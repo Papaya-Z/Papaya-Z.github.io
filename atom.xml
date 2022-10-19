@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-10T06:22:39.517Z</updated>
+  <updated>2022-10-19T15:47:29.464Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/post/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html"/>
     <id>http://example.com/post/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html</id>
     <published>2022-05-10T03:33:04.000Z</published>
-    <updated>2022-05-10T06:22:39.517Z</updated>
+    <updated>2022-10-19T15:47:29.464Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论 &amp; 量子规范场论<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="pdf/2_R&amp;R.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论 &amp; 量子规范场论<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/2_R&amp;R.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
       
@@ -53,9 +53,9 @@ M.E.Peskin &amp;amp; D.V.S</summary>
     <link href="http://example.com/post/QFT-seminar-chap7-LSZ-reduction-formula.html"/>
     <id>http://example.com/post/QFT-seminar-chap7-LSZ-reduction-formula.html</id>
     <published>2022-05-10T03:28:12.000Z</published>
-    <updated>2022-05-10T06:22:29.107Z</updated>
+    <updated>2022-10-19T15:47:39.408Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="pdf/1.2_LSZ.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/1.2_LSZ.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
       
@@ -85,9 +85,9 @@ M.E.Peskin &amp;amp; D.V.S</summary>
     <link href="http://example.com/post/QFT-seminar-chap7-Kallen-Leymann-representation.html"/>
     <id>http://example.com/post/QFT-seminar-chap7-Kallen-Leymann-representation.html</id>
     <published>2022-05-10T03:25:45.390Z</published>
-    <updated>2022-05-10T06:22:16.857Z</updated>
+    <updated>2022-10-19T15:47:34.597Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：K-L谱表示</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="pdf/1.1_K-L.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：K-L谱表示</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/1.1_K-L.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
       
@@ -117,9 +117,9 @@ M.E.Peskin &amp;amp; D.V.Sc</summary>
     <link href="http://example.com/post/QFT-seminar-chap4-scattering.html"/>
     <id>http://example.com/post/QFT-seminar-chap4-scattering.html</id>
     <published>2022-05-10T03:14:47.000Z</published>
-    <updated>2022-05-10T03:23:36.019Z</updated>
+    <updated>2022-10-19T15:47:04.522Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第四章讲稿：形式散射intro</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="pdf/0_Scattering.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第四章讲稿：形式散射intro</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/0_Scattering.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
       
@@ -149,9 +149,9 @@ M.E.Peskin &amp;amp; D.V</summary>
     <link href="http://example.com/post/QFT-seminar-chap3-Dirac-Field.html"/>
     <id>http://example.com/post/QFT-seminar-chap3-Dirac-Field.html</id>
     <published>2022-05-10T02:18:02.000Z</published>
-    <updated>2022-05-10T03:23:26.249Z</updated>
+    <updated>2022-10-19T15:47:12.624Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第三章讲稿：狄拉克场相关</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)H.J.W.Muller-Kirsten &amp; A.Wiedemann: Introduction to Supersymmetry<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="pdf/Dirac_ver.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第三章讲稿：狄拉克场相关</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)H.J.W.Muller-Kirsten &amp; A.Wiedemann: Introduction to Supersymmetry<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/Dirac_ver.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
       
