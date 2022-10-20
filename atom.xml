@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-19T15:47:29.464Z</updated>
+  <updated>2022-10-19T17:16:26.954Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://example.com/post/test.html"/>
+    <id>http://example.com/post/test.html</id>
+    <published>2022-10-19T17:05:24.000Z</published>
+    <updated>2022-10-19T17:16:26.954Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><p>开封府huajila$\frac{\alpha}{\sqrt{\rho^2}}$</p><script type="math/tex; mode=display">\langle\psi\rangle</script><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论 &amp; 量子规范场论<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;量子场论讨论班&lt;/p&gt;
+&lt;p&gt;第七章讲稿：LSZ约化公式&lt;/p&gt;
+&lt;p&gt;开封府huajila$\frac{\alpha}{\sqrt{\rho^2}}$&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\langle\psi\r</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="QFT" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
+    
+    
+    <category term="QFT" scheme="http://example.com/tags/QFT/"/>
+    
+    <category term="seminar" scheme="http://example.com/tags/seminar/"/>
+    
+  </entry>
   
   <entry>
     <title>QFT seminar chap.8: Regularization &amp; Renormalization</title>
