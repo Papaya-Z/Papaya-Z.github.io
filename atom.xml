@@ -3,11 +3,11 @@
   <title>Papaya&#39;s</title>
   
   <subtitle>Phy Blog</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://papaya-z.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2022-10-19T17:16:26.954Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://papaya-z.github.io/"/>
+  <updated>2022-10-20T07:59:06.561Z</updated>
+  <id>https://papaya-z.github.io/</id>
   
   <author>
     <name>Papaya Z</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>test</title>
-    <link href="http://example.com/post/test.html"/>
-    <id>http://example.com/post/test.html</id>
+    <link href="https://papaya-z.github.io/post/test.html"/>
+    <id>https://papaya-z.github.io/post/test.html</id>
     <published>2022-10-19T17:05:24.000Z</published>
-    <updated>2022-10-19T17:16:26.954Z</updated>
+    <updated>2022-10-20T07:59:06.561Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><p>开封府huajila$\frac{\alpha}{\sqrt{\rho^2}}$</p><script type="math/tex; mode=display">\langle\psi\rangle</script><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论 &amp; 量子规范场论<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr>]]></content>
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><p>开封府huajilaki<br>$\frac{\alpha}{\sqrt{\rho^2}}$</p><script type="math/tex; mode=display">\langle\psi\rangle</script><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论 &amp; 量子规范场论<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr>]]></content>
     
     
       
@@ -31,27 +31,27 @@
     <summary type="html">&lt;hr&gt;
 &lt;p&gt;量子场论讨论班&lt;/p&gt;
 &lt;p&gt;第七章讲稿：LSZ约化公式&lt;/p&gt;
-&lt;p&gt;开封府huajila$\frac{\alpha}{\sqrt{\rho^2}}$&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\langle\psi\r</summary>
+&lt;p&gt;开封府huajilaki&lt;br&gt;$\frac{\alpha}{\sqrt{\rho^2}}$&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\langle</summary>
       
     
     
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="QFT" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
     
     
-    <category term="QFT" scheme="http://example.com/tags/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/tags/QFT/"/>
     
-    <category term="seminar" scheme="http://example.com/tags/seminar/"/>
+    <category term="seminar" scheme="https://papaya-z.github.io/tags/seminar/"/>
     
   </entry>
   
   <entry>
     <title>QFT seminar chap.8: Regularization &amp; Renormalization</title>
-    <link href="http://example.com/post/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html"/>
-    <id>http://example.com/post/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html</id>
+    <link href="https://papaya-z.github.io/post/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html"/>
+    <id>https://papaya-z.github.io/post/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html</id>
     <published>2022-05-10T03:33:04.000Z</published>
     <updated>2022-10-19T15:47:29.464Z</updated>
     
@@ -69,21 +69,21 @@ M.E.Peskin &amp;amp; D.V.S</summary>
     
     
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="QFT" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
     
     
-    <category term="QFT" scheme="http://example.com/tags/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/tags/QFT/"/>
     
-    <category term="seminar" scheme="http://example.com/tags/seminar/"/>
+    <category term="seminar" scheme="https://papaya-z.github.io/tags/seminar/"/>
     
   </entry>
   
   <entry>
     <title>QFT seminar chap.7: LSZ reduction formula</title>
-    <link href="http://example.com/post/QFT-seminar-chap7-LSZ-reduction-formula.html"/>
-    <id>http://example.com/post/QFT-seminar-chap7-LSZ-reduction-formula.html</id>
+    <link href="https://papaya-z.github.io/post/QFT-seminar-chap7-LSZ-reduction-formula.html"/>
+    <id>https://papaya-z.github.io/post/QFT-seminar-chap7-LSZ-reduction-formula.html</id>
     <published>2022-05-10T03:28:12.000Z</published>
     <updated>2022-10-19T15:47:39.408Z</updated>
     
@@ -101,21 +101,21 @@ M.E.Peskin &amp;amp; D.V.S</summary>
     
     
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="QFT" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
     
     
-    <category term="QFT" scheme="http://example.com/tags/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/tags/QFT/"/>
     
-    <category term="seminar" scheme="http://example.com/tags/seminar/"/>
+    <category term="seminar" scheme="https://papaya-z.github.io/tags/seminar/"/>
     
   </entry>
   
   <entry>
     <title>QFT seminar chap.7: Kallen-Leymann representation</title>
-    <link href="http://example.com/post/QFT-seminar-chap7-Kallen-Leymann-representation.html"/>
-    <id>http://example.com/post/QFT-seminar-chap7-Kallen-Leymann-representation.html</id>
+    <link href="https://papaya-z.github.io/post/QFT-seminar-chap7-Kallen-Leymann-representation.html"/>
+    <id>https://papaya-z.github.io/post/QFT-seminar-chap7-Kallen-Leymann-representation.html</id>
     <published>2022-05-10T03:25:45.390Z</published>
     <updated>2022-10-19T15:47:34.597Z</updated>
     
@@ -133,21 +133,21 @@ M.E.Peskin &amp;amp; D.V.Sc</summary>
     
     
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="QFT" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
     
     
-    <category term="QFT" scheme="http://example.com/tags/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/tags/QFT/"/>
     
-    <category term="seminar" scheme="http://example.com/tags/seminar/"/>
+    <category term="seminar" scheme="https://papaya-z.github.io/tags/seminar/"/>
     
   </entry>
   
   <entry>
     <title>QFT seminar chap.4: scattering</title>
-    <link href="http://example.com/post/QFT-seminar-chap4-scattering.html"/>
-    <id>http://example.com/post/QFT-seminar-chap4-scattering.html</id>
+    <link href="https://papaya-z.github.io/post/QFT-seminar-chap4-scattering.html"/>
+    <id>https://papaya-z.github.io/post/QFT-seminar-chap4-scattering.html</id>
     <published>2022-05-10T03:14:47.000Z</published>
     <updated>2022-10-19T15:47:04.522Z</updated>
     
@@ -165,21 +165,21 @@ M.E.Peskin &amp;amp; D.V</summary>
     
     
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="QFT" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
     
     
-    <category term="QFT" scheme="http://example.com/tags/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/tags/QFT/"/>
     
-    <category term="seminar" scheme="http://example.com/tags/seminar/"/>
+    <category term="seminar" scheme="https://papaya-z.github.io/tags/seminar/"/>
     
   </entry>
   
   <entry>
     <title>QFT seminar chap3: Dirac Field</title>
-    <link href="http://example.com/post/QFT-seminar-chap3-Dirac-Field.html"/>
-    <id>http://example.com/post/QFT-seminar-chap3-Dirac-Field.html</id>
+    <link href="https://papaya-z.github.io/post/QFT-seminar-chap3-Dirac-Field.html"/>
+    <id>https://papaya-z.github.io/post/QFT-seminar-chap3-Dirac-Field.html</id>
     <published>2022-05-10T02:18:02.000Z</published>
     <updated>2022-10-19T15:47:12.624Z</updated>
     
@@ -197,21 +197,21 @@ M.E.Peskin &amp;amp; D.V.Sc</summary>
     
     
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="QFT" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/"/>
     
     
-    <category term="QFT" scheme="http://example.com/tags/QFT/"/>
+    <category term="QFT" scheme="https://papaya-z.github.io/tags/QFT/"/>
     
-    <category term="seminar" scheme="http://example.com/tags/seminar/"/>
+    <category term="seminar" scheme="https://papaya-z.github.io/tags/seminar/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/post/hello-world.html"/>
-    <id>http://example.com/post/hello-world.html</id>
+    <link href="https://papaya-z.github.io/post/hello-world.html"/>
+    <id>https://papaya-z.github.io/post/hello-world.html</id>
     <published>2022-05-07T13:44:31.349Z</published>
     <updated>2022-05-07T13:44:31.349Z</updated>
     

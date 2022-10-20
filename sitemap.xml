@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/post/test.html</loc>
+    <loc>https://papaya-z.github.io/post/test.html</loc>
+    
+    <lastmod>2022-10-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://papaya-z.github.io/post/QFT-seminar-chap7-LSZ-reduction-formula.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -11,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/post/QFT-seminar-chap7-LSZ-reduction-formula.html</loc>
+    <loc>https://papaya-z.github.io/post/QFT-seminar-chap7-Kallen-Leymann-representation.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/post/QFT-seminar-chap7-Kallen-Leymann-representation.html</loc>
+    <loc>https://papaya-z.github.io/post/QFT-seminar-chap8-Regularization-&-Renormalization.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/post/QFT-seminar-chap8-Regularization-&-Renormalization.html</loc>
+    <loc>https://papaya-z.github.io/post/QFT-seminar-chap3-Dirac-Field.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/post/QFT-seminar-chap3-Dirac-Field.html</loc>
+    <loc>https://papaya-z.github.io/post/QFT-seminar-chap4-scattering.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/post/QFT-seminar-chap4-scattering.html</loc>
+    <loc>https://papaya-z.github.io/link/index.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/link/index.html</loc>
+    <loc>https://papaya-z.github.io/categories/index.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://papaya-z.github.io/tags/index.html</loc>
     
     <lastmod>2022-10-19</lastmod>
     
@@ -74,16 +83,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
-    
-    <lastmod>2022-10-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>https://papaya-z.github.io/about/index.html</loc>
     
     <lastmod>2022-05-10</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/message/index.html</loc>
+    <loc>https://papaya-z.github.io/message/index.html</loc>
     
     <lastmod>2022-05-09</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/post/hello-world.html</loc>
+    <loc>https://papaya-z.github.io/post/hello-world.html</loc>
     
     <lastmod>2022-05-07</lastmod>
     
@@ -111,7 +111,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://papaya-z.github.io/</loc>
     <lastmod>2022-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -119,14 +119,14 @@
 
   
   <url>
-    <loc>http://example.com/tags/QFT/</loc>
+    <loc>https://papaya-z.github.io/tags/QFT/</loc>
     <lastmod>2022-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/seminar/</loc>
+    <loc>https://papaya-z.github.io/tags/seminar/</loc>
     <lastmod>2022-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -135,14 +135,14 @@
 
   
   <url>
-    <loc>http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/</loc>
+    <loc>https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QFT/</loc>
     <lastmod>2022-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
