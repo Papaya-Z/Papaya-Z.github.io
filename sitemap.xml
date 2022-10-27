@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://papaya-z.github.io/post/QFT.Chap.1.html</loc>
+    
+    <lastmod>2022-10-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://papaya-z.github.io/post/QFT-seminar-chap8-Regularization-&-Renormalization.html</loc>
     
     <lastmod>2022-10-27</lastmod>
@@ -39,15 +48,6 @@
   
   <url>
     <loc>https://papaya-z.github.io/post/QFT-seminar-chap3-Dirac-Field.html</loc>
-    
-    <lastmod>2022-10-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://papaya-z.github.io/post/QFT.Chap.1.html</loc>
     
     <lastmod>2022-10-27</lastmod>
     
