@@ -6,7 +6,7 @@
   <link href="https://papaya-z.github.io/atom.xml" rel="self"/>
   
   <link href="https://papaya-z.github.io/"/>
-  <updated>2022-10-28T01:15:54.254Z</updated>
+  <updated>2022-11-04T05:18:55.424Z</updated>
   <id>https://papaya-z.github.io/</id>
   
   <author>
@@ -17,16 +17,497 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>量子场论 Chap.1：经典场论基础1</title>
-    <link href="https://papaya-z.github.io/post/QFT.Chap.1.html"/>
-    <id>https://papaya-z.github.io/post/QFT.Chap.1.html</id>
-    <published>2022-10-19T17:05:24.000Z</published>
-    <updated>2022-10-28T01:15:54.254Z</updated>
+    <title>梁灿彬《微分几何入门与广义相对论》附录G笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BFG.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BFG.html</id>
+    <published>2022-11-04T05:14:18.000Z</published>
+    <updated>2022-11-04T05:18:55.424Z</updated>
     
-    <content type="html"><![CDATA[<hr><blockquote><p><strong>Refrence</strong></p></blockquote><pre class="line-numbers language-none"><code class="language-none">M.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论郑汉青：量子场论（上）高显：经典力学讲义老大中：变分法基础<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h1 id="场论观点的必要性"><a href="#场论观点的必要性" class="headerlink" title="场论观点的必要性"></a>场论观点的必要性</h1><p>量子场论是量子力学在场动力学体系中的应用，在这里主要关心基本粒子的动力学，因此涉及到相对论性的场。</p><p>场论很多时候意味着粒子数不确定。要从场论观点切入而不能简单地研究确定少数个相对论性粒子的量子力学，有几方面的必要性。例如单粒子的相对论性波动方程——K-G方程或Dirac方程——会出现无穷多负能态等不自洽；相对论性粒子所涉及的能量通常与其静质量相当，因此可能会出现粒子的对产生；即便能量未达到这个水平，在微扰论中也会出现作为中间态的多粒子作用。</p><p>此外，对于一个多粒子理论的需求也来自于因果性的要求。考虑一个自由粒子的传播子，即在$t$时间内从$\bf x$到$\bf x_0$的振幅，在非相对论性的形式为</p><script type="math/tex; mode=display">\begin{aligned}U(t) &= \langle{\bf x} | {\rm e}^{-{\rm i}Ht} |{\bf x}_0 \rangle\\&= \langle{\bf x} | {\rm e}^{-{\rm i}{\bf p}^2t/2m} |{\bf x}_0 \rangle\\&= \int\frac{ {\rm d}^3 p}{(2\pi)^3} \langle{\bf x} | {\rm e}^{-{\rm i}Ht} |{\bf p} \rangle \langle{\bf p}|{\bf x}_0 \rangle\\&= \frac{1}{(2\pi)^3}\int{\rm d}^3p {\rm e}^{-{\rm i}{\bf p}^2t/2m} {\rm e}^{-{\rm i}{\bf p}\cdot ({\bf x}-{\bf x}_0)}\\&= \left(\frac{m}{2\pi{\rm i}t}\right)^{3/2}{\rm e}^{ {\rm i}m({\bf x}-{\bf x}_0)^2/2t}\end{aligned}</script><p>这个表达式对所有$x$和$t$均非零；这表明可以在任意短时间内传播任意长的距离，显然是违反了相对论性因果性的。那么在相对论框架下呢？如果仅考虑单粒子，也是无法解决的。相对论情形下该传播子为</p><script type="math/tex; mode=display">\begin{aligned}U(t) &= \langle {\bf x} | {\rm e}^{-{\rm i}t\sqrt{ {\bf p}^2+m^2} } |{\bf x}_0 \rangle\\&= \frac{1}{(2\pi)^3}\int{\rm d}^3p {\rm e}^{-{\rm i}t\sqrt{ {\bf p}^2+m^2} } {\rm e}^{ {\rm i}{\bf p}\cdot({\bf x}-{\bf x}_0)}\\&= \frac{1}{2\pi^2|{\bf x}-{\bf x}_0|} \int_0^\infty{\rm d}p\ p\sin(p|{\bf x}-{\bf x}_0|){\rm e}^{-{\rm i}t\sqrt{p^2+m^2} }\end{aligned}</script><p>它在$x^2\gg t^2$的远光锥渐进行为是$U(t)\sim {\rm e}^{-m\sqrt{x^2-t^2} }$，因此传播子的振幅在光锥外具有小但非零的值，因果性仍然破坏。这个问题只有在多粒子的量子场论中才能得到有效的解决。</p><p>此外，量子场论还提供了处理变粒子数过程的方法，自然解释了粒子的自旋统计规律，并提供了计算粒子散射截面、寿命等可观测量的方法。</p><p><br/></p><hr><h1 id="经典场论框架"><a href="#经典场论框架" class="headerlink" title="经典场论框架"></a>经典场论框架</h1><p>尽管量子场可以（甚至应该）不依赖于经典连续场来引入，但是掌握经典场论中的基本概念以及很多处理方法仍然是必要的。并且，从经典场出发进行量子化得到粗糙的量子场，再根据其存在的病态行为——虽然这些病态可能恰恰是因为从经典场量子化而带来的——对其进行正规化、重整化等手续以获得具有预言能力的量子场论，也是我们将会遵循的主线。</p><blockquote><p><em>经典力学与经典场论的理论框架会涉及到不少有关泛函与变分的内容，不熟悉的读者可以在本章附录中找到所需足够的内容补充。</em></p></blockquote><p><br></p><h2 id="拉格朗日场论"><a href="#拉格朗日场论" class="headerlink" title="拉格朗日场论"></a>拉格朗日场论</h2><h3 id="最小作用量原理与欧-拉方程"><a href="#最小作用量原理与欧-拉方程" class="headerlink" title="最小作用量原理与欧-拉方程"></a>最小作用量原理与欧-拉方程</h3><p>经典力学体系的核心是作用量$S$，即对拉格朗日量的时间积分。在连续场分布的情形下，可以定义<strong>拉格朗日密度</strong>使得作用量就是其四维时空积分</p><script type="math/tex; mode=display">S[\phi] = \int\mathscr L(\phi(x),\partial_\mu\phi(x)){\rm d}^4x</script><p>其中$\phi=\phi(x)$是在四维时空连续分布的场自由度，拉格朗日密度$\mathscr L$通常是场变量及其一阶导数的泛函。在这里取度规$g_{\mu\nu}=g^{\mu\nu}={\rm diag}(1,-1,-1,-1)$。$\mathscr L$可以包含多个不同的场，相应地在之后每个场分别服从其各自的场方程。</p><p>与有限自由度的经典力学不同，那里的拉格朗日量通常可以显含时间参数$t$来描述处于随时间变化外场中的粒子；但是在经典场论中，我们会把这样的外场一同考虑进研究对象$\phi$中，如无特别说明，$\mathscr L$关于时间的依赖都来自于场变量的时间依赖。需要强调的是在拉格朗日框架下不区分时空坐标，拉格朗日场论天生就是四维协变的理论。</p><p>作用量显然是关于场变量$\phi$的泛函。<strong>最小作用量原理</strong>表明，当系统在四维时空中演化时，在所有可能的演化里，符合物理真实动力学的演化路径应当使得作用量取平稳值（在较短的演化中通常是极小值）。我们这里遵循大多数教材讨论的方法，即考虑泛函$S[\phi]$的变分为零</p><script type="math/tex; mode=display">\begin{aligned}0 &= \delta S[\phi]\\&= \int{\rm d}^4x\left\{\frac{\partial\mathscr L}{\partial\phi}\delta\phi + \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta(\partial_\mu\phi)\right\}\\&= \int{\rm d}^4x \left\{\frac{\partial\mathscr L}{\partial\phi}\delta\phi - \partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right)\delta\phi + \partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right)\right\}\end{aligned}</script><p>最后一项可以转化为在四维时空积分区域的边界上的表面积分，由于一般初、末态场构型都是确定的，若进一步合理假定在空间积分区域的边界处（通常为无穷远处）场为零，则在四维边界上$\delta\phi=0$，因此这一项消失了。</p><p>此外这一考虑也使得拉格朗日密度具有<strong>非唯一性</strong>。很显然对应同一组运动方程的拉氏量，可以相差一个全导数，因为这一部分只会产生边界项，而不会真正影响区域内的动力学。</p><p>于是最小作用量原理给出经典场的运动方程为：</p><script type="math/tex; mode=display">\partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right)-\frac{\partial\mathscr L}{\partial\phi} = 0</script><p>此即场的<strong>欧拉-拉格朗日方程</strong>。一般而言$\mathscr L$是多个不同场的函数，此时该方程对每个场分别成立。</p><p>事实上根据本节附录给出的多元函数最简泛函的平稳值条件，可以直接得到该问题的结论，即场运动方程就是作用量对场变量的泛函导数为零：</p><script type="math/tex; mode=display">- \frac{\delta S[\phi]}{\delta\phi} = \partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right)-\frac{\partial\mathscr L}{\partial\phi} = 0</script><p>之前扔掉的表面积分，就是在泛函导数的讨论中涉及到的边界项，这是我们所不关心的。</p><blockquote><p><em>在一些理论中有时也会考虑包含场变量高阶导数的拉格朗日密度：$\mathscr L(\phi,\partial\phi,\cdots,\partial^k\phi)$。其动力学方程也可由最小作用量原理得到，但这样的理论通常会存在一些问题，不在我们的讨论之列。</em></p></blockquote><p><br/></p><h3 id="拉格朗日密度的函数形式"><a href="#拉格朗日密度的函数形式" class="headerlink" title="拉格朗日密度的函数形式"></a>拉格朗日密度的函数形式</h3><p>原则上只要知道$\mathscr L$的具体函数形式就可获得场运动方程。目前为止只知道：它可以抽象地表达为场变量与其一阶导数的函数：$\mathscr L(\phi,\partial_\mu\phi)$；对于同一组运动方程，$\mathscr L$还具有非唯一性。事实上拉格朗日密度常被定义为能够通过最小作用量原理生成正确运动方程的数学函数，但这无助于获知其进一步信息。</p><p>首先，作用量$S$本身是一个数；同时，狭义相对性原理要求$S$应当在洛伦兹变换下保持不变，具有这种性质的数叫做洛伦兹标量。更一般地，希望拉格朗日框架在引力理论——广义相对论——中也成立，因此希望$S$应当在广义坐标变换下不变。而作用量是$\mathscr L$的四维积分，因此$\mathscr L$至少也应是一个洛伦兹标量。事实上这是一种基于洛伦兹对称性的要求。</p><p>从量纲角度，自然单位制下（$c=\hbar=1$），时空、能量、质量的量纲存在关系$[T]=[L]=[E]^{-1}=[M]^{-1}$，作用量$S$具有量纲$1$；而$S$是$\mathscr L$的四维时空积分，因此$\mathscr L$就应该拥有能量四次方的量纲，即$[\mathscr L]=[E]^4$。</p><p>最后，$\mathscr L$应当能够反映物理系统的各种对称性，包括时空对称性以及内部对称性。具体的讨论可以在诺特定理一节中得到展现，这里只利用其结论。例如，若认为系统应当存在$\phi\to{\rm e}^{-{\rm i}\alpha}\phi$的对称性，那么系统拉格朗日密度$\mathscr L$应当在这种对称性下不变，至多差一个全导数。</p><p>综合上述讨论，符合要求的$\mathscr L$，应当是一个<strong>具有能量量纲</strong>的<strong>洛伦兹标量</strong>，且函数形式受到各种<strong>对称性</strong>的约束；在此基础上希望从其各种等价形式中取<strong>最简</strong>形式。很多时候只要遵循这些条件，就已经将$\mathscr L$限制在少数几种可能的选择之中了。</p><p><br></p><p>尽管拉格朗日密度的具体函数形式可以十分多样，但是基于前述讨论仍可以大致归纳较为常见的类型。在非相对论极限的经典力学中，拉格朗日量通常具有$L=T-V$的形式，其中$T$是广义速度的二次型，一般称之为动能，用以刻画物体本身的运动状态；$V$则是仅与广义坐标有关的标量函数，称之为势能，用以刻画其所受到的外部作用力。在场论中也经常借鉴这样的分离形式。</p><p>首先，单一的场$\phi$作为一项出现在$\mathscr L$中不会对运动方程产生影响，其各阶导数也是如此；不考虑这些类型。在所讨论的最简形式$\mathscr L$中，每一项至少存在两个（相同或不同的）场量。</p><p>对于任意类型的场$\phi$，其本身可能带有多个不同类型的指标，例如洛伦兹指标（用希腊字母表示）、狄拉克旋量指标甚至其他内部空间指标等等；特别是对时空求导后的$\partial_\mu\phi$，至少会携带一个洛伦兹指标。要得到一个洛伦兹标量，最简单的方法就是用两个相同类型的场、两个求导算符、求导算符与其中一个场缩并掉所有的同类型指标。</p><p>最简单的就是不涉及导数算符，只由同一个场与自己完全缩并：</p><script type="math/tex; mode=display">\mathscr L_m \supset m^2\phi^2,\quad m^2 A^\mu A_\mu,\quad m\overline\psi\psi,\quad\cdots</script><p>在这些例子中系数$m$都具有能量量纲，一般表示场对应粒子的质量；类似这样的项常被称为<strong>质量项</strong>。</p><p>另一方面，也存在导数算符参与的项，在只有两个场量的时候例如：</p><script type="math/tex; mode=display">\mathscr L_K \supset \frac{1}{2}\phi_1\partial^\mu\partial_\mu\phi_2,\quad\overline\psi\gamma^\mu\partial_\mu\psi,\quad\frac{1}{4}(\partial_\mu A_\nu-\partial_\nu A_\mu)(\partial^\mu A^\nu-\partial^\nu A^\mu),\quad \phi\partial_\mu A^\mu,\quad\cdots</script><p>这些项都是关于两个场的双线性型。求导描述了场$\phi$本身的变化与运动，因此期望这些项能够描述场在不涉及相互作用的自由场动力学。通常把这样只关于两个场（或同一个场出现两次）的双线性型称之为<strong>动能项</strong>。</p><p>在更复杂的情况下，就要涉及到三个或更多的场量：</p><script type="math/tex; mode=display">\mathscr L_I \supset \lambda \phi^3,\quad g\partial_\mu\phi A^\mu \phi^*,\quad g^2A^2_\mu A^2_\nu,\quad \frac{1}{M}\partial_\mu h^{\mu\nu}\partial_\nu h_{\alpha\beta}h^{\alpha\beta},\quad\cdots</script><p>在量子场论的观点中，所有的相互作用都是通过三个或以上的场耦合来实现的，因此这些项也被称为<strong>相互作用项</strong>。其前面的系数则是用以表征耦合强度的<strong>耦合常数</strong>。在后面中将会看到，若耦合常数很小意味着体系是弱耦合的，此时可以进行微扰场论的计算。</p><blockquote><p><em>以上这些只是最简单的梳理，在实际的各种理论中、尤其是强相对论性的理论中常常会见到更复杂的构造，甚至无法明确区分场的纯动力学与相互作用，需要再具体分析。</em></p></blockquote><p><br></p><h2 id="哈密顿场论"><a href="#哈密顿场论" class="headerlink" title="哈密顿场论"></a>哈密顿场论</h2><p>与拉格朗日场论天然是四维构造因而是协变性的场论不同，哈密顿框架由于正则方程需要特别关注时间导数，从而必须要构造为$3+1$的结构。但它可以方便地引入一种较为简单的量子化手续——正则量子化；与之相应的，拉格朗日框架则是路径积分量子化的桥梁。</p><h3 id="哈密顿正则方程"><a href="#哈密顿正则方程" class="headerlink" title="哈密顿正则方程"></a>哈密顿正则方程</h3><p>在离散体系中，对每个动力学变量$q$，引入一个共轭动量$p=\partial L/\partial \dot q$，哈密顿量就是$H=\sum p\dot q-L$。推广到连续场论中，对于每个空间点$\bf x$上的场变量$\phi({\bf x},t)$，定义其共轭动量/正则动量密度</p><script type="math/tex; mode=display">\pi({\bf x},t) = \frac{\partial\mathscr L}{\partial\dot\phi({\bf x},t)}</script><p>在这里已经默认对原本四维协变的拉格朗日密度做了$3+1$分解，且从物理出发假设$\mathscr L$只包含基本变量$\phi({\bf x},t)$至多到一阶时间导数，以及各阶空间导数，但不包含时空混合导数。在这里只考虑到一阶导数的情况：</p><script type="math/tex; mode=display">\mathscr L(\phi(x),\partial_\mu\phi(x)) \to \mathscr L^{(3+1)}(\phi({\bf x},t),\dot\phi({\bf x},t),\partial_i\phi({\bf x},t))</script><p>在不引起歧义的情况下可将$\phi({\bf x},t)$简记为$\phi({\bf x})$，其他场量也是如此，但在记号背后它们仍然具有时间依赖。将共轭动量密度定义代入拉格朗日方程可以得到其时间变化率为</p><script type="math/tex; mode=display">\dot\pi({\bf x}) = \frac{\partial\mathscr L}{\partial\phi({\bf x})} - \partial_i\left(\frac{\partial\mathscr L}{\partial(\partial_i\phi({\bf x}))}\right)</script><p>并且定义<strong>哈密顿密度</strong>为</p><script type="math/tex; mode=display">\mathscr H = \pi({\bf x})\dot\phi({\bf x})-\mathscr L^{(3+1)}</script><p>反过来说，</p><script type="math/tex; mode=display">\mathscr L^{(3+1)} = \pi({\bf x})\dot\phi({\bf x})-\mathscr H</script><p>两者之间的这种变换关系在数学上叫做<strong>勒让德变换</strong>，是一种从一组独立变量到另一组独立变量的变换，在这里就是依赖于变量$\dot\phi$的$\mathscr L^{(3+1)}$与依赖于变量$\pi$的$\mathscr H$之间的变换。数学上讲，变换之后的$\mathscr H$已经不再依赖于$\dot\phi$。从几何语言的角度，拉格朗日密度$\mathscr L$是描述四维时空的底流形的切丛上的函数，拉格朗日框架都是在切丛上进行的；而$\mathscr H$则是余切丛上的函数。</p><p>$\mathscr H$实际上只是场变量$\phi$与共轭动量$\pi$的泛函$\mathscr H(\phi,\pi)$，一般不将场变量的一阶空间导数$\partial_i\phi$看作其独立变量。但是明确起见不妨显式地写出其对$\partial_i\phi$的依赖关系，即$\mathscr H(\phi,\partial_i\phi,\pi)$。据此可以明显看出此时利用哈密顿密度所表达的动力学方程，即<strong>哈密顿正则方程</strong>是</p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x})&=\frac{\partial\mathscr H}{\partial \pi({\bf x})}\\-\dot\pi({\bf x})&=\frac{\partial\mathscr H}{\partial \phi({\bf x})} - \partial_i\left(\frac{\partial\mathscr H}{\partial(\partial_i\phi({\bf x}))}\right)\end{aligned}</script><p><br/></p><p>为了在形式上获得与有限自由度体系类同的形式，可以考虑用泛函导数的语言代替偏导数进行表述。于是可以看到，共轭动量密度就是所谓拉格朗日量对场变量时间导数的泛函导数</p><script type="math/tex; mode=display">\pi({\bf x}) = \frac{\delta L}{\delta \dot\phi({\bf x})} = \frac{\delta}{\delta \dot\phi({\bf x})}\int{\rm d}^3x\mathscr L</script><p>哈密顿量则是</p><script type="math/tex; mode=display">H=\int{\rm d}^3x\ \pi({\bf x})\dot\phi({\bf x})- L = \int{\rm d}^3x\mathscr H</script><p>此时的哈密顿正则方程就是</p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x}) = \frac{\delta H}{\delta \pi({\bf x})}\\-\dot\pi({\bf x}) = \frac{\delta H}{\delta \phi({\bf x})}\end{aligned}</script><p><br/></p><h3 id="泊松括号"><a href="#泊松括号" class="headerlink" title="泊松括号"></a>泊松括号</h3><p>下面考虑场论中的泊松括号。注意到$f(x) = \int{\rm d}y \delta(x-y)f(y)$，可以写出： </p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x}) &= \int{\rm d}^3y\ \delta^{(3)}({\bf x}-{\bf y}) \frac{\delta H}{\delta \pi({\bf y})} = \int{\rm d}^3y\ \frac{\delta \phi({\bf x})}{\delta \phi({\bf y})} \frac{\delta H}{\delta \pi({\bf y})}\\\dot\pi({\bf x}) &= -\int{\rm d}^3y\ \delta^{(3)}({\bf x}-{\bf y}) \frac{\delta H}{\delta \phi({\bf y})} = -\int{\rm d}^3y\ \frac{\delta \pi({\bf x})}{\delta \pi({\bf y})} \frac{\delta H}{\delta \phi({\bf y})}\end{aligned}</script><p>在哈密顿框架下，对描述物理量的泛函$F(\phi,\pi,t)$有</p><script type="math/tex; mode=display">\begin{aligned}\frac{ {\rm d} F}{ {\rm d}t} &= \frac{\partial F}{\partial t} + \dot\phi({\bf x})\frac{\delta F}{\delta \phi({\bf x})} + \dot\pi({\bf x})\frac{\delta  F}{ \delta \pi({\bf x})}\\&= \frac{\partial F}{\partial t} + \int{\rm d}^3y\ \left[\frac{\delta F}{\delta \phi({\bf y})} \frac{\delta H}{\delta \pi({\bf y})} - \frac{\delta  F}{ \delta \pi({\bf y})}\frac{\delta H}{\delta \phi({\bf y})}\right]\\&= \frac{\partial F}{\partial t} + \{F,H\}\end{aligned}</script><p>该式描述了物理量随时间的变化；同时也用泛函导数定义了在经典场论中两个物理量的<strong>泊松括号</strong>：</p><script type="math/tex; mode=display">\{F,G\} = \int{\rm d}^3x\ \left[\frac{\delta F}{\delta \phi({\bf x})} \frac{\delta G}{\delta \pi({\bf x})} - \frac{\delta  F}{ \delta \pi({\bf x})}\frac{\delta G}{\delta \phi({\bf x})}\right]</script><p>据此立即可以得到<strong>等时正则泊松关系</strong>，在这里给出推广到多个场的情形（在积分意义下）：</p><script type="math/tex; mode=display">\{\phi_i({\bf x}),\phi_j({\bf y})\} = \{\pi_i({\bf x}),\pi_j({\bf y})\} = 0\ ,\quad \{\phi_i({\bf x}),\pi_j({\bf y})\} = \delta_{ij}\delta^{(3)}({\bf x}-{\bf y})</script><p>哈密顿正则方程也可以用泊松括号重写为</p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x}) = \{\phi({\bf x}), H\}\\\dot\pi({\bf x}) = \{\pi({\bf x}), H\}\end{aligned}</script><p>最后值得一提的是，对于我们这里不显含时的哈密顿量</p><script type="math/tex; mode=display">\frac{ {\rm d} H}{ {\rm d}t} = \frac{\partial H}{\partial t} + \{H,H\} = 0</script><p>不随时间改变。在不考虑一些特殊情况（例如时空背景的动力学），场论中的哈密顿量几乎都是不显含时的，因此场论总会存在一个守恒量，即哈密顿量$H$。将会看到，哈密顿量的守恒正是时间平移对称性的结果。在经典力学中我们知道哈密顿量就是总能量；经典场论中它也被赋予相同的含义，因此$\mathscr H$也被称为能量密度。</p><p><br></p><h3 id="为什么拉格朗日是局域的而哈密顿非局域"><a href="#为什么拉格朗日是局域的而哈密顿非局域" class="headerlink" title="为什么拉格朗日是局域的而哈密顿非局域"></a>为什么拉格朗日是局域的而哈密顿非局域</h3><hr><h1 id="连续对称性与守恒律"><a href="#连续对称性与守恒律" class="headerlink" title="连续对称性与守恒律"></a>连续对称性与守恒律</h1><h2 id="诺特定理"><a href="#诺特定理" class="headerlink" title="诺特定理"></a>诺特定理</h2><p>诺特定理描述了场论中连续对称性与守恒律之间的关系。若系统在某连续变换下运动方程不变，就称其为一种对称变换或对称操作，且系统具有相应变换下的<strong>对称性</strong>或不变性。这对应于作用量不变或至多差一个边界项，或者拉格朗日密度不变或至多差一个全导数。</p><p><br/></p><p>首先考虑最一般情况的无穷小连续变换</p><script type="math/tex; mode=display">x^\mu \to x'^\mu = x^\mu + \epsilon^\mu\ ,\quad \phi(x) \to \phi'(x') = \phi(x) + \bar\delta \phi(x)</script><p>其中，$\epsilon^\mu=\epsilon^\mu(x)$是任一表征无穷小坐标变换的无穷小4-矢量场。参考本章附录关于函数全变分的讨论，这里用全变分$\bar\delta$表示同时改变了坐标和场量的变换，需要强调偏导数$\partial_\mu$不与全变分$\bar\delta$对易，但与变分$\delta$对易。因此根据变分与全变分的关系，在该无穷小连续变换下，拉格朗日密度的改变可以表示为：</p><script type="math/tex; mode=display">\begin{aligned}\bar\delta\mathscr L &= \delta\mathscr L + \epsilon^\nu \partial_\nu\mathscr L\\&= \frac{\partial\mathscr L}{\partial\phi}\delta\phi + \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta(\partial_\mu\phi) + \epsilon^\nu \partial_\nu\mathscr L\\&= \left[\frac{\partial\mathscr L}{\partial\phi} - \partial_\mu\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right]\delta\phi + \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right] + \epsilon^\nu \partial_\nu\mathscr L\\&= \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right] + \epsilon^\nu \partial_\nu\mathscr L\end{aligned}</script><p>最后一步运用了欧-拉方程。相应地，此时的作用量也发生改变。但是注意到坐标变换也会引起积分中的积分测度变化，在只到一阶无穷小时其雅可比行列式为：</p><script type="math/tex; mode=display">J=\left|\frac{\partial x'}{\partial x}\right| = \det\left(\frac{\partial x'^\mu}{\partial x^\nu}\right) = |{\delta^\mu}_\nu + \partial_\nu\epsilon^\mu|  \approx 1 + \partial_\nu\epsilon^\nu</script><p>（注意${ g^\mu }_\nu=g^{ \mu\rho }g_{ \rho\nu }={ \delta^\mu }_\nu$）因此作用量的变化为</p><script type="math/tex; mode=display">\begin{aligned}\delta S &= \int \Big\{[{\rm d}^4x+\bar\delta({\rm d}^4x)](\mathscr L+\bar\delta\mathscr L) - {\rm d}^4x \mathscr L\Big\} = \int[\bar\delta({\rm d}^4x)\mathscr L-{\rm d}^4x\bar\delta \mathscr L]\\&=\int{\rm d}^4x \left\{\mathscr L \partial_\nu\epsilon^\nu + \epsilon^\nu \partial_\nu\mathscr L + \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right]\right\}\\&=\int{\rm d}^4x\ \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi + \mathscr L \epsilon^\mu\right]\end{aligned}</script><p>可见，若变换是一个对称变换，即$\delta S=0$，必然会导致一个如下的流守恒：</p><script type="math/tex; mode=display">\begin{aligned}j^\mu &= \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi + \mathscr L \epsilon^\mu\\&= \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\bar\delta\phi + \left[{g^\mu}_\nu\mathscr L - \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\partial_\nu\phi\right]\epsilon^\nu\end{aligned}</script><p>叫做相应对称性的守恒流，或者叫诺特流。其满足守恒方程</p><script type="math/tex; mode=display">\partial_\mu j^\mu = 0</script><p>相应地，其守恒荷为</p><script type="math/tex; mode=display">Q=\int{\rm d}^3x\ j^0</script><p>此即<strong>诺特定理：若系统存在一个连续的对称性，则必然导致一个守恒律。</strong></p><p>需要强调诺特定理成立必须满足的三点：</p><ul><li>对称性必须是连续对称性，否则无穷小变换中$\epsilon^\mu$无法定义；</li><li>守恒流只有在壳情况下是守恒的，即必须满足运动方程；</li><li>诺特定理对于全局和局域的对称性都是成立的（即$\epsilon^\mu$可以是常量场也可以是随坐标变化的场$\epsilon^\mu(x)$）。</li></ul><p><br></p><p>上面是从最基本的坐标和场量的变化开始考虑给出守恒流的形式。实际上一般如果确定（或假设）系统具有某种对称性时，经常可以直接从拉格朗日密度的函数形式出发得到守恒流的形式。对于运动方程不变的要求，就是拉格朗日密度至多差一个全导数</p><script type="math/tex; mode=display">\mathscr L(x) \to \mathscr L(x) + \partial_\mu\mathscr J^\mu(x)</script><p>相当于已知$\delta\mathscr L = \partial_\mu\mathscr J^\mu$，则可以直接得到守恒流$j^\mu$及其守恒方程的形式为</p><script type="math/tex; mode=display">\partial_\mu j^\mu(x) = \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi(x) - \mathscr J^\mu(x)\right] = 0</script><p>下面将会看到，很多时候所称的“守恒流”并不要求一定是狭义的矢量场（只有一个洛伦兹指标），还可以是拥有更多指标的张量；相应的“守恒荷”也就不一定是标量。</p><blockquote><p><em>需要强调的是，前述讨论仅仅是在经典水平上证明了诺特定理；但是经典系统被量子化后，其对称性是有可能被破坏的，例如可能存在量子反常的现象。对于量子系统的对称性与守恒律，在之后会具体讨论。</em></p></blockquote><p><br></p><h2 id="时空对称性与洛伦兹对称性"><a href="#时空对称性与洛伦兹对称性" class="headerlink" title="时空对称性与洛伦兹对称性"></a>时空对称性与洛伦兹对称性</h2><p>经典场论最简单也最重要的对称性就是时空对称性。四维时空的全部时空对称性由<strong>庞加莱群</strong>所描述，包括时间平移变换、空间平移变换、空间旋转变换以及洛伦兹变换所对应的对称性，其中后两种对称变换又由<strong>洛伦兹群</strong>所描述。它们分别导致了能量、动量、角动量的守恒。</p><h3 id="时空平移对称性与能-动张量"><a href="#时空平移对称性与能-动张量" class="headerlink" title="时空平移对称性与能-动张量"></a>时空平移对称性与能-动张量</h3><p>考虑四维时空坐标的无穷小平移变换</p><script type="math/tex; mode=display">x^\mu\to x'^\mu = x^\mu - a^\mu</script><p>其中$a^\mu$是确定的无穷小恒定4-矢量。具有时空平移对称性的场，应当在变换后满足如下关系：</p><script type="math/tex; mode=display">\phi(x)\to \phi'(x) = \phi(x+a) = \phi(x) + a^\mu\partial_\mu\phi(x)</script><p>这实际上给出了$\bar\delta\phi=0$而$\epsilon^\mu = -a^\mu$。直接代入前面的式子，或者分析拉格朗日密度在前述坐标变换下的变化</p><script type="math/tex; mode=display">\begin{aligned}\mathscr L(x) &\to \mathscr L(x+a) \approx \mathscr L(x) + a^\mu\partial_\mu \mathscr L(x)\\&= \mathscr L(x) + \partial_\mu (a^\nu {g^\mu}_\nu\mathscr L(x))\end{aligned}</script><p>都可以得出此时的守恒流是$j^\mu = a^\nu {T^\mu}_\nu$，其中</p><script type="math/tex; mode=display">{T^\mu}_\nu = \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\partial_\nu\phi - {g^\mu}_\nu\mathscr L</script><p>称为<strong>能量-动量张量</strong>，描述场的能量、动量在时空中的分布。由于$a^\nu$的任意性，所以一般就称${T^\mu}_\nu$是守恒流，其满足的守恒律是</p><script type="math/tex; mode=display">\partial_\mu{T^\mu}_\nu = 0</script><blockquote><p><em>需要注意的是在这里定义的能动张量并不一定是对称的，因此不能直接用于广义相对论。</em></p></blockquote><p>能动张量对应的守恒荷：</p><script type="math/tex; mode=display">\begin{aligned}P^\nu &= \int{\rm d}^3x T^{0\nu} = \int{\rm d}^3x \left[\frac{\partial\mathscr L}{\partial(\partial_0\phi)}\partial^\nu\phi - g^{0\nu}\mathscr L\right]\\&= \int{\rm d}^3x \left[\pi\partial^\nu\phi - g^{0\nu}\mathscr L\right]\end{aligned}</script><p>这就是所谓4-动量，为了看出这一点，考虑其第$0$分量 </p><script type="math/tex; mode=display">E = P^0 = \int {\rm d}^3x T^{00} = \int{\rm d}^3x \left[\pi\dot\phi - \mathscr L\right] = \int {\rm d}^3x \mathscr H = H</script><p>正是系统的总哈密顿量即能量，而$T^{00}=\mathscr H$就是哈密顿密度；能量的守恒对应于时间平移对称性。</p><p>另一方面，其空间分量则是</p><script type="math/tex; mode=display">p^i = \int {\rm d}^3x T^{0i} = -\int{\rm d}^3x\ \pi\partial_i\phi</script><p>或者写为3-矢量形式${\bf p} = -\int{\rm d}^3x\ \pi\nabla\phi$，其中$T^{0i} = -\pi\partial_i\phi$称为动量密度。之所以等式右边的指标$i$取逆变指标是为了遵循在三维场论分析中算符$\nabla = (\partial_i)$的习惯。动量守恒对应于空间平移对称性。</p><p>需要强调的是，这里的动量是表征系统运动状态的物理动量，与前面引入作为系统独立自由度的正则动量/共轭动量密度$\pi$不同。</p><p>此外，也要区分守恒荷与不变量；守恒荷可以是标量，矢量或张量，强调其不随时间发生变化的性质；而相对论语境下不变量则多指（洛伦兹）标量，强调其在一些对称变换下的不变性。</p><p><br></p><h3 id="洛伦兹对称性与角动量"><a href="#洛伦兹对称性与角动量" class="headerlink" title="洛伦兹对称性与角动量"></a>洛伦兹对称性与角动量</h3><p>由于可以统一由洛伦兹群所描述，因此广义上的洛伦兹对称性包括3个空间旋转与3个洛伦兹boost所联系的对称性。考虑如下形式的无穷小坐标变换：</p><script type="math/tex; mode=display">x^\mu \to {\varLambda^\mu}_\nu x^\nu = ({\delta^\mu}_\nu + {\omega^\mu}_\nu) x^\nu</script><p>若要求这样的变换保持度规不变，即</p><script type="math/tex; mode=display">{\varLambda^\mu}_\sigma {\varLambda^\nu}_\tau \eta^{\sigma\tau} = ({\delta^\mu}_\sigma + {\omega^\mu}_\sigma)({\delta^\nu}_\tau + {\omega^\nu}_\tau) \eta^{\sigma\tau} = \eta^{\mu\nu}\ \Longrightarrow\ \omega^{\mu\nu} + \omega^{\nu\mu} = 0</script><p>那么无穷小量$\omega^{\mu\nu}$一定是反对称的。反对称$4\times 4$矩阵的自由度共有$6$个，正对应于洛伦兹群所描述的6个对称变换。在这样的变换下，考虑一种简单的场量变换形式</p><script type="math/tex; mode=display">\phi(x)\to\phi'(x) = \phi(\varLambda^{-1}x) = \phi(x^\mu-{\omega^\mu}_\nu x^\nu) = \phi(x)-{\omega^\mu}_\nu x^\nu\partial_\mu\phi(x)</script><blockquote><p><em>应当指出的是，只有一部分场满足这样的变换性质，即所谓的标量场。关于更一般的讨论，将会在后面关于庞加莱群表示的部分深入。</em></p></blockquote><p>注意到由于反对称性$\omega^\mu_\mu = 0$，且$\omega^\mu_\nu$ 是恒量，而$\partial_\mu x^\nu = \delta_\mu^\nu$，则</p><script type="math/tex; mode=display">\partial_\mu({\omega^\mu}_\nu x^\nu \phi) = {\omega^\mu}_\nu x^\nu\partial_\mu\phi + {\omega^\mu}_\nu \phi {\delta_\mu}^\nu = {\omega^\mu}_\nu x^\nu\partial_\mu\phi</script><p>因此</p><script type="math/tex; mode=display">\mathscr L \to \mathscr L - \partial_\mu({\omega^\mu}_\nu x^\nu \mathscr L)</script><p>相差一个全导数，显然此时的守恒流就是</p><script type="math/tex; mode=display">\begin{aligned}j^\mu &= -\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}{\omega^\rho}_\nu x^\nu \partial_\rho\phi + {\omega^\mu}_\nu x^\nu\mathscr L\\&= -{\omega^\rho}_\nu x^\nu \left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)} \partial_\rho\phi - {g^\mu}_\rho\mathscr L\right]\\&= -{\omega^\rho}_\nu x^\nu {T^\mu}_\rho\end{aligned}</script><p>式中再次出现了上一节定义的能-动张量。考虑到$\omega^{\mu\nu}$的反对称性，总可以将上述表达式拆成六个独立守恒流的线性组合，每个都形如</p><script type="math/tex; mode=display">(M^\mu)^{\rho\nu} = x^\rho T^{\mu\nu} - x^\nu T^{\mu\rho}</script><p>它们的守恒方程是</p><script type="math/tex; mode=display">\partial_\mu(M^\mu)^{\rho\nu} = 0</script><p>这将给出六个守恒荷。对于$\rho,\nu=1,2,3$的守恒荷就是系统的<strong>总角动量</strong></p><script type="math/tex; mode=display">Q^{ij} = \int{\rm d}^3x(x^i T^{0j} - x^j T^{0i})</script><p>这对应于空间转动对称性。</p><p><br></p><p>而另一方面，与洛伦兹boost相联系的守恒荷是</p><script type="math/tex; mode=display">Q^{0i} = \int{\rm d}^3x(x^0 T^{0i} - x^i T^{00})</script><p>其守恒意味着</p><script type="math/tex; mode=display">\begin{aligned}0 &= \frac{ {\rm d}Q^{0i} }{ {\rm d}t} = \int{\rm d}^3x T^{0i} + t\int{\rm d}^3x \frac{\partial T^{0i} }{\partial t} - \frac{ {\rm d} }{ {\rm d}t}\int{\rm d}^3x\ x^i T^{00}\\&= P^i+t\frac{ {\rm d}P^i }{ {\rm d}t} - \frac{ {\rm d} }{ {\rm d}t}\int{\rm d}^3x\ x^i \mathscr H\end{aligned}</script><p>而动量是守恒的，因此该式得到了一个守恒的常量：</p><script type="math/tex; mode=display">\frac{ {\rm d} }{ {\rm d}t}\int{\rm d}^3x\ x^i \mathscr H = {\rm constant}</script><p>该式的物理意义是，场的能量分布的“等效中心”（联想质心的定义）以恒定速度运动；某种程度上这就是场论版本的牛顿第一定律。</p><p><br></p><h2 id="内部对称性"><a href="#内部对称性" class="headerlink" title="内部对称性"></a>内部对称性</h2><p>除了同时涉及时空坐标与场量的时空对称变换之外，场论还经常会处理所谓内部对称性，只会涉及到场量的变换。考虑最简单的一种情况：复标量场</p><script type="math/tex; mode=display">\psi(x) = \frac{\phi_1(x)+{\rm i}\phi_2(x)}{\sqrt 2}</script><p>构造拉格朗日密度为</p><script type="math/tex; mode=display">\mathscr L = \partial_\mu\phi^*\partial^\mu\psi-V(|\psi|^2)</script><p>显然拉格朗日密度具有如下的无穷小连续变换对称性</p><script type="math/tex; mode=display">\psi \to {\rm e}^{-{\rm i}\alpha}\psi \quad {\rm or} \quad \delta\psi=-{\rm i}\alpha\psi</script><p>其中$\alpha$是无穷小的实参数。因此具有相应的守恒流</p><script type="math/tex; mode=display">j^\mu = {\rm i}(\partial^\mu\psi^*)\psi -{\rm i}\psi^*(\partial^\mu\psi)</script><p>以及守恒荷</p><script type="math/tex; mode=display">Q={\rm i}\int{\rm d}^3x(\dot\psi^*\psi-\psi^*\dot\psi)</script><p>类似于这样的内部对称性对对应的守恒律在场论中十分重要，其守恒荷往往作为理论的重要特征数出现。由于形如$\psi \to {\rm e}^{ {\rm i}\alpha}\psi$的变换可由连续李群$U(1)$描述，因此本例中的对称性一般也叫（全局的）$U(1)$对称性。此外还可能会有其他连续李群描述的内部对称性，例如本例中的参数$\alpha$若取矩阵值，则可以很方便地推广到非阿贝尔群的情形。</p><p>另一方面由于这些对称性往往描述了理论相对于现实的冗余自由度，例如本例中给场量全局地附加一个相位并不会改变其所描述的物理，因此这类对称性也叫规范对称性。</p><p><br></p><hr><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="泛函变分与泛函导数"><a href="#泛函变分与泛函导数" class="headerlink" title="泛函变分与泛函导数"></a>泛函变分与泛函导数</h2><p>在分析经典力学与经典场论时，不可避免会遇到需要处理泛函的问题。泛函，即某个函数空间$\mathcal F$到某数域（物理上通常是复数域$\mathbb C$）的映射</p><script type="math/tex; mode=display">\begin{aligned}F:\mathcal F &\to\mathbb C\\f &\mapsto F[f]\ ,\end{aligned}</script><p>在物理中绝大多数会遇到的泛函都可以写成如下的简单积分型泛函：</p><script type="math/tex; mode=display">F[f]=\int{\rm d}x\ \mathscr F(x,f(x),f'(x),f''(x),\dots)</script><p><br></p><h3 id="泛函的变分"><a href="#泛函的变分" class="headerlink" title="泛函的变分"></a>泛函的变分</h3><p>泛函中会出现所谓“变分”的概念，这与函数的微分概念在某种程度上是对应的。具体来说：</p><p>作为函数的自变量，$x$会发生一个无穷小的改变${\rm d}x$，称之为自变量的微分</p><script type="math/tex; mode=display">x \to x+\epsilon\ {\rm d}x</script><p>同时，函数$f(x)$会完全由于自变量$x$发生变化${\rm d}x$而引起函数值的无穷小变化</p><script type="math/tex; mode=display">\begin{aligned}f(x) &\to f(x+\epsilon\ {\rm d}x)\\&= f(x) + \epsilon\ {\rm d}f(x) + \frac{\epsilon^2}{2}{\rm d}^2 f(x) + \frac{\epsilon^3}{3!}{\rm d}^3 f(x) + \cdots\\&= f(x) + \epsilon\ \frac{ {\rm d}f(x)}{ {\rm d}x}{\rm d}x + \frac{\epsilon^2}{2}\frac{ {\rm d}^2f(x)}{ {\rm d}x^2}({\rm d}x)^2 + \frac{\epsilon^3}{3!}\frac{ {\rm d}^3f(x)}{ {\rm d}x^3}({\rm d}x)^3 + \cdots\end{aligned}</script><p>这给出了函数的各阶微分${\rm d}^nf(x)$，例如其线性主部就是（一阶）微分${\rm d}f(x)$，它们本身都是无穷小的数；同时上式也给出了各阶函数导数的定义，即</p><script type="math/tex; mode=display">{\rm d}^{n}f(x) = \frac{ {\rm d}^nf(x)}{ {\rm d}x^n}({\rm d}x)^n</script><p>显然，函数导数的作用，（以一阶导数为例）是将一个无穷小的数${\rm d}x$映射到另一个无穷小的数${\rm d}f(x)$。</p><p><br></p><p>与此类似，在泛函问题中，函数本身作为泛函的宗量，也会在函数空间中发生微小变化$\delta f$</p><script type="math/tex; mode=display">f(x) \to f(x) + \epsilon\ \delta f(x)</script><p>这本身是一个无穷小的函数，称之为函数的变分。泛函$F[f]$也会完全由于函数变分而引起泛函值的无穷小变化</p><script type="math/tex; mode=display">\begin{aligned}F[f] &\to F[f+\epsilon\ \delta f]\\&= F[f] + \epsilon\ \delta F[f] + \frac{\epsilon^2}{2}\delta^2 F[f] + \frac{\epsilon^3}{3!}\delta^3 F[f] + \cdots\end{aligned}</script><p>这给出了泛函的各阶变分$\delta^n F[f]$，易见泛函的各阶变分也都是无穷小的数。</p><p>我们希望定义泛函$F[f]$对其宗量函数$f(x)$的<strong>泛函导数</strong>$\frac{\delta F[f]}{\delta f(x)}$。类比于函数导数的作用，泛函导数的作用应当（也以一阶泛函导数为例）是将一个无穷小的函数$\delta f(x)$映射到无穷小的数$\delta F[f]$，这可以由积分来实现</p><script type="math/tex; mode=display">\delta F[f] = \int{\rm d}x\frac{\delta F[f]}{\delta f(x)}\delta f(x)</script><p>类似地，更高阶的泛函导数也由积分定义为</p><script type="math/tex; mode=display">\delta^n F[f] = \int{\rm d}x_1{\rm d}x_2\cdots{\rm d}x_n \frac{\delta^n F[f]}{\delta f(x_1) \delta f(x_2)\cdots \delta f(x_n)}\delta f(x_1) \delta f(x_2)\cdots \delta f(x_n)</script><p>从上述定义的角度来讲，泛函导数与所谓的“$\delta$-函数”$\delta(x)$类似，都是只在积分意义下的泛函；但同样我们也可以类比对$\delta(x)$的处理方法，在符号意义下将$\frac{\delta F[f]}{\delta f(x)}$视作$x$的一个“函数”，这也是泛函导数在物理上常扮演的角色。我们希望找到一种能够计算在给定$x$处其“函数值”的方法。</p><p><br></p><h3 id="泛函导数的操作性定义"><a href="#泛函导数的操作性定义" class="headerlink" title="泛函导数的操作性定义"></a>泛函导数的操作性定义</h3><p>注意到前述定义在具体计算时不甚方便。若将$F[f+\epsilon\ \delta f]$视作关于$\epsilon$的普通函数，则可以给出更具操作性的泛函导数的定义。将$F[f+\epsilon\ \delta f]$按$\epsilon$进行泰勒展开：</p><script type="math/tex; mode=display">F[f+\epsilon\delta f] = F[f] + \epsilon\frac{ {\rm d} }{ {\rm d}\epsilon}F[f+\epsilon\delta f]\bigg|_{\epsilon = 0} + \frac{\epsilon^2}{2}\frac{ {\rm d}^2}{ {\rm d}\epsilon^2}F[f+\epsilon\delta f]\bigg|_{\epsilon = 0} + \cdots</script><p>与之前的定义式相比，不难得到此时的泛函导数（一阶为例）满足</p><script type="math/tex; mode=display">\int{\rm d}x\frac{\delta F[f]}{\delta f(x)}\delta f(x) = \frac{ {\rm d}F[f+\epsilon\delta f]}{ {\rm d}\epsilon}\Bigg|_{\epsilon = 0} = \lim_{\epsilon\to 0}\frac{F[f+\epsilon\delta f]-F[f]}{\epsilon}</script><p>这是<strong>拉格朗日形式的泛函导数</strong>定义，与前述定义是等价的。形式上将最后一项表达成积分，可以写为：</p><script type="math/tex; mode=display">\frac{\delta F[f]}{\delta f(x)} = \lim_{\epsilon\to 0} \frac{F[f+\epsilon\delta(x)]-F[f]}{\epsilon}</script><p>这给出了$\frac{\delta F[f]}{\delta f(x)}$的操作性定义：我们可以将记号$\frac{\delta F[f]}{\delta f(x)}$看作一个自变量取值为$x$的函数，其在积分下有意义，体现为对任意的函数$g(x)$，积分给出</p><script type="math/tex; mode=display">\int{\rm d}x\frac{\delta F[f]}{\delta f(x)} g(x) = \lim_{\epsilon\to 0}\frac{F[f+\epsilon g]-F[f]}{\epsilon}</script><p>不难看出这也是一个写成了函数的泛函，即与$\delta(x)$类似的“广义函数”。事实上依据定义，若将函数$f$在某一点$y$处的取值$f(y)$看作$f$本身的泛函，则有</p><script type="math/tex; mode=display">\frac{\delta f(y)}{\delta f(x)} = \delta(y-x)</script><p>即函数对自身的泛函导数是$\delta$-函数。</p><p>据此，在计算一般的泛函导数时，可以采用简单的求普通导数的方法来计算：即从泛函$F[f]$得到普通函数$\Phi(\epsilon) = F[f+\epsilon\delta f]$，求其关于参数$\epsilon$的普通导函数在$\epsilon=0$处的取值$\Phi’(0)$，就是泛函的变分值$\delta F$。通常这会得到一个积分的形式$\Phi’(0) = \int{\rm d}x g(x) \delta f(x)$，其中$g(x)$就是我们所定义的$\frac{\delta F[f]}{\delta f(x)}$。</p><p><br></p><h3 id="变分运算规则"><a href="#变分运算规则" class="headerlink" title="变分运算规则"></a>变分运算规则</h3><p>本小节给出变分的基本运算规则，有些在之前的讨论中已经用到过。对于自变量$x$的可微函数，函数变分运算的基本规则大多与微分类似：</p><script type="math/tex; mode=display">\begin{aligned}(1)&\ \delta(f_1+f_2) = \delta f_1+\delta f_2\\(2)&\ \delta(f_1f_2) = f_2\delta f_1+f_1\delta f_2\\(3)&\ \delta(f^n) = nf^{0n-1}\delta f\\(4)&\ \delta\left(\frac{f_1}{f_2}\right) = \delta\left(\frac{f_2\delta f_1-f_1\delta f_2}{f_2^2}\right)\\(5)&\ \delta\left[\frac{ {\rm d}^n}{ {\rm d}x^n}f\right] = \frac{ {\rm d}^n}{ {\rm d}x^n}(\delta f)\\(6)&\ \delta\int{\rm d}x f = \int{\rm d}x(\delta f)\end{aligned}</script><p>需要注意的是上述第5、6条表明，对于函数的变分运算可以与求导、积分运算交换。这两条的证明需要用到条件$\delta x=0$，因为变分本来就是函数本身的变化，与宗量无关。</p><p>对于形如$\mathscr F(f(x),f’(x))$的复合函数，除了上述规则之外，变分还满足链式法则：</p><script type="math/tex; mode=display">\delta \mathscr F(f(x),f'(x)) = \frac{\partial \mathscr F}{\partial f}\delta f + \frac{\partial \mathscr F}{\partial f'}\delta f'</script><p>结合链式法则与前述第六条规则，我们可以得到对于简单积分型泛函，其变分</p><script type="math/tex; mode=display">\begin{aligned}\delta F[f] &= \delta\int{\rm d}x\ \mathscr F(x,f(x),f'(x),f''(x),\dots)\\&= \int{\rm d}x\ \delta\mathscr F(x,f(x),f'(x),f''(x),\dots)\\&= \int{\rm d}x \left(\frac{\partial \mathscr F}{\partial f}\delta f + \frac{\partial \mathscr F}{\partial f'}\delta f' + \frac{\partial \mathscr F}{\partial f''}\delta f'' + \dots\right)\end{aligned}</script><p>以右侧积分中第二项为例，可以用分部积分将之变形：</p><script type="math/tex; mode=display">\frac{\partial \mathscr F}{\partial f'}\delta f' = \frac{\partial \mathscr F}{\partial f'}\delta \left(\frac{ {\rm d}f}{ {\rm d}x}\right) = \frac{\partial \mathscr F}{\partial f'} \frac{ {\rm d}}{ {\rm d}x}(\delta f) = \frac{ {\rm d}}{ {\rm d}x}\left(\frac{\partial \mathscr F}{\partial f'} \delta f\right) - \delta f \frac{ {\rm d}}{ {\rm d}x} \frac{\partial \mathscr F}{\partial f'}</script><p>第一项是一个全导数，在积分之后变为只取决于函数在边界上值的“边界项”，而第二项则由$\delta f’$变为了$\delta f$。对泛函变分$\delta F[f]$其余的部分也进行多次分部积分，最后可以全部变换为$\delta f$，这种变换称之为拉普拉斯变换。</p><p><br></p><p>有时我们会需要处理函数与宗量同时变化的情况，即所谓“全变分”的概念，一般用$\bar\delta$表示。需要区分两者的关系，即变分只是函数本身的变化，函数的变分仍是一个函数。但全变分则同时表征函数本身和宗量的变化，函数在某点处的全变分是一个无穷小数。考虑函数由$f(x)$变化一无穷小函数变为$f_1(x)$，则函数的变分作为一个函数，在某点$x$处的取值为</p><script type="math/tex; mode=display">\delta f(x) = f_1(x)-f(x)</script><p>而其在$x$点的全变分则同时要考虑函数的变化，以及$x$也变化一无穷小数${\rm d}x$，即：</p><script type="math/tex; mode=display">\bar\delta f(x) = f_1(x+{\rm d}x) - f(x)</script><p>特别地，对于自变量而言，$\bar\delta x={\rm d} x$。对于可微函数，将函数$f_1$在$x$处泰勒展开到一阶无穷小：</p><script type="math/tex; mode=display">f_1(x+{\rm d}x)-f_1(x) = f_1'(x) {\rm d} x \approx f'(x) {\rm d} x</script><p>约等号是由于函数变分本身就是无穷小量，乘以${\rm d}x$属于高阶无穷小量。因此全变分$\bar\delta$与变分$\delta$在只保留一阶无穷小量下近似有：</p><script type="math/tex; mode=display">\bar\delta f(x) \approx \delta f(x) + f'(x){\rm d}x</script><p>事实上这个式子对任何关于$x$的泛函也成立。第一项表明仅由函数变化所引起的部分，第二项表示函数不变时，仅由自变量变化引起的部分。</p><p>需要强调，全变分与求导、积分运算一般均不可交换，因为$\bar\delta x={\rm d} x \neq 0$。</p><p><br></p><h3 id="简单积分型泛函导数与欧拉方程"><a href="#简单积分型泛函导数与欧拉方程" class="headerlink" title="简单积分型泛函导数与欧拉方程"></a>简单积分型泛函导数与欧拉方程</h3><p>注意到这里无论哪种定义给出的泛函导数都是积分意义下的定义。一般而言，积分会经由分部积分等步骤产生在积分端点（边界）处取值的“边界项”，但通常我们会处理固定边界的泛函问题，边界项与真正关心的内部的$\delta f$无关，因此在泛函导数的计算时经常扔掉边界项。</p><p>结合之前的讨论，很容易得到对于我们在物理中所关心的简单积分型泛函，其泛函导数为：</p><script type="math/tex; mode=display">\begin{aligned}\frac{\delta F}{\delta f} &= \frac{\delta}{\delta f}\int{\rm d}x\mathscr F\quad (-{\rm boundary\ terms})\\&= \frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} + \frac{ {\rm d}^2}{ {\rm d}x^2}\frac{\partial\mathscr F}{\partial f''} +\cdots\\&= \sum_{n=0}(-1)^n\frac{ {\rm d}^n}{ {\rm d}x^n}\frac{\partial\mathscr F}{\partial f^{(n)} }\end{aligned}</script><p>或者写为泛函变分的形式</p><script type="math/tex; mode=display">\delta F[f] = \int{\rm d}x \left(\frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} + \frac{ {\rm d}^2}{ {\rm d}x^2}\frac{\partial\mathscr F}{\partial f''} +\cdots\right)</script><p>这个结论会经常用到。</p><p><br></p><p>物理上研究最多的是泛函平稳值问题。当函数$f$发生微小变化时，泛函取平稳值的条件就是$F[f]$对$f$的泛函导数为零。考虑较简单的一种泛函平稳值问题，对于只依赖于$f$一阶导数的<strong>最简泛函</strong></p><script type="math/tex; mode=display">F[f]=\int{\rm d}x\mathscr F(x,f(x),f'(x))</script><p>此时泛函$F[f]$取平稳值的条件就是，函数$f$满足下述微分方程</p><script type="math/tex; mode=display">\frac{\delta F}{\delta f} = \frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} = 0</script><p>此即最简泛函平稳值问题的<strong>欧拉方程</strong>，或称<strong>欧拉-拉格朗日方程</strong>。</p><p><br></p><p>我们可以从各个角度对该问题进一步拓展。首先可以考虑依赖于$f$更高阶导数的泛函平稳值问题，显然也有相应于欧拉方程的条件</p><script type="math/tex; mode=display">\frac{\delta F}{\delta f} = \sum_{n=0}(-1)^n\frac{ {\rm d}^n}{ {\rm d}x^n}\frac{\partial\mathscr F}{\partial f^{(n)} } = 0</script><p>此即涉及高阶导数的<strong>欧拉-泊松方程</strong>。</p><p>另外，也可以考虑依赖于多个一元函数的泛函平稳值问题，例如泛函被积函数取$\mathscr F = \mathscr F(x,f(x),f’(x),g(x),g’(x))$。此时各个一元函数都要分别满足欧-拉方程，整个泛函取平稳值的条件就是</p><script type="math/tex; mode=display">\left\{\begin{aligned}\frac{\delta F}{\delta f} = \frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} &= 0\\\frac{\delta F}{\delta g} = \frac{\partial\mathscr  F}{\partial g} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial g'} &= 0\end{aligned}\right.</script><p>即关于多个一元函数的<strong>欧-拉方程组</strong>。</p><p>最后，还可以考虑依赖于多元函数的泛函平稳值问题，即$\mathscr F = \mathscr F(x,y,u(x,y),u_x,u_y)$。此时在每个方程中都要考虑所有自变量的影响，对应的条件是</p><script type="math/tex; mode=display">\frac{\delta F}{\delta u} = \frac{\partial\mathscr  F}{\partial u} - \frac{\partial}{\partial x}\frac{\partial\mathscr F}{\partial u_x} - \frac{\partial}{\partial y}\frac{\partial\mathscr F}{\partial u_y} = 0</script><p>此即涉及多元函数的<strong>欧拉-奥斯克罗格拉茨基方程</strong>。</p><p>上述这些不同形式的方程都具有共性，可统称为欧拉方程。欧拉方程系统地回答了各类简单积分型泛函的平稳值问题。</p>]]></content>
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》附录G笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/G.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
-    <summary type="html">经典场论的基本原理与框架；诺特定理；泛函变分与导数的基础</summary>
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》附录G笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/G.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》附录B笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BFB.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BFB.html</id>
+    <published>2022-11-04T05:13:20.000Z</published>
+    <updated>2022-11-04T05:18:49.909Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》附录B笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/B.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》附录B笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/B.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》第七章笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF7.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF7.html</id>
+    <published>2022-11-04T05:12:31.000Z</published>
+    <updated>2022-11-04T05:18:44.285Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》第七章笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/7.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》第七章笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/7.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》第六章笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF6.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF6.html</id>
+    <published>2022-11-04T05:11:45.000Z</published>
+    <updated>2022-11-04T05:18:37.715Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》第六章笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/6.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》第六章笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/6.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》第五章笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF5.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF5.html</id>
+    <published>2022-11-04T05:10:41.000Z</published>
+    <updated>2022-11-04T05:18:31.112Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》第五章笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/5.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》第五章笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/5.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》第四章笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF4.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF4.html</id>
+    <published>2022-11-04T05:09:55.000Z</published>
+    <updated>2022-11-04T05:18:25.937Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》第四章笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/4.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》第四章笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/4.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》第三章笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF3.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF3.html</id>
+    <published>2022-11-04T05:08:52.000Z</published>
+    <updated>2022-11-04T05:18:19.411Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》第三章笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/3.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》第三章笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/3.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》第二章笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF2.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF2.html</id>
+    <published>2022-11-04T05:07:52.000Z</published>
+    <updated>2022-11-04T05:18:13.022Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>梁灿彬《微分几何入门与广义相对论》第二章笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/2.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》第二章笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/2.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梁灿彬《微分几何入门与广义相对论》第一章笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF1.html"/>
+    <id>https://papaya-z.github.io/post/archived/DG&amp;GR/%E5%BE%AE%E5%B9%BF1.html</id>
+    <published>2022-11-04T05:02:48.000Z</published>
+    <updated>2022-11-04T05:18:07.855Z</updated>
+    
+    <content type="html"><![CDATA[<hr><hr><p>梁灿彬《微分几何入门与广义相对论》第一章笔记</p><hr><div class="row">    <embed src="/pdf/archived/DG&amp;GR/1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;梁灿彬《微分几何入门与广义相对论》第一章笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/DG&amp;amp;GR/1.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; t</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="微广-梁灿彬" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/%E5%BE%AE%E5%B9%BF-%E6%A2%81%E7%81%BF%E5%BD%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.7笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-7.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-7.html</id>
+    <published>2022-11-04T04:47:55.000Z</published>
+    <updated>2022-11-04T05:21:12.191Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.7笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen7.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.7笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen7.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.6笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-6.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-6.html</id>
+    <published>2022-11-04T04:47:14.000Z</published>
+    <updated>2022-11-04T05:21:04.718Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.6笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen6.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.6笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen6.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.5笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-5.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-5.html</id>
+    <published>2022-11-04T04:46:34.000Z</published>
+    <updated>2022-11-04T05:20:57.908Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.5笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen5.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.5笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen5.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.4笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-4.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-4.html</id>
+    <published>2022-11-04T04:45:50.000Z</published>
+    <updated>2022-11-04T05:20:51.537Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.4笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen4.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.4笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen4.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.3笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-3.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-3.html</id>
+    <published>2022-11-04T04:45:10.000Z</published>
+    <updated>2022-11-04T05:20:43.835Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.3笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen3.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.3笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen3.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.2笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-2.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-2.html</id>
+    <published>2022-11-04T04:43:51.000Z</published>
+    <updated>2022-11-04T05:20:37.577Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.2笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen2.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.2笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen2.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.1笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-1.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-1.html</id>
+    <published>2022-11-04T04:37:49.000Z</published>
+    <updated>2022-11-04T05:20:26.476Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.1笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.1笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen1.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>量子场论 Chap.3：量子化：路径积分方法</title>
+    <link href="https://papaya-z.github.io/post/QFT.Chap.3.html"/>
+    <id>https://papaya-z.github.io/post/QFT.Chap.3.html</id>
+    <published>2022-11-02T07:43:11.000Z</published>
+    <updated>2022-11-02T09:03:10.048Z</updated>
+    
+    <content type="html"><![CDATA[<hr><blockquote><p><strong>Refrence</strong></p></blockquote><pre class="line-numbers language-none"><code class="language-none">M.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论郑汉青：量子场论（上）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h1 id="路径积分"><a href="#路径积分" class="headerlink" title="路径积分"></a>路径积分</h1><p>首先考虑在非相对论性量子力学中，一维运动粒子的哈密顿量</p><script type="math/tex; mode=display">\hat H(t) = \frac{\hat p^2}{2m}+V(\hat x,t)</script><p>考虑初态$|i(t_i)\rangle = |x_i\rangle$与末态$\langle f(t_f)| = \langle x_f|$分别是局域于两个时空点处的位置本征态，表明在相应的时刻测量位置时确定处于这两点的粒子态；我们希望得到从初态到末态的<strong>传播子</strong>，即：</p><script type="math/tex; mode=display">U(x_i,t_i;x_f,t_f) = \langle f(t_f) | i(t_i) \rangle = \langle x_f | {\rm e}^{-{\rm i}(t_f-t_i)\hat H} | x_i \rangle</script><p>注意到这样的形式当且仅当在$\hat H$不含时的情况下成立，因为只有这样才能</p><p>时间演化算符的形式</p><p>如果假设$\hat H$是时间的光滑函数，则前述简单的形式只有在无穷小时间间隔内成立；对于有限长的时间间隔，一个自然的处理方法就是将之分割为许多极短时间间隔$\Delta t_j$：</p><script type="math/tex; mode=display">U(x_i,t_i;x_f,t_f) = \int {\rm d}x_1\cdots {\rm d}x_n \langle x_f | {\rm e}^{-{\rm i}\Delta t_f\hat H(t_f)} | x_{n} \rangle \cdots \langle x_1 | {\rm e}^{-{\rm i}\Delta t_1\hat H(t_1)} | x_i \rangle</script><p>可以看到这里事实上是对时间进行了切片，然后考虑了在每个中间时刻粒子所处位置的全部可能性（对每个中间态位置的积分）——换句话说实际上考虑了确定初末态下粒子运动的全部可能“轨迹”。</p>]]></content>
+    
+    
+    <summary type="html">庞加莱代数及其表示；场的分类；离散对称性</summary>
     
     
     
@@ -37,12 +518,6 @@
     
     <category term="量子场论" scheme="https://papaya-z.github.io/tags/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/"/>
     
-    <category term="经典场论" scheme="https://papaya-z.github.io/tags/%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA/"/>
-    
-    <category term="数学" scheme="https://papaya-z.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-    <category term="泛函" scheme="https://papaya-z.github.io/tags/%E6%B3%9B%E5%87%BD/"/>
-    
     <category term="木瓜数学物理计划" scheme="https://papaya-z.github.io/tags/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E8%AE%A1%E5%88%92/"/>
     
   </entry>
@@ -51,8 +526,8 @@
     <title>量子场论 Chap.2：经典场论基础2</title>
     <link href="https://papaya-z.github.io/post/QFT.Chap.2.html"/>
     <id>https://papaya-z.github.io/post/QFT.Chap.2.html</id>
-    <published>2022-10-19T17:05:24.000Z</published>
-    <updated>2022-10-31T20:04:17.819Z</updated>
+    <published>2022-10-28T01:10:46.000Z</published>
+    <updated>2022-11-02T07:57:39.282Z</updated>
     
     <content type="html"><![CDATA[<hr><blockquote><p><strong>Refrence</strong></p></blockquote><pre class="line-numbers language-none"><code class="language-none">M.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论郑汉青：量子场论（上）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h1 id="庞加莱群与洛伦兹群"><a href="#庞加莱群与洛伦兹群" class="headerlink" title="庞加莱群与洛伦兹群"></a>庞加莱群与洛伦兹群</h1><h2 id="群，群作用与群表示"><a href="#群，群作用与群表示" class="headerlink" title="群，群作用与群表示"></a>群，群作用与群表示</h2><h3 id="对称变换的描述"><a href="#对称变换的描述" class="headerlink" title="对称变换的描述"></a>对称变换的描述</h3><p>重新考察四维时空的时空对称性，我们希望找到合适的数学描述。</p><p>在物理上，对称性一般由<strong>群</strong>来描述。所谓群$G$，即是一种定义了二元运算（群乘法）$g\circ h$的代数结构，且运算满足下列性质：</p><ul><li><p>封闭性：$\forall g,h\in G,\quad g\circ h\in G$</p></li><li><p>结合律：$\forall g,h,k\in G,\quad (g\circ h)\circ k = g\circ (h\circ k) = g\circ h\circ k$</p></li><li><p>有恒元$e$满足：$\forall g \in G,\quad g\circ e=e\circ g = g$</p></li><li><p>对$\forall g\in G$，有逆元$g^{-1}$满足：$g^{-1}\circ g = g \circ g^{-1} = e$</p></li></ul><p>这恰恰对应了我们在物理上对于对称变换所满足性质的期待：</p><ul><li>对体系连续施加两个对称变换，其总效果按照定义仍是一种对称变换；</li><li>连续施行多次对称变换时，总应当可以按顺序任意拆分成几组变换；</li><li>有恒等变换，即不进行任何改变的操作，也属于特殊的对称变换；</li><li>对称变换不应该损失体系的信息，总应当可以复原变换前的体系，即对称变换可逆。</li></ul><p>因此在大多数情况下我们都会为一类特定的对称变换寻找一个合适的群$G$来描述。特别地，群乘法一般可以是不对易的。</p><p>相比于抽象的群结构本身，物理上更关心的是群元素作用在某些对象上的效果，即所谓<strong>群作用</strong>的概念。若用$G$描述对称变换的操作本身，那么对称变换的对象的全体则作为一个集合$X$，其每个可以被变换的对象都是集合中的一个元素$x\in X$。例如，对于时空对称变换，$X$就可以是时空坐标全体，即四维闵氏空间。</p><p>群$G$<strong>（左）作用</strong>在集合$X$上，就是说每个群元$g\in G$都是集合$X$上的一个可逆变换，代表一个物理的对称变换操作：$x\mapsto g\cdot x \in X$，且满足：</p><ul><li><p>群乘法表示对称变换操作的复合：$(g\circ h)\cdot x = g\cdot(h\cdot x)$；</p></li><li><p>特别地，恒元$e$对应的变换是恒等变换：$e\cdot x=x$。</p></li></ul><p>这样，群$G$及其作用空间$X$共同构成了物理上对一个对称变换的抽象描述。</p><p><br></p><p>但是更多时候我们不仅仅只研究对称变换本身，更关心的是在对称变换下某些物理对象——比如说在场论中，这样的对象就是场，也即$X$上各种类型的映射——的变换形式。给定了群$G$在集合$X$上的作用，就能自然诱导出群在其上映射空间的作用。</p><p>设$G$作用在集合$X$和$Y$上，群作用分别用$g\cdot x$和$g* y$表示，$\mathcal F[X\to Y ]$是全体$X\to Y$映射的集合，则存在$\mathcal F$上的诱导群作用$\Pi$，对$\forall g\in G$，存在变换$\Pi_g$满足：</p><script type="math/tex; mode=display">\begin{aligned}(\Pi_g f)(x) = g* f(g^{-1}\cdot x)\end{aligned}</script><p>对于不同类型的值域$Y$，可能存在不同的群作用$g*y$，则相应函数$f\in\mathcal F$服从的变换律也不同。若群作用是$X$上的对称变换，此时也说映射空间$\mathcal F$具有这种对称性。</p><p>据此，时空的对称性就会自然诱导出场的对称性。在下面的讨论中，我们的重点就是各类不同的场在时空对称变换下的行为。之后如无特殊说明，群乘法、群作用都用普通乘法的记号来简记，即$g_1g_2\equiv g_1\circ g_2$，$g\cdot x\equiv x$。</p><h3 id="群表示"><a href="#群表示" class="headerlink" title="群表示"></a>群表示</h3><p>物理上的对称性可以由群$G$对某个空间$X$的作用来描述，但是这样抽象的描述不便于物理的计算与分析，因此我们会进一步希望用一些更熟悉的、更具体的工具来定量刻画群的作用，例如矩阵代数。</p><p>前面已经看到，研究一个特定空间$X$上的映射$f\in\mathcal F[X\to Y ]$在对称变换下的变换律，关键是要研究对称群$G$在不同类型空间$Y$上的群作用。物理上很多时候对所研究的场的一般要求（例如可加性）决定了我们感兴趣的绝大多数都是群在不同线性空间上的作用，此即<strong>群（线性）表示</strong>的概念：</p><p>群$G$的一个<strong>线性表示</strong>是一个群同态$\varphi:G\to {\rm GL}(V)$，其中$V$是域$K$上的线性空间，称为该群表示的表示空间，${\rm GL}(V)$是其上全体可逆线性变换构成的群，称为一般线性群；$n=\dim V$是表示空间的维数，也称为表示$\varphi$的次数$\deg\varphi$。群在线性空间上的群作用本身就是一个线性表示；一般也把群的线性表示称为群在相应线性空间上的作用。</p><p>所谓<strong>群同态</strong>就是保持群乘法的映射（不必单满）：$\varphi(g_1)\varphi(g_2) = \varphi(g_1g_2)$。这显然包含了：</p><ul><li>恒元映射到恒等变换：$\varphi(e)=I_d\in{\rm GL}(V)$；</li><li>一个群元的逆元映射到其对应变换的逆变换：$\varphi(g^{-1}) = [\varphi(g)]^{-1}$；</li></ul><p>若$\varphi$是单满的双射，则$\varphi$也叫作<strong>群同构</strong>，此时的表示称为<strong>忠实表示</strong>，$\ker\varphi = {e}$；若$\varphi$将所有群元都映射到恒等变换$I_d\in{\rm GL}(V)$，此时的表示称为<strong>平凡表示</strong>，$\ker\varphi = G$。特别地，$G$的一次平凡表示也叫<strong>主表示</strong>或<strong>单位表示</strong>。</p><p>考虑两个同构的线性空间，具有同构映射$\sigma: U\to V$。若同一个群$G$在这样两个空间上的表示分别为$\varphi$和$\phi$，且表示映射可与同构映射交换：</p><script type="math/tex; mode=display">\sigma\circ\varphi(g) = \phi(g)\circ\sigma</script><p>这个映射等式对$\forall u\in U$成立，则称$\varphi$和$\phi$是<strong>等价线性表示</strong>。</p><p><br></p><p>为了便于定量计算，引入一个新的概念：<strong>矩阵表示</strong>$\varPhi:G\to {\rm GL}(n)$，在这里${\rm GL}(n)$为域$K$上的全体可逆$n$阶矩阵构成的矩阵群，$n$也是矩阵表示$\varPhi$的次数$\deg\varPhi$。</p><p>根据线性代数的知识，线性空间上的线性变换总可以通过选取一定的基来写成矩阵的形式；反之给定矩阵和一个线性空间，也可以选定一组基定义一个线性变换。由此，==域$K$上的$n$阶矩阵表示$\varPhi$与域$K$上某$n$维空间上的线性表示$\varphi$存在选定基下的一一对应关系。==</p><p>同一个域上可以有多个相同次数的矩阵表示，若它们之间通过一个特定的变换矩阵$S\in{\rm GL}(n)$联系：$\forall g\in G$，$\varPsi(g) = S^{-1}\varPhi(g) S$，则称两者是<strong>等价矩阵表示</strong>。可以证明，==线性表示等价，当且仅当它们对应的矩阵表示等价。==</p><p>据此，我们可以不区分群在同一个数域上的线性表示与矩阵表示，在之后统称为（群）表示；这样既方便抽象地分析群在某个表示空间上的作用，也提供了从矩阵角度定量计算的方法。大多数情况下也不再区分等价表示，因为通常它们在物理上描述的是具有相同性质的对象。显然一个群可以有许多不等价表示，其之间的区别取决于表示空间本身的性质。因此，==物理上我们会用同一个群的不等价表示给物理对象进行分类==，以表征它们在相同对称变换下的不同变换性质。</p><h3 id="李群——连续对称性"><a href="#李群——连续对称性" class="headerlink" title="李群——连续对称性"></a>李群——连续对称性</h3><p>不囿于数学严谨地说，物理上常用的群表示就是取我们熟悉的某个具体的状态空间，例如经典力学中的位形空间、速度空间、相空间，或是量子力学中的希尔伯特空间；在这些空间上</p><p>不等价不可约</p><p>由此也引出了在物理上描述变换的两种观点：主动观点与被动观点</p><p>主动观点（active viewpoint）：认为对称变换是将$x$点变换到$g\cdot x$，并由此导致原本在$x$点的场$f(x)$变为在$g\cdot x$点的$g*f(g\cdot x)$。</p><p>被动观点（passive viewpoint）：</p><h2 id="庞加莱群"><a href="#庞加莱群" class="headerlink" title="庞加莱群"></a>庞加莱群</h2><p>前面已经讨论过，四维时空对称性包括时空平移变换与洛伦兹变换两大类，若是区分时间与空间，则前者又可分为时间平移和空间平移，后者也可分为纯空间的转动与涉及时间的boost。我们用所谓庞加莱群来描述四维时空的所有时空对称性。</p><h1 id="附录：群作用与群表示"><a href="#附录：群作用与群表示" class="headerlink" title="附录：群作用与群表示"></a>附录：群作用与群表示</h1>]]></content>
     
@@ -79,39 +554,44 @@
   </entry>
   
   <entry>
+    <title>量子场论 Chap.1：经典场论基础1</title>
+    <link href="https://papaya-z.github.io/post/QFT.Chap.1.html"/>
+    <id>https://papaya-z.github.io/post/QFT.Chap.1.html</id>
+    <published>2022-10-19T17:05:24.000Z</published>
+    <updated>2022-11-02T07:57:33.126Z</updated>
+    
+    <content type="html"><![CDATA[<hr><blockquote><p><strong>Refrence</strong></p></blockquote><pre class="line-numbers language-none"><code class="language-none">M.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论郑汉青：量子场论（上）高显：经典力学讲义老大中：变分法基础<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h1 id="场论观点的必要性"><a href="#场论观点的必要性" class="headerlink" title="场论观点的必要性"></a>场论观点的必要性</h1><p>量子场论是量子力学在场动力学体系中的应用，在这里主要关心基本粒子的动力学，因此涉及到相对论性的场。</p><p>场论很多时候意味着粒子数不确定。要从场论观点切入而不能简单地研究确定少数个相对论性粒子的量子力学，有几方面的必要性。例如单粒子的相对论性波动方程——K-G方程或Dirac方程——会出现无穷多负能态等不自洽；相对论性粒子所涉及的能量通常与其静质量相当，因此可能会出现粒子的对产生；即便能量未达到这个水平，在微扰论中也会出现作为中间态的多粒子作用。</p><p>此外，对于一个多粒子理论的需求也来自于因果性的要求。考虑一个自由粒子的传播子，即在$t$时间内从$\bf x$到$\bf x_0$的振幅，在非相对论性的形式为</p><script type="math/tex; mode=display">\begin{aligned}U(t) &= \langle{\bf x} | {\rm e}^{-{\rm i}Ht} |{\bf x}_0 \rangle\\&= \langle{\bf x} | {\rm e}^{-{\rm i}{\bf p}^2t/2m} |{\bf x}_0 \rangle\\&= \int\frac{ {\rm d}^3 p}{(2\pi)^3} \langle{\bf x} | {\rm e}^{-{\rm i}Ht} |{\bf p} \rangle \langle{\bf p}|{\bf x}_0 \rangle\\&= \frac{1}{(2\pi)^3}\int{\rm d}^3p {\rm e}^{-{\rm i}{\bf p}^2t/2m} {\rm e}^{-{\rm i}{\bf p}\cdot ({\bf x}-{\bf x}_0)}\\&= \left(\frac{m}{2\pi{\rm i}t}\right)^{3/2}{\rm e}^{ {\rm i}m({\bf x}-{\bf x}_0)^2/2t}\end{aligned}</script><p>这个表达式对所有$x$和$t$均非零；这表明可以在任意短时间内传播任意长的距离，显然是违反了相对论性因果性的。那么在相对论框架下呢？如果仅考虑单粒子，也是无法解决的。相对论情形下该传播子为</p><script type="math/tex; mode=display">\begin{aligned}U(t) &= \langle {\bf x} | {\rm e}^{-{\rm i}t\sqrt{ {\bf p}^2+m^2} } |{\bf x}_0 \rangle\\&= \frac{1}{(2\pi)^3}\int{\rm d}^3p {\rm e}^{-{\rm i}t\sqrt{ {\bf p}^2+m^2} } {\rm e}^{ {\rm i}{\bf p}\cdot({\bf x}-{\bf x}_0)}\\&= \frac{1}{2\pi^2|{\bf x}-{\bf x}_0|} \int_0^\infty{\rm d}p\ p\sin(p|{\bf x}-{\bf x}_0|){\rm e}^{-{\rm i}t\sqrt{p^2+m^2} }\end{aligned}</script><p>它在$x^2\gg t^2$的远光锥渐进行为是$U(t)\sim {\rm e}^{-m\sqrt{x^2-t^2} }$，因此传播子的振幅在光锥外具有小但非零的值，因果性仍然破坏。这个问题只有在多粒子的量子场论中才能得到有效的解决。</p><p>此外，量子场论还提供了处理变粒子数过程的方法，自然解释了粒子的自旋统计规律，并提供了计算粒子散射截面、寿命等可观测量的方法。</p><p><br/></p><hr><h1 id="经典场论框架"><a href="#经典场论框架" class="headerlink" title="经典场论框架"></a>经典场论框架</h1><p>尽管量子场可以（甚至应该）不依赖于经典连续场来引入，但是掌握经典场论中的基本概念以及很多处理方法仍然是必要的。并且，从经典场出发进行量子化得到粗糙的量子场，再根据其存在的病态行为——虽然这些病态可能恰恰是因为从经典场量子化而带来的——对其进行正规化、重整化等手续以获得具有预言能力的量子场论，也是我们将会遵循的主线。</p><blockquote><p><em>经典力学与经典场论的理论框架会涉及到不少有关泛函与变分的内容，不熟悉的读者可以在本章附录中找到所需足够的内容补充。</em></p></blockquote><p><br></p><h2 id="拉格朗日场论"><a href="#拉格朗日场论" class="headerlink" title="拉格朗日场论"></a>拉格朗日场论</h2><h3 id="最小作用量原理与欧-拉方程"><a href="#最小作用量原理与欧-拉方程" class="headerlink" title="最小作用量原理与欧-拉方程"></a>最小作用量原理与欧-拉方程</h3><p>经典力学体系的核心是作用量$S$，即对拉格朗日量的时间积分。在连续场分布的情形下，可以定义<strong>拉格朗日密度</strong>使得作用量就是其四维时空积分</p><script type="math/tex; mode=display">S[\phi] = \int\mathscr L(\phi(x),\partial_\mu\phi(x)){\rm d}^4x</script><p>其中$\phi=\phi(x)$是在四维时空连续分布的场自由度，拉格朗日密度$\mathscr L$通常是场变量及其一阶导数的泛函。在这里取度规$g_{\mu\nu}=g^{\mu\nu}={\rm diag}(1,-1,-1,-1)$。$\mathscr L$可以包含多个不同的场，相应地在之后每个场分别服从其各自的场方程。</p><p>与有限自由度的经典力学不同，那里的拉格朗日量通常可以显含时间参数$t$来描述处于随时间变化外场中的粒子；但是在经典场论中，我们会把这样的外场一同考虑进研究对象$\phi$中，如无特别说明，$\mathscr L$关于时间的依赖都来自于场变量的时间依赖。需要强调的是在拉格朗日框架下不区分时空坐标，拉格朗日场论天生就是四维协变的理论。</p><p>作用量显然是关于场变量$\phi$的泛函。<strong>最小作用量原理</strong>表明，当系统在四维时空中演化时，在所有可能的演化里，符合物理真实动力学的演化路径应当使得作用量取平稳值（在较短的演化中通常是极小值）。我们这里遵循大多数教材讨论的方法，即考虑泛函$S[\phi]$的变分为零</p><script type="math/tex; mode=display">\begin{aligned}0 &= \delta S[\phi]\\&= \int{\rm d}^4x\left\{\frac{\partial\mathscr L}{\partial\phi}\delta\phi + \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta(\partial_\mu\phi)\right\}\\&= \int{\rm d}^4x \left\{\frac{\partial\mathscr L}{\partial\phi}\delta\phi - \partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right)\delta\phi + \partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right)\right\}\end{aligned}</script><p>最后一项可以转化为在四维时空积分区域的边界上的表面积分，由于一般初、末态场构型都是确定的，若进一步合理假定在空间积分区域的边界处（通常为无穷远处）场为零，则在四维边界上$\delta\phi=0$，因此这一项消失了。</p><p>此外这一考虑也使得拉格朗日密度具有<strong>非唯一性</strong>。很显然对应同一组运动方程的拉氏量，可以相差一个全导数，因为这一部分只会产生边界项，而不会真正影响区域内的动力学。</p><p>于是最小作用量原理给出经典场的运动方程为：</p><script type="math/tex; mode=display">\partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right)-\frac{\partial\mathscr L}{\partial\phi} = 0</script><p>此即场的<strong>欧拉-拉格朗日方程</strong>。一般而言$\mathscr L$是多个不同场的函数，此时该方程对每个场分别成立。</p><p>事实上根据本节附录给出的多元函数最简泛函的平稳值条件，可以直接得到该问题的结论，即场运动方程就是作用量对场变量的泛函导数为零：</p><script type="math/tex; mode=display">- \frac{\delta S[\phi]}{\delta\phi} = \partial_\mu\left(\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right)-\frac{\partial\mathscr L}{\partial\phi} = 0</script><p>之前扔掉的表面积分，就是在泛函导数的讨论中涉及到的边界项，这是我们所不关心的。</p><blockquote><p><em>在一些理论中有时也会考虑包含场变量高阶导数的拉格朗日密度：$\mathscr L(\phi,\partial\phi,\cdots,\partial^k\phi)$。其动力学方程也可由最小作用量原理得到，但这样的理论通常会存在一些问题，不在我们的讨论之列。</em></p></blockquote><p><br/></p><h3 id="拉格朗日密度的函数形式"><a href="#拉格朗日密度的函数形式" class="headerlink" title="拉格朗日密度的函数形式"></a>拉格朗日密度的函数形式</h3><p>原则上只要知道$\mathscr L$的具体函数形式就可获得场运动方程。目前为止只知道：它可以抽象地表达为场变量与其一阶导数的函数：$\mathscr L(\phi,\partial_\mu\phi)$；对于同一组运动方程，$\mathscr L$还具有非唯一性。事实上拉格朗日密度常被定义为能够通过最小作用量原理生成正确运动方程的数学函数，但这无助于获知其进一步信息。</p><p>首先，作用量$S$本身是一个数；同时，狭义相对性原理要求$S$应当在洛伦兹变换下保持不变，具有这种性质的数叫做洛伦兹标量。更一般地，希望拉格朗日框架在引力理论——广义相对论——中也成立，因此希望$S$应当在广义坐标变换下不变。而作用量是$\mathscr L$的四维积分，因此$\mathscr L$至少也应是一个洛伦兹标量。事实上这是一种基于洛伦兹对称性的要求。</p><p>从量纲角度，自然单位制下（$c=\hbar=1$），时空、能量、质量的量纲存在关系$[T]=[L]=[E]^{-1}=[M]^{-1}$，作用量$S$具有量纲$1$；而$S$是$\mathscr L$的四维时空积分，因此$\mathscr L$就应该拥有能量四次方的量纲，即$[\mathscr L]=[E]^4$。</p><p>最后，$\mathscr L$应当能够反映物理系统的各种对称性，包括时空对称性以及内部对称性。具体的讨论可以在诺特定理一节中得到展现，这里只利用其结论。例如，若认为系统应当存在$\phi\to{\rm e}^{-{\rm i}\alpha}\phi$的对称性，那么系统拉格朗日密度$\mathscr L$应当在这种对称性下不变，至多差一个全导数。</p><p>综合上述讨论，符合要求的$\mathscr L$，应当是一个<strong>具有能量量纲</strong>的<strong>洛伦兹标量</strong>，且函数形式受到各种<strong>对称性</strong>的约束；在此基础上希望从其各种等价形式中取<strong>最简</strong>形式。很多时候只要遵循这些条件，就已经将$\mathscr L$限制在少数几种可能的选择之中了。</p><p><br></p><p>尽管拉格朗日密度的具体函数形式可以十分多样，但是基于前述讨论仍可以大致归纳较为常见的类型。在非相对论极限的经典力学中，拉格朗日量通常具有$L=T-V$的形式，其中$T$是广义速度的二次型，一般称之为动能，用以刻画物体本身的运动状态；$V$则是仅与广义坐标有关的标量函数，称之为势能，用以刻画其所受到的外部作用力。在场论中也经常借鉴这样的分离形式。</p><p>首先，单一的场$\phi$作为一项出现在$\mathscr L$中不会对运动方程产生影响，其各阶导数也是如此；不考虑这些类型。在所讨论的最简形式$\mathscr L$中，每一项至少存在两个（相同或不同的）场量。</p><p>对于任意类型的场$\phi$，其本身可能带有多个不同类型的指标，例如洛伦兹指标（用希腊字母表示）、狄拉克旋量指标甚至其他内部空间指标等等；特别是对时空求导后的$\partial_\mu\phi$，至少会携带一个洛伦兹指标。要得到一个洛伦兹标量，最简单的方法就是用两个相同类型的场、两个求导算符、求导算符与其中一个场缩并掉所有的同类型指标。</p><p>最简单的就是不涉及导数算符，只由同一个场与自己完全缩并：</p><script type="math/tex; mode=display">\mathscr L_m \supset m^2\phi^2,\quad m^2 A^\mu A_\mu,\quad m\overline\psi\psi,\quad\cdots</script><p>在这些例子中系数$m$都具有能量量纲，一般表示场对应粒子的质量；类似这样的项常被称为<strong>质量项</strong>。</p><p>另一方面，也存在导数算符参与的项，在只有两个场量的时候例如：</p><script type="math/tex; mode=display">\mathscr L_K \supset \frac{1}{2}\phi_1\partial^\mu\partial_\mu\phi_2,\quad\overline\psi\gamma^\mu\partial_\mu\psi,\quad\frac{1}{4}(\partial_\mu A_\nu-\partial_\nu A_\mu)(\partial^\mu A^\nu-\partial^\nu A^\mu),\quad \phi\partial_\mu A^\mu,\quad\cdots</script><p>这些项都是关于两个场的双线性型。求导描述了场$\phi$本身的变化与运动，因此期望这些项能够描述场在不涉及相互作用的自由场动力学。通常把这样只关于两个场（或同一个场出现两次）的双线性型称之为<strong>动能项</strong>。</p><p>在更复杂的情况下，就要涉及到三个或更多的场量：</p><script type="math/tex; mode=display">\mathscr L_I \supset \lambda \phi^3,\quad g\partial_\mu\phi A^\mu \phi^*,\quad g^2A^2_\mu A^2_\nu,\quad \frac{1}{M}\partial_\mu h^{\mu\nu}\partial_\nu h_{\alpha\beta}h^{\alpha\beta},\quad\cdots</script><p>在量子场论的观点中，所有的相互作用都是通过三个或以上的场耦合来实现的，因此这些项也被称为<strong>相互作用项</strong>。其前面的系数则是用以表征耦合强度的<strong>耦合常数</strong>。在后面中将会看到，若耦合常数很小意味着体系是弱耦合的，此时可以进行微扰场论的计算。</p><blockquote><p><em>以上这些只是最简单的梳理，在实际的各种理论中、尤其是强相对论性的理论中常常会见到更复杂的构造，甚至无法明确区分场的纯动力学与相互作用，需要再具体分析。</em></p></blockquote><p><br></p><h2 id="哈密顿场论"><a href="#哈密顿场论" class="headerlink" title="哈密顿场论"></a>哈密顿场论</h2><p>与拉格朗日场论天然是四维构造因而是协变性的场论不同，哈密顿框架由于正则方程需要特别关注时间导数，从而必须要构造为$3+1$的结构。但它可以方便地引入一种较为简单的量子化手续——正则量子化；与之相应的，拉格朗日框架则是路径积分量子化的桥梁。</p><h3 id="哈密顿正则方程"><a href="#哈密顿正则方程" class="headerlink" title="哈密顿正则方程"></a>哈密顿正则方程</h3><p>在离散体系中，对每个动力学变量$q$，引入一个共轭动量$p=\partial L/\partial \dot q$，哈密顿量就是$H=\sum p\dot q-L$。推广到连续场论中，对于每个空间点$\bf x$上的场变量$\phi({\bf x},t)$，定义其共轭动量/正则动量密度</p><script type="math/tex; mode=display">\pi({\bf x},t) = \frac{\partial\mathscr L}{\partial\dot\phi({\bf x},t)}</script><p>在这里已经默认对原本四维协变的拉格朗日密度做了$3+1$分解，且从物理出发假设$\mathscr L$只包含基本变量$\phi({\bf x},t)$至多到一阶时间导数，以及各阶空间导数，但不包含时空混合导数。在这里只考虑到一阶导数的情况：</p><script type="math/tex; mode=display">\mathscr L(\phi(x),\partial_\mu\phi(x)) \to \mathscr L^{(3+1)}(\phi({\bf x},t),\dot\phi({\bf x},t),\partial_i\phi({\bf x},t))</script><p>在不引起歧义的情况下可将$\phi({\bf x},t)$简记为$\phi({\bf x})$，其他场量也是如此，但在记号背后它们仍然具有时间依赖。将共轭动量密度定义代入拉格朗日方程可以得到其时间变化率为</p><script type="math/tex; mode=display">\dot\pi({\bf x}) = \frac{\partial\mathscr L}{\partial\phi({\bf x})} - \partial_i\left(\frac{\partial\mathscr L}{\partial(\partial_i\phi({\bf x}))}\right)</script><p>并且定义<strong>哈密顿密度</strong>为</p><script type="math/tex; mode=display">\mathscr H = \pi({\bf x})\dot\phi({\bf x})-\mathscr L^{(3+1)}</script><p>反过来说，</p><script type="math/tex; mode=display">\mathscr L^{(3+1)} = \pi({\bf x})\dot\phi({\bf x})-\mathscr H</script><p>两者之间的这种变换关系在数学上叫做<strong>勒让德变换</strong>，是一种从一组独立变量到另一组独立变量的变换，在这里就是依赖于变量$\dot\phi$的$\mathscr L^{(3+1)}$与依赖于变量$\pi$的$\mathscr H$之间的变换。数学上讲，变换之后的$\mathscr H$已经不再依赖于$\dot\phi$。从几何语言的角度，拉格朗日密度$\mathscr L$是描述四维时空的底流形的切丛上的函数，拉格朗日框架都是在切丛上进行的；而$\mathscr H$则是余切丛上的函数。</p><p>$\mathscr H$实际上只是场变量$\phi$与共轭动量$\pi$的泛函$\mathscr H(\phi,\pi)$，一般不将场变量的一阶空间导数$\partial_i\phi$看作其独立变量。但是明确起见不妨显式地写出其对$\partial_i\phi$的依赖关系，即$\mathscr H(\phi,\partial_i\phi,\pi)$。据此可以明显看出此时利用哈密顿密度所表达的动力学方程，即<strong>哈密顿正则方程</strong>是</p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x})&=\frac{\partial\mathscr H}{\partial \pi({\bf x})}\\-\dot\pi({\bf x})&=\frac{\partial\mathscr H}{\partial \phi({\bf x})} - \partial_i\left(\frac{\partial\mathscr H}{\partial(\partial_i\phi({\bf x}))}\right)\end{aligned}</script><p><br/></p><p>为了在形式上获得与有限自由度体系类同的形式，可以考虑用泛函导数的语言代替偏导数进行表述。于是可以看到，共轭动量密度就是所谓拉格朗日量对场变量时间导数的泛函导数</p><script type="math/tex; mode=display">\pi({\bf x}) = \frac{\delta L}{\delta \dot\phi({\bf x})} = \frac{\delta}{\delta \dot\phi({\bf x})}\int{\rm d}^3x\mathscr L</script><p>哈密顿量则是</p><script type="math/tex; mode=display">H=\int{\rm d}^3x\ \pi({\bf x})\dot\phi({\bf x})- L = \int{\rm d}^3x\mathscr H</script><p>此时的哈密顿正则方程就是</p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x}) = \frac{\delta H}{\delta \pi({\bf x})}\\-\dot\pi({\bf x}) = \frac{\delta H}{\delta \phi({\bf x})}\end{aligned}</script><p><br/></p><h3 id="泊松括号"><a href="#泊松括号" class="headerlink" title="泊松括号"></a>泊松括号</h3><p>下面考虑场论中的泊松括号。注意到$f(x) = \int{\rm d}y \delta(x-y)f(y)$，可以写出： </p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x}) &= \int{\rm d}^3y\ \delta^{(3)}({\bf x}-{\bf y}) \frac{\delta H}{\delta \pi({\bf y})} = \int{\rm d}^3y\ \frac{\delta \phi({\bf x})}{\delta \phi({\bf y})} \frac{\delta H}{\delta \pi({\bf y})}\\\dot\pi({\bf x}) &= -\int{\rm d}^3y\ \delta^{(3)}({\bf x}-{\bf y}) \frac{\delta H}{\delta \phi({\bf y})} = -\int{\rm d}^3y\ \frac{\delta \pi({\bf x})}{\delta \pi({\bf y})} \frac{\delta H}{\delta \phi({\bf y})}\end{aligned}</script><p>在哈密顿框架下，对描述物理量的泛函$F(\phi,\pi,t)$有</p><script type="math/tex; mode=display">\begin{aligned}\frac{ {\rm d} F}{ {\rm d}t} &= \frac{\partial F}{\partial t} + \dot\phi({\bf x})\frac{\delta F}{\delta \phi({\bf x})} + \dot\pi({\bf x})\frac{\delta  F}{ \delta \pi({\bf x})}\\&= \frac{\partial F}{\partial t} + \int{\rm d}^3y\ \left[\frac{\delta F}{\delta \phi({\bf y})} \frac{\delta H}{\delta \pi({\bf y})} - \frac{\delta  F}{ \delta \pi({\bf y})}\frac{\delta H}{\delta \phi({\bf y})}\right]\\&= \frac{\partial F}{\partial t} + \{F,H\}\end{aligned}</script><p>该式描述了物理量随时间的变化；同时也用泛函导数定义了在经典场论中两个物理量的<strong>泊松括号</strong>：</p><script type="math/tex; mode=display">\{F,G\} = \int{\rm d}^3x\ \left[\frac{\delta F}{\delta \phi({\bf x})} \frac{\delta G}{\delta \pi({\bf x})} - \frac{\delta  F}{ \delta \pi({\bf x})}\frac{\delta G}{\delta \phi({\bf x})}\right]</script><p>据此立即可以得到<strong>等时正则泊松关系</strong>，在这里给出推广到多个场的情形（在积分意义下）：</p><script type="math/tex; mode=display">\{\phi_i({\bf x}),\phi_j({\bf y})\} = \{\pi_i({\bf x}),\pi_j({\bf y})\} = 0\ ,\quad \{\phi_i({\bf x}),\pi_j({\bf y})\} = \delta_{ij}\delta^{(3)}({\bf x}-{\bf y})</script><p>哈密顿正则方程也可以用泊松括号重写为</p><script type="math/tex; mode=display">\begin{aligned}\dot\phi({\bf x}) = \{\phi({\bf x}), H\}\\\dot\pi({\bf x}) = \{\pi({\bf x}), H\}\end{aligned}</script><p>最后值得一提的是，对于我们这里不显含时的哈密顿量</p><script type="math/tex; mode=display">\frac{ {\rm d} H}{ {\rm d}t} = \frac{\partial H}{\partial t} + \{H,H\} = 0</script><p>不随时间改变。在不考虑一些特殊情况（例如时空背景的动力学），场论中的哈密顿量几乎都是不显含时的，因此场论总会存在一个守恒量，即哈密顿量$H$。将会看到，哈密顿量的守恒正是时间平移对称性的结果。在经典力学中我们知道哈密顿量就是总能量；经典场论中它也被赋予相同的含义，因此$\mathscr H$也被称为能量密度。</p><p><br></p><h3 id="为什么拉格朗日是局域的而哈密顿非局域"><a href="#为什么拉格朗日是局域的而哈密顿非局域" class="headerlink" title="为什么拉格朗日是局域的而哈密顿非局域"></a>为什么拉格朗日是局域的而哈密顿非局域</h3><hr><h1 id="连续对称性与守恒律"><a href="#连续对称性与守恒律" class="headerlink" title="连续对称性与守恒律"></a>连续对称性与守恒律</h1><h2 id="诺特定理"><a href="#诺特定理" class="headerlink" title="诺特定理"></a>诺特定理</h2><p>诺特定理描述了场论中连续对称性与守恒律之间的关系。若系统在某连续变换下运动方程不变，就称其为一种对称变换或对称操作，且系统具有相应变换下的<strong>对称性</strong>或不变性。这对应于作用量不变或至多差一个边界项，或者拉格朗日密度不变或至多差一个全导数。</p><p><br/></p><p>首先考虑最一般情况的无穷小连续变换</p><script type="math/tex; mode=display">x^\mu \to x'^\mu = x^\mu + \epsilon^\mu\ ,\quad \phi(x) \to \phi'(x') = \phi(x) + \bar\delta \phi(x)</script><p>其中，$\epsilon^\mu=\epsilon^\mu(x)$是任一表征无穷小坐标变换的无穷小4-矢量场。参考本章附录关于函数全变分的讨论，这里用全变分$\bar\delta$表示同时改变了坐标和场量的变换，需要强调偏导数$\partial_\mu$不与全变分$\bar\delta$对易，但与变分$\delta$对易。因此根据变分与全变分的关系，在该无穷小连续变换下，拉格朗日密度的改变可以表示为：</p><script type="math/tex; mode=display">\begin{aligned}\bar\delta\mathscr L &= \delta\mathscr L + \epsilon^\nu \partial_\nu\mathscr L\\&= \frac{\partial\mathscr L}{\partial\phi}\delta\phi + \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta(\partial_\mu\phi) + \epsilon^\nu \partial_\nu\mathscr L\\&= \left[\frac{\partial\mathscr L}{\partial\phi} - \partial_\mu\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\right]\delta\phi + \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right] + \epsilon^\nu \partial_\nu\mathscr L\\&= \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right] + \epsilon^\nu \partial_\nu\mathscr L\end{aligned}</script><p>最后一步运用了欧-拉方程。相应地，此时的作用量也发生改变。但是注意到坐标变换也会引起积分中的积分测度变化，在只到一阶无穷小时其雅可比行列式为：</p><script type="math/tex; mode=display">J=\left|\frac{\partial x'}{\partial x}\right| = \det\left(\frac{\partial x'^\mu}{\partial x^\nu}\right) = |{\delta^\mu}_\nu + \partial_\nu\epsilon^\mu|  \approx 1 + \partial_\nu\epsilon^\nu</script><p>（注意${ g^\mu }_\nu=g^{ \mu\rho }g_{ \rho\nu }={ \delta^\mu }_\nu$）因此作用量的变化为</p><script type="math/tex; mode=display">\begin{aligned}\delta S &= \int \Big\{[{\rm d}^4x+\bar\delta({\rm d}^4x)](\mathscr L+\bar\delta\mathscr L) - {\rm d}^4x \mathscr L\Big\} = \int[\bar\delta({\rm d}^4x)\mathscr L-{\rm d}^4x\bar\delta \mathscr L]\\&=\int{\rm d}^4x \left\{\mathscr L \partial_\nu\epsilon^\nu + \epsilon^\nu \partial_\nu\mathscr L + \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi\right]\right\}\\&=\int{\rm d}^4x\ \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi + \mathscr L \epsilon^\mu\right]\end{aligned}</script><p>可见，若变换是一个对称变换，即$\delta S=0$，必然会导致一个如下的流守恒：</p><script type="math/tex; mode=display">\begin{aligned}j^\mu &= \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi + \mathscr L \epsilon^\mu\\&= \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\bar\delta\phi + \left[{g^\mu}_\nu\mathscr L - \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\partial_\nu\phi\right]\epsilon^\nu\end{aligned}</script><p>叫做相应对称性的守恒流，或者叫诺特流。其满足守恒方程</p><script type="math/tex; mode=display">\partial_\mu j^\mu = 0</script><p>相应地，其守恒荷为</p><script type="math/tex; mode=display">Q=\int{\rm d}^3x\ j^0</script><p>此即<strong>诺特定理：若系统存在一个连续的对称性，则必然导致一个守恒律。</strong></p><p>需要强调诺特定理成立必须满足的三点：</p><ul><li>对称性必须是连续对称性，否则无穷小变换中$\epsilon^\mu$无法定义；</li><li>守恒流只有在壳情况下是守恒的，即必须满足运动方程；</li><li>诺特定理对于全局和局域的对称性都是成立的（即$\epsilon^\mu$可以是常量场也可以是随坐标变化的场$\epsilon^\mu(x)$）。</li></ul><p><br></p><p>上面是从最基本的坐标和场量的变化开始考虑给出守恒流的形式。实际上一般如果确定（或假设）系统具有某种对称性时，经常可以直接从拉格朗日密度的函数形式出发得到守恒流的形式。对于运动方程不变的要求，就是拉格朗日密度至多差一个全导数</p><script type="math/tex; mode=display">\mathscr L(x) \to \mathscr L(x) + \partial_\mu\mathscr J^\mu(x)</script><p>相当于已知$\delta\mathscr L = \partial_\mu\mathscr J^\mu$，则可以直接得到守恒流$j^\mu$及其守恒方程的形式为</p><script type="math/tex; mode=display">\partial_\mu j^\mu(x) = \partial_\mu\left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi(x) - \mathscr J^\mu(x)\right] = 0</script><p>下面将会看到，很多时候所称的“守恒流”并不要求一定是狭义的矢量场（只有一个洛伦兹指标），还可以是拥有更多指标的张量；相应的“守恒荷”也就不一定是标量。</p><blockquote><p><em>需要强调的是，前述讨论仅仅是在经典水平上证明了诺特定理；但是经典系统被量子化后，其对称性是有可能被破坏的，例如可能存在量子反常的现象。对于量子系统的对称性与守恒律，在之后会具体讨论。</em></p></blockquote><p><br></p><h2 id="时空对称性与洛伦兹对称性"><a href="#时空对称性与洛伦兹对称性" class="headerlink" title="时空对称性与洛伦兹对称性"></a>时空对称性与洛伦兹对称性</h2><p>经典场论最简单也最重要的对称性就是时空对称性。四维时空的全部时空对称性由<strong>庞加莱群</strong>所描述，包括时间平移变换、空间平移变换、空间旋转变换以及洛伦兹变换所对应的对称性，其中后两种对称变换又由<strong>洛伦兹群</strong>所描述。它们分别导致了能量、动量、角动量的守恒。</p><h3 id="时空平移对称性与能-动张量"><a href="#时空平移对称性与能-动张量" class="headerlink" title="时空平移对称性与能-动张量"></a>时空平移对称性与能-动张量</h3><p>考虑四维时空坐标的无穷小平移变换</p><script type="math/tex; mode=display">x^\mu\to x'^\mu = x^\mu - a^\mu</script><p>其中$a^\mu$是确定的无穷小恒定4-矢量。具有时空平移对称性的场，应当在变换后满足如下关系：</p><script type="math/tex; mode=display">\phi(x)\to \phi'(x) = \phi(x+a) = \phi(x) + a^\mu\partial_\mu\phi(x)</script><p>这实际上给出了$\bar\delta\phi=0$而$\epsilon^\mu = -a^\mu$。直接代入前面的式子，或者分析拉格朗日密度在前述坐标变换下的变化</p><script type="math/tex; mode=display">\begin{aligned}\mathscr L(x) &\to \mathscr L(x+a) \approx \mathscr L(x) + a^\mu\partial_\mu \mathscr L(x)\\&= \mathscr L(x) + \partial_\mu (a^\nu {g^\mu}_\nu\mathscr L(x))\end{aligned}</script><p>都可以得出此时的守恒流是$j^\mu = a^\nu {T^\mu}_\nu$，其中</p><script type="math/tex; mode=display">{T^\mu}_\nu = \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\partial_\nu\phi - {g^\mu}_\nu\mathscr L</script><p>称为<strong>能量-动量张量</strong>，描述场的能量、动量在时空中的分布。由于$a^\nu$的任意性，所以一般就称${T^\mu}_\nu$是守恒流，其满足的守恒律是</p><script type="math/tex; mode=display">\partial_\mu{T^\mu}_\nu = 0</script><blockquote><p><em>需要注意的是在这里定义的能动张量并不一定是对称的，因此不能直接用于广义相对论。</em></p></blockquote><p>能动张量对应的守恒荷：</p><script type="math/tex; mode=display">\begin{aligned}P^\nu &= \int{\rm d}^3x T^{0\nu} = \int{\rm d}^3x \left[\frac{\partial\mathscr L}{\partial(\partial_0\phi)}\partial^\nu\phi - g^{0\nu}\mathscr L\right]\\&= \int{\rm d}^3x \left[\pi\partial^\nu\phi - g^{0\nu}\mathscr L\right]\end{aligned}</script><p>这就是所谓4-动量，为了看出这一点，考虑其第$0$分量 </p><script type="math/tex; mode=display">E = P^0 = \int {\rm d}^3x T^{00} = \int{\rm d}^3x \left[\pi\dot\phi - \mathscr L\right] = \int {\rm d}^3x \mathscr H = H</script><p>正是系统的总哈密顿量即能量，而$T^{00}=\mathscr H$就是哈密顿密度；能量的守恒对应于时间平移对称性。</p><p>另一方面，其空间分量则是</p><script type="math/tex; mode=display">p^i = \int {\rm d}^3x T^{0i} = -\int{\rm d}^3x\ \pi\partial_i\phi</script><p>或者写为3-矢量形式${\bf p} = -\int{\rm d}^3x\ \pi\nabla\phi$，其中$T^{0i} = -\pi\partial_i\phi$称为动量密度。之所以等式右边的指标$i$取逆变指标是为了遵循在三维场论分析中算符$\nabla = (\partial_i)$的习惯。动量守恒对应于空间平移对称性。</p><p>需要强调的是，这里的动量是表征系统运动状态的物理动量，与前面引入作为系统独立自由度的正则动量/共轭动量密度$\pi$不同。</p><p>此外，也要区分守恒荷与不变量；守恒荷可以是标量，矢量或张量，强调其不随时间发生变化的性质；而相对论语境下不变量则多指（洛伦兹）标量，强调其在一些对称变换下的不变性。</p><p><br></p><h3 id="洛伦兹对称性与角动量"><a href="#洛伦兹对称性与角动量" class="headerlink" title="洛伦兹对称性与角动量"></a>洛伦兹对称性与角动量</h3><p>由于可以统一由洛伦兹群所描述，因此广义上的洛伦兹对称性包括3个空间旋转与3个洛伦兹boost所联系的对称性。考虑如下形式的无穷小坐标变换：</p><script type="math/tex; mode=display">x^\mu \to {\varLambda^\mu}_\nu x^\nu = ({\delta^\mu}_\nu + {\omega^\mu}_\nu) x^\nu</script><p>若要求这样的变换保持度规不变，即</p><script type="math/tex; mode=display">{\varLambda^\mu}_\sigma {\varLambda^\nu}_\tau \eta^{\sigma\tau} = ({\delta^\mu}_\sigma + {\omega^\mu}_\sigma)({\delta^\nu}_\tau + {\omega^\nu}_\tau) \eta^{\sigma\tau} = \eta^{\mu\nu}\ \Longrightarrow\ \omega^{\mu\nu} + \omega^{\nu\mu} = 0</script><p>那么无穷小量$\omega^{\mu\nu}$一定是反对称的。反对称$4\times 4$矩阵的自由度共有$6$个，正对应于洛伦兹群所描述的6个对称变换。在这样的变换下，考虑一种简单的场量变换形式</p><script type="math/tex; mode=display">\phi(x)\to\phi'(x) = \phi(\varLambda^{-1}x) = \phi(x^\mu-{\omega^\mu}_\nu x^\nu) = \phi(x)-{\omega^\mu}_\nu x^\nu\partial_\mu\phi(x)</script><blockquote><p><em>应当指出的是，只有一部分场满足这样的变换性质，即所谓的标量场。关于更一般的讨论，将会在后面关于庞加莱群表示的部分深入。</em></p></blockquote><p>注意到由于反对称性$\omega^\mu_\mu = 0$，且$\omega^\mu_\nu$ 是恒量，而$\partial_\mu x^\nu = \delta_\mu^\nu$，则</p><script type="math/tex; mode=display">\partial_\mu({\omega^\mu}_\nu x^\nu \phi) = {\omega^\mu}_\nu x^\nu\partial_\mu\phi + {\omega^\mu}_\nu \phi {\delta_\mu}^\nu = {\omega^\mu}_\nu x^\nu\partial_\mu\phi</script><p>因此</p><script type="math/tex; mode=display">\mathscr L \to \mathscr L - \partial_\mu({\omega^\mu}_\nu x^\nu \mathscr L)</script><p>相差一个全导数，显然此时的守恒流就是</p><script type="math/tex; mode=display">\begin{aligned}j^\mu &= -\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}{\omega^\rho}_\nu x^\nu \partial_\rho\phi + {\omega^\mu}_\nu x^\nu\mathscr L\\&= -{\omega^\rho}_\nu x^\nu \left[\frac{\partial\mathscr L}{\partial(\partial_\mu\phi)} \partial_\rho\phi - {g^\mu}_\rho\mathscr L\right]\\&= -{\omega^\rho}_\nu x^\nu {T^\mu}_\rho\end{aligned}</script><p>式中再次出现了上一节定义的能-动张量。考虑到$\omega^{\mu\nu}$的反对称性，总可以将上述表达式拆成六个独立守恒流的线性组合，每个都形如</p><script type="math/tex; mode=display">(M^\mu)^{\rho\nu} = x^\rho T^{\mu\nu} - x^\nu T^{\mu\rho}</script><p>它们的守恒方程是</p><script type="math/tex; mode=display">\partial_\mu(M^\mu)^{\rho\nu} = 0</script><p>这将给出六个守恒荷。对于$\rho,\nu=1,2,3$的守恒荷就是系统的<strong>总角动量</strong></p><script type="math/tex; mode=display">Q^{ij} = \int{\rm d}^3x(x^i T^{0j} - x^j T^{0i})</script><p>这对应于空间转动对称性。</p><p><br></p><p>而另一方面，与洛伦兹boost相联系的守恒荷是</p><script type="math/tex; mode=display">Q^{0i} = \int{\rm d}^3x(x^0 T^{0i} - x^i T^{00})</script><p>其守恒意味着</p><script type="math/tex; mode=display">\begin{aligned}0 &= \frac{ {\rm d}Q^{0i} }{ {\rm d}t} = \int{\rm d}^3x T^{0i} + t\int{\rm d}^3x \frac{\partial T^{0i} }{\partial t} - \frac{ {\rm d} }{ {\rm d}t}\int{\rm d}^3x\ x^i T^{00}\\&= P^i+t\frac{ {\rm d}P^i }{ {\rm d}t} - \frac{ {\rm d} }{ {\rm d}t}\int{\rm d}^3x\ x^i \mathscr H\end{aligned}</script><p>而动量是守恒的，因此该式得到了一个守恒的常量：</p><script type="math/tex; mode=display">\frac{ {\rm d} }{ {\rm d}t}\int{\rm d}^3x\ x^i \mathscr H = {\rm constant}</script><p>该式的物理意义是，场的能量分布的“等效中心”（联想质心的定义）以恒定速度运动；某种程度上这就是场论版本的牛顿第一定律。</p><p><br></p><h2 id="内部对称性"><a href="#内部对称性" class="headerlink" title="内部对称性"></a>内部对称性</h2><p>除了同时涉及时空坐标与场量的时空对称变换之外，场论还经常会处理所谓内部对称性，只会涉及到场量的变换。考虑最简单的一种情况：复标量场</p><script type="math/tex; mode=display">\psi(x) = \frac{\phi_1(x)+{\rm i}\phi_2(x)}{\sqrt 2}</script><p>构造拉格朗日密度为</p><script type="math/tex; mode=display">\mathscr L = \partial_\mu\phi^*\partial^\mu\psi-V(|\psi|^2)</script><p>显然拉格朗日密度具有如下的无穷小连续变换对称性</p><script type="math/tex; mode=display">\psi \to {\rm e}^{-{\rm i}\alpha}\psi \quad {\rm or} \quad \delta\psi=-{\rm i}\alpha\psi</script><p>其中$\alpha$是无穷小的实参数。因此具有相应的守恒流</p><script type="math/tex; mode=display">j^\mu = {\rm i}(\partial^\mu\psi^*)\psi -{\rm i}\psi^*(\partial^\mu\psi)</script><p>以及守恒荷</p><script type="math/tex; mode=display">Q={\rm i}\int{\rm d}^3x(\dot\psi^*\psi-\psi^*\dot\psi)</script><p>类似于这样的内部对称性对对应的守恒律在场论中十分重要，其守恒荷往往作为理论的重要特征数出现。由于形如$\psi \to {\rm e}^{ {\rm i}\alpha}\psi$的变换可由连续李群$U(1)$描述，因此本例中的对称性一般也叫（全局的）$U(1)$对称性。此外还可能会有其他连续李群描述的内部对称性，例如本例中的参数$\alpha$若取矩阵值，则可以很方便地推广到非阿贝尔群的情形。</p><p>另一方面由于这些对称性往往描述了理论相对于现实的冗余自由度，例如本例中给场量全局地附加一个相位并不会改变其所描述的物理，因此这类对称性也叫规范对称性。</p><p><br></p><hr><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="泛函变分与泛函导数"><a href="#泛函变分与泛函导数" class="headerlink" title="泛函变分与泛函导数"></a>泛函变分与泛函导数</h2><p>在分析经典力学与经典场论时，不可避免会遇到需要处理泛函的问题。泛函，即某个函数空间$\mathcal F$到某数域（物理上通常是复数域$\mathbb C$）的映射</p><script type="math/tex; mode=display">\begin{aligned}F:\mathcal F &\to\mathbb C\\f &\mapsto F[f]\ ,\end{aligned}</script><p>在物理中绝大多数会遇到的泛函都可以写成如下的简单积分型泛函：</p><script type="math/tex; mode=display">F[f]=\int{\rm d}x\ \mathscr F(x,f(x),f'(x),f''(x),\dots)</script><p><br></p><h3 id="泛函的变分"><a href="#泛函的变分" class="headerlink" title="泛函的变分"></a>泛函的变分</h3><p>泛函中会出现所谓“变分”的概念，这与函数的微分概念在某种程度上是对应的。具体来说：</p><p>作为函数的自变量，$x$会发生一个无穷小的改变${\rm d}x$，称之为自变量的微分</p><script type="math/tex; mode=display">x \to x+\epsilon\ {\rm d}x</script><p>同时，函数$f(x)$会完全由于自变量$x$发生变化${\rm d}x$而引起函数值的无穷小变化</p><script type="math/tex; mode=display">\begin{aligned}f(x) &\to f(x+\epsilon\ {\rm d}x)\\&= f(x) + \epsilon\ {\rm d}f(x) + \frac{\epsilon^2}{2}{\rm d}^2 f(x) + \frac{\epsilon^3}{3!}{\rm d}^3 f(x) + \cdots\\&= f(x) + \epsilon\ \frac{ {\rm d}f(x)}{ {\rm d}x}{\rm d}x + \frac{\epsilon^2}{2}\frac{ {\rm d}^2f(x)}{ {\rm d}x^2}({\rm d}x)^2 + \frac{\epsilon^3}{3!}\frac{ {\rm d}^3f(x)}{ {\rm d}x^3}({\rm d}x)^3 + \cdots\end{aligned}</script><p>这给出了函数的各阶微分${\rm d}^nf(x)$，例如其线性主部就是（一阶）微分${\rm d}f(x)$，它们本身都是无穷小的数；同时上式也给出了各阶函数导数的定义，即</p><script type="math/tex; mode=display">{\rm d}^{n}f(x) = \frac{ {\rm d}^nf(x)}{ {\rm d}x^n}({\rm d}x)^n</script><p>显然，函数导数的作用，（以一阶导数为例）是将一个无穷小的数${\rm d}x$映射到另一个无穷小的数${\rm d}f(x)$。</p><p><br></p><p>与此类似，在泛函问题中，函数本身作为泛函的宗量，也会在函数空间中发生微小变化$\delta f$</p><script type="math/tex; mode=display">f(x) \to f(x) + \epsilon\ \delta f(x)</script><p>这本身是一个无穷小的函数，称之为函数的变分。泛函$F[f]$也会完全由于函数变分而引起泛函值的无穷小变化</p><script type="math/tex; mode=display">\begin{aligned}F[f] &\to F[f+\epsilon\ \delta f]\\&= F[f] + \epsilon\ \delta F[f] + \frac{\epsilon^2}{2}\delta^2 F[f] + \frac{\epsilon^3}{3!}\delta^3 F[f] + \cdots\end{aligned}</script><p>这给出了泛函的各阶变分$\delta^n F[f]$，易见泛函的各阶变分也都是无穷小的数。</p><p>我们希望定义泛函$F[f]$对其宗量函数$f(x)$的<strong>泛函导数</strong>$\frac{\delta F[f]}{\delta f(x)}$。类比于函数导数的作用，泛函导数的作用应当（也以一阶泛函导数为例）是将一个无穷小的函数$\delta f(x)$映射到无穷小的数$\delta F[f]$，这可以由积分来实现</p><script type="math/tex; mode=display">\delta F[f] = \int{\rm d}x\frac{\delta F[f]}{\delta f(x)}\delta f(x)</script><p>类似地，更高阶的泛函导数也由积分定义为</p><script type="math/tex; mode=display">\delta^n F[f] = \int{\rm d}x_1{\rm d}x_2\cdots{\rm d}x_n \frac{\delta^n F[f]}{\delta f(x_1) \delta f(x_2)\cdots \delta f(x_n)}\delta f(x_1) \delta f(x_2)\cdots \delta f(x_n)</script><p>从上述定义的角度来讲，泛函导数与所谓的“$\delta$-函数”$\delta(x)$类似，都是只在积分意义下的泛函；但同样我们也可以类比对$\delta(x)$的处理方法，在符号意义下将$\frac{\delta F[f]}{\delta f(x)}$视作$x$的一个“函数”，这也是泛函导数在物理上常扮演的角色。我们希望找到一种能够计算在给定$x$处其“函数值”的方法。</p><p><br></p><h3 id="泛函导数的操作性定义"><a href="#泛函导数的操作性定义" class="headerlink" title="泛函导数的操作性定义"></a>泛函导数的操作性定义</h3><p>注意到前述定义在具体计算时不甚方便。若将$F[f+\epsilon\ \delta f]$视作关于$\epsilon$的普通函数，则可以给出更具操作性的泛函导数的定义。将$F[f+\epsilon\ \delta f]$按$\epsilon$进行泰勒展开：</p><script type="math/tex; mode=display">F[f+\epsilon\delta f] = F[f] + \epsilon\frac{ {\rm d} }{ {\rm d}\epsilon}F[f+\epsilon\delta f]\bigg|_{\epsilon = 0} + \frac{\epsilon^2}{2}\frac{ {\rm d}^2}{ {\rm d}\epsilon^2}F[f+\epsilon\delta f]\bigg|_{\epsilon = 0} + \cdots</script><p>与之前的定义式相比，不难得到此时的泛函导数（一阶为例）满足</p><script type="math/tex; mode=display">\int{\rm d}x\frac{\delta F[f]}{\delta f(x)}\delta f(x) = \frac{ {\rm d}F[f+\epsilon\delta f]}{ {\rm d}\epsilon}\Bigg|_{\epsilon = 0} = \lim_{\epsilon\to 0}\frac{F[f+\epsilon\delta f]-F[f]}{\epsilon}</script><p>这是<strong>拉格朗日形式的泛函导数</strong>定义，与前述定义是等价的。形式上将最后一项表达成积分，可以写为：</p><script type="math/tex; mode=display">\frac{\delta F[f]}{\delta f(x)} = \lim_{\epsilon\to 0} \frac{F[f+\epsilon\delta(x)]-F[f]}{\epsilon}</script><p>这给出了$\frac{\delta F[f]}{\delta f(x)}$的操作性定义：我们可以将记号$\frac{\delta F[f]}{\delta f(x)}$看作一个自变量取值为$x$的函数，其在积分下有意义，体现为对任意的函数$g(x)$，积分给出</p><script type="math/tex; mode=display">\int{\rm d}x\frac{\delta F[f]}{\delta f(x)} g(x) = \lim_{\epsilon\to 0}\frac{F[f+\epsilon g]-F[f]}{\epsilon}</script><p>不难看出这也是一个写成了函数的泛函，即与$\delta(x)$类似的“广义函数”。事实上依据定义，若将函数$f$在某一点$y$处的取值$f(y)$看作$f$本身的泛函，则有</p><script type="math/tex; mode=display">\frac{\delta f(y)}{\delta f(x)} = \delta(y-x)</script><p>即函数对自身的泛函导数是$\delta$-函数。</p><p>据此，在计算一般的泛函导数时，可以采用简单的求普通导数的方法来计算：即从泛函$F[f]$得到普通函数$\Phi(\epsilon) = F[f+\epsilon\delta f]$，求其关于参数$\epsilon$的普通导函数在$\epsilon=0$处的取值$\Phi’(0)$，就是泛函的变分值$\delta F$。通常这会得到一个积分的形式$\Phi’(0) = \int{\rm d}x g(x) \delta f(x)$，其中$g(x)$就是我们所定义的$\frac{\delta F[f]}{\delta f(x)}$。</p><p><br></p><h3 id="变分运算规则"><a href="#变分运算规则" class="headerlink" title="变分运算规则"></a>变分运算规则</h3><p>本小节给出变分的基本运算规则，有些在之前的讨论中已经用到过。对于自变量$x$的可微函数，函数变分运算的基本规则大多与微分类似：</p><script type="math/tex; mode=display">\begin{aligned}(1)&\ \delta(f_1+f_2) = \delta f_1+\delta f_2\\(2)&\ \delta(f_1f_2) = f_2\delta f_1+f_1\delta f_2\\(3)&\ \delta(f^n) = nf^{0n-1}\delta f\\(4)&\ \delta\left(\frac{f_1}{f_2}\right) = \delta\left(\frac{f_2\delta f_1-f_1\delta f_2}{f_2^2}\right)\\(5)&\ \delta\left[\frac{ {\rm d}^n}{ {\rm d}x^n}f\right] = \frac{ {\rm d}^n}{ {\rm d}x^n}(\delta f)\\(6)&\ \delta\int{\rm d}x f = \int{\rm d}x(\delta f)\end{aligned}</script><p>需要注意的是上述第5、6条表明，对于函数的变分运算可以与求导、积分运算交换。这两条的证明需要用到条件$\delta x=0$，因为变分本来就是函数本身的变化，与宗量无关。</p><p>对于形如$\mathscr F(f(x),f’(x))$的复合函数，除了上述规则之外，变分还满足链式法则：</p><script type="math/tex; mode=display">\delta \mathscr F(f(x),f'(x)) = \frac{\partial \mathscr F}{\partial f}\delta f + \frac{\partial \mathscr F}{\partial f'}\delta f'</script><p>结合链式法则与前述第六条规则，我们可以得到对于简单积分型泛函，其变分</p><script type="math/tex; mode=display">\begin{aligned}\delta F[f] &= \delta\int{\rm d}x\ \mathscr F(x,f(x),f'(x),f''(x),\dots)\\&= \int{\rm d}x\ \delta\mathscr F(x,f(x),f'(x),f''(x),\dots)\\&= \int{\rm d}x \left(\frac{\partial \mathscr F}{\partial f}\delta f + \frac{\partial \mathscr F}{\partial f'}\delta f' + \frac{\partial \mathscr F}{\partial f''}\delta f'' + \dots\right)\end{aligned}</script><p>以右侧积分中第二项为例，可以用分部积分将之变形：</p><script type="math/tex; mode=display">\frac{\partial \mathscr F}{\partial f'}\delta f' = \frac{\partial \mathscr F}{\partial f'}\delta \left(\frac{ {\rm d}f}{ {\rm d}x}\right) = \frac{\partial \mathscr F}{\partial f'} \frac{ {\rm d}}{ {\rm d}x}(\delta f) = \frac{ {\rm d}}{ {\rm d}x}\left(\frac{\partial \mathscr F}{\partial f'} \delta f\right) - \delta f \frac{ {\rm d}}{ {\rm d}x} \frac{\partial \mathscr F}{\partial f'}</script><p>第一项是一个全导数，在积分之后变为只取决于函数在边界上值的“边界项”，而第二项则由$\delta f’$变为了$\delta f$。对泛函变分$\delta F[f]$其余的部分也进行多次分部积分，最后可以全部变换为$\delta f$，这种变换称之为拉普拉斯变换。</p><p><br></p><p>有时我们会需要处理函数与宗量同时变化的情况，即所谓“全变分”的概念，一般用$\bar\delta$表示。需要区分两者的关系，即变分只是函数本身的变化，函数的变分仍是一个函数。但全变分则同时表征函数本身和宗量的变化，函数在某点处的全变分是一个无穷小数。考虑函数由$f(x)$变化一无穷小函数变为$f_1(x)$，则函数的变分作为一个函数，在某点$x$处的取值为</p><script type="math/tex; mode=display">\delta f(x) = f_1(x)-f(x)</script><p>而其在$x$点的全变分则同时要考虑函数的变化，以及$x$也变化一无穷小数${\rm d}x$，即：</p><script type="math/tex; mode=display">\bar\delta f(x) = f_1(x+{\rm d}x) - f(x)</script><p>特别地，对于自变量而言，$\bar\delta x={\rm d} x$。对于可微函数，将函数$f_1$在$x$处泰勒展开到一阶无穷小：</p><script type="math/tex; mode=display">f_1(x+{\rm d}x)-f_1(x) = f_1'(x) {\rm d} x \approx f'(x) {\rm d} x</script><p>约等号是由于函数变分本身就是无穷小量，乘以${\rm d}x$属于高阶无穷小量。因此全变分$\bar\delta$与变分$\delta$在只保留一阶无穷小量下近似有：</p><script type="math/tex; mode=display">\bar\delta f(x) \approx \delta f(x) + f'(x){\rm d}x</script><p>事实上这个式子对任何关于$x$的泛函也成立。第一项表明仅由函数变化所引起的部分，第二项表示函数不变时，仅由自变量变化引起的部分。</p><p>需要强调，全变分与求导、积分运算一般均不可交换，因为$\bar\delta x={\rm d} x \neq 0$。</p><p><br></p><h3 id="简单积分型泛函导数与欧拉方程"><a href="#简单积分型泛函导数与欧拉方程" class="headerlink" title="简单积分型泛函导数与欧拉方程"></a>简单积分型泛函导数与欧拉方程</h3><p>注意到这里无论哪种定义给出的泛函导数都是积分意义下的定义。一般而言，积分会经由分部积分等步骤产生在积分端点（边界）处取值的“边界项”，但通常我们会处理固定边界的泛函问题，边界项与真正关心的内部的$\delta f$无关，因此在泛函导数的计算时经常扔掉边界项。</p><p>结合之前的讨论，很容易得到对于我们在物理中所关心的简单积分型泛函，其泛函导数为：</p><script type="math/tex; mode=display">\begin{aligned}\frac{\delta F}{\delta f} &= \frac{\delta}{\delta f}\int{\rm d}x\mathscr F\quad (-{\rm boundary\ terms})\\&= \frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} + \frac{ {\rm d}^2}{ {\rm d}x^2}\frac{\partial\mathscr F}{\partial f''} +\cdots\\&= \sum_{n=0}(-1)^n\frac{ {\rm d}^n}{ {\rm d}x^n}\frac{\partial\mathscr F}{\partial f^{(n)} }\end{aligned}</script><p>或者写为泛函变分的形式</p><script type="math/tex; mode=display">\delta F[f] = \int{\rm d}x \left(\frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} + \frac{ {\rm d}^2}{ {\rm d}x^2}\frac{\partial\mathscr F}{\partial f''} +\cdots\right)</script><p>这个结论会经常用到。</p><p><br></p><p>物理上研究最多的是泛函平稳值问题。当函数$f$发生微小变化时，泛函取平稳值的条件就是$F[f]$对$f$的泛函导数为零。考虑较简单的一种泛函平稳值问题，对于只依赖于$f$一阶导数的<strong>最简泛函</strong></p><script type="math/tex; mode=display">F[f]=\int{\rm d}x\mathscr F(x,f(x),f'(x))</script><p>此时泛函$F[f]$取平稳值的条件就是，函数$f$满足下述微分方程</p><script type="math/tex; mode=display">\frac{\delta F}{\delta f} = \frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} = 0</script><p>此即最简泛函平稳值问题的<strong>欧拉方程</strong>，或称<strong>欧拉-拉格朗日方程</strong>。</p><p><br></p><p>我们可以从各个角度对该问题进一步拓展。首先可以考虑依赖于$f$更高阶导数的泛函平稳值问题，显然也有相应于欧拉方程的条件</p><script type="math/tex; mode=display">\frac{\delta F}{\delta f} = \sum_{n=0}(-1)^n\frac{ {\rm d}^n}{ {\rm d}x^n}\frac{\partial\mathscr F}{\partial f^{(n)} } = 0</script><p>此即涉及高阶导数的<strong>欧拉-泊松方程</strong>。</p><p>另外，也可以考虑依赖于多个一元函数的泛函平稳值问题，例如泛函被积函数取$\mathscr F = \mathscr F(x,f(x),f’(x),g(x),g’(x))$。此时各个一元函数都要分别满足欧-拉方程，整个泛函取平稳值的条件就是</p><script type="math/tex; mode=display">\left\{\begin{aligned}\frac{\delta F}{\delta f} = \frac{\partial\mathscr  F}{\partial f} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial f'} &= 0\\\frac{\delta F}{\delta g} = \frac{\partial\mathscr  F}{\partial g} - \frac{\rm d}{ {\rm d}x}\frac{\partial\mathscr F}{\partial g'} &= 0\end{aligned}\right.</script><p>即关于多个一元函数的<strong>欧-拉方程组</strong>。</p><p>最后，还可以考虑依赖于多元函数的泛函平稳值问题，即$\mathscr F = \mathscr F(x,y,u(x,y),u_x,u_y)$。此时在每个方程中都要考虑所有自变量的影响，对应的条件是</p><script type="math/tex; mode=display">\frac{\delta F}{\delta u} = \frac{\partial\mathscr  F}{\partial u} - \frac{\partial}{\partial x}\frac{\partial\mathscr F}{\partial u_x} - \frac{\partial}{\partial y}\frac{\partial\mathscr F}{\partial u_y} = 0</script><p>此即涉及多元函数的<strong>欧拉-奥斯克罗格拉茨基方程</strong>。</p><p>上述这些不同形式的方程都具有共性，可统称为欧拉方程。欧拉方程系统地回答了各类简单积分型泛函的平稳值问题。</p>]]></content>
+    
+    
+    <summary type="html">经典场论的基本原理与框架；诺特定理；泛函变分与导数的基础</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="量子场论" scheme="https://papaya-z.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/"/>
+    
+    
+    <category term="量子场论" scheme="https://papaya-z.github.io/tags/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/"/>
+    
+    <category term="经典场论" scheme="https://papaya-z.github.io/tags/%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA/"/>
+    
+    <category term="数学" scheme="https://papaya-z.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="泛函" scheme="https://papaya-z.github.io/tags/%E6%B3%9B%E5%87%BD/"/>
+    
+    <category term="木瓜数学物理计划" scheme="https://papaya-z.github.io/tags/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>QFT seminar chap.8: Regularization &amp; Renormalization</title>
-    <link href="https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html"/>
-    <id>https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html</id>
+    <link href="https://papaya-z.github.io/post/archived/peskin/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html"/>
+    <id>https://papaya-z.github.io/post/archived/peskin/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html</id>
     <published>2022-05-10T03:33:04.000Z</published>
-    <updated>2022-10-27T18:11:00.717Z</updated>
+    <updated>2022-11-04T05:01:16.495Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论 &amp; 量子规范场论<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/2_R&amp;R.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;量子场论讨论班&lt;/p&gt;
-&lt;p&gt;第七章讲稿：LSZ约化公式&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;Refrence
-M.E.Peskin &amp;amp; D.V.S</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>QFT seminar chap.7: LSZ reduction formula</title>
-    <link href="https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap7-LSZ-reduction-formula.html"/>
-    <id>https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap7-LSZ-reduction-formula.html</id>
-    <published>2022-05-10T03:28:12.000Z</published>
-    <updated>2022-10-27T18:10:55.487Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/1.2_LSZ.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：LSZ约化公式</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论 &amp; 量子规范场论<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/archived/peskin/2_R&amp;R.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
       
@@ -127,103 +607,7 @@ M.E.Peskin &amp;amp; D.V.S</summary>
     
     <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>QFT seminar chap.7: Kallen-Leymann representation</title>
-    <link href="https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap7-Kallen-Leymann-representation.html"/>
-    <id>https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap7-Kallen-Leymann-representation.html</id>
-    <published>2022-05-10T03:25:45.390Z</published>
-    <updated>2022-10-27T18:10:48.504Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第七章讲稿：K-L谱表示</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/1.1_K-L.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;量子场论讨论班&lt;/p&gt;
-&lt;p&gt;第七章讲稿：K-L谱表示&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;Refrence
-M.E.Peskin &amp;amp; D.V.Sc</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>QFT seminar chap.4: scattering</title>
-    <link href="https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap4-scattering.html"/>
-    <id>https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap4-scattering.html</id>
-    <published>2022-05-10T03:14:47.000Z</published>
-    <updated>2022-10-27T18:10:43.312Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第四章讲稿：形式散射intro</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/0_Scattering.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;量子场论讨论班&lt;/p&gt;
-&lt;p&gt;第四章讲稿：形式散射intro&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;Refrence
-M.E.Peskin &amp;amp; D.V</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>QFT seminar chap3: Dirac Field</title>
-    <link href="https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap3-Dirac-Field.html"/>
-    <id>https://papaya-z.github.io/post/%E5%BD%92%E6%A1%A3/QFT-seminar-chap3-Dirac-Field.html</id>
-    <published>2022-05-10T02:18:02.000Z</published>
-    <updated>2022-10-27T18:10:29.296Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>量子场论讨论班</p><p>第三章讲稿：狄拉克场相关</p><pre class="line-numbers language-none"><code class="language-none">RefrenceM.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)H.J.W.Muller-Kirsten &amp; A.Wiedemann: Introduction to Supersymmetry<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><div class="row">    <embed src="/pdf/Dirac_ver.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;量子场论讨论班&lt;/p&gt;
-&lt;p&gt;第三章讲稿：狄拉克场相关&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;Refrence
-M.E.Peskin &amp;amp; D.V.Sc</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://papaya-z.github.io/post/hello-world.html"/>
-    <id>https://papaya-z.github.io/post/hello-world.html</id>
-    <published>2022-05-07T13:44:31.349Z</published>
-    <updated>2022-05-07T13:44:31.349Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
+    <category term="QFT-Peskin" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QFT-Peskin/"/>
     
     
   </entry>
