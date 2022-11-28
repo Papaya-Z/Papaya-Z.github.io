@@ -1,0 +1,532 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>经典场论 Chap.3：Yang-Mills规范场论基础 | Papaya's</title><meta name="keywords" content="经典场论,木瓜数学物理计划,李群李代数,规范场论,Yang-Mills场论,纤维丛,微分几何"><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Yang-Mills场论；规范变换与规范场；规范群及其李代数；微分几何与纤维丛理论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="经典场论 Chap.3：Yang-Mills规范场论基础">
+<meta property="og:url" content="https://papaya-z.github.io/post/ClassicalFT-Chap-3.html">
+<meta property="og:site_name" content="Papaya&#39;s">
+<meta property="og:description" content="Yang-Mills场论；规范变换与规范场；规范群及其李代数；微分几何与纤维丛理论">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://papaya-z.github.io/img/Mtheory.jpg">
+<meta property="article:published_time" content="2022-11-22T13:49:43.000Z">
+<meta property="article:modified_time" content="2022-11-28T00:45:37.771Z">
+<meta property="article:author" content="Papaya Z">
+<meta property="article:tag" content="经典场论">
+<meta property="article:tag" content="木瓜数学物理计划">
+<meta property="article:tag" content="李群李代数">
+<meta property="article:tag" content="规范场论">
+<meta property="article:tag" content="Yang-Mills场论">
+<meta property="article:tag" content="纤维丛">
+<meta property="article:tag" content="微分几何">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://papaya-z.github.io/img/Mtheory.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/ClassicalFT-Chap-3"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '经典场论 Chap.3：Yang-Mills规范场论基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-28 08:45:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Papaya's</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">经典场论 Chap.3：Yang-Mills规范场论基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-22T13:49:43.000Z" title="发表于 2022-11-22 21:49:43">2022-11-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-28T00:45:37.771Z" title="更新于 2022-11-28 08:45:37">2022-11-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA/">经典场论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">11.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>42分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="经典场论 Chap.3：Yang-Mills规范场论基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<blockquote>
+<p><strong>Refrence</strong></p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">M.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field Theory
+M.D.Schwartz: Quantum Field Theory and the Standard Model
+David Tong: Quantum Field Theory
+S.Weinberg: The Quantum Theory of Field (Volume 1)
+刘川: 量子场论
+郑汉青：量子场论（上）
+高显：经典力学讲义
+老大中：变分法基础<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h1 id="内部对称性与规范变换"><a href="#内部对称性与规范变换" class="headerlink" title="内部对称性与规范变换"></a>内部对称性与规范变换</h1><p>本章考虑物质场的内部对称性，在这里“物质场”一般指有质量的标量场和旋量场，因为它们在内部对称变换下的行为几乎一致且同样简单。</p>
+<h2 id="物质场的整体内部对称性"><a href="#物质场的整体内部对称性" class="headerlink" title="物质场的整体内部对称性"></a>物质场的整体内部对称性</h2><p>考虑场的内部对称变换：</p>
+<script type="math/tex; mode=display">
+\phi_a(x)\to U(x)_{ab}\phi^b(x) = {\rm e}^{-{\rm i} g \alpha_i(x) T^i_{ab} }\phi^b(x)</script><p>其中用指标$a,b$等表示群作用的矩阵表示指标，以此强调记号存在作用的顺序；$g$是一个标度因子，只是为了方便看清各种场量在变换下的相对行为而设置的任意实数；$T^i$则是对称群在场量$\phi$所属的表示（对于物质场，就是标量表示和旋量表示）下的生成元。</p>
+<p>若拉格朗日密度$\mathscr L=\mathscr L(\phi,\partial_\mu\phi)$在上述变换下不变，则称系统具有内部对称性。一般而言，参数$\alpha$、其所对应的群元、以及所对应的表示$U$都可以是$x$的函数，即在不同的时空点对场作不同的内部对称变换，这样的称之为局域变换或定域变换。</p>
+<p>这里首先考虑较简单的情形，即$\alpha$是恒定参数的变换，称之为全局变换或整体变换。根据诺特定理，连续的内部对称性会导致守恒律。在较简单的情况下，上述整体内部对称变换的无穷小变换是</p>
+<script type="math/tex; mode=display">
+\quad \phi_a(x) \to \phi_a(x) - {\rm i}g\alpha_iT^i_{ab} \phi^b(x)</script><p>相应的守恒流为</p>
+<script type="math/tex; mode=display">
+j_\mu^i = -{\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi^a)}T^i_{ab}\phi^b</script><p>其中$T^i$是相应对称群的生成元，每个生成元都对应一个守恒流。以下各式省略矩阵表示的指标。各个守恒荷为：</p>
+<script type="math/tex; mode=display">
+Q^i = -{\rm i}g\int{\rm d}^3x\frac{\partial\mathscr L}{\partial(\partial^0\phi)}T^i\phi = -{\rm i}g\int{\rm d}^3x\ \pi T^i\phi</script><p>因此对于每个生成元$T^i$，存在一个守恒荷$Q^i$，$T^i$有时也称为荷矩阵。守恒荷与场变量存在内部空间中的正则泊松括号关系：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\{Q^i,\phi\} &= {\rm i}gT^i\phi\\
+\{Q^i,\pi\} &= -{\rm i}g\pi T^i
+\end{aligned}</script><p>这一性质也表明了$Q^i$是与时间无关的量。若$\mathscr L$含有多个独立场变量，则守恒流、守恒荷就是这些场各自对应项之和。特别地，若$\mathscr L$在含有$\phi$同时也包含$\overline\phi$作为形式上的独立变量，则其相应也要进行整体变换。从$\phi$的变换可以得出$\overline\phi$的变换为：</p>
+<script type="math/tex; mode=display">
+\phi \to U\phi = {\rm e}^{-{\rm i}g\alpha_i T^i} \phi\ ,\qquad \overline\phi\to \overline\phi U^{\dagger} = \overline\phi {\rm e}^{ {\rm i}g\alpha_i T^i}</script><p>对应的无穷小变换：</p>
+<script type="math/tex; mode=display">
+\bar\delta\phi = -{\rm i}g\alpha_i T^i \phi\ ,\qquad \bar\delta\overline\phi = {\rm i}g\alpha_i \overline\phi T^i</script><p><br></p>
+<p>物理上最常考虑内部对称性的是所谓物质场，即旋量场$\psi$。考虑旋量场$\psi_i$，设其带有的某内部指标$i$可取$n$个值，则其构成洛伦兹不变拉格朗日密度最常见的形式是</p>
+<script type="math/tex; mode=display">
+\mathscr L = \sum_{i=1}^n \overline\psi_i({\rm i}\gamma_\mu\partial^\mu-m)\psi_i</script><p>即所谓自由旋量场，其包含动能项与质量项。可以看出，若要让这样的拉格朗日密度在形如$\psi\to \widetilde U\psi$，$\overline\psi\to\overline\psi \widetilde U^\dagger$的内部变换下不变（$\widetilde U$作用在内部空间上），需要满足$\widetilde U^\dagger \widetilde U=I$即$\widetilde U\in{\rm U}(n)$，此时也说该拉格朗日密度具有${\rm U}(n)$的整体内部对称性（这是复值场量的结果，若是实值场量则减少一个相位自由度，对称群就只是${\rm SU}(n)$）。由$\dim {\rm U}(n) = n^2$，因此这会产生$n^2$个守恒荷。</p>
+<blockquote>
+<p>这里重要的一点在于变换$\widetilde U$是整体的，即参数$\alpha$与时空坐标$x$无关，因此导数算符$\partial^\mu$才与变换群元$\widetilde U$或其生成元可交换。在之后的定域规范变换下，变换群元是时空坐标依赖的，因而不再可以与导数算符$\partial^\mu$交换，则自由场不再能够满足定域规范对称性。</p>
+</blockquote>
+<p>考虑到$\det \widetilde U={\rm e}^{-{\rm i}\theta}$，可令$\widetilde U=U U_1$，其中$U_1\in {\rm U}(1)$，这样$\det U = 1$因此$U\in{\rm SU(n)}$，这实际上是${\rm U}(n)$群的半直积分解：</p>
+<script type="math/tex; mode=display">
+{\rm U}(n) = {\rm U}(1) \otimes_S {\rm SU}(n)</script><p>在$n&gt;1$时${\rm U}(n)$与${\rm SU}(n)$都是非阿贝尔群（非交换群），而${\rm U}(1)$是阿贝尔群。</p>
+<p><br></p>
+<p>关于${\rm U}(n)$中${\rm U}(1)$部分的对称性，可以考虑$n=1$的特殊情况，这当然也可以看作是实值场量的一个一维内部空间自由度，但更常用的观点是把这种情况看作是复值场量$\psi$的不考虑额外内部空间、而是纯相位的自由度，即形如$\mathscr L = \overline\psi({\rm i}\gamma_\mu\partial^\mu-m)\psi$的拉格朗日密度本身也满足一个整体对称性，也就是场量作为复值本身所具有的一个整体纯相位对称性：</p>
+<script type="math/tex; mode=display">
+\phi \to {\rm e}^{-{\rm i}e\alpha} \phi\ ,\qquad \overline\phi\to \overline\phi {\rm e}^{ {\rm i}e\alpha}</script><p>（习惯上将${\rm U}(1)$对应的标度因子记为$e$）此时的对称群是${\rm U}(1)$，只有一个守恒流可取为：$j_\mu = -{\rm i}e\overline\psi \gamma_\mu\psi$；守恒荷为</p>
+<script type="math/tex; mode=display">
+Q = -{\rm i}e\int{\rm d}^3x \overline\psi \gamma_0\psi = -{\rm i}e\int{\rm d}^3x \psi^\dagger (\gamma_0)^2\psi = -{\rm i}e\int{\rm d}^3x\ \psi^\dagger\psi</script><p>可见对于一般的${\rm U}(n)$整体对称性来说，其中${\rm U}(1)$的部分来自于复场量本身的相位自由度，即便不考虑额外的内部空间也存在；但是为与时空对称性相区别，仍将之称为内部对称性。这是一个阿贝尔整体对称性，复值场量相位会引起一个固有守恒荷。在量子理论中，我们将会看到物理上实际至多只能在差一个相位的程度确定量子态，这为引入${\rm U}(1)$内部对称性提供了充分的动机。</p>
+<p><br></p>
+<p>另一方面，剩余的对称性则是非阿贝尔的${\rm SU}(n)$对称性。由于$\dim SU(n) = n^2-1$，因此由非阿贝尔整体对称性可以得到$n^2-1$个守恒流：</p>
+<script type="math/tex; mode=display">
+j_\mu^i = -{\rm i}g\overline\psi \gamma_\mu T^i\psi</script><p>以及相应守恒荷：</p>
+<script type="math/tex; mode=display">
+Q^i = -{\rm i}g\int{\rm d}^3x \overline\psi\gamma_0 T^i\psi = -{\rm i}g\int{\rm d}^3x \psi^\dagger (\gamma_0)^2 T^i\psi = -{\rm i}g\int{\rm d}^3x\ \psi^\dagger T^i\psi</script><p>可见，这$n^2-1$个守恒荷一一对应于${\rm SU}(n)$的$n^2-1$个生成元，该群作用空间实际就是$n$维内部空间，效果是保内积不变（幺正性）并且除去了相位的自由度，因此这些守恒荷的具体性质取决于$n$维内部空间的自由度。考虑不同的内部空间，理论会出现不同的守恒荷；若不考虑内部自由度，也就不会出现这些守恒荷。</p>
+<p><br></p>
+<p>基于这些讨论，常常会将依赖于内部空间自由度的对称性${\rm SU}(n)$与依赖于复值场量相位的固有对称性${\rm U}(1)$分开讨论，谈及某些内部空间性质，只会讨论相应的${\rm SU}(n)$对称性。</p>
+<p><br></p>
+<p>前述讨论仅仅是基于旋量场的一个简单例子，在其他类型的场也存在类似的整体内部对称性，以及相应的守恒荷。例如具有$N$维内部空间的复标量场（略去其内部自由度指标）：</p>
+<script type="math/tex; mode=display">
+\mathscr L = \sum_{i=1}^n \big[\partial_\mu\phi_i^\dagger\partial^\mu\phi_i-m^2\phi_i^\dagger\phi_i \big]</script><p>显然也具有${\rm U}(n)$整体对称性，其守恒流为$j_\mu^i = -{\rm i}g(\phi^\dagger T^i \partial_\mu\phi-\partial_\mu\phi^\dagger T^i\phi)$；它同样可以分为只与复值场量相位相关的${\rm U}(1)$对称性以及内部空间的${\rm SU}(n)$对称性。可见整体内部对称性及其守恒荷在场论中是十分普遍存在的。</p>
+<p>需要强调的是，整体内部对称性虽然不如时空对称性那样直观，但它可以导致守恒荷这一物理实际可测量，因而是系统真正存在的对称性。</p>
+<p><br></p>
+<h2 id="物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）"><a href="#物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）" class="headerlink" title="物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）"></a>物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）</h2><h3 id="“定域内部对称性”存在吗"><a href="#“定域内部对称性”存在吗" class="headerlink" title="“定域内部对称性”存在吗"></a>“定域内部对称性”存在吗</h3><p>前面的讨论基于一个假设，即内部对称变换的参数$\alpha$与时空坐标$x$无关，但这在某些时候不能令人满意：例如一旦为某一时空点处的内部空间选取了一个确定的“值”，那么为确保内部对称性的成立，场在全时空的内部自由度便也必须随之确定；但我们总是希望所构建的场论是一个定域的理论，即在某一点处选择的内部状态不应立刻影响到全时空。这促使我们考虑更一般的一类变换，即是否有可能在如下依赖时空的变换下：</p>
+<script type="math/tex; mode=display">
+\phi \to U(x)\phi = {\rm e}^{-{\rm i}g\alpha_i(x) T^i} \phi\ ,\qquad \overline\phi\to \overline\phi U^{\dagger}(x) = \overline\phi {\rm e}^{ {\rm i}g\alpha_i(x) T^i}</script><p>使得拉格朗日密度$\mathscr L$不变或只差一个边界项。这样的变换也就是定域内部变换。</p>
+<p>很明显，对于自由场，例如自由旋量场$\mathscr L = \overline\psi({\rm i}\gamma_\mu\partial^\mu-m)\psi$，这样不变性的要求不能成立，直接原因在于普通导数算符$\partial_\mu$不能与之相洽，会产生额外的诸如$\partial_\mu \alpha(x)$的项；根本上来说，则是无法在这样的变换下比较不同点处的场量，如下文所述。</p>
+<p><br></p>
+<p>考虑间隔一定时空距离的两个点$x$、$y$，希望比较场$\phi$在它们处的值$\phi(x)$、$\phi(y)$的相对差异，比如如何定义$\phi(y)=\phi(x)$？又如如何计算$\phi(y)-\phi(x)$？这些问题涉及到在动能项的中如何恰当地定义场的普通导数$\partial_\mu$。</p>
+<p>在整体内部变换的意义下，这个问题具有确定到仅差一个幺正变换的意义，即无论在何种参数$\alpha_i$所代表的整体变换下，</p>
+<script type="math/tex; mode=display">
+\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i T^i}\phi(y)-{\rm e}^{-{\rm i}g\alpha_i T^i}\phi(x) = {\rm e}^{-{\rm i}g\alpha_i T^i}\big[\phi(y)-\phi(x)\big]</script><p>结果都只差一个幺正变换，因此对于$|\phi(y)-\phi(x)|$这类量，是存在确定的答案的，它<strong>与整体内部状态的具体选择无关，但可以在任一整体选择之下计算出来</strong>。这是对称性的普遍性质。</p>
+<p>但若是考虑定域的内部变换，</p>
+<script type="math/tex; mode=display">
+\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i(y) T^i}\phi(y)-{\rm e}^{-{\rm i}g\alpha_i(x) T^i}\phi(x)</script><p>即便是$|\phi(y)-\phi(x)|$也依赖于所选取的具体定域变换，也就是说需要事先为每个点单独选取一个独立的内部变换，而计算结果强烈地依赖于选取方案，不同的选择都会带来不一样的计算结果。尚且无法确定的比较不同点处的场量相对差异，那么导数算符$\partial_\mu$也就无从定义了。</p>
+<p>由此可见，<strong>自由场事实上不存在所谓“定域内部对称性”</strong>。</p>
+<p><br></p>
+<h3 id="联络与协变导数"><a href="#联络与协变导数" class="headerlink" title="联络与协变导数"></a>联络与协变导数</h3><p>这样看，场论的定域性似乎与内部对称性不能兼容。但是微分几何提供了一种可能的方法来比较不同点处的场值。具体来说：引入一个辅助场$W(x,y)$来抵消内部空间选择的差异，它是一种依赖于两个时空点的所谓“双定域场”，也就是说，希望它在定域变换下的行为是</p>
+<script type="math/tex; mode=display">
+W(x,t)\to {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W(x,y) {\rm e}^{ {\rm i}g\alpha_k(y) T^k}</script><p>那么就可以构造如下量：</p>
+<script type="math/tex; mode=display">
+W(x,y)\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W(x,y) \phi(y)-{\rm e}^{-{\rm i}g\alpha_k(x) T^k}\phi(x) = {\rm e}^{-{\rm i}g\alpha_i T^i}\big[W(x,y)\phi(y)-\phi(x)\big]</script><p>是可以在仅差一个幺正变换的意义下确定的。从而可以定义辅助场意义下的“导数算符”</p>
+<script type="math/tex; mode=display">
+D_\mu\phi(x) = \lim_{\epsilon\to 0}\frac{W(x,x+\epsilon e^\mu)\phi(x+\epsilon e^\mu)-\phi(x)}{\epsilon}</script><p>于是这样的“导数算符”也可以在仅差一个幺正变换的意义下确定</p>
+<script type="math/tex; mode=display">
+D_\mu\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i T^i}D_\mu\phi(x)</script><p>由于它的变换规律与基本场自由度$\phi(x)$是相同的，因此称其为<strong>协变导数</strong>。剩下唯一的问题就是如何确定辅助场$W(x,y)$。</p>
+<p><br></p>
+<p>首先考虑$W(x,y)$的物理意义。定义这样的辅助场，是希望它能够尽量保持$\phi$在$y$点处原本的性质（例如内部空间状态），而将其“移动”到$x$点处并与$\phi(x)$做运算；但是微分几何的结果告诉我们，这样的移动结果是路径依赖的。所以在平直时空$W(x,y)$的作用实质就是<strong>（沿某条连接$x$、$y$的路径）平移</strong>，也叫做“平移子（parallel transporter）”。 详见本章附录。</p>
+<p>自然希望$W(x,x)=1$；若将其在$x=y$附近展开则有：</p>
+<script type="math/tex; mode=display">
+W(x,x+\epsilon) = 1 - {\rm i}g\epsilon^\mu A^i_\mu(x) T_i + \mathcal O(\epsilon^2)</script><p>此处$T_i$是变换群生成元，这组矢量场$A^i_\mu(x)$就是“无穷近”辅助场的线性部分，也是$W(x,y)$对第二个变量的（普通）导数，并且是一组定域的场量。这在微分几何上称为<strong>联络</strong>，用于比较不同点处具有不同局域坐标系的场。</p>
+<p>有了无穷近两点之间的辅助场，构造两个有限距离点之间的辅助场自然可以积分地表达（下面用${\boldsymbol A} = T_i A^i$）：</p>
+<script type="math/tex; mode=display">
+W_{\mathcal C}(x,y) = P\left[ \exp\left({\rm i}g\int_y^x {\boldsymbol A}_\mu(z) {\rm d}z^\mu\right) \right]</script><p>为便于计算，可将路径$\mathcal C$参数化为$z^\mu(s)$，$0\leq s \leq 1$，其中$z^\mu(0)=y^\mu$且$z^\mu(1)=x^\mu$，这样就能写成</p>
+<script type="math/tex; mode=display">
+W_{\mathcal C}(x,y) = P\left[ \exp\left({\rm i}g\int_0^1 {\boldsymbol A}_\mu(z(s) ) \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} {\rm d}s \right)\right]</script><p>其中$P$是路径编序算符，因为非阿贝尔定域变换下不同点处的群生成元不对易。其准确定义是如下的无穷级数：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+W_{\mathcal C} =& P\left[ \exp\left({\rm i}g\int_0^1 {\boldsymbol A}_\mu(z(s) ) \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} {\rm d}s \right)\right]\\
+=&1+{\rm i}g\int_0^1 {\rm d}s \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} T_i A^i_\mu(z(s) ) \\
+&+\frac{({\rm i}g)^2}{2}\int_0^1 {\rm d}s_1\int_0^1 {\rm d}s_2 \frac{ {\rm d}z^\mu(s_1)}{ {\rm d}s_1} \frac{ {\rm d}z^\nu(s_2)}{ {\rm d}s_2} A^i_\mu(z(s_1) ) A^j_\nu(z(s_2) ) \big[T_i T_j \theta(s_1-s_2) + T_j T_i \theta(s_2-s_1)\big]\\
+&+ \cdots
+\end{aligned}</script><p>这样构造的辅助场形式称为“<strong>Wilson线</strong>”，是一个路径$\mathcal C$依赖的、非定域的量，$\mathcal C$是从$y$到$x$的任一连续路径，并且也是满足最初要求的定域变换律的。在理论构造中，很多时候用与其等价的、路径无关的、定域的场量$A^i_\mu(x)$显然更方便。</p>
+<p><br></p>
+<h3 id="辅助场-A-i-mu-x-的定域变换"><a href="#辅助场-A-i-mu-x-的定域变换" class="headerlink" title="辅助场$A^i_\mu(x)$的定域变换"></a>辅助场$A^i_\mu(x)$的定域变换</h3><p>利用定域辅助场$A^i_\mu(x)$，可以等价的表示协变导数$D_\mu\phi(x)$，即</p>
+<script type="math/tex; mode=display">
+D_\mu\phi(x) = \partial_\mu\phi(x)-{\rm i}g{\boldsymbol A}_\mu(x)\phi(x) = \big[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)\big]\phi(x)</script><p>定域变换下辅助场也满足一定的变换律：</p>
+<script type="math/tex; mode=display">
+\big[\partial_\mu-{\rm i}g{\boldsymbol A}'_\mu(x)\big] \big[{\rm e}^{-{\rm i}g\alpha_j(x) T^j} \phi(x)\big] = {\rm e}^{-{\rm i}g\alpha_k(x) T^k} \cdot \big[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)\big]\phi(x)</script><p>这里${\boldsymbol A}’_\mu(x)$就是变换后的辅助场；可以得到</p>
+<script type="math/tex; mode=display">
+\partial_\mu {\rm e}^{-{\rm i}g\alpha_i(x) T^i} - {\rm i}g{\boldsymbol A}'_\mu(x) {\rm e}^{-{\rm i}g\alpha_j(x) T^j} = -{\rm i}g {\rm e}^{-{\rm i}g\alpha_k(x) T^k} {\boldsymbol A}_\mu(x)</script><p>因此得到变换律为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{\boldsymbol A}_\mu(x) \to &{\rm e}^{-{\rm i}g\alpha_i(x) T^i} {\boldsymbol A}_\mu(x) {\rm e}^{ {\rm i}g\alpha_j(x) T^j} - \frac{\rm i}{g}(\partial_\mu {\rm e}^{-{\rm i}g\alpha_k(x) T^k}) {\rm e}^{ {\rm i}g\alpha_l(x) T^l}\\
+=&{\rm e}^{-{\rm i}g\alpha_i(x) T^i} {\boldsymbol A}_\mu(x) {\rm e}^{ {\rm i}g\alpha_j(x) T^j} + \frac{\rm i}{g} {\rm e}^{-{\rm i}g\alpha_k(x) T^k}\ \partial_\mu\ {\rm e}^{ {\rm i}g\alpha_l(x) T^l}\\
+=&U {\boldsymbol A}_\mu(x) U^{-1} + \frac{\rm i}{g} U \partial_\mu U^{-1}
+\end{aligned}</script><p>这里$U$表示变换群元素。第二项的存在导致这是一种非齐次变换。从这个形式可以看出，<strong>定域变换下${\boldsymbol A}_\mu(x)$的变换分为两部分，即其本身按照伴随表示变换，加上由于变换是定域的而产生的非齐次附加项，附加项形如$\partial_\mu$按照伴随表示的变换。</strong></p>
+<blockquote>
+<p>注意，这里提到“伴随表示”，相当于默认了${\boldsymbol A}_\mu(x)$是变换群对应李 代数的元素；这一点会在后面说明。</p>
+</blockquote>
+<p>将之写成更熟悉的形式，在无穷小变换下（即精确到$\mathcal O(\alpha)$阶）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\bar\delta {\boldsymbol A}_\mu(x) \to & - \frac{1}{g}\partial_\mu \alpha^i(x) + {\rm i}(\alpha^j {\boldsymbol A}_\mu T_j- \alpha^k T_k {\boldsymbol A}_\mu)\\
+=& - \frac{1}{g}\partial_\mu \alpha^i(x) + {\rm i}\alpha^j \big[{\boldsymbol A}_\mu, T_j \big]_{\rm Lie}
+\end{aligned}</script><p>这里$[<em>,</em>]_{\rm Lie}$是李括号，也就是生成元的简单对易子。它们满足：</p>
+<script type="math/tex; mode=display">
+[T_i,T_j] = {\rm i}f_{ij}^k T_k</script><p>其中反对称的量$f_{ij}^k=-f_{ji}^k$是该李代数的结构常数。因此最终得到辅助场分量的无穷小定域变换</p>
+<script type="math/tex; mode=display">
+\bar\delta A_\mu^i(x) = - \frac{1}{g}\partial_\mu \alpha^i(x) + f^i_{jk}\alpha^j A^k_\mu(x)</script><p>从这个结果可以看出三点：</p>
+<ol>
+<li>场$A^i_\mu(x)$的定域变换只与结构常数$f_{ij}^k$和参数$\alpha(x)$有关，而与场$\phi$所属的具体表示（标量场，旋量场，……）无关。</li>
+<li>由于阿贝尔群的结构常数全为零，因此第二项只在非阿贝尔的变换时才会出现；特别地，即便不是无穷小变换，定域阿贝尔变换也会产生形如前两项变换的辅助场，即阿贝尔情形下不要求$\alpha(x)$无穷小。</li>
+<li>第一项只在定域变换时才会出现；若是整体变换，则$A^i_\mu(x)$的变换就按照伴随表示变换。</li>
+<li>根据前两点，整体阿贝尔变换下，场$A^i_\mu(x)$不变。</li>
+</ol>
+<p><br></p>
+<p>到目前为止已经看到，自由场不存在所谓“定域内部对称性”；但是总可以通过一定的方式来改写拉格朗日密度：</p>
+<script type="math/tex; mode=display">
+\mathscr L(\psi,D_\mu\psi) \equiv \mathscr L(\psi,[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)]\psi) \equiv \mathscr L(\psi,\partial_\mu\psi,A) \equiv \mathscr L_0 + \mathscr L_I</script><p>使之在一定的定域变换下保持不变，而其代价就是重定义普通导数$\partial_\mu$为协变导数$D_\mu$，相当于引入了作为辅助场的$A^i_\mu(x)$。</p>
+<p>同时，可以看到在改写后的理论中，势必引入了物质场与规范场的耦合项：</p>
+<script type="math/tex; mode=display">
+\mathscr L_I = -{\rm i}g \frac{\partial\mathscr L}{\partial(\partial^\mu\phi^a)} T_i A_\mu^i(x) \phi</script><p>例如在旋量场中，这一项就是</p>
+<script type="math/tex; mode=display">
+\mathscr L_I = g \overline\psi\gamma_\mu T_i A_\mu^i(x) \psi</script><p>这表明在规范场论中，一定存在物质场与规范场的相互作用。并且这一耦合项的强弱总是由因子$g$来标度，因此我们一般把$g$称为规范场与物质的耦合因子。此时的拉格朗日密度可以写为</p>
+<script type="math/tex; mode=display">
+\mathscr L_\phi = \mathscr L_0 + \mathscr L_I</script><blockquote>
+<p>应当指出，标度因子$g$的绝对值在纯理论中是完全没有意义的；完全可以通过场$A_\mu^i$的重定义将其吸收掉；但是当理论与实际对应时，可以用这一因子来表征场之间耦合的强度。例如，当存在不同物质场时，由于同一对称性所引入的规范场视作只有一个，那么不同物质场便可具有不同的耦合因子$g$来表征它们与同一规范场的不同耦合强度。因而$g$也获得了实际意义，即表示物质场所携带的基本相互作用荷的大小。</p>
+</blockquote>
+<p><br></p>
+<p>定域的辅助场$A^i_\mu(x)$的引入，使得理论可以在不同的时空点上独立地选取内部空间状态。这样的效果是，存在某些物理量，它<strong>与内部状态的具体定域选择无关，但可以在任一定域选择之下计算出来</strong>。——这样的性质在经典电动力学中已经遇到过了，在处理不同问题时可以对电磁势选取不同的规范（库伦规范、朗道规范、洛伦兹规范……）来方便计算，但是得到的计算结果却与所选取的规范无关。</p>
+<p>因此，在这里我们也把“定域内部变换”称为“<strong>规范变换</strong>”，相应的一些物理量若在规范变换下不变，则称其为规范不变的或规范无关的；为了保持这种不变性所引入辅助场称为<strong>规范场</strong>。事实上这些辅助场除了$A^i_\mu(x)$还有其他表达形式（例如Wilson线），为区别于后面的场强张量，一般将$A^i_\mu(x)$称为<strong>规范势</strong>。</p>
+<blockquote>
+<p>要很审慎地使用“规范对称性”这种称呼；我统一称之为“规范不变性”。因为它与整体对称性是理论本身所具有的不同，理论本身不存在所谓“规范对称性”。具体可见“规范不变性是对称性吗？”一节的说明。</p>
+</blockquote>
+<p><br></p>
+<h3 id="场强张量"><a href="#场强张量" class="headerlink" title="场强张量"></a>场强张量</h3><p>到目前为止，理论中的规范势$A^i_\mu(x)$没有动能，也没有相互作用，似乎没有独立的物理意义，只是代表了内部状态自由选择的定域性。如果确实如此，那么应当存在一种特定的定域变换，可以将其从理论中消去，即存在变换$U$使得</p>
+<script type="math/tex; mode=display">
+{\boldsymbol A}'_\mu(x) = U {\boldsymbol A}_\mu(x) U^{-1} - \frac{\rm i}{g}(\partial_\mu U) U^{-1} = 0</script><p>显然，若存在某个规范变换$U$，使其能够被完全从理论中消去的规范势，一定也能够被该变换表为</p>
+<script type="math/tex; mode=display">
+{\boldsymbol A}_\mu(x) = \frac{\rm i}{g} U^{-1}(\partial_\mu U)</script><p>称之为纯规范条件，满足这以条件的规范势就确实不具有独立的动力学。现实中确实有物理模型中的规范场不是动力学场。</p>
+<p>但是不满足该条件（只需要满足定域变换规律）的规范势仍可以被引入到理论中并使理论保持定域规范不变；如果假设规范场可以是动力学场，则可以大大扩展理论的内涵。因此一个想法就是将规范场视作独立的动力学场引入理论，这就必须要引入由$A^i_\mu(x)$及其普通导数（注意尽管引入了协变导数，但表征场动能项的仍然是普通导数）构造的一些非平庸的规范不变项。理想的情况是，我们希望这样的项由某种与$A^i_\mu(x)$有关的场量来构造，当其为零时表示此时的规范场是纯规范；当其不为零时则可以表征规范场的动力学。</p>
+<p>在目前我们已经得到的各种量之中，包含规范势$A^i_\mu(x)$且规范变换性质比较好的，只有Wilson线和协变导数算符；它们恰恰对应了我们构造规范场动能项的两个途径：积分地构造，即利用Wilson圈；或者局域地构造，即利用协变导数。 </p>
+<p><br></p>
+<h4 id="积分角度构造：Wilson圈"><a href="#积分角度构造：Wilson圈" class="headerlink" title="积分角度构造：Wilson圈"></a>积分角度构造：Wilson圈</h4><p>首先从Wilson线出发考虑。考虑到$W(x,y)$依赖于其两端点处的规范变换，则可以考虑取闭合回路（取端点为$x$）构成Wilson圈$W_{\mathcal C}^{\rm loop}$：</p>
+<script type="math/tex; mode=display">
+W_{\mathcal C}^{\rm loop}(x,x) = P\left[ \exp\left({\rm i}g\oint_{\mathcal C} {\boldsymbol A}_\mu(z){\rm d}z^\mu\right) \right]</script><p>这里$s=0$和$s=1$表示同一点$x$。根据Stokes定理，这样的圈积分应当可以写成某个场的通量积分：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+W_{\mathcal C}^{\rm loop}(x,x) =& \exp\left(\frac{ {\rm i}g}{2}\int_{\Sigma} {\rm d}\sigma^{\mu\nu} {\boldsymbol F}_{\mu\nu}\right)\\
+=& 1 + \frac{ {\rm i}g}{2}\int_{\Sigma} {\rm d}\sigma^{\mu\nu} {\boldsymbol F}_{\mu\nu} + \cdots
+\end{aligned}</script><p>为获得定域的量，尽量将环路$\mathcal C$收缩至点$x$附近的无穷小回路；此时略去无穷小面积$\sigma$的高阶小量，得到</p>
+<script type="math/tex; mode=display">
+W_{\mathcal C}^{\rm loop}(x) = 1 + \frac{ {\rm i}g}{2} {\boldsymbol F}_{\mu\nu}(x) \int_{\Sigma(x)} {\rm d}\sigma^{\mu\nu}</script><p>其中该无穷小Wilson圈面积的系数${\boldsymbol F}_{\mu\nu}(x)$是${\boldsymbol A}_\mu(x)$的外微分，不难看出规范场的非平凡信息都包含在其中。可以利用微分几何的方法得到${\boldsymbol F}_{\mu\nu}(x)$的表达式。但同时也可从物理上获得启发：一个简单的例子是所谓小方格，即考虑由$x^\mu$，$x^\mu+\epsilon\zeta^\mu$，$x^\mu+\epsilon\zeta^\mu+\epsilon\xi^\mu$，$x^\mu+\epsilon\xi^\mu$四点直线相连构成的闭合回路，其中矢量$\zeta^\mu$和$\xi^\mu$不平行，$\epsilon$是无穷小量。根据辅助场的物理意义，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+W_\Box =& W(x,x+\epsilon\zeta) W(x+\epsilon\zeta,x+\epsilon\zeta+\epsilon\xi) W(x+\epsilon\zeta+\epsilon\xi,x+\epsilon\xi) W(x+\epsilon\xi,x)\\
+=& \Big[1 - {\rm i}g\epsilon{\boldsymbol A}_\mu(x+\frac{\epsilon}{2}\zeta)\zeta^\mu -\frac{g^2}{2} \epsilon^2 \zeta^\mu\zeta^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\zeta) + \cdots\Big]\\
+&\times \Big[1 - {\rm i}g\epsilon{\boldsymbol A}_\nu(x+\epsilon\zeta+\frac{\epsilon}{2}\xi)\xi^\nu -\frac{g^2}{2} \epsilon^2 \xi^\mu\xi^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\epsilon\zeta+\frac{\epsilon}{2}\xi) + \cdots \Big]\\
+&\times \Big[1 + {\rm i}g\epsilon{\boldsymbol A}_\rho(x+\frac{\epsilon}{2}\zeta+\epsilon\xi)\zeta^\rho -\frac{g^2}{2} \epsilon^2 \zeta^\mu\zeta^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\zeta+\epsilon\xi) + \cdots \Big]\\
+&\times \Big[1 + {\rm i}g\epsilon{\boldsymbol A}_\sigma(x+\frac{\epsilon}{2}\xi)\xi^\sigma -\frac{g^2}{2} \epsilon^2 \xi^\mu\xi^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\xi) + \cdots \Big]\\
+\end{aligned}</script><p>注意这里是在小方格各边中点处展开。保留到$\mathcal O(\epsilon^2)$阶，并与之前的$W_{\mathcal C}^{\rm loop}(x)$表达式相比，就得到</p>
+<script type="math/tex; mode=display">
+{\boldsymbol F}_{\mu\nu} = \partial_\mu {\boldsymbol A}_\nu - \partial_\nu {\boldsymbol A}_\mu - {\rm i}g [{\boldsymbol A}_\mu,{\boldsymbol A}_\nu]_{\rm Lie}</script><p>最后一项是因非阿贝尔规范场的非对易性而产生的。这一定义可以推广到推广到不限于小方格的普遍情况；其中同样有${\boldsymbol F}_{\mu\nu} = F^i_{\mu\nu} T_i$，其分量为</p>
+<script type="math/tex; mode=display">
+F^i_{\mu\nu} = \partial_\mu A_\nu^i - \partial_\nu A_\mu^i + gf^i_{jk} A_\mu^j A_\nu^k</script><p>它就是将Wilson圈定域化得到的结果。在阿贝尔规范场的情况下，这就退化为</p>
+<script type="math/tex; mode=display">
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu</script><p><br></p>
+<p>回顾之前对纯规范条件的讨论，我们希望这个新的场量${\boldsymbol F}_{\mu\nu}(x)$能反映规范场是否具有实际的动力学。考虑到当规范势满足纯规范条件时：</p>
+<script type="math/tex; mode=display">
+{\boldsymbol A}_\mu(x) = \frac{\rm i}{g} U^{-1}(\partial_\mu U)</script><p>再利用$\partial_\mu U^{-1} = -U^{-1} (\partial_\mu U) U^{-1}$，代入式中得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{\boldsymbol F}_{\mu\nu} =& \partial_\mu {\boldsymbol A}_\nu - \partial_\nu {\boldsymbol A}_\mu - {\rm i}g [{\boldsymbol A}_\mu,{\boldsymbol A}_\nu]_{\rm Lie}\\
+=& \frac{\rm i}{g}\Big\{ \partial_\mu(U^{-1}\partial_\nu U) - \partial_\nu(U^{-1}\partial_\mu U) + \big[U^{-1}(\partial_\mu U),U^{-1}(\partial_\nu U) \big]_{\rm Lie} \Big\}\\
+=& 0
+\end{aligned}</script><p>可见，只有当${\boldsymbol F}_{\mu\nu}(x) \equiv 0$处处为零时，规范场就是纯规范；若其不处处为零，则意味着具有独立的动力学。因此${\boldsymbol F}_{\mu\nu}$的值其实反映了作为独立动力学场的规范场，所以一般称其为<strong>场强张量</strong>。</p>
+<p><br></p>
+<h4 id="场强张量的性质"><a href="#场强张量的性质" class="headerlink" title="场强张量的性质"></a>场强张量的性质</h4><p>最后还剩余的目标，就是得到${\boldsymbol F}_{\mu\nu}$的规范变换性质，再由其构造出规范不变、洛伦兹不变的规范场动能项。首先的想法就是验证Wilson圈$W_{\mathcal C}^{\rm loop}$是否是规范不变的；若其是规范不变量，显然作为其定域化的结果，场强张量${\boldsymbol F}_{\mu\nu}$也是规范不变的。</p>
+<p>在规范变换下，</p>
+<script type="math/tex; mode=display">
+W_{\mathcal C}^{\rm loop}(x,x) \to U(x) W_{\mathcal C}^{\rm loop}(x,x) U^{-1}(x) = {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W_{\mathcal C}^{\rm loop}(x,x) {\rm e}^{ {\rm i}g\alpha_k(x) T^k}</script><p>不难验证规范场场强张量也服从相同的变换</p>
+<script type="math/tex; mode=display">
+{\boldsymbol F}_{\mu\nu}(x) \to U(x) {\boldsymbol F}_{\mu\nu}(x) U^{-1}(x) = {\rm e}^{-{\rm i}g\alpha_j(x) T^j} {\boldsymbol F}_{\mu\nu}(x) {\rm e}^{ {\rm i}g\alpha_k(x) T^k}</script><p>可以看到，相比于规范势${\boldsymbol A}_\mu$的变换，场强张量${\boldsymbol F}_{\mu\nu}$的变换不出现非齐次项，因此比规范势更方便构造规范不变量。</p>
+<p>对于阿贝尔规范变换，$W_{\mathcal C}^{\rm loop}$显然是规范不变量，阿贝尔规范场的${\boldsymbol F}_{\mu\nu}$本身就是规范不变的。但对于非阿贝尔规范变换，则${\boldsymbol F}_{\mu\nu} = F_{\mu\nu}^i T_i$就不是规范不变量，而是按照伴随表示进行变换。其本质原因还在于内部自由度，即$T_i$的非对易性。因此要想得到由场强张量构造的规范不变量，需要分析其内部空间分量的无穷小变换，这可从$A_\mu^i$的无穷小规范变换直接得到：</p>
+<script type="math/tex; mode=display">
+\bar\delta F_{\mu\nu}^i = f^i_{jk}\alpha^j(\partial_\mu A_\nu^k - \partial_\nu A_\mu^k) + g(f^i_{mk}f^k_{jn} + f^i_{kn}f^k_{jm})\alpha^j A_\mu^m A_\nu^n</script><p> 再利用结构常数所满足的雅可比恒等式</p>
+<script type="math/tex; mode=display">
+f_{jn}^kf_{mk}^i - f_{mn}^kf_{jk}^i = - f_{jm}^kf_{kn}^i</script><p>即可得到场强张量的内部分量在无穷小规范变换下具有简单的变换形式</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\bar\delta F_{\mu\nu}^i =& f^i_{jk}\alpha^j( \partial_\mu A_\nu^k - \partial_\nu A_\mu^k + gf^k_{mn}A_\mu^m A_\nu^n )\\
+=& f^i_{jk}\alpha^jF_{\mu\nu}^k
+\end{aligned}</script><p>即其内部分量并不依赖于$T_i$；所以可以想象，用分量$F_{\mu\nu}^i$而不是${\boldsymbol F}_{\mu\nu}$是构造规范不变量更方便的形式。不难验证，</p>
+<script type="math/tex; mode=display">
+\mathscr L_G = -\frac{1}{4} \sum_{i=1}^n F_{\mu\nu}^iF^{i,\mu\nu} = -\frac{1}{4}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i + gf^i_{jk} A_\mu^j A_\nu^k)^2</script><p>是规范不变、洛伦兹不变的；这对应于Wilson圈求迹：</p>
+<script type="math/tex; mode=display">
+{\rm tr}\left[W_{\mathcal C}^{\rm loop}\right] = {\rm tr}\left\{ P\left[ \exp\left({\rm i}g\oint_{\mathcal C} {\boldsymbol A}_\mu(z){\rm d}z^\mu\right) \right] \right\}</script><p>它是一个重要的规范不变量。</p>
+<p><br></p>
+<p>现在关注前面得到的</p>
+<script type="math/tex; mode=display">
+\mathscr L_G = -\frac{1}{4} \sum_{i=1}^n F_{\mu\nu}^iF^{i,\mu\nu}</script><p>有几点需要说明：</p>
+<ol>
+<li>阿贝尔规范场是规范不变量，非阿贝尔规范场则按照伴随表示变换，不是规范不变量；但无论何种情况，$(F_{\mu\nu})^2$（这里平方包含着对内部指标求和）都是规范不变量；</li>
+<li>无论是否是阿贝尔的，$\mathscr L_G$都包含规范势$A_\mu^i$的一阶偏导数，因此可作为规范场的动能项</li>
+<li>非阿贝尔规范场的场强$F_{\mu\nu}^i$存在非线性项$gf^i_{jk} A_\mu^j A_\nu^k$，这导致在拉格朗日密度中会出现规范势$A_\mu^i$本身的三次、四次项，这被解释为<strong>规范场的自相互作用</strong>；这只会在非阿贝尔规范场发生。在将标度因子$g$解释为相互作用荷时，会看到非阿贝尔规范场本身就带有荷$g$，这与阿贝尔规范场是完全不同的。</li>
+</ol>
+<p>这里给出以规范势表达的拉格朗日密度的具体形式：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal L_G =& -\frac{1}{4}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i)^2\\
+&-\frac{g}{2}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i)f_{ijk}A_\mu^j
+A_\nu^k\\
+&-\frac{g^2}{4}f^i_{jk}f_{ij'k'}A_\mu^j A_\nu^k A_\mu^{j'} A_\nu^{k'}
+\end{aligned}</script><p>第二项、第三项就分别是规范场的所谓三线、四线自相互作用。这些性质表明，定域规范变换与自由运动不兼容。这不仅仅意味着之前就已经得到的结论，即自由物质场不满足所谓“定域内部对称性”；另一个角度上，如果是在非阿贝尔的规范变换下，即便引入了与之耦合的规范场${\boldsymbol F}_{\mu\nu}$，不仅是物质场，就连规范场本身也因存在自相互作用而不可能是自由的。</p>
+<p>加入这一项后，完整的规范不变拉格朗日密度为：</p>
+<script type="math/tex; mode=display">
+\mathscr L = \mathscr L_0 + \mathscr L_I + \mathscr L_G</script><p>分别代表物质场动能项荷质量项、物质场与规范场相互作用项，以及规范场的动能（与相互作用）项。</p>
+<p><br></p>
+<h4 id="规范场的质量？"><a href="#规范场的质量？" class="headerlink" title="规范场的质量？"></a>规范场的质量？</h4><p>得到了规范场的动能项，下一个问题是，能否可以简单地按照一般自由矢量场的规律，在规范场的拉格朗日密度之中为其添加一个质量项：</p>
+<script type="math/tex; mode=display">
+-\frac{1}{2}m^2 \sum_{i=1}^n A_\mu^i A^{i,\mu}</script><p>答案是不可以，因为这样会破坏其定域规范不变性。但这并不意味着规范场不能获得质量，只不过不是以如此简单的方式。</p>
+<p><br></p>
+<h4 id="局域角度构造：协变导数算符，比安基恒等式"><a href="#局域角度构造：协变导数算符，比安基恒等式" class="headerlink" title="局域角度构造：协变导数算符，比安基恒等式"></a>局域角度构造：协变导数算符，比安基恒等式</h4><p>最后，回顾本小节最开始的分析。之前都是利用Wilson线来积分地构造规范不变量；另一条路则是用协变导数来局域地构造。不难看出，之前得到的场强张量表达式也可以直接由协变导数来表达为：</p>
+<script type="math/tex; mode=display">
+{\boldsymbol F}_{\mu\nu} = D_\mu {\boldsymbol A}_\nu - D_\nu {\boldsymbol A}_\mu</script><p>要注意的是协变导数算符中也有规范势的存在， 因此上式的每项都是在同一点处的协变导数算符作用在相同点处的规范势。阿贝尔规范场情况下同样退化为</p>
+<script type="math/tex; mode=display">
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu</script><p>正因为协变导数算符中也含有规范势，这启发我们是否可以考虑协变导数算符的对易子$\big[D_\mu,D_\nu\big]$。这实际上也符合之前对Wilson线几何意义的初步探讨：既然Wilson线的作用是将场量沿路径”平移”，那么Wilson圈就是沿某路径绕回原处。与绕行之前相比，绕一周所产生的影响就是附加一个规范场${\boldsymbol F}_{\mu\nu}$；而在微分几何中，衡量之中差异的，恰恰就是协变导数算符的对易子，被称为<strong>曲率张量</strong>。可见，${\boldsymbol F}_{\mu\nu}$的存在，实际上表征了内部空间的某种弯曲程度。</p>
+<p>不难验证：</p>
+<script type="math/tex; mode=display">
+{\boldsymbol F}_{\mu\nu} = \frac{\rm i}{g}\big[D_\mu,D_\nu\big]</script><p>特别地，协变导数算符满足雅可比恒等式：</p>
+<script type="math/tex; mode=display">
+\big[D_\mu,\big[D_\nu,D_\sigma\big]\big] + \big[D_\nu,\big[D_\sigma,D_\mu\big]\big] + \big[D_\sigma,\big[D_\mu,D_\nu\big]\big] = 0</script><p>即得到关于场强张量的一个重要恒等式：比安基恒等式 </p>
+<script type="math/tex; mode=display">
+\big[D_\mu,{\boldsymbol F}_{\nu\sigma}\big] + \big[D_\nu,{\boldsymbol F}_{\sigma\mu}\big] + \big[D_\sigma,{\boldsymbol F}_{\mu\nu}\big] = 0</script><p>或者写为</p>
+<script type="math/tex; mode=display">
+D_\mu {\boldsymbol F}_{\nu\sigma} + D_\nu {\boldsymbol F}_{\sigma\mu} + D_\sigma {\boldsymbol F}_{\mu\nu} = 0</script><p>引入对偶场强：</p>
+<script type="math/tex; mode=display">
+\widetilde {\boldsymbol F}^{\mu\nu} = -\frac{\rm i}{2} \epsilon^{\mu\nu\rho\sigma} {\boldsymbol F}_{\mu\nu}</script><p>则比安基恒等式可写为</p>
+<script type="math/tex; mode=display">
+D_\mu \widetilde {\boldsymbol F}^{\mu\nu} = 0</script><p><br></p>
+<h3 id="规范场的运动方程与守恒律"><a href="#规范场的运动方程与守恒律" class="headerlink" title="规范场的运动方程与守恒律"></a>规范场的运动方程与守恒律</h3><p>有了拉格朗日密度，就能导出规范场的运动方程：</p>
+<script type="math/tex; mode=display">
+\partial^\mu F_{\mu\nu}^i + g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} = - \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}</script><p>而物质场的运动方程，可以简单地将普通导数算符替换为协变导数算符而得到。</p>
+<p>利用协变导数算符的伴随表示（即$\big[T_{\rm adj}^i\big]_{jk} = -{\rm i}f^j_{jk}$，也是规范场所属的表示），可以将规范场的运动方程写为</p>
+<script type="math/tex; mode=display">
+D^\mu F_{\mu\nu}^i = -gj_\nu^i</script><p>其中</p>
+<script type="math/tex; mode=display">
+gj_\nu^i = -{\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\nu\phi)}T^i\phi = \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}</script><p>是在整体内部对称性下得到的守恒流，称为物质流；其满足方程</p>
+<script type="math/tex; mode=display">
+D^\mu j_\mu^i = 0 \Longleftrightarrow \partial^\mu j_\mu^i = -gf^i_{jk}A^{j,\mu}j_\mu^k</script><p>可见，<u>对于阿贝尔规范场，结构常数全为零，即上式右侧为零，使得在整体内部对称性下得到的守恒流仍然守恒。但是对于非阿贝尔规范场，$j_\mu^i$不再守恒。这主要是因为非阿贝尔规范场自身携带了相互作用荷，导致纯物质场部分的荷不再守恒；而阿贝尔规范场则不携带荷。</u></p>
+<p><br></p>
+<p>另一方面，直接将运动方程移项可得</p>
+<script type="math/tex; mode=display">
+\partial^\mu F_{\mu\nu}^i = -gJ_\nu^i</script><p>其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+gJ_\nu^i =& g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} + \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}\\
+=& g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} - {\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi)}T^i\phi\\
+=& -g\frac{\partial\mathscr L}{\partial(\partial^\mu A^{k,\nu})}f^i_{jk} A^{j,\mu} - {\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi)}T^i\phi\\
+=& -\frac{\partial\mathscr L}{\partial A^{i,\nu}}
+\end{aligned}</script><p>显然此时具有守恒律：</p>
+<script type="math/tex; mode=display">
+\partial^\mu J_\mu^i = 0</script><p>以及相应的守恒荷</p>
+<script type="math/tex; mode=display">
+Q_J^i = \int{\rm d}x^3\ J_0^i</script><p>但尽管存在守恒律，但<u>很明显$J_\mu^i$以及$Q_J^i$是依赖于规范选择的，即它们不是规范不变量；下一节将会说明，物理上不可能测量到非规范不变的量，因此这些$J_\mu^i$和$Q_J^i$是非物理的。</u>从而在这样的非阿贝尔规范理论之中，不再存在与非阿贝尔对称性相关的守恒律；不仅如此，也不存在类似于高斯定律的简单公式，规范场与物质场以高度复杂荷非线性的方式耦合在一起。</p>
+<p>这暗示了规范不变性其实并不是一种“物理的”对称性：按照诺特定理，连续对称性应当产生守恒律，并且基于物理意义的要求，我们希望这样的守恒荷是可观测量。但是规范不变性并不能产生“物理的”守恒荷（即规范不变的，从而可观测的守恒荷），因此规范不变性并不是物理上真正的对称性。</p>
+<p><br></p>
+<h3 id="规范条件，规范不变性是对称性吗？"><a href="#规范条件，规范不变性是对称性吗？" class="headerlink" title="规范条件，规范不变性是对称性吗？"></a>规范条件，规范不变性是对称性吗？</h3><p>依照定义，由真实的对称性所联系的两个不同的$\mathscr L$，会给出相同的运动方程；换言之，若两个物理态分别由两个不同的$\mathscr L$所描述，并且两者之间存在真实的对称性，则它们是同一运动方程的解，只不过具有不同的初始条件/边界条件。</p>
+<p>但是另一方面，由于规范变换是依赖$x$的，即规范变换是定域的，因此由规范变换相联系的两个解，可能具有相同的边条件；换句话说，若运动方程存在一个解，总可以通过局域的变换，在不改变初始条件/边界条件的情况下，将之变换为另一个解；因此在规范变换的意义下，运动方程+初始条件/边界条件不能唯一确定一个解，这些无法唯一确定的一类解，称为是由一类规范变换相联系。但是它们在物理上是不可区分的——物理上只能区分不同的运动方程，或者不同的初始条件/边界条件，否则将会被识别为同一个物理态——从而这些由规范变换相联系的解在物理上是等价的。</p>
+<p>既然把不同的解看作一个物理态，那就说明规范变换并不是真正的对称性，只是理论”冗余”的一种体现——我们为了描述现实，构造的理论使用了过多的参数和变量，却又不得不把一些参数不同的解识别为同一个态。在这个精神下，任何物理可观测量都应该是规范不变的。</p>
+<p>既然理论使用了过多的参数，那为了求出唯一的解，就要用一些条件来约束这些参数。这样的约束条件就是所谓<strong>规范条件</strong>，即人为地规定规范场$A_\mu^i$（或物质场$\phi$）满足一些限制（当然要符合规范场的规范变换性质），一般是由等式组来表示：</p>
+<script type="math/tex; mode=display">
+f^i(A,\phi) = 0</script><p>完整规范条件的等式个数等于生成元的个数。</p>
+<p>选定一组规范条件，就相当于选取了一种规范。由于真实的物理量是规范不变的，所以规范条件并不会影响对于可观测量的计算。这样，运动方程+初始条件/边界条件+规范条件，就能唯一确定一个解。这样的操作实际上是把运动方程的所有可能的解进行了划分等价类，每组在前述意义下不可区分的解（即可以由规范变换相联系的解）归为一个等价类，其中的代表元素就是满足规范条件的那个解。</p>
+<p>因此一个好的规范条件应该要满足：</p>
+<ol>
+<li>每个等价类中都可以找到符合规范条件的解；即对于该类中任意的$A$和$\phi$，总存在一定的规范变换变为$A’$和$\phi’$，使其满足规范条件。</li>
+<li>每个等价类中只有一个符合该规范条件，从而可以被运动方程+初始条件/边界条件唯一解出。</li>
+<li>应当与运动方程相洽，即若由运动方程+初始条件/边界条件+规范条件在某时刻解出一个解，则其在任意时刻都满足规范条件。</li>
+</ol>
+<p><br></p>
+<h1 id="对称性的自发破缺"><a href="#对称性的自发破缺" class="headerlink" title="对称性的自发破缺"></a>对称性的自发破缺</h1><h2 id="整体内部对称性的自发破缺，Goldstone定理"><a href="#整体内部对称性的自发破缺，Goldstone定理" class="headerlink" title="整体内部对称性的自发破缺，Goldstone定理"></a>整体内部对称性的自发破缺，Goldstone定理</h2><h2 id="定域规范不变性的自发破缺，Higgs机制"><a href="#定域规范不变性的自发破缺，Higgs机制" class="headerlink" title="定域规范不变性的自发破缺，Higgs机制"></a>定域规范不变性的自发破缺，Higgs机制</h2><h1 id="附录：微分几何，联络，曲率"><a href="#附录：微分几何，联络，曲率" class="headerlink" title="附录：微分几何，联络，曲率"></a>附录：微分几何，联络，曲率</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/ClassicalFT-Chap-3.html">https://papaya-z.github.io/post/ClassicalFT-Chap-3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BB%8F%E5%85%B8%E5%9C%BA%E8%AE%BA/">经典场论</a><a class="post-meta__tags" href="/tags/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E8%AE%A1%E5%88%92/">木瓜数学物理计划</a><a class="post-meta__tags" href="/tags/%E6%9D%8E%E7%BE%A4%E6%9D%8E%E4%BB%A3%E6%95%B0/">李群李代数</a><a class="post-meta__tags" href="/tags/%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/">规范场论</a><a class="post-meta__tags" href="/tags/Yang-Mills%E5%9C%BA%E8%AE%BA/">Yang-Mills场论</a><a class="post-meta__tags" href="/tags/%E7%BA%A4%E7%BB%B4%E4%B8%9B/">纤维丛</a><a class="post-meta__tags" href="/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/">微分几何</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/archived/Cohen/QM-Cohen-7.html"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cohen量子力学Chap.7笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/ClassicalFT-Chap-2.html" title="经典场论 Chap.2：对称性"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-28</div><div class="title">经典场论 Chap.2：对称性</div></div></a></div><div><a href="/post/ClassicalFT-Chap-1.html" title="经典场论 Chap.1：场论基础"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-20</div><div class="title">经典场论 Chap.1：场论基础</div></div></a></div><div><a href="/post/QFT-Chap-3.html" title="量子场论 Chap.3：量子化：路径积分方法"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-02</div><div class="title">量子场论 Chap.3：量子化：路径积分方法</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E5%AF%B9%E7%A7%B0%E6%80%A7%E4%B8%8E%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">内部对称性与规范变换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E5%9C%BA%E7%9A%84%E6%95%B4%E4%BD%93%E5%86%85%E9%83%A8%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text">物质场的整体内部对称性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E5%9C%BA%E7%9A%84%E5%AE%9A%E5%9F%9F%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7%EF%BC%88%E5%86%85%E9%83%A8%E7%A9%BA%E9%97%B4%E5%BC%AF%E6%9B%B2%EF%BC%89%EF%BC%88%E7%94%9F%E6%88%90%E5%85%83%E5%AF%B9%E5%BA%94%E4%BA%8E%E5%9C%BA%E7%9A%84%E5%85%B7%E4%BD%93%E8%A1%A8%E7%A4%BA%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E5%AE%9A%E5%9F%9F%E5%86%85%E9%83%A8%E5%AF%B9%E7%A7%B0%E6%80%A7%E2%80%9D%E5%AD%98%E5%9C%A8%E5%90%97"><span class="toc-number">1.2.1.</span> <span class="toc-text">“定域内部对称性”存在吗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%BB%9C%E4%B8%8E%E5%8D%8F%E5%8F%98%E5%AF%BC%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">联络与协变导数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%85%E5%8A%A9%E5%9C%BA-A-i-mu-x-%E7%9A%84%E5%AE%9A%E5%9F%9F%E5%8F%98%E6%8D%A2"><span class="toc-number">1.2.3.</span> <span class="toc-text">辅助场$A^i_\mu(x)$的定域变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E5%BC%BA%E5%BC%A0%E9%87%8F"><span class="toc-number">1.2.4.</span> <span class="toc-text">场强张量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E8%A7%92%E5%BA%A6%E6%9E%84%E9%80%A0%EF%BC%9AWilson%E5%9C%88"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">积分角度构造：Wilson圈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%BA%E5%BC%BA%E5%BC%A0%E9%87%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">场强张量的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E5%9C%BA%E7%9A%84%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">规范场的质量？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E8%A7%92%E5%BA%A6%E6%9E%84%E9%80%A0%EF%BC%9A%E5%8D%8F%E5%8F%98%E5%AF%BC%E6%95%B0%E7%AE%97%E7%AC%A6%EF%BC%8C%E6%AF%94%E5%AE%89%E5%9F%BA%E6%81%92%E7%AD%89%E5%BC%8F"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">局域角度构造：协变导数算符，比安基恒等式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E5%9C%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E6%96%B9%E7%A8%8B%E4%B8%8E%E5%AE%88%E6%81%92%E5%BE%8B"><span class="toc-number">1.2.5.</span> <span class="toc-text">规范场的运动方程与守恒律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E6%9D%A1%E4%BB%B6%EF%BC%8C%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7%E6%98%AF%E5%AF%B9%E7%A7%B0%E6%80%A7%E5%90%97%EF%BC%9F"><span class="toc-number">1.2.6.</span> <span class="toc-text">规范条件，规范不变性是对称性吗？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%9A%84%E8%87%AA%E5%8F%91%E7%A0%B4%E7%BC%BA"><span class="toc-number">2.</span> <span class="toc-text">对称性的自发破缺</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E5%86%85%E9%83%A8%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%9A%84%E8%87%AA%E5%8F%91%E7%A0%B4%E7%BC%BA%EF%BC%8CGoldstone%E5%AE%9A%E7%90%86"><span class="toc-number">2.1.</span> <span class="toc-text">整体内部对称性的自发破缺，Goldstone定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E5%9F%9F%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7%E7%9A%84%E8%87%AA%E5%8F%91%E7%A0%B4%E7%BC%BA%EF%BC%8CHiggs%E6%9C%BA%E5%88%B6"><span class="toc-number">2.2.</span> <span class="toc-text">定域规范不变性的自发破缺，Higgs机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%E5%BD%95%EF%BC%9A%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%EF%BC%8C%E8%81%94%E7%BB%9C%EF%BC%8C%E6%9B%B2%E7%8E%87"><span class="toc-number">3.</span> <span class="toc-text">附录：微分几何，联络，曲率</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/ClassicalFT-Chap-3.html" title="经典场论 Chap.3：Yang-Mills规范场论基础"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="经典场论 Chap.3：Yang-Mills规范场论基础"/></a><div class="content"><a class="title" href="/post/ClassicalFT-Chap-3.html" title="经典场论 Chap.3：Yang-Mills规范场论基础">经典场论 Chap.3：Yang-Mills规范场论基础</a><time datetime="2022-11-22T13:49:43.000Z" title="发表于 2022-11-22 21:49:43">2022-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/archived/Cohen/QM-Cohen-7.html" title="Cohen量子力学Chap.7笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.7笔记"/></a><div class="content"><a class="title" href="/post/archived/Cohen/QM-Cohen-7.html" title="Cohen量子力学Chap.7笔记">Cohen量子力学Chap.7笔记</a><time datetime="2022-11-04T04:47:55.000Z" title="发表于 2022-11-04 12:47:55">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/archived/Cohen/QM-Cohen-6.html" title="Cohen量子力学Chap.6笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.6笔记"/></a><div class="content"><a class="title" href="/post/archived/Cohen/QM-Cohen-6.html" title="Cohen量子力学Chap.6笔记">Cohen量子力学Chap.6笔记</a><time datetime="2022-11-04T04:47:14.000Z" title="发表于 2022-11-04 12:47:14">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/archived/Cohen/QM-Cohen-5.html" title="Cohen量子力学Chap.5笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5笔记"/></a><div class="content"><a class="title" href="/post/archived/Cohen/QM-Cohen-5.html" title="Cohen量子力学Chap.5笔记">Cohen量子力学Chap.5笔记</a><time datetime="2022-11-04T04:46:34.000Z" title="发表于 2022-11-04 12:46:34">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/archived/Cohen/QM-Cohen-4.html" title="Cohen量子力学Chap.4笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.4笔记"/></a><div class="content"><a class="title" href="/post/archived/Cohen/QM-Cohen-4.html" title="Cohen量子力学Chap.4笔记">Cohen量子力学Chap.4笔记</a><time datetime="2022-11-04T04:45:50.000Z" title="发表于 2022-11-04 12:45:50">2022-11-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
