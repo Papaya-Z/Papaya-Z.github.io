@@ -6,7 +6,7 @@
   <link href="https://papaya-z.github.io/atom.xml" rel="self"/>
   
   <link href="https://papaya-z.github.io/"/>
-  <updated>2022-11-28T00:45:37.771Z</updated>
+  <updated>2022-11-30T21:34:45.607Z</updated>
   <id>https://papaya-z.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://papaya-z.github.io/post/ClassicalFT-Chap-3.html"/>
     <id>https://papaya-z.github.io/post/ClassicalFT-Chap-3.html</id>
     <published>2022-11-22T13:49:43.000Z</published>
-    <updated>2022-11-28T00:45:37.771Z</updated>
+    <updated>2022-11-30T21:34:45.607Z</updated>
     
-    <content type="html"><![CDATA[<hr><blockquote><p><strong>Refrence</strong></p></blockquote><pre class="line-numbers language-none"><code class="language-none">M.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论郑汉青：量子场论（上）高显：经典力学讲义老大中：变分法基础<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h1 id="内部对称性与规范变换"><a href="#内部对称性与规范变换" class="headerlink" title="内部对称性与规范变换"></a>内部对称性与规范变换</h1><p>本章考虑物质场的内部对称性，在这里“物质场”一般指有质量的标量场和旋量场，因为它们在内部对称变换下的行为几乎一致且同样简单。</p><h2 id="物质场的整体内部对称性"><a href="#物质场的整体内部对称性" class="headerlink" title="物质场的整体内部对称性"></a>物质场的整体内部对称性</h2><p>考虑场的内部对称变换：</p><script type="math/tex; mode=display">\phi_a(x)\to U(x)_{ab}\phi^b(x) = {\rm e}^{-{\rm i} g \alpha_i(x) T^i_{ab} }\phi^b(x)</script><p>其中用指标$a,b$等表示群作用的矩阵表示指标，以此强调记号存在作用的顺序；$g$是一个标度因子，只是为了方便看清各种场量在变换下的相对行为而设置的任意实数；$T^i$则是对称群在场量$\phi$所属的表示（对于物质场，就是标量表示和旋量表示）下的生成元。</p><p>若拉格朗日密度$\mathscr L=\mathscr L(\phi,\partial_\mu\phi)$在上述变换下不变，则称系统具有内部对称性。一般而言，参数$\alpha$、其所对应的群元、以及所对应的表示$U$都可以是$x$的函数，即在不同的时空点对场作不同的内部对称变换，这样的称之为局域变换或定域变换。</p><p>这里首先考虑较简单的情形，即$\alpha$是恒定参数的变换，称之为全局变换或整体变换。根据诺特定理，连续的内部对称性会导致守恒律。在较简单的情况下，上述整体内部对称变换的无穷小变换是</p><script type="math/tex; mode=display">\quad \phi_a(x) \to \phi_a(x) - {\rm i}g\alpha_iT^i_{ab} \phi^b(x)</script><p>相应的守恒流为</p><script type="math/tex; mode=display">j_\mu^i = -{\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi^a)}T^i_{ab}\phi^b</script><p>其中$T^i$是相应对称群的生成元，每个生成元都对应一个守恒流。以下各式省略矩阵表示的指标。各个守恒荷为：</p><script type="math/tex; mode=display">Q^i = -{\rm i}g\int{\rm d}^3x\frac{\partial\mathscr L}{\partial(\partial^0\phi)}T^i\phi = -{\rm i}g\int{\rm d}^3x\ \pi T^i\phi</script><p>因此对于每个生成元$T^i$，存在一个守恒荷$Q^i$，$T^i$有时也称为荷矩阵。守恒荷与场变量存在内部空间中的正则泊松括号关系：</p><script type="math/tex; mode=display">\begin{aligned}\{Q^i,\phi\} &= {\rm i}gT^i\phi\\\{Q^i,\pi\} &= -{\rm i}g\pi T^i\end{aligned}</script><p>这一性质也表明了$Q^i$是与时间无关的量。若$\mathscr L$含有多个独立场变量，则守恒流、守恒荷就是这些场各自对应项之和。特别地，若$\mathscr L$在含有$\phi$同时也包含$\overline\phi$作为形式上的独立变量，则其相应也要进行整体变换。从$\phi$的变换可以得出$\overline\phi$的变换为：</p><script type="math/tex; mode=display">\phi \to U\phi = {\rm e}^{-{\rm i}g\alpha_i T^i} \phi\ ,\qquad \overline\phi\to \overline\phi U^{\dagger} = \overline\phi {\rm e}^{ {\rm i}g\alpha_i T^i}</script><p>对应的无穷小变换：</p><script type="math/tex; mode=display">\bar\delta\phi = -{\rm i}g\alpha_i T^i \phi\ ,\qquad \bar\delta\overline\phi = {\rm i}g\alpha_i \overline\phi T^i</script><p><br></p><p>物理上最常考虑内部对称性的是所谓物质场，即旋量场$\psi$。考虑旋量场$\psi_i$，设其带有的某内部指标$i$可取$n$个值，则其构成洛伦兹不变拉格朗日密度最常见的形式是</p><script type="math/tex; mode=display">\mathscr L = \sum_{i=1}^n \overline\psi_i({\rm i}\gamma_\mu\partial^\mu-m)\psi_i</script><p>即所谓自由旋量场，其包含动能项与质量项。可以看出，若要让这样的拉格朗日密度在形如$\psi\to \widetilde U\psi$，$\overline\psi\to\overline\psi \widetilde U^\dagger$的内部变换下不变（$\widetilde U$作用在内部空间上），需要满足$\widetilde U^\dagger \widetilde U=I$即$\widetilde U\in{\rm U}(n)$，此时也说该拉格朗日密度具有${\rm U}(n)$的整体内部对称性（这是复值场量的结果，若是实值场量则减少一个相位自由度，对称群就只是${\rm SU}(n)$）。由$\dim {\rm U}(n) = n^2$，因此这会产生$n^2$个守恒荷。</p><blockquote><p>这里重要的一点在于变换$\widetilde U$是整体的，即参数$\alpha$与时空坐标$x$无关，因此导数算符$\partial^\mu$才与变换群元$\widetilde U$或其生成元可交换。在之后的定域规范变换下，变换群元是时空坐标依赖的，因而不再可以与导数算符$\partial^\mu$交换，则自由场不再能够满足定域规范对称性。</p></blockquote><p>考虑到$\det \widetilde U={\rm e}^{-{\rm i}\theta}$，可令$\widetilde U=U U_1$，其中$U_1\in {\rm U}(1)$，这样$\det U = 1$因此$U\in{\rm SU(n)}$，这实际上是${\rm U}(n)$群的半直积分解：</p><script type="math/tex; mode=display">{\rm U}(n) = {\rm U}(1) \otimes_S {\rm SU}(n)</script><p>在$n&gt;1$时${\rm U}(n)$与${\rm SU}(n)$都是非阿贝尔群（非交换群），而${\rm U}(1)$是阿贝尔群。</p><p><br></p><p>关于${\rm U}(n)$中${\rm U}(1)$部分的对称性，可以考虑$n=1$的特殊情况，这当然也可以看作是实值场量的一个一维内部空间自由度，但更常用的观点是把这种情况看作是复值场量$\psi$的不考虑额外内部空间、而是纯相位的自由度，即形如$\mathscr L = \overline\psi({\rm i}\gamma_\mu\partial^\mu-m)\psi$的拉格朗日密度本身也满足一个整体对称性，也就是场量作为复值本身所具有的一个整体纯相位对称性：</p><script type="math/tex; mode=display">\phi \to {\rm e}^{-{\rm i}e\alpha} \phi\ ,\qquad \overline\phi\to \overline\phi {\rm e}^{ {\rm i}e\alpha}</script><p>（习惯上将${\rm U}(1)$对应的标度因子记为$e$）此时的对称群是${\rm U}(1)$，只有一个守恒流可取为：$j_\mu = -{\rm i}e\overline\psi \gamma_\mu\psi$；守恒荷为</p><script type="math/tex; mode=display">Q = -{\rm i}e\int{\rm d}^3x \overline\psi \gamma_0\psi = -{\rm i}e\int{\rm d}^3x \psi^\dagger (\gamma_0)^2\psi = -{\rm i}e\int{\rm d}^3x\ \psi^\dagger\psi</script><p>可见对于一般的${\rm U}(n)$整体对称性来说，其中${\rm U}(1)$的部分来自于复场量本身的相位自由度，即便不考虑额外的内部空间也存在；但是为与时空对称性相区别，仍将之称为内部对称性。这是一个阿贝尔整体对称性，复值场量相位会引起一个固有守恒荷。在量子理论中，我们将会看到物理上实际至多只能在差一个相位的程度确定量子态，这为引入${\rm U}(1)$内部对称性提供了充分的动机。</p><p><br></p><p>另一方面，剩余的对称性则是非阿贝尔的${\rm SU}(n)$对称性。由于$\dim SU(n) = n^2-1$，因此由非阿贝尔整体对称性可以得到$n^2-1$个守恒流：</p><script type="math/tex; mode=display">j_\mu^i = -{\rm i}g\overline\psi \gamma_\mu T^i\psi</script><p>以及相应守恒荷：</p><script type="math/tex; mode=display">Q^i = -{\rm i}g\int{\rm d}^3x \overline\psi\gamma_0 T^i\psi = -{\rm i}g\int{\rm d}^3x \psi^\dagger (\gamma_0)^2 T^i\psi = -{\rm i}g\int{\rm d}^3x\ \psi^\dagger T^i\psi</script><p>可见，这$n^2-1$个守恒荷一一对应于${\rm SU}(n)$的$n^2-1$个生成元，该群作用空间实际就是$n$维内部空间，效果是保内积不变（幺正性）并且除去了相位的自由度，因此这些守恒荷的具体性质取决于$n$维内部空间的自由度。考虑不同的内部空间，理论会出现不同的守恒荷；若不考虑内部自由度，也就不会出现这些守恒荷。</p><p><br></p><p>基于这些讨论，常常会将依赖于内部空间自由度的对称性${\rm SU}(n)$与依赖于复值场量相位的固有对称性${\rm U}(1)$分开讨论，谈及某些内部空间性质，只会讨论相应的${\rm SU}(n)$对称性。</p><p><br></p><p>前述讨论仅仅是基于旋量场的一个简单例子，在其他类型的场也存在类似的整体内部对称性，以及相应的守恒荷。例如具有$N$维内部空间的复标量场（略去其内部自由度指标）：</p><script type="math/tex; mode=display">\mathscr L = \sum_{i=1}^n \big[\partial_\mu\phi_i^\dagger\partial^\mu\phi_i-m^2\phi_i^\dagger\phi_i \big]</script><p>显然也具有${\rm U}(n)$整体对称性，其守恒流为$j_\mu^i = -{\rm i}g(\phi^\dagger T^i \partial_\mu\phi-\partial_\mu\phi^\dagger T^i\phi)$；它同样可以分为只与复值场量相位相关的${\rm U}(1)$对称性以及内部空间的${\rm SU}(n)$对称性。可见整体内部对称性及其守恒荷在场论中是十分普遍存在的。</p><p>需要强调的是，整体内部对称性虽然不如时空对称性那样直观，但它可以导致守恒荷这一物理实际可测量，因而是系统真正存在的对称性。</p><p><br></p><h2 id="物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）"><a href="#物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）" class="headerlink" title="物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）"></a>物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）</h2><h3 id="“定域内部对称性”存在吗"><a href="#“定域内部对称性”存在吗" class="headerlink" title="“定域内部对称性”存在吗"></a>“定域内部对称性”存在吗</h3><p>前面的讨论基于一个假设，即内部对称变换的参数$\alpha$与时空坐标$x$无关，但这在某些时候不能令人满意：例如一旦为某一时空点处的内部空间选取了一个确定的“值”，那么为确保内部对称性的成立，场在全时空的内部自由度便也必须随之确定；但我们总是希望所构建的场论是一个定域的理论，即在某一点处选择的内部状态不应立刻影响到全时空。这促使我们考虑更一般的一类变换，即是否有可能在如下依赖时空的变换下：</p><script type="math/tex; mode=display">\phi \to U(x)\phi = {\rm e}^{-{\rm i}g\alpha_i(x) T^i} \phi\ ,\qquad \overline\phi\to \overline\phi U^{\dagger}(x) = \overline\phi {\rm e}^{ {\rm i}g\alpha_i(x) T^i}</script><p>使得拉格朗日密度$\mathscr L$不变或只差一个边界项。这样的变换也就是定域内部变换。</p><p>很明显，对于自由场，例如自由旋量场$\mathscr L = \overline\psi({\rm i}\gamma_\mu\partial^\mu-m)\psi$，这样不变性的要求不能成立，直接原因在于普通导数算符$\partial_\mu$不能与之相洽，会产生额外的诸如$\partial_\mu \alpha(x)$的项；根本上来说，则是无法在这样的变换下比较不同点处的场量，如下文所述。</p><p><br></p><p>考虑间隔一定时空距离的两个点$x$、$y$，希望比较场$\phi$在它们处的值$\phi(x)$、$\phi(y)$的相对差异，比如如何定义$\phi(y)=\phi(x)$？又如如何计算$\phi(y)-\phi(x)$？这些问题涉及到在动能项的中如何恰当地定义场的普通导数$\partial_\mu$。</p><p>在整体内部变换的意义下，这个问题具有确定到仅差一个幺正变换的意义，即无论在何种参数$\alpha_i$所代表的整体变换下，</p><script type="math/tex; mode=display">\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i T^i}\phi(y)-{\rm e}^{-{\rm i}g\alpha_i T^i}\phi(x) = {\rm e}^{-{\rm i}g\alpha_i T^i}\big[\phi(y)-\phi(x)\big]</script><p>结果都只差一个幺正变换，因此对于$|\phi(y)-\phi(x)|$这类量，是存在确定的答案的，它<strong>与整体内部状态的具体选择无关，但可以在任一整体选择之下计算出来</strong>。这是对称性的普遍性质。</p><p>但若是考虑定域的内部变换，</p><script type="math/tex; mode=display">\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i(y) T^i}\phi(y)-{\rm e}^{-{\rm i}g\alpha_i(x) T^i}\phi(x)</script><p>即便是$|\phi(y)-\phi(x)|$也依赖于所选取的具体定域变换，也就是说需要事先为每个点单独选取一个独立的内部变换，而计算结果强烈地依赖于选取方案，不同的选择都会带来不一样的计算结果。尚且无法确定的比较不同点处的场量相对差异，那么导数算符$\partial_\mu$也就无从定义了。</p><p>由此可见，<strong>自由场事实上不存在所谓“定域内部对称性”</strong>。</p><p><br></p><h3 id="联络与协变导数"><a href="#联络与协变导数" class="headerlink" title="联络与协变导数"></a>联络与协变导数</h3><p>这样看，场论的定域性似乎与内部对称性不能兼容。但是微分几何提供了一种可能的方法来比较不同点处的场值。具体来说：引入一个辅助场$W(x,y)$来抵消内部空间选择的差异，它是一种依赖于两个时空点的所谓“双定域场”，也就是说，希望它在定域变换下的行为是</p><script type="math/tex; mode=display">W(x,t)\to {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W(x,y) {\rm e}^{ {\rm i}g\alpha_k(y) T^k}</script><p>那么就可以构造如下量：</p><script type="math/tex; mode=display">W(x,y)\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W(x,y) \phi(y)-{\rm e}^{-{\rm i}g\alpha_k(x) T^k}\phi(x) = {\rm e}^{-{\rm i}g\alpha_i T^i}\big[W(x,y)\phi(y)-\phi(x)\big]</script><p>是可以在仅差一个幺正变换的意义下确定的。从而可以定义辅助场意义下的“导数算符”</p><script type="math/tex; mode=display">D_\mu\phi(x) = \lim_{\epsilon\to 0}\frac{W(x,x+\epsilon e^\mu)\phi(x+\epsilon e^\mu)-\phi(x)}{\epsilon}</script><p>于是这样的“导数算符”也可以在仅差一个幺正变换的意义下确定</p><script type="math/tex; mode=display">D_\mu\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i T^i}D_\mu\phi(x)</script><p>由于它的变换规律与基本场自由度$\phi(x)$是相同的，因此称其为<strong>协变导数</strong>。剩下唯一的问题就是如何确定辅助场$W(x,y)$。</p><p><br></p><p>首先考虑$W(x,y)$的物理意义。定义这样的辅助场，是希望它能够尽量保持$\phi$在$y$点处原本的性质（例如内部空间状态），而将其“移动”到$x$点处并与$\phi(x)$做运算；但是微分几何的结果告诉我们，这样的移动结果是路径依赖的。所以在平直时空$W(x,y)$的作用实质就是<strong>（沿某条连接$x$、$y$的路径）平移</strong>，也叫做“平移子（parallel transporter）”。 详见本章附录。</p><p>自然希望$W(x,x)=1$；若将其在$x=y$附近展开则有：</p><script type="math/tex; mode=display">W(x,x+\epsilon) = 1 - {\rm i}g\epsilon^\mu A^i_\mu(x) T_i + \mathcal O(\epsilon^2)</script><p>此处$T_i$是变换群生成元，这组矢量场$A^i_\mu(x)$就是“无穷近”辅助场的线性部分，也是$W(x,y)$对第二个变量的（普通）导数，并且是一组定域的场量。这在微分几何上称为<strong>联络</strong>，用于比较不同点处具有不同局域坐标系的场。</p><p>有了无穷近两点之间的辅助场，构造两个有限距离点之间的辅助场自然可以积分地表达（下面用${\boldsymbol A} = T_i A^i$）：</p><script type="math/tex; mode=display">W_{\mathcal C}(x,y) = P\left[ \exp\left({\rm i}g\int_y^x {\boldsymbol A}_\mu(z) {\rm d}z^\mu\right) \right]</script><p>为便于计算，可将路径$\mathcal C$参数化为$z^\mu(s)$，$0\leq s \leq 1$，其中$z^\mu(0)=y^\mu$且$z^\mu(1)=x^\mu$，这样就能写成</p><script type="math/tex; mode=display">W_{\mathcal C}(x,y) = P\left[ \exp\left({\rm i}g\int_0^1 {\boldsymbol A}_\mu(z(s) ) \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} {\rm d}s \right)\right]</script><p>其中$P$是路径编序算符，因为非阿贝尔定域变换下不同点处的群生成元不对易。其准确定义是如下的无穷级数：</p><script type="math/tex; mode=display">\begin{aligned}W_{\mathcal C} =& P\left[ \exp\left({\rm i}g\int_0^1 {\boldsymbol A}_\mu(z(s) ) \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} {\rm d}s \right)\right]\\=&1+{\rm i}g\int_0^1 {\rm d}s \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} T_i A^i_\mu(z(s) ) \\&+\frac{({\rm i}g)^2}{2}\int_0^1 {\rm d}s_1\int_0^1 {\rm d}s_2 \frac{ {\rm d}z^\mu(s_1)}{ {\rm d}s_1} \frac{ {\rm d}z^\nu(s_2)}{ {\rm d}s_2} A^i_\mu(z(s_1) ) A^j_\nu(z(s_2) ) \big[T_i T_j \theta(s_1-s_2) + T_j T_i \theta(s_2-s_1)\big]\\&+ \cdots\end{aligned}</script><p>这样构造的辅助场形式称为“<strong>Wilson线</strong>”，是一个路径$\mathcal C$依赖的、非定域的量，$\mathcal C$是从$y$到$x$的任一连续路径，并且也是满足最初要求的定域变换律的。在理论构造中，很多时候用与其等价的、路径无关的、定域的场量$A^i_\mu(x)$显然更方便。</p><p><br></p><h3 id="辅助场-A-i-mu-x-的定域变换"><a href="#辅助场-A-i-mu-x-的定域变换" class="headerlink" title="辅助场$A^i_\mu(x)$的定域变换"></a>辅助场$A^i_\mu(x)$的定域变换</h3><p>利用定域辅助场$A^i_\mu(x)$，可以等价的表示协变导数$D_\mu\phi(x)$，即</p><script type="math/tex; mode=display">D_\mu\phi(x) = \partial_\mu\phi(x)-{\rm i}g{\boldsymbol A}_\mu(x)\phi(x) = \big[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)\big]\phi(x)</script><p>定域变换下辅助场也满足一定的变换律：</p><script type="math/tex; mode=display">\big[\partial_\mu-{\rm i}g{\boldsymbol A}'_\mu(x)\big] \big[{\rm e}^{-{\rm i}g\alpha_j(x) T^j} \phi(x)\big] = {\rm e}^{-{\rm i}g\alpha_k(x) T^k} \cdot \big[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)\big]\phi(x)</script><p>这里${\boldsymbol A}’_\mu(x)$就是变换后的辅助场；可以得到</p><script type="math/tex; mode=display">\partial_\mu {\rm e}^{-{\rm i}g\alpha_i(x) T^i} - {\rm i}g{\boldsymbol A}'_\mu(x) {\rm e}^{-{\rm i}g\alpha_j(x) T^j} = -{\rm i}g {\rm e}^{-{\rm i}g\alpha_k(x) T^k} {\boldsymbol A}_\mu(x)</script><p>因此得到变换律为</p><script type="math/tex; mode=display">\begin{aligned}{\boldsymbol A}_\mu(x) \to &{\rm e}^{-{\rm i}g\alpha_i(x) T^i} {\boldsymbol A}_\mu(x) {\rm e}^{ {\rm i}g\alpha_j(x) T^j} - \frac{\rm i}{g}(\partial_\mu {\rm e}^{-{\rm i}g\alpha_k(x) T^k}) {\rm e}^{ {\rm i}g\alpha_l(x) T^l}\\=&{\rm e}^{-{\rm i}g\alpha_i(x) T^i} {\boldsymbol A}_\mu(x) {\rm e}^{ {\rm i}g\alpha_j(x) T^j} + \frac{\rm i}{g} {\rm e}^{-{\rm i}g\alpha_k(x) T^k}\ \partial_\mu\ {\rm e}^{ {\rm i}g\alpha_l(x) T^l}\\=&U {\boldsymbol A}_\mu(x) U^{-1} + \frac{\rm i}{g} U \partial_\mu U^{-1}\end{aligned}</script><p>这里$U$表示变换群元素。第二项的存在导致这是一种非齐次变换。从这个形式可以看出，<strong>定域变换下${\boldsymbol A}_\mu(x)$的变换分为两部分，即其本身按照伴随表示变换，加上由于变换是定域的而产生的非齐次附加项，附加项形如$\partial_\mu$按照伴随表示的变换。</strong></p><blockquote><p>注意，这里提到“伴随表示”，相当于默认了${\boldsymbol A}_\mu(x)$是变换群对应李 代数的元素；这一点会在后面说明。</p></blockquote><p>将之写成更熟悉的形式，在无穷小变换下（即精确到$\mathcal O(\alpha)$阶）：</p><script type="math/tex; mode=display">\begin{aligned}\bar\delta {\boldsymbol A}_\mu(x) \to & - \frac{1}{g}\partial_\mu \alpha^i(x) + {\rm i}(\alpha^j {\boldsymbol A}_\mu T_j- \alpha^k T_k {\boldsymbol A}_\mu)\\=& - \frac{1}{g}\partial_\mu \alpha^i(x) + {\rm i}\alpha^j \big[{\boldsymbol A}_\mu, T_j \big]_{\rm Lie}\end{aligned}</script><p>这里$[<em>,</em>]_{\rm Lie}$是李括号，也就是生成元的简单对易子。它们满足：</p><script type="math/tex; mode=display">[T_i,T_j] = {\rm i}f_{ij}^k T_k</script><p>其中反对称的量$f_{ij}^k=-f_{ji}^k$是该李代数的结构常数。因此最终得到辅助场分量的无穷小定域变换</p><script type="math/tex; mode=display">\bar\delta A_\mu^i(x) = - \frac{1}{g}\partial_\mu \alpha^i(x) + f^i_{jk}\alpha^j A^k_\mu(x)</script><p>从这个结果可以看出三点：</p><ol><li>场$A^i_\mu(x)$的定域变换只与结构常数$f_{ij}^k$和参数$\alpha(x)$有关，而与场$\phi$所属的具体表示（标量场，旋量场，……）无关。</li><li>由于阿贝尔群的结构常数全为零，因此第二项只在非阿贝尔的变换时才会出现；特别地，即便不是无穷小变换，定域阿贝尔变换也会产生形如前两项变换的辅助场，即阿贝尔情形下不要求$\alpha(x)$无穷小。</li><li>第一项只在定域变换时才会出现；若是整体变换，则$A^i_\mu(x)$的变换就按照伴随表示变换。</li><li>根据前两点，整体阿贝尔变换下，场$A^i_\mu(x)$不变。</li></ol><p><br></p><p>到目前为止已经看到，自由场不存在所谓“定域内部对称性”；但是总可以通过一定的方式来改写拉格朗日密度：</p><script type="math/tex; mode=display">\mathscr L(\psi,D_\mu\psi) \equiv \mathscr L(\psi,[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)]\psi) \equiv \mathscr L(\psi,\partial_\mu\psi,A) \equiv \mathscr L_0 + \mathscr L_I</script><p>使之在一定的定域变换下保持不变，而其代价就是重定义普通导数$\partial_\mu$为协变导数$D_\mu$，相当于引入了作为辅助场的$A^i_\mu(x)$。</p><p>同时，可以看到在改写后的理论中，势必引入了物质场与规范场的耦合项：</p><script type="math/tex; mode=display">\mathscr L_I = -{\rm i}g \frac{\partial\mathscr L}{\partial(\partial^\mu\phi^a)} T_i A_\mu^i(x) \phi</script><p>例如在旋量场中，这一项就是</p><script type="math/tex; mode=display">\mathscr L_I = g \overline\psi\gamma_\mu T_i A_\mu^i(x) \psi</script><p>这表明在规范场论中，一定存在物质场与规范场的相互作用。并且这一耦合项的强弱总是由因子$g$来标度，因此我们一般把$g$称为规范场与物质的耦合因子。此时的拉格朗日密度可以写为</p><script type="math/tex; mode=display">\mathscr L_\phi = \mathscr L_0 + \mathscr L_I</script><blockquote><p>应当指出，标度因子$g$的绝对值在纯理论中是完全没有意义的；完全可以通过场$A_\mu^i$的重定义将其吸收掉；但是当理论与实际对应时，可以用这一因子来表征场之间耦合的强度。例如，当存在不同物质场时，由于同一对称性所引入的规范场视作只有一个，那么不同物质场便可具有不同的耦合因子$g$来表征它们与同一规范场的不同耦合强度。因而$g$也获得了实际意义，即表示物质场所携带的基本相互作用荷的大小。</p></blockquote><p><br></p><p>定域的辅助场$A^i_\mu(x)$的引入，使得理论可以在不同的时空点上独立地选取内部空间状态。这样的效果是，存在某些物理量，它<strong>与内部状态的具体定域选择无关，但可以在任一定域选择之下计算出来</strong>。——这样的性质在经典电动力学中已经遇到过了，在处理不同问题时可以对电磁势选取不同的规范（库伦规范、朗道规范、洛伦兹规范……）来方便计算，但是得到的计算结果却与所选取的规范无关。</p><p>因此，在这里我们也把“定域内部变换”称为“<strong>规范变换</strong>”，相应的一些物理量若在规范变换下不变，则称其为规范不变的或规范无关的；为了保持这种不变性所引入辅助场称为<strong>规范场</strong>。事实上这些辅助场除了$A^i_\mu(x)$还有其他表达形式（例如Wilson线），为区别于后面的场强张量，一般将$A^i_\mu(x)$称为<strong>规范势</strong>。</p><blockquote><p>要很审慎地使用“规范对称性”这种称呼；我统一称之为“规范不变性”。因为它与整体对称性是理论本身所具有的不同，理论本身不存在所谓“规范对称性”。具体可见“规范不变性是对称性吗？”一节的说明。</p></blockquote><p><br></p><h3 id="场强张量"><a href="#场强张量" class="headerlink" title="场强张量"></a>场强张量</h3><p>到目前为止，理论中的规范势$A^i_\mu(x)$没有动能，也没有相互作用，似乎没有独立的物理意义，只是代表了内部状态自由选择的定域性。如果确实如此，那么应当存在一种特定的定域变换，可以将其从理论中消去，即存在变换$U$使得</p><script type="math/tex; mode=display">{\boldsymbol A}'_\mu(x) = U {\boldsymbol A}_\mu(x) U^{-1} - \frac{\rm i}{g}(\partial_\mu U) U^{-1} = 0</script><p>显然，若存在某个规范变换$U$，使其能够被完全从理论中消去的规范势，一定也能够被该变换表为</p><script type="math/tex; mode=display">{\boldsymbol A}_\mu(x) = \frac{\rm i}{g} U^{-1}(\partial_\mu U)</script><p>称之为纯规范条件，满足这以条件的规范势就确实不具有独立的动力学。现实中确实有物理模型中的规范场不是动力学场。</p><p>但是不满足该条件（只需要满足定域变换规律）的规范势仍可以被引入到理论中并使理论保持定域规范不变；如果假设规范场可以是动力学场，则可以大大扩展理论的内涵。因此一个想法就是将规范场视作独立的动力学场引入理论，这就必须要引入由$A^i_\mu(x)$及其普通导数（注意尽管引入了协变导数，但表征场动能项的仍然是普通导数）构造的一些非平庸的规范不变项。理想的情况是，我们希望这样的项由某种与$A^i_\mu(x)$有关的场量来构造，当其为零时表示此时的规范场是纯规范；当其不为零时则可以表征规范场的动力学。</p><p>在目前我们已经得到的各种量之中，包含规范势$A^i_\mu(x)$且规范变换性质比较好的，只有Wilson线和协变导数算符；它们恰恰对应了我们构造规范场动能项的两个途径：积分地构造，即利用Wilson圈；或者局域地构造，即利用协变导数。 </p><p><br></p><h4 id="积分角度构造：Wilson圈"><a href="#积分角度构造：Wilson圈" class="headerlink" title="积分角度构造：Wilson圈"></a>积分角度构造：Wilson圈</h4><p>首先从Wilson线出发考虑。考虑到$W(x,y)$依赖于其两端点处的规范变换，则可以考虑取闭合回路（取端点为$x$）构成Wilson圈$W_{\mathcal C}^{\rm loop}$：</p><script type="math/tex; mode=display">W_{\mathcal C}^{\rm loop}(x,x) = P\left[ \exp\left({\rm i}g\oint_{\mathcal C} {\boldsymbol A}_\mu(z){\rm d}z^\mu\right) \right]</script><p>这里$s=0$和$s=1$表示同一点$x$。根据Stokes定理，这样的圈积分应当可以写成某个场的通量积分：</p><script type="math/tex; mode=display">\begin{aligned}W_{\mathcal C}^{\rm loop}(x,x) =& \exp\left(\frac{ {\rm i}g}{2}\int_{\Sigma} {\rm d}\sigma^{\mu\nu} {\boldsymbol F}_{\mu\nu}\right)\\=& 1 + \frac{ {\rm i}g}{2}\int_{\Sigma} {\rm d}\sigma^{\mu\nu} {\boldsymbol F}_{\mu\nu} + \cdots\end{aligned}</script><p>为获得定域的量，尽量将环路$\mathcal C$收缩至点$x$附近的无穷小回路；此时略去无穷小面积$\sigma$的高阶小量，得到</p><script type="math/tex; mode=display">W_{\mathcal C}^{\rm loop}(x) = 1 + \frac{ {\rm i}g}{2} {\boldsymbol F}_{\mu\nu}(x) \int_{\Sigma(x)} {\rm d}\sigma^{\mu\nu}</script><p>其中该无穷小Wilson圈面积的系数${\boldsymbol F}_{\mu\nu}(x)$是${\boldsymbol A}_\mu(x)$的外微分，不难看出规范场的非平凡信息都包含在其中。可以利用微分几何的方法得到${\boldsymbol F}_{\mu\nu}(x)$的表达式。但同时也可从物理上获得启发：一个简单的例子是所谓小方格，即考虑由$x^\mu$，$x^\mu+\epsilon\zeta^\mu$，$x^\mu+\epsilon\zeta^\mu+\epsilon\xi^\mu$，$x^\mu+\epsilon\xi^\mu$四点直线相连构成的闭合回路，其中矢量$\zeta^\mu$和$\xi^\mu$不平行，$\epsilon$是无穷小量。根据辅助场的物理意义，</p><script type="math/tex; mode=display">\begin{aligned}W_\Box =& W(x,x+\epsilon\zeta) W(x+\epsilon\zeta,x+\epsilon\zeta+\epsilon\xi) W(x+\epsilon\zeta+\epsilon\xi,x+\epsilon\xi) W(x+\epsilon\xi,x)\\=& \Big[1 - {\rm i}g\epsilon{\boldsymbol A}_\mu(x+\frac{\epsilon}{2}\zeta)\zeta^\mu -\frac{g^2}{2} \epsilon^2 \zeta^\mu\zeta^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\zeta) + \cdots\Big]\\&\times \Big[1 - {\rm i}g\epsilon{\boldsymbol A}_\nu(x+\epsilon\zeta+\frac{\epsilon}{2}\xi)\xi^\nu -\frac{g^2}{2} \epsilon^2 \xi^\mu\xi^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\epsilon\zeta+\frac{\epsilon}{2}\xi) + \cdots \Big]\\&\times \Big[1 + {\rm i}g\epsilon{\boldsymbol A}_\rho(x+\frac{\epsilon}{2}\zeta+\epsilon\xi)\zeta^\rho -\frac{g^2}{2} \epsilon^2 \zeta^\mu\zeta^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\zeta+\epsilon\xi) + \cdots \Big]\\&\times \Big[1 + {\rm i}g\epsilon{\boldsymbol A}_\sigma(x+\frac{\epsilon}{2}\xi)\xi^\sigma -\frac{g^2}{2} \epsilon^2 \xi^\mu\xi^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\xi) + \cdots \Big]\\\end{aligned}</script><p>注意这里是在小方格各边中点处展开。保留到$\mathcal O(\epsilon^2)$阶，并与之前的$W_{\mathcal C}^{\rm loop}(x)$表达式相比，就得到</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu} = \partial_\mu {\boldsymbol A}_\nu - \partial_\nu {\boldsymbol A}_\mu - {\rm i}g [{\boldsymbol A}_\mu,{\boldsymbol A}_\nu]_{\rm Lie}</script><p>最后一项是因非阿贝尔规范场的非对易性而产生的。这一定义可以推广到推广到不限于小方格的普遍情况；其中同样有${\boldsymbol F}_{\mu\nu} = F^i_{\mu\nu} T_i$，其分量为</p><script type="math/tex; mode=display">F^i_{\mu\nu} = \partial_\mu A_\nu^i - \partial_\nu A_\mu^i + gf^i_{jk} A_\mu^j A_\nu^k</script><p>它就是将Wilson圈定域化得到的结果。在阿贝尔规范场的情况下，这就退化为</p><script type="math/tex; mode=display">F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu</script><p><br></p><p>回顾之前对纯规范条件的讨论，我们希望这个新的场量${\boldsymbol F}_{\mu\nu}(x)$能反映规范场是否具有实际的动力学。考虑到当规范势满足纯规范条件时：</p><script type="math/tex; mode=display">{\boldsymbol A}_\mu(x) = \frac{\rm i}{g} U^{-1}(\partial_\mu U)</script><p>再利用$\partial_\mu U^{-1} = -U^{-1} (\partial_\mu U) U^{-1}$，代入式中得到</p><script type="math/tex; mode=display">\begin{aligned}{\boldsymbol F}_{\mu\nu} =& \partial_\mu {\boldsymbol A}_\nu - \partial_\nu {\boldsymbol A}_\mu - {\rm i}g [{\boldsymbol A}_\mu,{\boldsymbol A}_\nu]_{\rm Lie}\\=& \frac{\rm i}{g}\Big\{ \partial_\mu(U^{-1}\partial_\nu U) - \partial_\nu(U^{-1}\partial_\mu U) + \big[U^{-1}(\partial_\mu U),U^{-1}(\partial_\nu U) \big]_{\rm Lie} \Big\}\\=& 0\end{aligned}</script><p>可见，只有当${\boldsymbol F}_{\mu\nu}(x) \equiv 0$处处为零时，规范场就是纯规范；若其不处处为零，则意味着具有独立的动力学。因此${\boldsymbol F}_{\mu\nu}$的值其实反映了作为独立动力学场的规范场，所以一般称其为<strong>场强张量</strong>。</p><p><br></p><h4 id="场强张量的性质"><a href="#场强张量的性质" class="headerlink" title="场强张量的性质"></a>场强张量的性质</h4><p>最后还剩余的目标，就是得到${\boldsymbol F}_{\mu\nu}$的规范变换性质，再由其构造出规范不变、洛伦兹不变的规范场动能项。首先的想法就是验证Wilson圈$W_{\mathcal C}^{\rm loop}$是否是规范不变的；若其是规范不变量，显然作为其定域化的结果，场强张量${\boldsymbol F}_{\mu\nu}$也是规范不变的。</p><p>在规范变换下，</p><script type="math/tex; mode=display">W_{\mathcal C}^{\rm loop}(x,x) \to U(x) W_{\mathcal C}^{\rm loop}(x,x) U^{-1}(x) = {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W_{\mathcal C}^{\rm loop}(x,x) {\rm e}^{ {\rm i}g\alpha_k(x) T^k}</script><p>不难验证规范场场强张量也服从相同的变换</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu}(x) \to U(x) {\boldsymbol F}_{\mu\nu}(x) U^{-1}(x) = {\rm e}^{-{\rm i}g\alpha_j(x) T^j} {\boldsymbol F}_{\mu\nu}(x) {\rm e}^{ {\rm i}g\alpha_k(x) T^k}</script><p>可以看到，相比于规范势${\boldsymbol A}_\mu$的变换，场强张量${\boldsymbol F}_{\mu\nu}$的变换不出现非齐次项，因此比规范势更方便构造规范不变量。</p><p>对于阿贝尔规范变换，$W_{\mathcal C}^{\rm loop}$显然是规范不变量，阿贝尔规范场的${\boldsymbol F}_{\mu\nu}$本身就是规范不变的。但对于非阿贝尔规范变换，则${\boldsymbol F}_{\mu\nu} = F_{\mu\nu}^i T_i$就不是规范不变量，而是按照伴随表示进行变换。其本质原因还在于内部自由度，即$T_i$的非对易性。因此要想得到由场强张量构造的规范不变量，需要分析其内部空间分量的无穷小变换，这可从$A_\mu^i$的无穷小规范变换直接得到：</p><script type="math/tex; mode=display">\bar\delta F_{\mu\nu}^i = f^i_{jk}\alpha^j(\partial_\mu A_\nu^k - \partial_\nu A_\mu^k) + g(f^i_{mk}f^k_{jn} + f^i_{kn}f^k_{jm})\alpha^j A_\mu^m A_\nu^n</script><p> 再利用结构常数所满足的雅可比恒等式</p><script type="math/tex; mode=display">f_{jn}^kf_{mk}^i - f_{mn}^kf_{jk}^i = - f_{jm}^kf_{kn}^i</script><p>即可得到场强张量的内部分量在无穷小规范变换下具有简单的变换形式</p><script type="math/tex; mode=display">\begin{aligned}\bar\delta F_{\mu\nu}^i =& f^i_{jk}\alpha^j( \partial_\mu A_\nu^k - \partial_\nu A_\mu^k + gf^k_{mn}A_\mu^m A_\nu^n )\\=& f^i_{jk}\alpha^jF_{\mu\nu}^k\end{aligned}</script><p>即其内部分量并不依赖于$T_i$；所以可以想象，用分量$F_{\mu\nu}^i$而不是${\boldsymbol F}_{\mu\nu}$是构造规范不变量更方便的形式。不难验证，</p><script type="math/tex; mode=display">\mathscr L_G = -\frac{1}{4} \sum_{i=1}^n F_{\mu\nu}^iF^{i,\mu\nu} = -\frac{1}{4}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i + gf^i_{jk} A_\mu^j A_\nu^k)^2</script><p>是规范不变、洛伦兹不变的；这对应于Wilson圈求迹：</p><script type="math/tex; mode=display">{\rm tr}\left[W_{\mathcal C}^{\rm loop}\right] = {\rm tr}\left\{ P\left[ \exp\left({\rm i}g\oint_{\mathcal C} {\boldsymbol A}_\mu(z){\rm d}z^\mu\right) \right] \right\}</script><p>它是一个重要的规范不变量。</p><p><br></p><p>现在关注前面得到的</p><script type="math/tex; mode=display">\mathscr L_G = -\frac{1}{4} \sum_{i=1}^n F_{\mu\nu}^iF^{i,\mu\nu}</script><p>有几点需要说明：</p><ol><li>阿贝尔规范场是规范不变量，非阿贝尔规范场则按照伴随表示变换，不是规范不变量；但无论何种情况，$(F_{\mu\nu})^2$（这里平方包含着对内部指标求和）都是规范不变量；</li><li>无论是否是阿贝尔的，$\mathscr L_G$都包含规范势$A_\mu^i$的一阶偏导数，因此可作为规范场的动能项</li><li>非阿贝尔规范场的场强$F_{\mu\nu}^i$存在非线性项$gf^i_{jk} A_\mu^j A_\nu^k$，这导致在拉格朗日密度中会出现规范势$A_\mu^i$本身的三次、四次项，这被解释为<strong>规范场的自相互作用</strong>；这只会在非阿贝尔规范场发生。在将标度因子$g$解释为相互作用荷时，会看到非阿贝尔规范场本身就带有荷$g$，这与阿贝尔规范场是完全不同的。</li></ol><p>这里给出以规范势表达的拉格朗日密度的具体形式：</p><script type="math/tex; mode=display">\begin{aligned}\mathcal L_G =& -\frac{1}{4}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i)^2\\&-\frac{g}{2}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i)f_{ijk}A_\mu^jA_\nu^k\\&-\frac{g^2}{4}f^i_{jk}f_{ij'k'}A_\mu^j A_\nu^k A_\mu^{j'} A_\nu^{k'}\end{aligned}</script><p>第二项、第三项就分别是规范场的所谓三线、四线自相互作用。这些性质表明，定域规范变换与自由运动不兼容。这不仅仅意味着之前就已经得到的结论，即自由物质场不满足所谓“定域内部对称性”；另一个角度上，如果是在非阿贝尔的规范变换下，即便引入了与之耦合的规范场${\boldsymbol F}_{\mu\nu}$，不仅是物质场，就连规范场本身也因存在自相互作用而不可能是自由的。</p><p>加入这一项后，完整的规范不变拉格朗日密度为：</p><script type="math/tex; mode=display">\mathscr L = \mathscr L_0 + \mathscr L_I + \mathscr L_G</script><p>分别代表物质场动能项荷质量项、物质场与规范场相互作用项，以及规范场的动能（与相互作用）项。</p><p><br></p><h4 id="规范场的质量？"><a href="#规范场的质量？" class="headerlink" title="规范场的质量？"></a>规范场的质量？</h4><p>得到了规范场的动能项，下一个问题是，能否可以简单地按照一般自由矢量场的规律，在规范场的拉格朗日密度之中为其添加一个质量项：</p><script type="math/tex; mode=display">-\frac{1}{2}m^2 \sum_{i=1}^n A_\mu^i A^{i,\mu}</script><p>答案是不可以，因为这样会破坏其定域规范不变性。但这并不意味着规范场不能获得质量，只不过不是以如此简单的方式。</p><p><br></p><h4 id="局域角度构造：协变导数算符，比安基恒等式"><a href="#局域角度构造：协变导数算符，比安基恒等式" class="headerlink" title="局域角度构造：协变导数算符，比安基恒等式"></a>局域角度构造：协变导数算符，比安基恒等式</h4><p>最后，回顾本小节最开始的分析。之前都是利用Wilson线来积分地构造规范不变量；另一条路则是用协变导数来局域地构造。不难看出，之前得到的场强张量表达式也可以直接由协变导数来表达为：</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu} = D_\mu {\boldsymbol A}_\nu - D_\nu {\boldsymbol A}_\mu</script><p>要注意的是协变导数算符中也有规范势的存在， 因此上式的每项都是在同一点处的协变导数算符作用在相同点处的规范势。阿贝尔规范场情况下同样退化为</p><script type="math/tex; mode=display">F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu</script><p>正因为协变导数算符中也含有规范势，这启发我们是否可以考虑协变导数算符的对易子$\big[D_\mu,D_\nu\big]$。这实际上也符合之前对Wilson线几何意义的初步探讨：既然Wilson线的作用是将场量沿路径”平移”，那么Wilson圈就是沿某路径绕回原处。与绕行之前相比，绕一周所产生的影响就是附加一个规范场${\boldsymbol F}_{\mu\nu}$；而在微分几何中，衡量之中差异的，恰恰就是协变导数算符的对易子，被称为<strong>曲率张量</strong>。可见，${\boldsymbol F}_{\mu\nu}$的存在，实际上表征了内部空间的某种弯曲程度。</p><p>不难验证：</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu} = \frac{\rm i}{g}\big[D_\mu,D_\nu\big]</script><p>特别地，协变导数算符满足雅可比恒等式：</p><script type="math/tex; mode=display">\big[D_\mu,\big[D_\nu,D_\sigma\big]\big] + \big[D_\nu,\big[D_\sigma,D_\mu\big]\big] + \big[D_\sigma,\big[D_\mu,D_\nu\big]\big] = 0</script><p>即得到关于场强张量的一个重要恒等式：比安基恒等式 </p><script type="math/tex; mode=display">\big[D_\mu,{\boldsymbol F}_{\nu\sigma}\big] + \big[D_\nu,{\boldsymbol F}_{\sigma\mu}\big] + \big[D_\sigma,{\boldsymbol F}_{\mu\nu}\big] = 0</script><p>或者写为</p><script type="math/tex; mode=display">D_\mu {\boldsymbol F}_{\nu\sigma} + D_\nu {\boldsymbol F}_{\sigma\mu} + D_\sigma {\boldsymbol F}_{\mu\nu} = 0</script><p>引入对偶场强：</p><script type="math/tex; mode=display">\widetilde {\boldsymbol F}^{\mu\nu} = -\frac{\rm i}{2} \epsilon^{\mu\nu\rho\sigma} {\boldsymbol F}_{\mu\nu}</script><p>则比安基恒等式可写为</p><script type="math/tex; mode=display">D_\mu \widetilde {\boldsymbol F}^{\mu\nu} = 0</script><p><br></p><h3 id="规范场的运动方程与守恒律"><a href="#规范场的运动方程与守恒律" class="headerlink" title="规范场的运动方程与守恒律"></a>规范场的运动方程与守恒律</h3><p>有了拉格朗日密度，就能导出规范场的运动方程：</p><script type="math/tex; mode=display">\partial^\mu F_{\mu\nu}^i + g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} = - \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}</script><p>而物质场的运动方程，可以简单地将普通导数算符替换为协变导数算符而得到。</p><p>利用协变导数算符的伴随表示（即$\big[T_{\rm adj}^i\big]_{jk} = -{\rm i}f^j_{jk}$，也是规范场所属的表示），可以将规范场的运动方程写为</p><script type="math/tex; mode=display">D^\mu F_{\mu\nu}^i = -gj_\nu^i</script><p>其中</p><script type="math/tex; mode=display">gj_\nu^i = -{\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\nu\phi)}T^i\phi = \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}</script><p>是在整体内部对称性下得到的守恒流，称为物质流；其满足方程</p><script type="math/tex; mode=display">D^\mu j_\mu^i = 0 \Longleftrightarrow \partial^\mu j_\mu^i = -gf^i_{jk}A^{j,\mu}j_\mu^k</script><p>可见，<u>对于阿贝尔规范场，结构常数全为零，即上式右侧为零，使得在整体内部对称性下得到的守恒流仍然守恒。但是对于非阿贝尔规范场，$j_\mu^i$不再守恒。这主要是因为非阿贝尔规范场自身携带了相互作用荷，导致纯物质场部分的荷不再守恒；而阿贝尔规范场则不携带荷。</u></p><p><br></p><p>另一方面，直接将运动方程移项可得</p><script type="math/tex; mode=display">\partial^\mu F_{\mu\nu}^i = -gJ_\nu^i</script><p>其中</p><script type="math/tex; mode=display">\begin{aligned}gJ_\nu^i =& g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} + \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}\\=& g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} - {\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi)}T^i\phi\\=& -g\frac{\partial\mathscr L}{\partial(\partial^\mu A^{k,\nu})}f^i_{jk} A^{j,\mu} - {\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi)}T^i\phi\\=& -\frac{\partial\mathscr L}{\partial A^{i,\nu}}\end{aligned}</script><p>显然此时具有守恒律：</p><script type="math/tex; mode=display">\partial^\mu J_\mu^i = 0</script><p>以及相应的守恒荷</p><script type="math/tex; mode=display">Q_J^i = \int{\rm d}x^3\ J_0^i</script><p>但尽管存在守恒律，但<u>很明显$J_\mu^i$以及$Q_J^i$是依赖于规范选择的，即它们不是规范不变量；下一节将会说明，物理上不可能测量到非规范不变的量，因此这些$J_\mu^i$和$Q_J^i$是非物理的。</u>从而在这样的非阿贝尔规范理论之中，不再存在与非阿贝尔对称性相关的守恒律；不仅如此，也不存在类似于高斯定律的简单公式，规范场与物质场以高度复杂荷非线性的方式耦合在一起。</p><p>这暗示了规范不变性其实并不是一种“物理的”对称性：按照诺特定理，连续对称性应当产生守恒律，并且基于物理意义的要求，我们希望这样的守恒荷是可观测量。但是规范不变性并不能产生“物理的”守恒荷（即规范不变的，从而可观测的守恒荷），因此规范不变性并不是物理上真正的对称性。</p><p><br></p><h3 id="规范条件，规范不变性是对称性吗？"><a href="#规范条件，规范不变性是对称性吗？" class="headerlink" title="规范条件，规范不变性是对称性吗？"></a>规范条件，规范不变性是对称性吗？</h3><p>依照定义，由真实的对称性所联系的两个不同的$\mathscr L$，会给出相同的运动方程；换言之，若两个物理态分别由两个不同的$\mathscr L$所描述，并且两者之间存在真实的对称性，则它们是同一运动方程的解，只不过具有不同的初始条件/边界条件。</p><p>但是另一方面，由于规范变换是依赖$x$的，即规范变换是定域的，因此由规范变换相联系的两个解，可能具有相同的边条件；换句话说，若运动方程存在一个解，总可以通过局域的变换，在不改变初始条件/边界条件的情况下，将之变换为另一个解；因此在规范变换的意义下，运动方程+初始条件/边界条件不能唯一确定一个解，这些无法唯一确定的一类解，称为是由一类规范变换相联系。但是它们在物理上是不可区分的——物理上只能区分不同的运动方程，或者不同的初始条件/边界条件，否则将会被识别为同一个物理态——从而这些由规范变换相联系的解在物理上是等价的。</p><p>既然把不同的解看作一个物理态，那就说明规范变换并不是真正的对称性，只是理论”冗余”的一种体现——我们为了描述现实，构造的理论使用了过多的参数和变量，却又不得不把一些参数不同的解识别为同一个态。在这个精神下，任何物理可观测量都应该是规范不变的。</p><p>既然理论使用了过多的参数，那为了求出唯一的解，就要用一些条件来约束这些参数。这样的约束条件就是所谓<strong>规范条件</strong>，即人为地规定规范场$A_\mu^i$（或物质场$\phi$）满足一些限制（当然要符合规范场的规范变换性质），一般是由等式组来表示：</p><script type="math/tex; mode=display">f^i(A,\phi) = 0</script><p>完整规范条件的等式个数等于生成元的个数。</p><p>选定一组规范条件，就相当于选取了一种规范。由于真实的物理量是规范不变的，所以规范条件并不会影响对于可观测量的计算。这样，运动方程+初始条件/边界条件+规范条件，就能唯一确定一个解。这样的操作实际上是把运动方程的所有可能的解进行了划分等价类，每组在前述意义下不可区分的解（即可以由规范变换相联系的解）归为一个等价类，其中的代表元素就是满足规范条件的那个解。</p><p>因此一个好的规范条件应该要满足：</p><ol><li>每个等价类中都可以找到符合规范条件的解；即对于该类中任意的$A$和$\phi$，总存在一定的规范变换变为$A’$和$\phi’$，使其满足规范条件。</li><li>每个等价类中只有一个符合该规范条件，从而可以被运动方程+初始条件/边界条件唯一解出。</li><li>应当与运动方程相洽，即若由运动方程+初始条件/边界条件+规范条件在某时刻解出一个解，则其在任意时刻都满足规范条件。</li></ol><p><br></p><h1 id="对称性的自发破缺"><a href="#对称性的自发破缺" class="headerlink" title="对称性的自发破缺"></a>对称性的自发破缺</h1><h2 id="整体内部对称性的自发破缺，Goldstone定理"><a href="#整体内部对称性的自发破缺，Goldstone定理" class="headerlink" title="整体内部对称性的自发破缺，Goldstone定理"></a>整体内部对称性的自发破缺，Goldstone定理</h2><h2 id="定域规范不变性的自发破缺，Higgs机制"><a href="#定域规范不变性的自发破缺，Higgs机制" class="headerlink" title="定域规范不变性的自发破缺，Higgs机制"></a>定域规范不变性的自发破缺，Higgs机制</h2><h1 id="附录：微分几何，联络，曲率"><a href="#附录：微分几何，联络，曲率" class="headerlink" title="附录：微分几何，联络，曲率"></a>附录：微分几何，联络，曲率</h1>]]></content>
+    <content type="html"><![CDATA[<hr><blockquote><p><strong>Refrence</strong></p></blockquote><pre class="line-numbers language-none"><code class="language-none">M.E.Peskin &amp; D.V.Schroeder: An Introduction to Quantum Field TheoryM.D.Schwartz: Quantum Field Theory and the Standard ModelDavid Tong: Quantum Field TheoryS.Weinberg: The Quantum Theory of Field (Volume 1)刘川: 量子场论郑汉青：量子场论（上）高显：经典力学讲义老大中：变分法基础<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h1 id="内部对称性与规范变换"><a href="#内部对称性与规范变换" class="headerlink" title="内部对称性与规范变换"></a>内部对称性与规范变换</h1><p>本章考虑物质场的内部对称性，在这里“物质场”一般指有质量的标量场和旋量场，因为它们在内部对称变换下的行为几乎一致且同样简单。</p><h2 id="物质场的整体内部对称性"><a href="#物质场的整体内部对称性" class="headerlink" title="物质场的整体内部对称性"></a>物质场的整体内部对称性</h2><p>考虑场的内部对称变换：</p><script type="math/tex; mode=display">\phi_a(x)\to U(x)_{ab}\phi^b(x) = {\rm e}^{-{\rm i} g \alpha_i(x) T^i_{ab} }\phi^b(x)</script><p>其中用指标$a,b$等表示场的内部自由度，同时也是群作用的矩阵表示指标，以此强调记号存在作用的顺序；$g$是一个标度因子，只是为了方便看清各种场量在变换下的相对行为而设置的任意实数；$T^i$则是对称群在场量$\phi$所属的表示（对于物质场，就是标量表示和旋量表示）下的生成元。</p><p>若拉格朗日密度$\mathscr L=\mathscr L(\phi,\partial_\mu\phi)$在上述变换下不变，则称系统具有内部对称性。一般而言，参数$\alpha$、其所对应的群元、以及所对应的表示$U$都可以是$x$的函数，即在不同的时空点对场作不同的内部对称变换，这样的称之为局域变换或定域变换。</p><p>这里首先考虑较简单的情形，即$\alpha$是恒定参数的变换，称之为全局变换或整体变换。根据诺特定理，连续的内部对称性会导致守恒律。在较简单的情况下，上述整体内部对称变换的无穷小变换是</p><script type="math/tex; mode=display">\quad \phi_a(x) \to \phi_a(x) - {\rm i}g\alpha_iT^i_{ab} \phi^b(x)</script><p>相应的守恒流为</p><script type="math/tex; mode=display">j_\mu^i = -{\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi^a)}T^i_{ab}\phi^b</script><p>其中$T^i$是相应对称群的生成元，每个生成元都对应一个守恒流。以下各式省略物质场内部分量的指标。各个守恒荷为：</p><script type="math/tex; mode=display">Q^i = -{\rm i}g\int{\rm d}^3x\frac{\partial\mathscr L}{\partial(\partial^0\phi)}T^i\phi = -{\rm i}g\int{\rm d}^3x\ \pi T^i\phi</script><p>因此对于每个生成元$T^i$，存在一个守恒荷$Q^i$，$T^i$有时也称为荷矩阵。守恒荷与场变量存在内部空间中的正则泊松括号关系：</p><script type="math/tex; mode=display">\begin{aligned}\{Q^i,\phi\} &= {\rm i}gT^i\phi\\\{Q^i,\pi\} &= -{\rm i}g\pi T^i\end{aligned}</script><p>这一性质也表明了$Q^i$是与时间无关的量。若$\mathscr L$含有多个独立场变量，则守恒流、守恒荷就是这些场各自对应项之和。特别地，若$\mathscr L$在含有$\phi$同时也包含$\overline\phi$作为形式上的独立变量，则其相应也要进行整体变换。从$\phi$的变换可以得出$\overline\phi$的变换为：</p><script type="math/tex; mode=display">\phi \to U\phi = {\rm e}^{-{\rm i}g\alpha_i T^i} \phi\ ,\qquad \overline\phi\to \overline\phi U^{\dagger} = \overline\phi {\rm e}^{ {\rm i}g\alpha_i T^i}</script><p>对应的无穷小变换：</p><script type="math/tex; mode=display">\bar\delta\phi = -{\rm i}g\alpha_i T^i \phi\ ,\qquad \bar\delta\overline\phi = {\rm i}g\alpha_i \overline\phi T^i</script><p><br></p><p>物理上最常考虑内部对称性的是所谓物质场，即旋量场$\psi$。考虑旋量场$\psi_i$，设其带有的某内部指标$a$可取$n$个值，则其构成洛伦兹不变拉格朗日密度最常见的形式是</p><script type="math/tex; mode=display">\mathscr L = \sum_{a=1}^n \overline\psi_a({\rm i}\gamma_\mu\partial^\mu-m)\psi_a</script><p>即所谓自由旋量场，其包含动能项与质量项。可以看出，若要让这样的拉格朗日密度在形如$\psi\to \widetilde U\psi$，$\overline\psi\to\overline\psi \widetilde U^\dagger$的内部变换下不变（$\widetilde U$作用在内部空间上），需要满足$\widetilde U^\dagger \widetilde U=I$即$\widetilde U\in{\rm U}(n)$，此时也说该拉格朗日密度具有${\rm U}(n)$的整体内部对称性（这是复值场量的结果，若是实值场量则减少一个相位自由度，对称群就只是${\rm SU}(n)$）。由$\dim {\rm U}(n) = n^2$，因此这会产生$n^2$个守恒荷。</p><blockquote><p>这里重要的一点在于变换$\widetilde U$是整体的，即参数$\alpha$与时空坐标$x$无关，因此导数算符$\partial^\mu$才与变换群元$\widetilde U$或其生成元可交换。在之后的定域规范变换下，变换群元是时空坐标依赖的，因而不再可以与导数算符$\partial^\mu$交换，则自由场不再能够满足定域规范对称性。</p></blockquote><p>考虑到$\det \widetilde U={\rm e}^{-{\rm i}\theta}$，可令$\widetilde U=U U_1$，其中$U_1\in {\rm U}(1)$，这样$\det U = 1$因此$U\in{\rm SU(n)}$，这实际上是${\rm U}(n)$群的半直积分解：</p><script type="math/tex; mode=display">{\rm U}(n) = {\rm U}(1) \otimes_S {\rm SU}(n)</script><p>在$n&gt;1$时${\rm U}(n)$与${\rm SU}(n)$都是非阿贝尔群（非交换群），而${\rm U}(1)$是阿贝尔群。</p><p><br></p><p>关于${\rm U}(n)$中${\rm U}(1)$部分的对称性，可以考虑$n=1$的特殊情况，这当然也可以看作是实值场量的一个一维内部空间自由度，但更常用的观点是把这种情况看作是复值场量$\psi$的不考虑额外内部空间、而是纯相位的自由度，即形如$\mathscr L = \overline\psi({\rm i}\gamma_\mu\partial^\mu-m)\psi$的拉格朗日密度本身也满足一个整体对称性，也就是场量作为复值本身所具有的一个整体纯相位对称性：</p><script type="math/tex; mode=display">\phi \to {\rm e}^{-{\rm i}e\alpha} \phi\ ,\qquad \overline\phi\to \overline\phi {\rm e}^{ {\rm i}e\alpha}</script><p>（习惯上将${\rm U}(1)$对应的标度因子记为$e$）此时的对称群是${\rm U}(1)$，只有一个守恒流可取为：$j_\mu = -{\rm i}e\overline\psi \gamma_\mu\psi$；守恒荷为</p><script type="math/tex; mode=display">Q = -{\rm i}e\int{\rm d}^3x \overline\psi \gamma_0\psi = -{\rm i}e\int{\rm d}^3x \psi^\dagger (\gamma_0)^2\psi = -{\rm i}e\int{\rm d}^3x\ \psi^\dagger\psi</script><p>可见对于一般的${\rm U}(n)$整体对称性来说，其中${\rm U}(1)$的部分来自于复场量本身的相位自由度，即便不考虑额外的内部空间也存在；但是为与时空对称性相区别，仍将之称为内部对称性。这是一个阿贝尔整体对称性，复值场量相位会引起一个固有守恒荷。在量子理论中，我们将会看到物理上实际至多只能在差一个相位的程度确定量子态，这为引入${\rm U}(1)$内部对称性提供了充分的动机。</p><p><br></p><p>另一方面，剩余的对称性则是非阿贝尔的${\rm SU}(n)$对称性。由于$\dim SU(n) = n^2-1$，因此由非阿贝尔整体对称性可以得到$n^2-1$个守恒流：</p><script type="math/tex; mode=display">j_\mu^i = -{\rm i}g\overline\psi \gamma_\mu T^i\psi</script><p>以及相应守恒荷：</p><script type="math/tex; mode=display">Q^i = -{\rm i}g\int{\rm d}^3x \overline\psi\gamma_0 T^i\psi = -{\rm i}g\int{\rm d}^3x \psi^\dagger (\gamma_0)^2 T^i\psi = -{\rm i}g\int{\rm d}^3x\ \psi^\dagger T^i\psi</script><p>可见，这$n^2-1$个守恒荷一一对应于${\rm SU}(n)$的$n^2-1$个生成元，该群作用空间实际就是$n$维内部空间，效果是保内积不变（幺正性）并且除去了相位的自由度，因此这些守恒荷的具体性质取决于$n$维内部空间的自由度。考虑不同的内部空间，理论会出现不同的守恒荷；若不考虑内部自由度，也就不会出现这些守恒荷。</p><p><br></p><p>基于这些讨论，常常会将依赖于内部空间自由度的对称性${\rm SU}(n)$与依赖于复值场量相位的固有对称性${\rm U}(1)$分开讨论，谈及某些内部空间性质，只会讨论相应的${\rm SU}(n)$对称性。</p><p><br></p><p>前述讨论仅仅是基于旋量场的一个简单例子，在其他类型的场也存在类似的整体内部对称性，以及相应的守恒荷。例如具有$N$维内部空间的复标量场（略去其内部自由度指标）：</p><script type="math/tex; mode=display">\mathscr L = \sum_{a=1}^n \big[\partial_\mu\phi_a^\dagger\partial^\mu\phi_a-m^2\phi_a^\dagger\phi_a \big]</script><p>显然也具有${\rm U}(n)$整体对称性，其守恒流为$j_\mu^i = -{\rm i}g(\phi^\dagger T^i \partial_\mu\phi-\partial_\mu\phi^\dagger T^i\phi)$；它同样可以分为只与复值场量相位相关的${\rm U}(1)$对称性以及内部空间的${\rm SU}(n)$对称性。可见整体内部对称性及其守恒荷在场论中是十分普遍存在的。</p><p>需要强调的是，整体内部对称性虽然不如时空对称性那样直观，但它可以导致守恒荷这一物理实际可测量，因而是系统真正存在的对称性。</p><p><br></p><h2 id="物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）"><a href="#物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）" class="headerlink" title="物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）"></a>物质场的定域规范不变性（内部空间弯曲）（生成元对应于场的具体表示）</h2><h3 id="“定域内部对称性”存在吗"><a href="#“定域内部对称性”存在吗" class="headerlink" title="“定域内部对称性”存在吗"></a>“定域内部对称性”存在吗</h3><p>前面的讨论基于一个假设，即内部对称变换的参数$\alpha$与时空坐标$x$无关，但这在某些时候不能令人满意：例如一旦为某一时空点处的内部空间选取了一个确定的“值”，那么为确保内部对称性的成立，场在全时空的内部自由度便也必须随之确定；但我们总是希望所构建的场论是一个定域的理论，即在某一点处选择的内部状态不应立刻影响到全时空。这促使我们考虑更一般的一类变换，即是否有可能在如下依赖时空的变换下：</p><script type="math/tex; mode=display">\phi \to U(x)\phi = {\rm e}^{-{\rm i}g\alpha_i(x) T^i} \phi\ ,\qquad \overline\phi\to \overline\phi U^{\dagger}(x) = \overline\phi {\rm e}^{ {\rm i}g\alpha_i(x) T^i}</script><p>使得拉格朗日密度$\mathscr L$不变或只差一个边界项。这样的变换也就是定域内部变换。</p><p>很明显，对于自由场，例如自由旋量场$\mathscr L = \overline\psi({\rm i}\gamma_\mu\partial^\mu-m)\psi$，这样不变性的要求不能成立，直接原因在于普通导数算符$\partial_\mu$不能与之相洽，会产生额外的诸如$\partial_\mu \alpha(x)$的项；根本上来说，则是无法在这样的变换下比较不同点处的场量，如下文所述。</p><p><br></p><p>考虑间隔一定时空距离的两个点$x$、$y$，希望比较场$\phi$在它们处的值$\phi(x)$、$\phi(y)$的相对差异，比如如何定义$\phi(y)=\phi(x)$？又如如何计算$\phi(y)-\phi(x)$？这些问题涉及到在动能项的中如何恰当地定义场的普通导数$\partial_\mu$。</p><p>在整体内部变换的意义下，这个问题具有确定到仅差一个幺正变换的意义，即无论在何种参数$\alpha_i$所代表的整体变换下，</p><script type="math/tex; mode=display">\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i T^i}\phi(y)-{\rm e}^{-{\rm i}g\alpha_i T^i}\phi(x) = {\rm e}^{-{\rm i}g\alpha_i T^i}\big[\phi(y)-\phi(x)\big]</script><p>结果都只差一个幺正变换，因此对于$|\phi(y)-\phi(x)|$这类量，是存在确定的答案的，它<strong>与整体内部状态的具体选择无关，但可以在任一整体选择之下计算出来</strong>。这是对称性的普遍性质。</p><p>但若是考虑定域的内部变换，</p><script type="math/tex; mode=display">\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i(y) T^i}\phi(y)-{\rm e}^{-{\rm i}g\alpha_i(x) T^i}\phi(x)</script><p>即便是$|\phi(y)-\phi(x)|$也依赖于所选取的具体定域变换，也就是说需要事先为每个点单独选取一个独立的内部变换，而计算结果强烈地依赖于选取方案，不同的选择都会带来不一样的计算结果。尚且无法确定的比较不同点处的场量相对差异，那么导数算符$\partial_\mu$也就无从定义了。</p><p>由此可见，<strong>自由场事实上不存在所谓“定域内部对称性”</strong>。</p><p><br></p><h3 id="联络与协变导数"><a href="#联络与协变导数" class="headerlink" title="联络与协变导数"></a>联络与协变导数</h3><p>这样看，场论的定域性似乎与内部对称性不能兼容。但是微分几何提供了一种可能的方法来比较不同点处的场值。具体来说：引入一个辅助场$W(x,y)$来抵消内部空间选择的差异，它是一种依赖于两个时空点的所谓“双定域场”，也就是说，希望它在定域变换下的行为是</p><script type="math/tex; mode=display">W(x,t)\to {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W(x,y) {\rm e}^{ {\rm i}g\alpha_k(y) T^k}</script><p>那么就可以构造如下量：</p><script type="math/tex; mode=display">W(x,y)\phi(y)-\phi(x) \to {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W(x,y) \phi(y)-{\rm e}^{-{\rm i}g\alpha_k(x) T^k}\phi(x) = {\rm e}^{-{\rm i}g\alpha_i T^i}\big[W(x,y)\phi(y)-\phi(x)\big]</script><p>是可以在仅差一个幺正变换的意义下确定的。从而可以定义辅助场意义下的“导数算符”</p><script type="math/tex; mode=display">D_\mu\phi(x) = \lim_{\epsilon\to 0}\frac{W(x,x+\epsilon e^\mu)\phi(x+\epsilon e^\mu)-\phi(x)}{\epsilon}</script><p>于是这样的“导数算符”也可以在仅差一个幺正变换的意义下确定</p><script type="math/tex; mode=display">D_\mu\phi(x) \to {\rm e}^{-{\rm i}g\alpha_i T^i}D_\mu\phi(x)</script><p>由于它的变换规律与基本场自由度$\phi(x)$是相同的，因此称其为<strong>协变导数</strong>。剩下唯一的问题就是如何确定辅助场$W(x,y)$。</p><p><br></p><p>首先考虑$W(x,y)$的物理意义。定义这样的辅助场，是希望它能够尽量保持$\phi$在$y$点处原本的性质（例如内部空间状态），而将其“移动”到$x$点处并与$\phi(x)$做运算；但是微分几何的结果告诉我们，这样的移动结果是路径依赖的。所以在平直时空$W(x,y)$的作用实质就是<strong>（沿某条连接$x$、$y$的路径）平移</strong>，也叫做“平移子（parallel transporter）”。 详见本章附录。</p><p>自然希望$W(x,x)=1$；若将其在$x=y$附近展开则有：</p><script type="math/tex; mode=display">W(x,x+\epsilon) = 1 - {\rm i}g\epsilon^\mu A^i_\mu(x) T_i + \mathcal O(\epsilon^2)</script><p>此处$T_i$是变换群生成元，这组矢量场$A^i_\mu(x)$就是“无穷近”辅助场的线性部分，也是$W(x,y)$对第二个变量的（普通）导数，并且是一组定域的场量。这在微分几何上称为<strong>联络</strong>，用于比较不同点处具有不同局域坐标系的场。</p><p>有了无穷近两点之间的辅助场，构造两个有限距离点之间的辅助场自然可以积分地表达（下面用${\boldsymbol A} = T_i A^i$）：</p><script type="math/tex; mode=display">W_{\mathcal C}(x,y) = P\left[ \exp\left({\rm i}g\int_y^x {\boldsymbol A}_\mu(z) {\rm d}z^\mu\right) \right]</script><p>为便于计算，可将路径$\mathcal C$参数化为$z^\mu(s)$，$0\leq s \leq 1$，其中$z^\mu(0)=y^\mu$且$z^\mu(1)=x^\mu$，这样就能写成</p><script type="math/tex; mode=display">W_{\mathcal C}(x,y) = P\left[ \exp\left({\rm i}g\int_0^1 {\boldsymbol A}_\mu(z(s) ) \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} {\rm d}s \right)\right]</script><p>其中$P$是路径编序算符，因为非阿贝尔定域变换下不同点处的群生成元不对易。其准确定义是如下的无穷级数：</p><script type="math/tex; mode=display">\begin{aligned}W_{\mathcal C} =& P\left[ \exp\left({\rm i}g\int_0^1 {\boldsymbol A}_\mu(z(s) ) \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} {\rm d}s \right)\right]\\=&1+{\rm i}g\int_0^1 {\rm d}s \frac{ {\rm d}z^\mu(s)}{ {\rm d}s} T_i A^i_\mu(z(s) ) \\&+\frac{({\rm i}g)^2}{2}\int_0^1 {\rm d}s_1\int_0^1 {\rm d}s_2 \frac{ {\rm d}z^\mu(s_1)}{ {\rm d}s_1} \frac{ {\rm d}z^\nu(s_2)}{ {\rm d}s_2} A^i_\mu(z(s_1) ) A^j_\nu(z(s_2) ) \big[T_i T_j \theta(s_1-s_2) + T_j T_i \theta(s_2-s_1)\big]\\&+ \cdots\end{aligned}</script><p>这样构造的辅助场形式称为“<strong>Wilson线</strong>”，是一个路径$\mathcal C$依赖的、非定域的量，$\mathcal C$是从$y$到$x$的任一连续路径，并且也是满足最初要求的定域变换律的。在理论构造中，很多时候用与其等价的、路径无关的、定域的场量$A^i_\mu(x)$显然更方便。</p><p><br></p><h3 id="辅助场-A-i-mu-x-的定域变换"><a href="#辅助场-A-i-mu-x-的定域变换" class="headerlink" title="辅助场$A^i_\mu(x)$的定域变换"></a>辅助场$A^i_\mu(x)$的定域变换</h3><p>利用定域辅助场$A^i_\mu(x)$，可以等价的表示协变导数$D_\mu\phi(x)$，即</p><script type="math/tex; mode=display">D_\mu\phi(x) = \partial_\mu\phi(x)-{\rm i}g{\boldsymbol A}_\mu(x)\phi(x) = \big[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)\big]\phi(x)</script><p>定域变换下辅助场也满足一定的变换律：</p><script type="math/tex; mode=display">\big[\partial_\mu-{\rm i}g{\boldsymbol A}'_\mu(x)\big] \big[{\rm e}^{-{\rm i}g\alpha_j(x) T^j} \phi(x)\big] = {\rm e}^{-{\rm i}g\alpha_k(x) T^k} \cdot \big[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)\big]\phi(x)</script><p>这里${\boldsymbol A}’_\mu(x)$就是变换后的辅助场；可以得到</p><script type="math/tex; mode=display">\partial_\mu {\rm e}^{-{\rm i}g\alpha_i(x) T^i} - {\rm i}g{\boldsymbol A}'_\mu(x) {\rm e}^{-{\rm i}g\alpha_j(x) T^j} = -{\rm i}g {\rm e}^{-{\rm i}g\alpha_k(x) T^k} {\boldsymbol A}_\mu(x)</script><p>因此得到变换律为</p><script type="math/tex; mode=display">\begin{aligned}{\boldsymbol A}_\mu(x) \to &{\rm e}^{-{\rm i}g\alpha_i(x) T^i} {\boldsymbol A}_\mu(x) {\rm e}^{ {\rm i}g\alpha_j(x) T^j} - \frac{\rm i}{g}(\partial_\mu {\rm e}^{-{\rm i}g\alpha_k(x) T^k}) {\rm e}^{ {\rm i}g\alpha_l(x) T^l}\\=&{\rm e}^{-{\rm i}g\alpha_i(x) T^i} {\boldsymbol A}_\mu(x) {\rm e}^{ {\rm i}g\alpha_j(x) T^j} + \frac{\rm i}{g} {\rm e}^{-{\rm i}g\alpha_k(x) T^k}\ \partial_\mu\ {\rm e}^{ {\rm i}g\alpha_l(x) T^l}\\=&U {\boldsymbol A}_\mu(x) U^{-1} + \frac{\rm i}{g} U \partial_\mu U^{-1}\end{aligned}</script><p>这里$U$表示变换群元素。第二项的存在导致这是一种非齐次变换。从这个形式可以看出，<strong>定域变换下${\boldsymbol A}_\mu(x)$的变换分为两部分，即其本身按照伴随表示变换，加上由于变换是定域的而产生的非齐次附加项，附加项形如$\partial_\mu$按照伴随表示的变换。</strong></p><blockquote><p>注意，这里提到“伴随表示”，相当于默认了${\boldsymbol A}_\mu(x)$是变换群对应李 代数的元素；这一点会在后面说明。</p></blockquote><p>将之写成更熟悉的形式，在无穷小变换下（即精确到$\mathcal O(\alpha)$阶）：</p><script type="math/tex; mode=display">\begin{aligned}\bar\delta {\boldsymbol A}_\mu(x) \to & - \frac{1}{g}\partial_\mu \alpha^i(x) + {\rm i}(\alpha^j {\boldsymbol A}_\mu T_j- \alpha^k T_k {\boldsymbol A}_\mu)\\=& - \frac{1}{g}\partial_\mu \alpha^i(x) + {\rm i}\alpha^j \big[{\boldsymbol A}_\mu, T_j \big]_{\rm Lie}\end{aligned}</script><p>这里$[<em>,</em>]_{\rm Lie}$是李括号，也就是生成元的简单对易子。它们满足：</p><script type="math/tex; mode=display">[T_i,T_j] = {\rm i}f_{ij}^k T_k</script><p>其中反对称的量$f_{ij}^k=-f_{ji}^k$是该李代数的结构常数。因此最终得到辅助场分量的无穷小定域变换</p><script type="math/tex; mode=display">\bar\delta A_\mu^i(x) = - \frac{1}{g}\partial_\mu \alpha^i(x) + f^i_{jk}\alpha^j A^k_\mu(x)</script><p>从这个结果可以看出三点：</p><ol><li>场$A^i_\mu(x)$的定域变换只与结构常数$f_{ij}^k$和参数$\alpha(x)$有关，而与场$\phi$所属的具体表示（标量场，旋量场，……）无关。</li><li>由于阿贝尔群的结构常数全为零，因此第二项只在非阿贝尔的变换时才会出现；特别地，即便不是无穷小变换，定域阿贝尔变换也会产生形如前两项变换的辅助场，即阿贝尔情形下不要求$\alpha(x)$无穷小。</li><li>第一项只在定域变换时才会出现；若是整体变换，则$A^i_\mu(x)$的变换就按照伴随表示变换。</li><li>根据前两点，整体阿贝尔变换下，场$A^i_\mu(x)$不变。</li></ol><p><br></p><p>到目前为止已经看到，自由场不存在所谓“定域内部对称性”；但是总可以通过一定的方式来改写拉格朗日密度：</p><script type="math/tex; mode=display">\mathscr L(\psi,D_\mu\psi) \equiv \mathscr L(\psi,[\partial_\mu-{\rm i}g{\boldsymbol A}_\mu(x)]\psi) \equiv \mathscr L(\psi,\partial_\mu\psi,A) \equiv \mathscr L_0 + \mathscr L_I</script><p>使之在一定的定域变换下保持不变，而其代价就是重定义普通导数$\partial_\mu$为协变导数$D_\mu$，相当于引入了作为辅助场的$A^i_\mu(x)$。</p><p>同时，可以看到在改写后的理论中，势必引入了物质场与规范场的耦合项：</p><script type="math/tex; mode=display">\mathscr L_I = -{\rm i}g \frac{\partial\mathscr L}{\partial(\partial^\mu\phi^a)} T_i A_\mu^i(x) \phi</script><p>例如在旋量场中，这一项就是</p><script type="math/tex; mode=display">\mathscr L_I = g \overline\psi\gamma_\mu T_i A_\mu^i(x) \psi</script><p>这表明在规范场论中，一定存在物质场与规范场的相互作用。并且这一耦合项的强弱总是由因子$g$来标度，因此我们一般把$g$称为规范场与物质的耦合因子。此时的拉格朗日密度可以写为</p><script type="math/tex; mode=display">\mathscr L_\phi = \mathscr L_0 + \mathscr L_I</script><blockquote><p>应当指出，标度因子$g$的绝对值在纯理论中是完全没有意义的；完全可以通过场$A_\mu^i$的重定义将其吸收掉；但是当理论与实际对应时，可以用这一因子来表征场之间耦合的强度。例如，当存在不同物质场时，由于同一对称性所引入的规范场视作只有一个，那么不同物质场便可具有不同的耦合因子$g$来表征它们与同一规范场的不同耦合强度。因而$g$也获得了实际意义，即表示物质场所携带的基本相互作用荷的大小。</p></blockquote><p><br></p><p>定域的辅助场$A^i_\mu(x)$的引入，使得理论可以在不同的时空点上独立地选取内部空间状态。这样的效果是，存在某些物理量，它<strong>与内部状态的具体定域选择无关，但可以在任一定域选择之下计算出来</strong>。——这样的性质在经典电动力学中已经遇到过了，在处理不同问题时可以对电磁势选取不同的规范（库伦规范、朗道规范、洛伦兹规范……）来方便计算，但是得到的计算结果却与所选取的规范无关。</p><p>因此，在这里我们也把“定域内部变换”称为“<strong>规范变换</strong>”，相应的一些物理量若在规范变换下不变，则称其为规范不变的或规范无关的；为了保持这种不变性所引入辅助场称为<strong>规范场</strong>。事实上这些辅助场除了$A^i_\mu(x)$还有其他表达形式（例如Wilson线），为区别于后面的场强张量，一般将$A^i_\mu(x)$称为<strong>规范势</strong>。</p><blockquote><p>要很审慎地使用“规范对称性”这种称呼；我统一称之为“规范不变性”。因为它与整体对称性是理论本身所具有的不同，理论本身不存在所谓“规范对称性”。具体可见“规范不变性是对称性吗？”一节的说明。</p></blockquote><p><br></p><h3 id="场强张量"><a href="#场强张量" class="headerlink" title="场强张量"></a>场强张量</h3><p>到目前为止，理论中的规范势$A^i_\mu(x)$没有动能，也没有相互作用，似乎没有独立的物理意义，只是代表了内部状态自由选择的定域性。如果确实如此，那么应当存在一种特定的定域变换，可以将其从理论中消去，即存在变换$U$使得</p><script type="math/tex; mode=display">{\boldsymbol A}'_\mu(x) = U {\boldsymbol A}_\mu(x) U^{-1} - \frac{\rm i}{g}(\partial_\mu U) U^{-1} = 0</script><p>显然，若存在某个规范变换$U$，使其能够被完全从理论中消去的规范势，一定也能够被该变换表为</p><script type="math/tex; mode=display">{\boldsymbol A}_\mu(x) = \frac{\rm i}{g} U^{-1}(\partial_\mu U)</script><p>称之为纯规范条件，满足这以条件的规范势就确实不具有独立的动力学。现实中确实有物理模型中的规范场不是动力学场。</p><p>但是不满足该条件（只需要满足定域变换规律）的规范势仍可以被引入到理论中并使理论保持定域规范不变；如果假设规范场可以是动力学场，则可以大大扩展理论的内涵。因此一个想法就是将规范场视作独立的动力学场引入理论，这就必须要引入由$A^i_\mu(x)$及其普通导数（注意尽管引入了协变导数，但表征场动能项的仍然是普通导数）构造的一些非平庸的规范不变项。理想的情况是，我们希望这样的项由某种与$A^i_\mu(x)$有关的场量来构造，当其为零时表示此时的规范场是纯规范；当其不为零时则可以表征规范场的动力学。</p><p>在目前我们已经得到的各种量之中，包含规范势$A^i_\mu(x)$且规范变换性质比较好的，只有Wilson线和协变导数算符；它们恰恰对应了我们构造规范场动能项的两个途径：积分地构造，即利用Wilson圈；或者局域地构造，即利用协变导数。 </p><p><br></p><h4 id="积分角度构造：Wilson圈"><a href="#积分角度构造：Wilson圈" class="headerlink" title="积分角度构造：Wilson圈"></a>积分角度构造：Wilson圈</h4><p>首先从Wilson线出发考虑。考虑到$W(x,y)$依赖于其两端点处的规范变换，则可以考虑取闭合回路（取端点为$x$）构成Wilson圈$W_{\mathcal C}^{\rm loop}$：</p><script type="math/tex; mode=display">W_{\mathcal C}^{\rm loop}(x,x) = P\left[ \exp\left({\rm i}g\oint_{\mathcal C} {\boldsymbol A}_\mu(z){\rm d}z^\mu\right) \right]</script><p>这里$s=0$和$s=1$表示同一点$x$。根据Stokes定理，这样的圈积分应当可以写成某个场的通量积分：</p><script type="math/tex; mode=display">\begin{aligned}W_{\mathcal C}^{\rm loop}(x,x) =& \exp\left(\frac{ {\rm i}g}{2}\int_{\Sigma} {\rm d}\sigma^{\mu\nu} {\boldsymbol F}_{\mu\nu}\right)\\=& 1 + \frac{ {\rm i}g}{2}\int_{\Sigma} {\rm d}\sigma^{\mu\nu} {\boldsymbol F}_{\mu\nu} + \cdots\end{aligned}</script><p>为获得定域的量，尽量将环路$\mathcal C$收缩至点$x$附近的无穷小回路；此时略去无穷小面积$\sigma$的高阶小量，得到</p><script type="math/tex; mode=display">W_{\mathcal C}^{\rm loop}(x) = 1 + \frac{ {\rm i}g}{2} {\boldsymbol F}_{\mu\nu}(x) \int_{\Sigma(x)} {\rm d}\sigma^{\mu\nu}</script><p>其中该无穷小Wilson圈面积的系数${\boldsymbol F}_{\mu\nu}(x)$是${\boldsymbol A}_\mu(x)$的外微分，不难看出规范场的非平凡信息都包含在其中。可以利用微分几何的方法得到${\boldsymbol F}_{\mu\nu}(x)$的表达式。但同时也可从物理上获得启发：一个简单的例子是所谓小方格，即考虑由$x^\mu$，$x^\mu+\epsilon\zeta^\mu$，$x^\mu+\epsilon\zeta^\mu+\epsilon\xi^\mu$，$x^\mu+\epsilon\xi^\mu$四点直线相连构成的闭合回路，其中矢量$\zeta^\mu$和$\xi^\mu$不平行，$\epsilon$是无穷小量。根据辅助场的物理意义，</p><script type="math/tex; mode=display">\begin{aligned}W_\Box =& W(x,x+\epsilon\zeta) W(x+\epsilon\zeta,x+\epsilon\zeta+\epsilon\xi) W(x+\epsilon\zeta+\epsilon\xi,x+\epsilon\xi) W(x+\epsilon\xi,x)\\=& \Big[1 - {\rm i}g\epsilon{\boldsymbol A}_\mu(x+\frac{\epsilon}{2}\zeta)\zeta^\mu -\frac{g^2}{2} \epsilon^2 \zeta^\mu\zeta^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\zeta) + \cdots\Big]\\&\times \Big[1 - {\rm i}g\epsilon{\boldsymbol A}_\nu(x+\epsilon\zeta+\frac{\epsilon}{2}\xi)\xi^\nu -\frac{g^2}{2} \epsilon^2 \xi^\mu\xi^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\epsilon\zeta+\frac{\epsilon}{2}\xi) + \cdots \Big]\\&\times \Big[1 + {\rm i}g\epsilon{\boldsymbol A}_\rho(x+\frac{\epsilon}{2}\zeta+\epsilon\xi)\zeta^\rho -\frac{g^2}{2} \epsilon^2 \zeta^\mu\zeta^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\zeta+\epsilon\xi) + \cdots \Big]\\&\times \Big[1 + {\rm i}g\epsilon{\boldsymbol A}_\sigma(x+\frac{\epsilon}{2}\xi)\xi^\sigma -\frac{g^2}{2} \epsilon^2 \xi^\mu\xi^\nu \big({\boldsymbol A}_\mu {\boldsymbol A}_\nu + {\boldsymbol A}_\nu {\boldsymbol A}_\mu\big)(x+\frac{\epsilon}{2}\xi) + \cdots \Big]\\\end{aligned}</script><p>注意这里是在小方格各边中点处展开。保留到$\mathcal O(\epsilon^2)$阶，并与之前的$W_{\mathcal C}^{\rm loop}(x)$表达式相比，就得到</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu} = \partial_\mu {\boldsymbol A}_\nu - \partial_\nu {\boldsymbol A}_\mu - {\rm i}g [{\boldsymbol A}_\mu,{\boldsymbol A}_\nu]_{\rm Lie}</script><p>最后一项是因非阿贝尔规范场的非对易性而产生的。这一定义可以推广到推广到不限于小方格的普遍情况；其中同样有${\boldsymbol F}_{\mu\nu} = F^i_{\mu\nu} T_i$，其分量为</p><script type="math/tex; mode=display">F^i_{\mu\nu} = \partial_\mu A_\nu^i - \partial_\nu A_\mu^i + gf^i_{jk} A_\mu^j A_\nu^k</script><p>它就是将Wilson圈定域化得到的结果。在阿贝尔规范场的情况下，这就退化为</p><script type="math/tex; mode=display">F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu</script><p><br></p><p>回顾之前对纯规范条件的讨论，我们希望这个新的场量${\boldsymbol F}_{\mu\nu}(x)$能反映规范场是否具有实际的动力学。考虑到当规范势满足纯规范条件时：</p><script type="math/tex; mode=display">{\boldsymbol A}_\mu(x) = \frac{\rm i}{g} U^{-1}(\partial_\mu U)</script><p>再利用$\partial_\mu U^{-1} = -U^{-1} (\partial_\mu U) U^{-1}$，代入式中得到</p><script type="math/tex; mode=display">\begin{aligned}{\boldsymbol F}_{\mu\nu} =& \partial_\mu {\boldsymbol A}_\nu - \partial_\nu {\boldsymbol A}_\mu - {\rm i}g [{\boldsymbol A}_\mu,{\boldsymbol A}_\nu]_{\rm Lie}\\=& \frac{\rm i}{g}\Big\{ \partial_\mu(U^{-1}\partial_\nu U) - \partial_\nu(U^{-1}\partial_\mu U) + \big[U^{-1}(\partial_\mu U),U^{-1}(\partial_\nu U) \big]_{\rm Lie} \Big\}\\=& 0\end{aligned}</script><p>可见，只有当${\boldsymbol F}_{\mu\nu}(x) \equiv 0$处处为零时，规范场就是纯规范；若其不处处为零，则意味着具有独立的动力学。因此${\boldsymbol F}_{\mu\nu}$的值其实反映了作为独立动力学场的规范场，所以一般称其为<strong>场强张量</strong>。</p><p><br></p><h4 id="场强张量的性质"><a href="#场强张量的性质" class="headerlink" title="场强张量的性质"></a>场强张量的性质</h4><p>最后还剩余的目标，就是得到${\boldsymbol F}_{\mu\nu}$的规范变换性质，再由其构造出规范不变、洛伦兹不变的规范场动能项。首先的想法就是验证Wilson圈$W_{\mathcal C}^{\rm loop}$是否是规范不变的；若其是规范不变量，显然作为其定域化的结果，场强张量${\boldsymbol F}_{\mu\nu}$也是规范不变的。</p><p>在规范变换下，</p><script type="math/tex; mode=display">W_{\mathcal C}^{\rm loop}(x,x) \to U(x) W_{\mathcal C}^{\rm loop}(x,x) U^{-1}(x) = {\rm e}^{-{\rm i}g\alpha_j(x) T^j} W_{\mathcal C}^{\rm loop}(x,x) {\rm e}^{ {\rm i}g\alpha_k(x) T^k}</script><p>不难验证，规范场场强张量也服从相同的变换，即<strong>规范场强按照伴随表示变换</strong>：</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu}(x) \to U(x) {\boldsymbol F}_{\mu\nu}(x) U^{-1}(x) = {\rm e}^{-{\rm i}g\alpha_j(x) T^j} {\boldsymbol F}_{\mu\nu}(x) {\rm e}^{ {\rm i}g\alpha_k(x) T^k}</script><p>可以看到，相比于规范势${\boldsymbol A}_\mu$的变换，场强张量${\boldsymbol F}_{\mu\nu}$的变换不出现非齐次项，因此比规范势更方便构造规范不变量。</p><p>对于阿贝尔规范变换，$W_{\mathcal C}^{\rm loop}$显然是规范不变量，阿贝尔规范场的${\boldsymbol F}_{\mu\nu}$本身就是规范不变的。但对于非阿贝尔规范变换，则${\boldsymbol F}_{\mu\nu} = F_{\mu\nu}^i T_i$就不是规范不变量，而是按照伴随表示进行变换。其本质原因还在于内部自由度，即$T_i$的非对易性。因此要想得到由场强张量构造的规范不变量，需要分析其内部空间分量的无穷小变换，这可从$A_\mu^i$的无穷小规范变换直接得到：</p><script type="math/tex; mode=display">\bar\delta F_{\mu\nu}^i = f^i_{jk}\alpha^j(\partial_\mu A_\nu^k - \partial_\nu A_\mu^k) + g(f^i_{mk}f^k_{jn} + f^i_{kn}f^k_{jm})\alpha^j A_\mu^m A_\nu^n</script><p> 再利用结构常数所满足的雅可比恒等式</p><script type="math/tex; mode=display">f_{jn}^kf_{mk}^i - f_{mn}^kf_{jk}^i = - f_{jm}^kf_{kn}^i</script><p>即可得到场强张量的内部分量在无穷小规范变换下具有简单的变换形式</p><script type="math/tex; mode=display">\begin{aligned}\bar\delta F_{\mu\nu}^i =& f^i_{jk}\alpha^j( \partial_\mu A_\nu^k - \partial_\nu A_\mu^k + gf^k_{mn}A_\mu^m A_\nu^n )\\=& f^i_{jk}\alpha^jF_{\mu\nu}^k\end{aligned}</script><p>即其内部分量并不依赖于$T_i$；所以可以想象，用分量$F_{\mu\nu}^i$而不是${\boldsymbol F}_{\mu\nu}$是构造规范不变量更方便的形式。不难验证，</p><script type="math/tex; mode=display">\mathscr L_G = -\frac{1}{4} \sum_{i=1}^n F_{\mu\nu}^iF^{i,\mu\nu} = -\frac{1}{4}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i + gf^i_{jk} A_\mu^j A_\nu^k)^2</script><p>是规范不变、洛伦兹不变的；对规范场强内部分量$F_{\mu\nu}^i$的指标的求和，对应于Wilson圈求迹：</p><script type="math/tex; mode=display">{\rm tr}\left[W_{\mathcal C}^{\rm loop}\right] = {\rm tr}\left\{ P\left[ \exp\left({\rm i}g\oint_{\mathcal C} {\boldsymbol A}_\mu(z){\rm d}z^\mu\right) \right] \right\}</script><p>它是一个重要的规范不变量。</p><p><br></p><p>现在关注前面得到的</p><script type="math/tex; mode=display">\mathscr L_G = - \frac{1}{4} \sum_{i=1}^n F_{\mu\nu}^iF^{i,\mu\nu}</script><p>有几点需要说明：</p><ol><li>阿贝尔规范场是规范不变量，非阿贝尔规范场则按照伴随表示变换，不是规范不变量；但无论何种情况，$(F_{\mu\nu})^2$（这里平方包含着对内部指标求和）都是规范不变量；</li><li>无论是否是阿贝尔的，$\mathscr L_G$都包含规范势$A_\mu^i$的一阶偏导数，因此可作为规范场的动能项</li><li>非阿贝尔规范场的场强$F_{\mu\nu}^i$存在非线性项$gf^i_{jk} A_\mu^j A_\nu^k$，这导致在拉格朗日密度中会出现规范势$A_\mu^i$本身的三次、四次项，这被解释为<strong>规范场的自相互作用</strong>；这只会在非阿贝尔规范场发生。在将标度因子$g$解释为相互作用荷时，会看到非阿贝尔规范场本身就带有荷$g$，这与阿贝尔规范场是完全不同的。</li></ol><p>这里给出以规范势表达的拉格朗日密度的具体形式：</p><script type="math/tex; mode=display">\begin{aligned}\mathcal L_G =& -\frac{1}{4}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i)^2\\&-\frac{g}{2}(\partial_\mu A_\nu^i - \partial_\nu A_\mu^i)f_{ijk}A_\mu^jA_\nu^k\\&-\frac{g^2}{4}f^i_{jk}f_{ij'k'}A_\mu^j A_\nu^k A_\mu^{j'} A_\nu^{k'}\end{aligned}</script><p>第二项、第三项就分别是规范场的所谓三线、四线自相互作用。这些性质表明，定域规范变换与自由运动不兼容。这不仅仅意味着之前就已经得到的结论，即自由物质场不满足所谓“定域内部对称性”；另一个角度上，如果是在非阿贝尔的规范变换下，即便引入了与之耦合的规范场${\boldsymbol F}_{\mu\nu}$，不仅是物质场，就连规范场本身也因存在自相互作用而不可能是自由的。</p><p>加入这一项后，完整的规范不变拉格朗日密度为：</p><script type="math/tex; mode=display">\mathscr L = \mathscr L_0 + \mathscr L_I + \mathscr L_G</script><p>分别代表物质场动能项荷质量项、物质场与规范场相互作用项，以及规范场的动能（与相互作用）项。</p><p><br></p><h4 id="规范场的质量？"><a href="#规范场的质量？" class="headerlink" title="规范场的质量？"></a>规范场的质量？</h4><p>得到了规范场的动能项，下一个问题是，能否可以简单地按照一般自由矢量场的规律，在规范场的拉格朗日密度之中为其添加一个质量项，也就是自由矢量场的Proca作用量：</p><script type="math/tex; mode=display">\mathscr L_P = -\frac{1}{4} \sum_{i=1}^n F_{\mu\nu}^iF^{i,\mu\nu} -\frac{1}{2}m^2 \sum_{i=1}^n A_\mu^i A^{i,\mu}</script><p>答案是不可以，因为与场强张量不同，规范势$A_\mu^i$的规范变换不是简单的伴随表示变换，这样会破坏其定域规范不变性。但这并不意味着规范场不能获得质量，只不过不是以如此简单的方式。</p><p><br></p><h4 id="局域角度构造：协变导数算符，比安基恒等式"><a href="#局域角度构造：协变导数算符，比安基恒等式" class="headerlink" title="局域角度构造：协变导数算符，比安基恒等式"></a>局域角度构造：协变导数算符，比安基恒等式</h4><p>最后，回顾本小节最开始的分析。之前都是利用Wilson线来积分地构造规范不变量；另一条路则是用协变导数来局域地构造。不难看出，之前得到的场强张量表达式也可以直接由协变导数来表达为：</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu} = D_\mu {\boldsymbol A}_\nu - D_\nu {\boldsymbol A}_\mu</script><p>要注意的是协变导数算符中也有规范势的存在， 因此上式的每项都是在同一点处的协变导数算符作用在相同点处的规范势。阿贝尔规范场情况下同样退化为</p><script type="math/tex; mode=display">F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu</script><p>正因为协变导数算符中也含有规范势，这启发我们是否可以考虑协变导数算符的对易子$\big[D_\mu,D_\nu\big]$。这实际上也符合之前对Wilson线几何意义的初步探讨：既然Wilson线的作用是将场量沿路径”平移”，那么Wilson圈就是沿某路径绕回原处。与绕行之前相比，绕一周所产生的影响就是附加一个规范场${\boldsymbol F}_{\mu\nu}$；而在微分几何中，衡量之中差异的，恰恰就是协变导数算符的对易子，被称为<strong>曲率张量</strong>。可见，${\boldsymbol F}_{\mu\nu}$的存在，实际上表征了内部空间的某种弯曲程度。</p><p>不难验证：</p><script type="math/tex; mode=display">{\boldsymbol F}_{\mu\nu} = \frac{\rm i}{g}\big[D_\mu,D_\nu\big]</script><p>特别地，协变导数算符满足雅可比恒等式：</p><script type="math/tex; mode=display">\big[D_\mu,\big[D_\nu,D_\sigma\big]\big] + \big[D_\nu,\big[D_\sigma,D_\mu\big]\big] + \big[D_\sigma,\big[D_\mu,D_\nu\big]\big] = 0</script><p>即得到关于场强张量的一个重要恒等式：比安基恒等式 </p><script type="math/tex; mode=display">\big[D_\mu,{\boldsymbol F}_{\nu\sigma}\big] + \big[D_\nu,{\boldsymbol F}_{\sigma\mu}\big] + \big[D_\sigma,{\boldsymbol F}_{\mu\nu}\big] = 0</script><p>或者写为</p><script type="math/tex; mode=display">D_\mu {\boldsymbol F}_{\nu\sigma} + D_\nu {\boldsymbol F}_{\sigma\mu} + D_\sigma {\boldsymbol F}_{\mu\nu} = 0</script><p>引入对偶场强：</p><script type="math/tex; mode=display">\widetilde {\boldsymbol F}^{\mu\nu} = -\frac{\rm i}{2} \epsilon^{\mu\nu\rho\sigma} {\boldsymbol F}_{\mu\nu}</script><p>则比安基恒等式可写为</p><script type="math/tex; mode=display">D_\mu \widetilde {\boldsymbol F}^{\mu\nu} = 0</script><p><br></p><h3 id="规范场的运动方程与守恒律"><a href="#规范场的运动方程与守恒律" class="headerlink" title="规范场的运动方程与守恒律"></a>规范场的运动方程与守恒律</h3><p>有了拉格朗日密度，就能导出规范场的运动方程：</p><script type="math/tex; mode=display">\partial^\mu F_{\mu\nu}^i + g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} = - \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}</script><p>而物质场的运动方程，可以简单地将普通导数算符替换为协变导数算符而得到。</p><p>利用协变导数算符的伴随表示（即$\big[T_{\rm adj}^i\big]_{jk} = -{\rm i}f^j_{jk}$，也是规范场所属的表示），可以将规范场的运动方程写为</p><script type="math/tex; mode=display">D^\mu F_{\mu\nu}^i = -gj_\nu^i</script><p>其中</p><script type="math/tex; mode=display">gj_\nu^i = -{\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\nu\phi)}T^i\phi = \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}</script><p>是在整体内部对称性下得到的守恒流，称为物质流；其满足方程</p><script type="math/tex; mode=display">D^\mu j_\mu^i = 0 \Longleftrightarrow \partial^\mu j_\mu^i = -gf^i_{jk}A^{j,\mu}j_\mu^k</script><p>可见，<u>对于阿贝尔规范场，结构常数全为零，即上式右侧为零，使得在整体内部对称性下得到的守恒流仍然守恒。但是对于非阿贝尔规范场，$j_\mu^i$不再守恒。这主要是因为非阿贝尔规范场自身携带了相互作用荷，导致纯物质场部分的荷不再守恒；而阿贝尔规范场则不携带荷。</u></p><p><br></p><p>另一方面，直接将运动方程移项可得</p><script type="math/tex; mode=display">\partial^\mu F_{\mu\nu}^i = -gJ_\nu^i</script><p>其中</p><script type="math/tex; mode=display">\begin{aligned}gJ_\nu^i =& g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} + \frac{\partial\mathscr L_I}{\partial A^{i,\nu}}\\=& g f^i_{jk} A^{j,\mu}F^k_{\mu\nu} - {\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi)}T^i\phi\\=& -g\frac{\partial\mathscr L}{\partial(\partial^\mu A^{k,\nu})}f^i_{jk} A^{j,\mu} - {\rm i}g\frac{\partial\mathscr L}{\partial(\partial^\mu\phi)}T^i\phi\\=& -\frac{\partial\mathscr L}{\partial A^{i,\nu}}\end{aligned}</script><p>显然此时具有守恒律：</p><script type="math/tex; mode=display">\partial^\mu J_\mu^i = 0</script><p>以及相应的守恒荷</p><script type="math/tex; mode=display">Q_J^i = \int{\rm d}^3x\ J_0^i</script><p>但尽管存在守恒律，但<u>很明显$J_\mu^i$以及$Q_J^i$是依赖于规范选择的，即它们不是规范不变量；下一节将会说明，物理上不可能测量到非规范不变的量，因此这些$J_\mu^i$和$Q_J^i$是非物理的。</u>从而在这样的非阿贝尔规范理论之中，不再存在与非阿贝尔对称性相关的守恒律；不仅如此，也不存在类似于高斯定律的简单公式，规范场与物质场以高度复杂荷非线性的方式耦合在一起。</p><p>这暗示了规范不变性其实并不是一种“物理的”对称性：按照诺特定理，连续对称性应当产生守恒律，并且基于物理意义的要求，我们希望这样的守恒荷是可观测量。但是规范不变性并不能产生“物理的”守恒荷（即规范不变的，从而可观测的守恒荷），因此规范不变性并不是物理上真正的对称性。</p><p><br></p><h3 id="规范条件，规范不变性是对称性吗？"><a href="#规范条件，规范不变性是对称性吗？" class="headerlink" title="规范条件，规范不变性是对称性吗？"></a>规范条件，规范不变性是对称性吗？</h3><p>依照定义，由真实的对称性所联系的两个不同的$\mathscr L$，会给出相同的运动方程；换言之，若两个物理态分别由两个不同的$\mathscr L$所描述，并且两者之间存在真实的对称性，则它们是同一运动方程的解，只不过具有不同的初始条件/边界条件。</p><p>但是另一方面，由于规范变换是依赖$x$的，即规范变换是定域的，因此由规范变换相联系的两个解，可能具有相同的边条件；换句话说，若运动方程存在一个解，总可以通过局域的变换，在不改变初始条件/边界条件的情况下，将之变换为另一个解；因此在规范变换的意义下，运动方程+初始条件/边界条件不能唯一确定一个解，这些无法唯一确定的一类解，称为是由一类规范变换相联系。但是它们在物理上是不可区分的——物理上只能区分不同的运动方程，或者不同的初始条件/边界条件，否则将会被识别为同一个物理态——从而这些由规范变换相联系的解在物理上是等价的。</p><p>既然把不同的解看作一个物理态，那就说明规范变换并不是真正的对称性，只是理论”冗余”的一种体现——我们为了描述现实，构造的理论使用了过多的参数和变量，却又不得不把一些参数不同的解识别为同一个态。在这个精神下，任何物理可观测量都应该是规范不变的。</p><p>既然理论使用了过多的参数，那为了求出唯一的解，就要用一些条件来约束这些参数。这样的约束条件就是所谓<strong>规范条件</strong>，即人为地规定规范场$A_\mu^i$（或物质场$\phi$）满足一些限制（当然要符合规范场的规范变换性质），一般是由等式组来表示：</p><script type="math/tex; mode=display">f^i(A,\phi) = 0</script><p>完整规范条件的等式个数等于规范变换群的维数（即其生成元的个数），这样才能完全消去因规范冗余带来的解的不确定度。</p><p>选定一组规范条件，就相当于选取了一种规范。由于真实的物理量是规范不变的，所以规范条件并不会影响对于可观测量的计算。这样，运动方程+初始条件/边界条件+规范条件，就能唯一确定一个解。这样的操作实际上是把运动方程的所有可能的解进行了划分等价类，每组在前述意义下不可区分的解（即可以由规范变换相联系的解）归为一个等价类，其中的代表元素就是满足规范条件的那个解。</p><p>因此一个好的规范条件应该要满足：</p><ol><li>每个等价类中都可以找到符合规范条件的解；即对于该类中任意的$A$和$\phi$，总存在一定的规范变换变为$A’$和$\phi’$，使其满足规范条件。</li><li>每个等价类中只有一个符合该规范条件，从而可以被运动方程+初始条件/边界条件唯一解出。</li><li>应当与运动方程相洽，即若由运动方程+初始条件/边界条件+规范条件在某时刻解出一个解，则其在任意时刻都满足规范条件。</li></ol><p><br></p><h1 id="对称性的自发破缺"><a href="#对称性的自发破缺" class="headerlink" title="对称性的自发破缺"></a>对称性的自发破缺</h1><p>若一个拉格朗日密度$\mathscr L$具有（或近似具有）某种对称性，而在其上加入某一不具备该对称性的项$\mathscr L_1$，那么整体$\mathscr L+\mathscr L_1$将不再具有此种对称性。此时就说$\mathscr L_1$破坏了原有的对称性。例如传统的强同位旋${\rm SU}(2)$模型认为，质子和中子具有强同位旋对称性，属于${\rm SU}(2)$的同一表示；但是电磁作用项将之破坏，导致了质子和中子的质量差。</p><p>另一方面，<strong>在场论中</strong>，即便系统的拉格朗日密度本身是严格服从对称性的，但在实际的体系中也会以另一种方式使其无法体现。此时拉格朗日密度虽然不含破坏对称性的项，但是作为运动方程的解的基态可能是对称性退化的。这通常发生在拉格朗日密度允许的基态有多个的情况下（称为“多重基态”，或者基态简并），但是系统实际可以实现的基态只是其中之一。由于物理基态的稳定性，即不会自发地变为另一个基态，并且在微扰场论的意义下，场的激发只能是有限能量的，意味着只是局域的扰动（而非对全体自由度进行变换从而得到另一个基态），因此原有的对称性在实际的系统中不被显示出来。这种情况是系统自身造成的（而非由于附加项的引起），因此就叫做<strong>对称性的自发破缺</strong>。</p><h2 id="离散对称性的自发破缺"><a href="#离散对称性的自发破缺" class="headerlink" title="离散对称性的自发破缺"></a>离散对称性的自发破缺</h2><p>首先考虑一个离散对称性的自发破缺。以实标量场的$\phi^4$模型为例</p><script type="math/tex; mode=display">\mathscr L= \frac{1}{2}(\partial_\mu\phi)^2 - \frac{1}{2}m^2\phi^2 - \frac{\lambda}{4}\phi^4 = \frac{1}{2}(\partial_\mu\phi)^2 - V(\phi)</script><p>显然其具有$\phi\lrarr -\phi$的离散对称性，可由$Z_2$群来描述，因此也叫$Z_2$对称性。在经典理论中，一般把使得势能项$V(\phi)$取最小值的$\phi$称为系统的<strong>（经典）基态</strong>，在涉及高能物理的场论中有时也叫<strong>（经典）真空</strong>。为使该理论存在真空，参数$\lambda&gt;0$。同时，场（在量子化后的粒子）的质量平方则是$V(\phi)$对$\phi$的二阶导数在真空的取值：$\left.\frac{ {\rm d}^2V(\phi)}{ {\rm d}\phi^2}\right|_{\phi = \phi_0}$</p><p>通常而言，质量项前的系数$m^2$为正（即$m^2&gt;0$，这也是为什么要将其写成平方的形式），这样的理论的真空是唯一的，即$\phi_0 = 0$，是系统唯一可能的势能最小状态；因此该场（量子化后得到的粒子）的质量也就是$m$。</p><p>但是在更一般的理论中该项系数可以为负，当然此时由于真空将不再是$\phi = 0$，该系数的物理意义也就不再是质量平方了。不妨改写为</p><script type="math/tex; mode=display">\mathscr L= \frac{1}{2}(\partial_\mu\phi)^2 + \frac{1}{2}\mu^2\phi^2 - \frac{\lambda}{4}\phi^4</script><p>此时的系统真空将会变为两个：</p><script type="math/tex; mode=display">\phi_0 = \pm\frac{\mu}{\sqrt\lambda} \equiv \pm v</script><p>常数$v$也叫做场$\phi$的（零阶）<strong>真空期望值</strong>。真空期望值不为零的现象，称作相应场的<strong>真空凝聚</strong>。此时发生了系统真空的简并，但实际系统的真空总是只可能取其中一个。不妨考虑两个真空之间的势垒，由于两个的真空能量相同，而从势能曲线上可以看看出，进行$\phi\lrarr -\phi$要越过的最低势垒就是$\phi=0$处的势垒，因此两个真空间势垒为：</p><script type="math/tex; mode=display">\int{\rm d}^3x \left[\frac{\lambda}{4}v^4 - \frac{1}{2}\mu^2v^2 \right] = \infty</script><p>这本质上是因为场论体系含有无穷多自由度，而联系两个真空的变换$\phi\lrarr -\phi$不是局域的扰动，因此要进行真空的变换就要对每个自由度施加变换。因此在其中任一真空上的有限能量激发都不可能越过势垒变为另一个真空上的激发。所以在一个确定的体系中，任何激发都只会在其中一个真空上实现，不妨取真空为$\phi_0 = +v$，则该场论中任何真实场量都可以表示为</p><script type="math/tex; mode=display">\phi(x) = \phi_0(x) + \sigma(x) = v + \sigma(x)</script><p>此时若再围绕原本的场$\phi(x)$进行后续的量子化手续，就会得到虚数质量$\sqrt{-\mu^2}$的错误结论。正确的量子化应当围绕实际观测的场$\sigma(x) = \phi(x) - v$进行，因此不妨以$\sigma(x)$为场的基本自由度来对拉格朗日密度进行改写，扔掉常数项得到</p><script type="math/tex; mode=display">\mathscr L = \frac{1}{2}(\partial_\mu\sigma)^2 - \frac{1}{2}(2\mu^2)\sigma^2 - \sqrt\lambda\mu\sigma^3 - \frac{\lambda}{4}\sigma^4</script><p>这样的拉格朗日密度描述的场$\sigma(x)$具有质量为$\sqrt{2}\mu$，以及$\sigma^3$和$\sigma^4$的自相互作用；并且在这样的形式下，原本的$Z_2$对称性不再表现出来（这体现为势能项的三个系数仅依赖于两个参数，从而减少了一个自由度）。当然，对称性并不是真的破坏掉了，新的拉格朗日密度仍然具有$\sigma\to -\sigma-2v$变换下的对称性，只不过变为了非线性的形式，因此也把对称性自发破缺称为隐藏的对称性。</p><p>由此可见，<strong>当场具有非零的真空期望值，在对称性下会出现多重真空（真空简并），那么真实系统就会出现对称性的自发破缺。</strong>这就是对称性自发破缺的一个最简单的例子。</p><p><br></p><h2 id="整体内部对称性的自发破缺，Goldstone定理"><a href="#整体内部对称性的自发破缺，Goldstone定理" class="headerlink" title="整体内部对称性的自发破缺，Goldstone定理"></a>整体内部对称性的自发破缺，Goldstone定理</h2><p>前面作为例子的对称性是$Z_2$的离散对称性；真正会产生重要结果的是连续对称性的自发破缺。这里考虑上一节的模型的一个简单推广，即所谓<strong>线性$\sigma$模型</strong>：</p><script type="math/tex; mode=display">\mathscr L= \frac{1}{2}(\partial_\mu\phi^a)^2 + \frac{1}{2}\mu^2(\phi^a)^2 - \frac{\lambda}{4}[(\phi^a)^2]^2</script><p>相当于是为实标量场引入了内部自由度，每个$(\phi^a)^2$都对指标$a$求和，$a=1,\cdots,n$。这样显然具有${\rm O}(n)$的整体内部对称性，代表着在$\phi$场各个分量所在$n$维空间转动变换下的不变性。该体系的真空在：</p><script type="math/tex; mode=display">(\phi^a_0)^2 = \frac{\mu^2}{\lambda} \equiv v^2</script><p>这说明场具有非零的真空期望值，由于该条件仅仅限定了其模长，因此存在多重真空，这些真空在几何上连续分布于$n$维空间中的一个$n-1$维超球面。真实的物理真空只能是其上的某一点$\phi_0$，总可以重新规定相位（相当于通过一个${\rm O}(n)$变换）令其为$\phi_0 = v$，于是任一真实的场量都可表为</p><script type="math/tex; mode=display">\phi(x) = (v + \sigma(x))\exp\left[{ {\rm i}\frac{\pi^k(x) }{v }T_k }\right]\ ,\qquad k=1,\cdots,n-1</script><p>其中将$\sigma(x)$称为真空的径向激发，势能项$V(\phi)$在该方向上的二阶方向导数具有正值；其余$n-1$个$\pi^k(x)$则称为周向激发，体现为相位上的$n-1$个自由度，势能项的二阶方向导数为零；$T_k$就是表征这些正交的相位方向的生成元（具体含义见后面的讨论）。</p><p>利用各个$T_k$之间相互正交的关系，可以用矩阵表示更清晰地展现出这些激发场的关系：若在内部空间设定基矢量，则无论真实的物理真空落在哪一点上，总可以通过一个${\rm O}(n)$变换（相当于重新选取一组基）使之表达为</p><script type="math/tex; mode=display">\phi_0 = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ v \end{bmatrix}\quad</script><p>由于${\rm i}T_k \begin{bmatrix} 0 \\ \vdots \\ 0 \\ \vdots \\ v \end{bmatrix} = \begin{bmatrix} 0 \\ \vdots \\ v \\ \vdots \\ 0 \end{bmatrix}$，于是在精确到激发场的一阶微扰意义下，任一真实场量都可表为：</p><script type="math/tex; mode=display">\phi(x) = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ v + \sigma(x) \end{bmatrix} + {\rm i}\frac{\pi^k(x) }{v }T_k \begin{bmatrix} 0 \\ \vdots \\ 0 \\ v \end{bmatrix} = \begin{bmatrix} \pi^1(x) \\ \vdots \\ \pi^{n-1}(x) \\ v + \sigma(x) \end{bmatrix}</script><p>可用$\sigma(x)$和$n-1$个$\pi^k(x)$​将拉格朗日密度表达为</p><script type="math/tex; mode=display">\begin{aligned}\mathscr L =& \frac{1}{2}(\partial_\mu \sigma)^2 - \frac{1}{2}(2\mu^2)\sigma^2 + \frac{1}{2}(\partial_\mu \pi^k)^2 \\&-\sqrt\lambda \mu \sigma \Big[\sigma^2 + (\pi^k)^2\Big] - \frac{\lambda}{4}\Big[\sigma^2 + (\pi^k)^2\Big]^2 + {\rm higher\ order\ terms}\end{aligned}</script><p>这里自发破缺掉了原本的${\rm O}(n)$对称性，且激发场$\sigma(x)$具有质量$\sqrt2\mu$，这与之前的例子都是一样的。但是与离散对称性不同的是，连续对称性由于具有了周向的自由度，因此其破缺后会在周向上产生$n-1$个零质量的场分量$\pi^k(x)$；并且这些$\pi^k(x)$会服从一个剩余的对称性，即原来的${\rm O}(n)$并未完全破缺，而是剩余一个未被破缺的子群${\rm O}(n-1)$。完整的理论中，除了$\sigma(x)$的自相互作用，这些$\pi^k(x)$也有自相互作用，并且$\pi^k(x)$还与$\sigma(x)$存在耦合。 </p><p>破缺后的剩余${\rm O}(n-1)$对称性具体表现为$\pi^k\to \pi^k + v\theta$下的整体内部对称性；其存在相应守恒流为</p><script type="math/tex; mode=display">j_\mu^k = v\partial_\mu \pi^k</script><p>${\rm O}(n)$具有$n(n-1)/2$个生成元，每个生成元$T_{ij}$表示在$n$维空间的第$i$和第$j$个方向张成的平面内转动；而${\rm O}(n-1)$只有$(n-1)(n-2)/2$个生成元，少了的$n-1$个生成元在本例中可以取为第$n$个方向与其他$n-1$个方向张成的平面内的转动$T_{ni}$，也就是上面的$T_k$。</p><p>在连续对称性自发破缺的理论中出现的周向模$\pi^k(x)$和径向模$\sigma(x)$具有非常不同的性质。周向模的相互作用模式完全由系统原本对称性部分破缺后剩余的对称性来决定，而径向模则依赖于具体的拉格朗日密度形式，并且在新的剩余对称性下是不变的。</p><p><br></p><p>零质量模$\pi^k(x)$的出现这一结果，被总结为了Goldstone定理：</p><blockquote><p><strong>Goldstone定理</strong></p><p><strong>在相对论性的定域场论中，整体连续对称性的自发破缺，一定会产生零质量的粒子，称为Nambu-Goldstone粒子或Goldstone粒子。并且对每个被破缺的对称性，都有一个Goldstone粒子。</strong></p></blockquote><p>在该陈述中，对称性的计数是从对称群的维数（生成元的个数）角度来说的，例如在之前的线性$\sigma$模型模型中，破缺前后对称群的维数降低了$n-1$，于是就说破缺掉的对称性有$n-1$个，并且产生了$n-1$个零质量的Goldstone粒子。数学角度来说，若原来的对称群$G$在破缺后的最大未破缺子群为$H$，那么会产生的Goldstone粒子数等于$G/H$的维数。</p><p>在经典标量场水平可以简单地证明这一定理：考虑一般的标量场$\phi$理论，含有若干场分量$\phi^a$，并将其拉格朗日密度按照是否依赖于标量场$\phi$的导数项$\partial_\mu\phi$而区分出势能项$V(\phi)$：</p><script type="math/tex; mode=display">\mathscr L = (\ {\rm (kinetic)\ terms\ with\ derivatives}) - V(\phi)</script><p>则该理论的真空$\phi_0$指的是其每个场分量同时使得势能项取最小值的常数场：</p><script type="math/tex; mode=display">\left.\frac{\partial V(\phi)}{\partial\phi^a}\right|_{\phi^a(x) = \phi_0^a} = 0\ ,\qquad \left.\frac{\partial^2 V(\phi)}{(\partial\phi^a)^2}\right|_{\phi^a(x) = \phi_0^a} \geq 0</script><p>这样的真空可能有多个；将势能项在任一真空附近展开：</p><script type="math/tex; mode=display">V(\phi) = V(\phi_0) + \frac{1}{2}(\phi^a-\phi_0^a)(\phi^b-\phi_0^b) \left(\frac{\partial^2 V(\phi)}{\partial\phi^a\partial\phi^b}\right)_{\phi_0} +\cdots</script><p>其中二阶项的系数矩阵：</p><script type="math/tex; mode=display">\left(\frac{\partial^2 V(\phi)}{\partial\phi^a\partial\phi^b}\right)_{\phi_0} \equiv M^2_{ab}</script><p>是对称矩阵，<strong>质量矩阵的本征值给出本征矢对应的场的质量平方</strong>；并且根据$\phi_0$为最小值点的条件（二阶导数非负）可知，这些本征值非负。</p><p>只要说明破缺掉的对称性会给出其零本征值，即可证明Goldstone定理。考虑该标量场理论存在的对称性，由对称群$G$描述，具有$r_G$个生成元$T_i$，$i=1,\cdots,r_G$：</p><script type="math/tex; mode=display">\phi_a \to \exp(-{\rm i}\sum_{i=1}^{r_G}\alpha_i T^i_{ab})\phi_0^b</script><p>那么在无穷小对称变换下：</p><script type="math/tex; mode=display">\bar\delta\phi_a(x) = -{\rm i}\sum_{i=1}^{r_G}\alpha_iT^i_{ab}\phi^b(x)</script><p>势能项应当不变，即</p><script type="math/tex; mode=display">\bar\delta V(\phi) = \frac{\partial V(\phi)}{\partial\phi^a} \bar\delta\phi^a(x) = -{\rm i}\sum_{i=1}^{r_G}\frac{\partial V(\phi)}{\partial\phi^a}\alpha_iT^i_{ab}\phi^b(x) = 0</script><p>对该式再进行一次求导，并将式子在真空$\phi_0$处取值得到得到</p><script type="math/tex; mode=display">\sum_{i=1}^{r_G}\left(\frac{\partial^2 V(\phi)}{\partial\phi^c\partial\phi^a}\right)_{\phi_0}T^i_{ab}\phi^b_0 + \sum_{i=1}^{r_G}\left(\frac{\partial V(\phi)}{\partial\phi^a}\right)_{\phi_0} T^i_{ab}\delta_{bc} = \sum_{i=1}^{r_G}M_{ca}^2 T^i_{ab} \phi^b_0 = 0</script><p>设该对称性自发破缺，场具有非零的真空期望值$\phi_0\neq 0$；又设对称群$G$破缺后剩余的未破缺的最大子群是$H$，其生成元不妨取为$G$生成元的前$r_H$个：$T_i$，$i=1,\cdots,r_H$。根据前面的讨论，真空$\phi_0$应当在$H$下保持不变，即</p><script type="math/tex; mode=display">\exp(-{\rm i}\sum_{i=1}^{r_H}\alpha_i T^i_{ab})\phi_0^b = \phi_0^b</script><p>意味着在无穷小变换下，$T^i_{ab}\phi_0^b = 0$，$i=1,\cdots,r_H$。结合前式$\sum_{i=1}^{r_G}M_{ca}^2 T^i_{ab} \phi^b_0 = 0$以及$M^2$本征值的非负性，就可得到</p><script type="math/tex; mode=display">M^2 T^i \phi_0 = 0\ ,\qquad i=r_H+1,\cdots,r_G</script><p>这就说明了对于破缺掉的$r_G-r_H$个对称性，质量矩阵有相同个数的本征值为零，相应的本征矢分别是$T^i\phi_0$。由于已经假设$H$是未破缺的最大子群，这可以说明这$r_G-r_H$个本征矢$T^i\phi_0$相互正交，由此就给出了$r_G-r_H$个零质量的Goldstone粒子。</p><p><br></p><h2 id="定域规范不变性的自发破缺，Higgs机制"><a href="#定域规范不变性的自发破缺，Higgs机制" class="headerlink" title="定域规范不变性的自发破缺，Higgs机制"></a>定域规范不变性的自发破缺，Higgs机制</h2><h1 id="附录：微分几何，联络，曲率"><a href="#附录：微分几何，联络，曲率" class="headerlink" title="附录：微分几何，联络，曲率"></a>附录：微分几何，联络，曲率</h1>]]></content>
     
     
     <summary type="html">Yang-Mills场论；规范变换与规范场；规范群及其李代数；微分几何与纤维丛理论</summary>
@@ -48,216 +48,6 @@
     <category term="纤维丛" scheme="https://papaya-z.github.io/tags/%E7%BA%A4%E7%BB%B4%E4%B8%9B/"/>
     
     <category term="微分几何" scheme="https://papaya-z.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cohen量子力学Chap.7笔记</title>
-    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-7.html"/>
-    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-7.html</id>
-    <published>2022-11-04T04:47:55.000Z</published>
-    <updated>2022-11-04T05:21:12.191Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.7笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen7.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;Cohen量子力学Chap.7笔记&lt;/p&gt;
-&lt;hr&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen7.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cohen量子力学Chap.6笔记</title>
-    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-6.html"/>
-    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-6.html</id>
-    <published>2022-11-04T04:47:14.000Z</published>
-    <updated>2022-11-04T05:21:04.718Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.6笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen6.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;Cohen量子力学Chap.6笔记&lt;/p&gt;
-&lt;hr&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen6.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cohen量子力学Chap.5笔记</title>
-    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-5.html"/>
-    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-5.html</id>
-    <published>2022-11-04T04:46:34.000Z</published>
-    <updated>2022-11-04T05:20:57.908Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.5笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen5.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;Cohen量子力学Chap.5笔记&lt;/p&gt;
-&lt;hr&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen5.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cohen量子力学Chap.4笔记</title>
-    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-4.html"/>
-    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-4.html</id>
-    <published>2022-11-04T04:45:50.000Z</published>
-    <updated>2022-11-04T05:20:51.537Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.4笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen4.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;Cohen量子力学Chap.4笔记&lt;/p&gt;
-&lt;hr&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen4.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cohen量子力学Chap.3笔记</title>
-    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-3.html"/>
-    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-3.html</id>
-    <published>2022-11-04T04:45:10.000Z</published>
-    <updated>2022-11-04T05:20:43.835Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.3笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen3.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;Cohen量子力学Chap.3笔记&lt;/p&gt;
-&lt;hr&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen3.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cohen量子力学Chap.2笔记</title>
-    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-2.html"/>
-    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-2.html</id>
-    <published>2022-11-04T04:43:51.000Z</published>
-    <updated>2022-11-04T05:20:37.577Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.2笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen2.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;Cohen量子力学Chap.2笔记&lt;/p&gt;
-&lt;hr&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen2.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cohen量子力学Chap.1笔记</title>
-    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-1.html"/>
-    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-1.html</id>
-    <published>2022-11-04T04:37:49.000Z</published>
-    <updated>2022-11-04T05:20:26.476Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.1笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;Cohen量子力学Chap.1笔记&lt;/p&gt;
-&lt;hr&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen1.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
-      
-    
-    
-    
-    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
-    
-    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
-    
     
   </entry>
   
@@ -500,6 +290,216 @@ M.E.Peskin &amp;amp; D.V.Sc</summary>
       
     
     
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.7笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-7.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-7.html</id>
+    <published>2020-07-26T01:09:55.000Z</published>
+    <updated>2022-11-28T02:23:29.731Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.7笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen7.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.7笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen7.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.6笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-6.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-6.html</id>
+    <published>2020-07-26T01:00:14.000Z</published>
+    <updated>2022-11-28T02:22:57.971Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.6笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen6.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.6笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen6.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.5笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-5.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-5.html</id>
+    <published>2020-07-26T00:59:34.000Z</published>
+    <updated>2022-11-28T02:22:31.384Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.5笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen5.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.5笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen5.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.4笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-4.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-4.html</id>
+    <published>2020-07-26T00:58:50.000Z</published>
+    <updated>2022-11-28T02:22:02.257Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.4笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen4.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.4笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen4.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.3笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-3.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-3.html</id>
+    <published>2020-07-24T13:05:10.000Z</published>
+    <updated>2022-11-28T02:15:50.962Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.3笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen3.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.3笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen3.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.2笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-2.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-2.html</id>
+    <published>2020-07-24T13:03:51.000Z</published>
+    <updated>2022-11-28T02:15:11.609Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.2笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen2.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.2笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen2.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cohen量子力学Chap.1笔记</title>
+    <link href="https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-1.html"/>
+    <id>https://papaya-z.github.io/post/archived/Cohen/QM-Cohen-1.html</id>
+    <published>2020-07-24T13:01:49.000Z</published>
+    <updated>2022-11-28T02:14:41.966Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>Cohen量子力学Chap.1笔记</p><hr><div class="row">    <embed src="/pdf/archived/Cohen/Cohen1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;Cohen量子力学Chap.1笔记&lt;/p&gt;
+&lt;hr&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;/pdf/archived/Cohen/Cohen1.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;appl</summary>
+      
+    
+    
+    
+    <category term="归档" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/"/>
+    
+    <category term="QM-Cohen" scheme="https://papaya-z.github.io/categories/%E5%BD%92%E6%A1%A3/QM-Cohen/"/>
     
     
   </entry>
