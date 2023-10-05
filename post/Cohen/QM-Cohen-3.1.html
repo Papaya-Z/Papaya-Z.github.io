@@ -1,0 +1,742 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Cohen量子力学Chap.3-补充材料笔记 | Papaya's 词驿</title><meta name="keywords" content="量子力学"><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Cohen量子力学Chap.3-补充材料笔记  E.密度算符到目前为止关于测量和演化的讨论都是基于这样一个前提，即假设我们已经明确知道物理系统的初态，它可由希尔伯特中的一个确定的态矢量$|\psi \rangle$所完全描述。 但实际情况下我们对物理系统的状态往往知道地不够确切，而是仅仅知道态的统计分布，例如自然光源中发出光子的偏振态。因此有必要通过引入统计学方法，在理论描述中加入这样不完备知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cohen量子力学Chap.3-补充材料笔记">
+<meta property="og:url" content="https://papaya-z.github.io/post/Cohen/QM-Cohen-3.1.html">
+<meta property="og:site_name" content="Papaya&#39;s 词驿">
+<meta property="og:description" content="Cohen量子力学Chap.3-补充材料笔记  E.密度算符到目前为止关于测量和演化的讨论都是基于这样一个前提，即假设我们已经明确知道物理系统的初态，它可由希尔伯特中的一个确定的态矢量$|\psi \rangle$所完全描述。 但实际情况下我们对物理系统的状态往往知道地不够确切，而是仅仅知道态的统计分布，例如自然光源中发出光子的偏振态。因此有必要通过引入统计学方法，在理论描述中加入这样不完备知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-09-23T08:24:13.000Z">
+<meta property="article:modified_time" content="2023-10-05T15:53:13.175Z">
+<meta property="article:author" content="Papaya Z">
+<meta property="article:tag" content="量子力学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Cohen/QM-Cohen-3.1"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Cohen量子力学Chap.3-补充材料笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-05 23:53:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Papaya's 词驿</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cohen量子力学Chap.3-补充材料笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-23T08:24:13.000Z" title="发表于 2023-09-23 16:24:13">2023-09-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-05T15:53:13.175Z" title="更新于 2023-10-05 23:53:13">2023-10-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/QM-Cohen/">QM-Cohen</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">12.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>46分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cohen量子力学Chap.3-补充材料笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<p>Cohen量子力学Chap.3-补充材料笔记</p>
+<hr>
+<h1 id="E-密度算符"><a href="#E-密度算符" class="headerlink" title="E.密度算符"></a>E.密度算符</h1><p>到目前为止关于测量和演化的讨论都是基于这样一个前提，即假设我们已经明确知道物理系统的初态，它可由希尔伯特中的一个确定的态矢量$|\psi \rangle$所完全描述。</p>
+<p>但实际情况下我们对物理系统的状态往往知道地不够确切，而是仅仅知道态的统计分布，例如自然光源中发出光子的偏振态。因此有必要通过引入统计学方法，在理论描述中加入这样不完备知识的影响。可以期望的是，这样得到的处理方法将有望把量子理论应用于统计物理系统。</p>
+<h2 id="态的统计混合"><a href="#态的统计混合" class="headerlink" title="态的统计混合"></a>态的统计混合</h2><p>一般而言对于体系知识的不完备，都会归结于概率性描述，即我们不能明确知道物理系统处于哪一个态，而仅仅知道它可能处于的一系列态$|\psi_1\rangle,\ |\psi_2\rangle,\ \dots$，并且我们知道它的统计分布，即物理系统处于$|\psi_1\rangle$的概率为$p_1$，处于$|\psi_2\rangle$的概率为$p_2$，且</p>
+<script type="math/tex; mode=display">
+\sum_k p_k = 1</script><p>此时，就称我们所处理的对象是$|\psi_1\rangle,\ |\psi_2\rangle,\ \dots$分别以$p_1,p_2,\dots$所组成的<strong>统计混合</strong>或<strong>统计系综</strong>。</p>
+<p>类似这样的由于对系统所知不完全而引入的概率性描述，在经典力学中也曾经做过。它并不来源于量子力学本身独有的性质，也与量子力学在测量过程中所涉及的（我称之为）”量子概率性“完全不同；但将会看到，为了在量子力学中引入这种（我称之为）“经典概率性”，迫使我们选择一种与之前完全不同的量子理论框架来进行描述。</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li><p>要将“态的统计混合”与“态的线性叠加”明确区分。在之前的讨论中，曾经出现过若干态的“叠加态”：</p>
+<script type="math/tex; mode=display">
+|\psi\rangle = \sum_i c_i|\psi_i\rangle</script><p>但它所表达的仍是一个确定的态矢，只不过在某些情况下，若可将诸$|\psi_i\rangle$取为某观察算符的本征矢，那么在对该可观测量进行测量之后，物理系统将会以$p_i=c_i^<em> c_i = |c_i|^2$的概率处于本征态$|\psi_i\rangle$处。<br>正如在Chap.3笔记第5.1节所讨论的那样，对于“态的线性叠加”的情况，其概率结果中通常会出现形如$c_k^</em> c_h$这样的交叉乘积，即叠加项之间的干涉效应，而在“态的统计混合”中是不会出现的。这是两者的一个重要差别。</p>
+</li>
+<li><p>在“态的统计混合”的描述下，理论中将会出现至少“两种”概率：其一是由于我们对系统初态所知不完全而导致的，即前述的”经典概率性“；其二是在测量的过程中，量子力学要求我们只能得到概率性的结果，即前述的、也是一直以来在讨论的”量子概率性“。在态的统计混合情况下，对任意系综进行的测量其最终的结果，一定是两种概率的共同作用。</p>
+</li>
+<li><p>一般而言参与统计混合的各个态$|\psi_1\rangle,\ |\psi_2\rangle,\ \dots$不一定是相互正交的。不过在下面的讨论中，将会取它们为归一化的。</p>
+</li>
+</ol>
+<p>正是因为在态叠加情况下干涉项的存在，保证了我们不可能用任何单独的”叠加态“——或者说一个”平均态矢量“来对统计混合系统进行描述，因此传统上利用态矢量对物理系统的描述在统计混合情况下是失效的。看来要想实现对态统计混合的描述，只好使用先分别计算各个可能态下的物理预言、再分别以概率权重对其求和这种不甚方便的办法。</p>
+<p>一个想法是，正如在统计学和统计物理中引入了与概率相关的矩阵，在量子力学中是否可以用一个”平均算符“来实现这种对统计混合的描述？</p>
+<h2 id="纯态：密度算符的引入"><a href="#纯态：密度算符的引入" class="headerlink" title="纯态：密度算符的引入"></a>纯态：密度算符的引入</h2><p>首先考虑一种简单的情况，即一直以来所讨论的，物理系统确切地只处于一个态$|\psi_k\rangle$上，在这里我们称之为在该态的概率为$p_k=1$，而其他任何态的概率均为$0$。将这种已经充分讨论过的简单情况在这里称为”<strong>纯态</strong>“，相应地，态的统计混合系综则称之为”<strong>混态</strong>“。如果在纯态中找到一种不同于传统态矢量的新描述方法，那么或许可以将之推广到对混态的更一般的描述上。</p>
+<p>回顾在纯态情况下，我们总是取态空间的一组基$\{|u_n\rangle\}$，并将任意态矢量在其中展开：</p>
+<script type="math/tex; mode=display">
+|\psi(t)\rangle = \sum_i  |u_n\rangle \langle u_n |\psi(t)\rangle = \sum_i c_n(t) |u_n\rangle</script><p>其归一化条件即为$\sum_n |c_n(t)|^2=1$。在该态上对可观测量$A$的测量期望为：</p>
+<script type="math/tex; mode=display">
+\langle A \rangle(t) = \langle \psi(t) | A | \psi(t) \rangle = \sum_{nm}\langle \psi(t) |u_n\rangle\langle u_n | A | u_m\rangle\langle u_m|\psi(t) \rangle = \sum_{nm}c_n^*(t)c_m(t) A_{nm}</script><p>而态矢的时间演化服从薛定谔方程：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\rm d}{ {\rm d}t}|\psi(t)\rangle = H(t) |\psi(t)\rangle</script><p>从以上的描述中可以发现，在对可观测量的测量中，诸系数$c_n(t)$总是以$c_n^*(t)c_m(t)$这样的二次项形式出现在期望值中的；而不难发现这些二次项正是如下投影算符的矩阵元：</p>
+<script type="math/tex; mode=display">
+|\psi(t)\rangle\langle\psi(t)|\ ;\qquad \langle u_i |\psi(t)\rangle\langle\psi(t)| u_j\rangle = c_n(t)c_m^*(t)</script><p>这一形式实际上在之前的讨论中已经见到过：回顾在坐标表象下的概率密度$\rho({\bm r},t)=\langle {\bm r} |\psi(t)\rangle\langle\psi(t)| {\rm r} \rangle$正是$\rho(t)$在坐标表象下的”矩阵元“，而它在我们建立起波函数语言之前，一直是描述古典量子力学的重要工具。</p>
+<p>因此自然地可以考虑引入<strong>密度算符</strong>：</p>
+<script type="math/tex; mode=display">
+\rho(t) = |\psi(t)\rangle\langle\psi(t)|</script><p>及其在基$\{|u_n\rangle\}$下的<strong>密度矩阵</strong>（注意系数取复共轭的顺序）：</p>
+<script type="math/tex; mode=display">
+\rho_{nm}(t) = \langle u_n | \rho(t) | u_m \rangle = c_n(t)c^*_m(t)</script><p>显然它是一个厄米算符：</p>
+<script type="math/tex; mode=display">
+\rho^\dagger = \rho</script><p>并且对于任意右矢$| v \rangle$：</p>
+<script type="math/tex; mode=display">
+\langle v | \rho | v \rangle = |\langle u | \psi \rangle |^2 \geq 0</script><p>即$\rho$是正定的。$\langle v | \rho | v \rangle$实际上正是系统处在$|u\rangle$处的概率密度。</p>
+<p>下面逐一说明密度算符用于描述量子系统的有效性。首先：</p>
+<script type="math/tex; mode=display">
+\sum_n |c_n(t)|^2 = \sum_n\rho_{nn}(t) = {\rm Tr}\rho(t) = 1</script><p>即态的归一化对应于<strong>密度算符迹的归一化</strong>，这也是概率守恒（<strong>概率的全局守恒</strong>）的体现，例如在坐标表象下：</p>
+<script type="math/tex; mode=display">
+{\rm Tr}\rho(t) = 1 \Longleftrightarrow \int \rho({\bm r},t) = 1</script><p>另一方面，可观测量的期望值可由由$\rho(t) A$的迹来计算：</p>
+<script type="math/tex; mode=display">
+\langle A \rangle (t) = \sum_{nm}c_n^*(t)c_m(t) A_{nm} = \sum_{nm}\langle u_m | \rho(t) |u_n\rangle\langle u_n | A | u_m\rangle = \sum_{m}\langle u_m | \rho(t) A | u_m\rangle = {\rm Tr} \{\rho(t) A\}</script><p>即<strong>可观测量期望值为${\rm Tr} \{\rho(t) A\}$</strong>；</p>
+<p>最后，<strong>密度算符的时间演化</strong>满足：</p>
+<script type="math/tex; mode=display">
+\frac{\rm d}{ {\rm d}t}\rho(t) = \left[\frac{\rm d}{ {\rm d}t}|\psi(t)\rangle\right]\langle \psi(t)| + |\psi(t)\rangle\left[\frac{\rm d}{ {\rm d}t}\langle \psi(t)|\right] = -\frac{\rm i}{\hbar}[H(t),\rho(t)]</script><p>即${\rm i}\hbar\dfrac{\rm d}{ {\rm d}t}\rho(t) = [H(t),\rho(t)]$。</p>
+<p>当然，作为完整的量子力学理论，必须给出得到某个测量值的准确概率。在标准的量子力学体系中，测量得到本征值$a_n$的概率是其本征子空间上投影算符$P_n$的期望值：</p>
+<script type="math/tex; mode=display">
+\mathscr P(a_n) = \langle\psi(t)|P_n|\psi(t)\rangle</script><p>因此在密度算符的语言下，该期望值可以直接得到：</p>
+<script type="math/tex; mode=display">
+\mathscr P(a_n) = {\rm Tr}\{P_n\rho(t)\}</script><p>根据上述的讨论可以看到，对于纯态来说，密度算符描述和态矢量描述是完全等价的两种描述。并且在某些方面，密度算符描述还具有一定的优越性。例如：</p>
+<ul>
+<li>描述同一个物理态的态矢量在数学上存在一个相位因子的任意性（即便已经归一化）；而密度算符则不存在这种相位因子带来的任意性。</li>
+<li>在态矢量语言下，很多期望值都是态矢量的二次式；而它们在密度算符语言下则成为$\rho$的线性式。可以期待这会大大简化在混态情况下的计算。</li>
+</ul>
+<p>此外，在纯态情况下，由于密度算符是简单的一个投影算符，因此具有一些性质：</p>
+<script type="math/tex; mode=display">
+\rho^2=\rho\ ;\qquad {\rm Tr}\rho^2=1</script><p>而将会看到，在混态情况下，它们是不成立的。</p>
+<h2 id="混态：密度算符的应用"><a href="#混态：密度算符的应用" class="headerlink" title="混态：密度算符的应用"></a>混态：密度算符的应用</h2><p>考虑态的统计混合情况，即如下纯态组成的系综：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+&0\leq p_1,p_2,\dots,p_k,\dots\leq 1\\
+&\sum_k p_k = 1
+\end{aligned}
+\right.</script><p>若系统处于其中某个纯态$|\psi_k\rangle$，则对可观测量$A$测量得到本征值$a_n$的概率是</p>
+<script type="math/tex; mode=display">
+\mathscr P_k(a_n) = \langle\psi_k | P_n |\psi_k \rangle</script><p>于是在统计混合系综中测量结果就需要对各个态的可能概率进行加权：</p>
+<script type="math/tex; mode=display">
+\mathscr P(a_n) = \sum_k p_k \mathscr P_k(a_n)</script><p>在密度算符的语言下，这一概率可以写为：</p>
+<script type="math/tex; mode=display">
+\mathscr P(a_n) = \sum_k p_k {\rm Tr}\{\rho_k P_n\} = {\rm Tr}\left\{\sum_k p_k\rho_k P_n\right\} = {\rm Tr}\{\rho P_n\}</script><p>其中已经对混态定义了<strong>混态密度算符</strong>为</p>
+<script type="math/tex; mode=display">
+\rho = \sum_k p_k \rho_k = \sum_k p_k |\psi_k\rangle\langle\psi_k |</script><p>因此对于混态系统的所有物理测量又可以表现为其$\rho$的线性项。</p>
+<h3 id="密度算符的一般性质"><a href="#密度算符的一般性质" class="headerlink" title="密度算符的一般性质"></a>密度算符的一般性质</h3><ol>
+<li><p>正定性仍然成立：</p>
+<script type="math/tex; mode=display">
+\langle v | \rho | v \rangle = \sum_k p_k |\langle v|\psi_k\rangle|^2 \geq 0</script><p>与纯态的结论是相同的。</p>
+</li>
+<li><p>由于各个概率$p_k$均为实数，而各个纯态的密度算符为厄米算符，因此混态的密度算符也是厄米的：</p>
+<script type="math/tex; mode=display">
+\rho^\dagger = \rho</script><p>与纯态的结论是相同的。</p>
+</li>
+<li><p>混态密度算符的迹也为1：</p>
+<script type="math/tex; mode=display">
+{\rm Tr}\rho = \sum_k p_k {\rm Tr}\rho_k = 1</script><p>与纯态的结论是相同的。从物理上讲，尽管我们可能不清楚系统的初态具体信息，但其概率守恒至少是保持的。</p>
+</li>
+<li><p>在混态下，可观测量的测量结果期望为：</p>
+<script type="math/tex; mode=display">
+\langle A \rangle (t) = \sum_n \mathscr P(a_n) = {\rm Tr}\left\{\rho\sum_n a_n P_n\right\} = {\rm Tr}\{\rho A\}</script><p>与纯态的结论是相同的。</p>
+</li>
+<li><p>要讨论混态密度算符的时间演化，尽管不清楚系统初态的具体信息，但应当明确知道其哈密顿量$H(t)$。由此可知，若系统在初始时刻$t_0$处于$|\psi_k(t_0)\rangle$的概率为$p_k$，那么在之后的某时刻$t$处于$|\psi_k(t)$的概率也应当为$p_k$。而每个纯态的演化服从薛定谔方程，于是在$t$时刻密度算符为：</p>
+<script type="math/tex; mode=display">
+\rho(t) = \sum_k p_k \rho_k(t) = \sum_k p_k |\psi_k(t) \rangle\langle\psi_k(t) |</script><p>其中每个纯态密度算符的演化均满足：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\dfrac{\rm d}{ {\rm d}t}\rho_k(t) = [H(t),\rho_k(t)]</script><p>于是混态的密度算符演化满足：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\dfrac{\rm d}{ {\rm d}t}\rho(t) = \sum_k p_k [H(t),\rho_k(t)] = [H(t),\rho(t)]</script><p>与纯态的结论是相同的。</p>
+</li>
+</ol>
+<p>上述结论，均可由纯态直接推广到混态的情况。尽管如此，对于混态仍有部分结论与纯态不同。例如，混态的密度算符一般不再是投影算符，因而：</p>
+<script type="math/tex; mode=display">
+\rho^2 \neq \rho\ ;\qquad {\rm Tr}\rho^2 \leq 1</script><p>只有当系统实际上为纯态时，上述式子才可能取等号，因此这也是判断系统是否为纯态的一个方法。</p>
+<h2 id="密度矩阵的矩阵元：布居数、相干元"><a href="#密度矩阵的矩阵元：布居数、相干元" class="headerlink" title="密度矩阵的矩阵元：布居数、相干元"></a>密度矩阵的矩阵元：布居数、相干元</h2><p>在基$\{|u_n\rangle\}$下密度矩阵$[\rho]$的矩阵元为：</p>
+<script type="math/tex; mode=display">
+\rho_{nm} = \sum_k p_k [\rho_k]_{nm} = \sum_k p_k c^{(k)}_n c^{(k)*}_m</script><p>首先考虑其对角元：</p>
+<script type="math/tex; mode=display">
+\rho_{nn} = \sum_k p_k c^{(k)}_n c^{(k)*}_n = \sum_k p_k |c_n^{(k)}|^2</script><p>其中$|c_n^{(k)}|^2$的物理意义是在纯态$|\psi_k\rangle$中测量后得到本征态$|u_n\rangle$的概率，因此$\rho_nn$则表示在该系综测量后得到$|u_n\rangle$的平均概率，称之为系综在态$|u_n\rangle$的<strong>布居数</strong>。显然布居数$\rho_{nn}\geq 0$，当且仅当全体$|c_n^{(k)}|^2$都为零时取等号。</p>
+<p>而密度矩阵的非对角元则为</p>
+<script type="math/tex; mode=display">
+\rho_{nm} = \sum_k p_k c^{(k)}_n c^{(k)*}_m</script><p>正如在Chap.3的笔记中所讨论的，出现$c_n^{(k)} c_m^{(k)*}$的交叉乘积项，表明此时系统存在态$|u_n\rangle$与态$|u_m\rangle$的干涉效应。这一项的存在表明着，在混态系综中有一定概率$p_k$可能存在着$|u_n\rangle$与$|u_m\rangle$的某个线性叠加态（仍然是纯态）$|\psi_k\rangle$。</p>
+<p>而混态密度矩阵的非对角元$\rho_{nm}$则表示$|u_n\rangle$与$|u_m\rangle$的各种干涉效应在系综中的平均：由于$c_n^{(k)}c_m^{(k)<em>}$是复数，因而即便所有交叉乘积项都非零，非对角元$\rho_{nm}$也可能为零，这意味着各个干涉效应相互抵消了；反之，若非对角元不为零，则说明各个干涉效应不能完全抵消，即$|u_n\rangle$与$|u_m\rangle$存在一定相干性，因此将$\rho_{nm}$称为$|u_n\rangle$与$|u_m\rangle$的<em>*相干元</em></em>。</p>
+<p>当然，密度矩阵显然是依赖于基的选取的，因此布居数与相干元之间其实并没有明确的界限。由于密度矩阵是厄米的：$\rho^\dagger = \rho$，因此总存在正交归一基$\{|\chi\rangle\}$使$\rho$对角化，此时</p>
+<script type="math/tex; mode=display">
+\rho=\sum_l \pi_l |\chi_l\rangle \langle \chi_l |</script><p>且：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{aligned}
+0\leq\pi_l\leq 1\\
+\sum_l \pi_l = 1
+\end{aligned}\right.</script><p>因此可以认为密度算符$\rho$描述的是各个$\{|\chi\rangle\}$之间无相干的统计混合。</p>
+<p>另一方面， 若选取的基$\{|u_n\rangle\}$是不含时哈密顿量$H$的本征态$H|u_n\rangle = E_n |u_n\rangle$，那么可得$\rho$的对角元和非对角元时间演化分别为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&{\rm i}\hbar \frac{\rm d}{ {\rm d}t}\rho_{nn}(t) = 0\\
+&{\rm i}\hbar \frac{\rm d}{ {\rm d}t}\rho_{nm}(t) = (E_n-E_m)\rho_{nm}(t)
+\end{aligned}</script><p>即</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\rho_{nn}(t) = {\rm constant}\\
+&\rho_{nm}(t) = {\rm e}^{-{\rm i}(E_n-E_m)t/\hbar}\rho_{nm}(0)
+\end{aligned}</script><p>可见密度矩阵的布居数总为常数，而相干元以玻尔频率进行振荡。</p>
+<p>并且密度矩阵的布居数和相干元之间还有关系：</p>
+<script type="math/tex; mode=display">
+\rho_{nn}\rho_{mm}\geq|\rho_{nm}|^2</script><p>即系统只可能在布居数非零的态之间存在相干元。</p>
+<h1 id="F-演化算符"><a href="#F-演化算符" class="headerlink" title="F.演化算符"></a>F.演化算符</h1><p>在Chap.3的讨论中已经看到，由于薛定谔方程使态随时间演化的结果是线性的，因此存在一线性算符将初态映射到任意时刻：</p>
+<script type="math/tex; mode=display">
+|\psi(t)\rangle = U(t,t_0) |\psi(t_0)\rangle</script><p>称$U(t,t_0)$为系统的<strong>演化算符</strong>。</p>
+<h2 id="演化算符的一般性质"><a href="#演化算符的一般性质" class="headerlink" title="演化算符的一般性质"></a>演化算符的一般性质</h2><p>显然，演化算符必须满足初值条件：</p>
+<script type="math/tex; mode=display">
+U(t_0,t_0) = \mathbb I</script><p>此外，不难验证其本身也满足薛定谔方程：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\partial}{\partial t}U(t,t_0) = H(t)U(t,t_0)</script><p>因此利用其初值和演化方程，就可完全确定$U(t,t_0)$。可以形式地将之表示为一个积分方程：</p>
+<script type="math/tex; mode=display">
+U(t,t_0) = \mathbb I - \frac{\rm i}{\hbar}\int_{t_0}^t H(t') U(t',t_0) {\rm d}t'</script><p>需要强调的是，由于薛定谔方程本身并不禁止，演化算符$U(t,t_0)$的两个时间参数$t$和$t_0$实际上并不一定要求存在时间先后顺序关系。</p>
+<p>根据其定义，可以得到演化算符的<strong>乘法关系</strong>：</p>
+<script type="math/tex; mode=display">
+U(t,t_0) = U(t,t')U(t',t_0)</script><p>若在其中令$t_0=t$，则可得到</p>
+<script type="math/tex; mode=display">
+U(t,t') = U^{-1}(t',t)</script><p>这也回应了先前所述的演化算符对两个时间参数并无顺序要求：顺序交换的意义只是演化算符取逆。</p>
+<p>将前述乘法关系进一步扩展就可以得到：</p>
+<script type="math/tex; mode=display">
+U(t_n,t_0) = U(t_n,t_{n-1})U(t_{n-1},t_{n-2})\cdots U(t_2,t_1)U(t_1,t_0)</script><p>其中$t_n,t_{n-1},\dots,t_0$也都是任意的。</p>
+<p>一个能够方便地精确求解演化算符所满足方程的例子是无穷小演化算符。考虑薛定谔方程的无穷小时间间隔形式：</p>
+<script type="math/tex; mode=display">
+{\rm d}|\psi(t)\rangle = |\psi(t+{\rm d}t)\rangle - |\psi(t)\rangle = -\frac{\rm i}{\hbar}H(t)|\psi(t)\rangle {\rm d}t</script><p>即</p>
+<script type="math/tex; mode=display">
+|\psi(t+{\rm d}t)\rangle = \left[\mathbb I - \frac{\rm i}{\hbar} H(t) {\rm d} t \right]|\psi(t)\rangle</script><p>因此得到<strong>无穷小演化算符</strong>为</p>
+<script type="math/tex; mode=display">
+U(t+{\rm d}t,t) = \mathbb I - \frac{\rm i}{\hbar} H(t) {\rm d} t</script><p>由于$H(t)$是厄米算符，根据Stone定理可知，$U(t+{\rm d}t,t)$是幺正算符。</p>
+<p>于是有限长时间的演化算符总可以表示成无穷小演化算符之乘积，因而也是<strong>幺正算符</strong>——这是自然的，因为我们期望态矢在演化的过程中总是保持模不变的。于是有：</p>
+<script type="math/tex; mode=display">
+U^\dagger(t,t') = U^{-1}(t,t') = U(t',t)</script><h2 id="保守系的演化算符"><a href="#保守系的演化算符" class="headerlink" title="保守系的演化算符"></a>保守系的演化算符</h2><p>对于不显含时的$H$，演化算符的积分方程可以直接求解得到：</p>
+<script type="math/tex; mode=display">
+U(t,t_0) = {\rm e}^{-{\rm i}H(t-t_0)/\hbar}</script><p>若将之应用到哈密顿算符$H$的本征态$|\phi_{n,\tau}\rangle$上，就能直接得到定态演化规律：</p>
+<script type="math/tex; mode=display">
+U(t,t_0) |\varphi_{n,\tau}\rangle = {\rm e}^{-{\rm i}H(t-t_0)/\hbar} |\varphi_{n,\tau}\rangle = {\rm e}^{-{\rm i}E_n(t-t_0)/\hbar} |\varphi_{n,\tau}\rangle</script><p>利用演化算符的概念，我们也可以更方便地描述两次间隔一定时间的测量行为：在第一次测量后系统变为某个本征态，而经过一段时间后其演化到可由演化算符所确定的态，此时再被第二次测量。</p>
+<p>需要强调的是，对于显含时的$H(t)$，演化算符所满足方程的解一般<strong>不能</strong>简单表示为形如${\rm e}^{-\frac{\rm i}{\hbar}\int_{t_0}^t H(t’){\rm d} t’}$这样的形式。严格的求解需要引入编时乘积的概念。</p>
+<h1 id="G-量子力学的绘景"><a href="#G-量子力学的绘景" class="headerlink" title="G.量子力学的绘景"></a>G.量子力学的绘景</h1><p>在之前的描述中，当我们要将时间演化引入到理论体系中时，我们所选取的做法是将时间演化全部归结于态$|\psi(t)\rangle$的演化，而对应于可观测量的观察算符则一般都是与时间无关的（除了少数的特例，例如哈密顿算符）。在这样的观点下，态矢的演化由薛定谔方程所决定，这也是薛定谔所建立的”波动力学“的基本观点，因此这种对量子体系时间演化的描述被称为<strong>薛定谔绘景</strong>。</p>
+<p>然而，量子力学事实上真正可以直接观测并不是态矢，也不是观察算符，而是所谓”标量积“，它是由左矢、算符、右矢所共同构成的标量：</p>
+<script type="math/tex; mode=display">
+\langle A \rangle = \langle \psi |A| \psi \rangle</script><p>因此量子力学中的时间演化问题，实际上是这样的可观测量的时间演化问题。除了将时间演化归结为态矢的演化：</p>
+<script type="math/tex; mode=display">
+\langle A \rangle (t) = \langle \psi(t) |A| \psi(t) \rangle</script><p>存在另一种观点，它将时间演化归结为算符本身的演化，而态矢则保持不变：</p>
+<script type="math/tex; mode=display">
+\langle A \rangle (t) = \langle \psi |A(t)| \psi \rangle</script><p>在历史上，海森堡首先基于这种观点推导出各种可观测量所对应的矩阵随时间的演化，并建立起”矩阵力学“，因此这种对量子体系时间演化的描述被称为<strong>海森堡绘景</strong>。</p>
+<p>今天我们知道，薛定谔的波动力学与海森堡的矩阵力学是完全等价的，因而薛定谔绘景与海森堡绘景事实上也是对同一物理过程的描述不同但完全等价的两种观点。</p>
+<p>在本节中，加下标$S$的表示其是薛定谔绘景下的量，加下标$H$的表示其是海森堡绘景下的量。</p>
+<p><em>需要强调的是，我们这里所讨论的可观测量，暂时只讨论<strong>不显含时</strong>的可观测量，例如坐标算符或动量算符，以此来突出其在两种绘景下的差异。若算符本身显含时，那么无论在哪个绘景之中都是显含时的，自然也是随时间变化的。在本节中，当我们使用“<strong>演化</strong>”一词，指的就是仅仅由于绘景所引起的符号对象随时间的改变，包括态矢的演化和算符的演化，而这一部分<strong>不</strong>包含算符由于其本身显含时而随时间的变化。</em></p>
+<h2 id="两种绘景的时间演化"><a href="#两种绘景的时间演化" class="headerlink" title="两种绘景的时间演化"></a>两种绘景的时间演化</h2><p>为了便于比较，我们假设系统从相同的初态开始演化，再在不同的绘景下观察其演化。理论要求两种绘景得到的结果应当是一样的。</p>
+<p>假设系统的初态处于$|\psi(t_0)\rangle=|\psi_S(t)\rangle=|\psi_H(t)\rangle$，算符初态为$A(t_0)=A_S(t_0)=A_H(t_0)$。</p>
+<p>在薛定谔绘景下，态矢量演化就是熟悉的薛定谔方程：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\rm d}{ {\rm d}t}|\psi_S(t)\rangle = H_S |\psi_S(t)\rangle</script><p>或者利用演化算符将之表示为：</p>
+<script type="math/tex; mode=display">
+|\psi_S(t)\rangle = U(t,t_0) |\psi_S(t_0)\rangle = U(t,t_0) |\psi(t_0)\rangle</script><p>而算符本身则保持不变：</p>
+<script type="math/tex; mode=display">
+A_S(t) = A_S(t_0) = A(t_0) = A_S</script><p>另一方面，在海森堡绘景下，态矢则是不变的：</p>
+<script type="math/tex; mode=display">
+|\psi_H(t)\rangle = |\psi_H(t_0)\rangle = |\psi(t_0)\rangle = |\psi_H\rangle</script><p>而算符承担了时间演化的任务（时间演化算符对其作用服从幺正变换对一般算符的作用）：</p>
+<script type="math/tex; mode=display">
+A_H(t) = U^\dagger(t,t_0) A_H(t_0) U(t,t_0) = U^\dagger(t,t_0) A(t_0) U(t,t_0)</script><p>显而易见，经过一定时间演化过后，两种绘景下的态矢和可观测量之间存在一定的关系，由时间演化算符相联系：</p>
+<script type="math/tex; mode=display">
+|\psi_S(t)\rangle = U(t,t_0) |\psi_H\rangle</script><script type="math/tex; mode=display">
+A_H(t) = U^\dagger(t,t_0) A_S U(t,t_0)</script><h2 id="算符演化方程"><a href="#算符演化方程" class="headerlink" title="算符演化方程"></a>算符演化方程</h2><p>目前为止，我们仅知道薛定谔绘景下态矢的演化满足的方程——薛定谔方程。那么在海森堡绘景下，算符演化所满足的方程是什么呢？</p>
+<h3 id="运动常量的情况"><a href="#运动常量的情况" class="headerlink" title="运动常量的情况"></a>运动常量的情况</h3><p>在保守系下，薛定谔绘景的哈密顿算符$H_S$是与时间完全无关的，若此时$A_S$与之可对易，即在薛定谔绘景中$A_S$为运动常量，那么</p>
+<script type="math/tex; mode=display">
+U(t,t_0) = {\rm e}^{-{\rm i}H(t-t_0)/\hbar}</script><p>且它也与$A_S$对易；于是</p>
+<script type="math/tex; mode=display">
+A_H(t) = U^\dagger(t,t_0) U(t,t_0) A_S = A_S</script><p>即此时两种绘景下的算符均与时间无关，且保持相等；换句话说<strong>运动常量的算符是不依赖于时间的，与绘景无关。</strong>特别是保守系的哈密顿量$H_S=H_H$，因此保守系中实际上无需区分哪种绘景的哈密顿算符。</p>
+<h3 id="一般的情况"><a href="#一般的情况" class="headerlink" title="一般的情况"></a>一般的情况</h3><p>若$A$是任意的可观测量，那么在海森堡绘景下求其时间演化方程：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{\rm i}\hbar\frac{\rm d}{ {\rm d}t}A_H(t) &= \left[ {\rm i}\hbar\frac{\rm d}{ {\rm d}t} U^\dagger(t,t_0)\right] A(t_0) U(t,t_0) + U^\dagger(t,t_0) A(t_0) \left[ {\rm i}\hbar\frac{\rm d}{ {\rm d}t} U(t,t_0) \right]\\
+&= -U^\dagger (t,t_0) H_S(t) A(t_0) U(t,t_0) + U^\dagger(t,t_0) A(t_0) H_S(t) U(t,t_0)\\
+&= -U^\dagger H_S U U^\dagger A U + U^\dagger A U U^\dagger  H_S U\\
+&= [A_H(t) ,H_H(t)]
+\end{aligned}</script><p>此即算符演化的<strong>海森堡方程</strong>。不难看出，它可以直接类比于经典力学中的泊松括号；这也是海森堡首先得到的矩阵力学基本方程。</p>
+<h2 id="相互作用绘景（狄拉克绘景）"><a href="#相互作用绘景（狄拉克绘景）" class="headerlink" title="相互作用绘景（狄拉克绘景）"></a>相互作用绘景（狄拉克绘景）</h2><p>除了上述两种比较极端的绘景之外，在一些场合（尤其是微扰论），我们也可以将总的时间演化分别让态矢和算符各承担一部分。</p>
+<p>设此时的总哈密顿量可以分为描述体系本身部分$H_0$（不显含时）和与外界相互作用的微扰部分$V_I(t)$（可以显含时）两部分。此时可以将时间演化设置为：</p>
+<script type="math/tex; mode=display">
+|\psi_I(t)\rangle = U_I(t,t_0) |\psi(t_0)\rangle</script><script type="math/tex; mode=display">
+A_I(t) = U_0^\dagger(t,0) A(t_0) U_0(t,t_0)</script><p>其中</p>
+<script type="math/tex; mode=display">
+U_0(t,t_0) = {\rm e}^{-{\rm i}H_0(t-t_0)/\hbar}</script><script type="math/tex; mode=display">
+U_I(t,t_0) = U_0^{-1}(t,t_0) U(t,t_0)</script><p>不难看出，在相互作用表象中，算符承担了体系本身$H_0$所带来的时间演化（有时称之为<strong>运动学演化</strong>），而态矢承担了相互作用所引起的时间演化（有时称之为<strong>动力学演化</strong>）。这样对量子体系时间演化的描述被称为<strong>相互作用绘景</strong>，也叫<strong>狄拉克绘景</strong>。</p>
+<p>不难得到，相互作用绘景中算符和态矢的时间演化方程分别为：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\rm d}{ {\rm d}t}|\psi_I(t)\rangle = V_I(t) |\psi_I(t)\rangle</script><script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\rm d}{ {\rm d}t}A_I(t) = [A_I(t) ,H_0]</script><p>可以看到相互作用绘景的优点是将来自于系统本身的运动学演化从态矢演化中分离掉，因此态矢的演化能够直接反映系统与外界的相互作用。</p>
+<p>同时也可得到三种绘景下态矢和算符之间的关系：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+|\psi_I(t)\rangle = U_0^\dagger (t,t_0) |\psi_S(t)\rangle\\
+|\psi_H\rangle = U^\dagger (t,t_0) |\psi_S(t)\rangle
+\end{aligned}
+\right.</script><script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+A_I(t) = U_0^\dagger (t,t_0) A_S U_0 (t,t_0)\\
+A_H(t) = U^\dagger (t,t_0) A_S U (t,t_0)
+\end{aligned}
+\right.</script><p>三种绘景之间的变换都是含时幺正变换，并且态矢与算符的变换是配套的，保证了各种概率幅数值不变、运动方程形式不变。</p>
+<h2 id="基矢的演化"><a href="#基矢的演化" class="headerlink" title="基矢的演化"></a>基矢的演化</h2><ol>
+<li><p>在薛定谔绘景：基矢不随时间演化：</p>
+<script type="math/tex; mode=display">
+|\alpha_S^i(t)\rangle = |\alpha_S^i(0)\rangle = |\alpha_S^i\rangle</script></li>
+<li><p>在海森堡绘景：基矢随时间逆演化：</p>
+<script type="math/tex; mode=display">
+|\alpha_H^i(t)\rangle = U^\dagger(t,t_0) |\alpha_H^i(0)\rangle</script></li>
+<li><p>在相互作用绘景：基矢随时间部分逆演化：</p>
+<script type="math/tex; mode=display">
+|\alpha_I^i(t)\rangle = U_0^\dagger(t,t_0)|\alpha_I^i(0)\rangle</script></li>
+</ol>
+<p>这样规定的基本目的是：保证本征方程可以在各种绘景下保持形式不变：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+A_S|\alpha_S^i \rangle &= a^i |\alpha_S^i \rangle\\
+A_H|\alpha_H^i(t) \rangle &= a^i |\alpha_H^i(t) \rangle\\
+A_I|\alpha_I^i(t) \rangle &= a^i |\alpha_I^i(t) \rangle
+\end{aligned}</script><p>这样的规定也与态矢和算符的演化相适应。</p>
+<h1 id="H-规范不变性"><a href="#H-规范不变性" class="headerlink" title="H.规范不变性"></a>H.规范不变性</h1><h2 id="电磁场的势和规范"><a href="#电磁场的势和规范" class="headerlink" title="电磁场的势和规范"></a>电磁场的势和规范</h2><p>在经典电磁学中，电场和磁场是相互关联的，满足麦克斯韦方程组。等价地，我们可以引入两个函数——标势$\phi$和矢势${\bm A}$来代替电场和磁场进行描述，它们之间的关系是：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+{\bm E} &= -\nabla \phi - \frac{\partial}{\partial t}{\bm A}\\
+{\bm B} &= \nabla \times {\bm A}
+\end{aligned}
+\right.</script><p>根据麦克斯韦方恒组，尽管这样的标势$\phi$和矢势${\bm A}$一定存在，但是却无法将之唯一确定。对于一组满足的$\phi$和${\bm A}$，总可以做如下变换：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+\phi' &= \phi - \frac{\partial}{\partial t}\chi\\
+{\bm A}' &= {\bm A} + \nabla \chi
+\end{aligned}
+\right.</script><p>其中$\chi$是任意函数，那么新的$\phi‘$和${\bm A}’$也会得到相同的电场和磁场。上式也给出了对于特定电磁场的一切可能的标势和矢势。</p>
+<p>势函数具有这样的自由度称为“<strong>规范自由度</strong>”，若选择其中一组特定的势，就进行了一次“<strong>规范固定</strong>”或者说选择了一种规范。当然，同一种电磁场可以用无穷多种不同的规范来进行描述，因此时常会将一种规范改成另一种规范，即<strong>规范变换</strong>。</p>
+<p>在物理学中，当我们写出体系的运动方程，并不是直接包含电场${\bm E}$和磁场${\bm B}$，而是包含标势$\phi$和矢势${\bm A}$，因而需要搞清楚一个问题：理论所给出的物理结果，是只依赖于空间各点处的场${\bm E}$和${\bm B}$呢，还是同时依赖于我们所选取的规范呢？若依赖于规范的选取，那么在写出运动方程的同时就有必要明确在哪一种规范下是有效的。</p>
+<h2 id="经典力学中的规范不变性"><a href="#经典力学中的规范不变性" class="headerlink" title="经典力学中的规范不变性"></a>经典力学中的规范不变性</h2><h3 id="哈密顿力学的规范性"><a href="#哈密顿力学的规范性" class="headerlink" title="哈密顿力学的规范性"></a>哈密顿力学的规范性</h3><p>在牛顿力学中，带电粒子在电磁场中运动所受到的洛伦兹力为：</p>
+<script type="math/tex; mode=display">
+{\bm f} = q({\bm E} + {\bm v}\times {\bm B})</script><p>它可以直接代入牛顿方程就得到了此时粒子的运动方程：</p>
+<script type="math/tex; mode=display">
+m \frac{ {\rm d}^2}{ {\rm d}t^2}{\bm r}(t) = {\bm f}</script><p>显然由于洛伦兹力只与电场和磁场的值有关，因此是规范不变的。</p>
+<p>而另一方面，经典力学还可以采用哈密顿表述：我虽然已经知道它与牛顿力学是等价的，但在哈密顿表述中，运动方程会显式包含$\phi$和${\bm A}$，从而让我们能够更明显地分析体系是否具有规范不变性。</p>
+<p>在电磁场中运动的带电粒子，其拉格朗日量为：</p>
+<script type="math/tex; mode=display">
+\mathscr L({\bm r},\dot{\bm r},t) = \frac12 m \dot{\bm r}^2 - q(\phi({\bm r},t) - {\bm v}\cdot {\bm A}({\bm r},t))</script><p>据此可以计算出动量为</p>
+<script type="math/tex; mode=display">
+{\bm p} = \nabla_{\bm  r} \mathscr L = m\dot{\bm r} + q{\bm A}({\bm r},t)</script><p>注意到这里的动量是作为哈密顿表述基本变量的<strong>正则动量</strong>，而非机械动量${\bm \pi} = m\dot{\bm r}$，一般在电磁场中两者的关系是：</p>
+<script type="math/tex; mode=display">
+{\bm \pi} = {\bm p} - q {\bm A}({\bm r},t)</script><p>在哈密顿力学中，基本变量是正则动量${\bm p}$，但在动量-能量关系（无论是否相对论性）中的则是机械动量${\bm \pi}$，因此在描述电磁场中的带电粒子运动时，哈密顿力学存在着所谓<strong>最小替换法则</strong>：将无电磁场时运动方程中的${\bm p}={\bm \pi}$，替换为有电磁场时的${\bm \pi} = {\bm p} - q {\bm A}$（能量也要相应从$E$变为$E+q\phi$）即可，这是将电磁场量耦合进运动方程的基本方法。</p>
+<p>哈密顿框架下，体系演化规律是<strong>哈密顿正则方程组</strong>：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+\frac{\rm d}{ {\rm d}t}{\bm r}(t) &= \nabla_{\bm p} \mathscr H({\bm r}(t),{\bm p}(t),t)\\
+\frac{\rm d}{ {\rm d}t}{\bm p}(t) &= -\nabla_{\bm r} \mathscr H({\bm r}(t),{\bm p}(t),t)
+\end{aligned}
+\right.</script><p>显然这里的哈密顿正则方程组在形式上是依赖规范选取的；我们关心基本变量${\bm r}$和${\bm p}$是否会有影响。一个trick是直接利用牛顿力学的结论，在那里我们已经知道粒子的速度和位置都与规范无关（在这里用上标$\ ‘\ $表示选取另一套规范下的物理量）：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+{\bm r}'(t) &= {\bm r}(t)\\
+{\bm \pi}'(t) &= {\bm \pi}(t)
+\end{aligned}
+\right.</script><p>但是在哈密顿力学中我们的基本变量不是机械动量而是正则动量，因此</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+&{\bm r}'(t) = {\bm r}(t)\\
+&{\bm p}'(t) - q{\bm A}'[{\bm r}'(t),t] = {\bm p}(t) - q{\bm A}[{\bm r}(t),t]
+\end{aligned}
+\right.</script><p>可见正则动量是规范相关的；若我们将${\bm A}\to{\bm A}’$的规范变换函数用$\chi$表示，那么哈密顿正则变量的规范依赖就是：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+{\bm r}'(t) &= {\bm r}(t)\\
+{\bm p}'(t) &= {\bm p}(t) +q \nabla_{\bm r} \chi[{\bm r}(t),t]
+\end{aligned}
+\right.</script><h3 id="“物理量”和“非物理量”"><a href="#“物理量”和“非物理量”" class="headerlink" title="“物理量”和“非物理量”"></a>“物理量”和“非物理量”</h3><p>到目前为止，我们发现在经典力学的哈密顿体系中，描述粒子运动的量至少存在两种类型：一类是“机械”的、不随规范改变的，例如位置${\bm r}$、速度${\bm v}$和机械动量${\bm \pi}$，另一类则是以正则动量${\bm p}$为代表的随规范变化的物理量。</p>
+<p>而由于规范在我们的观点中，仅仅是一些为了便于计算而引入的工具的冗余自由度，规范变换不应当影响真实的物理。因此对于真正的物理可观测量，一定应当是规范不变量；而随规范改变的量则应当是“非物理量”，仅仅是一种计算工具而非真正的可观测量。</p>
+<p>在哈密顿力学中，对于两个基本变量：${\bm r}$和${\bm p}$，按照上面的定义，显然一个是“物理量”，一个是“非物理量”。但其他的量基本都表现为这两个基本变量的函数，又应当如何判断其是否是真实的可观测量？</p>
+<p>我们用$\mathscr J$代表一种规范的选取。首先从函数形式上来看：若某一个量的函数仅依赖于位置坐标：$\mathscr F_{\mathscr J} = \mathscr F_{\mathscr J}({\bm r})$，那么其显然是规范不变量；若某量的函数同时依赖于两个基本变量：$\mathscr F_{\mathscr J} = \mathscr F_{\mathscr J}({\bm r},{\bm p})$，那么由于${\bm p}$的存在，$\mathscr F_{\mathscr J}$必然也是随规范变化的；因此若在不同的规范中，某量所对应的函数相同：$\mathscr F_{\mathscr J}({\bm r},{\bm p}) = \mathscr F_{ {\mathscr J}’}({\bm r},{\bm p})$，它一定是“非物理量”。</p>
+<p>因此，除了$\mathscr F_{\mathscr J} = \mathscr F({\bm r})$的特殊情况，一个物理体系的真实可观测量应当具有随规范变化的函数。通过对前面讨论的分析，不难得出这样的函数其变化规律应当为：</p>
+<script type="math/tex; mode=display">
+\mathscr G_{\mathscr J}({\bm r},{\bm p}) = \mathscr G_{ {\mathscr J}'}({\bm r}',{\bm p}') = \mathscr G_{ {\mathscr J}'}({\bm r},{\bm p}+q\nabla_{\bm r}\chi({\bm r},t))</script><p>此即可观测量应当具有的规范变换性质。即若将新规范中的函数$\mathscr F_{ {\mathscr J}’}({\bm r}’,{\bm p}’)$中的正则动量${\bm p}$全部替换成${\bm p}+q\nabla_{\bm r}\chi$，就会得到旧规范下的函数形式$\mathscr F_{\mathscr J}({\bm r},{\bm p})$；反之，若要从旧规范变换到新规范，只需将${\bm p}$替换为${\bm p}-q\nabla_{\bm r}\chi$。</p>
+<p>因此，一般来讲可以给出物理真实可观测量的一种函数形式：</p>
+<script type="math/tex; mode=display">
+\mathscr G_{\mathscr J}({\bm r},{\bm p}) = F[{\bm r},{\bm p} - q{\bm A}({\bm r},t)]</script><p>下面是一些可观测量的例子：</p>
+<p>机械动量：</p>
+<script type="math/tex; mode=display">
+{\bm \pi}_{\mathscr J}({\bm r},{\bm p}) = {\bm p} - q{\bm A}({\bm r},t)</script><p>机械角动量：</p>
+<script type="math/tex; mode=display">
+{\bm \varLambda}_{\mathscr J}({\bm r},{\bm p}) = {\bm r}\times[{\bm p} - q{\bm A}({\bm r},t)]</script><p>动能：</p>
+<script type="math/tex; mode=display">
+K_{\mathscr J}({\bm r},{\bm p}) = \frac{[{\bm p} - q{\bm A}({\bm r},t)]^2}{2m}</script><p>最后要指出的是，经典的哈密顿函数：</p>
+<script type="math/tex; mode=display">
+\mathscr H_{\mathscr J}({\bm r},{\bm p}) = \frac{[{\bm p} - q{\bm A}({\bm r},t)]^2}{2m} + q\phi({\bm r},t)</script><p>其第一部分是规范不变的，但第二部分却是规范相关的，因为势能的选取是任意的。在这个意义上，<u>总能量的绝对值实际上并不具有实际意义；幸运或者说必然的是，在运动方程中这种任意性被导数所消除了，因此由哈密顿函数所导出的运动方程是规范不变的。</u></p>
+<h2 id="量子力学中的规范不变性"><a href="#量子力学中的规范不变性" class="headerlink" title="量子力学中的规范不变性"></a>量子力学中的规范不变性</h2><p>在经典力学中，由于牛顿定律的存在，规范不变性的问题比较容易分析。而在量子力学中，不仅没有牛顿定律，而且哈密顿量的作用方式也与经典力学不同；此外还需要考虑态矢在规范变换下的影响。</p>
+<h3 id="算符的规范行为"><a href="#算符的规范行为" class="headerlink" title="算符的规范行为"></a>算符的规范行为</h3><p>为了从经典力学过渡到量子体系，首先需要考虑的是量子化规则（我们仍然选取正则量子化方法）在规范变换下的行为。一个并不那么显然但合理的假设是：无论规范的选取，特定体系的态空间$\mathscr E$都是不变的，否则规范变换将会造成实质性的物理改变。但是作用在其上的算符在两种规范中可能是不同的。</p>
+<p>遵循正则量子化的精神，我们首先考虑算符${\bm R}$与${\bm P}$。在坐标表象$\{|{\bm r}\rangle\}$下，算符${\bm R}$的作用相当于用${\bm r}$倍乘，算符${\bm P}$则是微分算符$-{\rm i}\hbar\nabla$，这些规则在任何规范中都是一样的，因此对于算符${\bm R}$与${\bm P}$，不需要特别强调其规范选取。</p>
+<p><em>注：在这里，算符${\bm P}$相联系的经典物理量是正则动量，而非机械动量。</em></p>
+<p>但是注意到其他物理量利用算符${\bm R}$、${\bm P}$表出的式子是来自于经典函数关系，因此可能会与规范相关。例如：</p>
+<p>正则角动量的函数形式与规范无关：</p>
+<script type="math/tex; mode=display">
+{\bm L}_{\mathscr J} = {\bm R}\times{\bm P} = {\bm L}_{ {\mathscr J}'}</script><p>与之相反，机械动量与机械角动量的函数形式都是依赖规范的：</p>
+<script type="math/tex; mode=display">
+{\bm \varPi}_{\mathscr J} = {\bm P} - q {\bm A}({\bm R},t) = {\bm \varPi}_{ {\mathscr J}'} + q \nabla \chi({\bm R},t)</script><script type="math/tex; mode=display">
+{\bm \varLambda}_{\mathscr J} = {\bm R}\times{\bm\varPi} = {\bm R}\times[{\bm P} - q {\bm A}({\bm R},t)] \neq {\bm \varLambda}_{ {\mathscr J}'}</script><p>哈密顿算符也是如此：</p>
+<script type="math/tex; mode=display">
+H_{\mathscr J} = \frac{[{\bm P} - q{\bm A}({\bm R},t)]^2}{2m} + q\phi({\bm R},t) \neq H_{ {\mathscr J}'}</script><h3 id="态矢及演化方程的规范行为"><a href="#态矢及演化方程的规范行为" class="headerlink" title="态矢及演化方程的规范行为"></a>态矢及演化方程的规范行为</h3><p>接下来考虑规范对态矢的影响。在经典力学（哈密顿力学）中，物理体系的状态由基本变量$\{ {\bm r},{\bm p} \}$来标记；而量子力学中，虽然我们使用态矢$|\psi(t)\rangle$来表示物理状态，但是可以计算其在算符${\bm R}$、${\bm P}$的期望。对应于经典力学的关系，我们期待两个算符在不同规范下的期望值应当具有如下关系：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\langle\psi'(t) | {\bm R}_{ {\mathscr J}'} | \psi'(t) \rangle = \langle\psi(t) | {\bm R}_{\mathscr J} | \psi(t) \rangle\\
+&\langle\psi'(t) | {\bm P}_{ {\mathscr J}'} | \psi'(t) \rangle  = \langle\psi(t) | {\bm P}_{\mathscr J} + q\nabla\chi({\bm R},t) | \psi(t) \rangle
+\end{aligned}</script><p>显然当且仅当态矢本身随规范一同变换：$|\psi’(t)\rangle\neq|\psi(t)\rangle$，上式才能成立，这对应于一个由规范变换$\chi$所决定的幺正算符：$T_\chi$，其对两个算符的作用满足：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&T_\chi^\dagger {\bm R} T_\chi = {\bm R} \\
+&T_\chi^\dagger {\bm P} T_\chi = {\bm P} + q\nabla\chi({\bm R},t)
+\end{aligned}</script><p>由第一式可知$T_\chi$与${\bm R}$对易，因此可设其形式为一厄米算符$F({\bm R},t)$的虚指数函数：</p>
+<script type="math/tex; mode=display">
+T_\chi = {\rm e}^{ {\rm i}F({\bm R},t)}</script><p>代入第二式，就会得到</p>
+<script type="math/tex; mode=display">
+\hbar\nabla F({\bm R},t) = q\nabla\chi({\bm R},t)</script><p>因此在相差至多一个总相位因子（而这对物理并无影响）的情况下可以将算符$T_\chi$表示为：</p>
+<script type="math/tex; mode=display">
+T_\chi = {\rm e}^{ \frac{\rm i}{\hbar}q \chi({\bm R},t)}</script><p>态矢在规范变换下按照下式变换：</p>
+<script type="math/tex; mode=display">
+|\psi'(t)\rangle = {\rm e}^{ \frac{\rm i}{\hbar}q \chi({\bm R},t)} |\psi(t)\rangle</script><p>需要强调的是，尽管看起来像是仅仅附加了一个并无影响的相位，但其实并非如此，例如在坐标表象下：</p>
+<script type="math/tex; mode=display">
+\psi'({\bm r},t) = {\rm e}^{ \frac{\rm i}{\hbar}q \chi({\bm r},t)} \psi({\bm r},t)</script><p>熟悉规范场论的读者会对这种形式很熟悉。因此规范变换对波函数$\psi({\bm r},t)$的影响实际上是随点而异的相位，由此可见利用不同规范下的波函数$\phi$和$\phi’$竟会得到规范不变的物理结果，这并非不证自明的。</p>
+<p>此外，对于多粒子体系，其总波函数的规范变换算符应当为：</p>
+<script type="math/tex; mode=display">
+T_\chi = \exp\{\frac{\rm i}{\hbar}[q_1 \chi({\bm R}_1,t)+q_2 \chi({\bm R}_2,t)+\cdots]\}</script><p>得出态矢以及哈密顿算符的规范变换后，就可以得到变换规范后的态矢演化方程——薛定谔方程的形式，这也是研究规范变换对量子力学体系影响的核心问题。</p>
+<p>由于：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{\rm i}\hbar\frac{\rm d}{ {\rm d}t}|\psi'(t)\rangle =& {\rm i}\hbar\frac{\rm d}{ {\rm d}t}\{T_\chi |\psi(t)\rangle\} = {\rm i}\hbar\left\{\frac{\rm d}{ {\rm d}t}T_\chi\right\}|\psi(t)\rangle + {\rm i}\hbar T_\chi\left\{\frac{\rm d}{ {\rm d}t}|\psi(t)\rangle\right\}\\
+=& -q \left\{\frac{\partial}{ \partial t}\chi({\bm R},t)\right\} T_\chi |\psi(t)\rangle + T_\chi(t) H_{\mathscr J} |\psi(t)\rangle\\
+=&\left\{-q\frac{\partial}{ \partial t}\chi({\bm R},t) + T_\chi(t) H_{\mathscr J}(t) T_\chi^\dagger(t) \right\} |\psi'(t)\rangle\\
+=&\left\{-q\frac{\partial}{ \partial t}\chi({\bm R},t) + \widetilde H_{\mathscr J}(t) \right\} |\psi'(t)\rangle
+\end{aligned}</script><p>结合$T_\chi$对${\bm R}$、${\bm P}$的作用规律，可以得到：</p>
+<script type="math/tex; mode=display">
+\widetilde H_{\mathscr J}(t) = T_\chi(t) H_{\mathscr J}(t) T_\chi^\dagger(t) = \frac{[{\bm P} - q{\bm A}({\bm R},t) - q\nabla\chi({\bm R},t)]^2}{2m} + q\phi({\bm R},t) = {\bm H}_{ {\mathscr J}'}</script><p>因此可以得到，在变换后的规范下，态矢的演化方程仍然满足：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\rm d}{ {\rm d}t}|\psi'(t)\rangle = H_{ {\mathscr J}'} |\psi'(t)\rangle</script><p>即体系的演化方程——薛定谔方程的形式是规范不变的。</p>
+<h3 id="物理预言的规范不变性"><a href="#物理预言的规范不变性" class="headerlink" title="物理预言的规范不变性"></a>物理预言的规范不变性</h3><p>最后需要讨论的是规范变换下理论的物理预言如何保持规范不变。</p>
+<p>根据前面的讨论我们知道， 算符在$T_\chi$作用下的行为是：</p>
+<script type="math/tex; mode=display">
+\widetilde \varGamma = T_\chi(t) \varGamma T_\chi^\dagger(t)</script><p>虽然$\widetilde {\bm R} = {\bm R}$，但$\widetilde {\bm P} \neq {\bm P}$，类似地：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\widetilde {\bm \varPi}_{\mathscr J} =& \widetilde {\bm P} - a{\bm A}(\widetilde {\bm R},t)\\
+=& {\bm P} - q\nabla\chi({\bm R},t) -q A({\bm R},t)\\
+=&{\bm \varPi}_{\mathscr J} - q\nabla\chi({\bm R},t)\\
+=&{\bm \varPi}_{ {\mathscr J}'}
+\end{aligned}</script><p>比较可知，前面提到过的对应于“真实可观测量”的算符，应当是类似于${\bm R}$和${\bm \varPi}$这样的：</p>
+<script type="math/tex; mode=display">
+\widetilde {\bm R}_{\mathscr J} = {\bm R}_{ {\mathscr J}'}</script><script type="math/tex; mode=display">
+\widetilde {\bm \varPi}_{\mathscr J} = {\bm \varPi}_{ {\mathscr J}'}</script><p>例子还有机械角动量：</p>
+<script type="math/tex; mode=display">
+\widetilde{\bm \varLambda}_{\mathscr J} = \widetilde{\bm R} \times \widetilde{\bm \varPi}_{\mathscr J} = {\bm \varLambda}_{ {\mathscr J}'}</script><p>以及动能：</p>
+<script type="math/tex; mode=display">
+\widetilde K_{\mathscr J} = \frac{\widetilde{\bm \varPi}_{\mathscr J}^2}{2m} = \frac{[\widetilde{\bm P} - q{\bm A}({\bm R},t)]^2}{2m} = K_{ {\mathscr J}'}</script><p>而那些“非物理量”则是类似于正则动量${\bm P}$的行为：</p>
+<script type="math/tex; mode=display">
+\widetilde {\bm P}_{\mathscr J} \neq {\bm P}_{ {\mathscr J}'}</script><p>类似的还有正则角动量以及哈密顿量，因为我们前面已经得到一般而言$\widetilde H_{\mathscr J} \neq H_{ {\mathscr J}’}$。</p>
+<p><em>注：除非是在时间无关的电磁场中，可以只考虑也与时间无关的势，$\widetilde H{\mathscr J} = H{ {\mathscr J}’}$，此时总能量确实是可观测量也是运动常量。</em></p>
+<p>这是一种量子力学中的普遍规律，即真实可观测量的算符都依赖于规范，且满足形式为：</p>
+<script type="math/tex; mode=display">
+\widetilde {\mathscr G}_{\mathscr J}({\bm R},{\bm P},t) = \mathscr G_{ {\mathscr J}'}(\widetilde {\bm R},\widetilde {\bm P}+q\nabla \chi(\widetilde {\bm R},t)) = {\mathscr G}_{ {\mathscr J}'}({\bm R},{\bm P},t)</script><p>这其实就是将经典力学中的：</p>
+<script type="math/tex; mode=display">
+\mathscr G_{\mathscr J}({\bm r},{\bm p}) = \mathscr G_{ {\mathscr J}'}({\bm r}',{\bm p}') = \mathscr G_{ {\mathscr J}'}({\bm r},{\bm p}+q\nabla_{\bm r}\chi({\bm r},t))</script><p>算符化后利用$T_\chi$进行幺正变换所得。</p>
+<p>当获知算符的规范行为时，为了获知物理预言结果，还应保证本征方程以及概率的不变性。这一点很容易得出：假设在原规范下存在可观测量的本征方程：</p>
+<script type="math/tex; mode=display">
+G_{\mathscr J} |\varphi_n\rangle = g_n |\varphi_n\rangle</script><p>观测得到$g_n$的概率是</p>
+<script type="math/tex; mode=display">
+\mathscr P(g_n) = |\langle \varphi_n | \psi \rangle|^2</script><p>考虑到在$T_\chi$的作用下：</p>
+<script type="math/tex; mode=display">
+G_{ {\mathscr J}'}|\varphi_n'\rangle = T_\chi G_{\mathscr J} T_\chi^\dagger T_\chi|\varphi_n\rangle = T_\chi g_n |\varphi_n\rangle =g_n |\varphi_n'\rangle</script><p>因此规范变换不改变可观测量的本征方程，并且其观测到$g_n$的概率仍然是：</p>
+<script type="math/tex; mode=display">
+\mathscr P(g_n) = |\langle \varphi_n' | \psi' \rangle|^2 = |\langle \varphi_n' |T_\chi^\dagger T_\chi| \psi' \rangle|^2 = |\langle \varphi_n | \psi \rangle|^2</script><p>从而也就证明了，在量子力学中，可观测量的物理预言与规范无关，即任何测量的可能结果和概率都是规范不变的。</p>
+<p>一个值得一提的点是，不难证明，概率密度和概率流（例如在坐标表象下）也都是规范不变量。</p>
+<h1 id="J-路径积分量子化简述"><a href="#J-路径积分量子化简述" class="headerlink" title="J.路径积分量子化简述"></a>J.路径积分量子化简述</h1><p>在电磁学领域中，描述场在时空中的传播行为，存在着两种方式：</p>
+<ul>
+<li>麦克斯韦方程组，即微分的观点，给出了时空各点处电磁场的变化率与其邻域内场的关系；</li>
+<li>惠更斯原理，即积分的观点，只要知道某一曲面上的单色场，则可通过子波源叠加（积分）的方式获知其他任意一点处的场。</li>
+</ul>
+<p>两种方式在描述波的传播行为上是等价的。</p>
+<p>在量子力学中，也存在波函数在时空中的传播；而薛定谔方程实际上就是从微分方程的角度确定了其传播行为。事实上将会看到，量子力学中同样存在一种从积分的角度描述波函数传播的方式，即<strong>费曼原理</strong>。</p>
+<p>并且，从过往的许多讨论中可以看出，薛定谔波动力学（以及与其等价的海森堡矩阵力学，这些依赖于态矢和算符、并且哈密顿算符居于中心地位的理论我们可以统称为<strong>正则量子化</strong>框架的量子力学）是与经典力学中的哈密顿力学强烈相关的，可以说其直接由哈密顿力学量子化而来，并继承了哈密顿力学的众多结论。类似地，费曼原理的思想将会引出另一种对量子力学的等价描述，而它则是直接从经典力学中的拉格朗日力学经量子化而来，在其中居于中心地位的是所谓“量子作用量”。这种力学称为<strong>路径积分量子化</strong>框架的量子力学。</p>
+<h2 id="薛定谔方程的传播函数（传播子）"><a href="#薛定谔方程的传播函数（传播子）" class="headerlink" title="薛定谔方程的传播函数（传播子）"></a>薛定谔方程的传播函数（传播子）</h2><h3 id="传播子的定义"><a href="#传播子的定义" class="headerlink" title="传播子的定义"></a>传播子的定义</h3><p>在薛定谔的力学中，考虑一个态经过时间演化后的结果（取坐标表象）：</p>
+<script type="math/tex; mode=display">
+\psi({\bm r}_2,t_2) = \langle {\bm r}_2|\psi(t_2)\rangle = \langle {\bm r}_2 |U(t_2,t_1) |\psi(t_1) \rangle</script><p>在其中插入坐标表象的完备性关系即可得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\psi({\bm r}_2,t_2) &= \int {\rm d}^3 r_1 \langle {\bm r}_2 |U(t_2,t_1) |{\bm r}_1 \rangle \langle {\bm r}_1 | \psi(t_1) \rangle\\
+&= \int {\rm d}^3 r_1 \langle {\bm r}_2 |U(t_2,t_1) |{\bm r}_1 \rangle \psi({\bm r}_1,t_1)
+\end{aligned}</script><p>这其中的积分核我们定义为薛定谔方程的传播子（传播函数）：</p>
+<script type="math/tex; mode=display">
+K(2,1) \equiv K({\bm r}_2,t_2;{\bm r}_1,t_1) = \langle {\bm r}_2 |U(t_2,t_1) |{\bm r}_1 \rangle</script><p>很显然，传播子$K(2,1)$的物理意义代表着在$t_1$时刻位于${\bm r}_1$处的粒子，在$t_2$时刻到达${\bm r}_2$处的概率幅。</p>
+<p>当然，很多时候我们实际考虑的问题只允许时间向正向的传播，于是可以定义一个“推迟传播子”：</p>
+<script type="math/tex; mode=display">
+K_{\rm retard}(2,1) = \theta(t_2-t_1) K(2,1)</script><p>之后将会看到，正是由于阶跃函数$\theta(t_2-t_1)$的存在，$K_{\rm ret}$是薛定谔方程的格林函数。</p>
+<p>类似地，也有“超前传播子”的定义：</p>
+<script type="math/tex; mode=display">
+K_{\rm advance}(2,1) = \theta(t_1-t_2) K(2,1)</script><p>推迟和超前传播子相当于强制规定了波函数在时间上的传播方向，否则传播子$K(2,1)$会向正时和逆时传播。</p>
+<h3 id="传播子用能量本征态表示"><a href="#传播子用能量本征态表示" class="headerlink" title="传播子用能量本征态表示"></a>传播子用能量本征态表示</h3><p>若哈密顿算符$H$不显含时，那么传播子可以用它的本征函数来表示。设：</p>
+<script type="math/tex; mode=display">
+H|\varphi_n\rangle = E_n |\varphi_n\rangle</script><p>利用能量本征态的完备性关系，可将演化算符写为：</p>
+<script type="math/tex; mode=display">
+U(t_2,t_1) = {\rm e}^{-{\rm i}H(t_2-t_1)/\hbar} = {\rm e}^{-{\rm i}H(t_2-t_1)/\hbar} \sum_n |\varphi_n\rangle\langle \varphi_n | = \sum_n {\rm e}^{-{\rm i}E_n(t_2-t_1)/\hbar} |\varphi_n\rangle\langle \varphi_n |</script><p>于是传播子就是：</p>
+<script type="math/tex; mode=display">
+K({\bm r}_2,t_2,{\bm r}_1,t_1) = \theta(t_2-t_1) \sum_n {\rm e}^{-{\rm i}E_n(t_2-t_1)/\hbar} \varphi_n({\bm r}_2) \varphi_n^*({\bm r}_1)</script><h3 id="传播子满足的方程"><a href="#传播子满足的方程" class="headerlink" title="传播子满足的方程"></a>传播子满足的方程</h3><p>下面考虑传播子，准确来说是推迟传播子$K_{\rm ret}$所满足的方程。</p>
+<p>首先定义：</p>
+<script type="math/tex; mode=display">
+H({\bm r}_2,\nabla_2)</script><p>是仅作用在变量${\bm r}_2$和$t_2$的哈密顿算符。并且注意到${\rm e}^{-{\rm i}E_n t_2/\hbar} \varphi_n({\bm r}_2)$是薛定谔方程的解，即：</p>
+<script type="math/tex; mode=display">
+\left[{\rm i}\hbar\frac{\partial}{\partial t_2} - H({\bm r}_2,\nabla_2)\right]{\rm e}^{-{\rm i}E_n t_2/\hbar} \varphi_n({\bm r}_2) = 0</script><p>而阶跃函数满足方程：</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial t_2}\theta(t_2-t_2) = \delta(t_2-t_1)</script><p>因此可得</p>
+<script type="math/tex; mode=display">
+\left[{\rm i}\hbar\frac{\partial}{\partial t_2} - H({\bm r}_2,\nabla_2)\right] K_{\rm ret}(2,1) = {\rm i}\hbar \delta(t_2-t_1) \sum_n \varphi_n^*({\bm r}_1) \varphi_n({\bm r}_2) {\rm e}^{-{\rm i}E_n(t_2-t_1)/\hbar}</script><p>由于等式右边存在$\delta(t_2-t_1)$，因此可将指数中取$t_2=t_1$，而</p>
+<script type="math/tex; mode=display">
+\sum_n \varphi_n^*({\bm r}_1) \varphi_n({\bm r}_2) = \langle {\bm r}_2 | \left[ \sum_n |\varphi_n\rangle \langle \varphi_n |\right] |{\bm r}_1 \rangle = \delta^{(3)}({\bm r}_2-{\bm r}_1)</script><p>因此传播子所满足的方程为：</p>
+<script type="math/tex; mode=display">
+\left[{\rm i}\hbar\frac{\partial}{\partial t_2} - H({\bm r}_2,\nabla_2)\right] K_{\rm ret}(2,1) = {\rm i}\hbar \delta(t_2-t_1) \delta^{(3)}({\bm r}_2-{\bm r}_1) = {\rm i}\hbar \delta^{(4)}(x_2-x_1)</script><p>由此可以看出，推迟传播子$K_{\rm ret}$在数学上实际上是薛定谔方程的<strong>格林函数</strong>，因此利用它可以很方便地得到薛定谔方程的解。若要完全确定传播子，还需边界条件：</p>
+<script type="math/tex; mode=display">
+K(2,1) = 0 \quad {\rm if} \quad t_2<t_1</script><h2 id="量子力学的拉格朗日表述（路径积分量子化）"><a href="#量子力学的拉格朗日表述（路径积分量子化）" class="headerlink" title="量子力学的拉格朗日表述（路径积分量子化）"></a>量子力学的拉格朗日表述（路径积分量子化）</h2><p>从观测的角度来讲，若我们分别在$t_1$时刻和$t_2$时刻对一个运动的粒子进行观测，只能得到它在两个时刻的位置分别是${\bm r}_1$、${\bm r}_2$，而对其在两个时刻的中间运动过程是无从得知的。</p>
+<h3 id="经典力学的拉格朗日表述"><a href="#经典力学的拉格朗日表述" class="headerlink" title="经典力学的拉格朗日表述"></a>经典力学的拉格朗日表述</h3><p>经典力学中，粒子在两个时刻之间会遵循一定的动力学规律——若从拉格朗日力学的角度来说，就是<strong>最小作用量原理</strong>——来运动，即沿着该动力学规律所唯一确定的一条时空轨迹${\bm r}^{(0)}(t)$运动。在拉格朗日力学的观点下，粒子在任意时刻的每一种可能的运动状态（用该时刻的位置和速度来表征）都唯一对应于一个<strong>拉格朗日量</strong>（考虑不显含时的简单情况）：</p>
+<script type="math/tex; mode=display">
+L({\bm r}(t),\dot{\bm r}(t)) = T - V</script><p>而拉格朗日力学认为，在确定的起点和终点之间存在着无数条可能的路径${\bm r}(t)$，每条路径都唯一对应于一个确定的值，即是将这条路径上每个时刻粒子的拉格朗日量对时间进行积分：</p>
+<script type="math/tex; mode=display">
+S[{\bm r}(t)] = \int {\rm d}t L({\bm r}(t),\dot{\bm r}(t))</script><p>不难看出$S$是路径${\bm r}(t)$的泛函，称之为这条路径的<strong>（经典）作用量</strong>。而拉格朗日力学的最小作用量原理则表明：在无数可能的路径中，真实的运动路径是使得$\delta S = 0$的路径。由此，拉格朗日力学决定了经典情形下粒子运动的唯一路径。</p>
+<h3 id="量子力学传播子的分解"><a href="#量子力学传播子的分解" class="headerlink" title="量子力学传播子的分解"></a>量子力学传播子的分解</h3><p>在量子力学中，拉格朗日力学显然不能直接套用——我们甚至不可能确定一条明确的“量子路径”。但是通过对传播子的分析，可以发现拉格朗日力学的思想仍然在量子力学中存在。</p>
+<p>注意到演化算符的性质：</p>
+<script type="math/tex; mode=display">
+U(t_2,t_1) = U(t_2,t_{\alpha_N})U(t_{\alpha_N},t_{\alpha_{N-1} })\cdots U(t_{\alpha_2},t_{\alpha_1})U(t_{\alpha_1},t_1)</script><p>这里是将$t_1$到$t_2$的时间段等间隔地分成了$N+1$段，每段时长$\delta t$：</p>
+<script type="math/tex; mode=display">
+t_{\alpha_{n} } = t_1 + \frac{n}{N+1}(t_2-t_1) = t_1 + n \delta t\ ,\qquad n=1,2,\dots, N</script><p>多次利用坐标表象下的完备性关系，可得</p>
+<script type="math/tex; mode=display">
+K(2,1) = \int \left(\prod_{k=1}^N {\rm d}^3 r_{\alpha_{k} }\right) K(2,\alpha_{N}) K(\alpha_{N},\alpha_{N-1})\cdots K(\alpha_2,\alpha_1) K(\alpha_1,1)</script><p>可见传播子也具有与演化算符类似的乘法关系，但要在每个分隔的时刻对全体坐标本征态积分。其中被积函数：</p>
+<script type="math/tex; mode=display">
+K(2,\alpha_{N}) K(\alpha_{N},\alpha_{N-1})\cdots K(\alpha_2,\alpha_1) K(\alpha_1,1)</script><p>或许可以简单地理解为，粒子在运动过程中的各个时刻对其观测，发现粒子依次地经过每个时刻所取的某个位置；当然这并非真实的物理解释。</p>
+<p>在上述积分式中令$N$趋于无穷大，我们将会期待每组$\alpha_k$的序列将会确定时空中的一条“路径”，而与之相应的传播子乘积就是这条路径所对应的概率幅。而实际的结果则是要对这无数个可能的概率幅进行无穷维积分——即对两点之间全体可能的时空路径的概率幅进行相干叠加。</p>
+<h3 id="费曼原理"><a href="#费曼原理" class="headerlink" title="费曼原理"></a>费曼原理</h3><p>前述基本就是费曼的观点，即在量子力学中，起点和终点之间的每条时空路径都对最终的结果有贡献；真实的概率幅要对这所有路径的贡献进行相干叠加，即无穷积分。</p>
+<p>尽管这一原理可以独立于早前的观点来得出，但方便起见，下面仍以薛定谔方程的传播子为基础，来详细推导这一原理。注意到传播子的表达式（仍然假设哈密顿量不含时）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+K(\alpha_k,\alpha_{k-1}) &= \langle {\bm r}_{\alpha_k} |U(t_{\alpha_k},t_{\alpha_{k-1} }) |{\bm r}_{\alpha_{k-1} } \rangle\\
+&= \langle {\bm r}_{\alpha_k} | {\rm e}^{-{\rm i}H\delta t/\hbar} |{\bm r}_{\alpha_{k-1} } \rangle\\
+&= \langle {\bm r}_{\alpha_k} | {\rm e}^{-\frac{\rm i}{\hbar} \left(\frac{P^2}{2m} + V\right)\delta t } |{\bm r}_{\alpha_{k-1} } \rangle
+\end{aligned}</script><p>在$\delta t$是小量的情况下，指数部分可以近似拆分：</p>
+<script type="math/tex; mode=display">
+{\rm e}^{-{\rm i}H\delta t/\hbar} = {\rm e}^{-\frac{\rm i}{\hbar}\frac{P^2}{2m}\delta t } {\rm e}^{-{\rm i}V\delta t/\hbar} + \mathcal O(\delta t^2)</script><p>于是利用动量表象的完备性关系：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+K(\alpha_k,\alpha_{k-1}) =& \int \frac{ {\rm d}^3 p_{\alpha_{k-1} }}{2\pi\hbar} \langle {\bm r}_{\alpha_k} | {\bm p}_{\alpha_{k-1} }\rangle\\
+&\left( \langle {\bm p}_{\alpha_{k-1} } | {\rm e}^{-\frac{\rm i}{\hbar}\frac{P^2}{2m}\delta t }\right) \left( {\rm e}^{-{\rm i}V\delta t/\hbar} |{\bm r}_{\alpha_{k-1} } \rangle\right)\\
+=& \int \frac{ {\rm d}^3 p_{\alpha_{k-1} } }{2\pi\hbar} \langle {\bm r}_{\alpha_k} | {\bm p}_{\alpha_{k-1} }\rangle\\
+&{\rm e}^{-\frac{\rm i}{\hbar}\frac{p_{\alpha_{k-1} }^2}{2m}\delta t } \langle {\bm p}_{\alpha_{k-1} } | {\bm r}_{\alpha_{k-1} } \rangle {\rm e}^{-{\rm i}V({\bm r}_{\alpha_{k-1} })\delta t/\hbar}\\
+=& \int \frac{ {\rm d}^3 p_{\alpha_{k-1} } }{2\pi\hbar} {\rm e}^{ {\rm i} {\bm p}_{\alpha_{k-1} } \cdot ({\bm r}_{\alpha_k} - {\bm r}_{\alpha_{k-1} } ) } {\rm e}^{-\frac{\rm i}{\hbar}\frac{p_{\alpha_{k-1} }^2}{2m}\delta t } {\rm e}^{-{\rm i}V({\bm r}_{\alpha_{k-1} })\delta t/\hbar}\\
+=&\int \frac{ {\rm d}^3 p_{\alpha_{k-1} } }{2\pi\hbar} \exp\left\{ -\frac{\rm i}{\hbar}\delta t \left[ \frac{p_{\alpha_{k-1} }^2}{2m} + V({\bm r}_{\alpha_k} ) - {\bm p}_{\alpha_{k-1} } \cdot \frac{ {\bm r}_{\alpha_k} - {\bm r}_{\alpha_{k-1} } }{\delta t} \right] \right\}
+\end{aligned}</script><p>在$\delta t \to 0$极限下，可以在形式上认为：</p>
+<script type="math/tex; mode=display">
+\lim_{\delta t\to 0}\frac{ {\bm r}_{\alpha_k} - {\bm r}_{\alpha_{k-1}} }{\delta t} = \frac{ {\rm d}{\bm r}_{\alpha_k} }{ {\rm d}t}</script><p>同样再约定：</p>
+<script type="math/tex; mode=display">
+p_{\alpha_k} = m \frac{ {\rm d}{\bm r}_{\alpha_k} }{ {\rm d}t}</script><p>这些记法具有启发性，我们可以定义一个“<strong>量子拉格朗日量</strong>”：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L_{\alpha_{k} } =& \lim_{\delta t\to 0}\left [ -\frac{p_{\alpha_{k} }^2}{2m} - V({\bm r}_{\alpha_k} ) + {\bm p}_{\alpha_{k} } \cdot \frac{ {\bm r}_{\alpha_{k+1} } - {\bm r}_{\alpha_{k}} }{\delta t} \right]\\
+=&\frac12 m \left(\frac{ {\rm d}{\bm r}_{\alpha_k} }{ {\rm d}t} \right)^2 - V({\bm r}_{\alpha_k} )
+\end{aligned}</script><p>于是利用这些记号，传播子$K(2,1)$可以表达为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+K(2,1) =& \lim_{\delta t \to 0} 
+\int \left(\prod_{k=1}^N {\rm d}^3 r_{\alpha_{k} }\right) \\
+&
+\langle {\bm r}_{2} | {\rm e}^{-\frac{\rm i}{\hbar}\frac{P^2}{2m}\delta t } {\rm e}^{-{\rm i}V\delta t/\hbar} |{\bm r}_{\alpha_{N} } \rangle \dots \langle {\bm r}_{\alpha_1} | {\rm e}^{-\frac{\rm i}{\hbar}\frac{P^2}{2m}\delta t } {\rm e}^{-{\rm i}V\delta t/\hbar} |{\bm r}_{1 } \rangle\\
+=& \lim_{\delta t \to 0} 
+\int \left(\prod_{k=1}^N {\rm d}^3 r_{\alpha_{k} }\right) \int\left(\prod_{k=1}^N \frac{ {\rm d}^3 p_{\alpha_{k} } }{2\pi\hbar}\right)\\
+&\exp\left\{ -\frac{\rm i}{\hbar}\delta t \left[ \frac{p_{\alpha_{k-1} }^2}{2m} + V({\bm r}_{\alpha_k} ) - {\bm p}_{\alpha_{k-1} } \cdot \frac{ {\rm d}{\bm r}_{\alpha_k} }{ {\rm d}t} \right] \right\}\\
+=& \lim_{\delta t \to 0} 
+\int \left(\prod_{k=1}^N {\rm d}^3 r_{\alpha_{k} }\right) \sqrt{\frac{m}{2\pi {\rm i} \hbar\delta t} }\\
+&\exp\left\{ \frac{\rm i}{\hbar}\delta t \sum_{k=1}^N \left[ \frac12 m \left(\frac{ {\rm d}{\bm r}_{\alpha_{k-1} } }{ {\rm d}t} \right)^2 - V({\bm r}_{\alpha_k} ) \right] \right\}
+\end{aligned}</script><p>在$\delta t \to 0$极限下，求和变为积分：</p>
+<script type="math/tex; mode=display">
+\lim_{\delta t \to 0}\delta t\sum_{k=1}^N \left[ \frac12 m \left(\frac{ {\rm d}{\bm r}_{\alpha_{k-1} } }{ {\rm d}t} \right)^2 - V({\bm r}_{\alpha_k} ) \right] = \int_{t_1 }^{t_2 } {\rm d}t L \equiv S[{\bm r}(t)]</script><p>这里$S[{\bm r}(t)]$是所定义的“<strong>量子作用量</strong>”，它是路径的泛函。利用它，终于可以写出传播子$K(2,1)$的表达式：</p>
+<script type="math/tex; mode=display">
+K(2,1) = \int \mathcal D[{\bm r}(t)] \exp({\rm i} S[{\bm r}(t)] / \hbar)</script><p>这里积分测度</p>
+<script type="math/tex; mode=display">
+\mathcal D[{\bm r}(t)] = \lim_{\delta t \to 0} \left(\frac{m}{2\pi {\rm i} \hbar\delta t}\right)^{N/2} \prod_{k=1}^N {\rm d}^3 r_{\alpha_{k} }</script><p>代表着对所有可能的路径的所有运动方式进行积分，是一个无穷维积分。因此，这样对量子力学的表述被称为<strong>路径积分表述</strong>。</p>
+<p>在下面，为了简便，通常用$\Gamma$表示一条经典路径，其作用量为$S_\Gamma$，于是路径积分表达式为：</p>
+<script type="math/tex; mode=display">
+K(2,1) = \int \mathcal D[\Gamma] \exp({\rm i} S_\Gamma / \hbar)</script><p>当然，这只是另一种记法，本质上是没有改变的。</p>
+<h3 id="路径积分的简单评述"><a href="#路径积分的简单评述" class="headerlink" title="路径积分的简单评述"></a>路径积分的简单评述</h3><ol>
+<li><p>利用路径积分求出传播子$K(2,1)$，原则上就可以得到任何波函数$\psi({\bm r},t)$的时间演化概率幅，而这一积分计算实际上不需要额外的量子假设。因此路径积分的确是对量子力学的一种完整理论框架。</p>
+</li>
+<li><p>虽然前面的过程是从薛定谔方程的相关概念出发导出路径积分表述，其中也应用到了一些算符运算，但事实上它是独立于正则量子化理论的另一种量子化理论。不同于正则量子化的核心是对物理态的态矢描述以及对经典可观测量的算符化，在路径积分表述中，一般而言不存在“算符”或“态矢”的概念；它直接给出的是体系的演化传播子，而在路径积分运算过程中涉及到的都是数（这包括一般的可交换数和描述费米子的反交换数——Grassmann数）的运算（主要是积分运算）。</p>
+</li>
+<li><p>前面在推导的过程中，曾经引入过诸如$\frac{ {\rm d}{\bm r}_{\alpha_k} }{ {\rm d}t}$这样的记号，这在正则量子化框架中意义是不明确的；同样，在正则量子化中也难以定义何为“路径”，因此有必要做一澄清。</p>
+<p>事实上，在路径积分框架下，可以看到我们所谈论的路径，（在$\delta t \to 0$极限下）其实就是“经典路径”，也即经典拉格朗日力学中所谓的“粒子运动的可能路径”；同样，在$\delta t \to 0$极限下所谓“量子拉格朗日量”、“量子作用量”其实就是经典力学中的<strong>经典拉格朗日量</strong>与经典作用量。因此，量子力学的路径积分理论事实上是保留了经典力学中相当一部分物理量概念的，包括位置、速度、轨迹等等。</p>
+<p>只不过在经典力学中，有了任意路径的作用量$S_\Gamma$后，下一步是通过$\delta S = 0$取得所谓“真实路径”；而在量子力学中，获知任意经典路径的作用量$S$后，要将它们按照路径积分的形式实现相干叠加，从而得到体系的传播子。</p>
+<p>这也反映了正则量子化与路径积分量子化的根本区别：正则量子化认为量子化发生在一开始对运动的描述上，必须使用态和算符去进行描述；<u>路径积分量子化则认为经典的路径以及一些概念仍然是有效的，只不过在得到作用量之后，如果我们仅仅保留一条“真实路径”那么得到的就是经典的结果，而如果将每个路径的贡献均计入考虑就会得到一个量子的结果。</u></p>
+</li>
+<li><p>当然还需要强调一点，尽管路径积分采取了经典的运动“路径”概念，但并不意味着这一理论承认粒子沿这条路径做经典运动的可能性；事实上注意到传播子$K(2,1)$本身是概率幅意义上的概念，因此路径积分量子化只是针对某一经典路径$\Gamma$计算了它所对应的的“部分概率幅”，而这一部分概率幅恰好可由其经典作用量求出：</p>
+<script type="math/tex; mode=display">
+K_\Gamma(2,1) = N {\rm e}^{-\frac{\rm i}{\hbar}S_\Gamma}</script><p>最后再将各个路径的概率幅通过积分进行相干叠加得到总的$K(2,1)$。</p>
+</li>
+<li><p>尽管在理论上，任何路径的贡献都要被平等地考虑；但实际上注意到在路径积分中，不同的经典路径对量子结果的贡献，其差异体现在一个相位因子上：</p>
+<script type="math/tex; mode=display">
+{\rm e}^{-\frac{\rm i}{\hbar}S_\Gamma}</script><p>在费曼的解释中，这意味着各个经典路径的贡献不是简单地相加（当然如此，相干叠加并非数值相加），而是以相位的方式进行振荡；尤其是这会给出在经典极限下的一个有趣结论。</p>
+<p>当取经典极限$\hbar \to 0$时，这时$S_\Gamma\geq \hbar$，两条经典路径之间的作用量差异$\Delta S_\Gamma$通常也远大于$\hbar$（即便它们的相对差异$\Delta S_\Gamma/S_\Gamma$很小），因此$K_\Gamma(2,1)$的变化也十分迅速，从而绝大多数路径的贡献都被它们自己的相位所干涉相消；这在数学上其实是说：</p>
+<p>对于如下形式的积分：</p>
+<script type="math/tex; mode=display">
+g = \int {\rm d}x {\rm e}^{ {\rm i}\lambda f(x)}</script><p>若参数$\lambda$很大而函数$f(x)$是实函数，且存在极值点$x_0$使$f’(x_0) = 0$，那么在靠近$x_0$的邻域内</p>
+<script type="math/tex; mode=display">
+f(x) \approx f(x_0) + \frac12 f''(x_0)(x-x_0)^2 + \cdots</script><p>由于邻域较小，更高次项可以忽略；而在邻域外远离$x_0$的那些值处的被积函数会被很大的$\lambda$引起剧烈振荡从而在积分中相消；因此</p>
+<script type="math/tex; mode=display">
+g \sim {\rm e}^{ {\rm i}\lambda f(x_0)} \int_{-\infty}^{+\infty}{\rm d}(\delta x) {\rm e}^{ {\rm i}\lambda f''(x_0)(\delta x)^2/2} = {\rm e}^{ {\rm i}\lambda f(x_0)} \sqrt{\frac{2\pi{\rm i} }{\lambda f''(x_0)} }</script><p>这一结论对高维积分都是成立的。此即数学上的<strong>稳相近似</strong>。</p>
+<p>通过这一结论可以发现，尽管路径积分中包含了全部可能的路径，但在经典极限下贡献最主要的其实是来自于$S\Gamma$与其相邻路径之间变化较缓慢的那些路径；准确来说，就是这样一条“稳定路径”，它在发生过渡到相邻路径的微扰时其作用量的一阶近似为零：</p>
+<script type="math/tex; mode=display">
+\frac{\delta S_\Gamma}{\delta \Gamma} = 0</script><p>只有这样的路径与其相邻路径，它们在路径积分时是干涉相长的。我们发现这一条件给出的其实正是经典拉格朗日力学通过最小作用量原理所选出的那条“真实路径”$\Gamma_{\rm cl}$：</p>
+<script type="math/tex; mode=display">
+\frac{\delta S_{\Gamma_{\rm cl} } }{\delta {\Gamma_{\rm cl} } } = 0</script><p>因此可以说，在路径积分量子化的框架下，经典极限的最主要贡献正是来自经典路径，因此路径积分可以自然地回到经典拉格朗日力学；费曼原理实际上包含着最小作用量原理的思想。可以期望在$\hbar \to 0$的经典极限下：</p>
+<script type="math/tex; mode=display">
+K(2,1) \sim \exp({\rm i} S_{\Gamma_{\rm cl} } / \hbar)</script><p>当然，若存在多条允许的经典“真实路径”，那么在量子力学中的准经典结果将是它们的干涉叠加。</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Cohen/QM-Cohen-3.1.html">https://papaya-z.github.io/post/Cohen/QM-Cohen-3.1.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/">量子力学</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/%E9%9B%86/%E5%A7%8B%20%E6%9C%88%E6%B9%96.html"><img class="next-cover" src="/img/%E6%9C%88%E6%B9%96.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">始 月湖</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/Cohen/QM-Cohen-1.html" title="Cohen量子力学Chap.1笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.1笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-2.html" title="Cohen量子力学Chap.2笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.2笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-4.html" title="Cohen量子力学Chap.4笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.4笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-3.html" title="Cohen量子力学Chap.3笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.3笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-6.html" title="Cohen量子力学Chap.6笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.6笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-5.html" title="Cohen量子力学Chap.5笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.5笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#E-%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">E.密度算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%81%E7%9A%84%E7%BB%9F%E8%AE%A1%E6%B7%B7%E5%90%88"><span class="toc-number">1.1.</span> <span class="toc-text">态的统计混合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%AF%E6%80%81%EF%BC%9A%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text">纯态：密度算符的引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E6%80%81%EF%BC%9A%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">混态：密度算符的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text">密度算符的一般性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A9%E9%98%B5%E5%85%83%EF%BC%9A%E5%B8%83%E5%B1%85%E6%95%B0%E3%80%81%E7%9B%B8%E5%B9%B2%E5%85%83"><span class="toc-number">1.4.</span> <span class="toc-text">密度矩阵的矩阵元：布居数、相干元</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#F-%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6"><span class="toc-number">2.</span> <span class="toc-text">F.演化算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8"><span class="toc-number">2.1.</span> <span class="toc-text">演化算符的一般性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E5%AE%88%E7%B3%BB%E7%9A%84%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6"><span class="toc-number">2.2.</span> <span class="toc-text">保守系的演化算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#G-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E7%9A%84%E7%BB%98%E6%99%AF"><span class="toc-number">3.</span> <span class="toc-text">G.量子力学的绘景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E7%BB%98%E6%99%AF%E7%9A%84%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96"><span class="toc-number">3.1.</span> <span class="toc-text">两种绘景的时间演化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6%E6%BC%94%E5%8C%96%E6%96%B9%E7%A8%8B"><span class="toc-number">3.2.</span> <span class="toc-text">算符演化方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E5%B8%B8%E9%87%8F%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">3.2.1.</span> <span class="toc-text">运动常量的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">3.2.2.</span> <span class="toc-text">一般的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%BB%98%E6%99%AF%EF%BC%88%E7%8B%84%E6%8B%89%E5%85%8B%E7%BB%98%E6%99%AF%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">相互作用绘景（狄拉克绘景）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%9F%A2%E7%9A%84%E6%BC%94%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">基矢的演化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#H-%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">H.规范不变性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%8A%BF%E5%92%8C%E8%A7%84%E8%8C%83"><span class="toc-number">4.1.</span> <span class="toc-text">电磁场的势和规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-number">4.2.</span> <span class="toc-text">经典力学中的规范不变性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A6%E7%9A%84%E8%A7%84%E8%8C%83%E6%80%A7"><span class="toc-number">4.2.1.</span> <span class="toc-text">哈密顿力学的规范性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E7%89%A9%E7%90%86%E9%87%8F%E2%80%9D%E5%92%8C%E2%80%9C%E9%9D%9E%E7%89%A9%E7%90%86%E9%87%8F%E2%80%9D"><span class="toc-number">4.2.2.</span> <span class="toc-text">“物理量”和“非物理量”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-number">4.3.</span> <span class="toc-text">量子力学中的规范不变性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6%E7%9A%84%E8%A7%84%E8%8C%83%E8%A1%8C%E4%B8%BA"><span class="toc-number">4.3.1.</span> <span class="toc-text">算符的规范行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%81%E7%9F%A2%E5%8F%8A%E6%BC%94%E5%8C%96%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%84%E8%8C%83%E8%A1%8C%E4%B8%BA"><span class="toc-number">4.3.2.</span> <span class="toc-text">态矢及演化方程的规范行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E9%A2%84%E8%A8%80%E7%9A%84%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-number">4.3.3.</span> <span class="toc-text">物理预言的规范不变性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#J-%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E9%87%8F%E5%AD%90%E5%8C%96%E7%AE%80%E8%BF%B0"><span class="toc-number">5.</span> <span class="toc-text">J.路径积分量子化简述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E4%BC%A0%E6%92%AD%E5%87%BD%E6%95%B0%EF%BC%88%E4%BC%A0%E6%92%AD%E5%AD%90%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">薛定谔方程的传播函数（传播子）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E5%AD%90%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">5.1.1.</span> <span class="toc-text">传播子的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E5%AD%90%E7%94%A8%E8%83%BD%E9%87%8F%E6%9C%AC%E5%BE%81%E6%80%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">5.1.2.</span> <span class="toc-text">传播子用能量本征态表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E5%AD%90%E6%BB%A1%E8%B6%B3%E7%9A%84%E6%96%B9%E7%A8%8B"><span class="toc-number">5.1.3.</span> <span class="toc-text">传播子满足的方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E8%A1%A8%E8%BF%B0%EF%BC%88%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E9%87%8F%E5%AD%90%E5%8C%96%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">量子力学的拉格朗日表述（路径积分量子化）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E8%A1%A8%E8%BF%B0"><span class="toc-number">5.2.1.</span> <span class="toc-text">经典力学的拉格朗日表述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%BC%A0%E6%92%AD%E5%AD%90%E7%9A%84%E5%88%86%E8%A7%A3"><span class="toc-number">5.2.2.</span> <span class="toc-text">量子力学传播子的分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B9%E6%9B%BC%E5%8E%9F%E7%90%86"><span class="toc-number">5.2.3.</span> <span class="toc-text">费曼原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E7%9A%84%E7%AE%80%E5%8D%95%E8%AF%84%E8%BF%B0"><span class="toc-number">5.2.4.</span> <span class="toc-text">路径积分的简单评述</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3-补充材料笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.3-补充材料笔记"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3-补充材料笔记">Cohen量子力学Chap.3-补充材料笔记</a><time datetime="2023-09-23T08:24:13.000Z" title="发表于 2023-09-23 16:24:13">2023-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E5%A7%8B%20%E6%9C%88%E6%B9%96.html" title="始 月湖"><img src="/img/%E6%9C%88%E6%B9%96.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="始 月湖"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E5%A7%8B%20%E6%9C%88%E6%B9%96.html" title="始 月湖">始 月湖</a><time datetime="2023-05-01T08:51:31.000Z" title="发表于 2023-05-01 16:51:31">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E7%BB%88%20%E5%BF%83%E7%8E%8B.html" title="终 心王"><img src="/img/%E5%BF%83%E7%8E%8B.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="终 心王"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E7%BB%88%20%E5%BF%83%E7%8E%8B.html" title="终 心王">终 心王</a><time datetime="2023-05-01T08:41:21.000Z" title="发表于 2023-05-01 16:41:21">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E8%82%86%20%E5%B0%81%E8%BE%B0.html" title="肆 封辰"><img src="/img/%E5%B0%81%E8%BE%B0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="肆 封辰"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E8%82%86%20%E5%B0%81%E8%BE%B0.html" title="肆 封辰">肆 封辰</a><time datetime="2023-05-01T08:33:23.000Z" title="发表于 2023-05-01 16:33:23">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E5%8F%81%20%E7%B4%A0%E4%BF%A1.html" title="叁 素信"><img src="/img/%E7%B4%A0%E4%BF%A1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="叁 素信"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E5%8F%81%20%E7%B4%A0%E4%BF%A1.html" title="叁 素信">叁 素信</a><time datetime="2023-05-01T08:31:32.000Z" title="发表于 2023-05-01 16:31:32">2023-05-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
