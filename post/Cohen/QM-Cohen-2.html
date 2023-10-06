@@ -1,17 +1,17 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Cohen量子力学Chap.2笔记 | Papaya's 词驿</title><meta name="keywords" content="量子力学"><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Cohen量子力学Chap.2笔记">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Cohen量子力学Chap.2：数学基础 | Papaya's 词驿</title><meta name="keywords" content="量子力学"><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="波函数；狄拉克符号；表象；本征问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cohen量子力学Chap.2笔记">
+<meta property="og:title" content="Cohen量子力学Chap.2：数学基础">
 <meta property="og:url" content="https://papaya-z.github.io/post/Cohen/QM-Cohen-2.html">
 <meta property="og:site_name" content="Papaya&#39;s 词驿">
-<meta property="og:description" content="Cohen量子力学Chap.2笔记">
+<meta property="og:description" content="波函数；狄拉克符号；表象；本征问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="og:image" content="https://papaya-z.github.io/img/2.png">
 <meta property="article:published_time" content="2020-07-24T13:03:51.000Z">
-<meta property="article:modified_time" content="2023-10-05T15:34:58.287Z">
+<meta property="article:modified_time" content="2023-10-06T09:36:39.368Z">
 <meta property="article:author" content="Papaya Z">
 <meta property="article:tag" content="量子力学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Cohen/QM-Cohen-2"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://papaya-z.github.io/img/2.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Cohen/QM-Cohen-2"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -48,12 +48,12 @@
   islazyload: false,
   isAnchor: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Cohen量子力学Chap.2笔记',
+  title: 'Cohen量子力学Chap.2：数学基础',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2023-10-05 23:34:58'
+  isToc: true,
+  postUpdate: '2023-10-06 17:36:39'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,18 +143,560 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
-</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Papaya's 词驿</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cohen量子力学Chap.2笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-24T13:03:51.000Z" title="发表于 2020-07-24 21:03:51">2020-07-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-05T15:34:58.287Z" title="更新于 2023-10-05 23:34:58">2023-10-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/QM-Cohen/">QM-Cohen</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">8</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cohen量子力学Chap.2笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<p>Cohen量子力学Chap.2笔记</p>
-<hr>
-
-
-	<div class="row">
-    <embed src="/pdf/archived/Cohen/Cohen2.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Cohen/QM-Cohen-2.html">https://papaya-z.github.io/post/Cohen/QM-Cohen-2.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/">量子力学</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/Cohen/QM-Cohen-3.html"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Cohen量子力学Chap.3笔记</div></div></a></div><div class="next-post pull-right"><a href="/post/Cohen/QM-Cohen-1.html"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cohen量子力学Chap.1笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/Cohen/QM-Cohen-1.html" title="Cohen量子力学Chap.1笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.1笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-3.html" title="Cohen量子力学Chap.3笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.3笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-4.html" title="Cohen量子力学Chap.4笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.4笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3-补充材料笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-23</div><div class="title">Cohen量子力学Chap.3-补充材料笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-5.html" title="Cohen量子力学Chap.5笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.5笔记</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-6.html" title="Cohen量子力学Chap.6笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.6笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3-补充材料笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.3-补充材料笔记"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3-补充材料笔记">Cohen量子力学Chap.3-补充材料笔记</a><time datetime="2023-09-23T08:24:13.000Z" title="发表于 2023-09-23 16:24:13">2023-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E5%A7%8B%20%E6%9C%88%E6%B9%96.html" title="始 月湖"><img src="/img/%E6%9C%88%E6%B9%96.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="始 月湖"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E5%A7%8B%20%E6%9C%88%E6%B9%96.html" title="始 月湖">始 月湖</a><time datetime="2023-05-01T08:51:31.000Z" title="发表于 2023-05-01 16:51:31">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E7%BB%88%20%E5%BF%83%E7%8E%8B.html" title="终 心王"><img src="/img/%E5%BF%83%E7%8E%8B.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="终 心王"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E7%BB%88%20%E5%BF%83%E7%8E%8B.html" title="终 心王">终 心王</a><time datetime="2023-05-01T08:41:21.000Z" title="发表于 2023-05-01 16:41:21">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E8%82%86%20%E5%B0%81%E8%BE%B0.html" title="肆 封辰"><img src="/img/%E5%B0%81%E8%BE%B0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="肆 封辰"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E8%82%86%20%E5%B0%81%E8%BE%B0.html" title="肆 封辰">肆 封辰</a><time datetime="2023-05-01T08:33:23.000Z" title="发表于 2023-05-01 16:33:23">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E5%8F%81%20%E7%B4%A0%E4%BF%A1.html" title="叁 素信"><img src="/img/%E7%B4%A0%E4%BF%A1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="叁 素信"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E5%8F%81%20%E7%B4%A0%E4%BF%A1.html" title="叁 素信">叁 素信</a><time datetime="2023-05-01T08:31:32.000Z" title="发表于 2023-05-01 16:31:32">2023-05-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/2.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Papaya's 词驿</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cohen量子力学Chap.2：数学基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-24T13:03:51.000Z" title="发表于 2020-07-24 21:03:51">2020-07-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-06T09:36:39.368Z" title="更新于 2023-10-06 17:36:39">2023-10-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QM-Cohen/">QM-Cohen</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">21k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>87分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cohen量子力学Chap.2：数学基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="波函数空间"><a href="#波函数空间" class="headerlink" title="波函数空间"></a>波函数空间</h1><p>回顾第一章的讨论，根据波函数（坐标表象下）的概率诠释可知它一定是平方可积函数，即能够使积分 $\int{\rm d}^3r|\psi(\boldsymbol r,t)|^2$ 存在（收敛）的函数；这就要求研究平方可积函数空间 $L^2$ ，至少是其某些特殊的子空间。</p>
+<p>物理上看我们只关心 $L^2$ 中处处连续、任意阶可微等附加限制条件的一类函数。设我们所关心的这类“性质充分好”的函数空间为 $\mathscr F\subset L^2$ 。</p>
+<h2 id="空间结构"><a href="#空间结构" class="headerlink" title="空间结构"></a>空间结构</h2><h3 id="线性空间"><a href="#线性空间" class="headerlink" title="线性空间"></a>线性空间</h3><p>首先， $\mathscr F$ 是复数域 $\mathbb C$ 上的线性空间，这一点从态叠加原理，以及波函数可以相差一个复常系数这一性质上很容易证明。关于态叠加原理，可以考虑 $\forall \psi_1,\psi_2\in\mathscr F$ ， $\forall c_1,c_2\in\mathbb C$ ， $\psi=c_1\psi_1+c_2\psi_2$ ，只需证明它平方可积。</p>
+<script type="math/tex; mode=display">
+|\psi|^2=|c_1|^2|\psi_1|^2+|c_2|^2|\psi_2|^2+c_1c_2^*\psi_1\psi_2^*+c_1^*c_2\psi_1^*\psi_2</script><p>后两项模相同；上式不会大于 $|c_1||c_2|\Big[|\psi_1|^2+|\psi_2|^2\Big]$ ，而这个函数显然可积，因此 $\psi$ 平方可积。</p>
+<h3 id="内积"><a href="#内积" class="headerlink" title="内积"></a>内积</h3><p>对于 $\psi,\varphi\in\mathscr F$ ，定义</p>
+<script type="math/tex; mode=display">
+(\psi,\varphi)=\int{\rm d}^3r\psi^*\varphi</script><p>这个复数称为两者的内积或标量积；上式收敛性易证。若 $(\psi,\varphi)=0$ ，则称两者正交。</p>
+<p>不难看出它有性质：</p>
+<p>共轭对称性： $(\psi,\varphi)=(\varphi,\psi)^{*}$ </p>
+<p>对第二元线性性： $(\psi,c_1\varphi_1+c_2\varphi_2)=c_1(\psi,\varphi_1)+c_2(\psi,\varphi_2)$ </p>
+<p>对第一元共轭线性性： $(c_1\psi_1+c_2\psi_2,\varphi)=c_1^{*}(\psi_1,\varphi)+c_2^{*}(\psi_2,\varphi)$ （这一条可由前两条推知。）</p>
+<p>正定性：$(\psi,\psi)=\int{\rm d}^3r\psi^{*}\psi=\int{\rm d}^3r|\psi|^2$ 显然是一个正实数，当且仅当 $\psi=0$ 时，它才为零。因此可以定义 $\sqrt{(\psi,\psi)}$ 为 $\psi$ 的模长。</p>
+<p>内积还满足施瓦茨不等式： $|(\psi,\varphi)|\leq\sqrt{(\psi,\psi)}\cdot\sqrt{(\varphi,\varphi)}$ ，取等当且仅当 $\psi=k\varphi$ 。</p>
+<h3 id="线性算符"><a href="#线性算符" class="headerlink" title="线性算符"></a>线性算符</h3><p>线性算符是函数之间的线性映射； $\mathscr F$ 上的线性算符是其上的线性变换，将任一 $\psi\in\mathscr F$ 映射到另一确定的 $\varphi\in\mathscr F$ ，且具有线性性： $A\Big[c_1\psi_1+c_2\psi_2\Big]=c_1A\psi_1+c_2A\psi_2$ 。</p>
+<p><em>注：有时候还会用到一些特殊的算符，定义域是 $\mathscr F$ 或 $L^2$ ，但映射的像却有可能是非平方可积的函数。</em></p>
+<p>定义</p>
+<script type="math/tex; mode=display">
+(AB)\psi=A[B\psi]</script><p>为两算符 $A$ 和 $B$ 的乘积。一般来说算符乘积不满足交换律；因此可以定义</p>
+<script type="math/tex; mode=display">
+[A,B]=AB-BA</script><p>为两者的对易子。</p>
+<h2 id="离散正交归一基"><a href="#离散正交归一基" class="headerlink" title="离散正交归一基"></a>离散正交归一基</h2><h3 id="函数的表示"><a href="#函数的表示" class="headerlink" title="函数的表示"></a>函数的表示</h3><p>$\mathscr F$ 中有一个可数的函数集合 $\left\{u_1(\boldsymbol r),u_2(\boldsymbol r),\cdots,u_i(\boldsymbol r),\cdots\right\}_{i\in I\subset\mathbb Z}$ ，若 $\forall \psi\in\mathscr F$ ， $\exists c_1,c_2,\cdots,c_i,\cdots\in\mathbb C$ ，使得 $\psi=\sum_{i}c_iu_i$ 且展开形式是唯一的，则称 $\left\{u_i(\boldsymbol r)\right\}_{i\in I}$ 构成 $\mathscr F$ 的一个离散基底。</p>
+<p>而若 $\left\{u_i(\boldsymbol r)\right\}_{i\in I}$ 还满足</p>
+<script type="math/tex; mode=display">
+(u_i,u_j)=\int{\rm d}^3ru_i^*u_j=\delta_{ij} ， \forall i,j\in I</script><p>则称 $\left\{u_i(\boldsymbol r)\right\}_{i\in I}$ 是正交归一的。</p>
+<p>任意 $\psi\in\mathscr F$ 在正交归一基 $\left\{u_i(\boldsymbol r)\right\}_{i\in I}$ 下的展开系数 $c_1,c_2,\cdots,c_i,\cdots$ 称为 $\psi 在基 \left\{u_i(\boldsymbol r)\right\}_{i\in I}$ 的坐标表示或分量表示，即，</p>
+<script type="math/tex; mode=display">
+c_i=\sum_jc_j\delta_{ij}=\sum_jc_j(u_i,u_j)=\left(u_i,\sum_jc_ju_j\right)=(u_i,\psi)=\int{\rm d}^3ru_i^*\psi</script><p>分量 $c_i$ 等于相应基矢量 $u_i$ 与展开函数 $\psi$ 的内积。给定基底后，坐标表示 $(c_1,c_2,\cdots,c_i,\cdots)^T 与 \psi$ 本身是等价的（一般用列向量表示）。</p>
+<h3 id="内积的表示"><a href="#内积的表示" class="headerlink" title="内积的表示"></a>内积的表示</h3><p>设若 $\psi(\boldsymbol r)=\sum_ia_iu_i(\boldsymbol r)$ ， $\varphi(\boldsymbol r)=\sum_jb_ju_j(\boldsymbol r)$ ，则</p>
+<script type="math/tex; mode=display">
+(\psi,\varphi)=\left(\sum_ia_iu_i,\sum_jb_ju_j\right)=\sum_{ij}a_i^*b_j(u_i,u_j)=\sum_{ij}a_i^*b_j\delta_{ij}=\sum_ia_i^*b_i</script><p>特别地， $(\psi,\psi)=\sum_i|a_i|^2$ 。可见利用基底，内积可以表示成分量的运算。</p>
+<h3 id="封闭性关系"><a href="#封闭性关系" class="headerlink" title="封闭性关系"></a>封闭性关系</h3><script type="math/tex; mode=display">
+\psi(\boldsymbol r)=\sum_ic_iu_i(\boldsymbol r)=\sum_i(u_i,\psi)u_i(\boldsymbol r)=\sum_i\left[\int{\rm d}^3r'u_i^*(\boldsymbol r')\psi(\boldsymbol r')\right]u_i(\boldsymbol r)</script><script type="math/tex; mode=display">
+=\int{\rm d}^3r'\psi(\boldsymbol r')\left[\sum_iu_i(\boldsymbol r)u_i^*(\boldsymbol r')\right]</script><p>可见 $\psi(\boldsymbol r)=\int{\rm d}^3r’\psi(\boldsymbol r’)F(\boldsymbol r,\boldsymbol r’)$ ， $\forall \psi\in\mathscr F$ 。</p>
+<p>显然 $F(\boldsymbol r,\boldsymbol r’)=\sum_iu_i(\boldsymbol r)u_i^*(\boldsymbol r’)=\delta(\boldsymbol r-\boldsymbol r’)$</p>
+<p>称之为封闭性关系。反之，所正交归一集合满足封闭性关系，则它必然构成一个基。</p>
+<h2 id="特殊展开"><a href="#特殊展开" class="headerlink" title="特殊展开"></a>特殊展开</h2><p>前述的基函数 $u_i$ 也是空间 $\mathscr F$ 中的元素；而在量子力学中为方便计算，有时也会（不严谨地）引入另一种展开方式，而展开“基函数”并不是 $\mathscr F$ 中的函数甚至不是平方可积函数。</p>
+<h3 id="平面波"><a href="#平面波" class="headerlink" title="平面波"></a>平面波</h3><p>考虑波函数及其傅里叶变换</p>
+<script type="math/tex; mode=display">
+\psi(\boldsymbol r)=\frac{1}{\sqrt{2\pi\hbar} }\int{\rm d}^3p \phi(\boldsymbol p){\rm e}^{ {\rm i}\boldsymbol p\cdot\boldsymbol r/\hbar}</script><script type="math/tex; mode=display">
+\phi(\boldsymbol p)=\frac{1}{\sqrt{2\pi\hbar} }\int{\rm d}^3r \psi(\boldsymbol r){\rm e}^{-{\rm i}\boldsymbol p\cdot\boldsymbol r/\hbar}</script><p>其变换核为 $v_{\boldsymbol p}(\boldsymbol r)=\frac{1}{\sqrt{2\pi\hbar} }{\rm e}^{ {\rm i}\boldsymbol p\cdot\boldsymbol r/\hbar}$ ，这是一个平面波，由 $\boldsymbol p$ （即波矢 $\boldsymbol p/\hbar$ ）完全决定，但它不是平方可积函数，因此 $v_{\boldsymbol p}(\boldsymbol r)\notin\mathscr F$ 。所有这种形式的平面波的集合记为 $\{v_{\boldsymbol p}(\boldsymbol r)\}$ ，它们的分布是连续的，可由三维的连续指标 $\boldsymbol p\in(-\infty,+\infty)^3$ 来标记（有别于前面 $\mathscr F$ 的基底是离散的）。</p>
+<p>尽管 $\{v_{\boldsymbol p}(\boldsymbol r)\}$ 并不是 $\mathscr F$ 的基，但是上面的式子表明存在这种对 $\forall \psi\in\mathscr F$ 的积分形式的“展开”，且这种展开是唯一的：</p>
+<script type="math/tex; mode=display">
+\psi(\boldsymbol r)=\int{\rm d}^3p \phi(\boldsymbol p)v_{\boldsymbol p}(\boldsymbol r)</script><script type="math/tex; mode=display">
+\phi(\boldsymbol p)=\int{\rm d}^3r \psi(\boldsymbol r)v_p^*(\boldsymbol r)=(v_{\boldsymbol p},\psi)</script><p>类比于前面对离散正交归一基的展开，我们称上面这种傅里叶正变换关系为“<strong>波函数按平面波展开</strong>”，而傅里叶逆变换则就相当于以内积形式给出了这种“展开的系数”，只不过相比于离散系数排列成向量，这里的连续“系数”直接成为指标 $\boldsymbol p$ 的函数 $\phi(\boldsymbol p)$ ，可以看作是波函数 $\psi(\boldsymbol r)$ 在 $\{v_{\boldsymbol p}(\boldsymbol r)\}$ 中的分量。</p>
+<p>首先考虑其是否具有类似于“正交归一”的性质：</p>
+<script type="math/tex; mode=display">
+(v_{\boldsymbol p},v_{\boldsymbol p'})=\int{\rm d}^3rv_{\boldsymbol p}^*(\boldsymbol r)v_{\boldsymbol p'}(\boldsymbol r)=\frac{1}{2\pi}\int{\rm d}^3\frac{r}{\hbar}{\rm e}^{ {\rm i}\frac{\boldsymbol r}{\hbar}\cdot(\boldsymbol p-\boldsymbol p')}=\delta(\boldsymbol p-\boldsymbol p')</script><p>可见对于指标 $\boldsymbol p$ 不同的 $v_{\boldsymbol p}$ 来说，其内积为零；但同一内积却是狄拉克发散的。我们称这种性质是“<strong>狄拉克意义下正交归一</strong>”，它作为连续指标的性质，与离散的正交归一有很多相似之处。</p>
+<p>内积也可以这种连续展开的“坐标”表示：</p>
+<script type="math/tex; mode=display">
+(\psi,\varphi)=\left(\int{\rm d}^3p \phi(\boldsymbol p)v_{\boldsymbol p},\int{\rm d}^3p' \chi(\boldsymbol p')v_{\boldsymbol {p'} }\right)=\int{\rm d}^3p\phi^*(\boldsymbol p)\chi(\boldsymbol p)</script><script type="math/tex; mode=display">
+(\psi,\psi)=\int{\rm d}^3p |\phi(\boldsymbol p)|^2</script><p>封闭性关系同样满足：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}^3p v_{\boldsymbol p}(\boldsymbol r)v_{\boldsymbol p}^*(\boldsymbol r')=\frac{1}{2\pi}\int{\rm d}^3\frac{p}{\hbar}{\rm e}^{ {\rm i}\frac{\boldsymbol p}{\hbar}\cdot(\boldsymbol r-\boldsymbol r')}=\delta(\boldsymbol r-\boldsymbol r')</script><p>事实上对于离散基所建立的大部分性质都可推广到这种意义的“展开”当中，只要做对应：</p>
+<script type="math/tex; mode=display">
+i\longleftrightarrow\boldsymbol p\ ;\quad\sum_i\longleftrightarrow\int{\rm d}^3\boldsymbol p\ ;\quad\delta_{ij}\longleftrightarrow\delta(\boldsymbol p-\boldsymbol p')</script><h3 id="boldsymbol-delta-函数"><a href="#boldsymbol-delta-函数" class="headerlink" title="$\boldsymbol \delta$ 函数"></a>$\boldsymbol \delta$ 函数</h3><p>可以引入另一个集合 $\{\xi_{\boldsymbol r_0}(\boldsymbol r)\}$ ，其中 $\xi_{\boldsymbol r_0}(\boldsymbol r)=\delta(\boldsymbol r-\boldsymbol r_0)$ 。它同样不是平方可积函数，因此 $\xi_{\boldsymbol r_0}(\boldsymbol r)\notin\mathscr F$ 。它们的分布是连续的，可由三维的连续指标 $\boldsymbol r_0\in(-\infty,+\infty)^3$ 来标记。根据 $\delta$ 函数的性质，有坐标变换</p>
+<script type="math/tex; mode=display">
+\psi(\boldsymbol r)=\int{\rm d}^3r_0 \psi(\boldsymbol r_0)\delta(\boldsymbol r-\boldsymbol r_0)</script><script type="math/tex; mode=display">
+\psi(\boldsymbol r_0)=\int{\rm d}^3r \psi(\boldsymbol r)\delta(\boldsymbol r_0-\boldsymbol r)</script><p>这表明尽管 $\{\xi_{\boldsymbol r_0}(\boldsymbol r)\}$ 也不是 $\mathscr F$ 的基，但同样存在这种对 $\forall \psi\in\mathscr F$ 的积分形式的“展开”，且这种展开是唯一的：</p>
+<script type="math/tex; mode=display">
+\psi(\boldsymbol r)=\int{\rm d}^3r_0 \psi(\boldsymbol r_0)\xi_{\boldsymbol r_0}(\boldsymbol r)</script><script type="math/tex; mode=display">
+\psi(\boldsymbol r_0)=\int{\rm d}^3r \psi(\boldsymbol r)\xi_{\boldsymbol r_0}^*(\boldsymbol r)=(\xi_{\boldsymbol r_0},\psi)</script><p>称上面这种坐标正变换关系为“<strong>波函数按 $\boldsymbol \delta$ 函数展开</strong>”，而坐标逆变换则就相当于以内积形式给出了这种“展开的系数”，即指标 $\boldsymbol r$ 的函数 $\xi_{\boldsymbol r_0}(\boldsymbol r)$ ，可以看作是波函数 $\psi(\boldsymbol r)$ 在 $\{\xi_{\boldsymbol r_0}(\boldsymbol r)\}$ 中的分量。</p>
+<p>“正交归一”性质：</p>
+<script type="math/tex; mode=display">
+(\xi_{\boldsymbol r_0},\xi_{\boldsymbol r'_0})=\int{\rm d}^3r\delta(\boldsymbol r-\boldsymbol r_0)\delta(\boldsymbol r-\boldsymbol r'_0)=\delta(\boldsymbol r_0-\boldsymbol r'_0)</script><p>内积：</p>
+<script type="math/tex; mode=display">
+(\psi,\varphi)=\left(\int{\rm d}^3r_0 \psi(\boldsymbol r_0)\xi_{\boldsymbol r_0},\int{\rm d}^3r'_0 \chi(\boldsymbol r'_0)\xi_{\boldsymbol r'_0}\right)=\int{\rm d}^3r_0 \psi^*(\boldsymbol r_0) \chi(\boldsymbol r_0)</script><script type="math/tex; mode=display">
+(\psi,\psi)=\int{\rm d}^3r_0 |\psi(\boldsymbol r_0)|^2</script><p>封闭性关系：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}^3r_0 \xi_{\boldsymbol r_0}(\boldsymbol r)\xi_{\boldsymbol r_0}^*(\boldsymbol r')=\int{\rm d}^3r_0\delta(\boldsymbol r-\boldsymbol r_0)\delta(\boldsymbol r'-\boldsymbol r_0)=\delta(\boldsymbol r-\boldsymbol r')</script><p>同样有离散基的对应：</p>
+<script type="math/tex; mode=display">
+i\longleftrightarrow\boldsymbol r_0\ ;\quad\sum_i\longleftrightarrow\int{\rm d}^3\boldsymbol r_0\ ;\quad\delta_{ij}\longleftrightarrow\delta(\boldsymbol r_0-\boldsymbol r_0')</script><h3 id="广义展开"><a href="#广义展开" class="headerlink" title="广义展开"></a>广义展开</h3><p>总结并推广前面的两个特殊例子，可以得到一种普遍的理论，即将 $\forall\psi\in\mathscr F$ 以积分形式“展开”为连续指标所标记的函数（<strong>可能</strong>不属于 $\mathscr F$ ）的线性形式。</p>
+<p>称 $\boldsymbol r$ 的函数 $w_\alpha(\boldsymbol r)$ 按照连续指标 $\alpha$ 所构成的集合 $\{w_\alpha(\boldsymbol r)\}$ 为“正交归一”的，若其满足</p>
+<script type="math/tex; mode=display">
+(w_\alpha,w_{\alpha'})=\int{\rm d}^3rw_\alpha^*(\boldsymbol r)w_{\alpha'}(\boldsymbol r)=\delta(\alpha-\alpha')</script><p>具有封闭性，若其满足</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\alpha w_{\alpha}(\boldsymbol r)w_{\alpha}^*(\boldsymbol r')=\delta(\boldsymbol r-\boldsymbol r')</script><p>这样的集合可以称为波函数空间的“广义正交归一基”。离散基与之的对应：</p>
+<script type="math/tex; mode=display">
+i\longleftrightarrow\alpha\ ;\quad\sum_i\longleftrightarrow\int{\rm d}\alpha\ ;\quad\delta_{ij}\longleftrightarrow\delta(\alpha-\alpha')</script><p><em>注：满足这样定义的函数 $w_\alpha(\boldsymbol r)$ 一定不属于 $\mathscr F$ ，因 $(w_\alpha,w_\alpha)$ 狄拉克发散。</em></p>
+<p>更一般地 ，存在这样的情况，即某个基既包含离散指标部分 $u_i(\boldsymbol r)$ ，又包含连续指标部分 $w_\alpha(\boldsymbol r)$ ，且单独的离散部分不能构成基。这种类型的一个典型例子是，方势阱中的全体定态波函数构成的基。因为当 $E<0$ 时，定态是离散的，但当 $E>0$ 时，也存在有界的解，可由连续指标标记，但由于它们延伸到全空间，所以不平方可积。</p>
+<p>在这样的“混合基” $\{u_i(\boldsymbol r),w_\alpha(\boldsymbol r)\}$ 中，正交归一关系为</p>
+<script type="math/tex; mode=display">
+\left\{ \begin{matrix} (u_i,u_j)=\delta_{ij}\\ (w_\alpha,w_{\alpha'})=\delta(\alpha-\alpha')\\ (u_i,w_\alpha)=0 \end{matrix} \right.</script><p>封闭性关系为</p>
+<script type="math/tex; mode=display">
+\sum_iu_i(\boldsymbol r)u_i^*(\boldsymbol r')+\int{\rm d}\alpha w_{\alpha}(\boldsymbol r)w_{\alpha}^*(\boldsymbol r')=\delta(\boldsymbol r-\boldsymbol r')</script><p>对于 $\forall \psi\in\mathscr F$ 在 $\{u_i(\boldsymbol r),w_\alpha(\boldsymbol r)\}$ 的展开式和分量式都是唯一的，为：</p>
+<script type="math/tex; mode=display">
+\psi(\boldsymbol r)=\sum_{i}c_iu_i(\boldsymbol r)+\int{\rm d}\alpha c(\alpha) w_{\alpha}(\boldsymbol r)</script><script type="math/tex; mode=display">
+c_i=\int{\rm d}^3r\psi(\boldsymbol r)u_i^*(\boldsymbol r)=(u_i,\psi)</script><script type="math/tex; mode=display">
+c(\alpha)=\int{\rm d}^3r \psi(\boldsymbol r)w_{\alpha}^*(\boldsymbol r)=(w_{\alpha},\psi)</script><p>内积：</p>
+<script type="math/tex; mode=display">
+(\psi,\varphi)=\left(\sum_{i}c_iu_i+\int{\rm d}\alpha c(\alpha) w_{\alpha},\sum_{j}b_ju_j+\int{\rm d}\alpha' b(\alpha') w_{\alpha'}\right)</script><script type="math/tex; mode=display">
+=\sum_ic_i^*b_i+\int{\rm d}\alpha c^*(\alpha) b(\alpha)</script><script type="math/tex; mode=display">
+(\psi,\psi)=\sum_i|c_i|^2+\int{\rm d}\alpha |c(\alpha)|^2</script><p><u><em>注：前述的特殊展开，并不具有实际的态叠加的物理意义，因为平面波和 $\delta$ 函数，以及其他连续指标标记的函数都不是平方可积函数，不能代表真正的物理态；上述处理只是一种方便的运算工具和启发直观图像的手段。</em></u></p>
+<h1 id="态空间；狄拉克符号"><a href="#态空间；狄拉克符号" class="headerlink" title="态空间；狄拉克符号"></a>态空间；狄拉克符号</h1><p>上一节讨论了波函数空间中的函数的各种展开模式，而这些展开系数还具有更深刻的意义。例如平面波展开系数 $\phi(\boldsymbol r)$ ，结合之前的讨论可知，它正是粒子动量的概率密度分布函数，后面还会知道平面波其实就是动量的“本征态”；上一节提到的能量本征态所构成的混合基，其展开系数实际上也是能量的概率密度分布函数；此外 $\psi(\boldsymbol r_0)$ 本身其实也是位置的概率密度分布函数，同时 $\delta$ 函数其实也是坐标的“本征态”。</p>
+<p>从物理角度来说，这些相互关联的函数其实所描述的对象都是相同的，只不过是从不同的角度来说；但结合傅里叶变换等数学工具，其实它们中的任何一个都能得出关于物理态的全部信息（至少是我们知道其经典对应的那一部分信息；而诸如自旋等概念，则就略显无能为力）。例如从 $\phi(\boldsymbol r)$ 出发，其实完全也能建立起与前面所有基于 $\psi(\boldsymbol r)$ 而建立的内容相一致的自洽体系。</p>
+<p>这就暗示我们需要建立起一个更为抽象的概念框架，在这个框架下这些不同却又相关的函数之间更像是一种平行关系而非从属关系。下面的构造将会明确这一点；并且在下面的构造中，我们将会看到上一节所谓的“广义展开式与分量式”，其真正的数学意义其实是<strong>基底变换和逆变换</strong>。</p>
+<p>另一个角度出发，也会获得这种动力，即关于粒子自旋的研究。这一性质似乎是来源于内禀的而不能体现在外在的位置、动量之上。这也表明或许需要一个更大的框架来留出位置描述这些内禀信息。</p>
+<p><strong>公理一：任何物理体系的量子态由一个复可分希尔伯特空间的子空间 $\boldsymbol {\mathcal E}$ 中的矢量来描述，称之为态矢量。</strong></p>
+<p>这一公理的提出还是十分自然的；完备的复内积空间叫做希尔伯特空间。选择复线性空间以及引入内积结构的动因来自于之前所有的讨论；完备性的要求才能保证正交归一基的存在（以及后面提到的左右矢的一一对应）。本章主要任务就是建立起关于希尔伯特空间，以及如何将之应用于量子力学的数学基础和物理技巧。</p>
+<h2 id="左右矢"><a href="#左右矢" class="headerlink" title="左右矢"></a>左右矢</h2><h3 id="右矢"><a href="#右矢" class="headerlink" title="右矢"></a>右矢</h3><p>称 $\mathscr E$ 为态空间，它其中的矢量对应于系统所有可能存在的物理态。态矢量常称作右矢（ket），用符号 $|\ \rangle$ 标记。特别地，任意波函数可以与之一一对应（暂且不考虑内禀性质）：</p>
+<script type="math/tex; mode=display">
+\psi(\boldsymbol r)\in\mathscr F\Longleftrightarrow|\psi\rangle\in\mathscr E</script><p>由此可见 $\mathscr E$ 与 $\mathscr F$ 是同构的；但是这里的右矢 $|\psi\rangle$ 却并不再具有坐标的依赖关系。它只是抽象地表征一个态的存在，至多会随着时间的演化。</p>
+<p>希尔伯特空间自然具有内积结构，继承到 $\mathscr E$ 上，则就是任意两个右矢之间都存在的内积 $(|\psi\rangle,|\varphi\rangle)$ 。这个内积具有共轭对称性、对第一元的共轭线性性、对第二元的线性性。</p>
+<p>特别地， $\forall c\in\mathbb C$ ， $|\psi\rangle$ 与 $|c\psi\rangle$ 代表同一物理态；也记为 $c|\psi\rangle$ 。</p>
+<h3 id="左矢"><a href="#左矢" class="headerlink" title="左矢"></a>左矢</h3><p>考虑态空间 $\mathscr E$ 上的线性泛函。有别于线性变换或称线性算子是指将一个右矢映射到另一个右矢，一般来说，域 $F$ 上的线性空间 $V$ 的线性泛函是指映射 $\eta:V\to F$ 。线性空间 $V$ 的全体线性泛函构成它的对偶空间 $V^*$ 。</p>
+<p>态空间 $\mathscr E$ 上的全体连续线性泛函（连续性主要针对无穷维而言；有限维内积空间的线性泛函自然连续）构成的空间 $\mathscr E^*$ 是 $\mathscr E$ 的对偶空间，其中的矢量称作左矢（bra），标记为 $\langle\ |$ 。并且对于给定的一对右矢 $\psi$ 和左矢 $\varphi$ ，记</p>
+<script type="math/tex; mode=display">
+\langle\varphi|\psi\rangle=\varphi(\psi)\in\mathbb C</script><p>这种左右矢合并的记号称为bracket（BTW，“bra”和“ket”中间的那个“c”代表两者之间可能还会夹一个其他什么东西或者character，例如算子……interesting）。</p>
+<h3 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h3><p>事实上对于每个 $|\psi\rangle\in\mathscr E$ ，都存在一个对应的左矢，记作 $\langle\psi|\in\mathscr E^*$ 。对应关系由态空间上的内积诱导：</p>
+<script type="math/tex; mode=display">
+\langle\psi|\varphi\rangle=(|\psi\rangle,|\varphi\rangle)</script><p>上述对应关系是共轭线性的，这来自于内积的性质，即：</p>
+<script type="math/tex; mode=display">
+(c_1|\psi_1\rangle+c_2|\psi_2\rangle,|\varphi\rangle)=c_1^*\langle\psi_1|\varphi\rangle+c_2^*\langle\psi_1|\varphi\rangle=(c_1^*\langle\psi_1|+c_2^*\langle\psi_2|)|\varphi\rangle</script><p>可见右矢 $c_1|\psi_1\rangle+c_2|\psi_2\rangle$ 对应于左矢 $c_1^<em>\langle\psi_1|+c_2^</em>\langle\psi_2|$ 。</p>
+<p>特别地， $\langle c\psi|$ 表示 $|c\psi\rangle$ 所对应的左矢；但不同于 $|c\psi\rangle=c|\psi\rangle$ ，这里 $\langle c\psi|=c^*\langle\psi|$ 。</p>
+<p><strong>尽管每个右矢都存在对应的左矢，但是左矢却并不全都有对应的右矢。</strong>下面给出两个反例。</p>
+<p>设一个波函数 $\xi^{(\varepsilon)}_{x_0}(x)\in\mathscr F$ 是充分正规的实值函数，其形状为一个近似于单矩形脉冲的峰，峰高 $1/\varepsilon$ ，等效峰宽 $\varepsilon$ ，峰中心点为 $x_0$ 。右矢表示为 $|\xi^{(\varepsilon)}_{x_0}\rangle$ ，其对应的左矢为 $\langle\xi^{(\varepsilon)}_{x_0}|$ 。则对于 $\forall|\psi\rangle\in\mathscr E$ ， $\langle\xi^{(\varepsilon)}_{x_0}|\psi\rangle=\left(\xi^{(\varepsilon)}_{x_0}(x),\psi(x)\right)=\int_{-\infty}^{+\infty}{\rm d}x\xi^{(\varepsilon)}_{x_0}(x)\psi(x)$ 。现令 $\varepsilon\to0$ 。一方面， $\lim_{\varepsilon\to0}\xi^{(\varepsilon)}_{x_0}(x)=\delta(x-x_0)\notin\mathscr F$ 是发散的，从而 $\lim_{\varepsilon\to0}|\xi^{(\varepsilon)}_{x_0}\rangle\notin\mathscr E$ ；另一方面，积分 $\lim_{\varepsilon\to0}\int_{-\infty}^{+\infty}{\rm d}x\xi^{(\varepsilon)}_{x_0}(x)\psi(x)=\psi(x_0)$ 却趋向于定值，从而 $\langle\xi^{(\varepsilon)}_{x_0}|$ 趋向于一个左矢，记作 $\langle\xi_{x_0}|\in\mathscr E^*$ 。 因此依据 $\langle\xi_{x_0}|\psi\rangle=\psi(x_0)$ 定义的左矢 $\langle\xi_{x_0}|$ 没有相应的右矢。</p>
+<p>考虑一个有限区间内的平面波 $v_{p_0}^{(L)}(x)=\frac{1}{\sqrt{2\pi\hbar} }{\rm e}^{ {\rm i}p_0x/\hbar}\left(-\frac{L}{2}\leq x\leq\frac{L}{2}\right)$ ，在区间端点处迅速衰减到零， 但是仍保持充分正规。右矢表示为 $|v_{p_0}^{(L)}\rangle$ ，其对应的左矢为 $\langle v_{p_0}^{(L)}|$ 。则对于 $\forall|\psi\rangle\in\mathscr E$ ， $\langle v_{p_0}^{(L)}|\psi\rangle=\left( v_{p_0}^{(L)}(x),\psi(x)\right)\simeq\frac{1}{\sqrt{2\pi\hbar} }\int_{-\frac{L}{2} }^{+\frac{L}{2} }{\rm d}x\psi(x){\rm e}^{-{\rm i}p_0x/\hbar}$ 。现令 $L\to+\infty$ 。一方面， $\lim_{\varepsilon\to0}v_{p_0}^{(L)}(x)\notin\mathscr F$ 是发散的，从而 $\lim_{\varepsilon\to0}|v_{p_0}^{(L)}\rangle\notin\mathscr E$ ；另一方面，积分 $\lim_{L\to+\infty}\frac{1}{\sqrt{2\pi\hbar} }\int_{-\frac{L}{2} }^{+\frac{L}{2} }{\rm d}x\psi(x){\rm e}^{-{\rm i}p_0x/\hbar}=\phi(p_0)$ 却趋向于定值，从而 $\langle v_{p_0}^{(L)}|$ 趋向于一个左矢，记作 $\langle v_{p_0}|\in\mathscr E^*$ 。 因此依据 $\langle v_{p_0}|\psi\rangle=\phi(p_0)$ 定义的左矢 $\langle v_{p_0}|$ 没有相应的右矢。</p>
+<p>这种左右矢之间的不对称性，从上面的例子中显见，是与前述 $\mathscr F$ 中所谓的“广义基”有关的。由于那些广义基不是真正的波函数，但是由他们所定义的内积却是确定的。如果要构造对称关系，可以在态空间引入相应于“广义基”的所谓“广义右矢”；但是这仅仅是一种数学运算的trick罢了。在理解上，为了回避数学上的不严谨性，通常将之视为某些可以忽略的附加小项处理。</p>
+<p>内积空间 $\mathscr E$ 和其对偶空间 $\mathscr E^*$ 在有限维时是同构的，但是通常涉及到的都是无穷维空间，一般而言就是不同构的，例如上面的两个例子。</p>
+<h2 id="线性算子"><a href="#线性算子" class="headerlink" title="线性算子"></a>线性算子</h2><p>态空间上的线性算子是一个线性变换： $A:\mathscr F\to\mathscr F\quad|\psi\rangle\mapsto|\psi’\rangle$ ，其乘积定义为 $(AB)|\psi\rangle=A(B|\psi\rangle)$ ，对易子 $[A,B]=AB-BA$ 。</p>
+<p>设 $|\psi\rangle,|\varphi\rangle\in\mathscr E$ ，记 $\langle\psi|\left(A|\varphi\rangle\right)$ 称为算子 $A$ 在 $|\psi\rangle$ 、 $|\varphi\rangle$ 之间的矩阵元，是一个复数，它对第一元共轭线性，对第二元线性。（BTW，这里 $A$ 就是bracket中的“c”  ）</p>
+<p>线性算子的一个重要例子是所谓“<strong>投影算符</strong>”。</p>
+<p>首先考虑左矢 $\langle\varphi|$ 和右矢 $|\psi\rangle$ 的另一种组合形式： $|\psi\rangle\langle\varphi|$ ，它实际上可以表示一个算子，因为对 $\forall|\chi\rangle\in\mathscr E$ ， $(|\psi\rangle\langle\varphi|)|\chi\rangle=|\psi\rangle\langle\varphi|\chi\rangle=\langle\varphi|\chi\rangle|\psi\rangle$ 是一右矢。事实上右矢和左矢的这种运算，一般叫做<strong>外积</strong>。由此可见狄拉克符号的顺序十分重要。一般而言只有复常系数能够改变其位置。</p>
+<p>假设 $|\psi\rangle$ 是归一化右矢： $\langle\psi|\psi\rangle=1$ ，考虑算符即右矢自身的外积：</p>
+<script type="math/tex; mode=display">
+P_\psi=|\psi\rangle\langle\psi|</script><p>将之作用于任一右矢： $P_\psi|\varphi\rangle=|\psi\rangle\langle\psi|\varphi\rangle$ ，得到与 $|\psi\rangle$ 成正比的右矢，比例系数 $\langle\psi|\varphi\rangle$ 。“几何”直观上看，这就相当于是将 $|\varphi\rangle$ 向 $|\psi\rangle$ 的方向做投影。</p>
+<p>这还是一个幂等算子： $P_\psi^2=P_\psi P_\psi=|\psi\rangle\langle\psi|\psi\rangle\langle\psi|=|\psi\rangle\langle\psi|=P_\psi$ ，也可用“投影”的“几何意义”解释。</p>
+<p>现设有 $q$ 个正交归一右矢 $|\psi_1\rangle,|\psi_2\rangle,\cdots,|\psi_q\rangle$ ，它们张成一个 $\mathcal E$ 的子空间。定义算符：</p>
+<script type="math/tex; mode=display">
+P_q=\sum_i^q|\psi_i\rangle\langle\psi_i|</script><p>这也是幂等算子： $P_q^2=\sum_i^q\sum_j^q|\psi_i\rangle\langle\psi_i|\psi_j\rangle\langle\psi_j|=\sum_i^q\sum_j^q|\psi_i\rangle\langle\psi_j|\delta_{ij}=P_q$</p>
+<p>对于 $\forall|\psi\rangle\in\mathscr E$ ， $P_q|\psi\rangle=\sum_i^q|\psi_i\rangle\langle\psi_i|\psi\rangle$ ，可见结果是得到 $|\psi_1\rangle,\cdots,|\psi_q\rangle$ 上投影的线性组合，即相当于将 $|\psi\rangle$ 向这个子空间投影。</p>
+<h2 id="厄米共轭"><a href="#厄米共轭" class="headerlink" title="厄米共轭"></a>厄米共轭</h2><h3 id="算子对左矢的作用"><a href="#算子对左矢的作用" class="headerlink" title="算子对左矢的作用"></a>算子对左矢的作用</h3><p>下面讨论算子对于左矢的作用。给定一个算子 $A$ 和一个左矢 $\langle\psi|$ ，对于 $\forall|\varphi\rangle\in\mathscr E$ ，可以考虑复数 $\langle\psi|\left(A|\varphi\rangle\right)$ ；它对于 $|\varphi\rangle$ 是线性的。于是可以考虑将 $\langle\psi|A$ 视作一个线性泛函，即新的左矢，给出的值按照上式定义。这种约定下可以看到不论将 $A$ 首先与哪边结合都会得到相同的结果，不妨记</p>
+<script type="math/tex; mode=display">
+\langle\psi|A|\varphi\rangle=(\langle\psi|A)|\varphi\rangle=\langle\psi|\left(A|\varphi\rangle\right)</script><p>上面定义的算子对左矢的作用是线性的：</p>
+<script type="math/tex; mode=display">
+\Big[(\lambda_1\langle\psi_1|+\lambda_2\langle\psi_2|)A\Big]|\varphi\rangle=\lambda_1\langle\psi_1|A|\varphi\rangle+\lambda_2\langle\psi_2|A|\varphi\rangle</script><p><em>注：这个线性性是来自于算符本身的线性性，要与内积对第一元的共轭线性性区分开。</em></p>
+<p><strong>强调：上述算子对左矢的作用只能写成 $\boldsymbol{\langle\psi|A}$ 而不能写反，否则没有意义。</strong><br>从数学上看，掩藏在狄拉克符号的简洁性之下，这里其实定义了一个对偶空间之上的新算子——算子 $A$ 的对偶算子 $A^{*}$ 。用数学语言会更加清晰：记线性泛函 $\eta$ ，矢量 $f$ ，则 $\mathscr E$ 上的算子 $A$ 在 $\mathscr E^{*}$ 上的对偶算子 $A^{*}$ 定义为： $\eta(Af)=(A^{*}\eta)(f)$ ， $\forall \eta\in\mathscr E^{*}$ ， $\forall f\in\mathscr E$ 这个对偶映射 ${*}$ 是线性的： $(c_1A_1+c_2A_2)^{*}=c_1A_1^{*}+c_2A_2^{*}$ 上述这些数学定义和性质保证了狄拉克符号的正确性。</p>
+<h3 id="伴随算子"><a href="#伴随算子" class="headerlink" title="伴随算子"></a>伴随算子</h3><p>设算子 $A:|\psi\rangle\mapsto|\psi’\rangle$ ，而定义其伴随算子（或称厄米共轭算子） $A^\dagger$ 满足： $\langle\psi’|=\langle\psi|A^\dagger$</p>
+<p>如此定义的伴随算子 $A^\dagger$ 对于左矢具有线性性：由于左矢 $\lambda_1\langle\psi_1|+\lambda_2\langle\psi_2|$ 对应于右矢 $c_1^<em>|\psi_1\rangle+c_2^</em>|\psi_2\rangle$ ，而 $A(c_1^<em>|\psi_1\rangle+c_2^</em>|\psi_2\rangle)=c_1^<em>A|\psi_1\rangle+c_2^</em>A|\psi_2\rangle$ ，故 $(\lambda_1\langle\psi_1|+\lambda_2\langle\psi_2|)A^\dagger=\lambda_1\langle\psi_1|A^\dagger+\lambda_2\langle\psi_2|A^\dagger$ 。</p>
+<p>很容易得到伴随算子的一个性质： $\langle\psi|A^\dagger|\varphi\rangle=\langle\varphi|A|\psi\rangle^*$ 。从矩阵元的角度看这一点是显然的：所谓矩阵的厄米共轭，就是指共轭转置。</p>
+<p>注意，根据定义，若记 $|A\psi\rangle=A|\psi\rangle$ ，则 $\langle A\psi|=\langle\psi|A^\dagger$ ，可见要将算子从左矢中提出，需要将之厄米共轭处理。与 $\langle c\psi|=c^*\langle\psi|$ 相比较，可以体会两者差别与联系。实际上若将复数看作一阶复矩阵，那么它的厄米共轭（即共轭转置）自然就是这个复数的共轭。</p>
+<p>上一小节看到，数学上 $\mathscr E$ 上的线性算子 $A$ 可以自然诱导出 $\mathcal E^{*}$ 上的对偶算子 $A^{*}$ ；而其实 $\mathscr E^{*}$ 上的对偶算子 $A^{*}$ 也可自然诱导出 $\mathscr E$ 上的伴随算子 $A^\dagger$ 。数学语言讲，若规定记号使得线性泛函 $\eta_f$ 与矢量 $f$ 满足 $\eta_f(f)=(f,f)$ ，则定义 $\mathscr E$ 上的 $A^\dagger$ 满足： $A^{*}\eta_f=\eta_{A^\dagger f}$ ， $\forall f\in\mathscr E$。</p>
+<p>伴随算符具有一些重要性质：</p>
+<p>伴随算子的伴随算子仍是算子本身： $(A^\dagger)^\dagger=A$ 伴随映射 $\dagger$ 是共轭线性的： $(c_1A_1+c_2A_2)^\dagger=c_1^<em>A_1^\dagger+c_2^</em>A_2^\dagger$ 。 算子乘积的伴随： $(AB)^\dagger=B^\dagger A^\dagger$</p>
+<p><em>注：根据 $(A^\dagger)^\dagger=A$ 可得 $\langle A^\dagger\psi|\varphi\rangle=\langle \psi|A\varphi\rangle$ ，有时也作为伴随算子的定义。</em></p>
+<h3 id="狄拉克符号的厄米共轭规律"><a href="#狄拉克符号的厄米共轭规律" class="headerlink" title="狄拉克符号的厄米共轭规律"></a>狄拉克符号的厄米共轭规律</h3><p>首先根据矩阵计算的观点，厄米共轭即是指矩阵的共轭转置；从这个意义上来讲，一对对应的左矢与右矢之间也是厄米共轭关系。因此厄米共轭操作对于形式化的狄拉克符号串的影响，就可以归结为共轭转置操作对于矩阵串的影响。</p>
+<p>右矢——左矢、算子——伴随算子之间的对应，可看作是是厄米共轭对于单个矩阵的变换；</p>
+<p>而对于两个矩阵相乘整体的变换，我们已经得到 $(AB)^\dagger=B^\dagger A^\dagger$ 、 $\Big(A|\psi\rangle\Big)^\dagger=\langle\psi|A^\dagger$ ，还容易证明 $\Big(|\psi\rangle\langle\varphi|\Big)^\dagger=|\varphi\rangle\langle\psi|$ 。</p>
+<p>综上，可以总结厄米共轭操作对于狄拉克符号串（即包含有复常数、右矢、左矢、算子的式子）的影响：</p>
+<p>先将单个基元厄米共轭化，即左矢→右矢，右矢→左矢，算子→伴随算子，复常数→共轭复数； 再将整个式子各个基元顺序颠倒（复常数位置则无关紧要）。</p>
+<h3 id="自伴算符"><a href="#自伴算符" class="headerlink" title="自伴算符"></a>自伴算符</h3><p>若算子 $A$ 满足 $A=A^\dagger$ ，则称其为自伴算子。</p>
+<p>此外，自伴算子还满足 $\langle\psi|A|\varphi\rangle=\langle\varphi|A|\psi\rangle^*$ ； $\langle A\psi|\varphi\rangle=\langle \psi|A\varphi\rangle$ 。</p>
+<p>回顾可知，投影算子即是自伴算子的一个例子。</p>
+<p>两个自伴算子 $A$ 、 $B$ 的乘积也为自伴算子，当且仅当对易子 $[A,B]=0$ （简单证明： $(AB)^\dagger=B^\dagger A^\dagger=BA=AB-[A,B]$ ）。</p>
+<h1 id="表象"><a href="#表象" class="headerlink" title="表象"></a>表象</h1><p>前面建立起的概念都是基于向量空间的语言；而所谓选择一种表象就是指在态空间 $\mathcal E$ 中选择一个离散（或连续的）正交归一基，在选定的表象中 ，矢量和算子都是以它们的坐标来表示（分量or矩阵元）。</p>
+<h2 id="态空间的正交归一基"><a href="#态空间的正交归一基" class="headerlink" title="态空间的正交归一基"></a>态空间的正交归一基</h2><p>对于右矢的离散集合 $\{|u_i\rangle\}$ 或连续集合 $\{|w_\alpha\rangle\}$ 来说：</p>
+<p>正交归一关系式：</p>
+<script type="math/tex; mode=display">
+\langle u_i|u_j\rangle=\delta_{ij}</script><script type="math/tex; mode=display">
+\langle w_\alpha|w_{\alpha'}\rangle=\delta(\alpha-\alpha')</script><p>注：由此可见这样定义的连续集合中的元素并不是真正的右矢，而应看作广义右矢。</p>
+<p>上述集合构成一个基的条件是任一右矢都可唯一地展开为：</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\sum_{i}\phi_i|u_i\rangle</script><script type="math/tex; mode=display">
+|\psi\rangle=\int{\rm d}\alpha \phi(\alpha) |w_{\alpha}\rangle</script><p>直接用左矢 $\langle u_j|$ 或 $\langle w_{\alpha’}|$ 作用在上式两边即可得到展开系数为</p>
+<script type="math/tex; mode=display">
+\phi_i=\langle u_i|\psi\rangle</script><script type="math/tex; mode=display">
+\phi(\alpha)=\langle w_\alpha|\psi\rangle</script><p>将之代回展开式即可得</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\sum_{i}\langle u_i|\psi\rangle|u_i\rangle=\sum_{i}|u_i\rangle\langle u_i|\psi\rangle=\left(\sum_{i}|u_i\rangle\langle u_i|\right)|\psi\rangle</script><script type="math/tex; mode=display">
+|\psi\rangle=\int{\rm d}\alpha \langle w_\alpha|\psi\rangle|w_{\alpha}\rangle=\int{\rm d}\alpha |w_{\alpha}\rangle\langle w_\alpha|\psi\rangle=\left(\int{\rm d}\alpha |w_{\alpha}\rangle\langle w_\alpha|\right)|\psi\rangle</script><p>出现了两个投影算符，且均等于恒等算符</p>
+<script type="math/tex; mode=display">
+P_{\{u_i\} }=\sum_{i}|u_i\rangle\langle u_i|=I</script><script type="math/tex; mode=display">
+P_{\{w_\alpha\} }=\int{\rm d}\alpha |w_{\alpha}\rangle\langle w_\alpha|=I</script><p>这就是封闭性关系。这是因为 $\{|u_i\rangle\}$ 或 $\{|w_\alpha\rangle\}$ 所张成的子空间就是态空间 $\mathscr E$ 本身，因此右矢投影到这个子空间仍是它自身。</p>
+<h2 id="矩阵表示"><a href="#矩阵表示" class="headerlink" title="矩阵表示"></a>矩阵表示</h2><h3 id="右矢的表示"><a href="#右矢的表示" class="headerlink" title="右矢的表示"></a>右矢的表示</h3><p>在离散基 $\{|u_i\rangle\}$ 中，</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\sum_i|u_i\rangle\langle u_i|\psi\rangle=\sum_ic_i|u_i\rangle</script><p>可将任一右矢 $|\psi\rangle$ 表示为一个列向量，其各个元素就是在 $\{|u_i\rangle\}$ 下的分量 $c_i=\langle u_i|\psi\rangle$ ：</p>
+<script type="math/tex; mode=display">
+[c_i]=\begin{pmatrix} \langle u_1|\psi\rangle\\ \langle u_2|\psi\rangle\\ \vdots\\ \langle u_i|\psi\rangle\\ \vdots \end{pmatrix}</script><p>而在连续基 $\{|w_\alpha\rangle\}$ 中，</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\int{\rm d}\alpha|w_\alpha\rangle\langle w_\alpha|\psi\rangle=\int{\rm d}\alpha c(\alpha)|w_\alpha\rangle</script><p>任一右矢 $|\psi\rangle$ 则可表示为一个函数 $c(\alpha)=\langle w_\alpha|\psi\rangle$ ，形式上可以写为一维分布</p>
+<script type="math/tex; mode=display">
+\alpha\downarrow \begin{pmatrix} \vdots\\ \langle w_\alpha|\psi\rangle\\ \vdots \end{pmatrix}</script><h3 id="左矢的表示"><a href="#左矢的表示" class="headerlink" title="左矢的表示"></a>左矢的表示</h3><p>在离散基 $\{|u_i\rangle\}$ 中，任一左矢 $\langle\psi|$ 表示为一个行向量，其各个元素为下式所示的分量</p>
+<script type="math/tex; mode=display">
+\langle\psi|=\langle\psi|P_{u_i}=\sum_{i}\langle\psi|u_i\rangle\langle u_i|</script><p>即对应右矢分量 $\langle u_i|\psi\rangle$ 的共轭复数 $\langle\psi|u_i\rangle$</p>
+<script type="math/tex; mode=display">
+[c_i]^{*T}=\begin{pmatrix}\langle\psi|u_1\rangle&\cdots&\langle\psi|u_i\rangle&\cdots\end{pmatrix}=\begin{pmatrix}\langle u_1|\psi\rangle^*&\cdots&\langle u_i|\psi\rangle^*&\cdots\end{pmatrix}</script><p>而在连续基 $\{|w_\alpha\rangle\}$ 中，任一左矢 $\langle\psi|$ 表示为</p>
+<script type="math/tex; mode=display">
+\langle\psi|=\langle\psi|P_{w_\alpha}=\int{\rm d}\alpha \langle\psi|w_{\alpha}\rangle\langle w_\alpha|</script><p>即对应右矢分量 $c(\alpha)=\langle w_\alpha|\psi\rangle$ 的共轭 $c^*(\alpha)=\langle \psi|w_\alpha\rangle$ 。可以形式地写为一维分布</p>
+<script type="math/tex; mode=display">
+\begin{matrix} \begin{pmatrix} \cdots&\langle\psi|w_\alpha\rangle&\cdots\end{pmatrix}\\ \longrightarrow\\ \alpha \end{matrix} = \begin{matrix} \begin{pmatrix} \cdots&\langle w_\alpha|\psi\rangle^*&\cdots\end{pmatrix}\\ \longrightarrow\\ \alpha \end{matrix}</script><p>之所以写成行向量的形式，是为了方便利用矩阵运算来表达左右矢之间的分量运算。例如：</p>
+<script type="math/tex; mode=display">
+\langle \varphi|\psi\rangle=\langle u_i|P_{\{u_i\} }|\psi\rangle=\sum_{i}\langle\varphi|u_i\rangle\langle u_i|\psi\rangle=\sum_i\chi_i^*\phi_i</script><script type="math/tex; mode=display">
+\langle \varphi|\psi\rangle=\langle u_i|P_{\{w_\alpha\} }|\psi\rangle=\int{\rm d}\alpha\langle\varphi|w_\alpha\rangle\langle w_\alpha|\psi\rangle=\int{\rm d}\alpha \chi^*(\alpha)\phi_i(\alpha)</script><p>可见行向量与列向量的乘积可以自然描述左右矢的作用。</p>
+<h3 id="算子的表示"><a href="#算子的表示" class="headerlink" title="算子的表示"></a>算子的表示</h3><p>线性算子是态空间上的线性变换，而某基底下的线性变换一般是用矩阵来表示；若想从给定的算子 $A$ 和离散基 $\{|u_i\rangle\}$ 组合得到数，最直接的就是</p>
+<script type="math/tex; mode=display">
+A_{ij}=\langle u_i|A|u_j\rangle</script><p>事实上</p>
+<script type="math/tex; mode=display">
+A=\sum_i\sum_j|u_i\rangle\langle u_i|A|u_j\rangle\langle u_j|=\sum_{ij}A_{ij}|u_i\rangle\langle u_j|</script><p>将之按照指标排列成方阵，得到的矩阵就称之为算子 $A$ 在离散基 $\{|u_i\rangle\}$ 下的矩阵表示。</p>
+<script type="math/tex; mode=display">
+[A_{ij}]=\begin{pmatrix} A_{11}&\cdots&A_{1j}&\cdots\\ \vdots&&\vdots&\\ A_{i1}&\cdots&A_{ij}&\cdots\\ \vdots&&\vdots& \end{pmatrix} = \begin{pmatrix} \langle u_1|A|u_1\rangle&\cdots&\langle u_1|A|u_j\rangle&\cdots\\ \vdots&&\vdots&\\ \langle u_i|A|u_1\rangle&\cdots&\langle u_i|A|u_j\rangle&\cdots\\ \vdots&&\vdots& \end{pmatrix}</script><p>而在连续基 $\{w_\alpha\}$ 下的表示则可通过</p>
+<script type="math/tex; mode=display">
+A=\int{\rm d}\alpha\int{\rm d}\alpha'|w_\alpha\rangle\langle w_\alpha|A|w_\alpha'\rangle\langle w_\alpha'|=\iint{\rm d}\alpha{\rm d}\alpha' A(\alpha,\alpha')|w_\alpha\rangle\langle w_{\alpha'}|</script><script type="math/tex; mode=display">
+A(\alpha,\alpha')=\langle w_\alpha|A|w_{\alpha'}\rangle</script><p>写成连续的二维分布：</p>
+<script type="math/tex; mode=display">
+\begin{matrix} &\alpha\\ &\longrightarrow\\ \alpha\downarrow& \begin{pmatrix} &\vdots&&\\ \cdots&A(\alpha,\alpha')&&\\ &&& \end{pmatrix} \end{matrix}</script><h3 id="伴随算子的表示"><a href="#伴随算子的表示" class="headerlink" title="伴随算子的表示"></a>伴随算子的表示</h3><p>根据性质，</p>
+<script type="math/tex; mode=display">
+(A^\dagger)_{ij}=\langle u_i|A^\dagger|u_j\rangle=\langle u_j|A|u_i\rangle^*=A^*_{ji}</script><script type="math/tex; mode=display">
+A^\dagger(\alpha,\alpha')=\langle w_\alpha|A^\dagger|w_{\alpha'}\rangle=\langle w_{\alpha'}|A|w_{\alpha}\rangle^*=A^*(\alpha',\alpha)</script><p>可见在同一表象中，相互伴随的两算子其矩阵互为厄米共轭（共轭转置）： $[A^\dagger]=[A]^{*T}$</p>
+<p>特别地，对于<strong>自伴算子</strong>来说， $A_{ij}=(A^\dagger)_{ij}=A^<em>_{ji}$ ，可知它的矩阵是<strong>共轭对称</strong>的，即矩阵元相对于主对角线互为共轭复数。而 $A_{ii}=A^</em>_{ii}$ ，说明其主对角线上的元素一定为实数。</p>
+<p><strong>综上，要得到任一狄拉克符号在某表象下的表示，只要通过插入相应的封闭性关系即可。</strong></p>
+<h3 id="狄拉克符号串的表示"><a href="#狄拉克符号串的表示" class="headerlink" title="狄拉克符号串的表示"></a>狄拉克符号串的表示</h3><p>要计算在基 $\{|u_i\rangle\} 下$，右矢 $|\psi\rangle$ 被算子 $A$ 作用的结果 $|\psi’\rangle=A|\psi\rangle$ ，从其分量入手：</p>
+<script type="math/tex; mode=display">
+c'_i=\langle u_i|\psi'\rangle=\langle u_i|A|\psi\rangle=\langle u_i|AP_{\{u_j\} }|\psi\rangle=\sum_j\langle u_i|A|u_j\rangle\langle u_j|\psi\rangle=\sum_jA_{ij}c_j</script><p>上面利用了封闭性关系插入运算。同理，对连续基 $\{|w_\alpha\rangle\}$ 也有</p>
+<script type="math/tex; mode=display">
+c'(\alpha)=\langle w_{\alpha}|AP_{\{w_{\alpha'}\} }|\psi\rangle=\int{\rm d}{\alpha'}\langle w_{\alpha}|A|w_{\alpha'}\rangle\langle w_{\alpha'}|\psi\rangle=\int{\rm d}{\alpha'} A(\alpha,\alpha')c(\alpha')</script><p>可见直接计算矩阵乘积 $[A_{ij}][\phi_k]$ 即可</p>
+<script type="math/tex; mode=display">
+A|\psi\rangle = \begin{pmatrix} A_{11}&\cdots&A_{1j}&\cdots\\ \vdots&&\vdots&\\ A_{i1}&\cdots&A_{ij}&\cdots\\ \vdots&&\vdots& \end{pmatrix} \begin{pmatrix} c_1\\ \vdots\\ c_i\\ \vdots \end{pmatrix}</script><p>特别地，矩阵 $[A_{ij}]$ 的第 $j$ 列，就是第 $i$ 基右矢 $|u_i\rangle 的变换 A|u_i\rangle 在基 \{|u_i\rangle\}$ 下的分量。</p>
+<p>同理可以证明，左矢 $\langle\psi|$ 被算子 $A$ 作用的结果 $\langle\psi’|=\langle\psi|A$ ，矩阵表示为</p>
+<script type="math/tex; mode=display">
+\langle\psi|A= \begin{pmatrix} b^*_1&\cdots&b^*_i&\cdots \end{pmatrix} \begin{pmatrix} A_{11}&\cdots&A_{1j}&\cdots\\ \vdots&&\vdots&\\ A_{i1}&\cdots&A_{ij}&\cdots\\ \vdots&&\vdots& \end{pmatrix}</script><p>数 $\langle \varphi|A|\psi\rangle$ 的矩阵表示也是同理：</p>
+<script type="math/tex; mode=display">
+\langle \varphi|A|\psi\rangle= \begin{pmatrix} b^*_1&\cdots&b^*_i&\cdots \end{pmatrix} \begin{pmatrix} A_{11}&\cdots&A_{1j}&\cdots\\ \vdots&&\vdots&\\ A_{i1}&\cdots&A_{ij}&\cdots\\ \vdots&&\vdots& \end{pmatrix} \begin{pmatrix} c_1\\ \vdots\\ c_i\\ \vdots \end{pmatrix}</script><p>外积算子 $|\psi\rangle\langle \varphi|$</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix} c_1\\ \vdots\\ c_i\\ \vdots \end{pmatrix} \begin{pmatrix} b^*_1&\cdots&b^*_i&\cdots \end{pmatrix} = \begin{pmatrix} c_1b_1^*&\cdots&c_ib_1^*&\cdots\\ \vdots&&\vdots&\\ c_1b_j^*&\cdots&c_ib_j^*&\cdots\\ \vdots&&\vdots& \end{pmatrix}</script><h2 id="表象变换"><a href="#表象变换" class="headerlink" title="表象变换"></a>表象变换</h2><p>在选取不同的表象下，同一右矢、左矢或算子会有不同的矩阵表示，这些矩阵之间存在确定的变换关系，即线性代数中的基底变换。这里先只讨论离散基的情况。</p>
+<p>假设离散正交归一基由 $\{|u_i\rangle\}$ 变为 $\{|t_k\rangle\}$ ，那么只要给出新基的每一基矢量在旧基的全部分量 $\langle u_i|t_k\rangle$ ，就能确定变换关系，它由变换矩阵 $S$ 表示</p>
+<script type="math/tex; mode=display">
+S_{ik}=\langle u_i|t_k\rangle</script><p>它的厄米共轭为</p>
+<script type="math/tex; mode=display">
+(S^\dagger)_{ki}=S^*_{ik}=\langle t_k|u_i\rangle</script><p><em>注：基底变换矩阵实际上是一个幺正矩阵（酉矩阵）： $S^\dagger S=SS^\dagger=I$ 。实际上</em> </p>
+<script type="math/tex; mode=display">
+(S^\dagger S)_{kl}=\sum_{i}S^\dagger_{ki}S_{il}=\sum_i\langle t_k|u_i\rangle\langle u_i|t_l\rangle=\langle t_k|t_l\rangle=\delta_{kl}</script><script type="math/tex; mode=display">
+(SS^\dagger)_{ij}=\sum_{i}S_{ik}S^\dagger_{kj}=\sum_i\langle u_i|t_k\rangle\langle t_k|u_j\rangle=\langle u_i|u_j\rangle=\delta_{ij}</script><p><em>这就说明基底逆变换 $S^{-1}=S^\dagger$ 。</em></p>
+<p>对于右矢 $|\psi\rangle$ ，在新基底的分量为 $\langle t_k|\psi\rangle$ ，则</p>
+<script type="math/tex; mode=display">
+\langle t_k|\psi\rangle=\langle t_k|P_{u_i}|\psi\rangle=\sum_i\langle t_k|u_i\rangle\langle u_i|\psi\rangle=\sum_iS^\dagger_{ki}c_i</script><script type="math/tex; mode=display">
+\langle u_i|\psi\rangle=\langle u_i|P_{t_k}|\psi\rangle=\sum_k\langle u_i|t_k\rangle\langle t_k|\psi\rangle=\sum_kS_{ik}c_k</script><p>可见 $[c_k]_t=[S^\dagger_{ki}][c_i]_u$ ， $[c_i]_u=[S_{ik}][c_k]_t ，即右矢的正变换为 S^{-1}=S^\dagger$ ，逆变换为 $S$ 。用熟悉的语言来讲，这就是说<strong>右矢是坐标逆变的</strong>。</p>
+<p>对于左矢 $\langle\psi|$ ，在新基底的分量为 $\langle \psi|t_k\rangle$ ，则</p>
+<script type="math/tex; mode=display">
+\langle \psi|t_k\rangle=\langle \psi|P_{u_i}|t_k\rangle=\sum_i\langle \psi|u_i\rangle\langle u_i|t_k\rangle=\sum_ic^*_i S_{ik}</script><script type="math/tex; mode=display">
+\langle \psi|u_i\rangle=\langle \psi|P_{t_k}|u_i\rangle=\sum_k\langle \psi|t_k\rangle\langle t_k|u_i\rangle=\sum_kc^*_k S^\dagger_{ki}</script><p>可见 $[c^<em>_k]_t=[c^</em>_i]_u[S_{ik}]$ ， $[c^<em>_i]_u=[c^</em>_k]_t[S^\dagger_{ik}]$ ，即左的正变换为 $S$ ，逆变换为 $S^{-1}=S^\dagger$ 。用熟悉的语言来讲，这就是说<strong>左矢是坐标协变的</strong>。</p>
+<p>对于算子 $A$ ，在新基底的分量为 $\langle t_k|A|t_l\rangle$ ，则</p>
+<script type="math/tex; mode=display">
+\langle t_k|A|t_l\rangle=\langle t_k|P_{u_i}AP_{u_i}|t_l\rangle=\sum_{ij}\langle t_k|u_i\rangle\langle u_i|A|u_j\rangle\langle u_j|t_l\rangle=\sum_{ij}S^\dagger_{ki}A_{ij}S_{jl}</script><script type="math/tex; mode=display">
+\langle u_i|A|u_j\rangle=\langle u_i|P_{t_k}AP_{t_l}|u_j\rangle=\sum_{kl}\langle u_i|t_k\rangle\langle t_k|A|t_l\rangle\langle t_l|u_j\rangle=\sum_{kl}S_{ik}A_{kl}S^\dagger_{lj}</script><p>可见 $[A_{kl}]_t=[S^\dagger_{ki}][A_{ij}]_u[S_{jl}]$ ， $[A_{ij}]_u=[S_{ik}][A_{kl}]_u[S^\dagger_{lj}]$ 。</p>
+<p>综上，可见<strong>表象变换也是通过插入封闭性关系来获得</strong>。</p>
+<h1 id="本征方程和观察算符"><a href="#本征方程和观察算符" class="headerlink" title="本征方程和观察算符"></a>本征方程和观察算符</h1><h2 id="本征方程"><a href="#本征方程" class="headerlink" title="本征方程"></a>本征方程</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>称 $A|\psi\rangle=\lambda|\psi\rangle$ 为算子的本征方程 $A$ ，其中复数 $\lambda$ 称为算子 $A$ 的一个本征值，右矢 $|\psi\rangle$ 称为算子 $A$ 相应于本征值 $\lambda$ 的一个本征矢，它所对应的物理态称为本征态。全体本征值的集合叫做算子 $A$ 的谱。</p>
+<p>注：若 $|\psi\rangle$ 是 $A$ 相应于 $\lambda$ 的一个本征矢，那么 $\alpha|\psi\rangle$ （ $\forall\alpha\in\mathbb C$ ）也是 $A$ 相应于同一本征值的本征矢： $A(\alpha|\psi\rangle)=\alpha A|\psi\rangle=\alpha\lambda|\psi\rangle=\lambda(\alpha|\psi\rangle)$ ，但在物理意义上两者又是代表同一量子态的。因此一般约定只讨论归一化本征矢： $\langle\psi|\psi\rangle=1$ 。 但是这一约定并没有完全消除上述情况，例如 ${\rm e}^{ {\rm i}\theta}|\psi\rangle$ 。 在不考虑上述冗余度的情况下（即相差一个复常数因子的右矢视作同一态），若一个本征值只对应于一个本征态，则称该本征值<strong>非简并</strong>；否则这个本征值就是<strong>简并</strong>的，且相应于它的线性无关本征矢的个数（即对应的不同本征态的个数）叫做该本征值的<strong>简并度</strong>（可以为有限值，也可以是无限的）。</p>
+<p><em>注：从计算方便上讲，这里可能会使用一些“广义右矢”作为本征矢，尽管并不严谨。 相应于同一本征值的所有本征矢的任意线性组合显然也是这个本征值的本征态，因此属于同一本征值 $\lambda$ 的全体本征矢构成一个 $g$ 维线性空间（可能是无穷维的），叫做本征值 $\lambda$ 的<strong>本征子空间</strong>，这里 $g$ 即是它的简并度。</em></p>
+<p>一个例子：投影算符本征方程 $P_\psi|\psi\rangle=\lambda|\psi\rangle$ ，它只有两个本征值： $\lambda=1$ ，它的本征子空间就是 $|\psi\rangle$ 本身，因而非简并； $\lambda=0$ ，它的本征子空间包含所有与正交的本征矢，即 $|\psi\rangle$ 的正交补空间；因而简并度为无穷大（若态空间是无穷维的）。</p>
+<p>与之对应的， $A|\psi\rangle=\lambda|\psi\rangle\Longrightarrow\langle\psi|A^\dagger=\lambda^{*}\langle\psi|$ ，则若右矢 $|\psi\rangle$ 称为算子 $A$ 相应于本征值 $\lambda$ 的本征右矢，有时也说左矢 $\langle\psi|$ 是 $A^\dagger$ 的相应于本征值 $\lambda^{*}$ 的本征左矢。</p>
+<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><p>下面先讨论有限 $N$ 维空间的情况，再不加证明地推广到无穷维上（尽管实际上所需的数学非常复杂）。</p>
+<p>选定表象 $\{|u_i\rangle\}$ ，则本征方程 $A|\psi\rangle=\lambda|\psi\rangle$ 在此基底的分量式为</p>
+<script type="math/tex; mode=display">
+\langle u_i|A|\psi\rangle=\lambda\langle u_i|\psi\rangle</script><p>插入封闭性关系</p>
+<script type="math/tex; mode=display">
+\sum_jA_{ij}c_j=\sum_j\langle u_i|A|u_j\rangle\langle u_j|\psi\rangle=\lambda\langle u_i|\psi\rangle=\lambda c_i</script><p>则求解本征方程就化为了方程组</p>
+<script type="math/tex; mode=display">
+\sum_{j=1}^N[A_{ij}-\lambda\delta_{ij}]c_j=0\quad i=1,2,\cdots,N</script><p>它包含 $N$ 个方程，原则上每个方程给出一个本征矢分量 $c_j$ 的解。</p>
+<p>若将之视作关于 $c_j$ 的方程，首先这是一个齐次线性方程组，显然有平凡解 $|\psi\rangle=\boldsymbol 0=(0,\cdots)^T$ 。而当且仅当系数矩阵行列式为零时，才会有非平凡解，即条件为</p>
+<script type="math/tex; mode=display">
+\det[\boldsymbol A-\lambda\boldsymbol I]=0</script><p>该方程称为<strong>特征方程</strong>或<strong>久期方程</strong>，它决定算符 $A$ 的全体本征值。写成分量式为</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix} A_{11}-\lambda & A_{12} & \cdots & A_{1N} \\ A_{21} & A_{22}-\lambda & \cdots & A_{2N} \\ \vdots & \vdots & \ddots & \vdots & \\ A_{N1} & A_{N2} & \cdots & A_{NN}-\lambda \\ \end{vmatrix} =0</script><p>特征方程是关于 $\lambda$ 的 $N$ 次方程，有 $N$ 个复根（包括重根），且与表象的选取无关（矩阵的行列式是基底变换的不变量）。求解之即可得到算子 $A$ 的全部本征值。</p>
+<p>通过特征方程求解并选定一个本征值 $\lambda_0$ 后，就要求其对应的本征矢 $|\psi_0\rangle$ 。设若 $\lambda_0$ 是特征方程的 $q$ 重根（ $1\leq q\leq N$ ，这包含了单根的情况），则可以证明，方程组</p>
+<script type="math/tex; mode=display">
+\sum_{j=1}^N[A_{ij}-\lambda\delta_{ij}]c_j=0\quad i=1,2,\cdots,N</script><p>可能只有 $N-p$ （ $0&lt;1\leq q$ ）个独立方程。但是有 $N$ 个未知数，因此存在无穷多组解；但是只要确定其中 $p$ 个分量，那么其他 $N-p$ 个分量也就随之确定；换言之，每一组解的全部分量都能表示为其中某 $p$ 个分量（例如，不妨取为前 $p$ 个分量 $c_1,c_2,\cdots,c_p$ ）的函数。这些函数应该具有线性齐次形式：</p>
+<script type="math/tex; mode=display">
+c_i=\alpha_i^1c_1+\alpha_i^2c_2+\cdots+\alpha_i^pc_p=\sum_{k=1}^p\alpha_i^kc_k ， j=1,2,\cdots,N</script><p>因为原方程组就是线性齐次的。显然 $\alpha_i^k=\delta_{ik}(1\leq i\leq p)$ ；其余诸系数 $\alpha_i$ 由矩阵元 $A_{ij}$ 和 $\lambda_0$ 决定。于是本征矢也就随之确定，因此可记作 $|\psi_0(c_1,\cdots,c_p)\rangle$ ：</p>
+<script type="math/tex; mode=display">
+|\psi_0(c_1,\cdots,c_p)\rangle=\sum_{i=1}^Nc_i|u_i\rangle=\sum_{i=1}^N\sum_{k=1}^p\alpha_i^kc_k|u_i\rangle=\sum_{k=1}^pc_k\left(\sum_{i=1}^N\alpha_i^k|u_i\rangle\right)</script><p>若记 $|\psi_0^k\rangle=\sum_{i=1}^N\alpha_i^k|u_i\rangle$ ，则 $|\psi_0(c_1,\cdots,c_p)\rangle=\sum_{k=1}^pc_k|\psi_0^k\rangle$</p>
+<p>因此选定本征值 $\lambda_0$ 后，其对应的全体本征矢构成一个 $p$ 维线性空间，此时<strong>为 $q$ 重根的本征值的简并度为 $p$ （ $\leq q$ ）</strong>。特别地，<strong>为单根的特征值一定是非简并的</strong>。</p>
+<p>综上可知，算子 $A$ 任一本征值 $\lambda$ 的简并度 $p$ 总是不超过其重数 $q$ ；<strong>对于自伴算符，可以证明本征值的简并度总是等于重数即 $p=q$</strong> 。因此在一个有限 $N$ 维空间中，自伴算符永远具有 $N$ 个线性无关的本征矢（可能具有相同或不同的本征值）。这样的好处在于它们能够进一步正交归一化从而构成空间的一个基底；因此<strong>在有限维空间中自伴算符可以对角化</strong>。</p>
+<h2 id="观察算符"><a href="#观察算符" class="headerlink" title="观察算符"></a>观察算符</h2><p>考察重要情况：自伴算子的本征方程。存在重要结论：</p>
+<ol>
+<li><p>自伴算子本征值都是实数：</p>
+<p>$A|\psi\rangle=\lambda|\psi\rangle$ ，则 $\lambda\langle\psi|\psi\rangle=\langle\psi|A|\psi\rangle$ 。对于自伴算子， $\langle\psi|A|\psi\rangle$ 是实数（ $\langle\psi|\psi\rangle$ 显然也是实数），从而 $\lambda$ 也一定是实数。</p>
+</li>
+<li><p>自伴算符的属于不同本征值的本征矢相互正交：</p>
+<p>设 $A|\psi\rangle=\lambda|\psi\rangle$ ， $A|\varphi\rangle=\mu|\varphi\rangle$ 。对于自伴算子，有 $\langle\psi|A=\lambda\langle\psi|$ ，右乘一个 $|\varphi\rangle$ 得 $\langle\psi|A|\varphi\rangle=\lambda\langle\psi|\varphi\rangle$ ；再对 $A|\varphi\rangle=\mu|\varphi\rangle$ 左乘一个 $\langle\psi|$ 得 $\langle\psi|A|\varphi\rangle=\mu\langle\psi|\varphi\rangle$ 。两式相减得 $(\lambda-\mu)\langle\psi|\varphi\rangle=0$ 。</p>
+</li>
+</ol>
+<p>前面已经看到在有限维空间中，自伴算符的本征矢可以构成一个基从而使之对角化；然而对于无穷维空间却未必如此。因此，引入一个概念——观察算符，即存在一组本征矢可以构成一个基的算符。</p>
+<p>考虑一个自伴算符 $A$ ，最一般的情况假设其谱为离散谱与连续谱的混合谱，其离散部分为 $\{a_n;n=1,2,\cdots\}$ ，简并度分别记为 $g_n$ ；连续部分为 $\{a(\nu);\nu\in D\subset\mathbb R\}$ ，而连续谱不能定义简并度。从每个离散谱本征值的本征子空间中各选取相互正交且归一化的 $g_n$ 个本征右矢 $|\psi_n^i\rangle$ ， $i=1,2,\cdots,g_n$ 。同时也选取连续谱对应的本征态 $|\psi_\nu\rangle$ 。由于不是同一子空间的本征矢相互正交，因此所有选出来的本征右矢就满足</p>
+<script type="math/tex; mode=display">
+\left\{ \begin{matrix} \langle\psi_n^i|\psi_{n'}^{i'}\rangle=\delta_{nn'}\delta_{ii'}\\ \langle\psi_\nu|\psi_{\nu'}\rangle=\delta(\nu-\nu')\\ \langle\psi_n^i|\psi_\nu\rangle=0 \end{matrix} \right.</script><p>此即正交归一条件。</p>
+<p>若自伴算符 $A$ 按上述方法选出的正交归一系构成态空间的一个基，即满足封闭性条件：</p>
+<script type="math/tex; mode=display">
+\sum_{n=1}^{+\infty}\sum_{i=1}^{g_n}|\psi_{n}^{i}\rangle\langle\psi_n^i|+\int_D{\rm d}\nu|\psi_\nu\rangle\langle\psi_\nu|=I</script><p>则称 $A$ 为<strong>观察算符</strong>或<strong>可观测量的算符</strong>。</p>
+<p>对于离散谱的简单情形，事实上由于各个子空间均可定义投影算符 $P_n=\sum_{i=1}^{g_n}|\psi_{n}^{i}\rangle\langle\psi_n^i|$ ，于是观察算符可以表示为 $A=\sum_na_nP_n$ 。</p>
+<p>投影算符 $P_\psi=|\psi\rangle\langle\psi|$ 就是一个观察算符：因对任一右矢 $|\varphi\rangle$ ， $|\varphi\rangle=P_\psi|\varphi\rangle+(I-P_\psi)|\varphi\rangle ，而 P_\psi|\varphi\rangle$ 、 $(I-P_\psi)|\varphi\rangle$ 显然分别是属于特征值1、0的本征矢。</p>
+<h2 id="可对易观察算符集"><a href="#可对易观察算符集" class="headerlink" title="可对易观察算符集"></a>可对易观察算符集</h2><h3 id="重要定理"><a href="#重要定理" class="headerlink" title="重要定理"></a>重要定理</h3><h4 id="定理一："><a href="#定理一：" class="headerlink" title="定理一："></a>定理一：</h4><p><strong>若两算符 $A$ 、 $B$ 可对易，且 $|\psi\rangle$ 是 $A$ 的一个本征矢，则 $B|\psi\rangle$ 也是 $A$ 的本征矢，且属于同一本征值。</strong></p>
+<p>设若 $A|\psi\rangle=a|\psi\rangle$ ，则</p>
+<script type="math/tex; mode=display">
+A(B|\psi\rangle)=AB|\psi\rangle=BA|\psi\rangle=aB|\psi\rangle=a(B|\psi\rangle)</script><p>即证。</p>
+<p>若 $a$ 非简并，则必有 $B|\psi\rangle=b|\psi\rangle$ ，可见 $|\psi\rangle$ 也是 $B$ 的本征矢。</p>
+<p>若 $a$ 简并，则 $B|\psi\rangle\in\mathscr E_a={\rm span}\{|\psi\rangle_a\}$ 。</p>
+<p>不论哪种情况，若两算符 $A$ 、 $B$ 可对易，则 $A$ 的所有本征子空间在 $B$ 作用下都是封闭不变的。</p>
+<h4 id="定理二："><a href="#定理二：" class="headerlink" title="定理二："></a>定理二：</h4><p><strong>若两观察算符 $A$ 、 $B$ 可对易，且 $|\psi_1\rangle$ 、 $|\psi_2\rangle$ 是 $A$ 的两个属于不同本征值的本征矢，则矩阵元 $\langle\psi_1|B|\psi_2\rangle=0$ 。</strong></p>
+<p>$A|\psi_1\rangle=a_1|\psi_1\rangle$ ， $A|\psi_2\rangle=a_2|\psi_2\rangle$ 。根据上一定理 $B|\psi_2\rangle$ 也是其本征矢，本征值为 $a_2$ 。于是根据正交性 $\langle\psi_1|B|\psi_2\rangle=0$ 。即证。</p>
+<p>不利用上一定理也可。由于 $[A,B]=0$ ，则 $\langle\psi_1|(AB-BA)|\psi_2\rangle=0$ 。又由于观察算符是自伴算符，则</p>
+<script type="math/tex; mode=display">
+\langle\psi_1|AB|\psi_2\rangle=a_1\langle\psi_1|B|\psi_2\rangle</script><script type="math/tex; mode=display">
+\langle\psi_1|BA|\psi_2\rangle=a_2\langle\psi_1|B|\psi_2\rangle</script><p>于是 $\langle\psi_1|(AB-BA)|\psi_2\rangle=(a_1-a_2)\langle\psi_1|B|\psi_2\rangle=0$ ，即证。</p>
+<h4 id="定理三："><a href="#定理三：" class="headerlink" title="定理三："></a>定理三：</h4><p><strong>（基本定理）若两观察算符 $A$ 、 $B$ 可对易，则总存在 $A$ 、 $B$ 的共同本征矢构成态空间的一个正交归一基。</strong></p>
+<p>观察算符 $A$ 至少存在一组本征矢可以构成正交归一基，记作 $|u_n^i\rangle$ ，则</p>
+<script type="math/tex; mode=display">
+\langle\psi_n^i|\psi_{n'}^{i'}\rangle=\delta_{nn'}\delta_{ii'}</script><p>在基 $\{|u_n^i\rangle\}$ 下考察 $B$ 的矩阵形式。首先 $n\neq n’ 时 \langle\psi_n^i|B|\psi_{n’}^{i’}\rangle=0$ ；则若将基矢量的顺序按照 $n$ 优先、 $i$ 其次的指标顺序排列，则 $B$ 至少是一个分块对角矩阵，即只在沿对角线的若干方块区域内不为零；这也又反映了“ $A$ 的所有本征子空间在 $B$ 作用下都是封闭不变的”这一性质。</p>
+<p>若 $A$ 的某个本征值非简并；则对应的 $B$ 分块只有一个元素，同时也是 $A$ 、 $B$ 的共同本征矢；而若 $A$ 的某个本征值简并度为 $g$ ，则对应的 $B$ 分块为 $g\times g$ 。但是无论如何选取， $A$ 自身在 $\{|u_n^i\rangle\}$ 下永远都是对角矩阵。</p>
+<p>下面在每个子空间选取 $A$ 、 $B$ 的共同本征矢。首先由于观察算符 $B$ 自伴，则它的分块也是厄米矩阵（ $\langle\psi_n^i|B|\psi_n^j\rangle=\langle\psi_n^j|B|\psi_n^i\rangle^{*}$ ），因而可对角化。也即在该子空间一定可以找到一个基 $\{|v_n^i\rangle\}$ 使得 $B$ 对角，从而它同时也是 $B$ 的本征矢。因此，所有子空间的 $\{|v_n^i\rangle\}$ 都是 $A$ 、 $B$ 的共同本征矢，且构成态空间的一个正交归一基。重点在于：<strong>$A$ 的属于简并本征值的本征矢不一定是 $B$ 的本征矢，但是在 $A$ 的每个本征子空间中总可以找到两者的共同本征矢构成的基。</strong></p>
+<p>上面三条定理表明了对于可对易的两观察算符，一定能够找到态空间的一个正交归一基，其中每个基矢量都同为两者本征矢，用 $|u_{n,p}^i\rangle$ 标记。记为：</p>
+<script type="math/tex; mode=display">
+A|u_{n,p}^i\rangle=a_n|u_{n,p}^i\rangle</script><script type="math/tex; mode=display">
+B|u_{n,p}^i\rangle=b_p|u_{n,p}^i\rangle</script><p>第三条定理的逆命题也是成立的，即若存在两观察算子的共同本征矢构成了态空间的一个基，则这两个观察算符一定对易。</p>
+<script type="math/tex; mode=display">
+AB|u_{n,p}^i\rangle=b_pA|u_{n,p}^i\rangle=b_pa_n|u_{n,p}^i\rangle</script><script type="math/tex; mode=display">
+BA|u_{n,p}^i\rangle=a_nB|u_{n,p}^i\rangle=a_nb_p|u_{n,p}^i\rangle</script><p>则 $[A,B]|u_{n,p}^i\rangle=0$ ，即证。</p>
+<p>特别地，若观察算符 $C$ 是对易观察算符 $A$ 、 $B$ 的和 $C=A+B$ ，那么 $A$ 、 $B$ 的共同本征矢构成的基 $\{|u_{n,p}^i\rangle\}$ 中的每一个基矢量 $|u_{n,p}^i\rangle$ 显然也是 $C$ 的本征矢，且本征值为 $a_n+b_p$ 。根据维数关系可知， $C$ 的一切本征值都具有 $a_n+b_p$ 的形式。</p>
+<h3 id="可对易观察算符完全集（CSCO：Complete-Set-of-Commutive-Observables）"><a href="#可对易观察算符完全集（CSCO：Complete-Set-of-Commutive-Observables）" class="headerlink" title="可对易观察算符完全集（CSCO：Complete Set of Commutive Observables）"></a>可对易观察算符完全集（CSCO：Complete Set of Commutive Observables）</h3><p>考虑观察算符 $A$ 及由其一组本征矢构成的态空间的基 $\{|v_n^i\rangle\}$ ，若各个本征值都没有简并，则每个本征子空间都是一维的，这个基就是由它的本征矢所能构成的唯一一个正交归一基；每个本征矢 $|v_n^i\rangle$ 都可由相应本征值 $a_n$ 完全标记，换句话说给出本征值就可完全确定一个本征态。这种情况下称观察算符 $A$ 本身单独构成一个CSCO。</p>
+<p>但若 $A$ 的本征值存在简并，则给出本征值也不能完全标记本征矢。这种时候由它的本征矢所能构成的基显然不是唯一的；但如果另取一个与之对易的观察算符 $B$ ，用它们的共同本征矢构成一个基，相对于是在 $A$ 的本征矢所有可能构成的基中进行了二次选取，要求这些基同时也对 $B$ 满足。那么这时对基的要求就更高了；如果选出来的基是唯一的，那么就称观察算符 $A$ 和 $B$ 共同构成一个CSCO。</p>
+<p>上述条件也可叙述为：若对于两观察算符 $A$ 和 $B$ 各自的本征值的每一对组合 $(a_n,b_p)$ 都只有唯一一个对应的基矢量，那么 $A$ 和 $B$ 共同构成一个CSCO。从矩阵的角度理解实际上就是要求在 $A$ 的每个 $g_n$ 维子空间内 $B$ 存在 $g_n$ 个不同本征值。<strong>通过引入新的观察算符 $B$ ，实际上用新引入的标记指标来消除了原有 $A$ 的简并。</strong></p>
+<p>当然，引入 $B$ 也有可能得不到唯一的基，此时可以重复上述步骤引入第三个算符，要求它与前两个算符都对易……直到最终只剩下唯一一个基为止。总结上述过程，对CSCO的抽象定义为：</p>
+<p>观察算符 $A,B,C,\cdots$ 的集合是一个CSCO，当且仅当满足如下条件：</p>
+<p>所有算符两两对易； 由每个算符的一个本征值组成的数组 $(a_n,b_p,c_r,\cdots)$ 可完全确定一个共同本征矢，一般也就记为 $|a_n,b_p,c_r,\cdots\rangle$ ； 这就相当于是说存在唯一一个共同本征矢构成的正交归一基（除了一个模长为1的相位因子以外）。</p>
+<p>CSCO的要解决的问题在于，如何对态空间中的每个态进行标记区分。一般而言，由于观察算符存在可以构成基的本征矢，故可以通过它不同的本征值来初步标记，但由于通常是有简并的，所以并不能完全区分。于是可以通过引入对易的算符，用它的本征值来进一步区分，消除原有的简并，直至每个态都可由这些不同算符的本征值所唯一标记。<br>注：对于任一CSCO，若再添加一个与所有算符都对易的新算符，则就是一个新的CSCO；但是通常只考虑“最小完全集”，即若是去掉任一算符就不再是CSCO的集合。 对于给定的物理体系，CSCO不止一个。</p>
+<h1 id="R＆P"><a href="#R＆P" class="headerlink" title="R＆P"></a>R＆P</h1><h2 id="boldsymbol-r-rangle-表象和-boldsymbol-p-rangle-表象"><a href="#boldsymbol-r-rangle-表象和-boldsymbol-p-rangle-表象" class="headerlink" title="$\boldsymbol{\{|r\rangle\} }$ 表象和 $\boldsymbol{\{|p\rangle\} }$ 表象"></a>$\boldsymbol{\{|r\rangle\} }$ 表象和 $\boldsymbol{\{|p\rangle\} }$ 表象</h2><p>回顾之前曾经在波函数空间引入的所谓“广义基”：</p>
+<script type="math/tex; mode=display">
+\xi_{\boldsymbol r_0}(\boldsymbol r)=\delta(\boldsymbol r-\boldsymbol r_0)</script><script type="math/tex; mode=display">
+v_{\boldsymbol p_0}(\boldsymbol r)=(2\pi\hbar)^{-3/2}{\rm e}^{ {\rm i}\boldsymbol p_0\cdot\boldsymbol r/\hbar}</script><p>在态空间中引入与之对应的“广义右矢”：</p>
+<script type="math/tex; mode=display">
+\xi_{\boldsymbol r_0}(\boldsymbol r)\Longleftrightarrow|\boldsymbol r_0\rangle</script><script type="math/tex; mode=display">
+v_{\boldsymbol p_0}(\boldsymbol r)\Longleftrightarrow|\boldsymbol p_0\rangle</script><p>这两种所谓的广义右矢，分别由三维空间中的位矢 $\boldsymbol r_0$ 和动量 $\boldsymbol p_0$ （三维连续指标）所标记。于是任意波函数都能按广义基“展开”的性质自然也就被继承到了态空间中；我们预期它们能够构成态空间的两个基。具体来说：</p>
+<p>正交归一关系：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r_0|\boldsymbol r_0'\rangle=\int{\rm d}^3r\xi^*_{\boldsymbol r_0}(\boldsymbol r)\xi_{\boldsymbol r'_0}(\boldsymbol r)=\delta(\boldsymbol r_0-\boldsymbol r'_0)</script><script type="math/tex; mode=display">
+\langle\boldsymbol p_0|\boldsymbol p_0'\rangle=\int{\rm d}^3rv^*_{\boldsymbol p_0}(\boldsymbol r)v_{\boldsymbol p'_0}(\boldsymbol r)=\delta(\boldsymbol p_0-\boldsymbol p'_0)</script><p>封闭性关系</p>
+<script type="math/tex; mode=display">
+\int{\rm d}^3r_0|\boldsymbol r_0\rangle\langle\boldsymbol r_0|=I</script><script type="math/tex; mode=display">
+\int{\rm d}^3p_0|\boldsymbol p_0\rangle\langle\boldsymbol p_0|=I</script><p>右矢展开式及分量式：</p>
+<script type="math/tex; mode=display">
+|\boldsymbol \psi\rangle=\int{\rm d}^3r_0\langle\boldsymbol r_0|\boldsymbol \psi\rangle|\boldsymbol r_0\rangle\ , \quad \langle\boldsymbol r_0|\boldsymbol \psi\rangle=\int{\rm d}^3r\xi^*_{\boldsymbol r_0}(\boldsymbol r)\psi(\boldsymbol r)=\psi(\boldsymbol r_0)</script><script type="math/tex; mode=display">
+|\boldsymbol \psi\rangle=\int{\rm d}^3p_0\langle\boldsymbol p_0|\boldsymbol \psi\rangle|\boldsymbol p_0\rangle\ , \quad \langle\boldsymbol p_0|\boldsymbol \psi\rangle=\int{\rm d}^3rv^*_{\boldsymbol p_0}(\boldsymbol r)\psi(\boldsymbol r)=\phi(\boldsymbol p_0)</script><p>算子的展开式：</p>
+<script type="math/tex; mode=display">
+A=\int{\rm d}^3r_0\int{\rm d}^3r'_0|\boldsymbol r_0\rangle\langle\boldsymbol r_0|A|\boldsymbol r'_0\rangle\langle\boldsymbol r'_0|=\iint{\rm d}^3r_0{\rm d}^3r'_0A(\boldsymbol r_0,\boldsymbol r'_0)|\boldsymbol r_0\rangle\langle\boldsymbol r'_0|</script><script type="math/tex; mode=display">
+A=\int{\rm d}^3p_0\int{\rm d}^3p'_0|\boldsymbol p_0\rangle\langle\boldsymbol p_0|A|\boldsymbol p'_0\rangle\langle\boldsymbol p'_0|=\iint{\rm d}^3p_0{\rm d}^3p'_0A(\boldsymbol p_0,\boldsymbol p'_0)|\boldsymbol p_0\rangle\langle\boldsymbol p'_0|</script><p>可见这两组广义右矢的确构成了两个表象： $\{|\boldsymbol r_0\rangle\}$ 表象和 $\{|\boldsymbol p_0\rangle\}$ 。从这可以看出重要结论：<strong>所谓的“波函数 $\psi(\boldsymbol r)$ 在 $\boldsymbol r_0$ 处的值”，不过是右矢 $|\boldsymbol \psi\rangle$ 在表象 $\{|\boldsymbol r_0\rangle\}$ 中基矢量 $|\boldsymbol r_0\rangle$ 上的分量；同样的，所谓“动量空间中的波函数 $\phi(\boldsymbol p)$ 在 $\boldsymbol p_0$ 处的值”，是右矢 $|\boldsymbol \psi\rangle$ 在表象 $\{|\boldsymbol p_0\rangle\}$ 中基矢量 $|\boldsymbol p_0\rangle$ 上的分量。</strong>因此到目前为止，我们就初步完成了在本章第二部分之初提出的目标，即：</p>
+<p>建立起一个更为抽象的概念框架，在这个框架下这些不同却又相关的函数之间更像是一种平行关系而非从属关系。这些相互关联的函数其实所描述的对象都是相同的，只不过是从不同的角度来说；但结合傅里叶变换等数学工具，其实它们中的任何一个都能得出关于物理态的全部信息。 下面也就不再专门标记，而是以 $|\boldsymbol r\rangle$ 和动量 $|\boldsymbol p\rangle$ 来代替 $|\boldsymbol r_0\rangle$ 和 $|\boldsymbol p_0\rangle$ ；正交归一关系和封闭性关系：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r|\boldsymbol r'\rangle=\delta(\boldsymbol r-\boldsymbol r')\ ; \quad \int{\rm d}^3r|\boldsymbol r\rangle\langle\boldsymbol r|=I</script><script type="math/tex; mode=display">
+\langle\boldsymbol p|\boldsymbol p'\rangle=\delta(\boldsymbol p-\boldsymbol p')\ ; \quad \int{\rm d}^3p|\boldsymbol p\rangle\langle\boldsymbol p|=I</script><p>当然，态空间的广义右矢基和波函数空间的广义基之间的这种关系，对于离散指标的基也是成立的。 右矢的内积，可以直接插入封闭性关系来得到</p>
+<script type="math/tex; mode=display">
+\langle\psi|\varphi\rangle=\int{\rm d}^3r\langle\psi|\boldsymbol r\rangle\langle\boldsymbol r|\varphi\rangle</script><script type="math/tex; mode=display">
+\langle\psi|\varphi\rangle=\int{\rm d}^3p\langle\psi|\boldsymbol p\rangle\langle\boldsymbol p|\varphi\rangle</script><p>关于表象变换，可以类比之前的讨论，只不过这里的两个基都是连续指标的。具体来说：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r|\psi\rangle=\int{\rm d}^3p\langle\boldsymbol r|\boldsymbol p\rangle\langle\boldsymbol p|\psi\rangle</script><script type="math/tex; mode=display">
+\langle\boldsymbol p|\psi\rangle=\int{\rm d}^3r\langle\boldsymbol p|\boldsymbol r\rangle\langle\boldsymbol r|\psi\rangle</script><p>因此所谓的“变换矩阵”为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S(\boldsymbol r,\boldsymbol p)&=\langle\boldsymbol r|\boldsymbol p\rangle\\
+S^\dagger(\boldsymbol p,\boldsymbol r)&=\langle\boldsymbol p|\boldsymbol r\rangle=\langle\boldsymbol r|\boldsymbol p\rangle^*=S^*(\boldsymbol r,\boldsymbol p)
+\end{aligned}</script><p>是幺正的；算符的表象变换也有：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol p|A|\boldsymbol p'\rangle=\int{\rm d}^3r\int{\rm d}^3r'\langle\boldsymbol p|\boldsymbol r\rangle\langle\boldsymbol r|A|\boldsymbol r'\rangle\langle\boldsymbol r'|\boldsymbol p'\rangle=\iint{\rm d}^3r{\rm d}^3r'S^\dagger(\boldsymbol p,\boldsymbol r)\langle\boldsymbol r|A|\boldsymbol r'\rangle S(\boldsymbol r',\boldsymbol p')</script><script type="math/tex; mode=display">
+\langle\boldsymbol r|A|\boldsymbol r'\rangle=\int{\rm d}^3p\int{\rm d}^3p'\langle\boldsymbol r|\boldsymbol p\rangle\langle\boldsymbol p|A|\boldsymbol p'\rangle\langle\boldsymbol p'|\boldsymbol r'\rangle=\iint{\rm d}^3p{\rm d}^3p'S(\boldsymbol r,\boldsymbol p)\langle\boldsymbol p|A|\boldsymbol p'\rangle S^\dagger(\boldsymbol p',\boldsymbol r')</script><h2 id="算符-boldsymbol-R-和算符-boldsymbol-P"><a href="#算符-boldsymbol-R-和算符-boldsymbol-P" class="headerlink" title="算符 $\boldsymbol R$ 和算符 $\boldsymbol P$"></a>算符 $\boldsymbol R$ 和算符 $\boldsymbol P$</h2><h3 id="算符-boldsymbol-R-和-boldsymbol-P-的形式与对易关系"><a href="#算符-boldsymbol-R-和-boldsymbol-P-的形式与对易关系" class="headerlink" title="算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的形式与对易关系"></a>算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的形式与对易关系</h3><p>首先<strong>在 $\{|\boldsymbol r\rangle\}$ 表象中</strong>定义三个算子 $X$ 、 $Y$ 、 $Z$ （的矩阵元）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle\boldsymbol r|X|\psi\rangle=x\langle\boldsymbol r|\psi\rangle\\ \langle\boldsymbol r|Y|\psi\rangle=y\langle\boldsymbol r|\psi\rangle\\ \langle\boldsymbol r|Z|\psi\rangle=z\langle\boldsymbol r|\psi\rangle \end{aligned}</script><p>这里 $x,y,z$ 正是位矢 $\boldsymbol r$ 的三个分量，于是不妨将上述三个算符视作同一“矢量算符 $R$ ”的三个分量，并可形式化地记为</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r|R|\psi\rangle=\boldsymbol r\langle\boldsymbol r|\psi\rangle</script><p>同理<strong>在 $\{|\boldsymbol p\rangle\}$ 表象</strong>中定义三个算子 $P_x$ 、 $P_y$ 、 $P_z$ （的矩阵元）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle\boldsymbol p|P_x|\psi\rangle=p_x\langle\boldsymbol p|\psi\rangle\\ \langle\boldsymbol p|P_y|\psi\rangle=p_y\langle\boldsymbol p|\psi\rangle\\ \langle\boldsymbol p|P_z|\psi\rangle=p_z\langle\boldsymbol p|\psi\rangle \end{aligned}</script><p>这里 $p_x,p_y,p_z$ 也是动量矢量 $\boldsymbol p$ 的三个分量，于是不妨也将上述三个算符视作同一“矢量算符 $P$ ”的三个分量，并可形式化地记为</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol p|P|\psi\rangle=\boldsymbol p\langle\boldsymbol p|\psi\rangle</script><p><strong>在 $\{|\boldsymbol r\rangle\}$ 表象中， $R$ 的作用</strong>计算非常方便。以 $X$ 为例，它在该表象下的作用：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r|X|\psi\rangle=x\langle\boldsymbol r|\psi\rangle</script><p>即 $X|\psi\rangle$ 的波函数表示为 $x\psi(x,y,z)$ ，即简单乘它的坐标 $x$ 。若要计算矩阵元 $\langle\varphi|X|\psi\rangle$ ，只需插入封闭性关系：</p>
+<script type="math/tex; mode=display">
+\langle\varphi|X|\psi\rangle=\int{\rm d}^3r\langle\varphi|\boldsymbol r\rangle\langle\boldsymbol r|X|\psi\rangle=\int{\rm d}^3r\varphi^*(\boldsymbol r)x\psi(\boldsymbol r)</script><p>下面考虑<strong>在 $\{|\boldsymbol r\rangle\}$ 表象中 $P$ 的作用</strong>，以 $P_x$ 为例：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r|P_x|\psi\rangle=\int{\rm d}^3p\langle\boldsymbol r|\boldsymbol p\rangle\langle\boldsymbol p|P_x|\psi\rangle=(2\pi\hbar)^{-3/2}\int{\rm d}^3p{\rm e}^{ {\rm i}\boldsymbol p\cdot\boldsymbol r/\hbar}p_x\phi(\boldsymbol p)</script><p>可见就是 $p_x\phi(\boldsymbol p)$ 的傅里叶逆变换；而 $\phi(\boldsymbol p)$ 又是 $\psi(\boldsymbol r)$ 的傅里叶变换，故上式</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&=\frac{-{\rm i}\hbar}{2\pi\hbar}\iint{\rm d}p_y{\rm d}p_z\left[{\rm e}^{\frac{\rm i}{\hbar}p_yy+p_zz}\frac{1}{\sqrt{2\pi\hbar} }\int{\rm d}p_x{\rm e}^{\frac{\rm i}{\hbar}p_xx}\frac{ {\rm i}p_x}{\hbar}\phi(p_x,p_y,p_z)\right]\\
+&=\frac{-{\rm i}\hbar}{2\pi\hbar}\iint{\rm d}p_y{\rm d}p_z\left[{\rm e}^{\frac{\rm i}{\hbar}p_yy+p_zz}\frac{\partial}{\partial x}\psi_x(x,p_y,p_z)\right]\\
+&=\frac{\hbar}{\rm i}\frac{\partial}{\partial x}\psi(\boldsymbol r)
+\end{aligned}</script><p>进一步地，可以记</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r|P|\psi\rangle=\frac{\hbar}{\rm i}\nabla\langle\boldsymbol r|\psi\rangle</script><p>可见算符 $P$ 在 $\{|\boldsymbol r\rangle\}$ 表象下对波函数的作用形式就是对坐标的偏导数算符 $-{\rm i}\hbar\nabla$ ；若要计算矩阵元 $\langle\varphi|P_x|\psi\rangle$ ，只需插入封闭性关系：</p>
+<script type="math/tex; mode=display">
+\langle\varphi|P_x|\psi\rangle=\int{\rm d}^3r\langle\varphi|\boldsymbol r\rangle\langle\boldsymbol r|P_x|\psi\rangle=\int{\rm d}^3r\varphi^*(\boldsymbol r)\left[\frac{\hbar}{\rm i}\frac{\partial}{\partial x}\right]\psi(\boldsymbol r)</script><p>与之对应地，<strong>在 $\{|\boldsymbol p\rangle\}$ 表象中， $P$ 的作用</strong>计算非常方便。以 $P_x$ 为例，它在该表象下的作用：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol p|P_x|\psi\rangle=p_x\langle\boldsymbol p|\psi\rangle</script><p>即 <strong>$P_x|\psi\rangle$ 在动量空间的波函数</strong>表示为 $p_x\phi(p_x,p_y,p_z)$ ，即简单乘它的动量 $p_x$ 。若要计算矩阵元 $\langle\varphi|P_x|\psi\rangle$ ，只需插入封闭性关系：</p>
+<script type="math/tex; mode=display">
+\langle\varphi|P_x|\psi\rangle=\int{\rm d}^3p\langle\varphi|\boldsymbol p\rangle\langle\boldsymbol p|P_x|\psi\rangle=\int{\rm d}^3p\chi^*(\boldsymbol p)p_x\phi(\boldsymbol p)</script><p>下面考虑<strong>在 $\{|\boldsymbol p\rangle\}$ 表象中 $R$ 的作用</strong>，以 $X$ 为例：</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol p|X|\psi\rangle=\int{\rm d}^3r\langle\boldsymbol p|\boldsymbol r\rangle\langle\boldsymbol r|X|\psi\rangle=(2\pi\hbar)^{-3/2}\int{\rm d}^3r{\rm e}^{-{\rm i}\boldsymbol p\cdot\boldsymbol r/\hbar}x\psi(\boldsymbol r)</script><p>可见就是 $x\psi(\boldsymbol r)$ 的傅里叶变换；而 $\psi(\boldsymbol r)$ 又是 $\phi(\boldsymbol p)$ 的傅里叶逆变换，故上式</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&=\frac{ {\rm i}\hbar}{2\pi\hbar}\iint{\rm d}y{\rm d}z\left[{\rm e}^{-\frac{\rm i}{\hbar}(p_yy+p_zz)}\frac{1}{\sqrt{2\pi\hbar} }\int{\rm d}x{\rm e}^{-\frac{\rm i}{\hbar}p_xx}\frac{-{\rm i}x}{\hbar}\psi(x,y,z)\right]\\
+&=\frac{ {\rm i}\hbar}{2\pi\hbar}\iint{\rm d}y{\rm d}z\left[{\rm e}^{-\frac{\rm i}{\hbar}(p_yy+p_zz)}\frac{\partial}{\partial p_x}\phi_x(p_x,y,z)\right]\\
+&={\rm i}\hbar\frac{\partial}{\partial p_x}\psi(\boldsymbol p)
+\end{aligned}</script><p>进一步地，可以记</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol p|R|\psi\rangle={\rm i}\hbar\nabla_p\langle\boldsymbol p|\psi\rangle</script><p>可见算符 $R$ 在 $\{|\boldsymbol p\rangle\}$ 表象下对波函数的作用形式就是（对动量的）偏导数算符 ${\rm i}\hbar\nabla_p$ ；若要计算矩阵元 $\langle\varphi|X|\psi\rangle$ ，只需插入封闭性关系：</p>
+<script type="math/tex; mode=display">
+\langle\varphi|X|\psi\rangle=\int{\rm d}^3p\langle\varphi|\boldsymbol p\rangle\langle\boldsymbol p|X|\psi\rangle=\int{\rm d}^3p\chi^*(\boldsymbol p)\left[{\rm i}\hbar\frac{\partial}{\partial p_x}\right]\phi(\boldsymbol p)</script><p>从上面可以看到，这两个表象 $\{|\boldsymbol r\rangle\}$ 、 $\{|\boldsymbol p\rangle\}$ 以及两个算符 $R$ 、 $P$ 分别具有很高的对称性。事实上量子力学中我们一般称坐标与动量是“<strong>共轭</strong>”的。</p>
+<p>下面要计算 $R$ 与 $P$ 的对易子。选取这两种表象都是较方便的。以 $X$ 与 $P_x$ 为例：</p>
+<p><strong>在 $\{|\boldsymbol r\rangle\}$ 表象中</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\langle\boldsymbol r|[X,P_x]|\psi\rangle&=\langle\boldsymbol r|(XP_x-P_xX)|\psi\rangle=x\langle\boldsymbol r|P_x|\psi\rangle-\frac{\hbar}{\rm i}\frac{\partial}{\partial x}\langle\boldsymbol r|X|\psi\rangle\\
+&=\frac{\hbar}{\rm i}x\left[\frac{\partial}{\partial x}\langle\boldsymbol r|\psi\rangle\right]-\frac{\hbar}{\rm i}\frac{\partial}{\partial x}\Big[x\langle\boldsymbol r|\psi\rangle\Big]={\rm i}\hbar\langle\boldsymbol r|\psi\rangle
+\end{aligned}</script><p>另一方面，<strong>在 $\{|\boldsymbol p\rangle\}$ 表象中</strong>也能计算：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\langle\boldsymbol p|[X,P_x]|\psi\rangle&=\langle\boldsymbol p|(XP_x-P_xX)|\psi\rangle={\rm i}\hbar\frac{\partial}{\partial p_x}\langle\boldsymbol p|P_x|\psi\rangle-p_x\langle\boldsymbol p|X|\psi\rangle\\
+&={\rm i}\hbar\frac{\partial}{\partial p_x}\Big[p_x\langle\boldsymbol p|\psi\rangle\Big]-{\rm i}\hbar p_x\left[\frac{\partial}{\partial p_x}\langle\boldsymbol p|\psi\rangle\right]={\rm i}\hbar\langle\boldsymbol p|\psi\rangle
+\end{aligned}</script><p>可见两种表象得出的结果是相同的。</p>
+<p><strong><em>注：这里需要注意，在计算诸如 $\boldsymbol{\langle r|P_xX|\psi\rangle}$ 的式子，它的结果是 $\boldsymbol{\frac{\hbar}{\rm i}\frac{\partial}{\partial x}\langle r|X|\psi\rangle=\frac{\hbar}{\rm i}\frac{\partial}{\partial x}\Big[x\langle r|\psi\rangle\Big]}$ 而不是 $\boldsymbol{x\langle r|P_x|\psi\rangle=x\left[\frac{\hbar}{\rm i}\frac{\partial}{\partial x}\langle r|\psi\rangle\right]}$ ；这是将相乘算符的右边算符与右矢视作一体，被左边算符所共同作用。</em></strong></p>
+<p>综上，算符 $R$ 与 $P$ 的所有分量的对易子如下：</p>
+<script type="math/tex; mode=display">
+\left\{ \begin{matrix} [R_i,R_j]=0\\ [P_i,P_j]=0\\ [R_i,P_j]={\rm i}\hbar\delta_{ij} \end{matrix} \right. \quad i,j=1,2,3</script><p>这种对易关系称为<strong>正则对易关系</strong>。</p>
+<p><em>注：对易子实际上是一个算符；因此上面的0、1实际上应该理解分别为零算符和恒等算符。</em></p>
+<h3 id="算符-boldsymbol-R-和-boldsymbol-P-的厄米性"><a href="#算符-boldsymbol-R-和-boldsymbol-P-的厄米性" class="headerlink" title="算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的厄米性"></a>算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的厄米性</h3><script type="math/tex; mode=display">
+\langle\varphi|X|\psi\rangle=\int{\rm d}^3r\varphi^*(\boldsymbol r)x\psi(\boldsymbol r)=\left[\int{\rm d}^3r\varphi(\boldsymbol r)x\psi^*(\boldsymbol r)\right]^*=\langle\psi|X|\varphi\rangle^*</script><p>显然 $R$ 是厄米算符； $P$ 的厄米性在 $\{|\boldsymbol p\rangle\}$ 表象下也很容易证明。</p>
+<p>当然，从 $\{|\boldsymbol r\rangle\}$ 表象证明 $P$ 的厄米性会有比较重要的启发：</p>
+<script type="math/tex; mode=display">
+\langle\varphi|P_x|\psi\rangle=\frac{\hbar}{\rm i}\iint{\rm d}y{\rm d}z\int{\rm d}x\varphi^*(\boldsymbol r)\frac{\partial}{\partial x}\psi(\boldsymbol r)</script><p>进行分部积分；由于标量积 $\langle\varphi|\psi\rangle$ 的积分收敛，故当 $x\to\pm\infty$ 时乘积 $\varphi^*(\boldsymbol r)\psi(\boldsymbol r)$ 趋于零；则得到</p>
+<script type="math/tex; mode=display">
+\langle\varphi|P_x|\psi\rangle=-\frac{\hbar}{\rm i}\int{\rm d}x\psi(\boldsymbol r)\frac{\partial}{\partial x}\varphi^*(\boldsymbol r)=\left[\frac{\hbar}{\rm i}\int{\rm d}x\psi^*(\boldsymbol r)\frac{\partial}{\partial x}\varphi(\boldsymbol r)\right]^*=\langle\psi|P_x|\varphi\rangle^*</script><p>可见虚数单位 ${\rm i}$ 的存在十分重要；单纯的微分算符 $\frac{\partial}{\partial x}$ 并不是厄米的，因为在分部积分后符号变了；<strong>虚数单位 ${\rm i}$ 的作用即是保证其厄米性</strong>。</p>
+<h3 id="算符-boldsymbol-R-和-boldsymbol-P-的本征矢"><a href="#算符-boldsymbol-R-和-boldsymbol-P-的本征矢" class="headerlink" title="算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的本征矢"></a>算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的本征矢</h3><p>考虑 $X$ 对 $\{|\boldsymbol r\rangle\}$ 表象中任一给定基右矢 $|\boldsymbol r_0\rangle$ 的作用</p>
+<script type="math/tex; mode=display">
+\langle\boldsymbol r|X|\boldsymbol r_0\rangle=x\langle\boldsymbol r|\boldsymbol r_0\rangle=x\delta(\boldsymbol r-\boldsymbol r_0)=x_0\delta(\boldsymbol r-\boldsymbol r_0)=x_0\langle\boldsymbol r|\boldsymbol r_0\rangle</script><p>因此 $X|\boldsymbol r_0\rangle=x_0|\boldsymbol r_0\rangle$ ；对 $Y$ 、 $Z$ 也是同样，结合维数关系可知， <strong>$\{|\boldsymbol r\rangle\}$ 表象中任意基右矢就是 $X$ 、 $Y$ 、 $Z$ 的共同本征矢</strong>，从而自然可以用坐标 $\boldsymbol r$ 作为连续指标来标记：</p>
+<script type="math/tex; mode=display">
+X|\boldsymbol r\rangle=x|\boldsymbol r\rangle</script><script type="math/tex; mode=display">
+Y|\boldsymbol r\rangle=y|\boldsymbol r\rangle</script><script type="math/tex; mode=display">
+Z|\boldsymbol r\rangle=z|\boldsymbol r\rangle</script><p>也可以说， <strong>$\{|\boldsymbol r\rangle\}$ 表象中全体基右矢就是 $R$ 的本征矢</strong>。类似的，</p>
+<script type="math/tex; mode=display">
+P_x|\boldsymbol p\rangle=p_x|\boldsymbol p\rangle</script><script type="math/tex; mode=display">
+P_y|\boldsymbol p\rangle=p_y|\boldsymbol p\rangle</script><script type="math/tex; mode=display">
+P_z|\boldsymbol p\rangle=p_z|\boldsymbol p\rangle</script><p>即 <strong>$\{|\boldsymbol p\rangle\}$ 表象中全体基右矢就是 $P_x$ 、 $P_y$ 、 $P_z$ 的共同本征矢；或说就是 $P$ 的本征矢</strong>。</p>
+<h3 id="算符-boldsymbol-R-和-boldsymbol-p-都是观察算符"><a href="#算符-boldsymbol-R-和-boldsymbol-p-都是观察算符" class="headerlink" title="算符 $\boldsymbol R$ 和 $\boldsymbol p$ 都是观察算符"></a>算符 $\boldsymbol R$ 和 $\boldsymbol p$ 都是观察算符</h3><p>上一节可以看到， $R$ 、 $P$ 的本征矢分别构成态空间的一组基；因而它们都是观察算符。</p>
+<p>由于本征值 $(x_0,y_0,z_0)$ 即可完全确定一个（广义）右矢 $|x_0,y_0,z_0\rangle$ ；对应的“波函数”即为 $\delta(x-x_0)\delta(y-y_0)\delta(z-z_0)$ ，因此 $X,Y,Z$ 即构成一组CSCO；</p>
+<p>同样， $P_x,P_y,P_z$ 也构成一组CSCO，对于本征值 $(p_x,p_y,p_z)$ 可以确定的右矢 $|p_{_{0_x} },p_{_{0_y} },p_{_{0_z} }\rangle$ ；对应的波函数是 $(2\pi\hbar)^{-3/2}{\rm e}^{ {\rm i}(p_{0_x}x+p_{0_y}y+p_{0_z}z)/\hbar}$ ；</p>
+<p>除此之外，这六个算符还可以构造诸如 $X,P_y,P_z$ 这一类的CSCO，只要保证两两对易即可；但是 $X,P_x$ 这类不满足可对易，因而不能构成CSCO。</p>
+<h1 id="态空间的张量积"><a href="#态空间的张量积" class="headerlink" title="态空间的张量积"></a>态空间的张量积</h1><p>某些问题中，我们需要考虑如何由较小的态空间构建更大的态空间。例如，讨论一维物理体系的态空间 $\mathscr E_x$ 、 $\mathscr E_y$ 、 $\mathscr E_z$ 与三维物理体系的态空间（注：物理体系的维数指的是实际空间维数，而非态空间的维数）之间的关系；或者考虑如何在同一个态空间中同时处理外部自由度（例如坐标、动量）与内部自由度（例如自旋）；又或者考虑两个没有相互作用的独立子系统如何构造出一个总系统的态空间，等等。</p>
+<p>事实上前述这一大类从较小态空间构造更大态空间的问题，在数学上可以归结为对态空间的一种运算——<strong>张量积</strong>。</p>
+<h2 id="张量积的定义和性质"><a href="#张量积的定义和性质" class="headerlink" title="张量积的定义和性质"></a>张量积的定义和性质</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>设有两个线性空间 $\mathscr E_1$ 、 $\mathscr E_2$ ，维数分别为 $N_1$ 、 $N_2$ （可以是有限的也可以是无限的）。则：</p>
+<p>线性空间 $\mathscr E$ 叫做 $\mathscr E_1$ 和 $\mathscr E_2$ 的张量积空间，若对于 $\forall|\varphi(1)\rangle\in\mathscr E_1$ 、 $\forall|\chi(2)\rangle\in\mathscr E_2$ ，都有一个矢量 $|\psi\rangle=|\varphi(1)\rangle\otimes|\chi(2)\rangle\in\mathscr E$ 与之对应，称作两者的张量积，且满足：</p>
+<p>齐性： </p>
+<script type="math/tex; mode=display">
+\big[\lambda|\varphi\rangle\big]\otimes|\varphi\rangle=\lambda\big[|\varphi\rangle\otimes|\varphi\rangle\big] ， |\varphi\rangle\otimes\big[\mu|\varphi\rangle\big]=\mu\big[|\varphi\rangle\otimes|\varphi\rangle\big]</script><p>加法分配律： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\big[|\varphi_1(1)\rangle+|\varphi_2(1)\rangle\big]\otimes|\chi(2)\rangle&=|\varphi_1(1)\rangle\otimes|\chi(2)\rangle+|\varphi_2(1)\rangle\otimes|\chi(2)\rangle|\varphi(1)\rangle\otimes\big[|\chi_1(2)\rangle+|\chi_2(2)\rangle\big]\\
+&=|\varphi(1)\rangle\otimes|\chi_1(2)\rangle+|\varphi(1)\rangle\otimes|\chi_2(2)\rangle
+\end{aligned}</script><p>若在空间 $\mathscr E_1$ 中选定一个基 $\{|u_i(1)\rangle\}$ ， $\mathscr E_2$ 中选定一个基 $\{|v_k(2)\rangle\}$ ，则 $\{|u_i(1)\rangle\otimes |v_k(2)\rangle\}$ 构成 $\mathscr E$ 的基。若 $\mathscr E_1$ 、 $\mathscr E_2$ 维数都是有限的，则 $\mathscr E$ 的维数为 $N_1N_2$ 上述定义不难推广到有限多个空间的张量积。</p>
+<h3 id="张量积空间中的矢量"><a href="#张量积空间中的矢量" class="headerlink" title="张量积空间中的矢量"></a>张量积空间中的矢量</h3><p><strong>首先，必有矢量可以表为两较小空间中矢量的张量积： $|\varphi(1)\rangle\otimes|\chi(2)\rangle$ 。</strong>设</p>
+<script type="math/tex; mode=display">
+|\varphi(1)\rangle=\sum_ia_i|u_i(1)\rangle</script><script type="math/tex; mode=display">
+|\chi(2)\rangle=\sum_kb_k|v_k(2)\rangle</script><p>则根据定义，它在 $\{|u_i(1)\otimes u_k(2)\}$ 中展开形式为：</p>
+<script type="math/tex; mode=display">
+|\varphi(1)\rangle\otimes|\chi(2)\rangle=\sum_{ik}(a_ib_k)|u_i(1)\rangle\otimes |v_k(2)\rangle</script><p>即，一个张量积矢量的分量就是对应两个矢量的分量的乘积。</p>
+<p>在不引起歧义的情况下，也通常直接记为 $|\varphi(1)\rangle|\chi(2)\rangle=|\varphi(1)\rangle\otimes|\chi(2)\rangle$ 。</p>
+<p><strong>其次，张量积空间中也存在不能表示为两个小空间中矢量的张量积的矢量。</strong>因为 $\mathcal E$ 中矢量最普遍的表示为</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\sum_{ik}c_{ik}|u_i(1)\rangle\otimes |v_k(2)\rangle</script><p>给定 $N_1N_2$ 个复数 $c_{ik}$ ，不一定能分解成 $N_1$ 个复数 $a_i$ 和另外 $N_2$ 个复数 $b_k$ 之间的两两乘积。但是， $\mathscr E$ 中矢量一定可以表示为张量积矢量的线性组合。</p>
+<h3 id="张量积空间中的内积"><a href="#张量积空间中的内积" class="headerlink" title="张量积空间中的内积"></a>张量积空间中的内积</h3><p>若空间 $\mathscr E_1$ 、 $\mathscr E_2$ 中存在内积，则可自然诱导出 $\mathscr E$ 中的内积。首先定义张量积矢量的内积为</p>
+<script type="math/tex; mode=display">
+\langle\varphi_1(1)\otimes\chi_1(2)|\varphi_2(1)\otimes\chi_2(2)\rangle=\langle\varphi_1(1)|\varphi_2(1)\rangle\langle\chi_1(2)|\chi_2(2)\rangle</script><p>由于非张量积矢量可以表示成张量积矢量的线性组合，因此内积也可自然定义。</p>
+<p>特别地，若基 $\{|u_i(1)\rangle\}$ 、 $\{|v_k(2)\rangle\}$ 都是正交归一的，则 $\{|u_i(1)\rangle\otimes |v_k(2)\rangle\}$ 也是正交归一的：</p>
+<script type="math/tex; mode=display">
+\langle u_i(1)\otimes v_k(2)|u_j(1)\otimes v_l(2)\rangle=\langle u_i(1)|u_j(1)\rangle\langle v_k(2)|v_l(2)\rangle=\delta_{ij}\delta_{kl}</script><h3 id="张量积空间中的算符"><a href="#张量积空间中的算符" class="headerlink" title="张量积空间中的算符"></a>张量积空间中的算符</h3><p>算符的延伸 首先对于 $\mathscr E_1$ 中的线性算符 $A(1)$ ，在 $\mathscr E$ 中引入一个线性算符 $\widetilde A(1)$ 称为 $A(1)$ 在 $\mathscr E$ 中的延伸算符，首先定义它对张量积矢量的作用为：</p>
+<script type="math/tex; mode=display">
+\widetilde A(1)\Big[|\varphi(1)\rangle\otimes|\chi(2)\rangle\Big]=\Big[A(1)|\varphi(1)\rangle\Big]\otimes|\chi(2)\rangle</script><p>再根据线性性即可完全确定它对 $\mathscr E$ 中每一个矢量的作用。按同样的方式可以确定 $\mathscr E_2$ 中的线性算符 $B(2)$ 在 $\mathscr E$ 中的延伸算符 $\widetilde B(2)$ 。</p>
+<p>在明确其作用对象的前提下，也可直接用 $A(1)$ 表示 $\widetilde A(1)$ 。</p>
+<p>算符的张量积 设 $A(1)$ 、 $B(2)$ 是分别作用在 $\mathscr E_1$ 、 $\mathscr E_2$ 中的两个算符，则两者的张量积 $A(1)\otimes B(2)$ 是在 $\mathscr E$ 中的算符，首先定义它对张量积矢量的作用为：</p>
+<script type="math/tex; mode=display">
+\Big[A(1)\otimes B(2)\Big]\Big[|\varphi(1)\rangle\otimes|\chi(2)\rangle\Big]=\Big[A(1)|\varphi(1)\rangle\Big]\otimes\Big[B(2)|\chi(2)\rangle\Big]</script><p>再根据线性性即可完全确定它对 $\mathscr E$ 中每一个矢量的作用。</p>
+<p>类似的，同样存在 $\mathscr E$ 中的算符不可以表示成两个小空间算符的张量积。</p>
+<p>在不引起歧义的情况下，也通常直接记为 $A(1)B(2)=A(1)\otimes B(2)$ 。</p>
+<p>下面介绍张量积的几个性质：</p>
+<ol>
+<li><p>显然算符的延伸是张量积的一个特例： $\widetilde A(1)=A(1)\otimes I(2)$ ， $\widetilde B(2)=I(1)\otimes B(2)$ ；反之，在 $\mathscr E$ 中 $A(1)\otimes B(2)=\widetilde A(1)\widetilde B(2)$ 就是普通乘积，这也可以看作是算符张量积的一个等价定义。</p>
+</li>
+<li><p>在 $\mathscr E$ 中 $\widetilde A(1)$ 、 $\widetilde B(2)$ 是对易的（只需对张量积矢量证明即可），根据定义和上一性质：</p>
+<script type="math/tex; mode=display">
+\widetilde A(1)\widetilde B(2)\Big[|\varphi(1)\rangle\otimes|\chi(2)\rangle\Big]=\Big[A(1)|\varphi(1)\rangle\Big]\otimes\Big[B(2)|\chi(2)\rangle\Big]</script><p>简单运算也可证明，</p>
+<script type="math/tex; mode=display">
+\widetilde B(2)\widetilde A(1)\Big[|\varphi(1)\rangle\otimes|\chi(2)\rangle\Big]=\Big[A(1)|\varphi(1)\rangle\Big]\otimes\Big[B(2)|\chi(2)\rangle\Big]</script><p>因此 $\widetilde A(1)\widetilde B(2)=\widetilde B(2)\widetilde A(1)$ 即 $\Big[\widetilde A(1),\widetilde B(2)\Big]=0$。</p>
+</li>
+<li><p>张量积矢量 $|\varphi(1)\rangle\otimes|\chi(2)\rangle$ 上的投影算符 $P_{|\varphi(1)\rangle\otimes|\chi(2)\rangle}$ ，是 $|\varphi(1)\rangle$ 、 $|\chi(2)\rangle$ 各自投影算符的张量积：</p>
+<script type="math/tex; mode=display">
+P_{\varphi(1)\otimes\chi(2)}=P_{\varphi(1)}\otimes P_{\chi(2)}</script></li>
+</ol>
+<h2 id="张量积空间中的本征方程"><a href="#张量积空间中的本征方程" class="headerlink" title="张量积空间中的本征方程"></a>张量积空间中的本征方程</h2><h3 id="延伸算符的本征方程"><a href="#延伸算符的本征方程" class="headerlink" title="延伸算符的本征方程"></a>延伸算符的本征方程</h3><p>考虑算符 $A(1)$ ，它在 $\mathscr E_1$ 中的谱完全离散：</p>
+<script type="math/tex; mode=display">
+A(1)|\varphi_n^i(1)\rangle=a_n|\varphi_n^i(1)\rangle\ ,\quad i=1,2,\cdots,g_n</script><p>那么在 $\mathscr E$ 中考虑其本征方程 $A(1)|\psi\rangle=a_n|\psi\rangle$ 。</p>
+<p>首先，显然对 $\forall|\chi(2)\rangle$ ，形如 $|\varphi_n^i(1)\rangle|\chi(2)\rangle$ 的张量积矢量都是属于 $a_n$ 的本征矢：</p>
+<script type="math/tex; mode=display">
+A(1)|\varphi_n^i(1)\rangle|\chi(2)\rangle=a_n|\varphi_n^i(1)\rangle|\chi(2)\rangle</script><p>下面证明，如果 $A(1)$ 是 $\mathscr E_1$ 中的观察算符，则它在 $\mathscr E$ 中的全体本征矢都具有这种形式。</p>
+<p>由于观察算符的本征矢集合构成 $\mathscr E_1$ 的一个基 $\{|\varphi_n^i(1)\rangle\}$ ，再取 $\mathscr E_2$ 的任一基 $\{|v_k(2)\rangle\}$ ，则全体形如 $|\psi_n^{ik}\rangle=|\varphi_n^i(1)\rangle|v_k(2)\rangle$ 的张量积矢量构成 $\mathscr E$ 的一个基，而 $|\psi_n^{ik}\rangle$ 又是 $A(1)$ 的本征矢，因此这就说明算符 $A(1)$ 在 $\mathscr E$ 中的全体本征矢都具有 $|\varphi_n^i(1)\rangle|\chi(2)\rangle$ 的形式。</p>
+<p>由此存在结论：</p>
+<p>若算符 $A(1)$ 是 $\mathscr E_1$ 中的观察算符，则它也是 $\mathscr E$ 中的观察算符。这是因为它存在构成基的本征矢，且显然也是厄米的。 算符 $A(1)$ 在 $\mathscr E_1$ 和 $\mathscr E$ 中的谱完全一样，即态空间的张量积不改变其本征值。 但是对于同一本征值 $a_n$ ，在 $\mathscr E_1$ 中的简并度为 $g_n$ ，则在 $\mathscr E$ 中的简并度为 $g_n\times N_2$ ；因此即便本征值 $a_n$ 在 $\mathscr E_1$ 中非简并，它在 $\mathscr E$ 中也是简并的。 对应于 $a_n$ 的本征子空间上的投影算符在 $\mathscr E$ 中为： </p>
+<script type="math/tex; mode=display">
+\sum_{ik}|\psi_n^{ik}\rangle\langle\psi_n^{ik}|=\sum_{ik}|\varphi_n^{i}(1)\rangle\langle\varphi_n^{i}(1)|\otimes|v_k(2)\rangle\langle v_k(2)|=\sum_{i}|\varphi_n^{i}(1)\rangle\langle\varphi_n^{i}(1)|\otimes I(2)</script><h3 id="A-1-B-2-的本征方程"><a href="#A-1-B-2-的本征方程" class="headerlink" title="$A(1)+B(2)$ 的本征方程"></a>$A(1)+B(2)$ 的本征方程</h3><p>设 $A(1)|\varphi_n(1)\rangle=a_n|\varphi_n(1)\rangle$ ， $B(2)|\chi_p(2)\rangle=b_p|\chi_p(2)\rangle$ ，假设谱都是离散的，且 $A(1)$ 、 $B(2)$ 都是观察算符。</p>
+<p>由于它们（的延伸）在 $\mathscr E$ 中是可对易的，且诸矢量 $|\varphi_n(1)\rangle|\chi_p(2)\rangle$ 可以构成 $\mathscr E$ 空间的基，同时它们又是两者的共同本征矢，因而也是 $C=A(1)+B(2)$ 的本征矢：</p>
+<script type="math/tex; mode=display">
+C|\varphi_n(1)\rangle|\chi_p(2)\rangle=(a_n+b_p)|\varphi_n(1)\rangle|\chi_p(2)\rangle</script><p>可见 $C=A(1)+B(2)$ 的本征值是 $A(1)$ 、 $B(2)$ 各取一个本征值之和，对应的本征矢则是两个本征值分别对应本征矢的张量积，且 $C$ 的本征矢构成 $\mathscr E$ 空间的一个基。</p>
+<p>更进一步地，若不存在不同的指标组 $(n_1,p_1),(n_2,p_2),\cdots$ 使得给出相同的本征值 $a_{n_1}+b_{p_1}=a_{n_2}+b_{p_2}=\cdots$ ，那么 $c_{np}=a_n+b_p$ 就是非简并的，其本征矢唯一确定，就是 $|\varphi_n(1)\rangle|\chi_p(2)\rangle$ ；但若 $c_{np}$ 简并，那么只能推断其对应的本征矢可以写作线性组合：</p>
+<script type="math/tex; mode=display">
+\sum_i\lambda_i|\varphi_{n_i}(1)\rangle|\chi_{p_i}(2)\rangle</script><p>这种情况下， $C$ 的本征矢有些并不能保证为张量积矢量。</p>
+<h3 id="mathscr-E-中的CSCO"><a href="#mathscr-E-中的CSCO" class="headerlink" title="$\mathscr E$ 中的CSCO"></a>$\mathscr E$ 中的CSCO</h3><p>本节将会证明若在 $\mathscr E_1$ 、 $\mathscr E_2$ 中分别取定一个CSCO，那么自然就能得到 $\mathscr E$ 中的一个CSCO。具体来说：</p>
+<p>设 $\mathscr E_1$ 中的一个CSCO： $\{A_1(1),A_2(1),\cdots,A_m(1)\}$ ，于是它们的共同本征矢构成的基是唯一的</p>
+<script type="math/tex; mode=display">
+\left\{ \begin{matrix} A_1(1)|\psi_{n_1n_2\cdots n_m}(1)\rangle=a^{(1)}_{n_1}|\psi_{n_1n_2\cdots n_m}(1)\rangle\\ A_2(1)|\psi_{n_1n_2\cdots n_m}(1)\rangle=a^{(2)}_{n_2}|\psi_{n_1n_2\cdots n_m}(1)\rangle\\ \vdots\\ A_m(1)|\psi_{n_1n_2\cdots n_m}(1)\rangle=a^{(m)}_{n_m}|\psi_{n_1n_2\cdots n_m}(1)\rangle \end{matrix} \right.</script><p>即对于给定的本征值组 $(a^{(1)}_{n_1},a^{(2)}_{n_2},\cdots,a^{(m)}_{n_m})$ 可以唯一确定一个右矢 $|\psi_{n_1n_2\cdots n_m}(1)\rangle$ ；同理，对于 $\mathscr E_2$ 中的一个CSCO： $\{B_1(2),B_2(2),\cdots,B_r(2)\}$ ，给定的本征值组 $(b^{(1)}_{p_1},b^{(2)}_{p_2},\cdots,b^{(r)}_{p_r})$ 可以唯一确定一个右矢 $|\chi_{p_1p_2\cdots p_r}(2)\rangle$ 。</p>
+<p>可以类比地说， $\{A_i(1)\}_{i=1,\cdots,m}$ 的共同本征矢对于 $(a^{(i)}_{n_i})_{i=1,\cdots,m}$ 是“非简并”的， $\{B_k(2)\}_{k=1,\cdots,r}$ 的共同本征矢对于 $(b^{(k)}_{p_k})_{k=1,\cdots,r}$ 是“非简并”的。</p>
+<p>然而在 $\mathscr E$ 中，对于给定的一组 $(a^{(i)}_{n_i})_{i=1,\cdots,m}$ ，却存在 $N_2$ 个线性无关的本征矢（ $N_2$ 重简并）；同理， $(b^{(k)}_{p_k})_{k=1,\cdots,r}$ 也是“ $N_1$ 重简并”的。但是由于 $\{A_i(1)\}_{i=1,\cdots,m}$ 和 $\{B_k(2)\}_{k=1,\cdots,r}$ 的对易性，可知对于它们的共同本征矢 $|\psi_{n_1\cdots n_m}(1)\rangle|\chi_{p_1\cdots p_r}(2)\rangle$ ，记为 $|\psi_{n_1\cdots n_m}(1)\chi_{p_1\cdots p_r}(2)\rangle$ ，有：</p>
+<script type="math/tex; mode=display">
+\left\{ \begin{matrix} A_i(1)|\psi_{n_1\cdots n_m}(1)\chi_{p_1\cdots p_r}(2)\rangle=a^{(i)}_{n_i}|\psi_{n_1\cdots n_m}(1)\chi_{p_1\cdots p_r}(2)\rangle\\ B_k(2)|\psi_{n_1\cdots n_m}(1)\chi_{p_1\cdots p_r}(2)\rangle=b^{(k)}_{p_k}|\psi_{n_1\cdots n_m}(1)\chi_{p_1\cdots p_r}(2)\rangle \end{matrix} \right.</script><p>$\forall i=1,\cdots,m;\ \forall k=1,\cdots,r$ 。由于 $\{|\psi_{n_1n_2\cdots n_m}(1)\rangle\}$ 、 $\{|\chi_{p_1p_2\cdots p_r}(2)\rangle\}$ 分别是对应空间的基，可见算符集 $\{A_i(1),B_k(2)\}_{i=1,\cdots,m;\ k=1,\cdots,r}$ 的共同本征矢构成 $\mathscr E$ 的一个基，且对于给定的本征值组 $(a^{(i)}_{n_i},b^{(k)}_{p_k})_{i=1,\cdots,m;\ k=1,\cdots,r}$ 有唯一确定的基矢量，<strong>因此 $\boldsymbol{\{A_i(1),B_k(2)\}_{i=1,\cdots,m;\ k=1,\cdots,r} }$ 是 $\mathscr E$ 中的一个CSCO。</strong></p>
+<h2 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h2><p>现在可以回顾在本节初所提到的三个关于构造大空间的问题了，它们用张量积的概念都能很好地解决。</p>
+<h3 id="一维及三维空间中的单粒子的态"><a href="#一维及三维空间中的单粒子的态" class="headerlink" title="一维及三维空间中的单粒子的态"></a>一维及三维空间中的单粒子的态</h3><p>设 $\mathscr E_x$ 是一维空间中单粒子的态空间，也即与波函数 $\varphi(x)=\langle x|\varphi\rangle$ 相联系的态空间。根据之前的结论可知， $X$ 本身就是 $\mathscr E_x$ 的一个CSCO，其本征矢是 $\{|x\rangle\}$ 表象的基右矢，对应于 $\xi_{x_0}(x)=\delta(x-x_0)$ 。</p>
+<p>同样地，从波函数 $\chi(y)$ 和 $\omega(z)$ 出发也可引入 $\mathscr E_y$ 、 $\mathscr E_z$ ，观察算符 $Y$ 、 $Z$ 分别是其中的CSCO。将这三个一维空间单粒子的态空间做张量积：</p>
+<script type="math/tex; mode=display">
+\mathscr E=\mathscr E_x\otimes\mathscr E_y\otimes\mathscr E_z</script><p>则它的基可由 $\{|x\rangle\}$ 、 $\{|y\rangle\}$ 、 $\{|z\rangle\}$ 张量积得到，其任一基右矢可表为</p>
+<script type="math/tex; mode=display">
+|x,y,z\rangle=|x\rangle\otimes|y\rangle\otimes|z\rangle</script><p>它们是算符 $X$ 、 $Y$ 、 $Z$ 在空间 $\mathcal E_{xyz}$ 中的延伸算符的共同本征矢</p>
+<script type="math/tex; mode=display">
+X|x,y,z\rangle=x|x,y,z\rangle</script><script type="math/tex; mode=display">
+Y|x,y,z\rangle=y|x,y,z\rangle</script><script type="math/tex; mode=display">
+Z|x,y,z\rangle=z|x,y,z\rangle</script><p>由此可见， $\mathscr E_{xyz}$ 空间与三维空间单粒子的态空间 $\mathscr E_{\boldsymbol r}$ 完全一致，因此 $|x,y,z\rangle$ 就是 $|\boldsymbol r\rangle$ 。</p>
+<p>在 $\mathscr E_{\boldsymbol r}$ 中存在一类右矢可以表为分别取自 $\mathscr E_x$ 、 $\mathscr E_y$ 、 $\mathscr E_z$ 的右矢的张量积： $|\varphi,\chi,\omega\rangle=|\varphi\rangle|\chi\rangle|\omega\rangle$ ，因而在 $\{|\boldsymbol r\rangle\}$ 表象中</p>
+<script type="math/tex; mode=display">
+\langle \boldsymbol r|\varphi,\chi,\omega\rangle=\langle x,y,z|\varphi,\chi,\omega\rangle=\langle x|\varphi\rangle\langle y|\chi\rangle\langle z|\omega\rangle=\varphi(x)\chi(y)\omega(z)</script><p>可见这类右矢所对应的波函数是可以分离变量的。这种情况也出现在基矢量本身：</p>
+<script type="math/tex; mode=display">
+\langle \boldsymbol r|\boldsymbol r_0\rangle=\delta(\boldsymbol r-\boldsymbol r_0)=\delta(x-x_0)\delta(y-y_0)\delta(z-z_0)</script><p>但是 $\mathscr E_{\boldsymbol r}$ 中最普遍的右矢形式并不是上述张量积形式，而是</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\int{\rm d}x{\rm d}y{\rm d}z\psi(x,y,z)|\varphi,\chi,\omega\rangle</script><p>而 $\psi(x,y,z)$ 一般不能分离为三个一维空间单粒子的波函数。</p>
+<p>这就说明了为什么 $X$ 本身是 $\mathscr E_x$ 的一个CSCO，但却不是 $\mathscr E_{\boldsymbol r}$ 的，因为 $\mathscr E_y$ 、 $\mathscr E_z$ 都是无穷多维空间，它的延伸算符的每个本征值都变成了无穷多重简并。但是从 $\mathscr E_x$ 、 $\mathscr E_y$ 、 $\mathscr E_z$ 中各取一个CSCO则可以构成一个 $\mathscr E_{\boldsymbol r}$ 的CSCO，例如 $\{X,Y,Z\}$ ；又因为 $P_x$ 本身也是 $\mathscr E_x$ 的CSCO，因此 $\{P_x,Y,Z\}$ 、 $\{X,P_y,P_z\}$ 等也是CSCO。</p>
+<p>下面是更宽泛的一个重要应用。设 $H_x$ 、 $H_y$ 、 $H_z$ 分别是 $\mathscr E_x$ 、 $\mathscr E_y$ 、 $\mathscr E_z$ 中的观察算符的延伸，定义 $H=H_x+H_y+H_z$ ，在 $\mathscr E_{\boldsymbol r}$ 中求解它的本征方程。首先，求出</p>
+<script type="math/tex; mode=display">
+H_x|\varphi_n\rangle=E_n^x|\varphi_n\rangle</script><script type="math/tex; mode=display">
+H_y|\chi_p\rangle=E_p^y|\chi_p\rangle</script><script type="math/tex; mode=display">
+H_z|\omega_p\rangle=E_r^z|\omega_r\rangle</script><p>于是可知 $H$ 的本征值一定具有 $E_{n,p,r}=E_n^x+E_p^y+E_r^z$ 的形式，其对应的本征矢则是张量积 $|\varphi_n,\chi_p,\omega_r\rangle=|\varphi_n\rangle|\chi_p\rangle|\omega_r\rangle$ ，对应的波函数可以分离变量： $\psi_{n,p,r}(x,y,z)=\varphi_n(x)\chi_p(y)\omega_r(z)$ 。</p>
+<p>这样的一个典型例子是哈密顿算符，其作用在三维波函数上时的形式为</p>
+<script type="math/tex; mode=display">
+H=-\frac{\hbar^2}{2m}\nabla^2+V(\boldsymbol r)=-\frac{\hbar^2}{2m}\left[\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}\right]+V(x,y,z)</script><p>在满足了特殊条件——势能可以写成如下形式</p>
+<script type="math/tex; mode=display">
+V(x,y,z)=V_1(x)+V_2(y)+V_3(z)</script><p>的情况下，它就可以拆分成前述形式，并且本征值、本征矢都可以方便计算。</p>
+<h3 id="双粒子体系的态"><a href="#双粒子体系的态" class="headerlink" title="双粒子体系的态"></a>双粒子体系的态</h3><p>考虑两个无自旋（可能有相互作用）的粒子组成的体系，它在某一时刻的波函数可由六个坐标变量决定：</p>
+<script type="math/tex; mode=display">
+\psi(\boldsymbol r_1,\boldsymbol r_2)=\psi(x_1,y_1,z_1,x_2,y_2,z_2)</script><p>现在在粒子 (1) 的态空间 $\mathscr E_{\boldsymbol r_1}$ 中确定一个表象 $\{|\boldsymbol r_1\rangle\}$ ，并取观察算符 $X_1,Y_1,Z_1$ ；对粒子 (2) 也如此操作。再做张量积</p>
+<script type="math/tex; mode=display">
+\mathscr E_{\boldsymbol r_1\boldsymbol r_2}=\mathscr E_{\boldsymbol r_1}\otimes\mathscr E_{\boldsymbol r_2}</script><p>它的一个基自然就是 $\{|\boldsymbol r_1,\boldsymbol r_2\rangle\}$ 。因而任何右矢都可写作</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\int{\rm d}^3r_1{\rm d}^3r_2\psi(\boldsymbol r_1,\boldsymbol r_2)|\boldsymbol r_1,\boldsymbol r_2\rangle</script><p>它的一个CSCO的例子，就是将两空间的 $X_1,Y_1,Z_1$ 、 $X_2,Y_2,Z_2$ 合并起来即可。<strong>因此若一个物理体系可看作由若干子系统组合而成，那么总的态空间就是子系统态空间的张量积。</strong></p>
+<p>特别地，假若 $|\psi\rangle=|\psi_1\rangle|\psi_2\rangle$ ，或 $\psi(\boldsymbol r_1,\boldsymbol r_2)=\psi_1(\boldsymbol r_1)\psi_2(\boldsymbol r_2)$ ，这种情况下称两粒子<strong>没有联系或没有相互作用</strong>。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Cohen/QM-Cohen-2.html">https://papaya-z.github.io/post/Cohen/QM-Cohen-2.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/">量子力学</a></div><div class="post_share"><div class="social-share" data-image="/img/2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/Cohen/QM-Cohen-3.html"><img class="prev-cover" src="/img/3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Cohen量子力学Chap.3：基本假设</div></div></a></div><div class="next-post pull-right"><a href="/post/Cohen/QM-Cohen-1.html"><img class="next-cover" src="/img/1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cohen量子力学Chap.1：基本概念</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3补充材料"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-23</div><div class="title">Cohen量子力学Chap.3补充材料</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-1.html" title="Cohen量子力学Chap.1：基本概念"><img class="cover" src="/img/1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.1：基本概念</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-5.html" title="Cohen量子力学Chap.5：一维谐振子"><img class="cover" src="/img/5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.5：一维谐振子</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-3.html" title="Cohen量子力学Chap.3：基本假设"><img class="cover" src="/img/3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.3：基本假设</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-6.html" title="Cohen量子力学Chap.6：量子力学中角动量的普遍性质"><img class="cover" src="/img/6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.6：量子力学中角动量的普遍性质</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-4.html" title="Cohen量子力学Chap.4：自旋1&#x2F;2和二能级系统"><img class="cover" src="/img/4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.4：自旋1&#x2F;2和二能级系统</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%A9%BA%E9%97%B4"><span class="toc-number">1.</span> <span class="toc-text">波函数空间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">空间结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4"><span class="toc-number">1.1.1.</span> <span class="toc-text">线性空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%A7%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">内积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.3.</span> <span class="toc-text">线性算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%AD%A3%E4%BA%A4%E5%BD%92%E4%B8%80%E5%9F%BA"><span class="toc-number">1.2.</span> <span class="toc-text">离散正交归一基</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text">函数的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%A7%AF%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.2.2.</span> <span class="toc-text">内积的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E9%97%AD%E6%80%A7%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.3.</span> <span class="toc-text">封闭性关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%B1%95%E5%BC%80"><span class="toc-number">1.3.</span> <span class="toc-text">特殊展开</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">平面波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#boldsymbol-delta-%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.2.</span> <span class="toc-text">$\boldsymbol \delta$ 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E5%B1%95%E5%BC%80"><span class="toc-number">1.3.3.</span> <span class="toc-text">广义展开</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%81%E7%A9%BA%E9%97%B4%EF%BC%9B%E7%8B%84%E6%8B%89%E5%85%8B%E7%AC%A6%E5%8F%B7"><span class="toc-number">2.</span> <span class="toc-text">态空间；狄拉克符号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A6%E5%8F%B3%E7%9F%A2"><span class="toc-number">2.1.</span> <span class="toc-text">左右矢</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E7%9F%A2"><span class="toc-number">2.1.1.</span> <span class="toc-text">右矢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E7%9F%A2"><span class="toc-number">2.1.2.</span> <span class="toc-text">左矢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-number">2.1.3.</span> <span class="toc-text">对应关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%AE%97%E5%AD%90"><span class="toc-number">2.2.</span> <span class="toc-text">线性算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%84%E7%B1%B3%E5%85%B1%E8%BD%AD"><span class="toc-number">2.3.</span> <span class="toc-text">厄米共轭</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E5%AF%B9%E5%B7%A6%E7%9F%A2%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.3.1.</span> <span class="toc-text">算子对左矢的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%B4%E9%9A%8F%E7%AE%97%E5%AD%90"><span class="toc-number">2.3.2.</span> <span class="toc-text">伴随算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%84%E6%8B%89%E5%85%8B%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%8E%84%E7%B1%B3%E5%85%B1%E8%BD%AD%E8%A7%84%E5%BE%8B"><span class="toc-number">2.3.3.</span> <span class="toc-text">狄拉克符号的厄米共轭规律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E4%BC%B4%E7%AE%97%E7%AC%A6"><span class="toc-number">2.3.4.</span> <span class="toc-text">自伴算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E8%B1%A1"><span class="toc-number">3.</span> <span class="toc-text">表象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%81%E7%A9%BA%E9%97%B4%E7%9A%84%E6%AD%A3%E4%BA%A4%E5%BD%92%E4%B8%80%E5%9F%BA"><span class="toc-number">3.1.</span> <span class="toc-text">态空间的正交归一基</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.</span> <span class="toc-text">矩阵表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E7%9F%A2%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.1.</span> <span class="toc-text">右矢的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E7%9F%A2%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.2.</span> <span class="toc-text">左矢的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.3.</span> <span class="toc-text">算子的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%B4%E9%9A%8F%E7%AE%97%E5%AD%90%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.4.</span> <span class="toc-text">伴随算子的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%84%E6%8B%89%E5%85%8B%E7%AC%A6%E5%8F%B7%E4%B8%B2%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.5.</span> <span class="toc-text">狄拉克符号串的表示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%B1%A1%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.</span> <span class="toc-text">表象变换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E6%96%B9%E7%A8%8B%E5%92%8C%E8%A7%82%E5%AF%9F%E7%AE%97%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text">本征方程和观察算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="toc-number">4.1.</span> <span class="toc-text">本征方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">4.1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3"><span class="toc-number">4.1.2.</span> <span class="toc-text">求解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E7%AE%97%E7%AC%A6"><span class="toc-number">4.2.</span> <span class="toc-text">观察算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E5%AF%B9%E6%98%93%E8%A7%82%E5%AF%9F%E7%AE%97%E7%AC%A6%E9%9B%86"><span class="toc-number">4.3.</span> <span class="toc-text">可对易观察算符集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E5%AE%9A%E7%90%86"><span class="toc-number">4.3.1.</span> <span class="toc-text">重要定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86%E4%B8%80%EF%BC%9A"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">定理一：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86%E4%BA%8C%EF%BC%9A"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">定理二：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86%E4%B8%89%EF%BC%9A"><span class="toc-number">4.3.1.3.</span> <span class="toc-text">定理三：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E5%AF%B9%E6%98%93%E8%A7%82%E5%AF%9F%E7%AE%97%E7%AC%A6%E5%AE%8C%E5%85%A8%E9%9B%86%EF%BC%88CSCO%EF%BC%9AComplete-Set-of-Commutive-Observables%EF%BC%89"><span class="toc-number">4.3.2.</span> <span class="toc-text">可对易观察算符完全集（CSCO：Complete Set of Commutive Observables）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#R%EF%BC%86P"><span class="toc-number">5.</span> <span class="toc-text">R＆P</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#boldsymbol-r-rangle-%E8%A1%A8%E8%B1%A1%E5%92%8C-boldsymbol-p-rangle-%E8%A1%A8%E8%B1%A1"><span class="toc-number">5.1.</span> <span class="toc-text">$\boldsymbol{\{|r\rangle\} }$ 表象和 $\boldsymbol{\{|p\rangle\} }$ 表象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6-boldsymbol-R-%E5%92%8C%E7%AE%97%E7%AC%A6-boldsymbol-P"><span class="toc-number">5.2.</span> <span class="toc-text">算符 $\boldsymbol R$ 和算符 $\boldsymbol P$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6-boldsymbol-R-%E5%92%8C-boldsymbol-P-%E7%9A%84%E5%BD%A2%E5%BC%8F%E4%B8%8E%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB"><span class="toc-number">5.2.1.</span> <span class="toc-text">算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的形式与对易关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6-boldsymbol-R-%E5%92%8C-boldsymbol-P-%E7%9A%84%E5%8E%84%E7%B1%B3%E6%80%A7"><span class="toc-number">5.2.2.</span> <span class="toc-text">算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的厄米性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6-boldsymbol-R-%E5%92%8C-boldsymbol-P-%E7%9A%84%E6%9C%AC%E5%BE%81%E7%9F%A2"><span class="toc-number">5.2.3.</span> <span class="toc-text">算符 $\boldsymbol R$ 和 $\boldsymbol P$ 的本征矢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6-boldsymbol-R-%E5%92%8C-boldsymbol-p-%E9%83%BD%E6%98%AF%E8%A7%82%E5%AF%9F%E7%AE%97%E7%AC%A6"><span class="toc-number">5.2.4.</span> <span class="toc-text">算符 $\boldsymbol R$ 和 $\boldsymbol p$ 都是观察算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%81%E7%A9%BA%E9%97%B4%E7%9A%84%E5%BC%A0%E9%87%8F%E7%A7%AF"><span class="toc-number">6.</span> <span class="toc-text">态空间的张量积</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E6%80%A7%E8%B4%A8"><span class="toc-number">6.1.</span> <span class="toc-text">张量积的定义和性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">6.1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E7%9F%A2%E9%87%8F"><span class="toc-number">6.1.2.</span> <span class="toc-text">张量积空间中的矢量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%86%85%E7%A7%AF"><span class="toc-number">6.1.3.</span> <span class="toc-text">张量积空间中的内积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E7%AE%97%E7%AC%A6"><span class="toc-number">6.1.4.</span> <span class="toc-text">张量积空间中的算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E6%9C%AC%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="toc-number">6.2.</span> <span class="toc-text">张量积空间中的本征方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E4%BC%B8%E7%AE%97%E7%AC%A6%E7%9A%84%E6%9C%AC%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="toc-number">6.2.1.</span> <span class="toc-text">延伸算符的本征方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-1-B-2-%E7%9A%84%E6%9C%AC%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="toc-number">6.2.2.</span> <span class="toc-text">$A(1)+B(2)$ 的本征方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mathscr-E-%E4%B8%AD%E7%9A%84CSCO"><span class="toc-number">6.2.3.</span> <span class="toc-text">$\mathscr E$ 中的CSCO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B"><span class="toc-number">6.3.</span> <span class="toc-text">应用举例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E5%8F%8A%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%8D%95%E7%B2%92%E5%AD%90%E7%9A%84%E6%80%81"><span class="toc-number">6.3.1.</span> <span class="toc-text">一维及三维空间中的单粒子的态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%B2%92%E5%AD%90%E4%BD%93%E7%B3%BB%E7%9A%84%E6%80%81"><span class="toc-number">6.3.2.</span> <span class="toc-text">双粒子体系的态</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3补充材料"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.3补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3补充材料">Cohen量子力学Chap.3补充材料</a><time datetime="2023-09-23T08:24:13.000Z" title="发表于 2023-09-23 16:24:13">2023-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E5%A7%8B%20%E6%9C%88%E6%B9%96.html" title="始 月湖"><img src="/img/%E6%9C%88%E6%B9%96.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="始 月湖"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E5%A7%8B%20%E6%9C%88%E6%B9%96.html" title="始 月湖">始 月湖</a><time datetime="2023-05-01T08:51:31.000Z" title="发表于 2023-05-01 16:51:31">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E7%BB%88%20%E5%BF%83%E7%8E%8B.html" title="终 心王"><img src="/img/%E5%BF%83%E7%8E%8B.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="终 心王"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E7%BB%88%20%E5%BF%83%E7%8E%8B.html" title="终 心王">终 心王</a><time datetime="2023-05-01T08:41:21.000Z" title="发表于 2023-05-01 16:41:21">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E8%82%86%20%E5%B0%81%E8%BE%B0.html" title="肆 封辰"><img src="/img/%E5%B0%81%E8%BE%B0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="肆 封辰"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E8%82%86%20%E5%B0%81%E8%BE%B0.html" title="肆 封辰">肆 封辰</a><time datetime="2023-05-01T08:33:23.000Z" title="发表于 2023-05-01 16:33:23">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E9%9B%86/%E5%8F%81%20%E7%B4%A0%E4%BF%A1.html" title="叁 素信"><img src="/img/%E7%B4%A0%E4%BF%A1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="叁 素信"/></a><div class="content"><a class="title" href="/post/%E9%9B%86/%E5%8F%81%20%E7%B4%A0%E4%BF%A1.html" title="叁 素信">叁 素信</a><time datetime="2023-05-01T08:31:32.000Z" title="发表于 2023-05-01 16:31:32">2023-05-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/2.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
     getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
@@ -183,7 +725,52 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><script>var pre
 
   }
 }
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
 POWERMODE.shake = false;
 POWERMODE.mobile = false;
 document.body.addEventListener('input', POWERMODE);
