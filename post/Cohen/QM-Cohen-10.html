@@ -1,0 +1,513 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Cohen量子力学Chap.10：角动量的耦合 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="角动量耦合"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Cohen/QM-Cohen-10.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Cohen量子力学Chap.10：角动量的耦合',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-21 13:39:15'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/QM.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cohen量子力学Chap.10：角动量的耦合</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-17T13:38:05.000Z" title="发表于 2023-10-17 21:38:05">2023-10-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-21T05:39:15.626Z" title="更新于 2023-10-21 13:39:15">2023-10-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QM-Cohen/">QM-Cohen</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>30分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cohen量子力学Chap.10：角动量的耦合"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/Cohen/QM-Cohen-10.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="引言：角动量"><a href="#引言：角动量" class="headerlink" title="引言：角动量"></a>引言：角动量</h1><h2 id="经典力学中的总角动量"><a href="#经典力学中的总角动量" class="headerlink" title="经典力学中的总角动量"></a>经典力学中的总角动量</h2><p>考虑经典$N$粒子体系，其对定点$O$的总角动量为各个粒子对该点角动量之矢量和：</p>
+<script type="math/tex; mode=display">
+\mathcal{\boldsymbol L} = \sum_{i=1}^N \mathcal{\boldsymbol L}_i</script><p>其中$\mathcal{\boldsymbol L}_i = {\boldsymbol r}_i \times {\boldsymbol p}_i$；角动量满足动量矩定理，即$\mathcal{\boldsymbol L}$的时间导数等于外力对$O$点的力矩；若所有外力矩矢量和为零（外力为零或所有外力指向同一个中心），则体系总角动量守恒；若体系存在内力，则尽管总角动量可能守恒，但各个粒子的角动量$\mathcal{\boldsymbol L}_i$并不是守恒量。</p>
+<p>因此在经典力学中，一个仅存在内部相互作用的体系，只有总角动量是运动常量，因为内力会引起体系内角动量在粒子之间的相互交换。因此经典体系中研究总角动量具有重要意义。</p>
+<h2 id="量子力学中的总角动量"><a href="#量子力学中的总角动量" class="headerlink" title="量子力学中的总角动量"></a>量子力学中的总角动量</h2><p>量子力学中，考虑一个具体的例子，即两粒子体系，假设两个质量分别为$\mu_1$、$\mu_2$的粒子处于同一个中心势场$V(r)$中。</p>
+<p>在两个粒子不存在相互作用的情况下，在表象$\{|\boldsymbol r_1,\boldsymbol r_2\rangle\}$中，体系哈密顿量可以简单写为两个粒子单独哈密顿量之和：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&H_0 = H_1 + H_2\\
+&H_1 = -\frac{\hbar^2}{2\mu}\nabla_1^2 + V(r_1)\\
+&H_2 = -\frac{\hbar^2}{2\mu}\nabla_2^2 + V(r_2)
+\end{aligned}</script><p>根据在中心力场一章中的讨论，任一粒子的轨道角动量算符$\boldsymbol L_i$（的三个分量）与总哈密顿算符$H$对易：</p>
+<script type="math/tex; mode=display">
+[\boldsymbol L_i,H] = [\boldsymbol L_i,H_i] = \boldsymbol 0</script><p>即不存在相互作用的时候，两粒子角动量分别是运动常量。</p>
+<p>但当两粒子之间存在相互作用的时候，假设该作用势仅仅依赖于其相对距离：$v = v( |\boldsymbol r_1 - \boldsymbol r_2| )$，此时总哈密顿量可以写为：</p>
+<script type="math/tex; mode=display">
+H = H_1 + H_2 + v( |\boldsymbol r_1 - \boldsymbol r_2| )</script><p>此时任一粒子的角动量与总哈密顿量$H$的对易子为：</p>
+<script type="math/tex; mode=display">
+[\boldsymbol L_i,H] = [\boldsymbol L_i,v( |\boldsymbol r_1 - \boldsymbol r_2| )]</script><p>例如，对于任一粒子的角动量$z$分量$L_{iz}$，其对易子为（利用第六章开头得到的角动量算符的正则量子化表达式）：</p>
+<script type="math/tex; mode=display">
+[L_{iz},H] = [L_{iz},v( |\boldsymbol r_1 - \boldsymbol r_2| )] = -{\rm i}\hbar\left( x_i\frac{\partial v}{\partial y_i} - y_i\frac{\partial v}{\partial x_i} \right) = -{\rm i}\hbar\left( x_i\frac{\partial}{\partial y_i} - y_i\frac{\partial}{\partial x_i} \right) v</script><p>一般来说，此时的两个粒子角动量均不再是运动方程；但若定义总角动量：</p>
+<script type="math/tex; mode=display">
+ \boldsymbol L = \boldsymbol L_1 + \boldsymbol L_2</script><p>那么该总角动量的三个分量均为运动常量：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}[]
+[L_z , H] &= [L_{1z} + L_{2z},H]\\
+&= -{\rm i}\hbar\left( x_1\frac{\partial v}{\partial y_1} - y_1\frac{\partial v}{\partial x_1} + x_2\frac{\partial v}{\partial y_2} - y_2\frac{\partial v}{\partial x_2} \right)\\
+&= -{\rm i}\hbar\left( v' x_1 \frac{\partial |\boldsymbol r_1 - \boldsymbol r_2|}{\partial y_1} - v' y_1 \frac{\partial |\boldsymbol r_1 - \boldsymbol r_2|}{\partial x_1} + v' x_2 \frac{\partial |\boldsymbol r_1 - \boldsymbol r_2|}{\partial y_2} - v' y_2 \frac{\partial |\boldsymbol r_1 - \boldsymbol r_2|}{\partial x_2} \right)\\
+&= -{\rm i}\hbar\left( v' x_1 \frac{|y_1 - y_2|}{|\boldsymbol r_1 - \boldsymbol r_2|} - v' y_1 \frac{|x_1 - x_2|}{|\boldsymbol r_1 - \boldsymbol r_2|} + v' x_2 \frac{|y_2 - y_1|}{|\boldsymbol r_1 - \boldsymbol r_2|} - v' y_2 \frac{|x_2 - x_1|}{|\boldsymbol r_1 - \boldsymbol r_2|} \right)\\
+&= 0
+\end{aligned}</script><p>这样，关于两个轨道角动量的结论是与经典力学相一致的。</p>
+<p>但是到目前为止，我们都并未考虑粒子的自旋。现在考虑在量子力学中另一种两角动量的合成：一个粒子的轨道角动量与其自旋角动量。假设该粒子处于中心势场$V(r)$中，哈密顿算符为：</p>
+<script type="math/tex; mode=display">
+H_0 = -\frac{\hbar^2}{2\mu}\nabla^2 + V(r)</script><p>于是轨道角动量算符$\boldsymbol L$与哈密顿算符对易；另一方面，自旋角动量算符$\boldsymbol S$显然也与哈密顿算符对易，因此两个角动量（的6个分量）都是运动常量。但是后面将会看到，在相对论修正下，哈密顿算符中将会出现如下的自旋-轨道耦合项：</p>
+<script type="math/tex; mode=display">
+H_{S0} = \xi(r) \boldsymbol L \cdot \boldsymbol S</script><p>这将会导致$\boldsymbol L$与$\boldsymbol S$均与$H$不对易：</p>
+<script type="math/tex; mode=display">
+[L_z,H] = [L_z,H_{S0}] = \xi(r)[L_z, \boldsymbol L \cdot \boldsymbol S] = {\rm i}\hbar\xi(r)(L_yS_x - L_xS_y)</script><script type="math/tex; mode=display">
+[S_z,H] = [S_z,H_{S0}] = \xi(r)[S_z, \boldsymbol L \cdot \boldsymbol S] = {\rm i}\hbar\xi(r)(L_xS_y - L_yS_x)</script><p>但若此时取$\boldsymbol J = \boldsymbol L + \boldsymbol S$，那么显然$\boldsymbol J$的三个分量均为运动常量。因此，我们可以定义$\boldsymbol J$为有自旋粒子的总角动量。</p>
+<p>上面的两个例子的共同点都是两个部分角动量和合成。若假设两个部分角动量分别为$\boldsymbol J_1$、$\boldsymbol J_2$，且两者对易，那么按照前面的知识，一组CSCO是$\{\boldsymbol J_1^2,J_{1z},\boldsymbol J_2^2,J_{2z}\}$，它们的共同本征矢构成态空间一组基。但是在合成的过程中，两个部分角动量分别不是运动常量，也分别与哈密顿算符不对易，因此在这样的基下总的哈密顿算符的形式要比较复杂。</p>
+<p>而两者之和$\boldsymbol J = \boldsymbol J_1 + \boldsymbol J_2$则是运动常量。因此我们希望能找到一组新的CSCO，它包括$\{\boldsymbol J^2,J_z\}$，使得选取新的一组基是它们的共同本征矢。在这样新的基中，由于$\boldsymbol J$和$J_z$与总的哈密顿算符对易，因此哈密顿算符一般很容易取对角化的形式。这样寻找新的基的问题，就是角动量耦合问题。</p>
+<h1 id="两个自旋-frac12-的耦合；初等方法"><a href="#两个自旋-frac12-的耦合；初等方法" class="headerlink" title="两个自旋$\frac12$的耦合；初等方法"></a>两个自旋$\frac12$的耦合；初等方法</h1><h2 id="问题的梗概"><a href="#问题的梗概" class="headerlink" title="问题的梗概"></a>问题的梗概</h2><p>考虑两个自旋$\frac12$粒子，而仅考虑其自旋的耦合。这样的耦合体系态空间具有一个显然的基：</p>
+<script type="math/tex; mode=display">
+\{\ket{\varepsilon_1,\varepsilon_2}\} = \{\ket{++},\ket{+-},\ket{-+},\ket{--}\}</script><p>相应CSCO为$\{\boldsymbol S_1^2,\boldsymbol S_2^2,S_{1z},S_{2z}\}$的本征方程为：</p>
+<script type="math/tex; mode=display">
+\boldsymbol S_1^2 \ket{\varepsilon_1,\varepsilon_2} = \boldsymbol S_2^2 \ket{\varepsilon_1,\varepsilon_2} = \frac12\left(1+\frac12\right) \hbar^2 \ket{\varepsilon_1,\varepsilon_2} =\frac34 \hbar^2 \ket{\varepsilon_1,\varepsilon_2}\\
+S_{1z} \ket{\varepsilon_1,\varepsilon_2} = \varepsilon_1 \frac{\hbar}{2} \ket{\varepsilon_1,\varepsilon_2}\\
+S_{1z} \ket{\varepsilon_1,\varepsilon_2} = \varepsilon_2 \frac{\hbar}{2} \ket{\varepsilon_1,\varepsilon_2}</script><p>当然，注意到算符$\boldsymbol S_1^2$和$\boldsymbol S_1^2$实际上就是恒等算符的倍数（在这里它们是卡西米尔算符），从去掉CSCO中去掉也不会影响算符集合的完备性。</p>
+<p>现在定义体系总自旋</p>
+<script type="math/tex; mode=display">
+\boldsymbol S = \boldsymbol S_1 + \boldsymbol S_2</script><p>显然其三个分量满足角动量代数，因而这样定义的算符的确是角动量。可以得到：</p>
+<script type="math/tex; mode=display">
+\boldsymbol S^2 = \boldsymbol S_1^2 + \boldsymbol S_2^2 + 2\boldsymbol S_1 \cdot \boldsymbol S_2\\
+S_z = S_{1z} + S_{2z}</script><p>引入两个角动量分别的升降算符，可以将$\boldsymbol S^2$表示为：</p>
+<script type="math/tex; mode=display">
+\boldsymbol S^2 = \boldsymbol S_1^2 + \boldsymbol S_2^2 + (S_{1+}S_{2-} + S_{1-}S_{2+}) + 2 S_{1z}S_{2z}</script><p>不难证明如下的对易关系：</p>
+<script type="math/tex; mode=display">
+[S_z,\boldsymbol S_1^2] = [S_z,\boldsymbol S_2^2] = [\boldsymbol S^2,\boldsymbol S_1^2] = [\boldsymbol S^2,\boldsymbol S_2^2] = 0\\
+[S_z,S_{1z}] = [S_z,S_{2z}] = 0</script><p>但是$\boldsymbol S^2$与$S_{1z}$和$S_{2z}$均不对易：</p>
+<script type="math/tex; mode=display">
+[\boldsymbol S^2,S_{1z}] = 2[S_{1x}S_{2x} + S_{1y}S_{2y} , S_{1z}] = 2{\rm i}\hbar (-S_{1y}S_{2x} + S_{1x}S_{2y} )</script><p>当然，由于$[\boldsymbol S^2,S_{1z}] = -[\boldsymbol S^2,S_{2z}]$，则</p>
+<script type="math/tex; mode=display">
+[\boldsymbol S^2,S_z] = 0</script><p>经过这样的讨论，我们最终选出的新的CSCO候选者是如下的对易算符集：</p>
+<script type="math/tex; mode=display">
+\{ \boldsymbol S^2, S_z, \boldsymbol S_1^2, \boldsymbol S_2^2\}</script><p>考虑在耦合态空间（4维）中将它们的4个共同本征矢记作$\ket{s,m}$，其满足本征方程：</p>
+<script type="math/tex; mode=display">
+\boldsymbol S_1^2 \ket{s,m} = \boldsymbol S_2^2 \ket{s,m} = \frac34 \hbar^2 \ket{s,m}\\
+\boldsymbol S^2 \ket{s,m} = s(s+1)\hbar^2 \ket{s,m}\\
+S_z \ket{s,m} = m\hbar \ket{s,m}</script><p>这里利用了量子力学中角动量的普遍性质。但仍需要明确在这样的形式中，$s$和$m$分别可取哪些值，并且利用旧有的$\ket{\varepsilon_1,\varepsilon_2}$来表示$\ket{s,m}$。</p>
+<h2 id="S-z-的本征值及简并度"><a href="#S-z-的本征值及简并度" class="headerlink" title="$S_z$的本征值及简并度"></a>$S_z$的本征值及简并度</h2><p>对于卡西米尔算符$\boldsymbol S_1^2$和$\boldsymbol S_1^2$实际上不需特别关注，因为在耦合态空间中任何矢量都是它们的属于本征值$\frac34 \hbar^2$的本征矢。</p>
+<p>而由于$S_z$与$\{\boldsymbol S_1^2,\boldsymbol S_2^2,S_{1z},S_{2z}\}$所有算符均对易，因此可以期待它的4个本征矢其实就是$\ket{\varepsilon_1,\varepsilon_2}$，这不难验证：</p>
+<script type="math/tex; mode=display">
+S_z \ket{\varepsilon_1,\varepsilon_2} = \frac12(\varepsilon_1+\varepsilon_2) \ket{\varepsilon_1,\varepsilon_2}</script><p>即$m = (\varepsilon_1+\varepsilon_2)/2$，考虑到$\varepsilon_i = \pm 1$，因此$m = +1,0,-1$。</p>
+<p>其中$m = +1,-1$的两个本征值是非简并的，因为它们的本征矢分别只有$\ket{++}$和$\ket{—}$；而$m=0$则是二重简并，存在两个正交本征矢$\ket{+-}$、$\ket{-+}$，它们的任何线性组合都是$S_z$的属于$m=0$的本征矢。这一点其实是显然的，只要注意到在基$\{\ket{\varepsilon_1,\varepsilon_2}\}$中$S_z$的矩阵表示是：</p>
+<script type="math/tex; mode=display">
+S_z = \hbar\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}</script><p>从而可以期待，在新的CSCO$\{ \boldsymbol S^2, S_z, \boldsymbol S_1^2, \boldsymbol S_2^2\}$中，4个共同本征矢分别取$\ket{++}$、$\ket{—}$，以及$\ket{+-}$和$\ket{-+}$的某两个正交线性组合，使得$\boldsymbol S^2$对角化。</p>
+<h2 id="boldsymbol-S-2-的对角化"><a href="#boldsymbol-S-2-的对角化" class="headerlink" title="$\boldsymbol S^2$的对角化"></a>$\boldsymbol S^2$的对角化</h2><p>利用$\boldsymbol S^2 = \boldsymbol S_1^2 + \boldsymbol S_2^2 + (S_{1+}S_{2-} + S_{1-}S_{2+}) + 2 S_{1z}S_{2z}$，可以写出$\boldsymbol S^2$作用在$\{\ket{\varepsilon_1,\varepsilon_2}\}$中每个矢量的结果：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol S^2\ket{++} &= \left(\frac34\hbar^2 + \frac34\hbar^2\right)\ket{++} + \frac12\hbar^2 \ket{++}\\
+&= 2\hbar^2\ket{++}\\
+\boldsymbol S^2\ket{+-} &= \left(\frac34\hbar^2 + \frac34\hbar^2\right)\ket{+-} - \frac12\hbar^2 \ket{+-} + \hbar^2\ket{-+}\\
+&= \hbar^2(\ket{+-} + \ket{-+})\\
+\boldsymbol S^2\ket{-+} &= \left(\frac34\hbar^2 + \frac34\hbar^2\right)\ket{-+} - \frac12\hbar^2 \ket{-+} + \hbar^2\ket{+-}\\
+&= \hbar^2(\ket{-+} + \ket{+-})\\
+\boldsymbol S^2\ket{--} &= \left(\frac34\hbar^2 + \frac34\hbar^2\right)\ket{--} + \frac12\hbar^2 \ket{--}\\
+&= 2\hbar^2\ket{--}\\
+\end{aligned}</script><p>从而在$\{\ket{\varepsilon_1,\varepsilon_2}\}$中$\boldsymbol S^2$的矩阵表示为：</p>
+<script type="math/tex; mode=display">
+\boldsymbol S^2 = \hbar^2\begin{pmatrix}
+2 & 0 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 2
+\end{pmatrix}</script><p>这实际上是分块对角的，它已经给出了$\boldsymbol S^2$的两个本征矢：$\ket{++}$和$\ket{—}$，均属于本征值$\hbar^2$；剩下两个本征矢只需要在$\ket{+-}$和$\ket{-+}$所张成的不变子空间中寻找即可，本质上是对角化一个$2\times 2$的矩阵$\begin{pmatrix}<br>1 &amp; 1\\<br>1 &amp; 1<br>\end{pmatrix}$。求解其特征值$\lambda$满足的方程$(1-\lambda)^2-1=0$不难得到$\lambda = 0,2$，即$\boldsymbol S^2$的另外两个本征值为$0$和$2\hbar^2$，并且有归一化本征矢：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol S^2 \frac{\ket{+-}+\ket{-+} }{\sqrt 2} &= 2\hbar^2 \frac{\ket{+-}+\ket{-+} }{\sqrt 2}\\
+\boldsymbol S^2 \frac{\ket{+-}-\ket{-+} }{\sqrt 2} &=0
+\end{aligned}</script><p>可见$\boldsymbol S^2$共有两个本征值：非简并本征值$0$，对应本征矢$\frac{1}{\sqrt 2}(\ket{+-}-\ket{-+})$，以及三重简并本征值$2\hbar^2$，对应本征矢$\ket{++}$、$\ket{—}$和$\frac{1}{\sqrt 2}(\ket{+-}+\ket{-+})$。</p>
+<h2 id="结果：三重态和单态"><a href="#结果：三重态和单态" class="headerlink" title="结果：三重态和单态"></a>结果：三重态和单态</h2><p>现在总结一下前面分别对$\boldsymbol S^2$和$S_z$的讨论。在如下本征方程中：</p>
+<script type="math/tex; mode=display">
+\boldsymbol S^2 \ket{s,m} = s(s+1)\hbar^2 \ket{s,m}\\
+S_z \ket{s,m} = m\hbar \ket{s,m}</script><p>量子数$s$有两个取值：</p>
+<ol>
+<li><p>$s=0$，此时允许的$m=0$，对应$\boldsymbol S^2$和$S_z$的唯一共同本征矢：</p>
+<script type="math/tex; mode=display">
+\ket{0,0} = \frac{1}{\sqrt 2}(\ket{+-}-\ket{-+})</script></li>
+<li><p>$s=1$，此时允许$m$三种取值，分别对应三个共同本征矢：</p>
+<script type="math/tex; mode=display">
+\begin{cases} 
+\ket{1,1} = \ket{++} & m = 1\\
+\ket{1,1} = \frac{1}{\sqrt 2}(\ket{+-}+\ket{-+}) & m = 0\\
+\ket{1,-1} = \ket{--} & m = -1
+\end{cases}</script></li>
+<li></li>
+</ol>
+<p>容易验证，这样的4个共同本征矢的确构成一组正交归一基，于是$\{\boldsymbol S^2,S_z\}$构成一组CSCO。</p>
+<p>我们把$s=1$对应的三个本征态合起来统称为$\boldsymbol S$的<strong>三重态</strong>，而$s=0$对应的一个态称为<strong>单态</strong>。一个重要的性质是，三重态对于两个部分角动量的交换是对称的，即若将旧基$\{\ket{\varepsilon_1,\varepsilon_2}\}$都换成$\{\ket{\varepsilon_2,\varepsilon_1}\}$，三重态的每个态都不变，而单态$\ket{00}$会改变一符号。可见除了$\ket{++}$、$\ket{—}$这两个对称态之外，$\ket{+-}$和$\ket{-+}$要分别构造出一个对称态进入三重态，以及一个与之正交的反对称单态。</p>
+<h1 id="两个任意角动量的耦合；普遍方法"><a href="#两个任意角动量的耦合；普遍方法" class="headerlink" title="两个任意角动量的耦合；普遍方法"></a>两个任意角动量的耦合；普遍方法</h1><h2 id="复习角动量的普遍理论"><a href="#复习角动量的普遍理论" class="headerlink" title="复习角动量的普遍理论"></a>复习角动量的普遍理论</h2><p>回顾在第六章的内容，对于一般的任意体系，其态空间$\mathscr E$，角动量$\boldsymbol J$，那么存在对易算符集$\{\boldsymbol J^2,J_z\}$的共同本征矢$\ket{k,j,m}$满足本征方程：</p>
+<script type="math/tex; mode=display">
+\boldsymbol J^2\ket{k,j,m} = k(k+1)\hbar^2\ket{k,j,m}\\
+J_z\ket{k,j,m} = m\hbar \ket{k,j,m}</script><p>用这样的共同本征矢构成标准基$\{\ket{k,j,m}\}$，其中可以构造角动量升降算符来对量子数$m$做增减：</p>
+<script type="math/tex; mode=display">
+J_\pm \ket{k,j,m} = \hbar\sqrt{j(j+1)-m(m\pm 1)} \ket{k,j,m\pm 1}</script><p>对于确定的量子数$k$和$j$，这样的本征矢张成$2j+1$维子空间$\mathscr{E}(k,j)$，其中的矢量只有$m$的不同，且可以用$J_\pm$实现相互转化。整个态空间$\mathscr E$则可看作这些子空间$\mathscr E(k,j)$的直和。</p>
+<p>显然，每个子空间$\mathscr{E}(k,j)$都是$\boldsymbol J,J_z,J_\pm$的不变子空间，即在任意算符函数$f(\boldsymbol J)$作用下都是不变的；换句话说，$\boldsymbol J,J_z,J_\pm$是分块对角的，只在这些子空间内才具有非零矩阵元。并且在一个子空间$\mathscr{E}(k,j)$内，角动量的任意算符函数$f(\boldsymbol J)$的矩阵元都与$k$无关。</p>
+<h2 id="问题的梗概-1"><a href="#问题的梗概-1" class="headerlink" title="问题的梗概"></a>问题的梗概</h2><p>现在将角动量普遍理论应用到两个任意角动量耦合的问题上来。考虑这样的物理体系，它包含两个子体系，分别具有角动量$\boldsymbol J_1$和$\boldsymbol J_2$。假设在任一子体系$(i)$中（$i=1,2$），已经知道其标准基为$\ket{k_i,j_i,m_i}$，满足</p>
+<script type="math/tex; mode=display">
+\boldsymbol J_i^2 \ket{k_i,j_i,m_i} = j_i(j_i+1)\hbar^2 \ket{k_i,j_i,m_i}\\
+J_{iz}\ket{k_i,j_i,m_i} = m_i\hbar \ket{k_i,j_i,m_i}\\
+J_{\pm} \ket{k_i,j_i,m_i} = \hbar\sqrt{j_i(j_i+1)-m_i(m_i\pm 1)} \ket{k_i,j_i,m_i\pm 1}</script><p>那么总体系态空间应为两个子体系态空间的张量积$\mathscr E = \mathscr E_1 \otimes \mathscr E_2$，其中的一个基自然就是两个子空间之基的张量积，在这种基下，总体系态空间中任一矢量可以表示为：</p>
+<script type="math/tex; mode=display">
+\ket{k_1,k_2;j_1,j_2;m_1,m_2} = \ket{k_1,j_1,m_1} \otimes \ket{k_1,j_2,m_2}</script><p>而若再将每个子体系态空间视作若干子空间的直和：</p>
+<script type="math/tex; mode=display">
+\mathscr E_i = \sum_{\oplus}\mathscr E_1(k_i,j_i)\qquad i=1,2</script><p>那么总体系态空间也能表示为直和形式：</p>
+<script type="math/tex; mode=display">
+\mathscr E = \sum_\oplus \mathscr E(k_1,k_2;j_1,j_2) = \sum_\oplus \mathscr E_1(k_1,j_1)\otimes\mathscr E_2(k_2,j_2)</script><p>它的每个直和子空间维数是$(2j_1+1)(2j_2+1)$，且在任意$\boldsymbol J_1$和$\boldsymbol J_2$（这里是原子体系态空间上算符在总体系态空间的延伸算符）的算符函数作用下是不变子空间。</p>
+<p>现在考虑总体系的总角动量$\boldsymbol J = \boldsymbol J_1+\boldsymbol J_2$​，显然同样满足角动量代数。它们的对易关系与上一节讨论的情况是类似的：</p>
+<script type="math/tex; mode=display">
+[J_z,\boldsymbol J_1^2] = [J_z,\boldsymbol J_2^2] = [\boldsymbol J^2,\boldsymbol J_1^2] = [\boldsymbol J^2,\boldsymbol J_2^2] = 0\\
+[J_z,J_{1z}] = [J_z,J_{2z}] = 0</script><p>以及</p>
+<script type="math/tex; mode=display">
+[\boldsymbol J^2,J_z] = 0</script><p>于是CSCO候选集合为</p>
+<script type="math/tex; mode=display">
+\{ \boldsymbol J^2, J_z, \boldsymbol J_1^2, \boldsymbol J_2^2\}</script><p>显然子空间$\mathscr E(k_1,k_2;j_1,j_2) = \mathscr E_1(k_1,j_1)\otimes\mathscr E_2(k_2,j_2)$也是$\boldsymbol J$的不变子空间，因此$\boldsymbol J^2$和$J_z$也自然具有分块对角的形式，只在这些子空间中具有非零矩阵元。尽管这两个算符在$\mathscr E$的矩阵表示的维数可能是无穷维的，但每个不变子空间都是有限维：$(2j_1+1)(2j_2+1)$，我们只需要在这样的每个子空间中进行对角化即可。</p>
+<p>又由于在每个子空间中$\boldsymbol J^2$和$J_z$的对角化程序与其他任何由$k_i$表示的量子数都是无关的，正因如此我们讨论角动量的耦合时，一般只说“将角动量$j_1$和$j_2$相加”，而无需指出其他量子数$k_i$。于是简明起见，我们总是可以略去$k_i$不记。</p>
+<p>现在，我们要研究的问题其实就是，在$(2j_1+1)(2j_2+1)$维的子空间$\mathscr E(j_1,j_2)$中研究算符$\boldsymbol J^2$和$J_z$的对角化。</p>
+<h2 id="boldsymbol-J-2-和-J-z-的本征值"><a href="#boldsymbol-J-2-和-J-z-的本征值" class="headerlink" title="$\boldsymbol J^2$和$J_z$的本征值"></a>$\boldsymbol J^2$和$J_z$的本征值</h2><p>由于$\boldsymbol J^2$和$J_z$满足角动量的普遍规律，因此要在子空间$\mathscr E(j_1,j_2)$中观察它们的行为，总是可以再次按照第六章的程序，将之进一步分解为若干“子子空间”的直和：</p>
+<script type="math/tex; mode=display">
+\mathscr E(j_1,j_2) = \sum_\oplus \mathscr E(K,J)</script><p>这里$K$不同于之前的$k_1,k_2$，是为了研究$\boldsymbol J^2$和$J_z$而新引入的形式量子数，即我们假设$\boldsymbol J^2$和$J_z$不足以构成一个CSCO而需要额外引入的算符的本征值。我们要解决两个问题：</p>
+<ol>
+<li>对于已知的$j_1$和$j_2$，量子数$J$取值如何？对于每个确定的$J$，存在多少相应的子空间$\mathscr E(K,J)$，即可以有多少可能的$K$？</li>
+<li>怎样将$\boldsymbol J^2$和$J_z$的属于子空间$\mathscr E(j_1,j_2)$的共同本征矢在旧基$\{\ket{j_1,j_2;m_1,m_2}\}$中展开？</li>
+</ol>
+<p>本节我们先回答第一个问题。</p>
+<h3 id="两自旋-frac12-耦合例子再回顾"><a href="#两自旋-frac12-耦合例子再回顾" class="headerlink" title="两自旋$\frac12$耦合例子再回顾"></a>两自旋$\frac12$耦合例子再回顾</h3><p>首先利用普遍方法，回顾前面讨论的两自旋耦合例子。此时，不必再将$\boldsymbol S^2$和$S_z$对角化即可求出它们的本征值和简并情况。</p>
+<p>按照普遍方法的结论，两个自旋$\frac12$形成$4$维态空间$\mathscr E(1/2,1/2)$，它可以分成各个$(2S+1)$维子空间$\mathscr E(K,S)$的直和；在每个子空间$\mathscr E(K,S)$中，$|M|\leq S$，且每个$M$值对应的$S_z$的本征态是唯一的。</p>
+<p>显然，半整数量子数$S$的取值存在限制$S\leq 1$，否则，若$S\geq2$，那么$(2S+1)&gt;4$；若$S = 3/2$，那么$(2S+1)=4$，意味着态空间$\mathscr E(1/2,1/2)$不可再直和分解，但是其中$M$只能取值$\pm 3/2, \pm 1/2$，这与两个自旋$1/2$耦合体系的假设相矛盾。因此实际只允许$S\leq 1$：</p>
+<ol>
+<li>$S=1$是合理的，此时$M=1,0,-1$，对应于$\mathscr E(K,1)$是三维子空间；</li>
+<li>$S=0$是合理的，此时$M=0$，对应于$\mathscr E(K,0)$是一维子空间；</li>
+<li>其余$S$取值都可以说明不合理。</li>
+</ol>
+<p>从中立即就就能得出结论：按照$\boldsymbol S^2$的本征值，其4个本征矢构成一个三重态（$S=1$）和一个单态（$S=0$）；按照$S_z$的本征值，$M=0$是二重简并的 ，$M=0,-1$是非简并的。</p>
+<h3 id="一般的两角动量耦合"><a href="#一般的两角动量耦合" class="headerlink" title="一般的两角动量耦合"></a>一般的两角动量耦合</h3><p>类似地，对于两个任意角动量$j_1$和$j_2$的耦合，其形成$(2j_1+1)(2j_2+1)$维态空间$\mathscr E(j_1,j_2)$。按照对易关系，旧CSCO$\{\boldsymbol J_1^2,J_{1z},\boldsymbol J_2^2,J_{2z}\}$的各个共同本征矢$\ket{j_1,j_2;m_1,m_2}$也都是$J_z$的本征矢：</p>
+<script type="math/tex; mode=display">
+J_z \ket{j_1,j_2;m_1,m_2} = (J_{1z}+J_{2z}) \ket{j_1,j_2;m_1,m_2} = (m_1+m_2)\hbar \ket{j_1,j_2;m_1,m_2}</script><p>于是可以得到：对于$j_1$和$j_2$的确定值，在态空间$\mathscr E(j_1,j_2)$中，算符$J_z$的本征值为$M\hbar$，其中量子数$M$取值为：</p>
+<script type="math/tex; mode=display">
+M = m_1 + m_2 = j_1+j_2,\ j_1+j_2-1,\ \cdots,\ -(j_1+j_2)</script><p>现在想要获知各个$M$可能值的简并度$g_{j_1j_2}(M)$，可以用画图辅助。考虑一个矩形，四个顶点分别位于坐标$(j_1,j_2)$、$(j_1,-j_2)$、$(-j_1,-j_2)$、$(-j_1,j_2)$；而将本征矢$\ket{j_1,j_2;m_1,m_2}$表示为坐标位于$(m_1,m_2)$的点。显然$M=m_1+m_2$相同的那些点位于平行于坐标系副对角线（即第二四象限角平分线）的直线上，其经过的$(m_1,m_2)$点数就是相应的简并度$g_{j_1j_2}(M)$。</p>
+<p>我们可以简要分析$g_{j_1j_2}(M)$的取值情况：</p>
+<ul>
+<li><p>对于$M = \pm(j_1+j_2)$，是非简并的：$g_{j_1j_2}(\pm(j_1+j_2)) = 1$；</p>
+</li>
+<li><p>随着$|M|$每次减小$1$，简并度也每次增加$1$，直到$M = \pm (j_1-j_2)$时简并度达到最大，为$g_{j_1j_2}(j_1-j_2) = 2j_{\rm min}+1$，这里$j_{\rm min}$是指两个角动量中较小的那个；</p>
+</li>
+<li><p>此后$|M|$继续减小而简并度始终保持该极大值。因此简并度最大的$M$范围是：</p>
+<script type="math/tex; mode=display">
+-|j_1-j_2| \leq M \leq |j_1-j_2|</script></li>
+</ul>
+<p>这样就讨论清楚了$J_z$的本征值性质。</p>
+<p>另一方面，在此基础上讨论$\boldsymbol J^2$的本征值。</p>
+<p>注意到角动量的普遍规律，既然$|M|\leq |j_1+j_2|$，那么$J$的取值范围也是$-(j_1+j_2)~\sim (j_1+j_2)$之间的半整数，且每个$J$之间相差最小是$1$。</p>
+<p>对于确定的$J$值，任一与之相应的子空间$\mathscr E(K,J)$中，$M$的取值都是</p>
+<script type="math/tex; mode=display">
+M = J,\ J-1,\ \cdots,\ -J</script><p>并且在任一子空间$\mathscr E(K,J)$中，一个确定的$M$值只存在唯一本征矢$\ket{K,J,M}$。</p>
+<p>考虑用$p_{j_1j_2}(J)$来表示给定确定的$J$值，相应的子空间$\mathscr E(K,J)$数目，即确定的$J$所对应的可能的$K$值数目。注意到$p_{j_1j_2}(J)$和$g_{j_1j_2}(M)$之间存在关系：</p>
+<script type="math/tex; mode=display">
+g_{j_1j_2}(M) = p_{j_1j_2}(J=|M|) + p_{j_1j_2}(J=|M|+1) + p_{j_1j_2}(J=|M|+2) + \cdots</script><p>于是得到</p>
+<script type="math/tex; mode=display">
+p_{j_1j_2}(J) = g_{j_1j_2}(M=J) - g_{j_1j_2}(M = J+1)</script><p>这样立即就可以用前面讨论出的$M$取值及简并度的性质来得到$J$相关的结论：</p>
+<ol>
+<li>显然，$p_{j_1j_2}(J&gt;j_1+j_2) = 0$；</li>
+<li>显然，$p_{j_1j_2}(J = j_1+j_2) = p_{j_1j_2}(M = j_1+j_2) = 1$；</li>
+<li>根据递推关系$p_{j_1j_2}(J) = g_{j_1j_2}(M=J) - g_{j_1j_2}(M = J+1)$，可以得到在$|j_1-j_2|\leq J \leq j_1+j_2$范围内的每个$J$值，$p_{j_1j_2}(J) =1$；</li>
+<li>当$J&lt;|j_1-j_2|$，$p_{j_1j_2}(J) =0$。</li>
+</ol>
+<p>总结上述结论，我们得到：</p>
+<p>对于$j_1$和$j_2$的确定值，在态空间$\mathscr E(j_1,j_2)$中，算符$\boldsymbol J^2$的本征值为$J(J+1)\hbar^2$，其中量子数$J$取值为：</p>
+<script type="math/tex; mode=display">
+J = j_1+j_2,\ j_1+j_2-1,\ \cdots,\ |j_1-j_2|</script><p>其中每个$J$值对应于唯一的一个子空间$\mathscr E(J)$，换句话说$\boldsymbol J^2,J_z$本身就构成一个CSCO而不需要其他算符。</p>
+<p>在子空间$\mathscr E(J)$中，$M = J,J-1,\cdots,-J$可取$2J+1$个值，每个值在该子空间$\mathscr E(J)$中唯一对应一个$\boldsymbol J^2,J_z$的共同本征矢$\ket{J,M}$。不难证明，对于给定的$j_1$和$j_2$，在态空间$\mathscr E(j_1,j_2)$中一共可以实现的共同本征矢$\ket{J,M}$数目恰为态空间维数：</p>
+<script type="math/tex; mode=display">
+\sum_{J=|j_1-j_2|}^{j_1+j_2} (2J+1) = (2j_1+1)(2j_2+1)</script><h2 id="boldsymbol-J-2-和-J-z-的共同本征矢"><a href="#boldsymbol-J-2-和-J-z-的共同本征矢" class="headerlink" title="$\boldsymbol J^2$和$J_z$的共同本征矢"></a>$\boldsymbol J^2$和$J_z$的共同本征矢</h2><p>现在考虑共同本征矢$\ket{J,M}$如何被构造出来。从本征方程出发：</p>
+<script type="math/tex; mode=display">
+\boldsymbol J^2 \ket{J,M} = J(J+1)\hbar^2\ket{J,M}\\
+J_z\ket{J,M} = M\hbar\ket{J,M}</script><p>我们需要找出$\ket{J,M}$用$\ket{j_1,j_2;m_1,m_2}$线性组合所表达的形式。</p>
+<h3 id="两自旋-frac12-耦合例子再回顾-1"><a href="#两自旋-frac12-耦合例子再回顾-1" class="headerlink" title="两自旋$\frac12$耦合例子再回顾"></a>两自旋$\frac12$耦合例子再回顾</h3><p>仍以这个例子分析，在态空间$\mathscr E(1/2,1/2)$中，显然$S_z$属于$M=1 = s_1+s_2$的唯一的本征态就是$\ket{++}$（唯一意味着非简并）。由于$\boldsymbol S^2$和$S_z$对易，且$M=1$非简并，因此$\ket{++}$一定也是$\boldsymbol S^2$的本征态，且由于$M=1$则一定有$J=1$。因此实际上：</p>
+<script type="math/tex; mode=display">
+\ket{1,1} = \ket{++}</script><p>据此，利用升降算符就可以很容易求得三重态中的其他本征态：</p>
+<script type="math/tex; mode=display">
+S_-\ket{1,1} = \hbar\sqrt{1(1+1)-1(1-1)}\ket{1,0} = \sqrt2\hbar\ket{1,0}</script><p>于是立即得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\ket{1,0} &= \frac{1}{\sqrt2\hbar} S_- \ket{1,1} = \frac{1}{\sqrt2\hbar} S_- \ket{++}\\
+& = \frac{1}{\sqrt2\hbar} (S_{1-} + S_{2-}) \ket{++}\\
+&= \frac{1}{\sqrt2} (\ket{-+} + \ket{+-})\\
+\end{aligned}</script><p>再次将$S_-$应用于它：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\ket{1,-1} &= \frac{1}{\sqrt2\hbar} S_- \ket{1,0}\\
+& = \frac{1}{2\hbar} (S_{1-} + S_{2-}) (\ket{-+} + \ket{+-})\\
+&= \frac{1}{2} (\ket{--} + \ket{--})\\
+&= \ket{--}
+\end{aligned}</script><p>这样就可以逐个遍历得到三重态中的本征态。</p>
+<p>最后还要考虑$S=0$对应的态，我们已经分析知道它是单态，$M=0$；二通过正交性要求（与刚才三个本征态正交）就可以将之确定。</p>
+<p>由于$\ket{0,0}$中$M=0$，那么它只能是$\ket{+-}$和$\ket{-+}$的线性组合$(\alpha\ket{-+} + \beta\ket{+-})$；再结合它与$\ket{1,0} = \frac{1}{\sqrt2}(\ket{-+} + \ket{+-})$正交，即可在差一个整体相位的程度上确定归一化线性组合系数$\alpha$和$\beta$，我们取实系数即得：</p>
+<script type="math/tex; mode=display">
+\ket{0,0} = \frac{1}{\sqrt2}(\ket{+-} - \ket{-+})</script><p>据此就直接得到了$\boldsymbol S^2$和$S_z$的四个本征态，而不需要对其做对角化处理。</p>
+<h3 id="一般的两角动量耦合-1"><a href="#一般的两角动量耦合-1" class="headerlink" title="一般的两角动量耦合"></a>一般的两角动量耦合</h3><p>考虑在态空间$\mathscr E(j_1,j_2)$中，我们类比前面的流程，首先寻找算符$J_z$的属于最大本征值$M=j_1+j_2$的唯一本征态：$\ket{j_1,j_2;m_1=j_1,m_2=j_2}$，类似地，它也是$\boldsymbol J^2$的本征态，且$J = j_1+j_2$，因此有：</p>
+<script type="math/tex; mode=display">
+\ket{j_1+j_2,j_1+j_2} = \ket{j_1,j_2;j_1,j_2}</script><p>我们知道，算符$\boldsymbol J^2$由$J$标记的本征值是$2J+1$重简并的，即存在$(2J+1)$重态；重复利用升降算符$J_-$作用于$\ket{j_1+j_2,j_1+j_2}$即可逐一得到。利用：</p>
+<script type="math/tex; mode=display">
+J_1\ket{j_1+j_2,j_1+j_2} = \sqrt{2(j_1+j_2)}\hbar \ket{j_1+j_2,j_1+j_2-1}</script><p>得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\ket{j_1+j_2,j_1+j_2-1} &= \frac{1}{\sqrt{2(j_1+j_2)}\hbar} J_- \ket{j_1+j_2,j_1+j_2}\\
+& = \frac{1}{\sqrt{2(j_1+j_2)}\hbar} (J_{1-} + J_{2-}) \ket{j_1,j_2;j_1,j_2}\\
+& = \frac{1}{\sqrt{2(j_1+j_2)}} (\sqrt{2j_1} \ket{j_1,j_2;j_1-1,j_2} + \sqrt{2j_2} \ket{j_1,j_2;j_1,j_2-1} )\\
+& = \sqrt\frac{j_1}{j_1+j_2}\ket{j_1,j_2;j_1-1,j_2} + \sqrt\frac{j_2}{j_1+j_2}\ket{j_1,j_2;j_1,j_2-1}
+\end{aligned}</script><p>它的形式是两个$M=j_1+j_2-1$的旧基矢的线性组合，也是属于$J=j_1+j_2$和$M=j_1+j_2-1$的唯一共同本征矢。</p>
+<p>只要不断将$J_-$作用上去，就能够继续得到$J=j_1+j_2$的全部本征矢，直到$\ket{j_1+j_2,-(j_1+j_2)} = \ket{j_1,j_2;-j_1,-j_2}$。如此，就得到了新基$\{\ket{J,M}\}$中的前$[2(j_1+j_2)+1]$个矢量，它们张成的就是子空间$\mathscr E(j_1+j_2)$。</p>
+<p>子空间$\mathscr E(j_1+j_2)$的情况是最简单的，因为只有在$J$取最大值的子空间中，我们可以明确地找到多重态中$M$最高的那个：$\ket{j_1+j_2,j_1+j_2} = \ket{j_1,j_2;j_1,j_2}$。而在其他子空间，并没有这么简单。</p>
+<p>考虑在态空间$\mathscr E(j_1,j_2)$中，子空间$\mathscr E(j_1+j_2)$的补空间$\mathscr S(j_1+j_2)$：</p>
+<script type="math/tex; mode=display">
+\mathscr S(j_1+j_2) = \mathscr E(j_1+j_2-1) \oplus \mathscr E(j_1+j_2-2) \oplus \cdots \oplus \mathscr E(|j_1-j_2|)</script><p>对于确定的一个值$M$，考虑到它在第一个子空间$\mathscr E(j_1+j_2)$中已经有一个本征矢，因此它在$\mathscr S(j_1+j_2)$中的实际简并度要少1：</p>
+<script type="math/tex; mode=display">
+g'_{j_1j_2}(M) = g_{j_1j_2}(M) - 1</script><p>这表明补空间$\mathscr S(j_1+j_2)$中不再有$M=j_1+j_2$的本征矢；且新的“极大值”$M = j_1+j_2-1$在补空间$\mathscr S(j_1+j_2)$中是非简并的，因此我们实际上可以在$\mathscr S(j_1+j_2)$中首先寻找如下的本征矢：</p>
+<script type="math/tex; mode=display">
+\ket{j_1+j_2-1,j_1+j_2-1} = \alpha \ket{j_1,j_2;j_1,j_2-1} + \beta \ket{j_1,j_2;j_1-1,j_2}</script><p>再利用正交化条件（正交于$\ket{j_1+j_2,j_1+j_2-1}$）和归一化条件确定出线性组合系数，得到：</p>
+<script type="math/tex; mode=display">
+\ket{j_1+j_2-1,j_1+j_2-1} = \sqrt\frac{j_1}{j_1+j_2} \ket{j_1,j_2;j_1,j_2-1} - \sqrt\frac{j_2}{j_1+j_2} \ket{j_1,j_2;j_1-1,j_2}</script><p>它是$J=j_1+j_2-1$的一族本征矢中$M$最高的那个，于是又可以利用$J_-$获得与它属于一个$[2(j_1+j_2-1)+1] = [2(j_1+j_2)-1]$​重态的其他本征矢，如此，就得到了新基$\{\ket{J,M}\}$中的另外$[2(j_1+j_2)-1]$个矢量，它们张成的是子空间$\mathscr E(j_1+j_2-1)$。</p>
+<p>上述过程给出了一种范式，当我们已经找齐某个$J$值（$J&gt;|j_1-j_2|+1$）下的全部本征矢后，就可以在$\mathscr E(J)$的补空间$\mathscr S(J)$中，利用正交化条件和归一化条件，以及算符$J_-$来确定新的本征矢。通过重复这样的方法，最终我们就可以找齐$\{\boldsymbol J^2,J_z\}$的$(2j_1+1)(2j_2+1)$个正交归一本征矢，并构成态空间的一组基。</p>
+<h3 id="克莱布希-高登系数（C-G系数）"><a href="#克莱布希-高登系数（C-G系数）" class="headerlink" title="克莱布希-高登系数（C-G系数）"></a>克莱布希-高登系数（C-G系数）</h3><p>在态空间$\mathscr E(j_1,j_2)$中，我们所找到的$\boldsymbol J^2$和$J_z$的每个共同本征矢，都是旧基$\{\ket{j_1,j_2,m_1,m_2}\}$中矢量的线性组合：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\ket{J,M} &= \sum_{m_1=-j_1}^{j_1}\sum_{m_2=-j_2}^{j_2} \ket{j_1,j_2;m_1,m_2} \braket{j_1,j_2;m_1,m_2}{J,M}\\
+&= \sum_{m_1=-j_1}^{j_1}\sum_{m_2=-j_2}^{j_2} C^{J,M}_{j_1,j_2;m_1,m_2} \ket{j_1,j_2;m_1,m_2} 
+\end{aligned}</script><p>其中展开系数$C^{J,M}_{j_1,j_2;m_1,m_2} = \braket{j_1,j_2;m_1,m_2}{J,M}$称为角动量耦合的<strong>C-G系数</strong>。</p>
+<p>是无法给出C-G系数的通式的，它们具体的值一般只能逐个计算。在此过程中，考虑到物理态相位的自由度，我们还需要对这些系数的相位做一些约定：总是取实值的C-G系数。</p>
+<p>经过前面有关正交性条件的讨论我们知道，对于$\braket{j_1,j_2;m_1,m_2}{J,M}$，只有在量子数取如下值的时候：</p>
+<script type="math/tex; mode=display">
+M = m_1+m_2\\
+|j_1-j_2| \leq J \leq j_1+j_2</script><p>时，该系数不为零；其中$|j_1-j_2| \leq J \leq j_1+j_2$称为“三角形法则”，即长度为$j_1$，$j_2$和$J$的线段应当构成一个三角形。</p>
+<p>我们还可以反过来，将旧基矢用新基做展开：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\ket{j_1,j_2;m_1,m_2} &= \sum_{J = |j_1-j_2|}^{j_1+j_2} \sum_{M = -J}^{J} \ket{J,M} \braket{J,M}{j_1,j_2;m_1,m_2}
+\end{aligned}</script><p>这其中的展开系数，在前述实值约定下，显然满足：</p>
+<script type="math/tex; mode=display">
+\braket{J,M}{j_1,j_2;m_1,m_2} = \braket{j_1,j_2;m_1,m_2}{J,M} =  C^{J,M}_{j_1,j_2;m_1,m_2}</script><p>因此它们也是C-G系数。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Cohen/QM-Cohen-10.html">https://papaya-z.github.io/post/Cohen/QM-Cohen-10.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/">量子力学</a></div><div class="post_share"><div class="social-share" data-image="/img/QM.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/Cohen/QM-Cohen-10.1.html" title="Cohen量子力学Chap.10补充材料"><img class="cover" src="/img/QM.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Cohen量子力学Chap.10补充材料</div></div></a></div><div class="next-post pull-right"><a href="/post/%E6%89%AC%E5%B7%9E%E6%85%A2.html" title="扬州慢"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">扬州慢</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/Cohen/QM-Cohen-1.html" title="Cohen量子力学Chap.1：基本概念"><img class="cover" src="/img/cohen/1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.1：基本概念</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-10.1.html" title="Cohen量子力学Chap.10补充材料"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-20</div><div class="title">Cohen量子力学Chap.10补充材料</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-2.1.html" title="Cohen量子力学Chap.2补充材料"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-20</div><div class="title">Cohen量子力学Chap.2补充材料</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-2.html" title="Cohen量子力学Chap.2：数学基础"><img class="cover" src="/img/cohen/2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.2：数学基础</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3补充材料"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-23</div><div class="title">Cohen量子力学Chap.3补充材料</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-4.html" title="Cohen量子力学Chap.4：自旋1&#x2F;2和二能级系统"><img class="cover" src="/img/cohen/4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-26</div><div class="title">Cohen量子力学Chap.4：自旋1&#x2F;2和二能级系统</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80%EF%BC%9A%E8%A7%92%E5%8A%A8%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">引言：角动量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E6%80%BB%E8%A7%92%E5%8A%A8%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">经典力学中的总角动量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E6%80%BB%E8%A7%92%E5%8A%A8%E9%87%8F"><span class="toc-number">1.2.</span> <span class="toc-text">量子力学中的总角动量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%87%AA%E6%97%8B-frac12-%E7%9A%84%E8%80%A6%E5%90%88%EF%BC%9B%E5%88%9D%E7%AD%89%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">两个自旋$\frac12$的耦合；初等方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E6%A2%97%E6%A6%82"><span class="toc-number">2.1.</span> <span class="toc-text">问题的梗概</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#S-z-%E7%9A%84%E6%9C%AC%E5%BE%81%E5%80%BC%E5%8F%8A%E7%AE%80%E5%B9%B6%E5%BA%A6"><span class="toc-number">2.2.</span> <span class="toc-text">$S_z$的本征值及简并度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boldsymbol-S-2-%E7%9A%84%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">$\boldsymbol S^2$的对角化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%EF%BC%9A%E4%B8%89%E9%87%8D%E6%80%81%E5%92%8C%E5%8D%95%E6%80%81"><span class="toc-number">2.4.</span> <span class="toc-text">结果：三重态和单态</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E4%BB%BB%E6%84%8F%E8%A7%92%E5%8A%A8%E9%87%8F%E7%9A%84%E8%80%A6%E5%90%88%EF%BC%9B%E6%99%AE%E9%81%8D%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">两个任意角动量的耦合；普遍方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E4%B9%A0%E8%A7%92%E5%8A%A8%E9%87%8F%E7%9A%84%E6%99%AE%E9%81%8D%E7%90%86%E8%AE%BA"><span class="toc-number">3.1.</span> <span class="toc-text">复习角动量的普遍理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E6%A2%97%E6%A6%82-1"><span class="toc-number">3.2.</span> <span class="toc-text">问题的梗概</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boldsymbol-J-2-%E5%92%8C-J-z-%E7%9A%84%E6%9C%AC%E5%BE%81%E5%80%BC"><span class="toc-number">3.3.</span> <span class="toc-text">$\boldsymbol J^2$和$J_z$的本征值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E8%87%AA%E6%97%8B-frac12-%E8%80%A6%E5%90%88%E4%BE%8B%E5%AD%90%E5%86%8D%E5%9B%9E%E9%A1%BE"><span class="toc-number">3.3.1.</span> <span class="toc-text">两自旋$\frac12$耦合例子再回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E7%9A%84%E4%B8%A4%E8%A7%92%E5%8A%A8%E9%87%8F%E8%80%A6%E5%90%88"><span class="toc-number">3.3.2.</span> <span class="toc-text">一般的两角动量耦合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boldsymbol-J-2-%E5%92%8C-J-z-%E7%9A%84%E5%85%B1%E5%90%8C%E6%9C%AC%E5%BE%81%E7%9F%A2"><span class="toc-number">3.4.</span> <span class="toc-text">$\boldsymbol J^2$和$J_z$的共同本征矢</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E8%87%AA%E6%97%8B-frac12-%E8%80%A6%E5%90%88%E4%BE%8B%E5%AD%90%E5%86%8D%E5%9B%9E%E9%A1%BE-1"><span class="toc-number">3.4.1.</span> <span class="toc-text">两自旋$\frac12$耦合例子再回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E7%9A%84%E4%B8%A4%E8%A7%92%E5%8A%A8%E9%87%8F%E8%80%A6%E5%90%88-1"><span class="toc-number">3.4.2.</span> <span class="toc-text">一般的两角动量耦合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E8%8E%B1%E5%B8%83%E5%B8%8C-%E9%AB%98%E7%99%BB%E7%B3%BB%E6%95%B0%EF%BC%88C-G%E7%B3%BB%E6%95%B0%EF%BC%89"><span class="toc-number">3.4.3.</span> <span class="toc-text">克莱布希-高登系数（C-G系数）</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-2.1.html" title="Cohen量子力学Chap.2补充材料"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.2补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-2.1.html" title="Cohen量子力学Chap.2补充材料">Cohen量子力学Chap.2补充材料</a><time datetime="2023-10-20T13:07:33.000Z" title="发表于 2023-10-20 21:07:33">2023-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-10.1.html" title="Cohen量子力学Chap.10补充材料"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.10补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-10.1.html" title="Cohen量子力学Chap.10补充材料">Cohen量子力学Chap.10补充材料</a><time datetime="2023-10-20T09:52:15.000Z" title="发表于 2023-10-20 17:52:15">2023-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-10.html" title="Cohen量子力学Chap.10：角动量的耦合"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.10：角动量的耦合"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-10.html" title="Cohen量子力学Chap.10：角动量的耦合">Cohen量子力学Chap.10：角动量的耦合</a><time datetime="2023-10-17T13:38:05.000Z" title="发表于 2023-10-17 21:38:05">2023-10-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/%E6%89%AC%E5%B7%9E%E6%85%A2.html" title="扬州慢">扬州慢</a><time datetime="2023-10-15T15:19:17.000Z" title="发表于 2023-10-15 23:19:17">2023-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3补充材料"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.3补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-3.1.html" title="Cohen量子力学Chap.3补充材料">Cohen量子力学Chap.3补充材料</a><time datetime="2023-09-23T08:24:13.000Z" title="发表于 2023-09-23 16:24:13">2023-09-23</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/QM.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: '9f9f19c80b36e64ceef473dd7544077b',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
