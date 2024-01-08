@@ -1,0 +1,365 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Cohen量子力学Chap.13：依赖于时间的问题的近似解法 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="含时微扰论"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Cohen/QM-Cohen-13.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Cohen量子力学Chap.13：依赖于时间的问题的近似解法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-08 16:18:12'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/QM.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-07T13:54:42.000Z" title="发表于 2024-01-07 21:54:42">2024-01-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-08T08:18:12.806Z" title="更新于 2024-01-08 16:18:12">2024-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QM-Cohen/">QM-Cohen</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/Cohen/QM-Cohen-13.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="问题的梗概"><a href="#问题的梗概" class="headerlink" title="问题的梗概"></a>问题的梗概</h1><p>在第11章中，我们考虑了定态微扰的情况，即在未微扰哈密顿算符$H_0$上附加一个不含时微扰$H_I = \lambda V$。在这一章我们考虑含时的微扰项：</p>
+<script type="math/tex; mode=display">
+H(t) = H_0 + \lambda V(t)</script><p>并且我们假设施加微扰是从$t=0$时刻开始的，即$t&lt;0$时$V = 0$。那么若体系原本处于初态$\ket{\psi(0)} = \ket{i}$，它在施加微扰后将会开始演化，设其在$t$时刻达到末态$\ket{\psi(t)} = \ket{f}$。在这章中我们重点关心体系在$t$时间从一个未微扰定态演化到另一个未微扰定态的概率$\mathscr P_{if}(t)$，即微扰$V(t)$可能激发的体系在两个未微扰定态之间的跃迁。</p>
+<p>薛定谔绘景中，态的时间演化为含时薛定谔方程：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\rm d}{ {\rm d}t} \ket{\psi(t)} = H(t) \ket{\psi(t)}</script><p>那么初始条件为：</p>
+<script type="math/tex; mode=display">
+\ket{\psi(t=0)} = \ket{i}</script><p>我们所要求的跃迁概率就是：</p>
+<script type="math/tex; mode=display">
+\mathscr P_{if}(t) = |\braket{f}{\psi(t)}|^2</script><p>由此可见，问题的核心就是求解含时薛定谔方程的解。但是通常这样的方程无法解析求解，因此需要利用包括微扰论在内的近似方法。在本章第二节，将会得到在$\lambda$充分小的时候用级数展开形式的解；第三节会将该结论应用到研究正弦型微扰以及常数型微扰的情况，并得到所谓的共振现象。我们首先从离散谱的情况开始，在本章最后，将会讨论初态与末态的连续统相耦合的情况，并在此情况下得到”费米黄金规则“。</p>
+<p>特别地：</p>
+<ol>
+<li>第11章所讨论的定态微扰理论，可以视作这一章含时微扰理论的一个特例，将会在后面说明这一点；</li>
+<li>第四章曾经讨论过二能级体系受到恒定微扰的情况，在那里跃迁概率$\mathscr P_{12}(t)$是可以严格计算的，其结果就是<strong>拉比公式</strong>。而本章讨论的是具有任意多个能级的体系受到任意含时微扰的情况，一般无法得到解析结果。</li>
+</ol>
+<h1 id="薛定谔方程的近似解"><a href="#薛定谔方程的近似解" class="headerlink" title="薛定谔方程的近似解"></a>薛定谔方程的近似解</h1><h2 id="能量表象中的薛定谔方程"><a href="#能量表象中的薛定谔方程" class="headerlink" title="能量表象中的薛定谔方程"></a>能量表象中的薛定谔方程</h2><p>我们关心定态——能量本征态——之间的跃迁概率，因此选择$H_0$的能量本征态构成能量表象$\{ \ket{n} \}$是自然的。</p>
+<h3 id="确定态矢分量的微分方程组"><a href="#确定态矢分量的微分方程组" class="headerlink" title="确定态矢分量的微分方程组"></a>确定态矢分量的微分方程组</h3><p>在能量表象下展开态矢：</p>
+<script type="math/tex; mode=display">
+\ket{\psi(t)} = \sum_n c_n(t) \ket{n}</script><p>注意到在该表象下，$H_0$是对角的：</p>
+<script type="math/tex; mode=display">
+\bra{n} H_0 \ket{m} = E_n \delta_{nm}</script><p>于是薛定谔方程的分量给出：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\rm d}{ {\rm d}t} c(t) = E_n c_n(t) + \lambda \sum_k V_{nk}(t) c_k(t)</script><p>可见，微扰的非对角元将不同分量的演化相联系起来。</p>
+<h3 id="函数变换"><a href="#函数变换" class="headerlink" title="函数变换"></a>函数变换</h3><p>我们已经知道在无微扰的时候各个分量$c_n(t)$的演化：</p>
+<script type="math/tex; mode=display">
+c_n(t) = b_n {\rm e}^{-{\rm i}E_n t/\hbar}</script><p>其中$b_n$是由初始条件所决定的与时间无关的常数。现在处理含时微扰，$c_n(t)$的演化不是如此简单的形式；但是注意到我们如果令$\lambda\ll 1$，那么可以预期，含时薛定谔方程的解应当与不含时薛定谔方程的解充分接近；换句话说，如果进行下述的函数变换：</p>
+<script type="math/tex; mode=display">
+c_n(t) = b_n(t) {\rm e}^{-{\rm i}E_n t/\hbar}</script><p>那么函数$b_n(t)$虽然不是常数，但应该是时间的缓变函数。将之代入薛定谔方程得到：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar {\rm e}^{-{\rm i}E_n t/\hbar} \frac{\rm d}{ {\rm d}t} b_n(t) + E_n b_n(t) {\rm e}^{-{\rm i}E_n t/\hbar} = E_n b_n(t) {\rm e}^{-{\rm i}E_n t/\hbar} + \lambda \sum_k V_{nk}(t) b_k(t) {\rm e}^{-{\rm i}E_k t/\hbar}</script><p>引入耦合能级$E_n$和$E_k$的玻尔频率：</p>
+<script type="math/tex; mode=display">
+\omega_{nk} = \frac{E_n-E_k}{\hbar}</script><p>那么得到</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\rm d}{ {\rm d}t} b_n(t) = \lambda \sum_k {\rm e}^{ {\rm i}\omega_{nk} t} V_{nk}(t) b_k(t)</script><p>此即决定态矢在能量表象中分量演化的方程，它与含时薛定谔方程严格等价。</p>
+<h2 id="微扰方程"><a href="#微扰方程" class="headerlink" title="微扰方程"></a>微扰方程</h2><p>到目前为止的讨论都是不涉及近似的。尽管得到了上述方程，但是一般我们难以精确求解。为此考虑采用幂级数形式的试探解：</p>
+<script type="math/tex; mode=display">
+b_n(t) = b_n^{(0)}(t) + \lambda b_n^{(1)}(t) + \cdots + \lambda^q b_n^{(q)}(t) + \cdots</script><p>将之带入方程并使用待定系数法，就得到：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\rm d}{ {\rm d}t} b^{(q)}_n(t) = \sum_k {\rm e}^{ {\rm i}\omega_{nk} t} V_{nk}(t) b^{(q-1)}_k(t)</script><p>这是$b_n(t)$展开式逐阶之间的递推关系；特别地，当$q=0$时</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\rm d}{ {\rm d}t} b^{(0)}_n(t) = 0</script><p>换句话说，当$\lambda = 0$时，$b_n = b_n^{(0)}$就是常数，这符合我们引入微扰论的思想。由此我们原则上就可以利用初始条件，逐阶地确定$b_n(t)$的幂级数形式解。</p>
+<h2 id="一级微扰"><a href="#一级微扰" class="headerlink" title="一级微扰"></a>一级微扰</h2><h3 id="t-时刻态的一级微扰"><a href="#t-时刻态的一级微扰" class="headerlink" title="$t$时刻态的一级微扰"></a>$t$时刻态的一级微扰</h3><p>我们已经假设在$t&lt;0$时体系处于某个定态$\ket{i}$，那么在诸$b_n(0)$中，只有一个$b_i(t&lt;0)\neq0$且与时间$t$无关，而其余都为零。在$t=0$时刻，我们施加的微扰是有限大小的，因此薛定谔方程的解保持连续，即：</p>
+<script type="math/tex; mode=display">
+b_n(t=0) = \delta_{ni}</script><p>因此微扰方程的递推初始条件是：</p>
+<script type="math/tex; mode=display">
+b^{(0)}_n(0) = \delta_{ni}\ ,\qquad b^{(q)}_n(0) = 0\quad (q>0)</script><p>在此初始条件下逐阶求解微扰方程。显然。对于$q=0$：</p>
+<script type="math/tex; mode=display">
+b_n^{(0)}(t) = b^{(0)}_n(0) = \delta_{ni}</script><p>据此，可以求解一级微扰方程。对于$q=1$，方程形式化为：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\rm d}{ {\rm d}t} b^{(1)}_n(t) = \sum_k {\rm e}^{ {\rm i}\omega_{nk} t} V_{nk}(t) \delta_{ki} = {\rm e}^{ {\rm i}\omega_{ni} t} V_{ni}(t)</script><p>其积分就得到一级微扰的解：</p>
+<script type="math/tex; mode=display">
+b_n^{(1)}(t) = \frac{1}{ {\rm i}\hbar}\int_0^t {\rm d}t' {\rm e}^{ {\rm i}\omega_{ni} t'} V_{ni}(t')</script><p>据此，得到函数$b_n(t)$的一级微扰：</p>
+<script type="math/tex; mode=display">
+b_n(t) = \delta_{ni} + \frac{\lambda}{ {\rm i}\hbar}\int_0^t {\rm d}t' {\rm e}^{ {\rm i}\omega_{ni} t'} V_{ni}(t') + \mathcal O(\lambda^2)</script><p>进而</p>
+<script type="math/tex; mode=display">
+c_n(t) = \delta_{ni} {\rm e}^{-{\rm i}E_i t/\hbar} + \frac{\lambda}{ {\rm i}\hbar} {\rm e}^{-{\rm i}E_n t/\hbar} \int_0^t {\rm d}t' {\rm e}^{ {\rm i}\omega_{ni} t'} V_{ni}(t') + \mathcal O(\lambda^2)</script><p>从而</p>
+<script type="math/tex; mode=display">
+\ket{\psi(t)} = {\rm e}^{-{\rm i}E_i t/\hbar} \ket{i} + \frac{\lambda}{ {\rm i}\hbar} \sum_n \ket{n} {\rm e}^{-{\rm i}E_n t/\hbar} \int_0^t {\rm d}t' {\rm e}^{ {\rm i}\omega_{ni} t'} V_{ni}(t') + \mathcal O(\lambda^2)</script><p>此即$\ket{\psi(t)}$到一级的微扰。</p>
+<h3 id="跃迁概率"><a href="#跃迁概率" class="headerlink" title="跃迁概率"></a>跃迁概率</h3><p>要计算到末态是定态$\ket{f}$的跃迁概率，注意到$c_n$与$b_n$具有相同的模，于是：</p>
+<script type="math/tex; mode=display">
+\mathscr P_{if}(t) = |\braket{f}{\psi(t)}|^2 = |c_f(t)|^2 = |b_f(t)|^2 = \Big| b_n^{(0)}(t) + \lambda b_n^{(1)}(t) + \cdots \Big|^2</script><p>我们所关心的是$\ket{f}\neq\ket{i}$的那些态，因此实际上的跃迁概率在一级微扰给出的是：</p>
+<script type="math/tex; mode=display">
+\mathscr P_{if}(t) = \frac{\lambda^2}{\hbar^2} \left| \int_0^t {\rm d}t' {\rm e}^{ {\rm i}\omega_{fi} t'} V_{fi}(t') \right|^2</script><p>或者将参数$\lambda$吸收进微扰项，写为：</p>
+<script type="math/tex; mode=display">
+\mathscr P_{if}(t) = \frac{1}{\hbar^2} \left| \int_0^t {\rm d}t' {\rm e}^{ {\rm i}\omega_{fi} t'} [H_I]_{fi}(t') \right|^2</script><p>可见，跃迁概率在一级微扰正比于微扰项在初末态之间矩阵元$V_{fi}$在$t=0$到$t$时刻之间的部分对于玻尔频率$\omega_{fi}$的傅里叶变换结果的模方。若矩阵元在此期间为零，即不存在微扰的直接耦合，那么到一级微扰的跃迁概率$\mathscr P_{if}(t) = 0$。</p>
+<blockquote>
+<p>注：这里尚未讨论我们引入$b_n(t)$幂级数展开近似的成立条件。比较我们曾经得到的关于$b_n(t)$的严格微分方程，以及递推微扰方程，注意到我们要逐阶对整个作用时间$0\sim t$积分来确定下一阶的初始条件。当$t$充分小以至于$b_k(t)$和$b_k(0)$相差很小时，这种近似还能保持有效，但当$t$很大时，就不能断定高阶修正仍然足够小以至于可以忽略。关于微扰作用时间和近似有效性的关系，在下面还会讨论。</p>
+</blockquote>
+<h1 id="重要特例：正弦型微扰或恒定微扰"><a href="#重要特例：正弦型微扰或恒定微扰" class="headerlink" title="重要特例：正弦型微扰或恒定微扰"></a>重要特例：正弦型微扰或恒定微扰</h1><h2 id="普遍公式的应用"><a href="#普遍公式的应用" class="headerlink" title="普遍公式的应用"></a>普遍公式的应用</h2><p>考虑取正弦函数或余弦函数的含时微扰：</p>
+<script type="math/tex; mode=display">
+V(t) = V\sin\omega t \qquad {\rm or} \qquad V(t) = V\cos\omega t</script><p>以正弦函数为例，直接可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+b_n^{(1)}(t) &= -\frac{V_{ni}}{ 2\hbar}\int_0^t {\rm d}t' {\rm e}^{ {\rm i}\omega_{ni} t'} \left({\rm e}^{ {\rm i}\omega t'} - {\rm e}^{ -{\rm i}\omega t'}\right)\\
+&= \frac{V_{ni}}{ 2{\rm i}\hbar} \left[ \frac{1-{\rm e}^{ {\rm i}(\omega_{ni}+\omega) t'} }{\omega_{ni}+\omega} - \frac{1-{\rm e}^{ {\rm i}(\omega_{ni}-\omega) t'} }{\omega_{ni}-\omega} \right]
+\end{aligned}</script><p>于是</p>
+<script type="math/tex; mode=display">
+\mathscr P^{\sin}_{if}(t,\omega) = \frac{|V_{fi}|^2}{ 4\hbar^2} \left| \frac{1-{\rm e}^{ {\rm i}(\omega_{fi}+\omega) t} }{\omega_{fi}+\omega} - \frac{1-{\rm e}^{ {\rm i}(\omega_{fi}-\omega) t} }{\omega_{fi}-\omega} \right|^2</script><p>类似的，若是余弦函数，则</p>
+<script type="math/tex; mode=display">
+\mathscr P^{\cos}_{if}(t,\omega) = \frac{|V_{fi}|^2}{ 4\hbar^2} \left| \frac{1-{\rm e}^{ {\rm i}(\omega_{fi}+\omega) t} }{\omega_{fi}+\omega} + \frac{1-{\rm e}^{ {\rm i}(\omega_{fi}-\omega) t} }{\omega_{fi}-\omega} \right|^2</script><p>这就是正弦型微扰下跃迁概率的一级结果。特别地，若当$\omega = 0$，此时微扰成为不依赖于时间的恒定微扰，那么得到：</p>
+<script type="math/tex; mode=display">
+\mathscr P^{\rm const}_{if}(t) = \frac{|V_{fi}|^2}{ \hbar^2} \left| \frac{1-{\rm e}^{ {\rm i}\omega_{fi} t'} }{\omega_{fi} }\right|^2 = \frac{|V_{fi}|^2}{ \hbar^2} \left[ \frac{ \sin(\omega_{fi}/2)t }{\omega_{fi}/2}\right]^2</script><p>当初末态均为离散能级时，$\mathscr P_{if}(t)$给出的就是两态之间跃迁的概率值；而当末态能级属于某个连续统时，那么$\mathscr P_{if}(t)$得到的是其概率密度函数。这会在物理上具有非常不同的结果。在下面两小节将会看到，在时间足够长时，前一种情况下体系将会在初末两态之间震荡；而后一种情况下体系会脱离初态$\ket{i}$而不再逆转。</p>
+<h2 id="耦合两个离散态的正弦型微扰：共振现象"><a href="#耦合两个离散态的正弦型微扰：共振现象" class="headerlink" title="耦合两个离散态的正弦型微扰：共振现象"></a>耦合两个离散态的正弦型微扰：共振现象</h2><h3 id="跃迁概率的共振特性"><a href="#跃迁概率的共振特性" class="headerlink" title="跃迁概率的共振特性"></a>跃迁概率的共振特性</h3><p>考虑固定时间$t$，那么在正弦型微扰下的跃迁概率$\mathscr P_{if}(t,\omega)$实际上是微扰频率$\omega$的函数，并且在$\omega \simeq \pm\omega_{fi}$时取极大值。因此，当微扰频率与其耦合的初末态玻尔频率一致时，就会出现共振现象。我们约定$\omega\geq0$，那么两个共振条件分别对应于$\omega_{fi}&gt;0$（向高能级跃迁）和$\omega_{fi}&lt;0$（向低能级跃迁）的情况；两个共振对应的物理过程分别是体系以共振的方式吸收一个$\hbar\omega$能量子（受激吸收），或者以共振的方式辐射一个$\hbar\omega$能量子（受激发射）。</p>
+<p>注意到$\mathscr P^{\sin}_{if}(t,\omega)$和$\mathscr P^{\cos}_{if}(t,\omega)$表达式中，模方内部第一项都是：</p>
+<script type="math/tex; mode=display">
+A_+ = \frac{1-{\rm e}^{ {\rm i}(\omega_{fi}+\omega) t'} }{\omega_{fi}+\omega} = -{\rm i} {\rm e}^{ {\rm i}(\omega_{fi}+\omega) t/2} \frac{ \sin(\omega_{fi}+\omega)t/2 }{(\omega_{fi}+\omega)/2}</script><p>第二项都是：</p>
+<script type="math/tex; mode=display">
+A_- = \frac{1-{\rm e}^{ {\rm i}(\omega_{fi}-\omega) t'} }{\omega_{fi}-\omega} = -{\rm i} {\rm e}^{ {\rm i}(\omega_{fi}-\omega) t/2} \frac{ \sin(\omega_{fi}-\omega)t/2 }{(\omega_{fi}-\omega)/2}</script><p>显然，在$\omega$接近$\omega_{fi}$时，$A_-\gg A_+$，换句话说$\omega\simeq\omega_{fi}$时，受激吸收跃迁概率由$A_-$主导，称之为”共振项“；反之，$\omega\simeq-\omega_{fi}$时，受激发射跃迁概率由$A_+$主导，称之为”反共振项“。</p>
+<p>考虑一个具体的$\omega\simeq\omega_{fi}$过程，即：</p>
+<script type="math/tex; mode=display">
+|\omega-\omega_{fi}|\ll \omega_{fi}</script><p>此时可以略去$A_+$项，这称为”共振近似“，此时</p>
+<script type="math/tex; mode=display">
+\mathscr P_{if}(t,\omega) \simeq \frac{|V_{fi}|^2}{ 4\hbar^2} \left[ \frac{ \sin(\omega_{fi}-\omega)t/2 }{(\omega_{fi}-\omega)/2} \right]^2</script><p>观察其关于$\omega$的函数曲线，当$\omega = \omega_{fi}$时函数取极大值$|V_{fi}|^2t^2/4\hbar^2$；当$\omega$偏离$\omega_{fi}$时，概率迅速下降，在$|\omega-\omega_{fi}| = 2\pi/t$时变为零，此后继续偏移时，概率在$|V_{fi}|^2/\hbar^2(\omega - \omega_{fi})^2$和零之间振荡。此即跃迁概率的共振特性。</p>
+<h3 id="共振宽度与时间-能量不确定度关系"><a href="#共振宽度与时间-能量不确定度关系" class="headerlink" title="共振宽度与时间-能量不确定度关系"></a>共振宽度与时间-能量不确定度关系</h3><p>共振宽度$\Delta\omega$可定义为$\mathscr P_{if}(t,\omega)$在主峰$\omega\simeq\omega_{fi}$两侧最近邻零点之间的距离，跃迁概率在该区间内取得最显著的值。对于正弦型微扰，</p>
+<script type="math/tex; mode=display">
+\Delta\omega \simeq \frac{4\pi}{t}</script><p>随着微扰时间增长，峰强度越来越高，峰宽度也越来越窄。</p>
+<p>这一关系式类似于时间-能量不确定关系。考虑到我们通过施加$\omega$不同的正弦型微扰，在一定时间$t$后，其最终所耦合的初末态能量差的量级可能接近为：</p>
+<script type="math/tex; mode=display">
+\Delta E = E_f - E_i = \hbar \omega_{fi} \simeq \hbar \Delta\omega = \frac{4\pi \hbar}{t} = \frac{2h}{t}</script><p>当然，这里$t$并非体系自由烟花的特征时间，而是外界施加微扰的时间。</p>
+<p><br></p>
+<p>综合上面两小节的讨论，总体来说，跃迁概率呈现单峰形状，峰高正比于$t^2$而峰宽度反比于$t$。</p>
+<h3 id="应用微扰的有效性"><a href="#应用微扰的有效性" class="headerlink" title="应用微扰的有效性"></a>应用微扰的有效性</h3><p>在上面的讨论中，为了获得能够突出显示共振特性的函数形式，我们做了一些近似，但是其成立需要一定条件。现在讨论这些条件成立的合理性。</p>
+<h4 id="共振近似"><a href="#共振近似" class="headerlink" title="共振近似"></a>共振近似</h4><p>在前面依据$\omega\simeq\omega_{fi}$，我们忽略了$A_+$项。注意到$|A_+(\omega)|^2 = |A_-(-\omega)|^2$，因此不难看出，若满足：</p>
+<script type="math/tex; mode=display">
+2|\omega_{fi}|\gg \Delta\omega</script><p>即峰中心值远大于峰宽度，那么在$\omega\simeq\omega_{fi}$附近，确实有$A_-\gg A_+$，忽略掉后一项是合理的。这一近似条件也就是说：</p>
+<script type="math/tex; mode=display">
+t\gg \frac{1}{|\omega_{fi}|}\simeq\frac{1}{\omega}</script><p>即正弦型微扰作用时间$t$显著大于$1/\omega$，那么在此时间长度时，共振近似是合理的。从物理意义上来讲，这一条件意味着微扰已经进行了多次振荡，对体系进行了充分的作用，足以被感受为完整的正弦型微扰。否则，若微扰还来不及振荡就停止作用，显然体系所感受到的微扰不可能接近理想的正弦型微扰，而是更接近随时间线性变化的微扰（正弦函数的初段）或者恒定微扰（余弦函数的初段）。</p>
+<p>特别地，若是恒定微扰，则上面写出的共振近似条件似乎永远无法满足，因为$\omega = 0$。但是此时可以直接写出跃迁概率$\mathscr P^{\rm const}_{if}(t)$随$\omega_{fi}$变化的函数形式：</p>
+<script type="math/tex; mode=display">
+\mathscr P^{\rm const}_{if}(t)= \frac{|V_{fi}|^2}{ \hbar^2} \left[ \frac{ \sin(\omega_{fi}/2)t }{\omega_{fi}/2}\right]^2</script><p>可以看出，该跃迁概率在$\omega_{fi}\simeq 0$即接近简并能级时取得极大值，并且体现出共振特性。在这个意义上，共振近似也是成立的。</p>
+<h4 id="一级近似的限度"><a href="#一级近似的限度" class="headerlink" title="一级近似的限度"></a>一级近似的限度</h4><p>上一小节给出了为使共振成立，所需微扰作用时间$t$的一个下限；但另一方面，当作用时间$t$过长时，似乎也会出现问题：事实上，在共振点的跃迁概率是：</p>
+<script type="math/tex; mode=display">
+\mathscr P_{if}(t,\omega) = \frac{|V_{fi}|^2}{ 4\hbar^2}t^2</script><p>似乎在$t\to\infty$时，该概率会趋向无穷大，但这显然违反概率本身的性质。这事实上反映了，一级近似在$t\to\infty$时的失效。因此为保证一级近似成立，对时间还要提出另一个限制：</p>
+<script type="math/tex; mode=display">
+t\ll \frac{\hbar}{|V_{fi}|}</script><p>这事实上是一级近似成立的一个必要条件——严格来说，还需要结合一些其他附加条件，才能保证高阶修正是很小的。但至少，我们迄今给出了一个对微扰作用时间的必要限制：</p>
+<script type="math/tex; mode=display">
+\frac{1}{|\omega_{fi}|} \ll t\ll \frac{\hbar}{|V_{fi}|}</script><p>当然，为使该条件有意义，显然需要满足的是：</p>
+<script type="math/tex; mode=display">
+|V_{fi}|\ll \hbar|\omega_{fi}|</script><p>也就是说初末态之间能级差应当显著大于微扰在该两者之间的矩阵元——这是理所应当的，否则$V$就不再是”微扰“了。</p>
+<h2 id="与连续谱中的态的耦合"><a href="#与连续谱中的态的耦合" class="headerlink" title="与连续谱中的态的耦合"></a>与连续谱中的态的耦合</h2><p>现在考虑另一种完全不同的情况，即末态处于哈密顿算符本征谱的某个连续统，即末态所处能级是连续分布的一部分，那么此时$\mathscr P_{if}(t)$给出的实际上不是概率，而是末态在$\ket{f}$附近的概率密度函数，而实际测量的概率应当是这个概率密度在末态某个区间的积分，取决于实际测量的形式。</p>
+<h3 id="遍及一个末态连续统的积分；态密度"><a href="#遍及一个末态连续统的积分；态密度" class="headerlink" title="遍及一个末态连续统的积分；态密度"></a>遍及一个末态连续统的积分；态密度</h3><h4 id="一个具体例子"><a href="#一个具体例子" class="headerlink" title="一个具体例子"></a>一个具体例子</h4><p>考虑质量$m$的无自旋粒子在势场$V({\boldsymbol r})$中的散射问题。将$t$时刻的态$\ket{\psi(t)}$按照动量本征态$\ket{\boldsymbol p}$展开，这些动量本征态在坐标表象下就是平面波：</p>
+<script type="math/tex; mode=display">
+\braket{\boldsymbol r}{\boldsymbol p} = \left(\frac{1}{2\pi\hbar}\right)^{3/2} {\rm e}^{ {\rm i}{\boldsymbol p}\cdot{\boldsymbol r}/\hbar}</script><p>我们想要测量粒子末态的动量$\boldsymbol p_f$，也就是要测量粒子在散射后处于哪个动量本征态及其概率。根据前面的讨论，与这样的测量相联系的概率密度函数是$|\braket{\boldsymbol p}{\psi(t)}|^2$。由于实际仪器分辨率的影响，我们事实上只能在动量方向$\Omega_f = \hat{\boldsymbol p}_f$附近的立体角$\delta\Omega_f$和动量大小$p_f = |\boldsymbol p_f|$附近的区间$\delta p_f$——等价于能量大小$E_f = \boldsymbol p_f^2/2m$附近的区间$\delta E_f$内确定末态。我们记$D_f = \{\hat{\boldsymbol p}\in\delta\Omega_f,p\in\delta p_f\}$，因此我们实际测得的概率是：</p>
+<script type="math/tex; mode=display">
+\delta \mathscr P_{i,\boldsymbol p_f}(t) = \int_{\boldsymbol p\in D_f} {\rm d}^3 p |\braket{\boldsymbol p}{\psi(t)}|^2</script><p>但是为了明显地看到概率与能量之间的关系，我们将之变换积分测度：</p>
+<p>$$<br>{\rm d}^3p = p^2{\rm d}p{\rm d}\Omega = p^2\frac{ {\rm d}p}</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Cohen/QM-Cohen-13.html">https://papaya-z.github.io/post/Cohen/QM-Cohen-13.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/">量子力学</a></div><div class="post_share"><div class="social-share" data-image="/img/QM.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img class="cover" src="/img/cohen/5.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Cohen量子力学Chap.5补充材料</div></div></a></div><div class="next-post pull-right"><a href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论"><img class="cover" src="/img/QM.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cohen量子力学Chap.11：定态微扰理论</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/Cohen/QM-Cohen-1.html" title="Cohen量子力学Chap.1：基本概念"><img class="cover" src="/img/cohen/1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-24</div><div class="title">Cohen量子力学Chap.1：基本概念</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-10.1.html" title="Cohen量子力学Chap.10补充材料"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-10</div><div class="title">Cohen量子力学Chap.10补充材料</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-07</div><div class="title">Cohen量子力学Chap.11：定态微扰理论</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-10.html" title="Cohen量子力学Chap.10：角动量的耦合"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-07</div><div class="title">Cohen量子力学Chap.10：角动量的耦合</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-07</div><div class="title">Cohen量子力学Chap.14：全同粒子体系</div></div></a></div><div><a href="/post/Cohen/QM-Cohen-15.html" title="Cohen量子力学Chap.15：全同粒子的产生和湮灭算符"><img class="cover" src="/img/QM.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-06</div><div class="title">Cohen量子力学Chap.15：全同粒子的产生和湮灭算符</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E6%A2%97%E6%A6%82"><span class="toc-number">1.</span> <span class="toc-text">问题的梗概</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E8%BF%91%E4%BC%BC%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">薛定谔方程的近似解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E8%A1%A8%E8%B1%A1%E4%B8%AD%E7%9A%84%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">能量表象中的薛定谔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%80%81%E7%9F%A2%E5%88%86%E9%87%8F%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">2.1.1.</span> <span class="toc-text">确定态矢分量的微分方程组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%98%E6%8D%A2"><span class="toc-number">2.1.2.</span> <span class="toc-text">函数变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%89%B0%E6%96%B9%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">微扰方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E5%BE%AE%E6%89%B0"><span class="toc-number">2.3.</span> <span class="toc-text">一级微扰</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#t-%E6%97%B6%E5%88%BB%E6%80%81%E7%9A%84%E4%B8%80%E7%BA%A7%E5%BE%AE%E6%89%B0"><span class="toc-number">2.3.1.</span> <span class="toc-text">$t$时刻态的一级微扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%83%E8%BF%81%E6%A6%82%E7%8E%87"><span class="toc-number">2.3.2.</span> <span class="toc-text">跃迁概率</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%89%B9%E4%BE%8B%EF%BC%9A%E6%AD%A3%E5%BC%A6%E5%9E%8B%E5%BE%AE%E6%89%B0%E6%88%96%E6%81%92%E5%AE%9A%E5%BE%AE%E6%89%B0"><span class="toc-number">3.</span> <span class="toc-text">重要特例：正弦型微扰或恒定微扰</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%AE%E9%81%8D%E5%85%AC%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">普遍公式的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%A6%E5%90%88%E4%B8%A4%E4%B8%AA%E7%A6%BB%E6%95%A3%E6%80%81%E7%9A%84%E6%AD%A3%E5%BC%A6%E5%9E%8B%E5%BE%AE%E6%89%B0%EF%BC%9A%E5%85%B1%E6%8C%AF%E7%8E%B0%E8%B1%A1"><span class="toc-number">3.2.</span> <span class="toc-text">耦合两个离散态的正弦型微扰：共振现象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%83%E8%BF%81%E6%A6%82%E7%8E%87%E7%9A%84%E5%85%B1%E6%8C%AF%E7%89%B9%E6%80%A7"><span class="toc-number">3.2.1.</span> <span class="toc-text">跃迁概率的共振特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E6%8C%AF%E5%AE%BD%E5%BA%A6%E4%B8%8E%E6%97%B6%E9%97%B4-%E8%83%BD%E9%87%8F%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6%E5%85%B3%E7%B3%BB"><span class="toc-number">3.2.2.</span> <span class="toc-text">共振宽度与时间-能量不确定度关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%BE%AE%E6%89%B0%E7%9A%84%E6%9C%89%E6%95%88%E6%80%A7"><span class="toc-number">3.2.3.</span> <span class="toc-text">应用微扰的有效性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B1%E6%8C%AF%E8%BF%91%E4%BC%BC"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">共振近似</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E8%BF%91%E4%BC%BC%E7%9A%84%E9%99%90%E5%BA%A6"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">一级近似的限度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E8%BF%9E%E7%BB%AD%E8%B0%B1%E4%B8%AD%E7%9A%84%E6%80%81%E7%9A%84%E8%80%A6%E5%90%88"><span class="toc-number">3.3.</span> <span class="toc-text">与连续谱中的态的耦合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8F%8A%E4%B8%80%E4%B8%AA%E6%9C%AB%E6%80%81%E8%BF%9E%E7%BB%AD%E7%BB%9F%E7%9A%84%E7%A7%AF%E5%88%86%EF%BC%9B%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-number">3.3.1.</span> <span class="toc-text">遍及一个末态连续统的积分；态密度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E4%BE%8B%E5%AD%90"><span class="toc-number">3.3.1.1.</span> <span class="toc-text">一个具体例子</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img src="/img/cohen/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料">Cohen量子力学Chap.5补充材料</a><time datetime="2024-01-08T08:33:10.000Z" title="发表于 2024-01-08 16:33:10">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</a><time datetime="2024-01-07T13:54:42.000Z" title="发表于 2024-01-07 21:54:42">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.11：定态微扰理论"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论">Cohen量子力学Chap.11：定态微扰理论</a><time datetime="2024-01-07T08:09:59.000Z" title="发表于 2024-01-07 16:09:59">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.16：场算符"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符">Cohen量子力学Chap.16：场算符</a><time datetime="2023-11-10T11:16:43.000Z" title="发表于 2023-11-10 19:16:43">2023-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.14：全同粒子体系"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系">Cohen量子力学Chap.14：全同粒子体系</a><time datetime="2023-11-07T05:29:29.000Z" title="发表于 2023-11-07 13:29:29">2023-11-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/QM.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: '2624a38dba053b5fa250da56bcc8f33f',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
