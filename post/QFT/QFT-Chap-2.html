@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>量子场论 Chap.2：场量子化：正则方法 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="正则量子化"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/QFT/QFT-Chap-2.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>量子场论 Chap.2：自由场量子化：正则方法 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="正则量子化"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/QFT/QFT-Chap-2.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -38,12 +38,12 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '量子场论 Chap.2：场量子化：正则方法',
+  title: '量子场论 Chap.2：自由场量子化：正则方法',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-11-23 15:09:37'
+  postUpdate: '2024-01-14 23:30:42'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -141,11 +141,755 @@
       }
       detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">量子场论 Chap.2：场量子化：正则方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-02T07:43:11.000Z" title="发表于 2022-11-02 15:43:11">2022-11-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-23T07:09:37.246Z" title="更新于 2023-11-23 15:09:37">2023-11-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">88</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="量子场论 Chap.2：场量子化：正则方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/QFT/QFT-Chap-2.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h1 id="正则量子化"><a href="#正则量子化" class="headerlink" title="正则量子化"></a>正则量子化</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>量子化的正则方法，得名于经典力学中的<strong>正则理论</strong>——哈密顿力学，在那里我们取描述系统的基本变量为一组正则变量：正则坐标$p_i$与正则动量$q_i$，它们满足<strong>正则泊松关系</strong>：</p>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">量子场论 Chap.2：自由场量子化：正则方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-02T07:43:11.000Z" title="发表于 2022-11-02 15:43:11">2022-11-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-14T15:30:42.394Z" title="更新于 2024-01-14 23:30:42">2024-01-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">22.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>91分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="量子场论 Chap.2：自由场量子化：正则方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/QFT/QFT-Chap-2.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="正则量子化方法"><a href="#正则量子化方法" class="headerlink" title="正则量子化方法"></a>正则量子化方法</h1><p>在从本章中，我们首先以简单的自由实标量场$\phi(x)$为例，给出场正则量子化的一般步骤，以及主要结论。在之后的章节里面，再逐个讨论不同类型的场正则量子化手续。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>量子化的正则方法，得名于经典力学中的<strong>正则理论</strong>——哈密顿力学，在那里我们取描述系统的基本变量为一组正则变量：正则坐标$p_i$与正则动量$q_i$，它们满足<strong>正则泊松关系</strong>：</p>
 <script type="math/tex; mode=display">
-\{q_i,p_j\} = \delta_{ij}\ ,\qquad \{q_i,q_j\} = \{p_i,p_j\} = 0</script><p>其中$\</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/QFT/QFT-Chap-2.html">https://papaya-z.github.io/post/QFT/QFT-Chap-2.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a><a class="post-meta__tags" href="/tags/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E8%AE%A1%E5%88%92/">木瓜数学物理计划</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/ClassicalFT/ClassicalFT-Chap-3.html" title="经典场论 Chap.3：Yang-Mills规范场论基础"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">经典场论 Chap.3：Yang-Mills规范场论基础</div></div></a></div><div class="next-post pull-right"><a href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">量子场论 Chap.3：场量子化：路径积分方法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-02</div><div class="title">量子场论 Chap.3：场量子化：路径积分方法</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">正则量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img src="/img/cohen/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料">Cohen量子力学Chap.5补充材料</a><time datetime="2024-01-08T08:33:10.000Z" title="发表于 2024-01-08 16:33:10">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</a><time datetime="2024-01-07T13:54:42.000Z" title="发表于 2024-01-07 21:54:42">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.11：定态微扰理论"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论">Cohen量子力学Chap.11：定态微扰理论</a><time datetime="2024-01-07T08:09:59.000Z" title="发表于 2024-01-07 16:09:59">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.16：场算符"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符">Cohen量子力学Chap.16：场算符</a><time datetime="2023-11-10T11:16:43.000Z" title="发表于 2023-11-10 19:16:43">2023-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.14：全同粒子体系"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系">Cohen量子力学Chap.14：全同粒子体系</a><time datetime="2023-11-07T05:29:29.000Z" title="发表于 2023-11-07 13:29:29">2023-11-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+\{q_i,p_j\} = \delta_{ij}\ ,\qquad \{q_i,q_j\} = \{p_i,p_j\} = 0</script><p>其中$\{ {*},{*}\}$是泊松括号，在哈密顿正则理论中由正则变量所定义：</p>
+<script type="math/tex; mode=display">
+\{A,B\} = \sum_{i}\left[ \frac{\partial A}{\partial q^i} \frac{\partial B}{\partial p^i} - \frac{\partial B}{\partial q^i} \frac{\partial A}{\partial p^i} \right]</script><p>而描述系统演化的是哈密顿量$H(q_i,p_i)$，通过哈密顿量给出两者的运动方程——<strong>哈密顿正则方程</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\dot q_i = \frac{\partial H}{\partial p^i} = \{q_i,H\}\ ,\qquad \dot p_i = -\frac{\partial H}{\partial q^i} = \{p_i,H\}
+\end{aligned}</script><p>于是在此基础上就可以表出其他任何物理量$f(q_i,p_i,t)$的时间演化：</p>
+<script type="math/tex; mode=display">
+\frac{ {\rm d}f}{ {\rm d}t} = \frac{\partial f}{\partial t} + \{f,H\}</script><p><br></p>
+<p>所谓<strong>正则量子化</strong>方法，是一种由经典力学体系过渡到量子体系的形式化方法，其作用在于能将经典理论中的许多结论通过一种较直观的方式移植到量子理论中，而免去了从基本公理开始构造量子理论的困难。</p>
+<p>Dirac和von Neumann等人注意到（Dirac 1925、1947，Von Neumann 1955），经典力学中的泊松括号$\{ {*},{*}\}$给出泊松代数，是一种特殊的李代数；而在量子理论中，我们真正关心的可观测量——自伴算符的期望值，总是会出现算符对易子$[{*},{*}]$，这是一个李括号，自然也给出一个李代数。自然希望两者之间存在李代数同构，这样就能直接把经典结论替换为量子结论。如果这种同构存在，那么任何一种由哈密顿正则理论所描述的经典理论，就可以严格“量子化”为一种量子理论。</p>
+<p>正则量子化的基础步骤仍然是寻找描述理论合适的正则变量：正则坐标$q_i$和正则动量$p_i$，但作为基础假设，我们从普遍性出发要求它们构成非交换的C<em>代数（一般而言是算符形式），并且满足<em>*正则对易关系</em></em>：</p>
+<script type="math/tex; mode=display">
+[q_i,p_j] = {\rm i}\hbar\delta_{ij}\ ,\qquad [q_i,q_j] = [p_i,p_j] = 0</script><p>由于前述同构不存在的原因，这一正则对易关系只能是作为量子理论的基础假定，而不能从经典泊松括号中严格推导得出。这里对易子定义为：</p>
+<script type="math/tex; mode=display">
+[A,B] = AB-BA</script><p>要看到量子对易子到经典泊松括号的对应关系，首先考虑一个简单的对易子$[p_i,V(q)]$，这里$V(q)$是$q_i$的函数，利用正则对易关系即可证明：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}[]
+[p_i,V(q)] =& \left[p_i,\sum_n\frac{V_q^{(n)}(0)}{n!}(q)^n\right]\\
+=& \sum_n\frac{V_{q_i}^{(n)}(0)}{n!} [p_i,q_i^n]\\
+=& \sum_n\frac{V_{q_i}^{(n)}(0)}{n!} (-n{\rm i}\hbar q_i^{n-1} )\\
+=& -{\rm i}\hbar \sum_n\frac{V_{q_i}^{(n)}(0)}{n!} \frac{\partial}{\partial q_i}q_i^n\\
+=& -{\rm i}\hbar \partial_{q_i} V(q)
+\end{aligned}</script><p>类似地，也有$[q_i,F(p)] = {\rm i}\hbar \partial_{p_i} F(p)$；于是对于两个算符函数：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}[]
+[F(p),V(q)] =& \left[\sum_n\frac{F_p^{(n)}(0)}{n!}(p)^n,\sum_m\frac{V_q^{(m)}(0)}{m!}(q)^m\right]\\
+=& -{\rm i}\hbar \sum_{n,m}\frac{F_{p_i}^{(n)}(0)}{n!}\frac{V_{q_i}^{(n)}(0)}{m!} \frac{\partial}{\partial p_i}p_i^n\frac{\partial}{\partial q_i}q_i^m\\
+=& -{\rm i}\hbar \partial_{p_i} F(p)\partial_{q_i} V(q)
+\end{aligned}</script><p>更一般地：</p>
+<script type="math/tex; mode=display">
+[F(q,p),V(q,p)] = {\rm i}\hbar \left( \frac{\partial F}{\partial q_i} \frac{\partial V}{\partial p_i} - \frac{\partial V}{\partial q_i} \frac{\partial F}{\partial p_i} \right) = {\rm i}\hbar \{F,V\}</script><p>这就得到了正则量子化中，作为算符的对易子与作为函数的泊松括号之间的理想对应关系。于是由经典正则方程，就可以直接得到量子理论的运动方程——海森堡方程：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\dot q_i &= \frac{1}{ {\rm i}\hbar}[q_i,H]\\
+\dot p_i &= \frac{1}{ {\rm i}\hbar}[p_i,H]\\
+\dot f(q,p,t) &= \partial_t f + \frac{1}{ {\rm i}\hbar}[f,H]\\
+\end{aligned}</script><p>但是Groenewold证明了这种李代数同构是不存在的（Groenewold 1946），因此一些严格的数学理论放宽了对这两种括号之间对应关系的要求，得到了形变量子化、几何量子化等方法。尽管严格的“正则量子化”不存在，但在很多时候，我们仍然能将$\{ {*},{*}\}$和$[{*},{*}]$之间的形式对应关系视为构造量子理论时的启发性方法，也就是把它视作反映了经典与量子理论之间的一种相似性。此即正则量子化在今天所扮演的角色。</p>
+<p><br></p>
+<h2 id="场的正则量子化"><a href="#场的正则量子化" class="headerlink" title="场的正则量子化"></a>场的正则量子化</h2><h3 id="等时正则对易关系"><a href="#等时正则对易关系" class="headerlink" title="等时正则对易关系"></a>等时正则对易关系</h3><p>现在我们希望量子化的对象是经典场。以实标量场$\phi(x)$为例，按照正则量子化的一般精神，我们首先要确定描述体系的合适正则变量。根据经典力学的经验，观察自由实标量场拉格朗日量的形式：</p>
+<script type="math/tex; mode=display">
+\mathscr L(\phi,\partial_\mu\phi) = \frac12 \partial_\mu\phi \partial^\mu\phi - \frac12 m^2\phi^2</script><p>这启发我们，可以选取<strong>正则场变量</strong>为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+q &= \phi({\bf x},t)\\
+p &= \frac{\partial\mathscr L}{\partial(\partial_0\phi)} = \partial_0 \phi(x) \equiv \pi({\bf x},t)
+\end{aligned}</script><p>其中离散指标$i$替换为连续坐标${\bf x}$（有时也要考虑$t$），于是标量场的<strong>哈密顿量</strong>可以由勒让德变换给出：</p>
+<script type="math/tex; mode=display">
+H(\phi,\pi) = \int{\rm d}^3x \left[\pi \partial_0 \phi - \mathscr L\right] = \int{\rm d}^3x\left[ \frac12 \pi({\bf x},t)^2 + \frac12 | \nabla \phi({\bf x},t) |^2 + \frac12 m^2 \phi({\bf x},t)^2 \right]</script><p>接下来要进行正则量子化的关键步骤：引入正则对易关系。方便起见，我们在<strong>薛定谔表象</strong>下考虑问题，或者等价地说是海森堡表象在$t=0$时的情况，这样的好处是可以不考虑时间$t$带来的影响；因此引入<strong>等时正则对易关系</strong>（equal-time commutative relation，ETCR）：</p>
+<script type="math/tex; mode=display">
+[\phi({\bf x}),\pi({\bf y})] = {\rm i}\hbar\delta^{(3)}({\bf x} - {\bf y})\ ,\qquad [\phi({\bf x}),\phi({\bf y})] = [\pi({\bf x}),\pi({\bf y})] = 0</script><p>这一关系表明，我们在事实上已经把场函数$\phi({\bf x},t)$、$\pi({\bf x},t)$提升为了Hilbert空间中的所谓“<strong>场算符</strong>”，至于它的物理意义，在之后再做讨论。</p>
+<p><em>注：严格来说，我们这里只定义了海森堡表象中$t=0$时刻的场算符$\phi({\bf x},0)$、$\pi({\bf x},0)$，因为只在该时刻引入等时正则对易关系。其他时刻的场算符在下一小节定义。</em></p>
+<p><br></p>
+<h3 id="能动量与运动方程"><a href="#能动量与运动方程" class="headerlink" title="能动量与运动方程"></a>能动量与运动方程</h3><p>接下来我们进入<strong>海森堡表象</strong>，讨论场算符的时间演化和其他变换下的行为。既然$\phi({\bf x},t)$、$\pi({\bf x},t)$被视为是算符，我们有：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\phi({\bf x},t) &= {\rm e}^{ {\rm i}Ht} \phi({\bf x},0) {\rm e}^{-{\rm i}Ht}\\
+\pi({\bf x},t) &= {\rm e}^{ {\rm i}Ht} \pi({\bf x},0) {\rm e}^{-{\rm i}Ht}
+\end{aligned}</script><p>此即$t$时刻场算符的定义。有了对易关系，就可以根据海森堡运动方程，给出正则场变量的时间演化：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\dot\phi({\bf x},t) &= \frac{1}{ {\rm i}\hbar} [\phi({\bf x},t),H] \\
+\dot\pi({\bf x},t) &= \frac{1}{ {\rm i}\hbar} [\pi({\bf x},t),H]
+\end{aligned}</script><p>从这两式即可得到标量场的运动方程：K-G方程。容易验证，该式的形式解与本小节开头对$\phi({\bf x},t)$、$\pi({\bf x},t)$的定义是一致的。</p>
+<p>另一方面，若将时空平移也考虑进来，还可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla\phi({\bf x},t) &= \frac{1}{ {\rm i}\hbar} [\phi({\bf x},t),\bf P] \\
+\nabla\pi({\bf x},t) &= \frac{1}{ {\rm i}\hbar} [\pi({\bf x},t),\bf P]
+\end{aligned}</script><p>其中${\bf P}$正是标量场的机械动量：</p>
+<script type="math/tex; mode=display">
+P^i = \int{\rm d}^3x T^{0i} = \int{\rm d}^3 x (\partial_0\phi)^2</script><p>或者也可将前述式子合写为四维形式：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\partial_\mu\phi(x) &= \frac{1}{ {\rm i}\hbar} [\phi({\bf x},t),P^\mu] \\
+\partial_\mu\pi(x) &= \frac{1}{ {\rm i}\hbar} [\pi({\bf x},t),P^\mu]
+\end{aligned}</script><script type="math/tex; mode=display">
+P^\mu = \int{\rm d}^3 T^{0\mu} = \int{\rm d}^3x \left( \frac12\partial_0\phi \partial^\mu\phi + \frac12 m^2 \phi^2 \right)</script><p>它描述了作为量子场算符的$\phi({\bf x},t)$和$\pi({\bf x},t)$在时间演化和空间平移下的行为。它的形式解为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\phi({\bf x},t) &= {\rm e}^{ {\rm i}Ht - {\rm i}{\bf P\cdot x} } \phi({\bf 0},0) {\rm e}^{ -{\rm i}Ht + {\rm i}{\bf P\cdot x} }\\
+\pi({\bf x},t) &= {\rm e}^{ {\rm i}Ht - {\rm i}{\bf P\cdot x} } \pi({\bf 0},0) {\rm e}^{ -{\rm i}Ht + {\rm i}{\bf P\cdot x} }
+\end{aligned}</script><p>在不引起歧义的情况下，我们也恢复四维时空坐标的记号：</p>
+<script type="math/tex; mode=display">
+\phi(x) \equiv \phi({\bf x},t)\ ,\qquad \pi(x) \equiv \pi({\bf x},t)</script><p><br></p>
+<p>我们还可以考虑场算符$\phi({\bf x},t)$、$\pi({\bf x},t)$在洛伦兹变换下的行为，注意到经典场论给出标量场的广义角动量</p>
+<script type="math/tex; mode=display">
+J^{\nu\rho} = \int{\rm d}^3x (x^\nu T^{0\rho} - x^\rho T^{0\nu})</script><p>容易验证</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+(x^\nu \partial^\rho - x^\rho \partial^\nu)\phi(x) &= \frac{1}{ {\rm i}\hbar}[\phi(x),J^{\nu\rho}]\\
+(x^\nu \partial^\rho - x^\rho \partial^\nu)\pi(x) &= \frac{1}{ {\rm i}\hbar}[\pi(x),J^{\nu\rho}]
+\end{aligned}</script><p>在我们取正则量子化之后，这里的$J^{\nu\rho}$和$P^\nu$事实上是庞加莱群的10个生成元在上的相应的Hilbert空间的幺正（投影）表示，分别成为Hilbert空间上厄米算符。经典场的能动量，量子化后自然得到场的能动量算符。</p>
+<p>上述的式子实际上表明了，在正则量子化之后，<u><strong>庞加莱群生成元作用于场的结果，可以由场算符与这些厄米算符的对易子自然给出。</strong></u>这是一个普遍规律：将会看到，在量子场论中，许多对称变换操作的结果都是以场算符和相应变换生成元算符的对易子形式给出的。</p>
+<p>上式还隐含着，我们通过引入等时正则对易关系所构建出的场算符$\phi({\bf x},t)$、$\pi({\bf x},t)$，其构成的场论是满足庞加莱不变性的自洽理论。</p>
+<p><br></p>
+<p>从下面开始，默认采用自然单位制$c=\hbar = 1$。</p>
+<p><br></p>
+<h2 id="场的二次量子化"><a href="#场的二次量子化" class="headerlink" title="场的二次量子化"></a>场的二次量子化</h2><p>前面的讨论，是通过正则量子化手续来形式地构造一个量子场论的尝试。但仅仅给出运动方程还不够，我们还需要对这样的体系进行具体的求解，以得到可以与实验相验证的结果。当然，量子场论的求解是庞大的工程，不可能在短篇幅之内完成；在这里，我们首先给出一种常用的分析方法。</p>
+<p>首先观察对场的正则量子化：不同于量子力学只是单自由度的动力学，场算符的自由度数是无穷多的，这导致即便我们对场进行了正则量子化，也很难简单地求解其运动方程。另一方面，场论乃至多体理论本身的性质要求我们处理多自由度/多体的体系，这让我们有了引入统计方法来进行描述的自然动机。</p>
+<p>在量子力学中，曾经引入过一种简单处理全同多粒子问题的方法，即<strong>二次量子化</strong>方法。当然，那里涉及到的多粒子问题远没有场论复杂，但其思想仍可为研究场论提供一借鉴。</p>
+<blockquote>
+<p>需要澄清的是，二次量子化在量子场论的研究中，事实上并不是必要的研究方法。这也就是说，量子场论并不一定需要在Fock表象（粒子数表象）下工作：</p>
+<blockquote>
+<p>The Schrodinger representation, which assigns a complex amplitude to each field configuration, has many uses. It is often omitted from the field theory texts, the Fock space representation being emphasized.</p>
+<p>——Polchinski, String Theory, §2.8.</p>
+</blockquote>
+<p>原则上，量子场论完全可以将场算符按照场函数处理，在薛定谔表象下进行运动方程的求解和分析。尽管这种做法很多时候比较复杂，并且不易看出其中的物理本质，但不意味着研究量子场论必须要从Fock表象出发。</p>
+</blockquote>
+<p><br></p>
+<p>所谓场论的“二次量子化”，事实上其最自然的构造，应当是利用单粒子态Hilbert空间通过张量代数构造多粒子态所在的Fock空间，那么该空间中态矢的张量积和内积自然对应于单粒子态的产生和湮灭。Fock空间的对称子代数和外代数，分别描述玻色子和费米子的多粒子态空间。</p>
+<p>若使用4动量的连续谱标记单粒子态，那么产生/湮灭算符可以自然地用3动量来标记，对它们做傅里叶变换就得到时空上的两个算符函数。将两者进行线性组合，可以构造出满足单粒子态运动方程的算符，我们将其解释为描述多粒子态的“态矢”，称之为“场算符”。</p>
+<p>从这个过程可以看到，事实上“二次量子化”并不涉及任何实际的“量子化”操作，仅仅是通过单粒子态对多体理论的一种构造方式。这一过程在本专题的第一章中已经介绍过了。</p>
+<p>但是物理上对量子场论更常见（可能也是更简单直观）的构造方式是对运动方程的解——经典场进行正则量子化，将其解释为场算符，再反向去构造产生/湮灭算符。这一过程实际上是前述构造的逆过程，从形式上看起来就像是把已经通过量子化得到的态矢/波函数再进行量子化得到场算符，因此得名“二次量子化”。本章我们主要遵循这一观点进行讨论。</p>
+<p><br></p>
+<h3 id="洛伦兹不变测度"><a href="#洛伦兹不变测度" class="headerlink" title="洛伦兹不变测度"></a>洛伦兹不变测度</h3><p>为便于下面的讨论，首先简要分析一下如下曾经才Chap.4出现过的积分测度在洛伦兹变换下的行为：</p>
+<script type="math/tex; mode=display">
+\widetilde{ {\rm d}k} = \frac{ {\rm d}^3k}{(2\pi)^3 2\omega_{\bf k} }</script><p>注意到利用如下关系</p>
+<script type="math/tex; mode=display">
+\frac{ {\rm d}k^0{\rm d}^3k}{(2\pi)^3 2\omega_{\bf k} }\delta(k^0\pm\omega_{\bf k}) = (2\pi)\frac{ {\rm d}^4k}{(2\pi)^4} \Theta(\mp k^0) \delta^{(4)}(k^2-m^2)</script><p>在积分意义下，等式左边对$k^0$部分的积分实际上就是将$k^0$限定于$\pm \omega_{\bf k}$两个值处；而等式右边可以证明是洛伦兹不变的。因此，积分测度$\widetilde{ {\rm d}k}$就相当于在这样的洛伦兹不变量中指定$k^0$取两个可能值之一，结果仍然是洛伦兹不变的。</p>
+<p>因此在下面将会频繁出现作为一个整体的结构$\frac{ {\rm d}^3k}{(2\pi)^3 2\omega_{\bf k} }$，它是一个洛伦兹不变的积分测度。</p>
+<h3 id="模式展开"><a href="#模式展开" class="headerlink" title="模式展开"></a>模式展开</h3><p>要直接研究场算符$\phi(x)$的性质可能不易，在物理上常常会想到首先利用傅里叶展开，研究它的各个单频模式的简单情况。在经典场论Chap.4中讨论传播子时，曾经给出经典场$\phi(x)$的模式展开：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\phi(x) =& \phi^{(-)}(x) + \phi^{(+)}(x)\\
+=& \int \frac{ {\rm d}^3k}{(2\pi)^3 2\omega_{\bf k} } \left[ a^{(-)}({\bf k}) {\rm e}^{ {\rm i}{\bf k}\cdot{\bf x}-{\rm i}\omega_k x^0} + a^{(+)}({\bf k}) {\rm e}^{ {\rm i}{\bf k}\cdot{\bf x}+{\rm i}\omega_k x^0} \right]\\
+=& \int \widetilde{ {\rm d}k} \left[ a^{(-)}({\bf k}) {\rm e}^{ {\rm i}{\bf k}\cdot{\bf x}-{\rm i}\omega_k x^0} + a^{(+)}(-{\bf k}) {\rm e}^{-{\rm i}{\bf k}\cdot{\bf x}+{\rm i}\omega_k x^0} \right]\\
+=& \int \widetilde{ {\rm d}k} \left[ a^{(-)}({\bf k}) {\rm e}^{-{\rm i}k_\mu x^\mu} + a^{(+)}(-{\bf k}) {\rm e}^{ {\rm i}k_\mu x^\mu} \right]
+\end{aligned}</script><p>其中：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a_{\bf k} &\equiv a^{(-)}({\bf k}) = \int{\rm d}k^0 \phi(k) \delta(k^0- \omega_k)\\
+a^\dagger_{\bf k} &\equiv a^{(+)}(-{\bf k}) = \int{\rm d}k^0 \phi(-k) \delta(k^0-\omega_k)
+\end{aligned}</script><p>可以证明，自由场的$a_{\bf k}$、$a^\dagger_{\bf k}$​都是不随时间变化的。事实上可以从展开式中求出算符$a_{\bf k}$、$a^\dagger_{\bf k}$具体的表达式</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a_{\bf k} &= {\rm i} \int{\rm d}^3x\ {\rm e}^{ {\rm i}k^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} \phi(x)\\
+a^\dagger_{\bf k} &= -{\rm i} \int{\rm d}^3x\ {\rm e}^{-{\rm i}k^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} \phi(x)
+\end{aligned}</script><p>之所以可以这样展开，除了数学上看平面波解构成函数完备基的角度，从物理上也可以理解为：自由场的拉格朗日量和哈密顿量都是其基本变量（例如对哈密顿正则理论，就是正则变量）的二次型，于是可以对坐标$\phi(x)$做线性变换使得拉格朗日量或哈密顿量的二次型对角化——这其实就是力学上选取简正坐标（简正模）的过程。我们要求场论具有时空平移不变性， 因此这样的简正坐标一定具有平面波的形式。</p>
+<p>于是在这样的观点下， $\omega_{\bf k}$无非就是相应的简正频率：</p>
+<script type="math/tex; mode=display">
+\omega_{\bf k} = \sqrt{ {\bf k}^2 + m^2 }</script><p>将模式展开取$t=0$，就得到我们前面定义的场算符：</p>
+<script type="math/tex; mode=display">
+\phi({\bf x}) = \int \widetilde{ {\rm d}k} \left( a_{\bf k} {\rm e}^{ {\rm i}\bf k \cdot \bf x} + a^\dagger_{\bf k} {\rm e}^{ -{\rm i}\bf k \cdot \bf x} \right)</script><p>从中可以得到</p>
+<script type="math/tex; mode=display">
+\pi({\bf x}) = \int \widetilde{ {\rm d}k} (-{\rm i}\omega_{\bf k}) \left( a_{\bf k} {\rm e}^{ {\rm i}\bf k \cdot \bf x} - a^\dagger_{\bf k} {\rm e}^{ -{\rm i}\bf k \cdot \bf x} \right)</script><p>但是这里$\phi({\bf x})$、$\pi({\bf x})$都是场算符而非一般的函数，我要求它们满足等时正则对易关系：</p>
+<script type="math/tex; mode=display">
+[\phi({\bf x}),\pi({\bf y})] = {\rm i}\hbar\delta^{(3)}({\bf x} - {\bf y})\ ,\qquad [\phi({\bf x}),\phi({\bf y})] = [\pi({\bf x}),\pi({\bf y})] = 0</script><p>这等价于要求$a_{\bf k}$、$a^\dagger_{\bf k}$满足（利用平面波的正交性）：</p>
+<script type="math/tex; mode=display">
+[a_{\bf k},a^\dagger_{\bf k’}] = (2\pi)^3 2\omega_{\bf k} \delta^{(3)}({\bf k} - {\bf k'})\ ,\qquad [a_{\bf k},a_{\bf k’}] = [a^\dagger_{\bf k},a^\dagger_{\bf k’}] = 0</script><p>这本质上是将$a_{\bf k}$、$a^\dagger_{\bf k}$也算符化。</p>
+<p>对于$a_{\bf k}$、$a^\dagger_{\bf k}$的对易关系要求，和对于$\phi({\bf x})$、$\pi({\bf x})$的对易关系要求是等价的，其结果都是将经典场进行正则量子化为场算符。只不过我们不是对场整体量子化，而是对场的每个简正模进行量子化。</p>
+<h3 id="产生-湮灭算符"><a href="#产生-湮灭算符" class="headerlink" title="产生/湮灭算符"></a>产生/湮灭算符</h3><p>利用$a_{\bf k}$、$a^\dagger_{\bf k}$，可以将系统哈密顿量构造为更清晰的形式：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H =&\ \frac12 \int{\rm d}^3x\left[ \pi({\bf x},t)^2 + | \nabla \phi({\bf x},t) |^2 + m^2 \phi({\bf x},t)^2 \right]\\
+=&\ \frac12\int \frac{ {\rm d}^3k}{(2\pi)^3 2\omega_{\bf k} } \omega_{\bf k} \left[ a_{\bf k} a^\dagger_{\bf k} + a^\dagger_{\bf k} a_{\bf k} \right]\\
+=&\ \int \widetilde{ {\rm d}k}\ \omega_{\bf k} a^\dagger_{\bf k} a_{\bf k} + \delta^{(3)}({\bf 0}) \int {\rm d}^3k \frac{\omega_{\bf k} }{2} 
+\end{aligned}</script><p>以及场的总动量：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{\bf P} =&\ -\int{\rm d}^3x \pi({\bf x},t)\nabla \phi({\bf x},t) \\
+=&\ \frac12\int \frac{ {\rm d}^3k}{(2\pi)^3 2\omega_{\bf k} } {\bf k} \left[ a_{\bf k} a^\dagger_{\bf k} + a^\dagger_{\bf k} a_{\bf k} \right]\\
+=&\ \int \widetilde{ {\rm d}k}\ {\bf k} a^\dagger_{\bf k} a_{\bf k} + \delta^{(3)}({\bf 0}) \int {\rm d}^3k \frac{\bf k}{2} 
+\end{aligned}</script><p>或者利用4-动量符号写为：</p>
+<script type="math/tex; mode=display">
+P^\mu = \int \widetilde{ {\rm d}k}\ k^\mu a^\dagger_{\bf k} a_{\bf k} + \delta^{(3)}({\bf 0}) \int {\rm d}^3k \frac{k^\mu}{2}</script><p>在量子化后，它们都成为Hilbert空间上的算符。可见对于实标量场，在这样的正则量子化框架下，场的总能量、总动量都是来自各个独立的简正模式${\bf k}$的贡献之和。对于三动量部分，$\int {\rm d}^3k {\bf k} = 0$，因此：</p>
+<script type="math/tex; mode=display">
+{\bf P} = \int \widetilde{ {\rm d}k}\ {\bf k} a^\dagger_{\bf k} a_{\bf k}</script><p>即场的总动量中，每个${\bf k}$模式的贡献可视为是$N_{\bf k} = a^\dagger_{\bf k} a_{\bf k}$份独立基本单元${\bf k}$的总和。要注意这里$N_{\bf k} = a^\dagger_{\bf k} a_{\bf k}$只是一个形式化记法，其真正的物理意义留待之后再作讨论。</p>
+<p>但对于哈密顿量（能量）来说，$\int {\rm d}^3k \omega_{\bf k} \neq 0$。于是哈密顿量中来自每个模式${\bf k}$的贡献又可以分成两部分：其一是每个${\bf k}$模式可被视作有$N_{\bf k} = a^\dagger_{\bf k} a_{\bf k}$份基本单元$\omega_{\bf k}$；其二则是各个简正模式${\bf k}$所固有的$(\omega_{\bf k}/2)$，这一项对所有模式${\bf k}$求和后还要乘以一个发散的常数$\delta^{(3)}({\bf 0})$：</p>
+<script type="math/tex; mode=display">
+H = \int \widetilde{ {\rm d}k}\ \omega_{\bf k} N_{\bf k} + E_0 \delta^{(3)}({\bf 0})</script><p>要弄清楚$E_0$的物理意义，需要首先讨论清楚算符$a_{\bf k}$、$a^\dagger_{\bf k}$的物理意义，这在之后再进行。但是可以看出，$E_0$是一个确定的常数，与场本身的运动状态无关；并且由于$\delta^{(3)}({\bf 0})$的存在，使这一项必然是发散的，因此我们得到的是一个无穷大的定值能量。</p>
+<p>尽管如此，我们并不需要担心这一发散行为，因为（至少在不考虑引力效应时）我们所能实际测量并处理的能量总是相对值，而其绝对数值没有意义；因此这样一个常数项不会对我们所构造的场论的实际功能造成任何影响。</p>
+<p>类似的项我们在单自由度的量子谐振子时也曾遇到过，那里形如$\omega/2$的定值能量称为“零点能”；在场论中，我们也把$E_0 = \int {\rm d}^3k \frac{\omega_{\bf k} }{2} $称为“零点能”或“真空能”，具体原因后叙。出于前述理由，将它从$H$中扔掉不会造成实际影响，因此我们有：</p>
+<script type="math/tex; mode=display">
+\int \widetilde{ {\rm d}k}\ \omega_{\bf k} a^\dagger_{\bf k} a_{\bf k} = :H: = \int \widetilde{ {\rm d}k}\ \omega_{\bf k} : \frac12\left[ a_{\bf k} a^\dagger_{\bf k} + a^\dagger_{\bf k} a_{\bf k} \right] :</script><p>在这里我们引入了<strong>正规乘积</strong>的概念，对于$a_{\bf k}$、$a^\dagger_{\bf k}$这样的算符的乘积，它总是把$a^\dagger_{\bf k}$放置在$a_{\bf k}$左侧；或者等价地说，服从$a_{\bf k}$、$a^\dagger_{\bf k}$这样的对易关系的算符（后面称之为<strong>玻色子算符</strong>，有别于<strong>费米子算符</strong>），在正规乘积符号$::$内部总被视作是对易的：</p>
+<script type="math/tex; mode=display">
+:a^\dagger_{\bf k} a_{\bf k}: = :a_{\bf k} a^\dagger_{\bf k}:</script><p>因此在二次量子化后，我们描述场的能量和动量的算符事实上是：</p>
+<script type="math/tex; mode=display">
+:H: = \int \widetilde{ {\rm d}k}\ \omega_{\bf k} a^\dagger_{\bf k} a_{\bf k}</script><script type="math/tex; mode=display">
+{\bf P} = \int \widetilde{ {\rm d}k}\ {\bf k} a^\dagger_{\bf k} a_{\bf k}</script><script type="math/tex; mode=display">
+P^\mu = \int \widetilde{ {\rm d}k}\ k^\mu a^\dagger_{\bf k} a_{\bf k}</script><p>在之后涉及到多个产生湮灭算符的情况时，我们默认取正规乘积，并省略正规序符号不写。不难验证：</p>
+<script type="math/tex; mode=display">
+[H,a^\dagger({\bf k})] = \omega_{\bf k} a^\dagger_{\bf k}\ ,\quad [{\bf P},a^\dagger({\bf k})] = {\bf k} a^\dagger_{\bf k}\ ,\quad [P^\mu,a^\dagger({\bf k})] = p^\mu a^\dagger_{\bf k}</script><p>即算符$a^\dagger_{\bf k}$的效果是使能量、动量分别增加$\omega_{\bf k}$、${\bf k}$。按照二次量子化的思想，算符$a^\dagger_{\bf k}$就是一个四动量为$(\omega_{\bf k},{\bf k})$的粒子的<strong>产生算符</strong>，算符$a_{\bf k}$则是这样一个粒子的<strong>湮灭算符</strong>。还可以定义这样状态粒子的占据数算符：$n_{\bf k} = a^\dagger_{\bf k} a_{\bf k}$；总的粒子数则是</p>
+<script type="math/tex; mode=display">
+N = \int \widetilde{ {\rm d}k}\ a^\dagger_{\bf k} a_{\bf k} = \int \widetilde{ {\rm d}k}\ n_{\bf k}</script><p>场的4-动量的物理意义可以写得更加清晰：</p>
+<script type="math/tex; mode=display">
+P^\mu = \int \widetilde{ {\rm d}k}\ k^\mu n_{\bf k}</script><p>它就是来自各个模式4-动量的总和。</p>
+<p>一般地，采用二次量子化的方法，我们可以取理论中能量最低的态为”真空态“，记为$\ket{0}$；于是产生算符作用在其上就会得到单粒子态，而湮灭算符作用于真空态，或者不包含对应动量的粒子态，就会得到零结果：</p>
+<script type="math/tex; mode=display">
+a^\dagger_{\bf k}\ket{0} = \ket{\bf k}\ ,\quad a_{\bf k}\ket{0} = 0</script><p>更一般地，多次作用产生算符就会得到包含算符对应动量的多粒子态，其中包含的粒子都是全同粒子，因为全部来自于同样的产生算符；产生、湮灭算符的作用分别是在态中增加或减少相应动量的一个粒子。</p>
+<h2 id="自由场费曼传播子"><a href="#自由场费曼传播子" class="headerlink" title="自由场费曼传播子"></a>自由场费曼传播子</h2><p>某种特定场的重要性质，可由一特殊的函数所刻画：<strong>两点编时关联函数</strong>，它是两点场算符编时乘积的真空期望值：</p>
+<script type="math/tex; mode=display">
+\bra{0}T\{\phi(x)\phi(y)\}\ket{0} = \theta(x^0-y^0)\bra{0}\phi(x)\phi(y)\ket{0} + \theta(y^0-x^0)\bra{0}\phi(y)\phi(x)\ket{0}</script><p>当然，现在可能暂时看不出关联函数的重要性：这会在之后讨论LSZ约化公式时得到体现；目前作为准备，我们将要证明两件事：</p>
+<ol>
+<li>它与我们在经典场论第四章中所引入的自由场费曼传播子具有相同的形式；</li>
+<li>它与也是场运动方程的格林函数。</li>
+</ol>
+<p>最后，尽管它在类空间隔仍然具有非零关联，也就是说量子场论中的费曼传播子仍然在光锥外有非零值，但是将会简要说明，在量子理论的观点看来，这并不会造成因果性的破坏。</p>
+<p><br></p>
+<h3 id="单粒子态的传播"><a href="#单粒子态的传播" class="headerlink" title="单粒子态的传播"></a>单粒子态的传播</h3><p>关于为什么要讨论两点编时关联函数，一个比较直观的说明如下。我们考虑一个简单的过程：一个粒子在时空点$y$处被从真空中产生，在传播一定时间后，在时空点$x$处被真空吸收，考察这个过程的振幅。</p>
+<p>为了得到一个位于时空点$y$的单粒子态，将场算符$\phi(y)$作用于真空态：</p>
+<script type="math/tex; mode=display">
+\ket{y} = \phi(y) \ket{0}</script><p>其中包含$a_{\bf k}$的项会自然消失。现在我们想要考虑这样一个粒子在时空中的传播到点$x$处并被吸收掉的振幅，它就是：</p>
+<script type="math/tex; mode=display">
+\big(\bra{0} \phi(x)\big) \big(\phi(y) \ket{0}\big) = \bra{0} \phi(x) \phi(y) \ket{0}</script><p>其中$\phi(x)$理解为作用于左边的真空态，其中包含$a^\dagger_{\bf k}$的项会自然消失。但是为了保证我们写出的表达式由物理意义，至少应该要求$x^0&gt;y^0$得到满足，于是我们真正应该写出的是：</p>
+<script type="math/tex; mode=display">
+\theta(x^0-y^0) \bra{0} \phi(x) \phi(y) \ket{0}</script><p>但实际上，我们还可以考察另该过程的反过程：在时空点$y$处虚拟得产生一个粒子，使其”逆着时空“传播，在$x$点将其吸收掉：</p>
+<script type="math/tex; mode=display">
+\theta(x^0-y^0) \bra{0} \phi(x) \phi(y) \ket{0}</script><p>但要注意到的是，这个过程由于是所谓”逆着时空“进行的，因此它的贡献应当加以负号；于是过程得总振幅就是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\ \theta(x^0-y^0) \bra{0} \phi(x) \phi(y) \ket{0} - \theta(x^0-y^0) \bra{0} \phi(x) \phi(y) \ket{0}\\
+=&\ \theta(x^0-y^0)\bra{0}\phi(x)\phi(y)\ket{0} + \theta(y^0-x^0)\bra{0}\phi(y)\phi(x)\ket{0}\\
+=& \bra{0}T\{\phi(x)\phi(y)\}\ket{0}
+\end{aligned}</script><p>也就是我们要考察的两点编时关联函数。</p>
+<h3 id="导出传播子的正则方法"><a href="#导出传播子的正则方法" class="headerlink" title="导出传播子的正则方法"></a>导出传播子的正则方法</h3><p>利用二次量子化场算符对产生湮灭算符的展开式，可将两点编时关联函数写为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\bra{0}T\{\phi(x)\phi(y)\}\ket{0}\\ =&\ \theta(x^0-y^0)\bra{0}\phi(x)\phi(y)\ket{0} + \theta(y^0-x^0)\bra{0}\phi(y)\phi(x)\ket{0}\\
+=&\ \theta(x^0-y^0)\bra{0} \int \widetilde{ {\rm d}k} \left[ a_{\bf k} {\rm e}^{ -{\rm i} k^\mu x_\mu} \right]  \int \widetilde{ {\rm d}k'} \left[ a^\dagger_{\bf k'} {\rm e}^{ {\rm i} k'^\mu y_\mu} \right] \ket{0}\\
+&+ \theta(y^0-x^0)\bra{0}  \int \widetilde{ {\rm d}k} \left[ a_{\bf k} {\rm e}^{ -{\rm i} k^\mu y_\mu} \right]  \int \widetilde{ {\rm d}k'} \left[ a^\dagger_{\bf k'} {\rm e}^{ {\rm i} k'^\mu x_\mu} \right]  \ket{0}\\
+=&\ \theta(x^0-y^0) \int \widetilde{ {\rm d}k} {\rm e}^{-{\rm i}k^\mu(x_\mu-y_\mu)} + \theta(y^0-x^0) \int \widetilde{ {\rm d}k} {\rm e}^{-{\rm i}k^\mu(y_\mu-x_\mu)}
+\end{aligned}</script><p>利用阶跃函数的傅里叶变换：</p>
+<script type="math/tex; mode=display">
+\theta(x^0-y^0) = \int_{-\infty}^\infty \frac{ {\rm d}\omega^0}{2\pi} \frac{ {\rm i} }{\omega^0+{\rm i}\epsilon}{\rm e}^{ -{\rm i}\omega^0 (x^0-y^0)}</script><p>以及采取在经典场论第四章中所讨论的绕过极点的方案，就得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\bra{0}T\{\phi(x)\phi(y)\}\ket{0}\\
+=&\ \frac{\rm i}{2\pi }\int \widetilde{ {\rm d}k} \frac{ {\rm d}\omega^0}{\omega^0+{\rm i}\epsilon} \left( {\rm e}^{-{\rm i}k^\mu(x_\mu-y_\mu)-{\rm i}\omega^0(x^0-y^0)} + {\rm e}^{-{\rm i}k^\mu(y_\mu-x_\mu)-{\rm i}\omega^0(y^0-x^0)}\right)\\
+=&\ {\rm i}\int \frac{ {\rm d}^4p}{(2\pi)^4 2\omega_{\bf p} } {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} \left( \frac{1}{p^0 - \omega_{\bf p} + {\rm i}\epsilon} - \frac{1}{p^0 + \omega_{\bf p} - {\rm i}\epsilon} \right)\\
+=&\ {\rm i}\int \frac{ {\rm d}^4p}{(2\pi)^4 } \frac{ {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} }{p^2 - m^2 + {\rm i}\epsilon}
+\end{aligned}</script><p>其中对两项分别做了积分变量的换元：$p^\mu = (\omega_{\bf k}+\omega^0,{\bf k})$和$p^\mu = (-\omega_{\bf k}-\omega^0,-{\bf k})$，并且注意到由于${\bf p} = {\bf k}$因此$\omega_{\bf p} = \omega_{\bf k}$。从上式得到在经典场论部分已经熟悉的<strong>自由标量场费曼传播子</strong>：</p>
+<script type="math/tex; mode=display">
+\widetilde\Delta_F(p) = \frac{ 1 }{p^2 - m^2 + {\rm i}\epsilon}</script><p>所以我们有结论：</p>
+<script type="math/tex; mode=display">
+\bra{0}T\{\phi(x)\phi(y)\}\ket{0} = {\rm i}\Delta_F(x-y) = {\rm i}\int \frac{ {\rm d}^4p}{(2\pi)^4 } \frac{ {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} }{p^2 - m^2 + {\rm i}\epsilon}</script><p>即<u>场的两点编时关联函数就是场的自由费曼传播子</u>。这对于其它类型的场也是普适的。</p>
+<p>将K-G算符作用于其上就得到：</p>
+<script type="math/tex; mode=display">
+(\partial^2 + m^2) \Delta_F(x-y) = -\int \frac{ {\rm d}^4p}{(2\pi)^4 } {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} = -\delta^{(4)}(x-y)</script><p>因此<u>标量场的自由传播子同时也是K-G方程的Green函数</u>，因此也称之为两点编时Green函数。这对于其它类型的场及其运动方程也是普适的。</p>
+<blockquote>
+<p>评述：这里在积分过程中，传播子中出现的$p^\mu$是所引入的新的积分变量，虽然形式上是4-动量，但实际上并不满足在（on-shell）条件：</p>
+<script type="math/tex; mode=display">
+(p^0)^2 \neq (\omega_{\bf p})^2 = {\bf p}^2 + m^2 \quad \Longleftrightarrow \quad p^\mu p_\mu \neq m^2</script><p>这实际上在理论中引入了不在壳传播子（off-shell propagator），即<strong>虚粒子</strong>的存在。</p>
+</blockquote>
+<p><br></p>
+<h3 id="再论因果性"><a href="#再论因果性" class="headerlink" title="再论因果性"></a>再论因果性</h3><p>回顾在经典场论第四章曾经遇到的问题：即便我们考虑了时序性、极点等等问题，得到的费曼传播子仍然具有因果性问题——它在光锥之外有非零值。量子场论得到的费曼传播子仍然具有这样的性质，那么因果性问题能否在量子场论中得到解决？</p>
+<p>在量子理论的观点看来，理论中是否存在光锥外的非零传播子不重要，重要的是这样的类空传播能否被观测到，或者说，在一点处的测量能否影响到在类空间隔的另一点处的测量。而在量子场论中，对物理量的测量无非归结为对场$\phi(x)$的测量，因此我们应该考虑场算符对易子$[\phi(x),\phi(y)]$，若它在光锥外为零，意味着对场的测量不会产生类空的影响。</p>
+<p>具体来说：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}[]
+&[\phi(x),\phi(y)]\\
+=& \int \widetilde{ {\rm d}k} \int \widetilde{ {\rm d}k'} \bigg[ \left( a_{\bf k} {\rm e}^{ -{\rm i} k^\mu x_\mu} + a^\dagger_{\bf k} {\rm e}^{ {\rm i} k^\mu x_\mu} \right) , \left( a_{\bf k'} {\rm e}^{ -{\rm i} k'^\mu y_\mu} + a^\dagger_{\bf k'} {\rm e}^{ {\rm i} k'^\mu y_\mu} \right) \bigg]\\
+=& \int \widetilde{ {\rm d}k} \left[{\rm e}^{ -{\rm i} k^\mu (x_\mu-y_\mu)} - {\rm e}^{ {\rm i} k^\mu (x_\mu-y_\mu)}\right]\\
+=&\ {\rm i}\Delta(x-y)
+\end{aligned}</script><p>注意到这是一个洛伦兹不变量。对于任意的类空间隔，总可以通过连续的洛伦兹变换将之变为纯空间间隔：$x^0-y^0 = 0$，${\bf x}-{\bf y}={\bf r}$；于是我们不妨在这种情况下考虑传播子的对易关系，从而</p>
+<script type="math/tex; mode=display">
+[\phi(x),\phi(y)]_{\rm space-like} = [\phi({\bf x}),\phi({\bf y})] = 0</script><p>也就是利用了等时正则对易关系。因此对于场的测量，不会产生类空的影响，从而在这个意义上我们保证了因果性的成立。</p>
+<p><em>注：对于其他类型的场，这一论述需要相应修改。例如对于旋量场，应采用反对易关系。</em></p>
+<p>当然，这仅仅是一个非常粗糙的解释，并且明显不能令人满意，比如我们并没有讨论何谓“对场的测量”，似乎也仅仅是对传播子在光锥外非零这一事实视若无睹。要想真正谈论因果性在量子场论中如何得到保证，我们必须直面传播子的性质，并且讨论相较于实标量场更复杂的场，例如复标量场。</p>
+<p>$\Delta(x-y)$有一些性质，是与量子场论的因果性直接相关的：</p>
+<ol>
+<li>K-G方程解：$(\partial^2_x + m^2) \Delta(x-y) = 0$；</li>
+<li>反对称性：$\Delta(x-y) = -\Delta(y-x)$；<ul>
+<li>空间对称：$\Delta(x^0-y^0,{\bf x}-{\bf y}) = \Delta(x^0-y^0,{\bf y}-{\bf x})$；</li>
+<li>时间反对称：$\Delta(x^0-y^0,{\bf x}-{\bf y}) = -\Delta(y^0-x^0,{\bf x}-{\bf y})$；</li>
+</ul>
+</li>
+<li><strong>微观因果性条件</strong>：<ul>
+<li>类空传播：$\Delta(x-y)|_{(x-y)^2&lt;0} = 0$；</li>
+<li>零时传播：$\Delta(x-y)|_{x^0=y^0} = 0$；</li>
+</ul>
+</li>
+<li>边界条件：<ul>
+<li>时间边界：$\frac{\partial \Delta(x-y)}{\partial x^0}|_{x^0=y^0} = -\delta^{(3)}({\bf x}-{\bf y})$；</li>
+<li>空间边界：$\frac{\partial \Delta(x-y)}{\partial x^i}|_{ {\bf x}={\bf y} } = 0$；</li>
+<li>空间边界：$\frac{\partial \Delta(x-y)}{\partial x^i}|_{x^0=y^0} = 0$；</li>
+</ul>
+</li>
+</ol>
+<p>不难看出，它也是K-G方程的一种Green函数。</p>
+<p><br></p>
+<h2 id="离散对称性"><a href="#离散对称性" class="headerlink" title="离散对称性"></a>离散对称性</h2><p>到目前为止，我们讨论的所谓洛伦兹变换都仅仅是“正规正时洛伦兹变换”，它属于完整洛伦兹群的四个连通分支之一，对场的分类也仅仅是基于正规正时分支的群表示。然而为了得到场在完整洛伦兹群变换下的性质，有必要考虑场在其余分支作用下的性质；这实际上被归结为两个特殊变换：空间反射${\textsf P}$和时间反演${\textsf T}$。</p>
+<p>在物理上还有第三个同样重要的离散变换：电荷共轭${\textsf C}$，引入它的动机来自于对更复杂场（具体来说，存在整体${\rm U}(x)$对称性的场），例如复标量场的量子化。在本章，首先简单讨论实标量场在空间反射${\textsf P}$和时间反演${\textsf T}$变换下的行为。作为基础表示，两者对4-坐标的变换是定义显然的：</p>
+<script type="math/tex; mode=display">
+{\textsf P} x^\mu = (x^0,-{\bf x}) = x_\mu</script><script type="math/tex; mode=display">
+{\textsf T}x^\mu = (-x^0,{\bf x}) = -x_\mu</script><p>对于标量场，我们希望找到两个变换对标量场作用的相应表示$D({\textsf P})$和$D({\textsf T})$。为此定义幺正算符$\mathcal P$和$\mathcal T$的作用为：</p>
+<script type="math/tex; mode=display">
+\mathcal P^{-1} \phi(x) \mathcal P = D({\textsf P}) \phi({\textsf P} x^\mu)</script><script type="math/tex; mode=display">
+\mathcal T^{-1} \phi(x) \mathcal T = D({\textsf T}) \phi({\textsf T} x^\mu)</script><p>为了确定它们的具体形式，我们要结合物理意义对两个变换提出一些基本但合理的要求，最主要的之一就是：希望作用两次${\textsf P}$或${\textsf T}$变换后，得到相同的物理可观测量。后面将会看到，可观测量直接依赖于编时关联函数$\bra{0} T \{\phi_1\phi_2\cdots\phi_n\} \ket{0}$的模方；归结到单个的场算符，也就是是希望做两次变换后得到原来的场，从而：</p>
+<script type="math/tex; mode=display">
+|D({\textsf {P/T} })|^{2} = 1</script><p>显然，这一要求不能完全确定表示矩阵$D({\textsf {P/T} })$，它们仍有许多选择的余地。但是一个比较简单的选择方法是考虑它们在产生湮灭算符上的作用（回顾QFT Chap.1的讨论）。</p>
+<p>由于算符$a({\bf k})$、$a^\dagger({\bf k})$与一个3-动量为${\bf k}$的单粒子态相关联，而在空间反射${\textsf P}$或时间反演${\textsf T}$变换下，3-动量${\bf k}$会变为其负矢量$-{\bf k}$，因此我们对产生算符选择：</p>
+<script type="math/tex; mode=display">
+\mathcal P^{-1} a^\dagger_{\bf k} \mathcal P = \eta a^\dagger_{-\bf k}</script><script type="math/tex; mode=display">
+\mathcal T^{-1} a^\dagger_{\bf k} \mathcal T = \zeta a^\dagger_{-\bf k}</script><p>取厄米共轭，就得到对湮灭算符的作用：</p>
+<script type="math/tex; mode=display">
+\mathcal P^{-1} a_{\bf k} \mathcal P = \eta^* a_{-\bf k}</script><script type="math/tex; mode=display">
+\mathcal T^{-1} a_{\bf k} \mathcal T = \zeta^* a_{-\bf k}</script><p>其中$\eta$称为<strong>P宇称</strong>，$\zeta$称为<strong>T宇称</strong>。一般而言，只要满足</p>
+<script type="math/tex; mode=display">
+\eta^*\eta = 1\ ,\qquad \zeta^*\zeta = 1</script><p>就可以满足$|D({\textsf {P/T} })|^{2} = 1$的要求。</p>
+<p>在这样的选择下立即就能得到实标量场本身的变换：</p>
+<script type="math/tex; mode=display">
+\mathcal P^{-1} \phi(x) \mathcal P = \eta^* \phi({\textsf P} x^\mu)</script><script type="math/tex; mode=display">
+\mathcal T^{-1} \phi(x) \mathcal T = \zeta^* \phi({\textsf P} x^\mu)</script><p>特别地，我们这里处理的是实标量场，它还会额外给出一个结果即$D({\textsf {P/T} })$是实的。于是对于实标量场：</p>
+<script type="math/tex; mode=display">
+D({\textsf {P/T} })^2 = 1</script><p>因此，对于实标量场，两个变换各有有两种可能的宇称：</p>
+<script type="math/tex; mode=display">
+\eta = \pm 1\ ,\qquad \zeta = \pm 1</script><p>此即实标量场所满足的离散对称性。我们把$\eta = 1$的标量场称为（真）标量场，而$\eta = -1$得标量场称为赝标量场。</p>
+<p>利用前面得到场的4-动量表达式，还可以证明：</p>
+<script type="math/tex; mode=display">
+\mathcal P^{-1} P^\mu \mathcal P = P_\mu</script><script type="math/tex; mode=display">
+\mathcal T^{-1} P^\mu \mathcal T = P_\mu</script><p>即场的4-动量也满足一般4-动量的离散对称性质。</p>
+<h1 id="各种类型场的正则量子化"><a href="#各种类型场的正则量子化" class="headerlink" title="各种类型场的正则量子化"></a>各种类型场的正则量子化</h1><p>第一章以自由实标量场为例，简要介绍了场正则量子化的基本思想、方法以及主要结论。本章将会在此基础上，给出自由复标量场、旋量场、矢量场的正则量子化结果。</p>
+<h2 id="复标量场"><a href="#复标量场" class="headerlink" title="复标量场"></a>复标量场</h2><h3 id="复标量场的正则量子化"><a href="#复标量场的正则量子化" class="headerlink" title="复标量场的正则量子化"></a>复标量场的正则量子化</h3><p>在前面实标量场的例子中，$a^\dagger_{\bf k}$和$a_{\bf k}$互为共轭算符，这是直接来自于$\phi = \phi^\dagger$的性质；它表明对于实标量场，只存在一种激发粒子，$\phi$场既可以产生这种粒子，也可以湮灭同种粒子。</p>
+<p>我们可以将讨论推广到取复值的标量场：</p>
+<script type="math/tex; mode=display">
+\phi = \frac{\phi_1 + {\rm i}\phi_2}{\sqrt2}\ ,\qquad \phi^\dagger = \frac{\phi_1 - {\rm i}\phi_2}{\sqrt2}</script><p>可以看作是两个质量相同的实标量场的复线性组合。这样的体系，按照实标量场的方法，可以写出其拉格朗日量为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathscr L &= \frac12 \partial_\mu\phi_1 \partial^\mu\phi_1 - \frac12 m^2\phi_1^2 + \frac12 \partial_\mu\phi_2 \partial^\mu\phi_2 - \frac12 m^2\phi_2^2\\
+&= \partial_\mu\phi^\dagger \partial^\mu\phi - m^2\phi^\dagger\phi
+\end{aligned}</script><p>它会给出运动方程为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+(\partial^2 + m^2)\phi &= 0\\
+(\partial^2 + m^2)\phi^\dagger &= 0
+\end{aligned}</script><p>对复标量场的正则量子化手续完全类似于实标量场，</p>
+<script type="math/tex; mode=display">
+\pi = \frac{\partial\mathscr L}{\partial(\partial_0\phi)} = \partial_0 \phi\ ,\qquad \pi^\dagger = \frac{\partial\mathscr L}{\partial(\partial_0\phi^\dagger)} = \partial_0 \phi^\dagger</script><p>哈密顿量</p>
+<script type="math/tex; mode=display">
+H = \int{\rm d}^3x \left(\pi \partial_0 \phi + \pi \partial_0 \phi - \mathscr L\right) = \int{\rm d}^3x\left( \pi^\dagger\pi + \nabla \phi^\dagger \nabla \phi + m^2 \phi^\dagger \phi \right)</script><p>相应的，我们对复标量场要引入的等时正则对易关系为：</p>
+<script type="math/tex; mode=display">
+[\phi({\bf x}),\pi({\bf y})] = [\phi^\dagger({\bf x}),\pi^\dagger({\bf y})] = {\rm i}\hbar\delta^{(3)}({\bf x} - {\bf y})</script><p>其余对易子均为零。这一关系可以视为是复标量场正则量子化的基本假设，也可以视为从实标量场正则量子化条件导出的结果。</p>
+<p>据此，就可以对复标量场做模式展开：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\phi({\bf x}) &= \int \widetilde{ {\rm d}k} \left( a_{\bf k} {\rm e}^{ {\rm i}\bf k \cdot \bf x} + b^\dagger_{\bf k} {\rm e}^{ -{\rm i}\bf k \cdot \bf x} \right)\\
+\phi^\dagger({\bf x}) &= \int \widetilde{ {\rm d}k} \left( a^\dagger_{\bf k} {\rm e}^{ {\rm i}\bf k \cdot \bf x} + b_{\bf k} {\rm e}^{ -{\rm i}\bf k \cdot \bf x} \right)
+\end{aligned}</script><p>注意到由于$\phi\neq\phi^\dagger$，因此其正、负频展开系数并不互为共轭，因此我们引入了两组产生/湮灭算符，它们分别互为共轭，且都可以由$\phi_1$、$\phi_2$的产生湮灭算符组合得出：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a_{\bf k} = \frac{a_{1,\bf k} + {\rm i}a_{2,\bf k} }{\sqrt2}\ ,\qquad a_{\bf k}^\dagger = \frac{a_{1,\bf k}^\dagger - {\rm i}a_{2,\bf k}^\dagger}{\sqrt2}\\
+b_{\bf k} = \frac{a_{1,\bf k} - {\rm i}a_{2,\bf k} }{\sqrt2}\ ,\qquad b_{\bf k}^\dagger = \frac{a_{1,\bf k}^\dagger + {\rm i}a_{2,\bf k}^\dagger}{\sqrt2}
+\end{aligned}</script><p>进而我们可以得出复标量场产生湮灭算符的对易关系：</p>
+<script type="math/tex; mode=display">
+[a_{\bf k},a^\dagger_{\bf k’}] = [b_{\bf k},b^\dagger_{\bf k’}] = (2\pi)^3 2\omega_{\bf k} \delta^{(3)}({\bf k} - {\bf k'})</script><p>其余对易子均为零。</p>
+<p>这表明，在复标量场中，存在两种不同的激发，也就是两类单粒子态：</p>
+<script type="math/tex; mode=display">
+\ket{\bf k}_a = a^\dagger_{\bf k} \ket{0}\ ,\quad \ket{\bf k}_b = b^\dagger_{\bf k} \ket{0}</script><p>它们对应于两种粒子，$\phi$场可以湮灭$a$型粒子，产生$b$型粒子；$\phi^\dagger$场则是产生$a$型粒子，湮灭$b$型粒子。当然，一个多粒子态中可以同时存在不同类型的粒子。</p>
+<h3 id="复标量场的整体-rm-U-1-对称性"><a href="#复标量场的整体-rm-U-1-对称性" class="headerlink" title="复标量场的整体${\rm U}(1)$对称性"></a>复标量场的整体${\rm U}(1)$对称性</h3><p>复标量场除了满足实标量场已经具有的时空对称性之外，注意到所引入得复数自由度，会自然产生一个新的对称性：</p>
+<script type="math/tex; mode=display">
+\phi \to {\rm e}^{ {\rm i}\alpha} \phi\ ,\qquad \phi^\dagger \to \phi^\dagger {\rm e}^{ -{\rm i}\alpha}</script><p>显然该变换下拉格朗日量不变。这是所谓整体${\rm U}(1)$对称性，它是一种内部对称性。容易得到其Noether流为：</p>
+<script type="math/tex; mode=display">
+j^\mu_{ {\rm U}(1)} = {\rm i}\phi^\dagger (\partial^\mu \phi) - {\rm i} (\partial^\mu \phi^\dagger) \phi = {\rm i} \phi^\dagger \overset{\leftrightarrow}{\partial^\mu}\phi</script><p>这会产生新的守恒荷</p>
+<script type="math/tex; mode=display">
+Q_{ {\rm U}(1)} = {\rm i} \int{\rm d}^3x \phi^\dagger \overset{\leftrightarrow}{\partial^0} \phi</script><p>将其按照产生两组湮灭算符展开为：</p>
+<script type="math/tex; mode=display">
+Q_{ {\rm U}(1)} = \int \widetilde{ {\rm d}k} \big[ a^\dagger_{\bf k} a_{\bf k} - b^\dagger_{\bf k} b_{\bf k} \big]</script><p>这里类似于前面略去真空能的做法，已经略去了真空可能出现的无穷大$Q_{ {\rm U}(1)}$荷。当然，复标量场的4-动量也可以用两组产生湮灭算符表示为：</p>
+<script type="math/tex; mode=display">
+P^\mu = \int \widetilde{ {\rm d}k} \ k^\mu \big[ a^\dagger_{\bf k} a_{\bf k} + b^\dagger_{\bf k} b_{\bf k} \big]</script><p>注意到我们已经定义过占据数算符：$n_{a,\bf k} = a^\dagger_{\bf k} a_{\bf k}$，$n_{b,\bf k} = b^\dagger_{\bf k} b_{\bf k}$。于是</p>
+<script type="math/tex; mode=display">
+Q_{ {\rm U}(1)} = \int \widetilde{ {\rm d}k} \big( n_{a,\bf k} - n_{b,\bf k} \big) = N_a-N_b</script><script type="math/tex; mode=display">
+P^\mu = \int \widetilde{ {\rm d}k}\ k^\mu \big( n_{a,\bf k} + n_{b,\bf k} \big)</script><p>可见，复标量场的总4-动量是来自于各个模式上所占据$a$型粒子和$b$型粒子的4-动量总和，而直接就正比于$a$型粒子与$b$型粒子的粒子数之差。</p>
+<p>一个简单但直观的解释是$a$型粒子和$b$型粒子带有大小相同但符号相反的$Q_{ {\rm U}(1)}$荷，它们的运动则形成相应的$j^\mu_{ {\rm U}(1)}$流；且我们已经知道两种粒子具有相同的质量$m$。这样的模型十分类似我们对于一对携带电荷的正反粒子的描述。</p>
+<p>事实上，我们可以考虑$Q_{ {\rm U}(1)}$荷与产生湮灭算符的对易子：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}[]
+[Q_{ {\rm U}(1)},a_{\bf k}] = -a_{\bf k}\ ,&\quad [Q_{ {\rm U}(1)},b^\dagger_{\bf k}] = -b^\dagger_{\bf k}\\
+[Q_{ {\rm U}(1)},a^\dagger_{\bf k}] = a^\dagger_{\bf k}\ ,&\quad [Q_{ {\rm U}(1)},b_{\bf k}] = b_{\bf k}
+\end{aligned}</script><p>注意到作为算符，$Q_{ {\rm U}(1)}$的本征值就是两种粒子的粒子数之差$n_a-n_b$，上述对易关系实际上可以解释为：</p>
+<ol>
+<li>算符$a_{\bf k}$湮灭一个$a$型粒子，并减少一单位$Q_{ {\rm U}(1)}$荷；</li>
+<li>算符$b^\dagger_{\bf k}$产生一个$b$型粒子，并减少一单位$Q_{ {\rm U}(1)}$荷；</li>
+<li>算符$a^\dagger_{\bf k}$产生一个$a$型粒子，并增加一单位$Q_{ {\rm U}(1)}$荷；</li>
+<li>算符$b_{\bf k}$湮灭一个$b$型粒子，并增加一单位$Q_{ {\rm U}(1)}$荷；</li>
+</ol>
+<p>于是场算符的作用就是：</p>
+<ol>
+<li>场算符$\phi(x)$减少一单位$Q_{ {\rm U}(1)}$荷，或者等价地说携带$+1$单位$Q_{ {\rm U}(1)}$荷；</li>
+<li>场算符$\phi^\dagger(x)$增加一单位$Q_{ {\rm U}(1)}$荷，或者等价地说携带$-1$单位$Q_{ {\rm U}(1)}$荷；</li>
+</ol>
+<p>因此$a$、$b$两种粒子的确是具有相同质量$m$，但携带相反荷$Q_{ {\rm U}(1)}$的粒子。大多数时候，我们将$Q_{ {\rm U}(1)}$荷解释为电荷，这样的$a$、$b$两种粒子我们称它们互为<strong>反粒子</strong>。</p>
+<h3 id="复标量场的费曼传播子"><a href="#复标量场的费曼传播子" class="headerlink" title="复标量场的费曼传播子"></a>复标量场的费曼传播子</h3><p>与实标量场类似，我们考虑两点编时关联函数。只不过这里的动机更加明确。第一项：</p>
+<script type="math/tex; mode=display">
+\theta(x^0-y^0) \big(\bra{0} \phi(x) \big) \big( \phi(y)^\dagger \ket{0}\big) = \theta(x^0-y^0) \bra{0} \phi(x) \phi^\dagger(y) \ket{0}</script><p>描述的是在$y$点产生一个$+1$荷的粒子，传播到$x$点被吸收；第二项</p>
+<script type="math/tex; mode=display">
+\theta(y^0-x^0) \big(\bra{0} \phi^\dagger(y) \big) \big( \phi(x) \ket{0}\big) = \theta(y^0-x^0) \bra{0} \phi^\dagger(y) \phi(x) \ket{0}</script><p>在实标量场中被我们解释为所谓”逆着时空“的传播，现在复标量场看来，这一项实际上有更合理的解释，那就是一个$-1$荷的粒子顺着时间的空间反向传播。</p>
+<p><em>注：因此也有人说，反粒子实际上是逆着时间的正粒子。</em></p>
+<p>于是在复标量场中，我们研究的两点编时关联函数是</p>
+<script type="math/tex; mode=display">
+\bra{0}T\{\phi(x)\phi^\dagger(y)\}\ket{0}</script><p>利用与实标量场完全相同的方法，最终可以得到相同的结果：</p>
+<script type="math/tex; mode=display">
+\bra{0}T\{\phi(x)\phi(y)\}\ket{0} ={\rm i} \Delta_F(x-y) = {\rm i}\int \frac{ {\rm d}^4p}{(2\pi)^4 } \frac{ {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} }{p^2 - m^2 + {\rm i}\epsilon}</script><p>即复标量场与实标量场的传播子是一样的。</p>
+<script type="math/tex; mode=display">
+\widetilde\Delta_F(p) = \frac{ 1 }{p^2 - m^2 + {\rm i}\epsilon}</script><h3 id="复标量场的离散对称性"><a href="#复标量场的离散对称性" class="headerlink" title="复标量场的离散对称性"></a>复标量场的离散对称性</h3><p>复标量场也存在与实标量场相同的离散对称性：空间反射${\textsf P}$和时间反演${\textsf T}$，并且结论完全相同：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal P^{-1} a_{\bf k} \mathcal P = \eta a_{-\bf k}\ ,&\quad \mathcal P^{-1} a^\dagger_{\bf k} \mathcal P = \eta a^\dagger_{-\bf k}\\
+\mathcal P^{-1} b^\dagger_{\bf k} \mathcal P = \eta b^\dagger_{-\bf k}\ ,&\quad \mathcal P^{-1} b_{\bf k} \mathcal P = \eta b_{-\bf k}
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\quad \mathcal T^{-1} a_{\bf k} \mathcal T = \zeta a_{-\bf k}\ ,&\mathcal T^{-1} a^\dagger_{\bf k} \mathcal T = \zeta a^\dagger_{-\bf k}\\
+\mathcal T^{-1} b^\dagger_{\bf k} \mathcal T = \zeta b^\dagger_{-\bf k}\ ,&\quad \mathcal T^{-1} b_{\bf k} \mathcal T = \zeta b_{-\bf k}
+\end{aligned}</script><p>容易说明，对于复标量场，$\eta = \pm1$；$\zeta = \pm1$。</p>
+<p>但是除此之外，复标量场还存在新的离散对称性：电荷共轭${\textsf C}$。它的效果是：</p>
+<script type="math/tex; mode=display">
+\phi(x) \to \phi^\dagger(x)</script><p>显然，在此变换之下复标量场拉格朗日量不变，因而的确是一个离散对称性。类似于在实标量场中对空间反射${\textsf P}$和时间反演${\textsf T}$的讨论，我们要寻找的电荷共轭${\textsf C}$的表示就是：</p>
+<script type="math/tex; mode=display">
+\mathcal C^{-1} \phi(x) \mathcal C = D({\textsf C}) \phi(x) = \phi^\dagger(x)</script><p>利用场算符的展开式可以将其写为对产生湮灭算符的作用。不同于空间反射${\textsf P}$和时间反演${\textsf T}$的作用将产生湮灭算符联系到其自己反向的动量，电荷共轭${\textsf C}$是将正反粒子的产生算符联系起来，湮灭算符联系起来：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\quad \mathcal C^{-1} a_{\bf k} \mathcal C = \xi_a^* b_{\bf k}\ ,&\quad \mathcal C^{-1} a^\dagger_{\bf k} \mathcal C = \xi_a b^\dagger_{\bf k}\\
+\mathcal C^{-1} b^\dagger_{\bf k} \mathcal C = \xi_b a^\dagger_{\bf k}\ ,&\quad \mathcal C^{-1} b_{\bf k} \mathcal C = \xi_b^* a_{\bf k}
+\end{aligned}</script><p>其中$\xi$称为<strong>C宇称</strong>。为了确定其值，更简单的办法是，注意到$\phi(x) \to \phi^\dagger(x)$变换实际上是对实部、虚部两个分量的变换：$\phi_1(x) \to \phi_1(x)$，$\phi_2(x) \to -\phi_2(x)$，于是利用两个实标量场算符与复标量场算符的关系就能直接得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\quad \mathcal C^{-1} a_{\bf k} \mathcal C =  b_{\bf k}\ ,&\quad \mathcal C^{-1} a^\dagger_{\bf k} \mathcal C =  b^\dagger_{\bf k}\\
+\mathcal C^{-1} b^\dagger_{\bf k} \mathcal C =  a^\dagger_{\bf k}\ ,&\quad \mathcal C^{-1} b_{\bf k} \mathcal C =  a_{\bf k}
+\end{aligned}</script><p>可以看到，离散的电荷共轭对称性的出现，总是伴随着连续的整体${\rm U}(1)$对称性同时存在的；整体${\rm U}(1)$对称性引入了$Q_{ {\rm U}(1)}$荷，而电荷共轭的作用就是将场或粒子所携带的$Q_{ {\rm U}(1)}$荷反号。</p>
+<p>特别地，实标量场作为其特例，场算符变换为：</p>
+<script type="math/tex; mode=display">
+\mathcal C^{-1} \phi(x) \mathcal C = \phi(x)</script><p>即实标量场不携带电荷，实标量粒子的反粒子就是其自己。</p>
+<h2 id="旋量场"><a href="#旋量场" class="headerlink" title="旋量场"></a>旋量场</h2><h3 id="旋量场的正则量子化"><a href="#旋量场的正则量子化" class="headerlink" title="旋量场的正则量子化"></a>旋量场的正则量子化</h3><p>在标量场正则量子化中，我们从拉格朗日量出发，通过定义场正则动量、施加等时正则对易关系，将场提升为场算符从而实现量子化。我们仍按照相同的步骤对旋量场做处理。旋量场拉格朗日量为：</p>
+<script type="math/tex; mode=display">
+\mathscr L = \overline\psi ( {\rm i}\cancel{\partial} - m)\psi = \psi^\dagger \gamma^0 ( {\rm i}\cancel{\partial} - m)\psi</script><p>正则动量：</p>
+<script type="math/tex; mode=display">
+\pi_{\psi} = {\rm i}\psi^\dagger = {\rm i}\overline\psi \gamma^0\ ,\qquad \pi_{\overline\psi} = 0</script><p>但是在正则量子化旋量场时，我们遇到的第一个问题就是，如果还沿用正则对易关系会出现严重的问题，包括但不限于违反因果律、能量无下界等等。</p>
+<p>其深层原因来自于自旋-统计定理，以及旋量场的构造。但是在这里我们接受一个事实，即对旋量场做正则量子化，需要我们采用<strong>等时正则反对易关系</strong>：</p>
+<script type="math/tex; mode=display">
+\{ \psi_\alpha({\bf x}),\pi_{\beta}({\bf y}) \} = {\rm i}\delta_{\alpha\beta} \delta^{(3)}({\bf x-y})</script><p>其余对易子均为零。其中$\alpha,\beta,\dots = 1,2,3,4$是旋量空间指标。注意到正则动量的表达式，上式实际上给出：</p>
+<script type="math/tex; mode=display">
+\{ \psi_\alpha({\bf x}),\overline\psi_{\beta}({\bf y}) \} = (\gamma^0)_{\alpha\beta} \delta^{(3)}({\bf x-y})</script><p>这种对旋量场的正则量子化方案称为Jordan-Wigner量子化。</p>
+<p><br></p>
+<h4 id="平面波解与旋量求和"><a href="#平面波解与旋量求和" class="headerlink" title="平面波解与旋量求和"></a>平面波解与旋量求和</h4><p>下面要将旋量场模式展开，并将展开系数提升为产生湮灭算符。为此，首先我们需要知道旋量场的运动方程——Dirac方程的平面波解的形式。平面波解的存在性是显然的，因为旋量场满足Dirac方程$({\rm i}\cancel\partial - m)\psi = 0$，那么必然也满足K-G方程，从而在无界空间中存在平面波解：</p>
+<script type="math/tex; mode=display">
+\psi(x) = u({\bf p}) {\rm e}^{-{\rm i}p^\mu x_\mu} + v({\bf p}) {\rm e}^{ {\rm i}p^\mu x_\mu}</script><p>其中正频系数$u({\bf p})$和负频系数$v({\bf p})$都是4分量的Dirac旋量，不难验证它们分别满足动量空间的Dirac方程：</p>
+<script type="math/tex; mode=display">
+(\cancel p - m)u = 0\ ,\qquad (\cancel p + m)v = 0</script><p>现在要具体求解出这两个方程。</p>
+<blockquote>
+<p>关于不同表象下Dirac方程的解，详见附录。</p>
+</blockquote>
+<p>结论是，两个方程各有两个独立解：$u_\lambda({\bf p})$，$v_\lambda({\bf p})$，$\lambda = +,-$，构成旋量空间一组基。它们按照如下方式归一化：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\overline u_\lambda({\bf p}) u_\rho({\bf p}) &= -\overline v_\lambda({\bf p}) v_\rho({\bf p}) = 2m \delta_{\lambda\rho}\\
+\overline u_\lambda({\bf p}) v_\rho({\bf p}) &= \overline v_\lambda({\bf p}) u_\rho({\bf p}) = 0\\
+\end{aligned}</script><p>并且还满足Gordon恒等式：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+2m\ \overline u_\lambda({\bf q}) \gamma^\mu u_\rho({\bf p}) &= \overline u_\lambda({\bf q}) \Big[ (q+p)^\mu + {\rm i} \sigma^{\mu\nu}(q-p)_\nu \Big] u_\rho({\bf p})\\
+-2m\ \overline u_\lambda({\bf q}) \gamma^\mu u_\rho({\bf p}) &= \overline u_\lambda({\bf q}) \Big[ (q+p)^\mu + {\rm i} \sigma^{\mu\nu}(q-p)_\nu \Big] u_\rho({\bf p})
+\end{aligned}</script><p>它在$p=q$的特殊情况时给出</p>
+<script type="math/tex; mode=display">
+\overline u_\lambda({\bf p}) \gamma^\mu u_\rho({\bf p}) = 2p^\mu \delta_{\lambda\rho}\ ,\quad \overline v_\lambda({\bf p}) \gamma^\mu v_\rho({\bf p}) = 2p^\mu \delta_{\lambda\rho}</script><p>此外，还有</p>
+<script type="math/tex; mode=display">
+\overline u_\lambda({\bf p}) \gamma^0 u_\rho(-{\bf p}) = 0\ ,\quad \overline v_\lambda({\bf p}) \gamma^0 v_\rho(-{\bf p}) = 0</script><p>最后，还满足重要的关系：旋量求和关系</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Lambda_+(p) &= \frac{1}{2m} \sum_{\lambda} u_\lambda({\bf p}) \overline u_\lambda({\bf p}) = \frac{\cancel p + m}{2m}\\
+\Lambda_-(p) &= -\frac{1}{2m} \sum_{\lambda} v_\lambda({\bf p}) \overline v_\lambda({\bf p}) = \frac{-\cancel p + m}{2m}
+\end{aligned}</script><p>它们事实上是两个投影算符，作用是将Dirac旋量投影到正能解和负能解：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Lambda_+(p)u_\lambda({\bf p}) &= u_\lambda({\bf p})\\
+\Lambda_-(p)v_\lambda({\bf p}) &= v_\lambda({\bf p})\\
+\Lambda_-(p)u_\lambda({\bf p}) &= 0\\
+\Lambda_+(p)v_\lambda({\bf p}) &= 0
+\end{aligned}</script><h4 id="旋量场产生-湮灭算符"><a href="#旋量场产生-湮灭算符" class="headerlink" title="旋量场产生/湮灭算符"></a>旋量场产生/湮灭算符</h4><p>于是利用前一节的内容，就可以将旋量场进行模式展开：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\psi({\bf x}) &= \sum_{\lambda}\int \widetilde{ {\rm d}p} \left( b_{\lambda,\bf p} u_\lambda({\bf p}) {\rm e}^{ {\rm i}\bf p \cdot \bf x} + d^\dagger_{\lambda,\bf p} v_\lambda({\bf p}) {\rm e}^{ -{\rm i}\bf p \cdot \bf x} \right)\\
+\overline \psi({\bf x}) &= \sum_{\lambda}\int \widetilde{ {\rm d}p} \left( b^\dagger_{\lambda,\bf p} \overline u_\lambda({\bf p}) {\rm e}^{ -{\rm i}\bf p \cdot \bf x} + d_{\lambda,\bf p} \overline v_\lambda({\bf p}) {\rm e}^{ {\rm i}\bf p \cdot \bf x} \right)
+\end{aligned}</script><p>这些展开系数具体表达式为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+b_{\lambda,\bf p} &= \int{\rm d}^3x\ {\rm e}^{ {\rm i}p^\mu x_\mu}\ \overline u_\lambda({\bf p}) \gamma^0 \psi(x)\\
+d^\dagger_{\lambda,\bf p} &= \int{\rm d}^3x\ {\rm e}^{ -{\rm i}p^\mu x_\mu}\ \overline v_\lambda({\bf p}) \gamma^0 \psi(x)\\
+b^\dagger_{\lambda,\bf p} &= \int{\rm d}^3x\ {\rm e}^{ -{\rm i}p^\mu x_\mu}\ \overline \psi(x) \gamma^0 u_\lambda({\bf p})\\
+d_{\lambda,\bf p} &= \int{\rm d}^3x\ {\rm e}^{ {\rm i}p^\mu x_\mu}\ \overline \psi(x) \gamma^0 v_\lambda({\bf p})\\
+\end{aligned}</script><p>随着等时正则反对易关系将场提升为场算符，这四个系数自然也被提升为相应的两组产生/湮灭算符。它们满足反对易关系：</p>
+<script type="math/tex; mode=display">
+\left\{b_{\lambda,\bf p},b^\dagger_{\rho,\bf k}\right\} = \left\{d_{\lambda,\bf p},d^\dagger_{\rho,\bf k}\right\} = (2\pi)^3 2\omega_{\bf p} \delta_{\lambda\rho} \delta^{(3)}({\bf p-k})</script><p>其余对易子均为零。</p>
+<h4 id="旋量场的能、动量"><a href="#旋量场的能、动量" class="headerlink" title="旋量场的能、动量"></a>旋量场的能、动量</h4><p>不难得出，旋量场的能量和动量为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H =&\ \int{\rm d}^3x \left( \pi^\alpha \partial^0 \psi_\alpha - \mathscr L\right)\\
+=&\ \int {\rm d}^3x\ \overline\psi \left( -{\rm i}\gamma^i \partial_i + m \right) \psi\\
+=&\ \sum_\lambda \int \widetilde{ {\rm d}p}\ \omega_{\bf p} \big[ b^\dagger_{\lambda,\bf p} b_{\lambda,\bf p} + d^\dagger_{\lambda,\bf p} d_{\lambda,\bf p} \big]
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+{\bf P} =&\ -\int{\rm d}^3x \pi^\alpha \nabla \psi_\alpha\\
+=&\ -{\rm i}\int {\rm d}^3x\ \overline\psi \gamma^0 \nabla \psi\\
+=&\ \sum_\lambda \int \widetilde{ {\rm d}p}\ {\bf p} \big[ b^\dagger_{\lambda,\bf p} b_{\lambda,\bf p} + d^\dagger_{\lambda,\bf p} d_{\lambda,\bf p} \big]
+\end{aligned}</script><p>或者利用4-动量符号写为：</p>
+<script type="math/tex; mode=display">
+P^\mu = \sum_\lambda \int \widetilde{ {\rm d}p}\ p^\mu \big[ b^\dagger_{\lambda,\bf p} b_{\lambda,\bf p} + d^\dagger_{\lambda,\bf p} d_{\lambda,\bf p} \big]</script><h4 id="旋量场的角动量"><a href="#旋量场的角动量" class="headerlink" title="旋量场的角动量"></a>旋量场的角动量</h4><p>不同于标量场的角动量只是轨道角动量，对于旋量场，它的角动量还需要包含自旋角动量的部分；从另一个角度来说，每个产生湮灭算符，除了携带一定的能动量，还会携带一部分角动量，这对应于单粒子的自旋。</p>
+<p>但是因为角动量的叠加没有能动量那么简单，所以我们实际上无法简单地将场的角动量写为某些粒子占据数算符的和；因此要想确定产生湮灭算符携带的自旋，我们只能用角动量算符作用于一个确定的单粒子态，例如$b^\dagger_{\lambda,p{\bf z} }\ket{0}$，它表明一个动量方向为${\bf z}$，大小为$p$的单粒子态。</p>
+<p>角动量算符可以从前面的讨论中得到。经典旋量场的角动量是：</p>
+<script type="math/tex; mode=display">
+J^{\mu\nu} = \int{\rm d}^3x \left[ x^\mu T^{0\nu} - x^\nu T^{0\mu} - \frac{\rm i}{2}\pi^\alpha (\sigma^{\mu\nu})_\alpha^\beta \psi_\beta \right]</script><p>根据前面讨论过的内容，我们知道：</p>
+<script type="math/tex; mode=display">
+-{\rm i}(x^\mu \partial^\nu - x^\nu \partial^\mu)\psi_\alpha(x) + \frac{1}{2}(\sigma^{\mu\nu})_\alpha^\beta \psi_\beta(x) = [\psi_\alpha(x),J^{\mu\nu}]</script><p>取$J_3 = J^{12}$，并使其算符作用于前述单粒子态：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+J_3 \ket{b,\lambda,p{\bf z} } &= [J_3,b^\dagger_{\lambda,p{\bf z} }] \ket{0}\\
+&= \int {\rm d}^3x {\rm e}^{-{\rm i}p^\mu x_\mu}[J_3,\overline\psi(x)] \gamma^0 u_\lambda(p{\bf z}) \ket{0}\\
+&= \frac{1}{2} \int {\rm d}^3x {\rm e}^{-{\rm i}p^\mu x_\mu} \overline\psi \sigma^{12} \gamma^0 u_\lambda(p{\bf z}) \ket{0}
+\end{aligned}</script><p>将其中$\overline\psi$展开，并利用$\sigma^{12} = {\rm i}\gamma^1 \gamma^2$和Gordon恒等式，即可得到</p>
+<script type="math/tex; mode=display">
+J_3 b^\dagger_{\lambda,p{\bf z} }\ket{0} = \frac12 \lambda b^\dagger_{\lambda,p{\bf z} }\ket{0}</script><p>类似地，另一个产生算符的结果是：</p>
+<script type="math/tex; mode=display">
+J_3 d^\dagger_{\lambda,p{\bf z} }\ket{0} = \frac12 \lambda d^\dagger_{\lambda,p{\bf z} }\ket{0}</script><p>注意这里$\lambda = +,-$。于是我们就知道，$b/d^\dagger_{\lambda,p{\bf z} }\ket{0}$是$z$方向角动量$J_3$的本征态，并且都携带能量$\omega_{\bf p}$，动量${\bf p}$，以及${\bf z}$方向的自旋角动量$\pm1/2$；其中$b^\dagger_{+,p{\bf z} }\ket{0}$、$d^\dagger_{+,p{\bf z} }\ket{0}$有${\bf z}$方向自旋极化$+1/2$，$b^\dagger_{-,p{\bf z} }\ket{0}$、$d^\dagger_{-,p{\bf z} }\ket{0}$有${\bf z}$方向自旋极化$-1/2$。</p>
+<h3 id="旋量场的整体-rm-U-1-对称性"><a href="#旋量场的整体-rm-U-1-对称性" class="headerlink" title="旋量场的整体${\rm U}(1)$对称性"></a>旋量场的整体${\rm U}(1)$对称性</h3><p>旋量场同样具有整体${\rm U}(1)$对称性</p>
+<script type="math/tex; mode=display">
+\psi \to {\rm e}^{ {\rm i}\alpha} \psi\ ,\qquad \psi^\dagger \to \psi^\dagger {\rm e}^{ -{\rm i}\alpha}</script><p>其对应的Noether流：</p>
+<script type="math/tex; mode=display">
+j^\mu = \overline\psi \gamma^\mu \psi</script><p>守恒荷</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Q_{ {\rm U}(1)} &= \int {\rm d}^3x \overline\psi \gamma^\mu \psi\\
+&= \sum_\lambda \int \widetilde{ {\rm d}p} \big[ b^\dagger_{\lambda,\bf p} b_{\lambda,\bf p} - d^\dagger_{\lambda,\bf p} d_{\lambda,\bf p} \big]
+
+\end{aligned}</script><p>这里的性质，与复标量场的情况完全类似，于是在旋量场中，$b$型粒子和$d$型粒子也是互为反粒子。</p>
+<h3 id="螺旋度和手征"><a href="#螺旋度和手征" class="headerlink" title="螺旋度和手征"></a>螺旋度和手征</h3><h3 id="旋量场的离散对称性"><a href="#旋量场的离散对称性" class="headerlink" title="旋量场的离散对称性"></a>旋量场的离散对称性</h3><p>考虑旋量场在空间反射${\textsf P}$和时间反演${\textsf T}$变换下的行为。首先还是考虑产生湮灭算符的变换，注意到已经知道两个变换均将动量${\bf p}$变为$-{\bf p}$；另一方面，角动量${\bf J} = {\bf x}\times{\bf p}$，在空间反射${\textsf P}$下${\bf x}$和${\bf p}$均反向，于是角动量不变；但是时间反演${\textsf T}$下只有${\bf p}$反向，于是角动量${\bf J}$​也反向。总结为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal P^{-1} b_{s,\bf p} \mathcal P = \eta_{b,s}^* b_{s,-\bf p}\ ,&\quad \mathcal P^{-1} b^\dagger_{s,\bf p} \mathcal P = \eta_{b,s} b^\dagger_{s,-\bf p}\\
+\mathcal P^{-1} d^\dagger_{s,\bf p} \mathcal P = \eta_{d,s} d^\dagger_{s,-\bf p}\ ,&\quad \mathcal P^{-1} d_{s,\bf p} \mathcal P = \eta_{d,s}^* d_{s,-\bf p}
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\quad \mathcal T^{-1} b_{s,\bf p} \mathcal T = \zeta_{b,s}^* b_{-s,-\bf p}\ ,&\quad \mathcal T^{-1} b^\dagger_{s,\bf p} \mathcal T = \zeta_{b,s} b^\dagger_{-s,-\bf p}\\
+\mathcal T^{-1} d^\dagger_{s,\bf p} \mathcal T = \zeta_{d,s} d^\dagger_{-s,-\bf p}\ ,&\quad \mathcal T^{-1} d_{s,\bf p} \mathcal T = \zeta_{d,s}^* d_{-s,-\bf p}
+\end{aligned}</script><p>将之带入到场的模式展开式中，我们希望场$\phi(x)$、$\psi^\dagger(x)$正负频部分的变换相容，结合旋量关系：</p>
+<script type="math/tex; mode=display">
+\beta u_{s}({\bf p}) = u_{s}({\bf -p})\ ,\quad \beta v_{s}({\bf p}) = -v_{s}({\bf -p})</script><p>就有</p>
+<script type="math/tex; mode=display">
+</script><script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal P^{-1} a_{\bf k} \mathcal P = \eta_a^* a_{-\bf k}\ ,&\quad \mathcal P^{-1} a^\dagger_{\bf k} \mathcal P = \eta_a a^\dagger_{-\bf k}\\
+\mathcal P^{-1} b^\dagger_{\bf k} \mathcal P = \eta_b b^\dagger_{-\bf k}\ ,&\quad \mathcal P^{-1} b_{\bf k} \mathcal P = \eta_b^* b_{-\bf k}
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\quad \mathcal T^{-1} a_{\bf k} \mathcal T = \zeta_a^* a_{-\bf k}\ ,&\mathcal T^{-1} a^\dagger_{\bf k} \mathcal T = \zeta_a a^\dagger_{-\bf k}\\
+\mathcal T^{-1} b^\dagger_{\bf k} \mathcal T = \zeta_b b^\dagger_{-\bf k}\ ,&\quad \mathcal T^{-1} b_{\bf k} \mathcal T = \zeta_b^* b_{-\bf k}
+\end{aligned}</script><h3 id="旋量场的费曼传播子"><a href="#旋量场的费曼传播子" class="headerlink" title="旋量场的费曼传播子"></a>旋量场的费曼传播子</h3><p>类似前面的讨论，对于旋量场，我们研究的两点编时关联函数是：</p>
+<script type="math/tex; mode=display">
+\bra{0} T\{ \psi_\alpha(x) \overline \psi^\beta(y) \} \ket{0}</script><p>置于为什么具体取这样的形式，将会在LSZ约化公式中看到。注意到，由于旋量场算符是反对易的，因此需要修改此处编时算符的定义：</p>
+<script type="math/tex; mode=display">
+T\{ \psi_\alpha(x) \overline \psi^\beta(y) \} = \theta(x^0-y^0) \psi_\alpha(x) \overline \psi^\beta(y) - \theta(y^0-x^0) \overline \psi^\beta(y)  \psi_\alpha(x)</script><p>利用恒等式：</p>
+<script type="math/tex; mode=display">
+\theta(x^0-y^0)\int\widetilde{ {\rm d}p} {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} + \theta(y^0-x^0)\int\widetilde{ {\rm d}p} {\rm e}^{ {\rm i}p^\mu(x_\mu-y_\mu)} = -\int \frac{ {\rm d}^4p}{(2\pi)^4} \frac{ {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} }{p^2-m^2+{\rm i}\varepsilon}</script><p>结合场的模式展开，就得到</p>
+<script type="math/tex; mode=display">
+\bra{0} T\{ \psi_\alpha(x) \overline \psi^\beta(y) \} \ket{0} = {\rm i} \int \frac{ {\rm d}^4p}{(2\pi)^4} \frac{ \cancel p + m }{p^2-m^2+{\rm i}\varepsilon} {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)}</script><p>这就得到<strong>自由旋量场费曼传播子</strong>：</p>
+<script type="math/tex; mode=display">
+\widetilde S_F(p) = \frac{ \cancel p + m }{p^2 - m^2 + {\rm i}\epsilon} = \frac{1}{\cancel p - m + {\rm i}\epsilon}</script><p>它与两点编时关联函数的关系同样是</p>
+<script type="math/tex; mode=display">
+\bra{0} T\{ \psi_\alpha(x) \overline \psi^\beta(y) \} \ket{0} = {\rm i} S_F(x-y) = {\rm i} \int \frac{ {\rm d}^4p}{(2\pi)^4} \frac{ (\cancel p + m) {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} }{p^2-m^2+{\rm i}\varepsilon}</script><h2 id="阿贝尔规范场——电磁场"><a href="#阿贝尔规范场——电磁场" class="headerlink" title="阿贝尔规范场——电磁场"></a>阿贝尔规范场——电磁场</h2><p>在处理矢量场之前，首先来看一个较为特殊的例子：电磁场，它不是一般的矢量场而是规范矢量场，这意味着其中存在由于规范不变性所引入的多余自由度。在经典情况下这些自由度或许可以暂时忽略，但是在量子化这样的对象时，必须要区分规范矢量场当中的规范分量，因为它们会导致得到物理上多余的模式，这是必须要排除的。</p>
+<p>另一方面，作为规范矢量场，电磁场也是最简单的一种矢量场：它是${\rm U}(1)$规范场，是一种阿贝尔规范场，不会存在由非阿贝尔规范群所导致的许多额外困难，因而也是我们观察规范场量子化方案的一个足够简单的模型。</p>
+<h3 id="规范场的规范问题"><a href="#规范场的规范问题" class="headerlink" title="规范场的规范问题"></a>规范场的规范问题</h3><p>首先写出电磁场的拉格朗日量</p>
+<script type="math/tex; mode=display">
+\mathscr L = -\frac14 F^{\mu\nu}  F_{\mu\nu} = -\frac14 (\partial^\mu A^\nu - \partial^\nu A^\mu) (\partial_\mu A_\nu - \partial_\nu A_\mu)</script><p>对于电磁场，我们选取其广义坐标为规范势$A^\mu$。其运动方程是</p>
+<script type="math/tex; mode=display">
+\partial_\nu F^{\mu\nu} = (g^{\mu\nu}\partial^2 - \partial^\mu \partial^\nu ) A_\nu(x)</script><p>我们已经知道，对于如下的局域规范变换</p>
+<script type="math/tex; mode=display">
+A^\mu(x) \to A^\mu(x) + \partial^\mu \Gamma(x)</script><p>电磁场是不变的，其中$\Gamma(x)$是任意的标量函数。这意味着$A^\mu$中存在非物理的由度，它们不是真正的广义坐标，不对应广义动量。事实上：</p>
+<script type="math/tex; mode=display">
+\pi_\mu = \frac{\partial\mathscr L}{\partial(\partial_0 A^\mu)} = - F_{0\mu}</script><p>于是显然有，$\pi_0 = 0$，这导致如果我们仍要使用完整的$A^\mu$作为广义坐标，那么就无法对$A^0$规定正则对易或反对易关系，从而无法实现正则量子化。</p>
+<h3 id="库伦规范下的正则量子化"><a href="#库伦规范下的正则量子化" class="headerlink" title="库伦规范下的正则量子化"></a>库伦规范下的正则量子化</h3><h4 id="平面波解与极化矢量求和"><a href="#平面波解与极化矢量求和" class="headerlink" title="平面波解与极化矢量求和"></a>平面波解与极化矢量求和</h4><p>为消去这些自由度，需要固定规范，通过引入规范条件进行约束。在这里首先选取库伦规范条件：</p>
+<script type="math/tex; mode=display">
+A^0 = 0\ ,\quad \partial_i A^i = 0</script><p>此时$A^0 = 0$与$\pi_0 = 0$没有矛盾，量子化将仅对${\bf A}$进行。在此规范下，拉格朗日量可以写作</p>
+<script type="math/tex; mode=display">
+\mathcal L_{\rm Coulomb} = \frac12 \partial_0 A_i \partial^0 A^i - \frac12 \partial_j A_i \partial^j A^i</script><p>它给出的运动方程是</p>
+<script type="math/tex; mode=display">
+\partial^2 A_i = 0</script><p>这个方程仅仅关于3-矢量$A_i$。显然该方程有3-矢量的平面波解：</p>
+<script type="math/tex; mode=display">
+A_i(x) = \sum_{\lambda = \pm} \int \widetilde{ {\rm d}p} \left[ \epsilon^{(\lambda)*}_{i}({\bf p}) a_{\lambda,{\bf p} } {\rm e}^{ -{\rm i}p^\mu x_\mu } + \epsilon^{(\lambda)}_{i}({\bf p}) a^\dagger_{\lambda,{\bf p} } {\rm e}^{ {\rm i}p^\mu x_\mu } \right]</script><p>其中3-矢量：$\epsilon^{(\lambda)}_{i}({\bf p})$是<strong>极化矢量</strong>。</p>
+<p>类似于我们在旋量场的时候引入了旋量空间的4个基矢，一般地，对于矢量场$A_\mu({\bf x})$的傅里叶变换$\widetilde A_\mu({\bf p})$也引入基矢$\epsilon^{(\lambda)}_{\mu}({\bf p})$。展开式中，4-动量在壳：$p^2 = 0$，我们总是可以根据与$p^\mu$的关系来选取极化矢量，这样的选择通常具有物理意义。</p>
+<p>关于展开式中取$\lambda = \pm$，是因为在库伦规范下，$\widetilde A_0 = 0$，$p^i \widetilde A_i = 0$，因此$\widetilde A_i({\bf p})$实际上只有两个自由度，因此独立的极化矢量也只有两个，且均与3-波矢垂直：$p^i\epsilon^{(\lambda)}_i= 0$，我们将这两个独立极化矢量分别标记为$\lambda = \pm$。</p>
+<blockquote>
+<p>更多关于极化矢量，见附录。</p>
+</blockquote>
+<p>对于无质量的矢量场，总可以选取坐标系使得$p^\mu = (p^0 = |{\bf p}|,0,0,|{\bf p}|)$，此时可以选取极化矢量为</p>
+<script type="math/tex; mode=display">
+\epsilon^{(+)} = \frac{1}{\sqrt2}(1,-{\rm i},0)\ ,\quad \epsilon^{(-)} = \frac{1}{\sqrt2}(1,{\rm i},0)</script><p>分别代表两个垂直波矢方向的圆偏振自由度。有求和关系：</p>
+<script type="math/tex; mode=display">
+\epsilon^{(\lambda)}_i({\bf p}) \epsilon^{i(\lambda')*}({\bf p}) = \delta^{\lambda\lambda'}\ ,\quad \sum_{\lambda=\pm} \epsilon^{(\lambda)*}_i({\bf p}) \epsilon^{(\lambda)}_j({\bf p}) = \delta_{ij} - \frac{p_i p_j}{|\bf p|^2}</script><p>由此可以得到展开系数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a_{\lambda,{\bf p} } &= +{\rm i} \epsilon^{(\lambda)*}_i(p) \int{\rm d}^3x {\rm e}^{ {\rm i}p^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} A^i(x)\\
+a^\dagger_{\lambda,{\bf p} } &= -{\rm i} \epsilon^{(\lambda)}_i(p) \int{\rm d}^3x {\rm e}^{ -{\rm i}p^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} A^i(x)
+\end{aligned}</script><p>其中有对指标$i$的重复求和。</p>
+<h4 id="修正对易条件"><a href="#修正对易条件" class="headerlink" title="修正对易条件"></a>修正对易条件</h4><p>接下来在库伦规范下对电磁场正则量子化。此时所选取的广义坐标是$A^i$，对应的正则动量是$\Pi^i = \partial_0 A^i$，假设我们直接假定等时正则对易关系：</p>
+<script type="math/tex; mode=display">
+[A_i({\bf x}),\Pi_j({\bf y})] = {\rm i} \delta_{ij} \delta^{(3)}({\bf x-y})</script><p>对其作用$\partial^i_{\bf x}$就得到$[\partial^i_{\bf x} A_i({\bf x}),\Pi_j({\bf y})] = {\rm i} \partial_{j,{\bf x} } \delta^{(3)}({\bf x-y})$，等式右边不等于零。但是库伦规范要求约束条件$\partial_i A^i = 0$，$\partial_i \Pi^i = 0$。这说明正则对易关系与库伦规范是违背的。</p>
+<p>出现这一矛盾的本质原因是，在库伦规范下，$A$和$\Pi$都只有横场分量，纵场部分（波矢方向分量）均为零，因此显然是相互对易的。但上述简单的对易关系却假定三个分量全部满足对易关系，因此其中包含了多余的约束条件。为修正这个问题，引入投影算符：</p>
+<script type="math/tex; mode=display">
+P_{ij} = \delta_{ij} - \frac{\partial_i \partial_j}{\nabla^2}</script><p>它可以减除掉纵场方向的约束；于是库伦规范下的等时正则对易关系为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}[]
+[A_i({\bf x}),\Pi_j({\bf y})] &= {\rm i} P_{ij} \delta^{(3)}({\bf x-y}) = {\rm i} \delta^{(3)}({\bf x-y}) \left( \delta_{ij} - \frac{\partial_i \partial_j}{\nabla^2} \right)\\
+&= {\rm i} \int \frac{ {\rm d}^3p}{(2\pi)^3} {\rm e}^{ {\rm i}{\bf p}\cdot ({\bf x-y})}\left( \delta_{ij} - \frac{p_i p_j}{|{\bf p}|^2} \right)
+\end{aligned}</script><p>其余对易子均为零。这样等价于我们只对$A_i$的两个非零的横场分量做量子化。</p>
+<p>需要指出的是，这样的处理是不严格的。要严格解决库伦规范下正则量子化的问题，需要考虑有约束体系的正则量子化，或者采取其他适合正则量子化的规范。</p>
+<h4 id="产生-湮灭算符-1"><a href="#产生-湮灭算符-1" class="headerlink" title="产生/湮灭算符"></a>产生/湮灭算符</h4><p>假定场算符的等时正则对易关系后，就可以从模式展开得到产生湮灭算符：</p>
+<script type="math/tex; mode=display">
+[a_{\lambda,{\bf p} },a^\dagger_{\lambda',{\bf p'} }] = (2\pi) 2\omega_{\bf p} ^3\delta_{\lambda\lambda'} \delta^{(3)}({\bf p-p'})</script><p>其余对易子均为零。</p>
+<p>同样可以考虑电磁场的哈密顿量：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H =&\ \int{\rm d}^3x \left( \Pi^i \partial^0 A_i - \mathscr L\right)\\
+=&\ \frac12\int {\rm d}^3x\ \left(\partial_0 A_i \partial^0 A^i + \partial_j A_i \partial^j A^i \right)\\
+=&\ \sum_{\lambda=\pm} \int \widetilde{ {\rm d}p}\ \omega_{\bf p} a^\dagger_{\lambda,\bf p} a_{\lambda,\bf p}
+\end{aligned}</script><p>可见有一次，我们得到了产生湮灭算符$a^\dagger_{\lambda,\bf p}$、$a_{\lambda,\bf p}$的相似结果。</p>
+<p>此外运用上一节类似的方法：</p>
+<script type="math/tex; mode=display">
+-{\rm i}(x^j \partial^k - x^k \partial^j)A_i(x) + {\rm i}\left( g^{jl} g^{k}_{i} - g^{j}_{i} g^{kl} \right) A_l = [A_i(x),J^{jk}]</script><p>取$J_3 = J^{12}$算符作用于单粒子态可得到</p>
+<script type="math/tex; mode=display">
+J_3 a^\dagger_{\lambda,p{\bf z} }\ket{0} = \lambda a^\dagger_{\lambda,p{\bf z} }\ket{0}</script><p>可以得到电磁场的产生算符$a^\dagger_{\lambda,\bf p}$携带的自旋角动量是$\pm 1$。</p>
+<h4 id="库伦规范下的电磁场费曼传播子"><a href="#库伦规范下的电磁场费曼传播子" class="headerlink" title="库伦规范下的电磁场费曼传播子"></a>库伦规范下的电磁场费曼传播子</h4><p>库伦规范下，两点编时关联函数是：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\bra{0} T\{ A^i(x) A^j(y) \} \ket{0} \\
+=&\ \theta(x^0-y^0)\bra{0}A^i(x) A^j(y)\ket{0} + \theta(y^0-x^0)\bra{0}A^i(x) A^j(y)\ket{0}\\
+=&\ \theta(x^0-y^0) \sum_{\lambda \lambda'} \bra{0} \int \widetilde{ {\rm d}p} \left[ \epsilon^{i(\lambda)*}({\bf p}) a_{\lambda,{\bf p} } {\rm e}^{ -{\rm i}p^\mu x_\mu } \right]  \int \widetilde{ {\rm d}p'} \left[ \epsilon^{j(\lambda')}({\bf p}') a^\dagger_{\lambda',{\bf p}'} {\rm e}^{ {\rm i}p'^\mu x_\mu } \right] \ket{0}\\
+&+ ( (x,i) \longleftrightarrow (y,j) ) \\
+=&\ \theta(x^0-y^0) \sum_{\lambda} \int \widetilde{ {\rm d}p} \epsilon^{i(\lambda)*}({\bf p}) \epsilon^{j(\lambda)}({\bf p}) {\rm e}^{ -{\rm i}p^\mu (x_\mu-y_\mu) } + ( (x,i) \longleftrightarrow (y,j) )\\
+=&\ \theta(x^0-y^0) \int \widetilde{ {\rm d}p} \left( \delta^{ij} - \frac{p^i p^j}{|{\bf p}|^2} \right) {\rm e}^{ -{\rm i}p^\mu (x_\mu-y_\mu) } + ( (x,i) \longleftrightarrow (y,j) )\\
+=&\ {\rm i} \int \frac{ {\rm d}^4p}{(2\pi)^4} \frac{  {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} }{p^2+{\rm i}\varepsilon}\left( \delta^{ij} - \frac{p^i p^j}{|{\bf p}|^2} \right)\\
+=&\ {\rm i}\Delta^{ij}_F(x-y)
+\end{aligned}</script><p>即在库伦规范下，电磁场传播子是</p>
+<script type="math/tex; mode=display">
+\widetilde \Delta^{ij}_F(p)_{\rm Coulomb} = \frac{ 1 }{p^2+{\rm i}\varepsilon}\left( \delta^{ij} - \frac{p^i p^j}{|{\bf p}|^2} \right)</script><h3 id="费曼规范下的正则量子化"><a href="#费曼规范下的正则量子化" class="headerlink" title="费曼规范下的正则量子化"></a>费曼规范下的正则量子化</h3><p>库伦规范尽管可以通过修正对易关系来实现正则量子化，但是一个缺点是库伦规范并非洛伦兹协变的，因此得到的量子化理论也不是协变的。</p>
+<p>为获得协变理论，可以采用另一种协变规范，也就是保持运动方程不变：</p>
+<script type="math/tex; mode=display">
+\partial^2 A_\mu = 0</script><p>但是额外施加约束条件一些协变的约束条件。我们处理这种有约束条件的量子化常常使用拉格朗日乘子法，将其改写为</p>
+<script type="math/tex; mode=display">
+\mathscr L = -\frac14 F^{\mu\nu} F_{\mu\nu} - \frac{1}{2\xi} (\partial_\mu A^\mu)^2</script><p>这种处理也可以从更物理的角度来理解：由于协变条件下$A^0$非零，就也需要一个非零的正则动量$\pi^0$来与之满足对易关系，为此可以尝试给拉格朗日量加一项没有物理后果的项$\pi^0\neq 0$；另一方面，加入的这一项破坏了拉格朗日量原本的规范对称性，相当于选择了一个规范，因此这一项被称为“<strong>规范固定项</strong>”。</p>
+<p>后面将会看到，这一项的确不会造成”物理的”影响。如前所述，这一项的效果是相当于选取了一个规范，我们称之为<strong>$R_\xi$规范</strong>，意为“可重整$\xi$规范”。常用的$\xi$有$\xi = 0,1$。</p>
+<ul>
+<li>对于$\xi = 0$，对应于朗道规范；注意到此时由于任何非零的$\partial_\mu A^\mu$都会造成拉格朗日量的发散，因此$\xi = 0$还蕴含要求$\partial_\mu A^\mu = 0$，即朗道规范蕴含要求洛伦兹规范。</li>
+<li>对于$\xi = 1$，对应于费曼规范。</li>
+</ul>
+<p>但是费曼规范的形式和库伦规范或洛伦兹规范是非常不同的。从上一节可以看出，库伦规范下$k^i\epsilon^{(\lambda)}_i = 0$，即消除了纵向极化的自由度。但是费曼规范仍然允许纵场的存在，因此实际上没有完全确定规范自由度；仅凭费曼规范实际上无法从运动方程和边界条件完全确定电磁场。它的作用仅仅是取消了规范不变性带来的量子化难题，从这个意义上来讲，它不是严格的规范，而只是一种弱化的量子化条件。</p>
+<p>在费曼规范下，正则动量</p>
+<script type="math/tex; mode=display">
+\Pi_\mu = \frac{\partial\mathscr L}{\partial(\partial_0 A^\mu)} = -\partial_0 A_\mu - \partial_\mu A_0 - g_{\mu 0}\partial_\nu A^\nu</script><p>此时规定等时正则对易关系为：</p>
+<script type="math/tex; mode=display">
+[A_\mu({\bf x}),\Pi_\nu({\bf y})] = {\rm i} g_{\mu\nu} \delta^{(3)}({\bf x-y})</script><p>其余对易子均为零。</p>
+<h4 id="平面波解与极化矢量求和-1"><a href="#平面波解与极化矢量求和-1" class="headerlink" title="平面波解与极化矢量求和"></a>平面波解与极化矢量求和</h4><p>费曼规范下的场运动方程仍然是</p>
+<script type="math/tex; mode=display">
+\partial^2 A_\mu = 0</script><p>此时没有库伦规范的限制，需要考虑$A_\mu$的全部四个分量，其平面波解为：</p>
+<script type="math/tex; mode=display">
+A_\mu(x) = \sum_{\lambda = 0}^3 \int \widetilde{ {\rm d}p} \left[ \epsilon^{(\lambda)*}_{\mu}({\bf p}) a_{\lambda,{\bf p} } {\rm e}^{ -{\rm i}p^\mu x_\mu } + \epsilon^{(\lambda)}_{\mu}({\bf p}) a^\dagger_{\lambda,{\bf p} } {\rm e}^{ {\rm i}p^\mu x_\mu } \right]</script><p>此时有四个极化矢量，注意到对无质量矢量场总是可以取$p^\mu = (p^0 = |{\bf p}|,0,0,{\bf p})$，因此四个极化矢量可以取为：</p>
+<script type="math/tex; mode=display">
+\epsilon_\mu^{(0)} = \begin{bmatrix}1\\0\\0\\0\end{bmatrix}\quad
+\epsilon_\mu^{(1)} = \begin{bmatrix}0\\1\\0\\0\end{bmatrix}\quad
+\epsilon_\mu^{(2)} = \begin{bmatrix}0\\0\\1\\0\end{bmatrix}\quad
+\epsilon_\mu^{(3)} = \begin{bmatrix}0\\0\\0\\1\end{bmatrix}</script><p>我们将$\lambda = 0$称为标量极化，$\lambda = 1,2$称为横向矢量极化，$\lambda = 3$称为纵向矢量极化。其中，$\epsilon^{(1)}$和$\epsilon^{(2)}$分别代表两个垂直波矢方向的线极化自由度；这两者还可以等价地取为另外两个基矢：</p>
+<script type="math/tex; mode=display">
+\epsilon^{(\pm)} = \frac{1}{\sqrt 2}(\epsilon^{(1)}\mp\epsilon^{(2)})</script><p>分别代表两个圆偏振自由度，它们与前述库伦规范时剩余的两个极化矢量自由度是相同的。无论何种取法，四个极化矢量均满足求和关系：</p>
+<script type="math/tex; mode=display">
+\epsilon^{(\lambda)}_\mu({\bf p}) \epsilon^{\mu(\lambda')*}({\bf p}) = g^{\lambda\lambda'}\ ,\quad \sum_{\lambda\lambda'} g_{\lambda\lambda'} \epsilon^{(\lambda)*}_\mu({\bf p}) \epsilon^{(\lambda)}_\nu({\bf p}) = g_{\mu\nu}</script><p>它们其实就是极化矢量的正交性关系和完备性关系。两个式子都是协变的，即洛伦兹变换改变4-动量$p^\mu$时不会改变极化矢量的两个求和关系。</p>
+<p>由此得到展开系数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a_{\lambda,{\bf p} } &= +{\rm i} \sum_{\lambda'}g_{\lambda\lambda'}\epsilon^{(\lambda')*}_\mu(p) \int{\rm d}^3x {\rm e}^{ {\rm i}p^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} A^\mu (x)\\
+a^\dagger_{\lambda,{\bf p} } &= -{\rm i} \sum_{\lambda'}g_{\lambda\lambda'}\epsilon^{(\lambda')}_\mu(p) \int{\rm d}^3x {\rm e}^{ -{\rm i}p^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} A^\mu (x)
+\end{aligned}</script><h4 id="弱Lorentz条件与Gupta-Bleuler不定度规量子化"><a href="#弱Lorentz条件与Gupta-Bleuler不定度规量子化" class="headerlink" title="弱Lorentz条件与Gupta-Bleuler不定度规量子化"></a>弱Lorentz条件与Gupta-Bleuler不定度规量子化</h4><p>在这种情况下，可以假定场算符的等时正则对易关系为：</p>
+<script type="math/tex; mode=display">
+[A_\mu({\bf x}),\Pi_\nu({\bf y})] = {\rm i} g_{\mu\nu} \delta^{(3)}({\bf x-y})</script><p>其余对易子均为零。这就得到产生湮灭算符满足的对易关系是：</p>
+<script type="math/tex; mode=display">
+[a_{\lambda,{\bf p} },a^\dagger_{\lambda',{\bf p'} }] = -(2\pi) 2\omega_{\bf p} ^3 g_{\lambda\lambda'} \delta^{(3)}({\bf p-p'})</script><p>其余对易子均为零。但是这会导致另一个严重的问题：由于$g^{00}&gt;0$，因此这会导致</p>
+<script type="math/tex; mode=display">
+\bra{0} a_{0,{\bf p} } a^\dagger_{0,{\bf p} } \ket{0} < 0</script><p>也即若采取费曼规范，就会导致Hilbert空间中出现负模态，显然这些由标量极化激发的态$a^\dagger_{0,{\bf p} } \ket{0}$是非物理的。此外，矢量极化态则均为正模态。这种不一致性是来自于极化空间具有不定度规$g_{\lambda\lambda’}$。</p>
+<p>实际上除了标量极化态，Hilbert空间中还会出现其他非物理态，例如我们知道纵向矢量极化态实际上也是非物理的。从规范的角度来看也容易理解：费曼规范并没有完全确定所有的规范自由度，因此很多非物理的场构型也在量子化的过程中与物理的场构型一并被量子化，导致获得的Hilbert空间中包含了这些非物理的自由度。</p>
+<p>这些由于量子化时没有完全确定规范而被引入到理论中的非物理态，称之为<strong>鬼态</strong>；它们对应的场构型称之为<strong>鬼场</strong>。鬼场就对应着未被确定的规范自由度。为了得到物理态空间，需要将这些鬼态排除出去，获得Hilbert空间的子空间$\mathcal H_1$作为实际物理态空间。这一排除的过程实际就是对费曼规范所没有确定的这部分规范自由度做进一步的规范固定。</p>
+<p>为了排除鬼态，我们不得不再回顾那些能够完全确定规范自由度的规范条件，例如Lorentz规范条件$\partial_\mu A^\mu = 0$。但是它作为算符方程，实际上与刚刚得到的算符对易关系是不相容的。为了说明这一点，注意到在费曼规范下：</p>
+<script type="math/tex; mode=display">
+\Pi_0 = -g_{00}\partial_\nu A^\nu = - \partial_\nu A^\nu</script><p>若直接施加Lorentz规范条件会导致$\pi_0 = 0$，这再次与正则对易关系矛盾。这说明Lorentz条件虽然可以确定规范自由度，但对Hilbert空间的限制太强了。因此我们可以适当放宽要求，使其只在如下的平均意义上成立：</p>
+<script type="math/tex; mode=display">
+\bra{\rm Phy} \partial_\mu A^\mu \ket{\rm Phy} = 0</script><p>其中$\ket{\rm Phy}$是我们希望通过这一条件筛选出的物理态。这称为<strong>弱Lorentz条件</strong>，也就是不再要求$\partial_\mu A^\mu = 0$严格满足，而是$\partial_\mu A^\mu$在物理态上的期望为零即可。</p>
+<p>不妨把$A_\mu = A_\mu^{(+)} + A_\mu^{(-)}$拆成湮灭分量和产生分量两部分考虑，注意到$(A_\mu^{(-)})^\dagger = A_\mu^{(+)}$，因此要满足上式，就归结为：</p>
+<script type="math/tex; mode=display">
+\partial^\mu A_\mu^{(-)} \ket{\rm Phy} = 0 \quad {\rm or} \quad \partial^\mu A_\mu^{(+)} \ket{\rm Phy} = 0</script><p>但是注意到产生分量$A_\mu^{(-)}$种包含产生算符，不可能满足$\partial^\mu A_\mu^{(-)} \ket{\rm Phy} = 0$，至少作用于真空态非零。因此只能要求</p>
+<script type="math/tex; mode=display">
+\partial^\mu A_\mu^{(+)} \ket{\rm Phy} = 0</script><p>这称为<strong>Gupta-Bleuler条件</strong>。它是Lorentz条件的充分条件，尽管稍强于Lorentz条件，但仍然不违背费曼规范下的正则量子化。它也就是</p>
+<script type="math/tex; mode=display">
+\sum_{\lambda=0}^3 \int \widetilde{ {\rm d}x}\ {\rm e}^{-{\rm i}p^\mu x_\mu} p^\mu \epsilon^{(\lambda)*}_\mu({\bf p}) a_{\lambda,{\bf p} } \ket{\rm Phy} = 0</script><p>注意到对于横向极化，$p^\mu \epsilon_\mu^{(1,2)} = 0$，因此上式实际上蕴含着</p>
+<script type="math/tex; mode=display">
+(a_{0,{\bf p} } - a_{3,{\bf p} }) \ket{\rm Phy} = 0</script><p>等价于</p>
+<script type="math/tex; mode=display">
+\bra{\rm Phy} (a^\dagger_{0,{\bf p} } a_{0,{\bf p} } - a^\dagger_{3,{\bf p} } a_{3,{\bf p} } )\ket{\rm Phy} = 0</script><p>也就是说，只要满足弱Lorentz条件，那么在我们所筛选出的任意物理态$\ket{\rm Phy}$中，标量极化与纵向矢量极化就总是同时存在，且物理态所包含它们的数量总是相同。</p>
+<p>尽管两者分别没有物理意义，但是它们的贡献会在期望值的意义上相互抵消。这可以从物理态的能量、动量及其他可观测量的期望值来看出，标量极化与纵向矢量极化的贡献都相互抵消。这也论证了，费曼规范下结合弱Lorentz条件，的确可以实现协变的正则量子化。</p>
+<h4 id="R-xi-规范下的电磁场费曼传播子"><a href="#R-xi-规范下的电磁场费曼传播子" class="headerlink" title="$R_\xi$规范下的电磁场费曼传播子"></a>$R_\xi$规范下的电磁场费曼传播子</h4><p>费曼规范下计算电磁场传播子，与库伦规范的区别仅在于极化矢量求和$\sum_\lambda \epsilon^{(\lambda)*}_\mu \epsilon^{(\lambda)}_\nu$这一部分。完全类似的过程，可以得到</p>
+<script type="math/tex; mode=display">
+\widetilde \Delta^{\mu\nu}_F(p)_{\rm Feynman} = \frac{ -g^{\mu\nu} }{p^2+{\rm i}\varepsilon}</script><p>更一般地，若是一开始在$R_\xi$规范中不指定$\xi$的取值，那么可以得到任意规范下相应的传播子为：</p>
+<script type="math/tex; mode=display">
+\widetilde \Delta^{\mu\nu}_F(p)_{R_\xi} = \frac{ -1 }{p^2+{\rm i}\varepsilon} \left[g^{\mu\nu} - (1-\alpha)\frac{ p^{\mu} p^{\nu} }{ p^2+{\rm i}\varepsilon} \right]</script><p>常用的规范还有$\alpha = 0$的朗道规范：</p>
+<script type="math/tex; mode=display">
+\widetilde \Delta^{\mu\nu}_F(p)_{\rm Landau} = \frac{ -1 }{p^2+{\rm i}\varepsilon} \left[g^{\mu\nu} - \frac{ p^{\mu} p^{\nu} }{ p^2+{\rm i}\varepsilon} \right]</script><p>虽然电磁场的传播子依赖于具体规范的选择$\alpha$，但实际上物理可观测量的结果是与之无关的。简单来说，这是因为规范场总是由于其他外场要保持规范不变性而引入，因此规范场$A_\mu$总与外源$j^\mu$相联系。只要$j^\mu$为守恒流$\partial_\mu j^\mu = 0$，动量空间中就是$p_\mu j^\mu = 0$，那么在与之耦合的时候，电磁场传播子当中$p_\mu p_\nu$项就不会有贡献，最终可观测量期望值仍与$\alpha$无关。</p>
+<h3 id="电磁场的离散对称性"><a href="#电磁场的离散对称性" class="headerlink" title="电磁场的离散对称性"></a>电磁场的离散对称性</h3><h2 id="有质量矢量场"><a href="#有质量矢量场" class="headerlink" title="有质量矢量场"></a>有质量矢量场</h2><p>现在考虑有质量的矢量场的情况。其拉格朗日量为</p>
+<script type="math/tex; mode=display">
+\mathscr L = -\frac14 F_{\mu\nu}  F^{\mu\nu} + \frac12 m^2 A_\mu A^\mu</script><p>可以得到其运动方程为Proca方程：</p>
+<script type="math/tex; mode=display">
+\partial_\mu F^{\mu\nu} + m^2 A^\nu = 0</script><p>注意到Proca方程可以给出：</p>
+<script type="math/tex; mode=display">
+0 = \partial_\nu (\partial_\mu F^{\mu\nu} + m^2 A^\nu) = \partial_\nu \partial_\mu F^{\mu\nu} + m^2 \partial_\nu A^\nu = m^2 \partial_\nu A^\nu</script><p>对于有质量矢量场，$m \neq 0$的条件就会自然给出矢量场需要满足的条件：</p>
+<script type="math/tex; mode=display">
+\partial_\mu A^\mu = 0</script><p>可见Lorentz条件对于无质量的规范矢量场来说，只是一个可选的规范条件，但对于有质量矢量场来说则是必定满足的性质。</p>
+<h3 id="平面波解与极化矢量求和-2"><a href="#平面波解与极化矢量求和-2" class="headerlink" title="平面波解与极化矢量求和"></a>平面波解与极化矢量求和</h3><p>有质量矢量场不存在规范自由度，要表示协变方程$\partial_\mu F^{\mu\nu} + m^2 A^\nu = 0$的平面波解，需要四个独立的极化矢量：</p>
+<script type="math/tex; mode=display">
+A_\mu(x) = \sum_{\lambda} \int \widetilde{ {\rm d}p} \left[ \epsilon^{(\lambda)}_{\mu}({\bf p}) a_{\lambda,{\bf p} } {\rm e}^{ -{\rm i}p^\mu x_\mu } + \epsilon^{(\lambda)*}_{\mu}({\bf p}) a^\dagger_{\lambda,{\bf p} } {\rm e}^{ {\rm i}p^\mu x_\mu } \right]</script><p>四个极化矢量也满足正交性关系和完备性关系</p>
+<script type="math/tex; mode=display">
+\epsilon^{(\lambda)}_\mu({\bf p}) \epsilon^{\mu(\lambda')*}({\bf p}) = g^{\lambda\lambda'}\ ,\quad \sum_{\lambda\lambda'} g_{\lambda\lambda'} \epsilon^{(\lambda)*}_\mu({\bf p}) \epsilon^{(\lambda)}_\nu({\bf p}) = g_{\mu\nu}</script><p>注意到$\partial_\mu A^\mu = 0$在动量空间给出</p>
+<script type="math/tex; mode=display">
+p^\mu \epsilon_\mu^{(\lambda)} = 0</script><p>因此真正描述有质量矢量场的极化矢量必须满足上述的<strong>四维横向条件</strong>。 但与一个确定的4-矢量$p^\mu$正交的独立4-矢量只有三个，这意味着即便不存在规范自由度，矢量场$A^\mu$的四个极化状态中也只有三个描述物理的极化状态。</p>
+<p>四个极化矢量中有一个类时矢量$\epsilon_\mu^{(t)}$和三个类空矢量；但是注意到有质量矢量场的4-矢量$p^\mu$一定是类时的，事实上总可以取$p^\mu = (m,{\bf 0})$，而类时极化矢量$\epsilon_\mu^{(t)}$一定有类时分量，从而$p^\mu\epsilon_\mu^{(t)}\neq 0$；且该式洛伦兹不变，因此在任何参考系中类时极化矢量均不满足四维横向条件。</p>
+<p>因此有结论：$A_\mu$的四个极化中，描述有质量物理态的是三个矢量极化态，而标量极化态是非物理的。一般常用的一种极化矢量取法是：类时矢量$\epsilon_\mu^{(t)}$取为与$p^\mu$平行；一个类空极化矢量$\epsilon_\mu^{(0)}$取为其空间分量与动量3-矢量${\bf p}$平行，时间分量由四维横向条件决定，称为纵向极化矢量；其余两个类空极化矢量$\epsilon_\mu^{(\pm)}$则在由它们两者决定的二维平面内取正交矢量即可，它们均与${\bf p}$正交，称为横向极化矢量：</p>
+<script type="math/tex; mode=display">
+\epsilon_\mu^{(t)} = \frac1m\begin{bmatrix}p^0\\{\bf p}\end{bmatrix}\quad
+\epsilon_\mu^{(+)} = \frac{1}{\sqrt2 |{\bf p}| |{\bf p}_{\rm T}|}\begin{bmatrix}0\\ p^1p^3-{\rm i}p^2|{\bf p}| \\ p^2p^3+{\rm i}p^1|{\bf p}| \\ \end{bmatrix}\quad
+\epsilon_\mu^{(-)} = \frac{1}{\sqrt2 |{\bf p}| |{\bf p}_{\rm T}|}\begin{bmatrix}0\\ p^1p^3+{\rm i}p^2|{\bf p}| \\ p^2p^3-{\rm i}p^1|{\bf p}| \\ \end{bmatrix}\quad
+\epsilon_\mu^{(0)} = \frac{1}{m|{\bf p}|}\begin{bmatrix}|{\bf p}|^2\\p^0{\bf p}\end{bmatrix}</script><p>在类时分量与$p^\mu$平行的约定下，三个物理的极化矢量满足求和关系：</p>
+<script type="math/tex; mode=display">
+\sum_{\lambda = 0,\pm} \epsilon_\mu^{(\lambda)*} \epsilon_\nu^{(\lambda)} = - \sum_{i=1}^3 g_{ii}\epsilon_\mu^{(i)*} \epsilon_\nu^{(i)} = -g_{\mu\nu} + g_{tt}\epsilon_\mu^{(t)*} \epsilon_\nu^{(t)} = -g_{\mu\nu} + \frac{p_\mu p_\nu}{|{\bf p|} }</script><script type="math/tex; mode=display">
+\epsilon^{(\lambda)}_\mu({\bf p}) \epsilon^{\mu(\lambda')*}({\bf p}) = -\delta^{\lambda\lambda'}</script><p>之所以这样标记$\lambda$，是因为这样定义的三个类空极化矢量恰好分别对应了有质量矢量粒子的三个螺旋度：$+1$，$0$，$-1$。可见相比于无质量矢量场，有质量矢量场多出一个$0$螺旋度态，对应于纵向极化。此外，$\lambda = \pm$的两个极化矢量分别表示右、左旋圆极化模式，它们也可以线性组合得到线极化矢量。</p>
+<h3 id="产生-湮灭算符-2"><a href="#产生-湮灭算符-2" class="headerlink" title="产生/湮灭算符"></a>产生/湮灭算符</h3><p>对于有质量矢量场，由于其本身就要求$\partial_\mu A^\mu = 0$从而减少一个自由度，我们可以只对三个物理的自由度左正则量子化，其等时正则对易关系形式比较直接：</p>
+<script type="math/tex; mode=display">
+[A_\mu({\bf x}),\Pi_\nu({\bf y})] = {\rm i} g_{\mu\nu} \delta^{(3)}({\bf x-y})</script><p>其余对易子均为零。</p>
+<p>立即可以从模式展开得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a_{\lambda,{\bf p} } &= +{\rm i} \sum_{\lambda'}g_{\lambda\lambda'}\epsilon^{(\lambda')*}_\mu(p) \int{\rm d}^3x {\rm e}^{ {\rm i}p^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} A^\mu (x)\\
+a^\dagger_{\lambda,{\bf p} } &= -{\rm i} \sum_{\lambda'}g_{\lambda\lambda'}\epsilon^{(\lambda')}_\mu(p) \int{\rm d}^3x {\rm e}^{ -{\rm i}p^\mu x_\mu} \overset{\leftrightarrow}{\partial^0} A^\mu (x)
+\end{aligned}</script><p>它们满足的对易关系为</p>
+<script type="math/tex; mode=display">
+[a_{\lambda,{\bf p} },a^\dagger_{\lambda',{\bf p'} }] = (2\pi) 2\omega_{\bf p} ^3\delta_{\lambda\lambda'} \delta^{(3)}({\bf p-p'})</script><p>其余对易子均为零。它们就是有质量矢量场的产生/湮灭算符；不难证明，$a^\dagger_{\lambda,{\bf p} }$携带的角动量有三种情况：$\lambda = +1，0,-1$。</p>
+<h3 id="有质量矢量场的费曼传播子"><a href="#有质量矢量场的费曼传播子" class="headerlink" title="有质量矢量场的费曼传播子"></a>有质量矢量场的费曼传播子</h3><p>有质量矢量场传播子的推导略微复杂，这里直接给出结果：</p>
+<script type="math/tex; mode=display">
+\bra{0} T\{ A^\mu(x) A^\nu(y) \} \ket{0} = {\rm i} \int \frac{ {\rm d}^4p}{(2\pi)^4} \frac{  {\rm e}^{-{\rm i}p^\mu(x_\mu-y_\mu)} }{p^2-m^2+{\rm i}\varepsilon}\left( -g^{\mu\nu} + \frac{p^\mu p^\nu}{m^2} \right) - \frac{\rm i}{m}g^{\mu0}g^{\nu0}\delta^{(4)}(x-y)</script><p>其第一项是协变的，但是出现了第二项的非协变项。所幸这一项在微扰论中的贡献可以被相互作用哈密顿量中的一个非协变项所精确抵消，从而使理论整体仍然是协变的。因此在计算中，可以略去这一非协变项不写：</p>
+<script type="math/tex; mode=display">
+\widetilde\Delta_F^{\mu\nu}(p) = \frac{  -{\rm i} }{p^2-m^2+{\rm i}\varepsilon}\left( g^{\mu\nu} - \frac{p^\mu p^\nu}{m^2} \right)</script><h2 id="非阿贝尔规范场"><a href="#非阿贝尔规范场" class="headerlink" title="非阿贝尔规范场"></a>非阿贝尔规范场</h2><p>对于更一般的非阿贝尔规范场，由于其场本身与自己就存在非对易的性质，在此之上难以构造合适的正则对易关系，从而几乎不可能进行正则量子化。对这类型的场需要路径积分量子化。</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="狄拉克方程解"><a href="#狄拉克方程解" class="headerlink" title="狄拉克方程解"></a>狄拉克方程解</h2><h2 id="极化矢量"><a href="#极化矢量" class="headerlink" title="极化矢量"></a>极化矢量</h2><script type="math/tex; mode=display">
+\Phi(x) = \sum_{\lambda} \int \widetilde{ {\rm d}p} \left[ \eta^{(\lambda)}({\bf p}) a_{\lambda,{\bf p} } {\rm e}^{ -{\rm i}p^\mu x_\mu } + \eta^{(\lambda)*}({\bf p}) a^\dagger_{\lambda,{\bf p} } {\rm e}^{ {\rm i}p^\mu x_\mu } \right]</script><script type="math/tex; mode=display">
+\widetilde\Delta_F = \frac{\rm i}{p^2-m^2+{\rm i}\epsilon} \sum_\lambda \eta^{(\lambda)}\eta^{(\lambda)*}</script></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/QFT/QFT-Chap-2.html">https://papaya-z.github.io/post/QFT/QFT-Chap-2.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a><a class="post-meta__tags" href="/tags/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E8%AE%A1%E5%88%92/">木瓜数学物理计划</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/ClassicalFT/ClassicalFT-Chap-3.html" title="经典场论 Chap.3：Yang-Mills规范场论基础"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">经典场论 Chap.3：Yang-Mills规范场论基础</div></div></a></div><div class="next-post pull-right"><a href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">量子场论 Chap.3：场量子化：路径积分方法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-02</div><div class="title">量子场论 Chap.3：场量子化：路径积分方法</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">正则量子化方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">场的正则量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E6%97%B6%E6%AD%A3%E5%88%99%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text">等时正则对易关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E5%8A%A8%E9%87%8F%E4%B8%8E%E8%BF%90%E5%8A%A8%E6%96%B9%E7%A8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">能动量与运动方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E7%9A%84%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">场的二次量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E4%B8%8D%E5%8F%98%E6%B5%8B%E5%BA%A6"><span class="toc-number">1.3.1.</span> <span class="toc-text">洛伦兹不变测度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E5%B1%95%E5%BC%80"><span class="toc-number">1.3.2.</span> <span class="toc-text">模式展开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F-%E6%B9%AE%E7%81%AD%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.3.</span> <span class="toc-text">产生&#x2F;湮灭算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E5%9C%BA%E8%B4%B9%E6%9B%BC%E4%BC%A0%E6%92%AD%E5%AD%90"><span class="toc-number">1.4.</span> <span class="toc-text">自由场费曼传播子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%B2%92%E5%AD%90%E6%80%81%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="toc-number">1.4.1.</span> <span class="toc-text">单粒子态的传播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E4%BC%A0%E6%92%AD%E5%AD%90%E7%9A%84%E6%AD%A3%E5%88%99%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">导出传播子的正则方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%8D%E8%AE%BA%E5%9B%A0%E6%9E%9C%E6%80%A7"><span class="toc-number">1.4.3.</span> <span class="toc-text">再论因果性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">1.5.</span> <span class="toc-text">离散对称性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B%E5%9C%BA%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">各种类型场的正则量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%A0%87%E9%87%8F%E5%9C%BA"><span class="toc-number">2.1.</span> <span class="toc-text">复标量场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%A0%87%E9%87%8F%E5%9C%BA%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">2.1.1.</span> <span class="toc-text">复标量场的正则量子化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%A0%87%E9%87%8F%E5%9C%BA%E7%9A%84%E6%95%B4%E4%BD%93-rm-U-1-%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.1.2.</span> <span class="toc-text">复标量场的整体${\rm U}(1)$对称性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%A0%87%E9%87%8F%E5%9C%BA%E7%9A%84%E8%B4%B9%E6%9B%BC%E4%BC%A0%E6%92%AD%E5%AD%90"><span class="toc-number">2.1.3.</span> <span class="toc-text">复标量场的费曼传播子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%A0%87%E9%87%8F%E5%9C%BA%E7%9A%84%E7%A6%BB%E6%95%A3%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.1.4.</span> <span class="toc-text">复标量场的离散对称性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA"><span class="toc-number">2.2.</span> <span class="toc-text">旋量场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">2.2.1.</span> <span class="toc-text">旋量场的正则量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E8%A7%A3%E4%B8%8E%E6%97%8B%E9%87%8F%E6%B1%82%E5%92%8C"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">平面波解与旋量求和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA%E4%BA%A7%E7%94%9F-%E6%B9%AE%E7%81%AD%E7%AE%97%E7%AC%A6"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">旋量场产生&#x2F;湮灭算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA%E7%9A%84%E8%83%BD%E3%80%81%E5%8A%A8%E9%87%8F"><span class="toc-number">2.2.1.3.</span> <span class="toc-text">旋量场的能、动量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA%E7%9A%84%E8%A7%92%E5%8A%A8%E9%87%8F"><span class="toc-number">2.2.1.4.</span> <span class="toc-text">旋量场的角动量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA%E7%9A%84%E6%95%B4%E4%BD%93-rm-U-1-%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.2.2.</span> <span class="toc-text">旋量场的整体${\rm U}(1)$对称性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9E%BA%E6%97%8B%E5%BA%A6%E5%92%8C%E6%89%8B%E5%BE%81"><span class="toc-number">2.2.3.</span> <span class="toc-text">螺旋度和手征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA%E7%9A%84%E7%A6%BB%E6%95%A3%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.2.4.</span> <span class="toc-text">旋量场的离散对称性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA%E7%9A%84%E8%B4%B9%E6%9B%BC%E4%BC%A0%E6%92%AD%E5%AD%90"><span class="toc-number">2.2.5.</span> <span class="toc-text">旋量场的费曼传播子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BF%E8%B4%9D%E5%B0%94%E8%A7%84%E8%8C%83%E5%9C%BA%E2%80%94%E2%80%94%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="toc-number">2.3.</span> <span class="toc-text">阿贝尔规范场——电磁场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E5%9C%BA%E7%9A%84%E8%A7%84%E8%8C%83%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.1.</span> <span class="toc-text">规范场的规范问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%93%E4%BC%A6%E8%A7%84%E8%8C%83%E4%B8%8B%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">2.3.2.</span> <span class="toc-text">库伦规范下的正则量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E8%A7%A3%E4%B8%8E%E6%9E%81%E5%8C%96%E7%9F%A2%E9%87%8F%E6%B1%82%E5%92%8C"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">平面波解与极化矢量求和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%AD%A3%E5%AF%B9%E6%98%93%E6%9D%A1%E4%BB%B6"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">修正对易条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F-%E6%B9%AE%E7%81%AD%E7%AE%97%E7%AC%A6-1"><span class="toc-number">2.3.2.3.</span> <span class="toc-text">产生&#x2F;湮灭算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%93%E4%BC%A6%E8%A7%84%E8%8C%83%E4%B8%8B%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA%E8%B4%B9%E6%9B%BC%E4%BC%A0%E6%92%AD%E5%AD%90"><span class="toc-number">2.3.2.4.</span> <span class="toc-text">库伦规范下的电磁场费曼传播子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B9%E6%9B%BC%E8%A7%84%E8%8C%83%E4%B8%8B%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">2.3.3.</span> <span class="toc-text">费曼规范下的正则量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E8%A7%A3%E4%B8%8E%E6%9E%81%E5%8C%96%E7%9F%A2%E9%87%8F%E6%B1%82%E5%92%8C-1"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">平面波解与极化矢量求和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B1Lorentz%E6%9D%A1%E4%BB%B6%E4%B8%8EGupta-Bleuler%E4%B8%8D%E5%AE%9A%E5%BA%A6%E8%A7%84%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">弱Lorentz条件与Gupta-Bleuler不定度规量子化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#R-xi-%E8%A7%84%E8%8C%83%E4%B8%8B%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA%E8%B4%B9%E6%9B%BC%E4%BC%A0%E6%92%AD%E5%AD%90"><span class="toc-number">2.3.3.3.</span> <span class="toc-text">$R_\xi$规范下的电磁场费曼传播子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E7%A6%BB%E6%95%A3%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.3.4.</span> <span class="toc-text">电磁场的离散对称性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E8%B4%A8%E9%87%8F%E7%9F%A2%E9%87%8F%E5%9C%BA"><span class="toc-number">2.4.</span> <span class="toc-text">有质量矢量场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E8%A7%A3%E4%B8%8E%E6%9E%81%E5%8C%96%E7%9F%A2%E9%87%8F%E6%B1%82%E5%92%8C-2"><span class="toc-number">2.4.1.</span> <span class="toc-text">平面波解与极化矢量求和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F-%E6%B9%AE%E7%81%AD%E7%AE%97%E7%AC%A6-2"><span class="toc-number">2.4.2.</span> <span class="toc-text">产生&#x2F;湮灭算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E8%B4%A8%E9%87%8F%E7%9F%A2%E9%87%8F%E5%9C%BA%E7%9A%84%E8%B4%B9%E6%9B%BC%E4%BC%A0%E6%92%AD%E5%AD%90"><span class="toc-number">2.4.3.</span> <span class="toc-text">有质量矢量场的费曼传播子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E9%98%BF%E8%B4%9D%E5%B0%94%E8%A7%84%E8%8C%83%E5%9C%BA"><span class="toc-number">2.5.</span> <span class="toc-text">非阿贝尔规范场</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%84%E6%8B%89%E5%85%8B%E6%96%B9%E7%A8%8B%E8%A7%A3"><span class="toc-number">3.1.</span> <span class="toc-text">狄拉克方程解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%8C%96%E7%9F%A2%E9%87%8F"><span class="toc-number">3.2.</span> <span class="toc-text">极化矢量</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img src="/img/cohen/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料">Cohen量子力学Chap.5补充材料</a><time datetime="2024-01-08T08:33:10.000Z" title="发表于 2024-01-08 16:33:10">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</a><time datetime="2024-01-07T13:54:42.000Z" title="发表于 2024-01-07 21:54:42">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.11：定态微扰理论"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论">Cohen量子力学Chap.11：定态微扰理论</a><time datetime="2024-01-07T08:09:59.000Z" title="发表于 2024-01-07 16:09:59">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.16：场算符"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符">Cohen量子力学Chap.16：场算符</a><time datetime="2023-11-10T11:16:43.000Z" title="发表于 2023-11-10 19:16:43">2023-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.14：全同粒子体系"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系">Cohen量子力学Chap.14：全同粒子体系</a><time datetime="2023-11-07T05:29:29.000Z" title="发表于 2023-11-07 13:29:29">2023-11-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
     getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
