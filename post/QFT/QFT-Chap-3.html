@@ -43,7 +43,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-11-03 18:12:15'
+  postUpdate: '2024-01-21 10:32:44'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -141,7 +141,7 @@
       }
       detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">量子场论 Chap.3：场量子化：路径积分方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-02T07:43:11.000Z" title="发表于 2022-11-02 15:43:11">2022-11-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-03T10:12:15.528Z" title="更新于 2023-11-03 18:12:15">2023-11-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">426</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="量子场论 Chap.3：场量子化：路径积分方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/QFT/QFT-Chap-3.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">量子场论 Chap.3：场量子化：路径积分方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-08T07:43:11.000Z" title="发表于 2024-01-08 15:43:11">2024-01-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-21T02:32:44.107Z" title="更新于 2024-01-21 10:32:44">2024-01-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%8A%84%E4%B9%A6%E8%AE%A1%E5%88%92/">木瓜数学物理抄书计划</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%8A%84%E4%B9%A6%E8%AE%A1%E5%88%92/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">10k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>41分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="量子场论 Chap.3：场量子化：路径积分方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/QFT/QFT-Chap-3.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
 <blockquote>
 <p><strong>Refrence</strong></p>
 </blockquote>
@@ -152,16 +152,380 @@ S.Weinberg: The Quantum Theory of Field (Volume 1)
 刘川: 量子场论
 郑汉青：量子场论（上）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h1 id="路径积分"><a href="#路径积分" class="headerlink" title="路径积分"></a>路径积分</h1><p>首先考虑在非相对论性量子力学中，一维运动粒子的哈密顿量</p>
+<p>在量子力学中，除了通过将物理量算符化而得到量子理论的所谓正则量子化方法之外，还有另一种等价的量子化方法：费曼路径积分量子化。在量子场论中也是如此，我们同样可以利用路径积分的方法来得到一个量子场论。</p>
+<h1 id="为什么需要路径积分？"><a href="#为什么需要路径积分？" class="headerlink" title="为什么需要路径积分？"></a>为什么需要路径积分？</h1><h2 id="再顾量子化"><a href="#再顾量子化" class="headerlink" title="再顾量子化"></a>再顾量子化</h2><p>经典理论与量子理论最大的区别是什么？</p>
+<p>经典理论相信体系的物理状态总可以由一组动力学坐标（拉格朗日力学：广义坐标与广义速度；哈密顿力学：正则坐标与正则动量）所唯一确定，这组坐标构成一个空间（拉格朗日力学：位形-速度空间；哈密顿力学：相空间），任何时刻体系的状态就是其中的一个确定的点；从一个确定的态出发，经过一定的演化，经典理论能够确定地预测其演化的结果，演化过程就是由经典运动方程所决定的状态空间中的一条确定的曲线。</p>
+<p>而量子理论则会对于体系一个确定的初态，给出若干可能的演化结果以及分别处于不同结果的<u>概率</u>；并且更进一步地，量子理论还总是允许系统处于若干态的所谓<u>叠加态</u>。于是我们用来描述体系可能的物理态所构成空间的是Hilbert空间，对物理态的描述不再只是一个点，而是一个矢量：态矢量。采用Hilbert空间来描述是符合量子力学基本观念的：一方面它作为线性空间，矢量的线性组合能够描述态的叠加性，另一方面它作为内积空间，态之间的内积能够描述概率。而量子态的演化，就是发生在这个Hilbert空间上的幺正变换。</p>
+<p>于是构建一个量子理论的第一步，就是要确定它的Hilbert空间。在这样看来，“量子化”的意义也就明确了：我们当然可以第一性地从零出发构造量子理论，但是要搞清楚一个量子理论的Hilbert空间是什么、其上的幺正演化是什么，不是简单的问题。但是一个方便的方法是<u>从经典理论出发，利用它的经典动力学坐标来构造一个Hilbert空间，使不同经典动力学坐标所对应的态矢量之间是相互正交的；并且借助经典动力学方程，来得到Hilbert空间上的幺正演化动力学。</u></p>
+<p>所以无论是前一章讨论的正则量子化，还是其他量子化方法，都是遵循以上精神，从经典力学“借来”量子的结论。但是经过前面的讨论，我们已经知道，所谓正则量子化方法其实仅仅借鉴了经典的哈密顿正则理论；那么理应存在对应于经典拉格朗日力学的的量子化方法，其实这就是费曼路径积分量子化。</p>
+<p>对于量子场论，我们要研究其在两个时刻的两个构型之间演化的振幅，这看起来是显式破坏洛伦兹协变性的，因为这意味着要单独将时间维度拿出来看，这一点已经在之前的讨论中涉及到了；但实际上将会看到，最终得到的结果仍然是洛伦兹不变的。</p>
+<h2 id="场的量子化"><a href="#场的量子化" class="headerlink" title="场的量子化"></a>场的量子化</h2><p>所谓场论，就是广义坐标取为时空中的场$\phi(x)$，并按照一定的动力学演化的理论。按照前述量子化精神，</p>
+<h1 id="路径积分原理"><a href="#路径积分原理" class="headerlink" title="路径积分原理"></a>路径积分原理</h1><blockquote>
+<p>对于一个物理体系，若$t_i$时刻其处于广义坐标为$q_i$的态上，那么在$t_f$时刻，体系演化到$q_f$的态的概率幅是：</p>
 <script type="math/tex; mode=display">
-\hat H(t) = \frac{\hat p^2}{2m}+V(\hat x,t)</script><p>考虑初态$|i(t_i)\rangle = |x_i\rangle$与末态$\langle f(t_f)| = \langle x_f|$分别是局域于两个时空点处的位置本征态，表明在相应的时刻测量位置时确定处于这两点的粒子态；我们希望得到从初态到末态的<strong>传播子</strong>，即：</p>
+\braket{q_f,t_f}{q_i,t_i} = \sum_{
+\begin{matrix}
+{\rm all\ possible\ paths\ } q(t)\\
+{\rm satisfies\ }q(t_i) = q_i,\ q(t_f) = q_f
+\end{matrix}
+}
+\exp{\left( {\rm i}S[q(t)] \right)}</script></blockquote>
+<p>这就是路径积分量子化的基本原理，它认为在体系两个构型之间的量子传播振幅，可以视为两个构型之间全部可能的路径以相因子$\exp{\left( {\rm i}S\right)}$叠加的结果，其中$S[q(t)]$是这条路径的作用量。</p>
+<p>可以看到它与经典力学的区别：经典力学认为，在全部可能的路径之中，仅有一条路径是“经典路径”，它就是唯一真实的演化，对任何物理量的预言也只需要计算这一条经典路径的结果即可。而在量子理论中，我们需要考虑全体可能的路径，并且将它们的贡献全部叠加。</p>
+<p>但实际上这个表述只是原理性的，到实际的理论细节还有距离。我们要做的第一件事就是定义何谓“对路径求和”。两个构型之间可能的路径是有无穷多条的，有必要数学化地定义对这些路径的遍历。但是任何轻易涉及到无穷的求和都是危险的，一种较为“安全”的方式是通过只存在有限多路径的格点情况来帮助定义。</p>
+<p>为了研究$t_i$到$t_f$时刻的演化，我们首先将时间区间$[t_i,t_f]$划分为$N$个格点：</p>
 <script type="math/tex; mode=display">
-U(x_i,t_i;x_f,t_f) = \langle f(t_f) | i(t_i) \rangle = \langle x_f | {\rm e}^{-{\rm i}(t_f-t_i)\hat H} | x_i \rangle</script><p>注意到这样的形式当且仅当在$\hat H$不含时的情况下成立，因为只有这样才能</p>
-<p>时间演化算符的形式</p>
-<p>如果假设$\hat H$是时间的光滑函数，则前述简单的形式只有在无穷小时间间隔内成立；对于有限长的时间间隔，一个自然的处理方法就是将之分割为许多极短时间间隔$\Delta t_j$：</p>
+t_m = t_i + m \frac{t_f-t_i}{N}</script><p>从而有了一系列时刻$t_i = t_0 &lt; t_1 &lt; \cdots &lt; t_{N-1} &lt; t_N = t_f$。对于这样格点时间系列来说，一条格点路径$q_\alpha(t)$就是一系列广义坐标值（两端$q_\alpha(t_0)$和$q_\alpha(t_N)$已经固定）：</p>
 <script type="math/tex; mode=display">
-U(x_i,t_i;x_f,t_f) = \int {\rm d}x_1\cdots {\rm d}x_n \langle x_f | {\rm e}^{-{\rm i}\Delta t_f\hat H(t_f)} | x_{n} \rangle \cdots \langle x_1 | {\rm e}^{-{\rm i}\Delta t_1\hat H(t_1)} | x_i \rangle</script><p>可以看到这里事实上是对时间进行了切片，然后考虑了在每个中间时刻粒子所处位置的全部可能性（对每个中间态位置的积分）——换句话说实际上考虑了确定初末态下粒子运动的全部可能“轨迹”。</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/QFT/QFT-Chap-3.html">https://papaya-z.github.io/post/QFT/QFT-Chap-3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a><a class="post-meta__tags" href="/tags/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E8%AE%A1%E5%88%92/">木瓜数学物理计划</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/QFT/QFT-Chap-2.html" title="量子场论 Chap.2：自由场量子化：正则方法"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">量子场论 Chap.2：自由场量子化：正则方法</div></div></a></div><div class="next-post pull-right"><a href="/post/ClassicalFT/ClassicalFT-Chap-2.html" title="经典场论 Chap.2：对称性与场的分类"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">经典场论 Chap.2：对称性与场的分类</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/QFT/QFT-Chap-2.html" title="量子场论 Chap.2：自由场量子化：正则方法"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-02</div><div class="title">量子场论 Chap.2：自由场量子化：正则方法</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">路径积分</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img src="/img/cohen/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料">Cohen量子力学Chap.5补充材料</a><time datetime="2024-01-08T08:33:10.000Z" title="发表于 2024-01-08 16:33:10">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</a><time datetime="2024-01-07T13:54:42.000Z" title="发表于 2024-01-07 21:54:42">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.11：定态微扰理论"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-11.html" title="Cohen量子力学Chap.11：定态微扰理论">Cohen量子力学Chap.11：定态微扰理论</a><time datetime="2024-01-07T08:09:59.000Z" title="发表于 2024-01-07 16:09:59">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.16：场算符"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-16.html" title="Cohen量子力学Chap.16：场算符">Cohen量子力学Chap.16：场算符</a><time datetime="2023-11-10T11:16:43.000Z" title="发表于 2023-11-10 19:16:43">2023-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.14：全同粒子体系"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-14.html" title="Cohen量子力学Chap.14：全同粒子体系">Cohen量子力学Chap.14：全同粒子体系</a><time datetime="2023-11-07T05:29:29.000Z" title="发表于 2023-11-07 13:29:29">2023-11-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+{\rm Lattice\ Path\ }q_\alpha(t) = \{ q_\alpha(t_1), q_\alpha(t_2), \dots, q_\alpha(t_{N-1}) \}</script><p>其中$q_\alpha$本身还包含多个由$\alpha$标记的自由度，因此实际上得到了$F(N-1)$个值，$F$是$q$的自由度数。于是我们要对路径求和，就是对这$F(N-1)$个值$q_\alpha(t_i)$的求和（积分）：</p>
+<script type="math/tex; mode=display">
+\sum_{
+{\rm all\ possible\ paths\ } q(t)
+}
+ = n(N) \int \prod_{\alpha=1}^F \prod_{i=1}^{N-1} {\rm d} q_\alpha(t_i)</script><p>其中$n(N)$是与格点划分有关的归一化因子。上式中出现对${\rm d}q$的积分是因为广义坐标$q$的取值可以是连续的。我们定义一个<strong>泛函积分测度</strong>：</p>
+<script type="math/tex; mode=display">
+\mathcal D[q] = \lim_{N\to\infty} n(N) \prod_{\alpha=1}^F \prod_{i=1}^{N-1} {\rm d} q_\alpha(t_i)</script><p>那么路径积分原理就是：</p>
+<script type="math/tex; mode=display">
+\braket{q_b,t_b}{q_a,t_a} = \int \mathcal D[q] \exp{\left( {\rm i}S[q(t)] \right)}</script><p>如果我们仅描述一个有限自由度$F$的体系，例如量子力学，那么到这里就足够定义物理上恰当的路径积分了，因为上式右边所包含的两个求乘积和一个积分操作都是明确的。</p>
+<p>但是我们希望处理的场$\phi_a(x)$是一个无穷多自由度的体系，相当于在每个时刻，$q_\alpha(t) = \phi_{a,\bf x}(t) = \phi_a({\bf x},t) = \phi_a(x)$，其中标记自由度数的$\alpha$包括空间坐标${\bf x}$和指标$a$，后者$a$标记的是除${\bf x}$之外剩余的自由度，例如体系中存在的多个场，或者矢量场的时空指标，旋量场的旋量指标等等，它通常是有限取值的。此时$\prod_{\alpha}$的意义是不明确的，为此要描述场论的路径积分量子化，我们必须再将空间也格点化，使${\bf x}$也只允许取有限多个——至少是可数多个值。</p>
+<p>这样我们得到一套对时空整体的格点划分，其包含$N$个时空坐标$x_m$，在这个格点时空上定义场$\phi(x_m)$，对于它定义泛函积分测度为：</p>
+<script type="math/tex; mode=display">
+\mathcal D[\phi] = \lim_{N\to\infty} n(N) \prod_{a} \prod_{m=1}^{N} {\rm d} \phi_a(x_m)</script><p>其中$\phi$可以是连续取值的。可以看到，在这种描述下，时间和空间也再次统一起来，符合我们对于场论应当洛伦兹协变的期待。于是场论的路径积分原理就是：</p>
+<blockquote>
+<script type="math/tex; mode=display">
+\braket{\phi_f,t_f}{\phi_i,t_i} = \int \mathcal D[\phi] \exp{\left( {\rm i}S[\phi] \right)}</script></blockquote>
+<p>注意到作用量可以由拉格朗日密度表达，于是</p>
+<script type="math/tex; mode=display">
+\braket{\phi_f,t_f}{\phi_i,t_i} = \int \mathcal D[\phi] \exp{\left( {\rm i} \int_{t_a}^{t_b} {\rm d}^4x \mathscr L \right)}</script><p>这就是我们之后对场论建立起路径积分量子化的基础。</p>
+<h1 id="完备性"><a href="#完备性" class="headerlink" title="完备性"></a>完备性</h1><h1 id="正则方法与路径积分方法的等价性"><a href="#正则方法与路径积分方法的等价性" class="headerlink" title="正则方法与路径积分方法的等价性"></a>正则方法与路径积分方法的等价性</h1><p>我们现在至少有两种对场的量子化方法，正则量子化和路径积分量子化。</p>
+<p>路径积分优点：非阿贝尔规范场，保持显式洛伦兹不变性，微扰论方便</p>
+<p>但是不适合描述单粒子态或多粒子态，从而不便于描述散射</p>
+<p>正则适合描述散射！</p>
+<p>为此要证明两者等价性——通过路径积分得到正则量子化的全部基本假设。</p>
+<h2 id="重要关系"><a href="#重要关系" class="headerlink" title="重要关系"></a>重要关系</h2><p>从形式上来看，两种量子化方法最大的区别在于，正则量子化体系建立在算符之上，而路径积分量子化体系中则不需要任何算符的存在。为此要论证两者等价性，首先就要说明“算符”在路径积分中意味着什么。</p>
+<p>正则体系中，可观测量所对应的算符总可以视作由最基本的对象：场算符$\phi(x)$所构造的算符函数</p>
+<script type="math/tex; mode=display">
+\mathcal O(x) = O(\phi(x)) \equiv O_{\phi}(x)</script><p>那么在任一时刻$t$，该算符在同一时刻的两个场构型之间的矩阵元就是：</p>
+<script type="math/tex; mode=display">
+\bra{\phi_m,t}\mathcal O(x)\ket{\phi_n,t} = O_{\phi_n}(x) \delta(\phi_n,\phi_m)</script><p>利用同一时刻的矩阵元，就可以通过路径积分来计算场在不同时刻的两个场构型之间的矩阵元：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\ \bra{\phi_m,t_m}\mathcal O(x)\ket{\phi_n,t_n}\\
+=&\ \int\mathcal D[\phi']_{t} \mathcal D[\phi'']_{t} \braket{\phi_m,t_m}{\phi',t} \bra{\phi',t} \mathcal O(x) \ket{\phi'',t} \braket{\phi'',t}{\phi_n,t_n}\\
+=&\ \int\mathcal D[\phi']_{t} \mathcal D[\phi'']_{t} \braket{\phi_m,t_m}{\phi',t} \braket{\phi'',t}{\phi_n,t_n} O_{\phi}(x) \delta(\phi',\phi'')\\
+=&\ \int\mathcal D[\phi']_{t} \braket{\phi_m,t_m}{\phi',t} \braket{\phi',t}{\phi_n,t_n} O_{\phi}(x)\\
+=&\ \int\mathcal D[\phi]_{\phi_n,t_n}^{\phi',t} \mathcal D[\phi']_{t} \mathcal D[\phi]^{\phi_m,t_m}_{\phi',t} \exp{\left( {\rm i} \int_{t}^{t_m} {\rm d}^4x \mathscr L \right)} \exp{\left( {\rm i} \int_{t_n}^{t} {\rm d}^4x \mathscr L \right)} O_{\phi}(x)\\
+=&\ \int\mathcal D[\phi]_{\phi_n,t_n}^{\phi_m,t_m} \exp{\left( {\rm i} \int_{t_n}^{t_m} {\rm d}^4x \mathscr L \right)} O_{\phi}(x)
+\end{aligned}</script><p>这里$\mathcal D[\phi]_{\phi_n,t_n}^{\phi_m,t_m}$表示特定起止点的泛函积分，$O_{\phi}(x)$表示算符$\mathcal O$对场算符$\phi$的函数形式在积分路径上的场构型$\phi(x)$上的取值。于是我们得到结论：</p>
+<blockquote>
+<script type="math/tex; mode=display">
+\langle \mathcal O \rangle = \int \mathcal D[\phi] \exp{\left( {\rm i}S[\phi] \right)} O(\phi)</script></blockquote>
+<p>这就是路径积分对算符矩阵元（期望值）的计算，也是联系正则体系与路径积分体系的重要公式：等式左边直接与正则体系中的算符相联系；等式右边则是纯粹的路径积分形式，其中不包含任何算符，只有物理量对场的函数形式$O(\phi)$。</p>
+<p>要论证正则体系与路径积分体系的等价性，就相当于要通过这一关系，利用路径积分来得出正则体系的结论。正则体系的基本假设是场算符满足经典场方程，场的正则对易关系，以及场在庞加莱群下的变换关系。</p>
+<h2 id="Schwinger作用量原理"><a href="#Schwinger作用量原理" class="headerlink" title="Schwinger作用量原理"></a>Schwinger作用量原理</h2><p>在经典场论部分，我们曾经讨论过经典场的作用量$S[\phi]$如何给出场运动方程、如何体现对称性等问题。现在在量子场论的路径积分体系下，考虑对路径积分原理等式右侧的泛函积分做一变分，考察在这种变化下概率幅$\braket{\phi_f,t_f}{\phi_i,t_i}$的改变。注意到作用量出现在指数函数上，因此有：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta \braket{\phi_f,t_f}{\phi_i,t_i} =&\ \delta \int \mathcal D[\phi] \exp{\left( {\rm i} \int_{t_i}^{t_f} {\rm d}^4x \mathscr L \right)}\\
+=&\ {\rm i} \int\mathcal D[\phi]\ \delta\left( \int_{t_i}^{t_f} {\rm d}^4x \mathscr L \right) \exp{\left( {\rm i} \int_{t_i}^{t_f} {\rm d}^4x \mathscr L \right)}\\
+=&\ {\rm i} \int\mathcal D[\phi]\ (\delta S) \exp{\left( {\rm i} \int_{t_i}^{t_f} {\rm d}^4x \mathscr L \right)}
+\end{aligned}</script><p>即：</p>
+<blockquote>
+<script type="math/tex; mode=display">
+\delta \braket{\phi_f,t_f}{\phi_i,t_i} = {\rm i} \bra{\phi_f,t_f} \delta S[\phi] \ket{\phi_i,t_i}</script></blockquote>
+<p>这里$\delta S$是由场算符构成的算符。此即<strong>Schwinger作用量原理</strong>，它与路径积分原理是等价的。Schwinger将其作为量子场论的基本公理，因为它不涉及无穷求和等可能存在数学困难的表述。</p>
+<p>但我们还没有仔细定义这里的变分具体指什么的变化。现在要具体阐明式中变分的意义：</p>
+<ol>
+<li><p>等式右边的$\delta$，是作用量的改变。我们首先在尽可能宽泛的意义下讨论作用量的变化：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta S &= \delta\left( \int_{t_a}^{t_b} {\rm d}^4x \mathscr L(\phi,\partial_\mu\phi) \right)\\
+&= \int_{\widetilde t_a}^{\widetilde t_b} {\rm d}^4x \widetilde {\mathscr L}(\widetilde \phi,\partial_\mu\widetilde \phi) - \int_{t_a}^{t_b} {\rm d}^4x \mathscr L(\phi,\partial_\mu\phi)
+\end{aligned}</script><p>这包括：</p>
+<ul>
+<li>每条可能路径上的场做一微小改变：$\phi \to \widetilde\phi = \phi + \varphi$；</li>
+<li>路径积分的起止同时面做一微小改变：$x_{i/f} \to \widetilde x_{i/f} = x_{i/f} + \epsilon_{i/f}$，其时间分量为$t_{i/f} \to \widetilde t_{i/f} = t_{i/f} + \tau_{i/f}$；</li>
+<li>拉格朗日密度本身的函数形式也做一微小改变：$\mathscr L \to \widetilde { \mathscr L} = \mathscr L + \mathscr \Lambda$。</li>
+</ul>
+<p>注意：在这里不对时空坐标$x^\mu$本身做改变（不做庞加莱变换），而仅仅通过改变起止同时面来改变积分的时空区域。</p>
+</li>
+<li><p>等式左边的$\delta$，是由于$S$的变化所引起的、在特定两个场构型本征态之间跃迁概率幅的变化。具体来说，尽管场、起止时间、拉格朗日密度都做了微小变化，但为了方便比较，我们仍可以采取旧的完备本征态，考察变化后的新体系在相同的两个场构型之间的矩阵元，所以它的操作性定义是：</p>
+<script type="math/tex; mode=display">
+\delta \braket{\phi_f,t_f}{\phi_i,t_i} = \braket{\phi_f,t_f+\tau_f}{\phi_i,t_i+\tau_i}_{\widetilde {\mathscr L},\widetilde \phi} - \braket{\phi_f,t_f}{\phi_i,t_i}_{\mathscr L,\phi}</script></li>
+</ol>
+<blockquote>
+<p>结合上述两方面的考虑，需要特别说明$\delta S$中两个积分在起止同时面处的场构型如何取。</p>
+<p>对于$\delta S$中第二个积分$\int_{t_a}^{t_b} {\rm d}^4x \mathscr L(\phi,\partial_\mu\phi)$，很显然其在$t = t_{i/f}$的同时面上，就将场构型取为$\phi^{(2)}(x)|_{t_{i/f}} = \phi_{i/f}$即可，这样计算结果就是$\braket{\phi_f,t_f}{\phi_i,t_i}$。</p>
+<p>但对于第一个积分，起止同时面变为$t = \widetilde t_{i/f}$，假如在新的起止同时面上，我们仍然限定场函数$\phi(x)$的取值满足$\phi(x)|_{\widetilde t_{i/f}} = \phi_{i/f}$，那么结合第一条场本身改变为$\widetilde\phi = \phi+\varphi$，实际上造成了积分真正的起止场构型是$\widetilde\phi(x)|_{\widetilde t_{i/f}} = (\phi+\varphi)(x)|_{\widetilde t_{i/f}}$；此时计算出的概率幅是$\braket{\phi_f+\varphi,t_f+\tau_f}{\phi_i+\varphi,t_i+\tau_i}$，不满足我们的期待。因此在第一个积分中，我们应该在起止同时面$t = \widetilde t_{i/f}$处，规定起止场构型为：</p>
+<script type="math/tex; mode=display">
+\phi^{(1)}(x)|_{\widetilde t_{i/f}} = \phi_{i/f} - \varphi(x)|_{\widetilde t_{i/f}}</script><p>注意到场和同时面的变化都是小量，于是这等价于</p>
+<script type="math/tex; mode=display">
+\phi^{(1)}(x)|_{t_{i/f}} = \phi_{i/f} - \varphi(x)|_{t_{i/f}} - \epsilon^\mu_{i/f}\partial_\mu\phi(x)|_{t_{i/f}} + \mathcal o(\varphi,\epsilon,\tau)</script><p>换句话说，在小量的一阶水平，我们要求在同时面$t = \widetilde t_{i/f}$处，两个积分中的场函数取值相差：</p>
+<script type="math/tex; mode=display">
+\delta\phi(x)|_{t_{i/f}} \equiv \phi^{(1)}(x)|_{t_{i/f}} - \phi^{(2)}(x)|_{t_{i/f}} = - \varphi(x)|_{t_{i/f}} - \epsilon^\mu_{i/f}\partial_\mu\phi(x)|_{t_{i/f}}</script></blockquote>
+<p>在这样的改变下，将$\delta S$写为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta S &= \int_{\widetilde t_a}^{\widetilde t_b} {\rm d}^4x \widetilde {\mathscr L}(\widetilde \phi,\partial_\mu\widetilde \phi) - \int_{t_a}^{t_b} {\rm d}^4x \mathscr L(\phi,\partial_\mu\phi)\\
+&\simeq \delta t_f \int_{t_f}{\rm d}^3x \mathscr L - \delta t_i \int_{t_i}{\rm d}^3x \mathscr L + \int_{t_i}^{t_f} {\rm d}^4x \left( \mathscr \Lambda + \frac{\partial\mathscr L}{\partial\phi}\delta\phi + \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\partial_\mu(\delta\phi) \right)
+\end{aligned}</script><p>上式中$\delta\phi$应该理解为前面所讨论的$\phi^{(1)} - \phi^{(2)}$，即两部分的场函数取值之差。其中利用了$\delta(\partial_\mu\phi) = \partial_\mu (\delta\phi)$，因为$\delta\phi$不改变时空坐标。最后一项通过分部积分得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_{t_i}^{t_f} {\rm d}^4x \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\partial_\mu(\delta\phi) =&\ \int_{t_i}^{t_f} {\rm d}^4x \partial_\mu\left( \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\delta\phi \right) - \int_{t_i}^{t_f} {\rm d}^4x \partial_\mu\left( \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)} \right) \delta\phi
+\end{aligned}</script><p>在第一项中，利用前面得到的$\delta \phi|_{t_{i/f}} = - \varphi|_{t_{i/f}} - \epsilon_{i/f}^\mu\partial_\mu \phi|_{t_{i/f}}$，并且取空间范围无限的区域，就可得</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_{t_i}^{t_f} {\rm d}^4x \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)}\partial_\mu(\delta\phi) =&\ \int_{t_f} {\rm d}^3x \left( -\pi \varphi - \pi\epsilon_f^\mu\partial_\mu \phi \right) - \int_{t_i} {\rm d}^3x \left( -\pi \varphi - \pi\epsilon_i^\mu\partial_\mu \phi \right)\\
+&\ - \int_{t_i}^{t_f} {\rm d}^4x \partial_\mu\left( \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)} \right) \delta\phi
+\end{aligned}</script><p>其中空间方向的全导数积分已经由于场在无穷远处为零而扔掉了。于是得到算符$\delta S$的形式：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\delta S =&\ \int_{t_i}^{t_f} {\rm d}^4x \left[ \mathscr \Lambda + \left(\frac{\partial\mathscr L}{\partial\phi} - \partial_\mu \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)} \right)\delta\phi \right]\\
+&+ \int_{t_f} {\rm d}^3x \Big( -\pi \varphi + (\mathscr L g^0_\mu - \pi\partial_\mu \phi)\epsilon_f^\mu \Big) - \int_{t_i} {\rm d}^3x \Big( -\pi \varphi + (\mathscr L g^0_\mu - \pi\partial_\mu \phi)\epsilon_i^\mu \Big)
+\end{aligned}</script><p>利用这一表达式，考察一个特殊情况：若不改变等时面$t_{i/f}$和拉格朗日密度$\mathscr L$，即$\epsilon = 0$，$\mathscr\Lambda = 0$，只变化场$\phi(x)$本身，于是$\delta\phi$在边界上就可以取为零，那么由于保持边界不变、边界上的场构型不变，概率幅$\braket{\phi_f,t_f}{\phi_i,t_i}$显然也不变，这自然就得到</p>
+<script type="math/tex; mode=display">
+0 = \braket{\phi_f,t_f}{\phi_i,t_i} = {\rm i} \int_{t_i}^{t_f} {\rm d}^4x \bra{\phi_f,t_f} \left( \frac{\partial\mathscr L}{\partial \phi} - \partial_\mu \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)} \right) \ket{\phi_i,t_i} \delta\phi</script><p>这对于任何的$\bra{\phi_f,t_f}$、$\ket{\phi_i,t_i}$都是成立的，于是在路径积分的意义下，我们得到了场算符$\phi$所满足的场方程：</p>
+<script type="math/tex; mode=display">
+\frac{\partial\mathscr L}{\partial \phi} - \partial_\mu \frac{\partial\mathscr L}{\partial(\partial_\mu\phi)} = 0</script><p>这是一个算符方程，它表明Schwinger作用量原理可以在量子意义下得到与经典场方程一样的结果；并且也表明，可以从路径积分原理出发，得到正则体系的第一个基本假设：场算符满足场方程。</p>
+<p>利用满足场方程的结论，就可以将$\delta S$写为：</p>
+<script type="math/tex; mode=display">
+\delta S = \int_{t_i}^{t_f} {\rm d}^4x  \mathscr \Lambda + \int_{t_f} {\rm d}^3x \Big( -\pi \varphi + (\mathscr L g^0_\mu - \pi\partial_\mu \phi)\epsilon_f^\mu \Big) - \int_{t_i} {\rm d}^3x \Big( -\pi \varphi + (\mathscr L g^0_\mu - \pi\partial_\mu \phi)\epsilon_i^\mu \Big)</script><h2 id="正则体系假设"><a href="#正则体系假设" class="headerlink" title="正则体系假设"></a>正则体系假设</h2><p>再回顾算符$\mathcal O$的矩阵元，</p>
+<h1 id="编时关联函数"><a href="#编时关联函数" class="headerlink" title="编时关联函数"></a>编时关联函数</h1><h2 id="路径积分表述"><a href="#路径积分表述" class="headerlink" title="路径积分表述"></a>路径积分表述</h2><p>在之后的讨论中我们将会看到，编时关联函数在散射理论中具有重要意义。在正则体系下，我们已经知道编时关联函数如何定义及计算，那么在路径积分体系中，编时关联函数意味着什么，又如何计算？</p>
+<p>首先考虑定义在两个不同时刻的态之间的如下编时算符乘积：</p>
+<script type="math/tex; mode=display">
+\bra{\phi_f,t_f} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\phi_i,t_i}</script><p>不失普遍性，假设$x_1^0&gt;\cdots&gt;x_n^0$，于是按照路径积分体系的方法，就可以写为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\ \bra{\phi_f,t_f} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\phi_i,t_i}\\
+=&\ \bra{\phi_f,t_f} \mathcal O_1(x_1) \dots \mathcal O_n(x_n) \ket{\phi_i,t_i}\\
+=&\ \int\mathcal D[\phi_1]_{t_1} \cdots \mathcal D[\phi_{n+1}]_{t_{n+1}} \braket{\phi_f,t_f}{\phi_1,t_1} \bra{\phi_1,t_1} \mathcal O_1(x_1) \ket{\phi_2,t_2} \cdots\\
+&\ \times\bra{\phi_n,t_n} \mathcal O_n(x_n) \ket{\phi_{n+1},t_{n+1}} \braket{\phi_{n+1},t_{n+1}}{\phi_i,t_i}\\
+=&\ \int\mathcal D[\phi_1]_{t_1} \cdots \mathcal D[\phi_{n+1}]_{t_{n+1}} \mathcal D[\phi_1']_{\phi_1,t_1}^{\phi_f,t_f} \mathcal D[\phi_2']_{\phi_2,t_2}^{\phi_1,t_1} \cdots \mathcal D[\phi_n']^{\phi_n,t_n}_{\phi_{n+1},t_{n+1}} \mathcal D[\phi_n']_{\phi_i,t_i}^{\phi_{n+1},t_{n+1}} \\
+&\ \times O_{1}(x_1) \cdots O_{n}(x_n)  \exp{\left( {\rm i} \int_{t_1}^{t_f} {\rm d}^4x \mathscr L \right)} \cdots \exp{\left( {\rm i} \int_{t_i}^{t_{n+1}} {\rm d}^4x \mathscr L \right)}\\
+=&\ \int\mathcal D[\phi]_{t_i}^{t_f} O_{1}(x_1) \cdots O_{n}(x_n)  \exp{\left( {\rm i} \int_{t_i}^{t_f} {\rm d}^4x \mathscr L \right)}
+\end{aligned}</script><p>可见路径积分看来，若干算符的编时关联函数就是它们函数形式乘积的路径积分。特别地，由于函数相乘不存在算符的对易问题，<u>在路径积分中各个算符的函数形式的乘积不需要特别指定乘积顺序，而积分得到的关联函数则自动是编时的。</u>反过来讲，我们必须要求等式左边的关联函数是编时乘积，因为这样才能让等式右边各个泛函积分测度恰好按照时序顺次相连成为一条积分路径。</p>
+<p>我们真正关心的是在正负无穷时刻的真空态之间的关联函数。所谓真空态$\ket\Omega$，指的是体系的能量最低态，并不一定是某个场构型本征态，甚至不一定可以简单地用场构型写出，尤其是在相互作用理论的真空态。</p>
+<p>但是有一个方法可以从上述得到的场算符本征态间关联函数中抽提出真空态的贡献：注意到任何时刻的$\ket{\phi,t}$总是可以由完备能量本征态展开，我们在海森堡绘景下这样展开，于是：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\ \bra{\phi_f,t_f} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\phi_i,t_i}\\
+=&\ \bra{\phi_f,0} {\rm e}^{ -{\rm i}H t_f}\  {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \}\ {\rm e}^{ {\rm i}H t_i} \ket{\phi_i,0}\\
+=&\ \sum_{m',m} \bra{\phi_f,0} {\rm e}^{ -{\rm i}E_{m'} t_f} \ket{m'} \bra{m'} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{m} \bra{m} {\rm e}^{ {\rm i}E_m t_i} \ket{\phi_i,0}
+\end{aligned}</script><p>真空态就包含在$\ket m$中：</p>
+<script type="math/tex; mode=display">
+{\rm e}^{ {\rm i}H t} \ket{\phi,0} = \sum_{m}  {\rm e}^{ {\rm i}E_m t} \ket{m}\braket{m}{\phi,0} = {\rm e}^{ {\rm i}E_\Omega t} \ket{\Omega}\braket{\Omega}{\phi,0} + \sum_{m\neq 0}  {\rm e}^{ {\rm i}E_m t} \ket{m}\braket{m}{\phi,0}</script><p>为了从中提取出真空态，考虑稍微改变一下理论的拉格朗日量，使其能量值添加一个微小的虚部：$H_\epsilon = H-{\rm i}\epsilon$，此时：</p>
+<script type="math/tex; mode=display">
+{\rm e}^{ -{\rm i}E_m t} \to {\rm e}^{ -{\rm i} (E_m-E_m{\rm i}\epsilon) t} = {\rm e}^{ -{\rm i} E_m t - \epsilon E_m t} = {\rm e}^{ -{\rm i} E_m t} {\rm e}^{- \epsilon E_n t}</script><p>于是只要取$t \to \infty$的极限，那么任何$E_m &gt; E_\Omega$的高能量态的贡献相对于真空态就会有一个${\rm e}^{- \epsilon (E_m-E_\Omega) t}$的指数衰减，于是基态成为最主要的贡献，近似得到：</p>
+<script type="math/tex; mode=display">
+\ket{\Omega} = \lim_{T\to\infty} \Big[{\rm e}^{-{\rm i}E_\Omega T(1-{\rm i}\epsilon)}\braket{\Omega}{\phi,0}\Big]^{-1} {\rm e}^{ {\rm i}H T(1-{\rm i}\epsilon)} \ket{\phi,0}</script><p>这表明，在这用的修改下，任何态都在无穷远时间渐进于真空态。</p>
+<p>据此，我们对场本征态间的编时关联函数也取这样的极限，就得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\ \lim_{T\to\infty} \bra{\phi_f,T} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\phi_i,-T}\\
+=&\ \sum_{m',m} \bra{\phi_f,0} {\rm e}^{ -{\rm i}E_{m'} T(1-{\rm i}\epsilon)} \ket{m'} \bra{m'} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{m} \bra{m} {\rm e}^{ -{\rm i}E_m T(1-{\rm i}\epsilon)} \ket{\phi_i,0}\\
+=&\ \lim_{T\to\infty} \bra{\Omega} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\Omega}\ {\rm e}^{ -2{\rm i}E_\Omega T(1-{\rm i}\epsilon)}\braket{\phi_f,0}{\Omega} \braket{\Omega}{\phi_i,0}\\
+=&\ \bra{\Omega} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\Omega} \left[ \lim_{T\to\infty} {\rm e}^{ -2{\rm i}E_\Omega T(1-{\rm i}\epsilon)}\braket{\phi_f,0}{\Omega} \braket{\Omega}{\phi_i,0} \right]
+\end{aligned}</script><p>为了得到右边的极限，考虑没有插入算符的路径积分，在同样的意义下可以写为：</p>
+<script type="math/tex; mode=display">
+\lim_{T\to\infty} \braket{\phi_f,T} {\phi_i,-T} = \left[ \lim_{T\to\infty} {\rm e}^{ -2{\rm i}E_\Omega T(1-{\rm i}\epsilon)}\braket{\phi_f,0}{\Omega} \braket{\Omega}{\phi_i,0} \right]</script><p>因此真空态之间的编时关联函数就是：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\ \bra{\Omega} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\Omega}\\
+=&\ \lim_{T\to\infty} \frac{ \bra{\phi_f,T} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\phi_i,-T} }{ \braket{\phi_f,T} {\phi_i,-T} }\\
+=&\ \lim_{T\to\infty} \frac{ \int\mathcal D[\phi]_{\phi_i,-T}^{\phi_f,T} O_{1}(x_1) \cdots O_{n}(x_n)  \exp{\left( {\rm i} \int_{-T}^{T} {\rm d}^4x \mathscr L_\epsilon \right)} }{ \int\mathcal D[\phi]_{\phi_i,-T}^{\phi_f,T}   \exp{\left( {\rm i} \int_{-T}^{T} {\rm d}^4x \mathscr L_\epsilon \right)} }
+\end{aligned}</script><p>注意上式中：</p>
+<ol>
+<li>拉格朗日密度$\mathscr L_\epsilon$表明拉格朗日量已经按照前述方式添加了一微小虚部；在之后将不会每次都把角标写出，但应当知道在涉及到真空态的路径积分时，拉格朗日密度$\mathscr L$都应该是在添加这一$\epsilon$意义下的。</li>
+<li>另一方面，形式上看，上式路径积分的起止时刻是渐进时刻$T\to\pm\infty$，并且在起止渐进时刻，场构型应当分别处于$\phi_f$、$\phi_i$；但事实上我们总是可以在分子分母同时作用：$\int \mathcal D[\phi_i]_{-T} \mathcal D[\phi_f]_{T}$，这就将起止时刻场构型扩展为任何的场；于是整个式子实际上并不限制任何时刻的场构型。</li>
+</ol>
+<p>在注意到这些说明后，最终我们可以将其写为：</p>
+<blockquote>
+<script type="math/tex; mode=display">
+\bra{\Omega} {\textsf T} \{\mathcal O_1(x_1) \dots \mathcal O_n(x_n) \} \ket{\Omega} = \frac{ \int\mathcal D[\phi] O_{1}(x_1) \cdots O_{n}(x_n) \exp{\left( {\rm i} S[\phi] \right)} }{ \int\mathcal D[\phi] \exp{\left( {\rm i} S[\phi] \right)} }</script></blockquote>
+<h2 id="生成泛函"><a href="#生成泛函" class="headerlink" title="生成泛函"></a>生成泛函</h2><p>我们还可以引入另一个方便地工具来计算上述路径积分：</p>
+<script type="math/tex; mode=display">
+Z[J] = \int\mathcal D[\phi] \exp{\left( {\rm i} \int {\rm d}^4x \Big[\mathscr L(x) + J(x)\phi(x) \Big] \right)}</script><p>称之为理论的<strong>生成泛函</strong>。它的作用非常重要，只要知道一个理论的生成泛函，立即就能得到所有的关联函数，为看出这一点，对其作用一个泛函导数：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\delta Z[J]}{\delta J(x_0)} =&\ \frac{\delta}{\delta J(x_0)} \int\mathcal D[\phi] \exp{\left( {\rm i} \int {\rm d}^4x \Big[\mathscr L(x) + J(x)\phi(x) \Big] \right)}\\
+=&\ {\rm i}\int\mathcal D[\phi] \frac{\delta}{\delta J(x_0)} \left( \int {\rm d}^4x \Big[\mathscr L(y) + J(y)\phi(y) \Big] \right)  \exp{\left( {\rm i} \int {\rm d}^4x \Big[\mathscr L(x) + J(x)\phi(x) \Big] \right)}\\
+=&\ {\rm i}\int\mathcal D[\phi] \left( \int {\rm d}^4x \delta^{(4)}(y-x_0)\phi(y) \right)  \exp{\left( {\rm i} \int {\rm d}^4x \Big[\mathscr L(x) + J(x)\phi(x) \Big] \right)}\\
+=&\ {\rm i}\int\mathcal D[\phi] \phi(x_0) \exp{\left( {\rm i} \int {\rm d}^4x \Big[\mathscr L(x) + J(x)\phi(x) \Big] \right)}
+\end{aligned}</script><p>不难推广得到：</p>
+<blockquote>
+<script type="math/tex; mode=display">
+\bra{\Omega} {\textsf T} \{\phi(x_1) \dots \phi(x_n) \} \ket{\Omega} = \frac{1}{ {\rm i}^nZ[0]} \left[ \frac{\delta^n}{\delta J(x_i)\cdots \delta J(x_{n})} Z[J] \right]_{J = 0}</script></blockquote>
+<p>从而可以任何编时关联函数总可以通过生成泛函的相应泛函导数得出。</p>
+<h1 id="各种场的路径积分量子化"><a href="#各种场的路径积分量子化" class="headerlink" title="各种场的路径积分量子化"></a>各种场的路径积分量子化</h1><h2 id="标量场"><a href="#标量场" class="headerlink" title="标量场"></a>标量场</h2><p>自由标量场论的生成泛函是：</p>
+<script type="math/tex; mode=display">
+Z[J] = \int\mathcal D[\phi] \exp{\left( {\rm i} \int {\rm d}^4x \Big[\mathscr L_\epsilon(\phi,\partial_\mu\phi) + J\phi \Big] \right)}</script><p>要明确$\mathscr L_\epsilon$的形式，注意到自由标量场的哈密顿密度是</p>
+<script type="math/tex; mode=display">
+\mathscr H = \pi\dot\phi - \mathscr L = \frac12 \dot\phi \dot\phi + \frac12 \nabla\phi\cdot\nabla\phi + \frac12 m^2\phi^2</script><p>要使其乘一$(1-{\rm i}\epsilon)$，</p>
+<p>相当于</p>
+<script type="math/tex; mode=display">
+\mathscr L_\epsilon = \frac12 \partial_\mu\phi\partial^\mu\phi - \frac12 (m^2-{\rm i}\epsilon)\phi^2</script><p>于是</p>
+<script type="math/tex; mode=display">
+Z[J] = \int\mathcal D[\phi] \exp{\left( {\rm i} \int {\rm d}^4x \Big[ \frac12 \partial_\mu\phi\partial^\mu\phi - \frac12 (m^2-{\rm i}\epsilon)\phi^2 + J\phi \Big] \right)}</script><h2 id="旋量场"><a href="#旋量场" class="headerlink" title="旋量场"></a>旋量场</h2><h3 id="Grassmann代数"><a href="#Grassmann代数" class="headerlink" title="Grassmann代数"></a>Grassmann代数</h3><p>根据自旋-统计定理，对旋量场的量子化必须考虑旋量场的交换反对称性。这在正则体系中是通过规定旋量场算符满足正则反对易关系来实现的。但是在路径积分体系中不涉及到算符的使用，因此必须考虑以另一种方式引入交换反对称性的性质。</p>
+<p>交换反对称性最直接体现在路径积分中对各个场（或其函数）的排序。在前面我们考虑的都是正常的数，交换它们相乘的顺序不会带来任何影响，称之为c-数（commutative number）。那么假如考虑一种新的数，其满足乘法的交换反对称性：</p>
+<script type="math/tex; mode=display">
+\psi_i\psi_j = -\psi_j\psi_i</script><p>似乎就可以描述旋量场的特殊性质。为此我们首先来研究满足这种交换反对称性的数的性质。</p>
+<h4 id="加法和乘法"><a href="#加法和乘法" class="headerlink" title="加法和乘法"></a>加法和乘法</h4><p>Grassmann数定义为加法运算与一般的c-数相同（加法满足交换对称性——加法交换律），而乘法满足反对称性的对象：</p>
+<script type="math/tex; mode=display">
+\psi_i\psi_j = \psi_j\psi_i\ ,\qquad \{\psi_i,\psi_j\} = 0</script><p>同时，它们与c-数对易：</p>
+<script type="math/tex; mode=display">
+c\psi_i = \psi_ic</script><p>注意到，两个Grassmann数的乘积是c-数：$(\psi_i\psi_j)\psi_k = \psi_k(\psi_i\psi_j)$，进一步地，有：</p>
+<ul>
+<li>奇数个Grassmann数相乘仍是Grassmann数</li>
+<li>偶数个Grassmann数相乘，是c-数</li>
+</ul>
+<p>Grassmann数的反对易性直接导致幂零性：$\psi^2 = 0$。因此对于它的任何单变量函数$f(\psi)$，其泰勒展开式只可能到线性项：</p>
+<script type="math/tex; mode=display">
+f(\psi) = a^{(0)} + a^{(1)}\psi</script><p>多变量函数的泰勒展开则至多到$n$阶项：</p>
+<script type="math/tex; mode=display">
+f(\psi_1,\dots,\psi_n) = a^{(0)} + a^{(1)}_i \psi_i + \frac12 a^{(2)}_{ij}\psi_i \psi_j + \cdots + \frac{1}{n!}a^{(n)}_{i_1 \cdots i_n}\psi_{i_1}\cdots \psi_{i_n}</script><p>其中对重复指标求和，各个系数$a^{(k)}_{i_i\cdots i_k}$都是关于各个指标$i_l$，$l = 1,2,\dots,k$反对称的。需要指明的是由于高阶项为零，因此这样的展开式都是在全范围内严格成立的（而非有限项的近似）。</p>
+<p>因此在上述展开式中，我们要求：</p>
+<script type="math/tex; mode=display">
+a^{(k)}
+\begin{cases}
+{\rm is\ Grassmann} & k {\rm \ is\ even}\\
+{\rm is\ c-number} & k {\rm \ is\ odd}
+\end{cases}</script><p>这样函数$f(\psi)$本身就是对易的。</p>
+<p>Grassmann数的这种性质很容易联想到所谓形式（form）的数学对象：令$\{\psi_1,\dots,\psi_n\}$构成一个线性空间$V$的基，它们之间作为Grassmann数的乘积就是该空间上的楔积$\wedge$；于是可以定义外代数$\wedge(V) = \bigoplus_n\wedge^n(V)$，其中$\wedge^n(V) = V \wedge V \wedge \cdots \wedge V$。任何Grassmann数就是这个外代数$\wedge(V)$中的元素；$\wedge^n(V)$中的元素称为n-形式。用直观的语言来说，就是$\{\psi_1,\dots,\psi_n\}$可以通过任意的加法和反对称乘法来获得新的Grassmann数。</p>
+<p>接下来我们希望定义Grassmann数的分析运算，包括导数和积分，且定义需要和Grassmann数本身的性质相容。</p>
+<h4 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h4><p>对导数最自然的效果是希望其满足：</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\psi_i} \psi_j = \partial_{\psi_i}\psi_j = \delta_{ij}\ ,\qquad \partial_{\psi_i}(af(\psi)+bg(\psi)) = a \partial_{\psi_i}f(\psi) + b \partial_{\psi_i}g(\psi)</script><p>而注意到Grassmann数的交换反对称性直接会导致：$\partial_{\psi_i}(\psi_j\wedge\psi_k) = - \partial_{\psi_i}(\psi_k\wedge\psi_j)$，因此考虑这些性质，给出如下定义：</p>
+<blockquote>
+<p>将<strong>左导数</strong>算符定义为映射：</p>
+<script type="math/tex; mode=display">
+\partial: V\times \wedge(V) \to \wedge(V)</script><p>它从左边作用在Grassmann数及其任何函数上：</p>
+<script type="math/tex; mode=display">
+\partial_{\psi_i} f(\psi) = \frac{\partial}{\partial\psi_i}f(\psi)</script><p>需要满足导数基本性质：</p>
+<ul>
+<li>$\partial_{\psi_i}\psi_j = \delta_{ij}$；</li>
+<li>Leibnitz律：$\partial_{\psi_i}(\psi_j\wedge\psi_k) = (\partial_{\psi_i}\psi_j)\wedge\psi_k - \psi_j\wedge(\partial_{\psi_i}\psi_k)$；</li>
+<li>若$a$为普通的常数，则$\partial_{\psi_i}a = 0$。</li>
+</ul>
+</blockquote>
+<p>它与普通c-数导数的区别主要在于Leibnitz律中的负号。这就可以确定导左数算符对任意函数的作用：</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\psi_i}f(\psi) = a^{(1)}_i + a^{(2)}_{ij}\psi_j + \cdots + \frac{1}{(n-1)!}a^{(n)}_{ij_2 \cdots j_n}\psi_{j_2}\cdots \psi_{j_n}</script><p>特别地，对于$\wedge^n(V)$中的元素，就会得到$\wedge^{n-1}$中的元素，这符合我们对导数的期待。</p>
+<p>为进一步要求函数被连续两个导数算符作用后得到的结果相同（注意到$a^{(n)}_{ij_2 \cdots j_n}$对指标的反对称性），就需要对左导数算符也提出反对易性的要求：</p>
+<script type="math/tex; mode=display">
+\left\{\frac{\partial}{\partial\psi_i},\frac{\partial}{\partial\psi_j}\right\} = 0</script><p>这意味着$\partial^2_{\psi_i}f = 0$和$\partial_{\psi_i}\partial_{\psi_j}f = -\partial_{\psi_j}\partial_{\psi_i}f$。</p>
+<p><br></p>
+<p>注意到Leibnitz律中的负号，这允许我们还可以定义<strong>右导数</strong>$\overset{\leftarrow}{\partial}$，它从右侧作用于Grassmann数及其函数：</p>
+<ul>
+<li>$\psi_j \overset{\leftarrow}{\partial}_{\psi_i} = \delta_{ij}$；</li>
+<li>Leibnitz律：$(\psi_j\wedge\psi_k)\overset{\leftarrow}{\partial}_{\psi_i} = -(\psi_j\overset{\leftarrow}{\partial}_{\psi_i})\wedge\psi_k + \psi_j\wedge(\psi_k\overset{\leftarrow}{\partial}_{\psi_i})$；</li>
+<li>若$a$为普通的常数，则$a\overset{\leftarrow}{\partial}_{\psi_i} = 0$。</li>
+</ul>
+<p>在对旋量场求导时，要注意具体的导数可能是左导数，也可能是右导数。</p>
+<h4 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h4><p>对Grasmann数积分也应当期望其满足线性性：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\psi_i (af(\psi)+bg(\psi)) = a \int{\rm d}\psi_i f(\psi) + b \int{\rm d}\psi_i g(\psi)</script><p>首先直觉地考虑对单变量函数函数$f(\psi) = a^{(0)} + a^{(1)}\psi$积分的效果：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\psi (a^{(0)} + a^{(1)}\psi) = a^{(0)}\int{\rm d}\psi + a^{(1)}\int{\rm d}\psi\ \psi</script><p>因此要定义积分，就归结为确定$\int{\rm d}\psi$和$\int{\rm d}\psi\ \psi$两者。</p>
+<p>而我们希望积分是求导的逆运算，这就会带来一个性质：全导数的积分仅仅是边界项。我们通常不关心它在边界处的行为，尤其是对全空间积分时，因此在这里不妨令其为零，也就是说对于$f(\psi)$的零阶项系数$a^{(0)}$，有：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\psi g(\psi) = \int{\rm d}\psi \frac{ {\rm d} }{ {\rm d}\psi}f(\psi) = a^{(0)}\int{\rm d}\psi = 0 \quad \Longrightarrow\quad \int{\rm d}\psi = 0</script><p>因此对函数的积分就正比于线性项的积分，不妨令其归一化为$\int{\rm d}\psi\ \psi = 1$，于是：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\psi (a^{(0)} + a^{(1)}\psi) = a^{(0)}\int{\rm d}\psi + a^{(1)}\int{\rm d}\psi\ \psi = a^{(1)}</script><p>可以发现它恰好就是导数算符作用的结果：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\psi f(\psi) = \frac{ {\rm d} }{ {\rm d}\psi}f(\psi)</script><p>这可以很方便地推广到多变量积分的情况：</p>
+<script type="math/tex; mode=display">
+\int {\rm d}\psi_n\cdots \int{\rm d}\psi_1 f(\psi) = a^{(n)}_{1\dots n} = \frac{\partial}{\partial\psi_n}\cdots\frac{\partial}{\partial\psi_1} f(\psi)</script><p>事实上一个n维空间生成的外代数中只有一个n-形式，即$\varepsilon_{i_1\dots i_n}$，因此$a^{(n)}_{i_1\dots i_n} = a \varepsilon_{i_1\dots i_n}$，于是：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}^n\psi f(\psi)  = a</script><p><br></p>
+<p>事实上，根据以上性质，可以给出下述定义：</p>
+<blockquote>
+<p>将<strong>积分</strong>算符定义为映射：</p>
+<script type="math/tex; mode=display">
+\int: \wedge(V) \to V\times \wedge(V)</script><p>对变量$\psi_i$的积分算子$\int{\rm d}\psi_i$作用在Grassmann数及其任何函数上，需要满足积分的基本性质：</p>
+<ul>
+<li>全导数（对全空间）的积分为零：$\int{\rm d}\psi_i\circ\partial_{\psi_i} = 0$；</li>
+<li>积分的导数为零：$\partial_{\psi_i}\circ\int{\rm d}\psi_i = 0$；</li>
+<li>若$a$为普通的常数，则$\partial_{\psi_i}a = 0$。</li>
+</ul>
+</blockquote>
+<p>事实上满足上述定义的恰恰就是（Grassmann）导数算符，因此有结论：Grassmann数的求导和积分运算是相同的：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\psi_i = \frac{\partial}{\partial\psi_i}</script><p>因此自然就得到前面所讨论的积分性质：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}\psi_i = 0\ ,\qquad \int{\rm d}\psi_i\ \psi_j = \delta_{ij}</script><p>因此积分算子也满足交换反对称关系；一般将积分号$\int$整体写在前面，于是这种反对称性就体现在积分测度（或者说Grassmann</p>
+<p>数的微分）上：</p>
+<script type="math/tex; mode=display">
+\{ {\rm d}\psi_i,{\rm d}\psi_j \} = 0</script><p>当然，作为积分测度，它们在楔积意义下本来就是满足交换反对称性的。</p>
+<h4 id="积分变量变换"><a href="#积分变量变换" class="headerlink" title="积分变量变换"></a>积分变量变换</h4><p>最后来考虑在Grassmann积分中，令积分变量有如下变换：</p>
+<script type="math/tex; mode=display">
+\eta = K \psi\ :\quad \eta_i = \sum_{j=1}^n K_{ij}\psi_j</script><p>这种变换下：</p>
+<script type="math/tex; mode=display">
+a^{(n)}_{i_1\dots i_n}\eta_{i_1}\cdots\eta_{i_n} = a\varepsilon_{i_1\dots i_n} K_{i_1 j_1}\cdots K_{i_n j_n}\psi_{j_1}\cdots\psi_{j_n} = (\det K)a^{(n)}_{j_1\dots j_n}\psi_{j_1}\cdots\psi_{j_n}</script><p>为了保证$\int{\rm d}^n\eta f(\eta) = \int{\rm d}^n\psi f(\psi)$，这会导致测度变换为：</p>
+<script type="math/tex; mode=display">
+{\rm d}^n \eta = [\det K]^{-1} {\rm d}^n \psi</script><p>即Grassmann数变换的雅可比行列式是变换矩阵行列式的逆，这与c-数的微积分中的关系是相反的。</p>
+<h4 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h4><h5 id="实Grassmann数"><a href="#实Grassmann数" class="headerlink" title="实Grassmann数"></a>实Grassmann数</h5><p>在下面我们最常用的重要应用是Grassmann数的高斯积分。考虑如下实Grassmann数的高斯积分：</p>
+<script type="math/tex; mode=display">
+I = \int{\rm d}^{n}\psi\exp\left(\frac12 \psi^T M \psi\right)</script><p>注意到只有在$n$为偶数时积分才非零，奇数情况下积分变量总与指数函数泰勒展式种的项数目不匹配。在偶数维，反对称算子$M$有正交相似标准型：</p>
+<script type="math/tex; mode=display">
+M' = U^T M U = \begin{pmatrix}
+0 & +m'_1 \\
+-m'_1 & 0 \\
+& & 0 & +m'_2\\
+& & -m'_2 & 0\\
+& & & & \ddots
+\end{pmatrix}</script><p>于是引入变量变换$\eta = U^{-1} \psi$，原积分就等于：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I &= (\det [U])^{-1}\int{\rm d}^{n}\eta \exp\left(\frac12 \eta^T M' \eta\right)\\
+&= (\det [U])^{-1} \prod_{i=1}^{n/2} \int {\rm d}\eta_{2i}{\rm d}\eta_{2i-1} \exp\left(m'_i\eta_{2i-1}\eta_{2i}\right)\\
+&= (\det [U])^{-1} \prod_{i=1}^{n/2} \int {\rm d}\eta_{2i}{\rm d}\eta_{2i-1} \left(1 + m'_i\eta_{2i-1}\eta_{2i}\right)\\
+&= (\det [U])^{-1} \prod_{i=1}^{n/2} [(m'_i)^2]^{1/2}\\
+&= (\det [U])^{-1} (\det [M'])^{1/2}\\
+&= (\det [U])^{-1} (\det [U])^{1/2}(\det [M])^{1/2}(\det [U])^{1/2}\\
+&= (\det [M])^{1/2}
+\end{aligned}</script><p>此即实Grassmann数的高斯积分。还可将之推广到更一般的情况：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}^{n}\psi\exp\left(\frac12 \psi^T M \psi + \theta\psi\right) = (\det [M])^{1/2} \exp\left(\frac12 \theta^T M \theta\right)</script><p>只需要在前式中考虑变量变换$\psi\to\psi - M^{-1}\theta$即可得到。</p>
+<h5 id="复Grassmann数"><a href="#复Grassmann数" class="headerlink" title="复Grassmann数"></a>复Grassmann数</h5><p>物理上更常用的是复Grassmann数，它们可视为由两个实Grassmann数组合而成：</p>
+<script type="math/tex; mode=display">
+\psi = \frac{1}{\sqrt2}(\eta_1+{\rm i}\xi_2)\qquad \overline\psi = \frac{1}{\sqrt2}(\eta_1-{\rm i}\xi_2)</script><p>对于复Grassmann数的高斯积分如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I &= \int{\rm d}^n\psi {\rm d}^n\overline\psi \exp\left(\psi^\dagger M \psi\right)\\
+&= (\det [U])^{-1}(\det [V])^{-1}\int{\rm d}^n\psi {\rm d}^n\overline\psi \exp\left((\psi^\dagger V^{-1}) (V M U) (U^{-1} \psi)\right)\\
+&= (\det [U])^{-1}(\det [V])^{-1} \prod_{i=1}^n \int{\rm d}\eta_i {\rm d}\overline\eta_i \exp\left(\overline\eta_i M'_i \eta_i\right)\\
+&= (\det [U])^{-1}(\det [V])^{-1} (\det [V]) (\det [M]) (\det [U])\\
+&= \det [M]
+\end{aligned}</script><p>此即复Grassmann数的高斯积分，它在物理上常用于描述自由旋量场的情况。还可将之推广到更一般的情况：</p>
+<script type="math/tex; mode=display">
+\int{\rm d}^n\overline\psi {\rm d}^n\psi \exp\left(\overline\psi M \psi + \overline\theta\psi - \overline\psi\theta\right) = \det [M] \exp\left( \overline\theta [M]^{-1} \theta \right)</script><p>这在物理上描述有源旋量场的情况。</p>
+<p>我们总结一下Grassmann数的高斯积分，并与c-数的高斯积分作一比较：</p>
+<blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">real</th>
+<th style="text-align:center">complex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">c-number</td>
+<td style="text-align:center">$\displaystyle\int{\rm d}^{n}x\exp\left(\frac12 X^T A X\right) = \frac{(2\pi)^{n/2} }{(\det [A])^{1/2}}$</td>
+<td style="text-align:center">$\displaystyle \int{\rm d}^n z {\rm d}^n z^* \exp\left(Z^\dagger A Z\right) = \frac{(2\pi)^n}{\det [A]}$</td>
+</tr>
+<tr>
+<td style="text-align:center">Grassmann number</td>
+<td style="text-align:center">$\displaystyle\int{\rm d}^{n}\psi\exp\left(\frac12 \psi^T M \psi\right) = (\det [M])^{1/2}$</td>
+<td style="text-align:center">$\displaystyle\int{\rm d}^n\psi {\rm d}^n\overline\psi \exp\left(\psi^\dagger M \psi\right) = \det [M]$</td>
+</tr>
+</tbody>
+</table>
+</div>
+</blockquote>
+<p>可见，无论c-数还是Grassmann数，其高斯积分的核心就是计算算符行列式$\det [M]$。这一点对旋量场尤为重要，因为其拉格朗日密度一般总具有$\mathscr L = \overline \psi D \psi$的形式。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/QFT/QFT-Chap-3.html">https://papaya-z.github.io/post/QFT/QFT-Chap-3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA/">量子场论</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img class="cover" src="/img/cohen/5.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Cohen量子力学Chap.5补充材料</div></div></a></div><div class="next-post pull-right"><a href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><img class="cover" src="/img/QM.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/QFT/QFT-Chap-2.html" title="量子场论 Chap.2：自由场量子化：正则方法"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-22</div><div class="title">量子场论 Chap.2：自由场量子化：正则方法</div></div></a></div><div><a href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-21</div><div class="title">量子场论 Chap.4：散射理论</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么需要路径积分？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%8D%E9%A1%BE%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text">再顾量子化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">场的量子化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">路径积分原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%8C%E5%A4%87%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">完备性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%96%B9%E6%B3%95%E4%B8%8E%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E6%96%B9%E6%B3%95%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">正则方法与路径积分方法的等价性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E5%85%B3%E7%B3%BB"><span class="toc-number">4.1.</span> <span class="toc-text">重要关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Schwinger%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86"><span class="toc-number">4.2.</span> <span class="toc-text">Schwinger作用量原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E4%BD%93%E7%B3%BB%E5%81%87%E8%AE%BE"><span class="toc-number">4.3.</span> <span class="toc-text">正则体系假设</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E6%97%B6%E5%85%B3%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">编时关联函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E8%A1%A8%E8%BF%B0"><span class="toc-number">5.1.</span> <span class="toc-text">路径积分表述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%B3%9B%E5%87%BD"><span class="toc-number">5.2.</span> <span class="toc-text">生成泛函</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text">各种场的路径积分量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E9%87%8F%E5%9C%BA"><span class="toc-number">6.1.</span> <span class="toc-text">标量场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA"><span class="toc-number">6.2.</span> <span class="toc-text">旋量场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Grassmann%E4%BB%A3%E6%95%B0"><span class="toc-number">6.2.1.</span> <span class="toc-text">Grassmann代数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E5%92%8C%E4%B9%98%E6%B3%95"><span class="toc-number">6.2.1.1.</span> <span class="toc-text">加法和乘法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E6%95%B0"><span class="toc-number">6.2.1.2.</span> <span class="toc-text">导数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%AF%E5%88%86"><span class="toc-number">6.2.1.3.</span> <span class="toc-text">积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E5%8F%98%E9%87%8F%E5%8F%98%E6%8D%A2"><span class="toc-number">6.2.1.4.</span> <span class="toc-text">积分变量变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E7%A7%AF%E5%88%86"><span class="toc-number">6.2.1.5.</span> <span class="toc-text">高斯积分</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9EGrassmann%E6%95%B0"><span class="toc-number">6.2.1.5.1.</span> <span class="toc-text">实Grassmann数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8DGrassmann%E6%95%B0"><span class="toc-number">6.2.1.5.2.</span> <span class="toc-text">复Grassmann数</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html" title="凝聚态chap1：量子化基础与凝胶模型"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="凝聚态chap1：量子化基础与凝胶模型"/></a><div class="content"><a class="title" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html" title="凝聚态chap1：量子化基础与凝胶模型">凝聚态chap1：量子化基础与凝胶模型</a><time datetime="2024-02-23T21:10:20.000Z" title="发表于 2024-02-24 05:10:20">2024-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.4：散射理论"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论">量子场论 Chap.4：散射理论</a><time datetime="2024-01-21T02:01:51.000Z" title="发表于 2024-01-21 10:01:51">2024-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img src="/img/cohen/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料">Cohen量子力学Chap.5补充材料</a><time datetime="2024-01-08T08:33:10.000Z" title="发表于 2024-01-08 16:33:10">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.3：场量子化：路径积分方法"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法">量子场论 Chap.3：场量子化：路径积分方法</a><time datetime="2024-01-08T07:43:11.000Z" title="发表于 2024-01-08 15:43:11">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</a><time datetime="2024-01-07T13:54:42.000Z" title="发表于 2024-01-07 21:54:42">2024-01-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
     getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')

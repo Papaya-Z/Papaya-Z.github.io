@@ -1,0 +1,483 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>凝聚态chap1：量子化基础与凝胶模型 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="二次量子化；凝胶模型"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '凝聚态chap1：量子化基础与凝胶模型',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-26 08:19:09'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">凝聚态chap1：量子化基础与凝胶模型</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-02-23T21:10:20.000Z" title="发表于 2024-02-24 05:10:20">2024-02-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-26T00:19:09.224Z" title="更新于 2024-02-26 08:19:09">2024-02-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%8A%84%E4%B9%A6%E8%AE%A1%E5%88%92/">木瓜数学物理抄书计划</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%A8%E7%93%9C%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%8A%84%E4%B9%A6%E8%AE%A1%E5%88%92/%E5%87%9D%E8%81%9A%E6%80%81%E7%90%86%E8%AE%BA/">凝聚态理论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="凝聚态chap1：量子化基础与凝胶模型"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="量子化基础"><a href="#量子化基础" class="headerlink" title="量子化基础"></a>量子化基础</h1><h2 id="一次量子化"><a href="#一次量子化" class="headerlink" title="一次量子化"></a>一次量子化</h2><p>一次量子化是物理量的量子化，它引入了描述物理状态的态矢，并将可观测量提升为态空间上的算符；经典的色散关系经过这样的提升后就得到量子力学的基本动力学方程：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar \frac{\partial}{\partial t}\ket\psi = \hat H\ket\psi = \left( \frac{\hat p^2}{2m} + \hat V \right) \ket\psi</script><h3 id="多体态的描述"><a href="#多体态的描述" class="headerlink" title="多体态的描述"></a>多体态的描述</h3><p>一次量子化框架下我们利用单体态来描述多体系统的基本方案是态矢的张量积，这对应于单体波函数的乘积：</p>
+<script type="math/tex; mode=display">
+\ket\psi = \ket{\phi_1,\phi_2,\dots,\phi_N} = \bigotimes_{i = 1}^N \ket{\phi_i}</script><script type="math/tex; mode=display">
+\psi(r_1,r_2,\dots,r_N) = \braket{r_1,r_2,\dots,r_N}{\psi} = \phi_1(r_1)\phi_2(r_2)\cdots\phi_N(r_N)</script><p>这样的态称为乘积态。这里指标$r_i$不仅指空间坐标，也包含其他态指标，如自旋、轨道等。</p>
+<p>注意到在记号$\ket{\phi_1,\phi_2,\dots,\phi_n}$中，各个单体态的顺序是重要的。处理全同粒子体系时，还需要额外考虑粒子全同性带来的统计问题，此时若交换两个粒子所处的态不会导致体系的物理态（波函数）改变，至多相差一个相因子：</p>
+<script type="math/tex; mode=display">
+\ket{\phi_1,\dots,\phi_k,\dots,\phi_j,\dots,\phi_n} = {\rm e}^{ {\rm i}\alpha} \ket{\phi_1,\dots,\phi_j,\dots,\phi_k,\dots,\phi_n}</script><p>特别地，两次同样的交换会将其变回原来的多体态，于是有条件：</p>
+<script type="math/tex; mode=display">
+{\rm e}^{ 2{\rm i}\alpha} = 1</script><p>在三维空间中，只允许相角$\alpha$的两种可能取值：</p>
+<ul>
+<li>$\alpha = 0$，表示交换粒子多体态矢不变，即交换对称，这称为玻色子体系；</li>
+<li>$\alpha = \pi$，表示交换粒子多体态矢改变一个负号，即交换反对称，这称为费米子体系。</li>
+</ul>
+<p>在一维或二维体系中，则相角可以允许是任意有理数（称为任意子）甚至矩阵形式（非阿贝尔任意子）。</p>
+<p>交换对称/反对称性要求我们在利用单体态写出多体态时，必须额外进行对称化/反对称化的操作：</p>
+<script type="math/tex; mode=display">
+\ket\psi = \frac{1}{\sqrt {N!} } \sum_P (\pm1)^{P} \ket{\phi_{P_1} }\ket{\phi_{P_2} }\cdots \ket{\phi_{P_N} }</script><p>并且这也会对张量积空间中那些描述真实物理态的态矢性质作出限制，实际的态空间是单体态空间张量积的子空间。特别地，费米子体系的反对称化多体波函数可以写为Slater行列式的形式：</p>
+<script type="math/tex; mode=display">
+\psi_{\rm Fermi}(\{r_i\}) = \frac{1}{\sqrt {N!} }\begin{vmatrix}
+\phi_1(r_1) & \phi_1(r_2) & \dots & \phi_1(r_N)\\
+\phi_2(r_1) & \phi_2(r_2) & \dots & \phi_2(r_N)\\
+\vdots & \vdots & \ddots & \vdots\\
+\phi_N(r_1) & \phi_N(r_2) & \dots & \phi_N(r_N)\\
+\end{vmatrix}</script><h3 id="例子：描述铁磁交换作用"><a href="#例子：描述铁磁交换作用" class="headerlink" title="例子：描述铁磁交换作用"></a>例子：描述铁磁交换作用</h3><p>作为一次量子化框架的简单应用，它可以较为方便地描述铁磁交换作用的产生。考虑一个双态电子体系，即两个电子占据两个正交的单电子本征态：</p>
+<script type="math/tex; mode=display">
+H_0\ket\lambda = \varepsilon_\lambda\ket\lambda\ ,\quad H_0\ket\rho = \varepsilon_\rho\ket\rho</script><p>则考虑库仑作用时体系哈密顿量为</p>
+<script type="math/tex; mode=display">
+H = H_0(1) + H_0(2) + \frac{e^2}{|r_1-r_2|}</script><p>电子波函数可以写为空间部分与自旋部分之乘积，根据费米子交换反对称性可以构造四个两电子态：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\ket{\psi_{11} } &= \frac{1}{\sqrt 2}\Big(\ket{\lambda,\rho} -\ket{\rho,\lambda} \Big) \times \ket{\uparrow\uparrow}\\
+\ket{\psi_{10} } &= \frac{1}{\sqrt 2}\Big(\ket{\lambda,\rho} -\ket{\rho,\lambda} \Big) \times \frac{1}{\sqrt2}\Big(\ket{\uparrow\downarrow} + \ket{\downarrow\uparrow}\Big)\\
+\ket{\psi_{1-1} } &= \frac{1}{\sqrt 2}\Big(\ket{\lambda,\rho} -\ket{\rho,\lambda} \Big) \times \ket{\downarrow\downarrow}\\
+\ket{\psi_{00} } &= \frac{1}{\sqrt 2}\Big(\ket{\lambda,\rho} +\ket{\rho,\lambda} \Big) \times  \frac{1}{\sqrt2}\Big(\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow}\Big)
+\end{aligned}</script><p>前三个态的自旋部分是三重态，空间部分是单态；最后一个态的自旋部分是单态，空间部分是三重态。由于哈密顿量与自旋无关，它们都是能量本征态，分别为：</p>
+<script type="math/tex; mode=display">
+\bra{\psi_{11} } H \ket{\psi_{11} } = \bra{\psi_{10} } H \ket{\psi_{10} } = \bra{\psi_{1-1} } H \ket{\psi_{1-1} } = \varepsilon_\lambda + \varepsilon_\rho + C - J</script><script type="math/tex; mode=display">
+\bra{\psi_{00} } H \ket{\psi_{00} } = \varepsilon_\lambda + \varepsilon_\rho + C + J</script><p>其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+C = \bra{\lambda(1),\rho(2)}\frac{e^2}{|r_1-r_2|}\ket{\lambda(1),\rho(2)} = \bra{\rho(1),\lambda(2)}\frac{e^2}{|r_1-r_2|}\ket{\rho(1),\lambda(2)}>0\\
+J = \bra{\lambda(1),\rho(2)}\frac{e^2}{|r_1-r_2|}\ket{\rho(1),\lambda(2)} = \bra{\rho(1),\lambda(2)}\frac{e^2}{|r_1-r_2|}\ket{\lambda(1),\rho(2)}>0
+\end{aligned}</script><p>其中第一项为“库仑项”，它在坐标表象下与经典的库仑相互作用一致；第二项是“交换项”，是纯粹由全同粒子的量子效应所产生的修正。</p>
+<p>交换项$J$的存在所带来的修正，导致电子倾向于按照自旋三重态排列，也即铁磁型自旋排列；同时自旋三重态的空间部分是单态，即两个电子在实空间倾向于减少波函数的重叠从而降低库仑相互作用能。这就解释了两个费米子正交态的铁磁交换作用的产生。</p>
+<p>事实上前述四个态恰好可以对应于一个量子海森堡模型的四个本征态：</p>
+<script type="math/tex; mode=display">
+H = -J_{\rm eff} \vec S_1 \cdot \vec S_2 + \varepsilon_0</script><p>其中$J_{\rm eff} = 2J$，$\varepsilon_0 = \varepsilon_\lambda + \varepsilon_\rho - \frac{J}{2}$。可见这的确是一个等效的铁磁海森堡模型。</p>
+<h3 id="Hartree-Fock近似"><a href="#Hartree-Fock近似" class="headerlink" title="Hartree-Fock近似"></a>Hartree-Fock近似</h3><p>前述讨论中出现的能量结构$\sum_k\varepsilon_k + C - J$是具有普遍性的，尤其是在即将讨论的所谓Hartree-Fock方法。考虑$N$全同费米子体系，哈密顿量写为</p>
+<script type="math/tex; mode=display">
+H = \sum_{i=1}^N \left[ \frac{p_i^2}{2m} + U(r_i) \right] + \frac12 \sum_{i\neq j}V(r_i,r_j) = \sum_{i=1}^N H_0(i) + \frac12 \sum_{i\neq j}V_{ij}</script><p>其中包含单电子的动能、单电子感受到来自材料背景的外势$U$，以及电子之间的相互作用$V$；这里忽略了自旋自由度。<strong>Hartree-Fock近似是指，用不包含相互作用的反对称化乘积态，来近似包含了相互作用的多体态基态，以计算体系的性质</strong>，即我们假设存在相互作用的多体波函数可以由自由的Slater行列式来近似：</p>
+<script type="math/tex; mode=display">
+\Psi(\{r_i\}) \simeq \psi_{\rm HF}(\{r_i\}) = \frac{1}{\sqrt {N!} }\begin{vmatrix}
+\phi_1(r_1) & \phi_1(r_2) & \dots & \phi_1(r_N)\\
+\phi_2(r_1) & \phi_2(r_2) & \dots & \phi_2(r_N)\\
+\vdots & \vdots & \ddots & \vdots\\
+\phi_N(r_1) & \phi_N(r_2) & \dots & \phi_N(r_N)\\
+\end{vmatrix}</script><p>Hartree-Fock近似通常结合能量变分法等方法，被用于求出多体基态$\Psi$；因此这一过程中需要计算$\psi_{\rm HF}$的能量。</p>
+<p>简单起见，首先考虑可分辨粒子的情况，此时的多体波函数就是单体波函数的简单乘积，不需要反对称化：</p>
+<script type="math/tex; mode=display">
+\psi_{\rm prd}(\{r_i\}) = \phi_1(r_1)\phi_2(r_2)\cdots \phi_N(r_N)</script><p>它的能量可以分为$E_{\rm prd} = E_0 + E_{\rm Hartree}$：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+E_0 &= \int\prod_{k=1}^N {\rm d}r_k\ \psi_{\rm prd}^*(\{r_k\}) \left[\sum_{i=1}^N H_0(i)\right] \psi_{\rm prd}(\{r_k\})\\
+&= \sum_{i = 1}^N \Bigg[ \prod_{k\neq i} \underbrace{\int{\rm d}r_k\ |\phi_k(r_k)|^2 }_{=1}\Bigg] \int{\rm d}r_i\ \phi_i^*(r_i)H_0(i)\phi_i(r_i)\\
+&= \sum_{i = 1}^N \varepsilon_i
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+E_{\rm Hartree} &= \int\prod_{k=1}^N {\rm d}r_k\ \psi_{\rm prd}^*(\{r_k\}) \left[\frac12 \sum_{j\neq i}V_{ij}\right] \psi_{\rm prd}(\{r_k\})\\
+&= \frac12 \sum_{j \neq i} \Bigg[ \prod_{k\neq i,j} \underbrace{\int{\rm d}r_k\ |\phi_k(r_k)|^2 }_{=1}\Bigg]  \iint{\rm d}r_i{\rm d}r_j\ \phi_i^*(r_i)\phi_j^*(r_j)V_{ij}\phi_i(r_i)\phi_j(r_j)\\
+&= \frac12 \sum_{j \neq i} \iint{\rm d}r_i{\rm d}r_j\ |\phi_i(r_i)|^2 V_{ij} |\phi_j(r_j)|^2
+\end{aligned}</script><p>其中第一部分能量$E_0$就是各个单体态的能量之总和；第二部分称之为Hartree能量$E_{\rm Hartree}$，它表示两两电子之间相互作用能的总和，其形式上与经典库仑相互作用完全相同。这是因为我们没有考虑全同粒子的统计性质带来的修正，因此乘积态$\psi_{\rm prd}$某种程度上就是经典极限下的费米子波函数，$E_{\rm Hartree}$也就是经典极限下的相互作用能。</p>
+<p>但我们实际上知道体系波函数应当考虑全同费米子的交换反对称性，因此真正需要考虑的波函数是：</p>
+<script type="math/tex; mode=display">
+\psi_{\rm HF}(\{r_i\}) = \frac{1}{\sqrt {N!} }\sum_P (-1)^{P} \phi_{P_1}(r_1)\phi_{P_2}(r_2)\cdots \phi_{P_N}(r_N)</script><p>可以计算得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+E_0 &= \int\prod_{k=1}^N {\rm d}r_k\ \psi_{\rm HF}^*(\{r_k\}) \left[\sum_{i=1}^N H_0(i)\right] \psi_{\rm HF}(\{r_k\})\\
+&= \frac{1}{N!}\sum_{i = 1}^N\sum_{P}\sum_Q(-1)^{P}(-1)^{Q} \Bigg[ \prod_{k\neq i} \underbrace{\int{\rm d}r_k\ \phi^*_{P_k}(r_k) \phi_{Q_K}(r_k) }_{=\delta_{P_k,Q_k} }\Bigg] \underbrace{\int{\rm d}r_i\ \phi_{P_i}^*(r_i)H_0(i)\phi_{Q_i}(r_i) }_{ = \varepsilon_{P_i}\delta_{P_i,Q_i} }\\
+&= \frac{1}{N!}\sum_{i = 1}^N \sum_{P} \big((-1)^{P}\big)^2 \varepsilon_{P_i} = \frac{1}{N!}\sum_{i = 1}^N \sum_{P_i = 1}^N (N-1)! \varepsilon_{P_i}\\
+&= \sum_{i = 1}^N \varepsilon_{i}
+\end{aligned}</script><p>可见粒子全同性不影响单电子能量部分。而另一方面，相互作用能部分则是：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+E_{\rm HF} &= \int\prod_{k=1}^N {\rm d}r_k\ \psi_{\rm HF}^*(\{r_k\}) \left[\frac12 \sum_{j\neq i}V_{ij}\right] \psi_{\rm HF}(\{r_k\})\\
+&= \frac{1}{2N!}\sum_{i = 1}^N\sum_{P,Q}(-)^{P+Q} \Bigg[ \prod_{k\neq i,j} \underbrace{\int{\rm d}r_k\ \phi^*_{P_k}(r_k) \phi_{Q_K}(r_k) }_{=\delta_{P_k,Q_k} }\Bigg] \iint{\rm d}r_i{\rm d}r_j\ \phi_{P_i}^*(r_i)\phi_{P_j}^*(r_j)V_{ij}\phi_{Q_i}(r_i)\phi_{Q_j}(r_j) \\
+&= \frac{1}{2N!}\sum_{i = 1}^N\sum_{P}(N-2)! \iint{\rm d}r_i{\rm d}r_j\ \phi_{P_i}^*(r_i)\phi_{P_j}^*(r_j)V_{ij}\phi_{P_i}(r_i)\phi_{P_j}(r_j)\\
+&- \frac{1}{2N!}\sum_{i = 1}^N\sum_{P}(N-2)! \iint{\rm d}r_i{\rm d}r_j\ \phi_{P_i}^*(r_i)\phi_{P_j}^*(r_j)V_{ij}\phi_{P_j}(r_i)\phi_{P_i}(r_j)\\
+&= \frac{1}{2}\sum_{i = 1}^N \iint{\rm d}r_i{\rm d}r_j\ |\phi_i(r_i)|^2 V_{ij} |\phi_j(r_j)|^2\\
+&- \frac{1}{2}\sum_{i = 1}^N \iint{\rm d}r_i{\rm d}r_j\ \phi_{P_i}^*(r_i)\phi_{P_j}(r_i)V_{ij}\phi_{P_j}^*(r_j)\phi_{P_i}(r_j)\\
+& = E_{\rm Hartree} + E_{\rm Fock}
+\end{aligned}</script><p>可见考虑了粒子全同性之后，会比之前多出一项，称为Fock能量$E_{\rm Fock}$，其积分中单电子态进行了交换，因而也叫交换能，相应的$E_{\rm Hartree}$则是库仑能或直接能。显然，$E_{\rm Fock}$是纯粹的量子全同性交换效应，它没有经典对应。</p>
+<p>在用HF态$\psi_{\rm HF}$对相互作用多体态近似时，相互作用能中必然会同时出现Hartree能量$E_{\rm Hartree}$和Fock能量$E_{\rm Fock}$。</p>
+<h2 id="二次量子化"><a href="#二次量子化" class="headerlink" title="二次量子化"></a>二次量子化</h2><p>二次量子化更方便描述全同粒子体系，它不关心特定粒子所处的单粒子态，而是关心特定单粒子态上的占据数。</p>
+<p>二次量子化得名于其“看起来像”是进一步将一次量子化中的波函数也提升为所谓场算符，并赋予正则对易/反对易关系：</p>
+<script type="math/tex; mode=display">
+\psi \to \hat\psi\ ,\quad \psi^* \to \hat\psi^\dagger</script><script type="math/tex; mode=display">
+[\hat\psi(x),\hat\psi^\dagger(y)]_{\zeta} = \delta(x-y)</script><p>但事实上在今天的观点看来，所谓“二次量子化”并不是进行第二次量子化，而是对多粒子体系进行“另一类量子化”：不同于一次量子化那样用单体态乘积得到多体态，在二次量子化中，我们关注占据数$n_i$的概念，即在第$i$个单粒子态上有$n_i$​个全同粒子占据。</p>
+<h3 id="多体态的描述-1"><a href="#多体态的描述-1" class="headerlink" title="多体态的描述"></a>多体态的描述</h3><p>利用占据数的概念，一个多体态的形式就是</p>
+<script type="math/tex; mode=display">
+\ket{n_1,n_2,\dots,n_k,\dots}</script><p>其中每个状态的占据数$n_i$都是非负整数，体系的基态是$\ket{\rm empty} = \ket{0,0,\dots}$。总粒子数$N = \sum_i n_i$显然是各个占据数之和。这样的多体态称为Fock态；特定总粒子数$N$的全体Fock态张成空间$\mathcal F^N$，而不同总粒子数的空间直和就构成描述全同粒子体系的Fock空间：</p>
+<script type="math/tex; mode=display">
+\mathcal F = \mathcal F^0 \oplus \mathcal F^1\oplus\cdots = \bigoplus_{N=0}^\infty \mathcal F^N</script><p>不同总粒子数之间可以通过产生/湮灭算符相互转化，对于玻色子体系：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a^\dagger_j \ket{n_1,\dots,n_j,\dots} &= \sqrt{n_j+1} \ket{n_1,\dots,n_j+1,\dots}\\
+a _j \ket{n_1,\dots,n_j,\dots} &= \sqrt{n_j} \ket{n_1,\dots,n_j-1,\dots}
+\end{aligned}</script><p>对于费米子体系：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a^\dagger_j \ket{n_1,\dots,n_j,\dots} &= (-)^{\sum_{i<j}n_i}\sqrt{1-n_j} \ket{n_1,\dots,n_j+1,\dots}\\
+a _j \ket{n_1,\dots,n_j,\dots} &= (-)^{\sum_{i<j}n_i}\sqrt{n_j} \ket{n_1,\dots,n_j-1,\dots}
+\end{aligned}</script><p>可见费米子体系的泡利不相容原理导致占据数只能取$n_i = 0,1$​两种情况，否则结果为零；费米子的交换反对称性还会带来所谓“费米子弦(fermionic string)”的负号因子。</p>
+<p>特别地，占据数算符$\hat n_j = a^\dagger_j a_j$，作用在Fock态上得到相应的占据数。</p>
+<p>产生湮灭算符满足的代数性质是对易/反对易关系：</p>
+<script type="math/tex; mode=display">
+[a_j,a_\ell^\dagger]_{\zeta} = a_j a_\ell^\dagger - \zeta a_\ell^\dagger a_j = \delta_{j\ell},\quad [a_j,a_\ell]_\zeta = [a_j^\dagger,a_\ell^\dagger]_\zeta = 0</script><p>其中对玻色子$\zeta = +1$，费米子$\zeta = -1$。</p>
+<p>我们可以在不同的表象下（即关注不同表象的单粒子态）谈论二次量子化形式，在两种表象的产生湮灭算符之间存在简单变换关系：</p>
+<script type="math/tex; mode=display">
+a^\dagger_\mu = \sum_j \braket{j}{\mu} a^\dagger_j\ ,\qquad a_j = \sum_\mu \braket{\mu}{j} a_\mu</script><p>特别地，坐标表象是连续表象，其中的产生湮灭算符就是前面提到的场算符：$\hat\psi^\dagger(r) = a^\dagger _r$，$\hat\psi(r) = a_r$。</p>
+<h3 id="多体算符"><a href="#多体算符" class="headerlink" title="多体算符"></a>多体算符</h3><p>二次量子化中与若干粒子相关的算符形式较为简单。</p>
+<p>首先考虑单体算符$\hat F = \sum_{i}\hat f(i)$，即单体态算符直接相加形式的算符，其二次量子化形式为：</p>
+<script type="math/tex; mode=display">
+\hat F = \sum_{\lambda\rho} a^\dagger_\lambda \bra{\lambda}\hat f\ket{\rho} a_\rho</script><p>例如：</p>
+<ul>
+<li><p>粒子数算符：$\displaystyle \hat N = \int {\rm d}r\ \hat\psi^\dagger(r) \hat\psi(r) = \sum_k a^\dagger_k a_k$，两个表象下都是对角的；</p>
+</li>
+<li><p>动能算符：$\displaystyle \hat T = \int {\rm d}r\ \hat\psi^\dagger(r) \left[ -\frac{\nabla^2}{2m} \right] \hat\psi(r) = \sum_k \dfrac{k^2}{2m} a^\dagger_k a_k$，两个表象下都是对角的；</p>
+</li>
+<li><p>外势算符：$\displaystyle \hat U = \int {\rm d}r\ U(r) \hat\psi^\dagger(r) \hat\psi(r) = \sum_{k,q} U(q) a^\dagger_{k+q} a_k$，坐标表象是对角的，动量表象依赖于电子的转移动量$q$，其中</p>
+<script type="math/tex; mode=display">
+U(q) = \frac1V \int{\rm d}^dx U(x) {\rm e}^{-{\rm i}qx}</script></li>
+</ul>
+<p>接下来考虑两体算符$\hat O = \sum_{i\neq j}\hat o(i,j)$，即与两个单体态相关的算符相加形式的算符，其二次量子化形式为：</p>
+<script type="math/tex; mode=display">
+\hat O = \sum_{\lambda\rho\mu\nu} a^\dagger_\lambda a^\dagger_\rho \bra{\lambda,\rho} \hat o \ket{\nu,\mu} a_\mu a_\nu</script><p>例如：</p>
+<ul>
+<li>库仑相互作用算符，在坐标表象时：$\displaystyle \hat H_{\rm coulomb} = \frac12 \int {\rm d}r{\rm d}r’\ \hat\psi^\dagger(r) \hat\psi^\dagger(r’) \frac{1}{|r-r’|} \hat\psi(r’) \hat\psi(r)$，是两点关联；</li>
+<li>库仑相互作用算符，在动量表象时：$\displaystyle \hat H_{\rm coulomb} = \frac{1}{2V} \sum_{k,k’,q} a^\dagger_{k+q} a^\dagger_{k’-q} \frac{4\pi e^2}{q^2} a_{k} a_{k’}$，其中利用了动量守恒，$V$是箱归一化体积。</li>
+</ul>
+<h3 id="电子体系哈密顿量"><a href="#电子体系哈密顿量" class="headerlink" title="电子体系哈密顿量"></a>电子体系哈密顿量</h3><p>上述给出的都是未考虑电子自旋的形式，若将之纳入考虑，则体系的二次量子化哈密顿量在坐标表象是：</p>
+<script type="math/tex; mode=display">
+\hat H = \sum_{\sigma = \uparrow,\downarrow}\int{\rm d}r\ \hat\psi^\dagger_\sigma(r) \left[ -\frac{\nabla^2}{2m} 
++ U(r) \right] \hat\psi_\sigma(r) + \frac12\sum_{\sigma,\sigma'}\iint{\rm d}r{\rm d}r'\ \hat\psi^\dagger_{\sigma}(r)\hat\psi^\dagger_{\sigma'}(r') \frac{e^2}{|r-r'|} \hat\psi_{\sigma'}(r')\hat\psi_{\sigma}(r)</script><p>或者在动量表象就是：</p>
+<script type="math/tex; mode=display">
+\hat H = \sum_{\sigma}\sum_k \left[ \frac{k^2}{2m} c^\dagger_{k,\sigma} c_{k,\sigma} + \frac1V \sum_{q} \int{\rm d}x U(x){\rm e}^{-{\rm i}qx} c^\dagger_{k+q,\sigma} c_{k,\sigma} \right] + \frac{1}{2V} \sum_{\sigma,\sigma'}\sum_{k,k',q} \frac{4\pi e^2}{q^2} c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'}</script><p>其中携带自旋的电子算符通常是定义在周期边界条件的体积为$V = L^d$的$d$维归一化箱中，从而动量离散化：$k_i = \dfrac{2\pi m_i}{L}$，且：</p>
+<script type="math/tex; mode=display">
+c_{k,\sigma} = \frac{1}{\sqrt V}\int{\rm d}x {\rm e}^{-{\rm i}kr}\psi_{\sigma}(r)\ ,\quad\psi_\sigma(r) = \frac{1}{\sqrt V} \sum_k {\rm e}^{ {\rm i}kr}c_{k,\sigma}</script><p>当取无穷大空间极限时，求和与积分之间存在关系是（利用$\Delta^dk = \Delta k_1\Delta k_2\cdots\Delta k_d \simeq \dfrac{(2\pi)^d}{V}$）：</p>
+<script type="math/tex; mode=display">
+\Delta^d k \sum_k \simeq \int{\rm d}^d p \Longrightarrow \frac1V\sum_k \simeq \int \frac{ {\rm d}^dk}{(2\pi)^d}</script><p>这样的平面波模型适于讨论具有空间平移不变性的系统（如电子气、液氦），及晶格周期势影响不大的晶格电子体系；但对于周期性明显的固体材料，则采用Bloch波作为基矢更合适，此时单粒子项（包括外势项）自动对角化。</p>
+<hr>
+<h1 id="库仑电子气的凝胶模型"><a href="#库仑电子气的凝胶模型" class="headerlink" title="库仑电子气的凝胶模型"></a>库仑电子气的凝胶模型</h1><h2 id="哈密顿量"><a href="#哈密顿量" class="headerlink" title="哈密顿量"></a>哈密顿量</h2><p>现在考虑一个最简单的模型：金属中由库仑相互作用主导的三维电子气体系，其哈密顿量可以写为：</p>
+<script type="math/tex; mode=display">
+H = H_{\rm ek} + H_{\rm ee} + H_{\rm bb} + H_{\rm eb}</script><p>分别代表电子动能、电子之间的库仑相互作用能、离子实构成的正电荷背景的相互作用能、电子与正电荷之间相互作用能。在经典情形它们的形式分别可以写成（为区分起见，我们将正电荷背景视作连续分布而电子则是离散分布）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H_{\rm ek} &= \sum_{i=1}^N \dfrac{p_i^2}{2m}\\
+H_{\rm ee} &= \frac{e^2}{2}\sum_{i\neq j} \frac{ {\rm e}^{-\mu|r_i-r_j|}}{|r_i-r_j|} \\
+H_{\rm bb} &= \frac{e^2}{2}\iint{\rm d}^3x{\rm d}^3y\ n(x)n(y)\frac{ {\rm e}^{-\mu|x-y|}}{|x-y|}\\
+H_{\rm eb} &= -e^2\sum_{i=1}^N\int{\rm d}^3x\ n(x)\frac{ {\rm e}^{-\mu|x-r_i|}}{|x-r_i|}
+\end{aligned}</script><p>在这里我们用汤川势$r^{-1}{\rm e}^{-\mu r}$代替了原本的库仑势$r^{-1}$，是一种正规化手段：为了避免长程库仑相互作用带来的发散特性，在计算过程中用衰减项${\rm e}^{-\mu r}$来控制发散，最后再取$\mu\to0$的极限；这实际上是将发散项的行为显式写出，从而可以再过程中对发散进行处理。</p>
+<p>上述后两个积分可以计算出来，这里假设正负电荷相等且正电荷均匀分布，于是正电荷的密度就是$n(x) = N/V$，于是</p>
+<script type="math/tex; mode=display">
+H_{\rm bb} = \frac{e^2}{2}\frac{N^2}{V^2} \underbrace{ \int{\rm d}^3R }_{=V} \int{\rm d}r\ 4\pi r^2 \frac{ {\rm e}^{-\mu r} }{r} = \frac{e^2}{2}\frac{N^2}{V} \frac{4\pi}{\mu^2}</script><script type="math/tex; mode=display">
+H_{\rm eb} = -e^2\frac{N}{V} N \int{\rm d}^3x\ \frac{ {\rm e}^{-\mu|x|}}{|x|} = -e^2\frac{N^2}{V} \frac{4\pi}{\mu^2}</script><p>其中$r = x-y$，$R = (x+y)/2$。注意到这两个正规化结果在取$\mu\to0$后都是发散的。这看起来出现问题，但是先暂时搁置，尝试计算电子部分的能量，看它的结果是否可以解决这一发散问题。</p>
+<p>接下来要计算的就是电子部分能量，按照二次量子化框架写为：</p>
+<script type="math/tex; mode=display">
+H_{\rm e} = H_{\rm ek}+H_{\rm ee} = \sum_{k,\sigma}\frac{k^2}{2m} c^\dagger_{k,\sigma} c_{k,\sigma} + \frac{1}{2V} \sum_{k,k',q,\sigma,\sigma'}\frac{4\pi e^2}{\mu^2 + q^2} c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'}</script><p>当取$\mu\to0$后，第二部分存在发散：注意到$k,k’,q$都是离散取值的，因此只在求和中的一项$q=0$处相互作用能发散。为此单独考虑这一项在$\mu$正规化时的形式为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H_{\rm ee}(q=0) &= \frac{e^2}{2}\frac{1}{V}\frac{4\pi}{\mu^2} \sum_{k,k',\sigma,\sigma'} c^\dagger_{k,\sigma} c^\dagger_{k',\sigma'} c_{k,\sigma} c_{k',\sigma'}\\
+&= -\frac{e^2}{2}\frac{1}{V}\frac{4\pi}{\mu^2} \left[ \sum_{k,\sigma}c^\dagger_{k,\sigma}c_{k,\sigma} - \left(\sum_{k,\sigma}c^\dagger_{k,\sigma}c_{k,\sigma}\right) \left(\sum_{k',\sigma'}c^\dagger_{k',\sigma'}c_{k',\sigma'}\right) \right]\\
+&= -\frac{e^2}{2}\frac{1}{V}\frac{4\pi}{\mu^2} (N-N^2)
+\end{aligned}</script><p>当取热力学极限$N\to\infty$的时候，上式第一项相较于第二项可以忽略，于是</p>
+<script type="math/tex; mode=display">
+\lim_{N\to\infty} \frac{H_{\rm ee}(q=0)}{N} \simeq -\frac{e^2}{2}\frac{N}{V}\frac{4\pi}{\mu^2}</script><p>它恰好可以和另外两个正规化发散项相抵消：</p>
+<script type="math/tex; mode=display">
+\lim_{N\to\infty} = \frac1N \left[ H_{\rm ee}(q=0) + H_{\rm bb} + H_{\rm eb} \right] = 0</script><p>这实际上并不是巧合，而是具有明确的物理意义：$q = 0$意味着电子感受到其他电子提供的负电荷背景的这部分相互作用能而未发生动量交换，因此$H_{\rm ee}(q=0)$描述的是静态电子体系的自相互作用能；而我们在金属电子气模型中又假定忽略了正电荷离子实的动力学，于是上述三项抵消实际上是体系整体为电中性的体现。</p>
+<p>于是我们真正需要处理的哈密顿量剩余部分就是纯粹的电子部分，并且不存在发散项：</p>
+<script type="math/tex; mode=display">
+H_{\rm eff} = \sum_{k,\sigma}\frac{k^2}{2m} c^\dagger_{k,\sigma} c_{k,\sigma} + \frac{1}{2V} \sum_{k,k',q\neq0,\sigma,\sigma'}\frac{4\pi e^2}{q^2} c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'}</script><p>可以简单估计一下两部分贡献的相对大小，引入一个特征长度$r_0$：</p>
+<script type="math/tex; mode=display">
+\frac43 \pi r_0^3 = \frac VN</script><p>即表示电子之间的平均距离；另一方面，玻尔半径是$a_B = \frac{1}{me^2} = 0.53\ \mathring{\rm A}$，一般金属的$r_s = r_0/a_B \sim 2-6$。据此引入无量纲的体积$\bar V = r_0^{^-3} V$和动量$\bar k = r_0 k$，哈密顿量写为</p>
+<script type="math/tex; mode=display">
+H_{\rm eff} = \frac{e^2}{2 a_B }\frac{1}{r_s^2} \left[ \sum_{k,\sigma}\bar k c^\dagger_{k,\sigma} c_{k,\sigma} + \frac{r_s}{\bar V} \sum_{k,k',q\neq0,\sigma,\sigma'}\frac{4\pi}{q^2} c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'} \right]</script><p>其中能量尺度$e^2/2a_B\sim13.6{\rm\ eV}$。可见对于$r_s\ll 1$的高密度极限，体系的相互作用相较于动能反而很弱，此时适于按照小参数$r_s$微扰展开计算；而低密度极限$r_s\gg 1$时则是强关联区。</p>
+<h2 id="微扰计算"><a href="#微扰计算" class="headerlink" title="微扰计算"></a>微扰计算</h2><p>现在利用前述的凝胶模型哈密顿量和HF方法来计算体系到小$r_s$的一阶微扰的基态能量。既然体系的相互作用能相较于动能可视作微扰，那么这样的体系就可视作是零温$T\to 0$下无相互作用的自由气体，其基态是电子按照能量从低到高逐个填充的费米球分布，也就是说我们采用的HF态是：</p>
+<script type="math/tex; mode=display">
+\ket{\Omega} = \left[\prod_{k<k_F} c^\dagger_{k,\uparrow} c^\dagger_{k,\downarrow} \right] \ket{\rm empty} = \left[\prod_{k,\sigma} c^\dagger_{k,\sigma} \right] \ket{\rm empty} = \bigotimes_{k,\sigma} \ket{n_{k,\sigma} }</script><p>其中电子占据数$n_{k,\sigma} = \theta(k_F-k)$，费米面（费米动量$k_F$及费米能$\varepsilon_F^0 = \dfrac{k_F^2}{2m}$）由粒子数决定：</p>
+<script type="math/tex; mode=display">
+N = \sum_{k<k_F} n_{k,\sigma} \simeq \sum_\sigma \int \frac{ {\rm d}^3 k }{(2\pi)^3} \theta(k_F-k) = 2 \frac{4\pi V}{(2\pi)^3} \int_0^{k_F}k^2{\rm d}k = \frac{V}{3\pi^2}k_F^3</script><p>据此可以计算基态能量。动能部分（零阶项）是：</p>
+<script type="math/tex; mode=display">
+E_{\rm ek} = \bra{\Omega} \sum_{k,\sigma} \frac{k^2}{2m} c^\dagger_{k,\sigma} c_{k,\sigma} \ket{\Omega} = 2\frac{4\pi V}{2m(2\pi)^3} \int_0^{k_F}k^4{\rm d}k = \frac{V}{2m\pi^2} \frac{k_F^5}{5} = \frac{3}{5}N \varepsilon_F^0</script><p>相互作用能部分（一阶微扰项）是：</p>
+<script type="math/tex; mode=display">
+E_{\rm ee} = \frac{1}{2V} \sum_{k,k',q\neq0,\sigma,\sigma'}\frac{4\pi e^2}{q^2} \bra{\Omega} c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'} \ket{\Omega}</script><p>由于左右两边都是完全占据的费米球态，可以预计只有当中间四个算符凉凉配成粒子数算符时才有非零值；事实上对于一般的无相互作用费米子体系，有所谓Wick定理的结论：</p>
+<script type="math/tex; mode=display">
+\bra\Omega a^\dagger_i a^\dagger_j a_k a_\ell \ket\Omega = \bra\Omega a^\dagger_i a_\ell \ket\Omega\bra\Omega a^\dagger_j a_k \ket\Omega - \bra\Omega a^\dagger_i a_k \ket\Omega\bra\Omega a^\dagger_j a_\ell \ket\Omega</script><p>于是我们再次得到相互作用能的直接项和交换项两部分贡献：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}\bra{\Omega} c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'} \ket{\Omega} &= \delta_{q=0} \theta(k_F-k)\theta(k_F-k') - \delta_{\sigma,\sigma'}\delta_{k',k+q} \theta(k_F-k)\theta(k_F-k-q)
+\end{aligned}</script><p>第一项就是Hartree能，第二项是Fock能。但我们已经排除掉了$q=0$的贡献，因此最终只有：</p>
+<script type="math/tex; mode=display">
+E_{\rm ee} = -\frac{1}{2V} \sum_{k\neq k',\sigma}\frac{4\pi e^2}{|k-k'|^2} \theta(k_F-k)\theta(k_F-k')</script><p>这是一个负的修正，并且只发生在自旋相同的电子之间，意味着交换效应会使自旋相同的电子倾向于远离而降低库仑排斥能。这个式子可以解析算出：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+E_{\rm ee} &= -\frac{4\pi e^2 V}{(2\pi)^6} \int_0^{k_F}{\rm d}k\ 4\pi k^2 \frac{2\pi}{k} \int_0^{k_F}{\rm d}k'k'\ln\frac{|k+k'|}{|k-k'|}\\
+&= -\frac{4\pi e^2 V}{(2\pi)^6}8\pi^2 k_F^4 \int_0^1 x^2{\rm d}x \left[1 + \frac{1-x^2}{2x}\ln\frac{|1+x|}{|1-x|}\right]\\
+&= -\frac{4\pi e^2 V}{(2\pi)^6}8\pi^2 k_F^4 \frac12\\
+&= -\frac{3e^2}{4\pi} N k_F
+\end{aligned}</script><p>于是得到平均每个电子的能量是</p>
+<script type="math/tex; mode=display">
+\frac{E_{\rm e} }{N} = \frac{3}{5}N \varepsilon_F^0 -\frac{3e^2}{4\pi} N k_F = \frac{e^2}{2a_B} \left( \frac{2.21}{r_s^2} - \frac{0.916}{r_s} \right)</script><p>可见它的确在小$r_s$时主导。更高阶的微扰结果是：</p>
+<script type="math/tex; mode=display">
+\frac{E_{\rm e} }{N} = \frac{e^2}{2a_B} \left[ \frac{2.21}{r_s^2} - \frac{0.916}{r_s} + 0.062\ln r_s - 0.093 + \mathcal O(r_s \ln r_s) \right]</script><h2 id="单电子能量"><a href="#单电子能量" class="headerlink" title="单电子能量"></a>单电子能量</h2><p>现在我们尝试得到基态中动量为$k$的电子的能量$\varepsilon(k)$。</p>
+<p>注意到基态总能量的表达式是：</p>
+<script type="math/tex; mode=display">
+H_{\rm eff} = \left[ \sum_{k,\sigma} \frac{k^2}{2m} c^\dagger_{k,\sigma} c_{k,\sigma} + \frac{1}{2 V} \sum_{k,k',q\neq0,\sigma,\sigma'}\frac{4\pi e^2}{q^2} c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'} \right]</script><p>第一项$c^\dagger_{k,\sigma} c_{k,\sigma} = \hat n_{k,\sigma}$就是占据数算符，但是第二项的四个算符乘积不方便直接计算，因此考虑利用算符的平均场近似：</p>
+<script type="math/tex; mode=display">
+\hat A \hat B \approx \hat A \langle B \rangle + \hat B \langle A \rangle - \langle A \rangle \langle B \rangle</script><p>将第二项的四个算符两两组合成两个新算符$A = c^\dagger_{k+q,\sigma}c_{k’,\sigma’}$、$B = c^\dagger_{k’-q,\sigma’}c_{k,\sigma}$，于是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& c^\dagger_{k+q,\sigma} c^\dagger_{k'-q,\sigma'} c_{k,\sigma} c_{k',\sigma'}\\
+=& - c^\dagger_{k+q,\sigma}c_{k',\sigma'} c^\dagger_{k'-q,\sigma'}c_{k,\sigma}\\
+=& - \langle c^\dagger_{k+q,\sigma}c_{k',\sigma'} \rangle c^\dagger_{k'-q,\sigma'}c_{k,\sigma} - c^\dagger_{k+q,\sigma}c_{k',\sigma'} \langle c^\dagger_{k'-q,\sigma'}c_{k,\sigma} \rangle + \langle c^\dagger_{k+q,\sigma}c_{k',\sigma'} \rangle \langle c^\dagger_{k'-q,\sigma'}c_{k,\sigma} \rangle\\
+\approx& - \delta_{k+q,k'} \delta_{\sigma,\sigma'} \big( \langle c^\dagger_{k',\sigma}c_{k',\sigma} \rangle c^\dagger_{k,\sigma}c_{k,\sigma} + c^\dagger_{k',\sigma}c_{k',\sigma} \langle c^\dagger_{k,\sigma}c_{k,\sigma} \rangle \big)
+\end{aligned}</script><p>于是相互作用能就可以写为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H_{\rm ee} &= -\frac{1}{2V}\sum_{k\neq k',\sigma} \big( \langle c^\dagger_{k',\sigma}c_{k',\sigma} \rangle c^\dagger_{k,\sigma}c_{k,\sigma} + c^\dagger_{k',\sigma}c_{k',\sigma} \langle c^\dagger_{k,\sigma}c_{k,\sigma} \rangle \big)\\
+&= - \frac1V \sum_{k\neq k',\sigma} \langle c^\dagger_{k',\sigma}c_{k',\sigma} \rangle c^\dagger_{k,\sigma}c_{k,\sigma}
+\end{aligned}</script><p>基态总能量则是</p>
+<script type="math/tex; mode=display">
+H_{\rm eff} = \sum_{k,\sigma} \left[  \frac{k^2}{2m} - \frac{1}{V} \sum_{k\neq k'}\frac{4\pi e^2}{|k-k'|^2} \langle c^\dagger_{k',\sigma}c_{k',\sigma} \rangle  \right] \hat n_{k,\sigma}</script><p>于是等效的单电子能量就是</p>
+<script type="math/tex; mode=display">
+\varepsilon(k) = \frac{k^2}{2m} - \frac{1}{V} \sum_{k\neq k'}\frac{4\pi e^2}{|k-k'|^2} \langle c^\dagger_{k',\sigma}c_{k',\sigma} \rangle</script><p>第二项的计算和上一节是类似的，结果是：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\varepsilon(k) &= \frac{k^2}{2m} - \frac{e^2}{\pi} \frac{1}{k} \int_0^{k_F} {\rm d}k'k'\ln\frac{|k+k_F|}{|k-k_F|}\\
+&= \frac{k^2}{2m} - 2\frac{e^2 k_F}{\pi} \left[ 1 + \frac{k_F^2 - k^2}{2k_Fk} \ln\frac{|k+k_F|}{|k-k_F|} \right]\\
+&= \frac{k^2}{2m} - 2\frac{e^2 k_F}{\pi} F\left(\frac{k}{k_F}\right)
+\end{aligned}</script><p>其中Lindhard函数是</p>
+<script type="math/tex; mode=display">
+F(x) = \frac12 + \frac{1-x^2}{4x}\ln\frac{|1+x|}{|1-x|}</script><p>但这实际上是存在问题的：若要计算费米速度（电子在费米面上的速度），则</p>
+<script type="math/tex; mode=display">
+v= \partial_k \varepsilon(k)|_{k = k_F} = \frac{k_F}{m} - \frac{2e^2}{\pi}F'(1)\to\infty</script><p>即这一模型计算出的费米速度发散。这意味着利用HF近似尽管模型简单，但实际上是非物理的，我们仍需考虑更复杂的效应来消除这种不合理的发散。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html">https://papaya-z.github.io/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%87%9D%E8%81%9A%E6%80%81/">凝聚态</a><a class="post-meta__tags" href="/tags/%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96/">二次量子化</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">量子场论 Chap.4：散射理论</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">量子化基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text">一次量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%BD%93%E6%80%81%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">多体态的描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%8F%8F%E8%BF%B0%E9%93%81%E7%A3%81%E4%BA%A4%E6%8D%A2%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">例子：描述铁磁交换作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hartree-Fock%E8%BF%91%E4%BC%BC"><span class="toc-number">1.1.3.</span> <span class="toc-text">Hartree-Fock近似</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">二次量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%BD%93%E6%80%81%E7%9A%84%E6%8F%8F%E8%BF%B0-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">多体态的描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%BD%93%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.2.</span> <span class="toc-text">多体算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E4%BD%93%E7%B3%BB%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">电子体系哈密顿量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%93%E4%BB%91%E7%94%B5%E5%AD%90%E6%B0%94%E7%9A%84%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">库仑电子气的凝胶模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">哈密顿量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%89%B0%E8%AE%A1%E7%AE%97"><span class="toc-number">2.2.</span> <span class="toc-text">微扰计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%94%B5%E5%AD%90%E8%83%BD%E9%87%8F"><span class="toc-number">2.3.</span> <span class="toc-text">单电子能量</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html" title="凝聚态chap1：量子化基础与凝胶模型"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="凝聚态chap1：量子化基础与凝胶模型"/></a><div class="content"><a class="title" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%9D%E8%83%B6%E6%A8%A1%E5%9E%8B.html" title="凝聚态chap1：量子化基础与凝胶模型">凝聚态chap1：量子化基础与凝胶模型</a><time datetime="2024-02-23T21:10:20.000Z" title="发表于 2024-02-24 05:10:20">2024-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.4：散射理论"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论">量子场论 Chap.4：散射理论</a><time datetime="2024-01-21T02:01:51.000Z" title="发表于 2024-01-21 10:01:51">2024-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img src="/img/cohen/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料">Cohen量子力学Chap.5补充材料</a><time datetime="2024-01-08T08:33:10.000Z" title="发表于 2024-01-08 16:33:10">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.3：场量子化：路径积分方法"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法">量子场论 Chap.3：场量子化：路径积分方法</a><time datetime="2024-01-08T07:43:11.000Z" title="发表于 2024-01-08 15:43:11">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"><img src="/img/QM.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.13：依赖于时间的问题的近似解法"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-13.html" title="Cohen量子力学Chap.13：依赖于时间的问题的近似解法">Cohen量子力学Chap.13：依赖于时间的问题的近似解法</a><time datetime="2024-01-07T13:54:42.000Z" title="发表于 2024-01-07 21:54:42">2024-01-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: 'e07beadd17335b0d358168225bfa8097',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
