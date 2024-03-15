@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[Kardar]V.1-C.4-经典统计力学 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="系综；"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Kardar/[Kardar]V.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[Kardar]V.1-C.4-经典统计力学',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-16 06:25:47'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">[Kardar]V.1-C.4-经典统计力学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-02-29T14:21:06.000Z" title="发表于 2024-02-29 22:21:06">2024-02-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-15T22:25:47.709Z" title="更新于 2024-03-16 06:25:47">2024-03-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6/">统计力学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>29分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="[Kardar]V.1-C.4-经典统计力学"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="一般定义"><a href="#一般定义" class="headerlink" title="一般定义"></a>一般定义</h1><p><strong>统计力学</strong>：是利用概率方法研究由大量自由度组成系统的平衡态宏观性质。</p>
+<p>在统计力学发展之前，人类对平衡态系统的宏观性质已经发展出唯象的热力学方法来描述。但是不同于力学中对体系动力学状态的描述，热力学中我们仅仅使用了少数几个宏观物理量就对宏观大量（$\sim 10^{23}$）粒子构成的体系做到了足够好的唯象描述。但是一个理论上的需求仍然是将宏观态$\Mu$的热力学量与微观态$\mu$的动力学联系起来。</p>
+<p>通过追踪单个（纯态）微观态$\mu$的动力学演化来得到其宏观性质是几乎做不到的，因为任何宏观体系的动力学方程都达到$10^{23}$量级。一个重要的认识是：一个系统，对应于同一宏观态，可能存在大量不同的微观态——从信息的角度来说这是自然的，因为宏观态仅用少数热力学量进行描述的代价自然就是损失掉大量对微观态进行区分的信息。</p>
+<p>基于此发展出了统计力学的现代理论，即假想大量复制的平衡态体系分别处于随机的微观状态，而我们的目的就是找出给定宏观条件$\Mu$的体系在不同微观态$\mu$上的分布概率（密度）$p_\Mu(\mu)$，刘维尔定理（相分布密度沿哈密顿相轨是常数；哈密顿相流不可压缩）论证了在特定宏观条件下所有可能的微观态都是相同可能出现的；那么$P(\Mu) = \sum_\mu p_M(\mu)$最大的宏观态$\Mu$就是体系实际最可能会处在的宏观态。这就是统计力学的核心——系综方法。</p>
+<p>本章将会对几种不同的系综给出$p_\Mu(\mu)$的无偏估计，并且论证在热力学极限（$N\to 0$）下这几种系综实际上是等价的。</p>
+<h1 id="微正则系综"><a href="#微正则系综" class="headerlink" title="微正则系综"></a>微正则系综</h1><p>首先从一个最简单的情况出发：一个在力和热上均孤立的系统（定容绝热封闭系统——孤立系统），因而不存在与外界的热交换、粒子交换与功，体系处在内能$E$、广义坐标$X^a$和粒子数$N$均确定的宏观态$\Mu = (E,X^a,N)$，它所对应的微观态组成的系综称为<strong>微正则系综</strong>。</p>
+<p>利用经典力学的方法，微正则系综中每个微观态都可由$3N$维相空间中的一个确定的代表点所描述，其演化方程由哈密顿量$\mathcal H(\mu)$所决定。注意到哈密顿方程保持能量守恒，这提供了一个约束条件，因此代表点的演化轨迹始终处于$\mathcal H(\mu) = E$所决定的相空间中的一个超曲面上。我们假设体系不存在其他的守恒量，因此该超曲面上的所有代表点都可能相互演化。</p>
+<p>微正则系综的核心是如下的概率分布：</p>
+<script type="math/tex; mode=display">
+p_{(E,X^a,N)}(\mu) = \begin{cases}
+\begin{gather*}
+\dfrac{1}{\Omega(E,X^a,N)} & \mathcal H(\mu) = E\\
+0 & {\rm otherwise}
+\end{gather*}
+\end{cases}</script><p>一些评述:</p>
+<ol>
+<li><p>上述概率分布是<strong>玻尔兹曼等概率假设</strong>的直接结果，它是说系统在任何可能的微观态均取相同的概率。该假设实际上是在守恒能量约束下对相空间概率的无偏估计，它与相空间的刘维尔定理是一致的。</p>
+<p>具体来说：由于任何可能的微观态之间可以相互演化，也就是由一个正则变换所联系；哈密顿力学表明，若微观态$\mu$的正则变量经过正则变换到另一个微观态$\mu’$，那么存在引理：正则变换的雅可比矩阵$|J| = 1$，因此$\mu’$的概率是：</p>
+<script type="math/tex; mode=display">
+p(\mu') = p(\mu)\left|\frac{\partial \mu'}{\partial \mu}\right| = p(\mu)</script><p>这对于体系全部的可能微观态均成立，因此给出等概率假设。</p>
+</li>
+<li><p>归一化因子$\Omega(E,X^a,N)$称为<strong>微正则配分函数</strong>，是相空间中允许相点的数目，即宏观态$\Mu = (E,X^a,N)$所对应的“微观状态数”。</p>
+<p>我们希望为微观状态数找一个更直观的概念，显然在相空间中的一个好的选择就是将之解释为全部允许相点所占据的体积，在这里实也就是超曲面$\mathcal H(\mu) = E$的“体积”。但事实上超曲面的体积是零，并且上述概率分布具有奇异性；我们或许可以考虑用一个$\delta$函数来重写这个概率分布，例如：</p>
+<script type="math/tex; mode=display">
+p_{(E,X^a,N)}(\mu) = \dfrac{1}{\Omega(E,X^a,N)}\delta\Big(\mathcal H(\mu) - E\Big)</script><p>其中归一化因子$\Omega(E,X^a,N)$就实际上是函数$\delta\Big(\mathcal H(\mu) - E\Big)$在相空间积分的结果。</p>
+<p>在经典意义下更方便的做法是将$p(\mu)$的非零取值域不要仅限在一个超曲面上，而是一个$E - \Delta &lt; \mathcal H(\mu) &lt; E + \Delta$所决定的厚度为$2\Delta$的球壳内，即放松约束条件，使能量存在一个不确定度$\Delta$。这在进入量子理论后当然是可以理解的，但即使是经典理论中我们也可以将其理解为某种粗粒化带来的影响。于是这个意义下，概率分布函数可以写为：</p>
+<script type="math/tex; mode=display">
+p_{(E,X^a,N)}(\mu) = \begin{cases}
+\begin{gather*}
+\dfrac{1}{\Omega'(E,X^a,N;\Delta)} & E - \Delta < \mathcal H(\mu) = E + \Delta\\
+0 & {\rm otherwise}
+\end{gather*}
+\end{cases}</script><p>其中$\Omega’ \simeq 2\Delta\Omega$是球壳的体积。这也会是我们处理问题时实际用到的概率分布函数；在下面，即便当我们写出原始的概率分布函数形式，它的实际意义是上面修改过的形式。</p>
+<p>但应该指出的是，最终我们需要说明这个额外引入的$\Delta$不会对统计系综理论的可观测量计算产生实质性的影响，才能确保这一修改的合理性。在这里我们首先可以简单估计，$\Omega$一般对$E$是指数依赖，而$\Delta\sim\mathcal O(E^0)$或$\Delta\mathcal O(E^1)$，实际上当热力学极限$E\propto N\to\infty$时，$\Omega’$与$\Omega$之间的差异可以忽略不计，因此在下面我们可以混用两个符号。</p>
+</li>
+<li><p>这一归一化的概率分布所给出的<strong>熵</strong>是：</p>
+<script type="math/tex; mode=display">
+S(E,X^a,N) = k_B \ln \Omega(E,X^a,N)</script><p>因子$k_B$是<strong>玻尔兹曼常数</strong>，用以保证熵具有与热力学定义一致的正确量纲。在相空间的正则变换下，$\Omega$与$S$都是不变的。对于复合系统而言，总相空间是各个子系统相空间之直积，于是$\Omega_{\rm tot} = \prod_i \Omega_i$，于是按照上述定义的熵$S_{\rm tot} = \sum_i S_i$具有可加性，并且可以期待是一个广延量。</p>
+</li>
+</ol>
+<p>现在，利用微正则系统的概率分布（实际上是经过$\Delta$修改的形式），就可以在大$N$近似下得到许多热力学定律或结论。</p>
+<h2 id="第零定律"><a href="#第零定律" class="headerlink" title="第零定律"></a>第零定律</h2><p>热力学第零定律是说，处于热平衡的系统之间总可以建立一个相同的热力学量，称之为温度。</p>
+<p>现在考虑使两个原本分别达平衡态的孤立系统相互接触，仅允许热交换。要描述这样的体系，简单地考虑两个微正则系综是不够的，必须将整体视作新的孤立系统并建立微正则系综，其总能量$E = E_1 + E_2$而微观状态记作$\mu = \mu_1 \otimes \mu_2$，于是</p>
+<script type="math/tex; mode=display">
+\mathcal H(\mu_1\otimes\mu_2) = \mathcal H(\mu_1) + \mathcal H(\mu_2)</script><p>给出概率分布</p>
+<script type="math/tex; mode=display">
+p_{E}(\mu_1\otimes\mu_2) = \begin{cases}
+\begin{gather*}
+\dfrac{1}{\Omega_2(E)} & \mathcal H(\mu_1) + \mathcal H(E_2) = E_1\\
+0 & {\rm otherwise}
+\end{gather*}
+\end{cases}</script><p>现在总相空间是两个子相空间的直积而只有一个约束条件，于是总的允许“体积”$\Omega_2(E)$是：</p>
+<script type="math/tex; mode=display">
+\Omega_2(E) = \int {\rm d}E_1 \Omega(E_1)\Omega(E-E_1) = \int{\rm d}E_1 \exp \left[ \frac{S_1(E_1) + S_2(E-E_1)}{k_B} \right]</script><p>由于熵是广延量$S\propto N$，在大$N$极限下被积函数指数增长，从而积分的结果可以由鞍点$E^*_1$处的被积函数值近似，即</p>
+<script type="math/tex; mode=display">
+\Omega_2(E)\simeq \exp \left[ \frac{S_1(E_1^*) + S_2(E-E_1^*)}{k_B} \right]</script><p>为寻找鞍点$E_1^*$，上式求导得到（利用$\exp$函数的单调性），其满足：</p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial S_1}{\partial E_1^*} \right)_{X_1,N_1} = \left( \frac{\partial S_2}{\partial E_2^*} \right)_{X_2,N_2}</script><p>可见对于两个体系来说，在相互热接触足够长时间后，宏观态$(E_1^<em>,E_2^</em>)$所对应的微观态数目是指数多的，因此等概率原理指出$(E_1^<em>,E_2^</em>)$就是它们最可能处在的宏观态，即在宏观达到新的平衡态。在相互热平衡的两个子系统之间满足上面的等时，因此可以将$\partial S / \partial E$是否相等作为判断两个系统是否热平衡的标志：</p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial S}{\partial E} \right)_{X,N} = \frac{1}{T}</script><p>这就是热力学第零定律的内容，并且给出了该标志函数——温度$T$的统计力学表达式。</p>
+<h2 id="第一定律"><a href="#第一定律" class="headerlink" title="第一定律"></a>第一定律</h2><p>下面考虑当广义坐标$X^a$变化时对熵的影响，我们使$X^a$产生一<strong>可逆</strong>的虚变动$\var X^a$，这会使系统受到机械功$\var W = J_a \var X^a$（其中$J_a$是相应的广义力），从而使内能从$E$变化为$E + J_a \var X^a$。于是熵的一阶变化量是：</p>
+<script type="math/tex; mode=display">
+\var S = S(E + J_a \var X^a,X^a + \var X^a,N) - S(E,X^a,N) = \left[ \left( \frac{\partial S}{\partial E} \right)_{X,N} J_a + \left( \frac{\partial S}{\partial X^a} \right)_{E,X^{b\neq a}}\right]\var X^a</script><p>我们希望讨论平衡态时的情况，此时虚位移不会真正改变体系的状态，因此</p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial S}{\partial X^a} \right)_{E,X^{b\neq a}} = - \frac{J_a}{T}</script><p>于是得到${\rm d}S = \frac{ {\rm d}E}{T} - \frac{J_a{\rm d}X^a}{T}$，即</p>
+<script type="math/tex; mode=display">
+{\rm d}E = T{\rm d}S + J_a{\rm d}X^a</script><p>此即热力学第一定律。这也允许我们定义热量变化为$\var Q = T{\rm d}S$。</p>
+<h2 id="第二定律"><a href="#第二定律" class="headerlink" title="第二定律"></a>第二定律</h2><p>根据前面的讨论，由于$N\gg1$，系统处在宏观态$(E_1^<em>,E_2^</em>)$的概率远远大于其他态的概率，即体系最终稳定存在的平衡态对应的微观状态数远远大于其他任何宏观态对应的微观状态数：</p>
+<script type="math/tex; mode=display">
+\Omega_1(E_1^*,X_1^a,N_1)\Omega_2(E_2^*,X_2^a,N_2) \gg \Omega_1(E_1,X_1^a,N_1)\Omega_2(E_2,X_2^a,N_2)</script><p>因此当系统自发地向着更可能地宏观态演化时，其对应的微观状态数总是增多的，进而熵$S = k_B \ln \Omega$也是自发增长的；并且当两个不平衡的系统相互热接触时，随着能量交换：</p>
+<script type="math/tex; mode=display">
+\var S = \left[ \left( \frac{\partial S_1}{\partial E_1} \right)_{X_1,N_1} - \left( \frac{\partial S_2}{\partial E_2} \right)_{X_2,N_2} \right]\var E_1 = \left(\frac{1}{T_1} - \frac{1}{T_2}\right)\var E_1\geq0</script><p>表明能量总是从高温系统向低温系统自发传递，也就是热力学第二定律的克劳修斯表述。</p>
+<h2 id="稳定性条件"><a href="#稳定性条件" class="headerlink" title="稳定性条件"></a>稳定性条件</h2><p>当达到平衡态时，由于$(E_1^<em>,E_2^</em>)$是$\Omega$极大值点，因此熵的一阶变动为零：</p>
+<script type="math/tex; mode=display">
+\var S = 0</script><p>且二阶变动一定是负的：</p>
+<script type="math/tex; mode=display">
+\var{}^2 S_{(E_1^*,E_2^*)} = \left[ \left( \frac{\partial^2 S_1}{\partial E_1^2} \right)_{X_1,N_1} + \left( \frac{\partial^2 S_2}{\partial E_2^2} \right)_{X_2,N_2}\right]_{(E_1^*,E_2^*)} \leq 0</script><p>因此稳定平衡态的条件是$\var S = 0$，$\var{}^2 S \leq 0$​​。</p>
+<h1 id="微正则例子"><a href="#微正则例子" class="headerlink" title="微正则例子"></a>微正则例子</h1><h2 id="二能级系统"><a href="#二能级系统" class="headerlink" title="二能级系统"></a>二能级系统</h2><p>考虑一个简单的例子，即每个粒子允许的能量态仅有基态$0$和激发态$\epsilon$两个离散能级。</p>
+<p>描述这样系统的微观态可以用占据数$n_i$的概念，$n_1=0$表示第$i$个粒子处于基态，$n_1$则表示处于激发态，于是$N$个占据数的集合$\{n_i\}$就可以描述$N$粒子的一个微观状态。总能量是</p>
+<script type="math/tex; mode=display">
+\mathcal H(\{n_i\}) = E = \epsilon \sum_{i=1}^N n_i = \epsilon N_1</script><p>其中$N_1 = E/\epsilon$是处于激发态粒子的总数。</p>
+<p>总能量$E$和总粒子数$N$就可以确定一个宏观态。于是微正则系综的概率分布就是</p>
+<script type="math/tex; mode=display">
+p(\{n_i\}) = \frac{\delta_{\epsilon\sum_i n_i,E} }{\Omega(E,N)}</script><p>其中$\Omega(E,N)$是从$N$粒子中选取$N!$个处于激发态的方式，即</p>
+<script type="math/tex; mode=display">
+\Omega(E,N) = \frac{N!}{N_1!(N-N_1)!} = {\text C}_N^{N_1}</script><h3 id="热力学量"><a href="#热力学量" class="headerlink" title="热力学量"></a>热力学量</h3><p>利用斯特林公式，在$N_1,N\gg1$时熵可以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S(E,N) &= k_B \ln \frac{N!}{N_1!(N-N_1)!} \\
+&\simeq -N k_B\left[ \frac{N_1}{N}\ln\frac{N_1}{N} + \frac{N-N_1}{N}\ln\frac{N-N_1}{N} \right]\\
+&=  -N k_B\left[ \frac{E}{N\epsilon}\ln\frac{E}{N\epsilon} + \left(1-\frac{E}{N\epsilon}\right)\ln\left(1-\frac{E}{N\epsilon}\right) \right]
+\end{aligned}</script><p>平衡态温度是</p>
+<script type="math/tex; mode=display">
+\frac{1}{T} = \left( \frac{\partial S}{\partial E} \right)_N = -\frac{k_B}{\epsilon}\ln \frac{E}{N\epsilon - E}</script><p>从中立即可以得到在平衡态温度$T$时，系统的总能量为</p>
+<script type="math/tex; mode=display">
+E(T) = \frac{N\epsilon}{ {\rm e}^{\frac{\epsilon}{k_B T} } + 1} = \frac{N\epsilon}{ {\rm e}^{\beta\epsilon} + 1}</script><p>其中$\beta = \dfrac{1}{k_B T}$称为逆温度，是一个常用的记号。可见内能是温度的单调递增函数，当$T = 0$时能量为$0$，而当$T\to\infty$时存在上限$N\epsilon/2$。</p>
+<p>尽管如此，系统是实际上是有可能处在内能高于$N\epsilon/2$的平衡态，此时具有所谓的<strong>负温度</strong>。负温度来源于系统的微观状态数随能量的增加而减少，这与大多数系统的情况是相反的，但是二能级系统恰恰存在这种特性，即它存在一个能量上限$\epsilon N$，但是很少有微观态接近这一上限，于是该系统的能量越高而微观状态数越少。但是负温度态与正常温度的环境接触非常容易耗散能量从而变回正温度的状态，因此负温度态是难以稳定存在的。</p>
+<p>该系统的热容是：</p>
+<script type="math/tex; mode=display">
+C = \frac{ {\rm d}E}{ {\rm d}T} = Nk_B\left(\frac{\epsilon}{k_B T}\right)^2 \exp\left(\frac{\epsilon}{k_B T}\right) \left[ \exp\left(\frac{\epsilon}{k_B T}\right)+1 \right]^{-2} = Nk_B \frac{(\beta\epsilon)^2 {\rm e}^{\beta\epsilon} }{({\rm e}^{\beta\epsilon}+1)^2}</script><p>它在高温和低温时都是很小的，低温时的指数衰减$\sim {\rm e}^{-\beta \epsilon}$来自于最低激发态与基态之间的能隙，这对于大多数系统都是存在的；高温时的衰减则是一种饱和效应，对于存在能量上限的系统是存在的。而在$T\propto \epsilon/k_B$​时，热容存在一个高峰。</p>
+<h3 id="能态分布"><a href="#能态分布" class="headerlink" title="能态分布"></a>能态分布</h3><p>统计力学除了给出能量或热容等宏观信息之外，还包含微观状态的大量信息。从一般微观态的概率分布$p(\{n_i\})$中，我们可以得到一个特定粒子的占据数的概率$p(n_i)$，它就是将其余粒子积掉得到的非条件概率：</p>
+<script type="math/tex; mode=display">
+p(n_i) = \sum_{\{n_{j\neq i}\}}p(\{n_j\}) = \frac{\Omega(E-n_i\epsilon,N-1)}{\Omega(E,N)}</script><p>代入前述$\Omega(E,N)$的表达式就得到</p>
+<script type="math/tex; mode=display">
+p(n_i=0) = 1-\frac{N_1}{N} = 1 - \frac{E}{N\epsilon}\ ,\qquad p(n_i=1) = \frac{N_1}{N} = \frac{E}{N\epsilon}</script><p>可以看到这就是统计学中的极大似然估计的结果。还可以将其写为确定平衡态温度时的概率:</p>
+<script type="math/tex; mode=display">
+p_i(n_i=0) = \frac{1}{ {\rm e}^{-\beta\epsilon}+1}\ ,\qquad p_i(n_i=1) = \frac{ {\rm e}^{-\beta\epsilon} }{ {\rm e}^{-\beta\epsilon}+1}</script><h2 id="理想气体"><a href="#理想气体" class="headerlink" title="理想气体"></a>理想气体</h2><p>现在考虑另一个例子：固定体积箱中的理想气体，其微观态可由$6N$维相空间中的点$\mu = (p_i,q_i)$表示，忽略粒子间相互作用时哈密顿量是</p>
+<script type="math/tex; mode=display">
+\mathcal H(\mu) = \sum_{i=1}^{N}\left[ \frac{\vec p_i^2}{2m} + U(\vec q_i) \right]</script><p>其中$U(\vec q_i)$是由体积为$V$的箱子提供的束缚势。这时的微正则系综由内能$E$、体积$V$和粒子数$N$决定，概率分布是</p>
+<script type="math/tex; mode=display">
+p(\mu) = \frac{1}{\Omega(E,V,N)}\cdot\begin{cases}
+1 & \vec q_i\in V\ {\rm and}\ \sum_i \vec p_i^2 = 2mE\\
+0 & {\rm otherwise}
+\end{cases}</script><p>因此相空间中的允许范围是实空间中$3N$维立方体$V^N$与动量空间中半径为$2mE$的$3N$​维超球面相乘得到。</p>
+<h3 id="热力学量-1"><a href="#热力学量-1" class="headerlink" title="热力学量"></a>热力学量</h3><p>根据几何方法可得，$d$维球表面积是：</p>
+<script type="math/tex; mode=display">
+A_d = \frac{2\pi^{d/2} }{(d/2-1)!} R^{d-1}</script><p>若该球面有一个微小厚度${\rm d}R$​成为球壳，则该球壳体积为</p>
+<script type="math/tex; mode=display">
+{\rm d}V_d = \frac{2\pi^{d/2} }{(d/2-1)!} R^{d-1}{\rm d}R</script><p>于是根据前面的讨论可知，相空间允许区域的体积（即微观状态数）是：</p>
+<script type="math/tex; mode=display">
+\Omega(E,V,N) = V^N \frac{2\pi^{3N/2} }{(3N/2-1)!} (2mE)^{(3N-1)/2}\Delta</script><p>利用斯特林公式，在大$N$极限下熵近似为</p>
+<script type="math/tex; mode=display">
+S = (E,V,N) \simeq N k_B \ln \left[ V \left( \frac{4\pi{\rm e}mE}{3N} \right)^{3/2} \right]</script><p>从中可以得到理想气体的温度与内能的关系</p>
+<script type="math/tex; mode=display">
+\frac1T = \left(\frac{\partial S}{\partial E}\right)_{V,N} = \frac32 \frac{N k_B}{E}</script><p>也就是</p>
+<script type="math/tex; mode=display">
+E = \frac32 N k_B T\ ,\qquad C_V = \frac32 N k_B</script><p>这就是热力学中理想气体内能和热容的表达式，能量仅与温度相关，热容是常数。状态方程也可从中熵的表达式导出：</p>
+<script type="math/tex; mode=display">
+\frac{P}{T} = \left(\frac{\partial S}{\partial V}\right)_{E,N} = \frac{N k_B}{V}</script><p>最终就得到</p>
+<script type="math/tex; mode=display">
+PV = N k_B T</script><p>这就是理想气体的克拉珀龙方程。</p>
+<h3 id="速度分布"><a href="#速度分布" class="headerlink" title="速度分布"></a>速度分布</h3><p>最后，还可以考虑某粒子处于特定动量（速度）的非条件概率$p(v_i)$，只要从$p(\mu)$中积掉其他粒子自由度：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+p(\vec p_i) &= \int{\rm d}^3 \vec q_i \int \prod_{j\neq i} {\rm d}^3q_j{\rm d}^3p_j p(\{\vec q_k,\vec p_k\})\\
+&= \frac{V\Omega(E-\vec p_i^2/2m,V,N-1)}{\Omega(E,V,N)}\\
+&= \frac{V^N \pi^{3(N-1)/2}(2mE-\vec p_i^2)^{(3(N-1)-1)/2}}{(3(N-1)/2-1)!}\frac{(3N/2-1)!}{V^N \pi^{3N/2}(2mE)^{(3N-1)/2}}\\
+&= \left(1 - \frac{\vec p_i^2}{2mE}\right)^{3N/2-2} \frac{1}{(2\pi m E)^{3/2}}\frac{(3N/2-1)!}{(3(N-1)/2-1)!}\\
+&\simeq \left( \frac{3N}{4\pi m E} \right)^{3/2} \exp\left( -\frac{3N}{2} \frac{\vec p_i^2}{2mE} \right)\\
+&= \frac{1}{(2\pi m k_B T)^{3/2}} \exp\left(-\frac{\vec p_i^2}{2mk_B T}\right)
+\end{aligned}</script><p>上面利用了$\lim_{N\to \infty} \left(1+x/N\right)^N = {\rm e}^x$。这就是<strong>麦克斯韦-玻尔兹曼分布</strong>，或者将其写为速度分布的形式为：</p>
+<script type="math/tex; mode=display">
+p(\vec v) = \frac{1}{(2\pi m k_B T)^{3/2}} \exp\left(-\frac{ m \vec v^2}{2k_B T}\right)</script><h1 id="混合熵与吉布斯佯谬"><a href="#混合熵与吉布斯佯谬" class="headerlink" title="混合熵与吉布斯佯谬"></a>混合熵与吉布斯佯谬</h1><h1 id="正则系综"><a href="#正则系综" class="headerlink" title="正则系综"></a>正则系综</h1><p>微正则系综描述系统的能量是确定的，平衡态温度是作为结论得到的。但从热力学的角度来看能量和温度都是状态函数，理应可以为具有确定温度的系统建立系综而从中得到能量的结论。</p>
+<p>考虑一个定容恒温的封闭系统，不存在与外界的粒子交换和功，但存在热交换使其始终保持在确定的温度，这可以使其与一个无穷大恒温热库——称为环境——充分接触实现。体系处在温度$T$、广义坐标$X^a$和粒子数$N$均确定的宏观态$\Mu = (T,X^a,N)$​​，它所对应的微观态组成的系综称为<strong>正则系综</strong>。</p>
+<h2 id="概率分布"><a href="#概率分布" class="headerlink" title="概率分布"></a>概率分布</h2><p>下文中用下标$s$标记封闭系统的物理量，用$r$标记环境的物理量。虽然我们暂时不知道如何处理正则系综，但是封闭系统系统和环境作为一个整体，其总能量是确定的，因此总系统可以用微正则系综来研究。用下标$t$描述总系统的物理量，其微观态是$\mu_t = \mu_s\otimes\mu_r$，总能量$E_t = \mathcal H_s(\mu_s) + \mathcal H_r(\mu_r)$，于是概率分布是</p>
+<script type="math/tex; mode=display">
+p(\mu_s\otimes\mu_r) = \begin{cases}\begin{gather*}
+\dfrac{1}{\Omega_{t}(E_t)} & \mathcal H_s(\mu_s) + \mathcal H_r(\mu_r) = E_t\\
+0 & {\rm otherwise}
+\end{gather*}\end{cases}</script><p>从中得到封闭系统的非条件概率分布是：</p>
+<script type="math/tex; mode=display">
+p(\mu_s) = \sum_{\{\mu_r\}} p(\mu_s\otimes\mu_r)</script><p>当封闭系统的微观态确定为$\mu_s$时，环境仍然在特定能量$E_t-E_s$存在大量微观状态数，因此根据等概率原理，上述概率应该是：</p>
+<script type="math/tex; mode=display">
+p(\mu_s) = \sum_{\{\mu_r\}} p(\mu_s\otimes\mu_r) = \dfrac{\Omega_r(E_t - \mathcal H_s(\mu_s))}{\Omega_{t}(E_t)} \propto \exp\left[ \frac{1}{k_B}S_r(E_t - \mathcal H_s(\mu_s)) \right]</script><p>由于热库的能量远高于封闭系统的能量，$\mathcal H_s(\mu_s)/E_t\ll1$，因此可以将上式的熵在$\sim 0$附近展开：</p>
+<script type="math/tex; mode=display">
+S_r(E_t - E_s) \simeq S_r(E_t) - \left.\frac{\partial S_r}{\partial E_r}\right|_{E_t} \mathcal H_s(\mu_s) = S_r(E_t) - \frac{\mathcal H_s(\mu_s)}{T}</script><p>因此封闭系统的归一化概率分布就得到是：</p>
+<script type="math/tex; mode=display">
+p(\mu_s) = \frac{ {\rm e}^{-\beta\mathcal H(\mu_s)} }{\mathcal Z(T,X^a,N)}</script><p>其中归一化因子</p>
+<script type="math/tex; mode=display">
+\mathcal Z(T,X^a,N) = \sum_\mu {\rm e}^{-\beta\mathcal H(\mu_s)}</script><p>称为<strong>正则配分函数</strong>。</p>
+<h2 id="能量"><a href="#能量" class="headerlink" title="能量"></a>能量</h2><p>我们想得到正则系综关于能量的结论，此时由于与环境的热交换，能量不是常数而是一个变量，因而也可以用一个能量概率分布来描述，它实际上就是能量相同的微观态概率$p(\mu_s)$之和：</p>
+<script type="math/tex; mode=display">
+p(E) = \sum_{\mu_s} p(\mu_s) \delta\Big(\mathcal H(\mu_s) - E\Big) = \frac{ {\rm e}^{-\beta E} }{\mathcal Z} \sum_{\mu_s} \delta\Big(\mathcal H(\mu_s) - E\Big)</script><p>上面的求和结果就是能量为$E$的微观状态数$\Omega(E)$，于是</p>
+<script type="math/tex; mode=display">
+p(E) = \frac{ {\rm e}^{-\beta E}\Omega(E,X^a,N) }{\mathcal Z(T,X^a,N)}</script><p>另一方面，系统<strong>平均能量</strong>是</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H \rangle = \sum_{\mu_s} \mathcal H({\mu_s}) \frac{ {\rm e}^{-\beta\mathcal H({\mu_s})} }{\mathcal Z} = -\frac{1}{\mathcal Z} \frac{\partial}{\partial\beta} \sum_{\mu_s} {\rm e}^{-\beta\mathcal H} = -\frac{\partial\ln \mathcal Z}{\partial\beta}</script><p>能量可能的涨落量级如何？这可以通过计算能量分布的方差$\langle \mathcal H^2 \rangle_c$来评估，它描述了能量分布曲线$p(E)$的宽度。注意到配分函数$\mathcal Z$实际上类似于$\mathcal H$的矩母函数：</p>
+<script type="math/tex; mode=display">
+-\frac{\partial \mathcal Z}{\partial\beta} = \sum_\mu \mathcal H {\rm e}^{-\beta \mathcal H}\ ,\qquad \frac{\partial^2 \mathcal Z}{\partial\beta^2} = \sum_\mu \mathcal H^2 {\rm e}^{-\beta \mathcal H}</script><p>于是</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H \rangle_c = \langle \mathcal H \rangle = \frac{1}{\mathcal Z}\sum_{\mu_s} \mathcal H {\rm e}^{-\beta \mathcal H} = -\frac{1}{\mathcal Z}\frac{\partial \mathcal Z}{\partial\beta} = -\frac{\partial\ln \mathcal Z}{\partial\beta}</script><script type="math/tex; mode=display">
+\langle \mathcal H^2 \rangle_c = \langle \mathcal H^2 \rangle - \langle \mathcal H \rangle^2 = \frac{1}{\mathcal Z}\sum_{\mu_s} \mathcal H^2 {\rm e}^{-\beta \mathcal H} - \frac{1}{\mathcal Z^2}\left(\sum_{\mu_s} \mathcal H {\rm e}^{-\beta \mathcal H}\right)^2 = \frac{\partial^2\ln \mathcal Z}{\partial\beta^2} = - \frac{\partial \langle \mathcal H \rangle}{\partial\beta}</script><p>更一般地，推广到$n$阶是：</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H^n \rangle_c = (-1)^n \frac{\partial^n\ln \mathcal Z}{\partial\beta^n}</script><p>因此，得到方差$\langle \mathcal H^2 \rangle_c$与定容热容的关系：</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H^2 \rangle_c = - \frac{\partial \langle \mathcal H \rangle}{\partial(1/k_B T)} = k_B T^2 \left(\frac{\partial \langle \mathcal H \rangle}{\partial T}\right)_X = k_B T^2 C_X</script><p>定容热容是广延量$C_X\propto N$，因此在大$N$极限下，能量分布曲线的相对展宽是</p>
+<script type="math/tex; mode=display">
+\frac{\sqrt{\langle \mathcal H^2 \rangle_c}}{\langle \mathcal H \rangle_c} \propto \frac{1}{\sqrt N} \to 0</script><p>可见在大$N$极限下能量分布曲线几乎是极窄的单峰，完全局限在平均能量处。事实上根据中心极限定理有：</p>
+<script type="math/tex; mode=display">
+p(E) = \frac{ {\rm e}^{ -\beta F(E) } }{\mathcal Z} \simeq \exp\left[ -\frac{(E - \langle\mathcal H\rangle)^2}{2k_B T^2 C_V} \right]\frac{1}{\sqrt{2\pi k_B T^2 C_V}}</script><p>该分布非常尖锐，以致在<u>正则系综中，当热力学极限$N\to\infty$时能量几乎确定</u>，此时平均能量就是<strong>最概然能量</strong>，进而正则系综与微正则系综的结果等价。</p>
+<h2 id="自由能与熵"><a href="#自由能与熵" class="headerlink" title="自由能与熵"></a>自由能与熵</h2><p>注意到能量分布$p(E)$的函数形式，将其中$\Omega(E)$写出：</p>
+<script type="math/tex; mode=display">
+p(E) = \frac{ {\rm e}^{-\beta E}\Omega(E) }{\mathcal Z} = \frac{ {\rm e}^{ -\beta E + \beta S(E) } }{\mathcal Z}</script><p>将其指数定义为一个新的热力学量：</p>
+<script type="math/tex; mode=display">
+F = E - T S</script><p>这正是热力学中的<strong>亥姆霍兹自由能</strong>，于是正则系综的能量分布就是</p>
+<script type="math/tex; mode=display">
+p(E) = \frac{ {\rm e}^{ -\beta F } }{\mathcal Z}</script><p>显然，能量分布曲线在自由能$F$极小时具有非常尖锐的高峰，根据前面能量的讨论可知，这对应于系统的最概然能量$E^*$（大$N$极限下趋于平均能量），也就是使自由能极小的能量，此时配分函数近似为指数的峰值</p>
+<script type="math/tex; mode=display">
+\mathcal Z = \sum_{\mu_s} {\rm e}^{-\beta\mathcal H({\mu_s})} = \sum_E {\rm e}^{-\beta F(E)} \simeq {\rm e}^{-\beta F(E^*)}</script><p>利用该式，可以给出自由能的正则系综定义：</p>
+<script type="math/tex; mode=display">
+F(T,X^a,N) = -k_B T \ln \mathcal Z(T,X^a,N)</script><p>正则系综的概率分布可视作是在平均能量约束下的无偏估计。正则系综的熵可以直接由概率分布和自由能的定义得到:</p>
+<script type="math/tex; mode=display">
+S = -k_B \langle \ln p(\mu) \rangle = -k_B \langle -\beta \mathcal H - \ln \mathcal Z \rangle = \frac{E-F}{T}</script><p>在任何有限$N$的系统，微正则系统和正则系综显然是具有明显区别的；但在$N\to\infty$的热力学极限下，正则系综的能量分布完全局限在平均能量，此时在平均能量处，正则系综和微正则系综对物理量的预言是不可区分的。</p>
+<h1 id="正则例子"><a href="#正则例子" class="headerlink" title="正则例子"></a>正则例子</h1><h1 id="吉布斯正则系综"><a href="#吉布斯正则系综" class="headerlink" title="吉布斯正则系综"></a>吉布斯正则系综</h1><p>还可以定义另一种广义的正则系综，其中内能的变化不仅可以通过热交换来变化，还可以通过<strong>机械功</strong>（这里不考虑引起粒子数变化的化学功）来变化，此时体系的宏观态$\Mu = (T,J_a,N)$具有确定的内能$E$、广义力$J_a$和粒子数$N$，而广义坐标$X^a$​​则是变量，其构成<strong>吉布斯正则系综</strong>。</p>
+<h2 id="概率分布-1"><a href="#概率分布-1" class="headerlink" title="概率分布"></a>概率分布</h2><p>现在不仅要考虑封闭系统与恒温$T$热库充分热接触，还需要与施加恒定力$J_a$的外恒力系充分力接触。现将封闭系统与外恒力系视作一个整体，若外力对系统做功是$J_a X^a$，那么总系统的哈密顿量是$\mathcal H - J_a X^a$（因为封闭系统获得的功被包含在$\mathcal H$中，而外恒力系失去能量$J_a X^a$），因此总系统是前面讨论过的正则系综。外恒力系的状态可用$X^a$来描述，于是总系统的概率分布是</p>
+<script type="math/tex; mode=display">
+p(\mu_s,X^a) = \frac{ {\rm e}^{ -\beta \mathcal H(\mu_s) + \beta J_a X^a } }{\mathscr Z(T,J_a,N)}</script><p>其中<strong>吉布斯配分函数</strong>是</p>
+<script type="math/tex; mode=display">
+\mathscr Z(T,J_a,N) = \sum_{\mu_s,X^a} {\rm e}^{ -\beta \mathcal H(\mu_s) + \beta J_a X^a }</script><h2 id="吉布斯函数与焓"><a href="#吉布斯函数与焓" class="headerlink" title="吉布斯函数与焓"></a>吉布斯函数与焓</h2><p>现在广义坐标成为变量，该系综给出它的期望值：</p>
+<script type="math/tex; mode=display">
+\langle X^a \rangle = k_B T \frac{\partial\ln \mathscr Z}{\partial J_a}</script><p>类似于正则系综中平均能量与自由能的关系，我们引入热力学中的<strong>吉布斯函数</strong>：</p>
+<script type="math/tex; mode=display">
+G = E - TS - J_a X^a</script><p>利用$\partial G/\partial J_a = -X^a$，可得吉布斯函数的吉布斯正则系综定义是：</p>
+<script type="math/tex; mode=display">
+G(T,J_a,N) = -k_B T \ln \mathscr Z(T,J_a,N)</script><p>也可通过最大化$X^a$的概率分布来实现。</p>
+<p>另一个有用的热力学函数是焓：</p>
+<script type="math/tex; mode=display">
+H = E - J_a X^a</script><p>其系综定义容易得到：</p>
+<script type="math/tex; mode=display">
+H = \langle \mathcal H - J_a X^a \rangle = - \frac{\partial\ln \mathscr Z}{\partial \beta}</script><p>它与定压热容的关系是$C_J = \partial H/\partial T$。</p>
+<h1 id="巨正则系综"><a href="#巨正则系综" class="headerlink" title="巨正则系综"></a>巨正则系综</h1><p>之前的讨论已经表明，正则系综与微正则系综在热力学极限下是完全等价的，但处理问题时，允许能量交换的正则系综比微正则系综更加方便；有时允许机械功的吉布斯正则系综比固定边界的正则系综也会更方便。</p>
+<p>另一方面，之前的讨论一直局限在粒子数不变的封闭系统；因此现在考虑可以与环境交换粒子，但保持化学势恒定的开放系统。将会看到，允许化学功（即交换粒子）而没有机械功的系综在处理一些问题时会更为方便。</p>
+<h2 id="概率分布-2"><a href="#概率分布-2" class="headerlink" title="概率分布"></a>概率分布</h2><p>现在我们考虑的系统宏观态$\Mu=(T,X^a,\mu)$由温度$T$，广义坐标$X^a$和化学势$\mu$确定，现在除了能量之外，粒子数$N$也成为不定变量。同样可以让系统与一个无穷大恒温热库、恒化学势粒子库的环境充分热接触、粒子交换来达到温度和和化学势的恒定。这样的系统构成<strong>巨正则系综</strong>。</p>
+<p>现在系统与环境总体成为微正则系综，从中积掉环境自由度就得到巨正则系综的概率分布（注意区分化学势$\mu$和微观状态$\mu_s$）：</p>
+<script type="math/tex; mode=display">
+p(\mu_s) = \frac{ {\rm e}^{ -\beta \mathcal H(\mu_s) + \beta \mu N(\mu_s) } }{ \mathscr Q(T,X^a,\mu)}</script><p>其中</p>
+<script type="math/tex; mode=display">
+\mathscr Q(T,X^a,\mu) = \sum_{\mu_s}{\rm e}^{ -\beta \mathcal H(\mu_s) + \beta \mu N(\mu_s) }</script><p>称为<strong>巨配分函数</strong>。</p>
+<h2 id="粒子数"><a href="#粒子数" class="headerlink" title="粒子数"></a>粒子数</h2><p>可以将巨配分函数中的求和分离为：</p>
+<script type="math/tex; mode=display">
+\mathscr Q(T,J_a,\mu) = \sum_{N = 0}^{\infty}{\rm e}^{ \beta \mu N } \sum_{(\mu_s|N)} {\rm e}^{ -\beta \mathcal H_N(\mu_s) } = \sum_{N = 0}^{\infty} {\rm e}^{ \beta \mu N } \mathcal Z(T,X^a,N)</script><p>其中$\mathcal Z$​就是当粒子数为某确定值时的正则配分函数。因此可以得到巨正则系综中粒子数分布的非条件概率是</p>
+<script type="math/tex; mode=display">
+p(N) = \frac{ {\rm e}^{ \beta \mu N } \mathcal Z(T,X^a,N) } {\mathscr Q(T,J_a,\mu)}</script><p>平均粒子数为:</p>
+<script type="math/tex; mode=display">
+\langle N \rangle = \frac{1}{\mathscr Q}\frac{\partial\mathscr Q}{\partial(\beta\mu)} = \frac{\partial \ln \mathscr Q}{\partial(\beta\mu)}</script><p>类似于对能量的讨论，这里粒子数分布的宽度由其方差描述：</p>
+<script type="math/tex; mode=display">
+\langle N^2 \rangle_c = \langle N^2 \rangle - \langle N \rangle^2 = \frac{\partial^2 \ln \mathscr Q}{\partial(\beta\mu)^2} = \frac{\partial \langle N \rangle}{\partial(\beta\mu)}</script><p>因此粒子数分布的相对展宽$\sqrt{\langle N^2 \rangle_c}/\langle N \rangle_c\propto N^{-{1/2}}$，在热力学极限下完全局限在平均粒子数，因此巨正则系综又与之前讨论的系综等价。</p>
+<h2 id="巨势"><a href="#巨势" class="headerlink" title="巨势"></a>巨势</h2><p>由于粒子数分布的尖峰性质，类似于正则系综中能量分布的情况，最概然粒子数与平均粒子数在大$N$极限时是相同的，巨配分函数近似由指数的峰值给出：</p>
+<script type="math/tex; mode=display">
+\mathscr Q = \sum_{N = 0}^{\infty} {\rm e}^{ \beta \mu N } \mathcal Z(T,X^a,N) \simeq {\rm e}^{\beta \mu N^*}\mathcal Z(T,X^a,N) \simeq {\rm e}^{\beta \mu N^*-\beta F}</script><p>据此引入一个热力学函数<strong>巨势</strong>：</p>
+<script type="math/tex; mode=display">
+\mathcal G = E - TS - \mu N</script><p>其巨正则系综定义为：</p>
+<script type="math/tex; mode=display">
+\mathcal G(T,X^a,\mu) = -k_B T \ln \mathscr Q(T,X^a,\mu)</script></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Kardar/[Kardar]V.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html">https://papaya-z.github.io/post/Kardar/[Kardar]V.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6/">统计力学</a><a class="post-meta__tags" href="/tags/%E7%B3%BB%E7%BB%BC/">系综</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">[大黄猫]chap1：量子化基础与Coulomb电子气</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">一般定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC"><span class="toc-number">2.</span> <span class="toc-text">微正则系综</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E9%9B%B6%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">第零定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">第一定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.3.</span> <span class="toc-text">第二定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%9D%A1%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text">稳定性条件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E6%AD%A3%E5%88%99%E4%BE%8B%E5%AD%90"><span class="toc-number">3.</span> <span class="toc-text">微正则例子</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%83%BD%E7%BA%A7%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text">二能级系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E9%87%8F"><span class="toc-number">3.1.1.</span> <span class="toc-text">热力学量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-number">3.1.2.</span> <span class="toc-text">能态分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93"><span class="toc-number">3.2.</span> <span class="toc-text">理想气体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E9%87%8F-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">热力学量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9F%E5%BA%A6%E5%88%86%E5%B8%83"><span class="toc-number">3.2.2.</span> <span class="toc-text">速度分布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E7%86%B5%E4%B8%8E%E5%90%89%E5%B8%83%E6%96%AF%E4%BD%AF%E8%B0%AC"><span class="toc-number">4.</span> <span class="toc-text">混合熵与吉布斯佯谬</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC"><span class="toc-number">5.</span> <span class="toc-text">正则系综</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="toc-number">5.1.</span> <span class="toc-text">概率分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E9%87%8F"><span class="toc-number">5.2.</span> <span class="toc-text">能量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E8%83%BD%E4%B8%8E%E7%86%B5"><span class="toc-number">5.3.</span> <span class="toc-text">自由能与熵</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E4%BE%8B%E5%AD%90"><span class="toc-number">6.</span> <span class="toc-text">正则例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%89%E5%B8%83%E6%96%AF%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC"><span class="toc-number">7.</span> <span class="toc-text">吉布斯正则系综</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-1"><span class="toc-number">7.1.</span> <span class="toc-text">概率分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%89%E5%B8%83%E6%96%AF%E5%87%BD%E6%95%B0%E4%B8%8E%E7%84%93"><span class="toc-number">7.2.</span> <span class="toc-text">吉布斯函数与焓</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A8%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC"><span class="toc-number">8.</span> <span class="toc-text">巨正则系综</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-2"><span class="toc-number">8.1.</span> <span class="toc-text">概率分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E6%95%B0"><span class="toc-number">8.2.</span> <span class="toc-text">粒子数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A8%E5%8A%BF"><span class="toc-number">8.3.</span> <span class="toc-text">巨势</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.4-经典统计力学"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学">[Kardar]V.1-C.4-经典统计力学</a><time datetime="2024-02-29T14:21:06.000Z" title="发表于 2024-02-29 22:21:06">2024-02-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[大黄猫]chap1：量子化基础与Coulomb电子气"/></a><div class="content"><a class="title" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气">[大黄猫]chap1：量子化基础与Coulomb电子气</a><time datetime="2024-02-23T21:10:20.000Z" title="发表于 2024-02-24 05:10:20">2024-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.4：散射理论"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论">量子场论 Chap.4：散射理论</a><time datetime="2024-01-21T02:01:51.000Z" title="发表于 2024-01-21 10:01:51">2024-01-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料"><img src="/img/cohen/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cohen量子力学Chap.5补充材料"/></a><div class="content"><a class="title" href="/post/Cohen/QM-Cohen-5.1.html" title="Cohen量子力学Chap.5补充材料">Cohen量子力学Chap.5补充材料</a><time datetime="2024-01-08T08:33:10.000Z" title="发表于 2024-01-08 16:33:10">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.3：场量子化：路径积分方法"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法">量子场论 Chap.3：场量子化：路径积分方法</a><time datetime="2024-01-08T07:43:11.000Z" title="发表于 2024-01-08 15:43:11">2024-01-08</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: 'd33e252cb4cef85e08a0d8e4b18e2dba',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
