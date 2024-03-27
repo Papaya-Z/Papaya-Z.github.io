@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Gattringer &amp; Lang - Cp5: 格点上的费米子 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="格点上的费米场作用量；Grassmann数"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/LQCD/LQCD-5.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Gattringer & Lang - Cp5: 格点上的费米子',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-27 14:55:45'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Gattringer &amp; Lang - Cp5: 格点上的费米子</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-04T10:23:27.000Z" title="发表于 2022-10-04 18:23:27">2022-10-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-27T06:55:45.741Z" title="更新于 2024-03-27 14:55:45">2024-03-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QCD-on-Latt-Gattringer-Lang/">QCD on Latt. - Gattringer &amp; Lang</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">711</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Gattringer &amp; Lang - Cp5: 格点上的费米子"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/LQCD/LQCD-5.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<p>在第二章给出的费米子作用量还未考虑费米子的交换统计性质，因此缺少一部分。本章将会用Grassmann数满足这一性质，并考虑其他一些必要的修正，最终得到Wilson费米子作用量。</p>
+<h1 id="费米统计和Grassmann数"><a href="#费米统计和Grassmann数" class="headerlink" title="费米统计和Grassmann数"></a>费米统计和Grassmann数</h1><h2 id="一些新记号"><a href="#一些新记号" class="headerlink" title="一些新记号"></a>一些新记号</h2><p>考虑到第二章给出的形式，将总的路径积分分为对费米子部分和对规范场部分的二重积分 </p>
+<script type="math/tex; mode=display">
+\langle O \rangle = \langle \langle O \rangle_F\rangle_G</script><p> 其中费米子部分的路径积分为 </p>
+<script type="math/tex; mode=display">
+\langle A \rangle_F = \frac{1}{Z_F[U]}\int\mathcal D[\psi,\overline\psi] {\rm e}^{-S_F[\psi,\overline\psi,U]} A[\psi,\overline\psi,U]</script><p> 在这种表示下$U$被视作外场；相应的配分函数 </p>
+<script type="math/tex; mode=display">
+Z_F[U] = \int\mathcal D[\psi,\overline\psi] {\rm e}^{-S_F[\psi,\overline\psi,U]}</script><p> 仅仅通过费米子作用量$S_F$部分依赖于规范场$U$。$Z_F[U]$也叫费米子行列式，即狄拉克算符的行列式。</p>
+<p>另一方面，规范场部分的积分则定义为 </p>
+<script type="math/tex; mode=display">
+\langle B \rangle_G = \frac{1}{Z}\int\mathcal D[U] {\rm e}^{-S_G[U]} Z_F[U] B[U]</script><h2 id="费米统计"><a href="#费米统计" class="headerlink" title="费米统计"></a>费米统计</h2><p>考虑费米场乘积的真空期望值 </p>
+<script type="math/tex; mode=display">
+\left\langle \psi^{(f_1)}(n_1)_{\substack{\alpha_1\\a_1}} \psi^{(f_2)}(n_2)_{\substack{\alpha_2\\a_2}} \cdots \psi^{(f_k)}(n_k)_{\substack{\alpha_k\\a_k}} \overline\psi^{(g_1)}(m_1)_{\substack{\beta_1\\b_1}} \cdots \overline\psi^{(g_k)}(m_k)_{\substack{\beta_k\\b_k}} \right\rangle</script><p> 它一般不是规范不变的，可能需要利用链变量乘积构成的因子使其规范不变；但这里只先考虑涉及到费米子的部分。</p>
+<p>费米子需要服从费米分布，也即在量子数交换下具有反对称性，即若进行如下交换： </p>
+<script type="math/tex; mode=display">
+f_1\leftrightarrow f_2\ ,\ n_1\leftrightarrow n_2\ ,\ \alpha_1\leftrightarrow \alpha_2\ ,\ a_1\leftrightarrow a_2</script><p> 前述真空期望值应当变一负号。这就要求我们要让费米子场（在这里就是夸克场）的行为类似反交换数 </p>
+<script type="math/tex; mode=display">
+\psi^{(f)}(n)_{\substack{\alpha\\a}} \psi^{(f')}(n')_{\substack{\alpha'\\a'}} = - \psi^{(f')}(n')_{\substack{\alpha'\\a'}} \psi^{(f')}(n')_{\substack{\alpha'\\a'}}</script><p> 反夸克场也是同样，并且夸克场和反夸克场也要反交换： </p>
+<script type="math/tex; mode=display">
+\overline\psi^{(f)}(n)_{\substack{\alpha\\a}} \overline\psi^{(f')}(n')_{\substack{\alpha'\\a'}} = - \overline\psi^{(f')}(n')_{\substack{\alpha'\\a'}} \overline\psi^{(f')}(n')_{\substack{\alpha'\\a'}}</script><script type="math/tex; mode=display">
+\psi^{(f)}(n)_{\substack{\alpha\\a}} \overline\psi^{(f')}(n')_{\substack{\alpha'\\a'}} = - \overline\psi^{(f')}(n')_{\substack{\alpha'\\a'}} \psi^{(f')}(n')_{\substack{\alpha'\\a'}}</script><p>除此之外，具有反对易数的费米子的路径积分还可以通过引入相干态从而由费米子的正则反对易关系中得到。</p>
+<h2 id="Grassmann数和导数"><a href="#Grassmann数和导数" class="headerlink" title="Grassmann数和导数"></a>Grassmann数和导数</h2><p>反对易数即Grassmann数，是服从如下规则的一组数$\eta_i,\ i=1,\dots,N$： </p>
+<script type="math/tex; mode=display">
+\eta_i \eta_j = -\eta_j \eta_i</script><p> 这表明Grassmann数是幂零的，即$\eta_i^2 = \eta_i \eta_i = 0$。因此Grassmann数的幂级数只有有限项，且唯一相关的函数类为复系数多项式 </p>
+<script type="math/tex; mode=display">
+A = a + \sum_i a_i\eta_i + \sum_{i<j}a_{ij}\eta_i\eta_j + \sum_{i<j<k}a_{ijk}\eta_i\eta_j\eta_k +\cdots+ a_{12\dots N}\eta_i\eta_j\dots\eta_N</script><p> 这类多项式通过加法和乘法构成Grassmann代数，而Grassmann数就是GRassmann代数的生成元。</p>
+<p>对Grassmann数求导最自然的定义为 </p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial \eta_i}\eta_j = \delta_{ij}</script><p> 为研究Grassmann导数性质，现在考虑简单的两个生成元的Grassmann代数，其最一般的多项式为 </p>
+<script type="math/tex; mode=display">
+A=a+a_1\eta_1+a_2\eta_2+a_{12}\eta_1\eta_2</script><p> 定义其左导数 </p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\eta_1}A = a_1 + a_{12}\left(\frac{\partial}{\partial\eta_1}\eta_1\right)\eta_2 = a_1 + a_{12}\eta_2</script><p> 另一方面，由于Grassmann数的反交换性， </p>
+<script type="math/tex; mode=display">
+A=a+a_1\eta_1+a_2\eta_2-a_{12}\eta_2\eta_1</script><p> 此时左导数为 </p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\eta_1}A = a_1 - a_{12}\eta_2\left(\frac{\partial}{\partial\eta_1}\eta_1\right)</script><p> 为获得相同的结果，导数算符也必须满足反交换性，即 </p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\eta_1}\eta_2 = -\eta_2\frac{\partial}{\partial\eta_1}</script><p> 此外 </p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial \eta_i}1 = 0\ ,\ \frac{\partial}{\partial \eta_i}\frac{\partial}{\partial \eta_j} = -\frac{\partial}{\partial \eta_j}\frac{\partial}{\partial \eta_i}</script><h2 id="对Grassmann数积分"><a href="#对Grassmann数积分" class="headerlink" title="对Grassmann数积分"></a>对Grassmann数积分</h2><p>经典积分是对被积函数的线性泛函。要考虑构造Grassmann数的积分，即积分算符$\int{\rm d}^N\eta$作用在多项式$A$上的结果，最好也要保持上述性质，即复线性算符 </p>
+<script type="math/tex; mode=display">
+\int{\rm d}^N\eta A\in\mathbb C\ ,\quad\int{\rm d}^N\eta (\lambda_1 A_1 + \lambda_2 A_2) = \lambda_1 \int{\rm d}^N\eta A_1 + \lambda_2 \int{\rm d}^N\eta A_2</script><p> 另一方面还要求 </p>
+<script type="math/tex; mode=display">
+\int{\rm d}^N\ \eta\frac{\partial}{\partial\eta_i}A = 0</script><p> 这两者构成了对Grassmann数积分的定义。</p>
+<p>第二条定义表明，若一个多项式$A$（在一定数量生成元的范围内）可以表示成另一个多项式$A’$的导数，那么它的积分一定为零。换句话说，积分的结果只正比于$A$中最高次项的系数$a_{12\dots N}$。据此可以为积分最后添加归一化条件 </p>
+<script type="math/tex; mode=display">
+\int{\rm d}^N\eta\ \eta_1\eta_2\dots\eta_N = 1\ \Longrightarrow\ \int{\rm d}^N\eta\ A = a_{12\cdots N}</script><p>在对每个单独的Grassmann数积分时，具有 </p>
+<script type="math/tex; mode=display">
+\int{\rm d}\eta_i\ 1 = 0\ ,\quad \int{\rm d}\eta_i\ \eta_i = 1\ ,\quad {\rm d}\eta_i{\rm d}\eta_j = -{\rm d}\eta_j{\rm d}\eta_i</script><p> 最后一式是由被积函数中变量可交换性得出的；这导致测度${\rm d}\eta_i$与导数$\partial/\partial\eta_i$满足相同的反交换性。</p>
+<p>最后考虑测度${\rm d}^N\eta$在变量的如下线性变换下的行为 </p>
+<script type="math/tex; mode=display">
+\eta'=M\eta\quad{\rm or}\quad\eta_i' = \sum_{j=1}^N M_{ij}\eta^j=M_{ij}\eta^j</script><p> 代入积分式得到 </p>
+<script type="math/tex; mode=display">
+\int{\rm d}^N\eta\ \eta_1\dots\eta_N = 1 = \int{\rm d}^N\eta'\ \eta_1'\dots\eta_N' = \int{\rm d}^N\eta'\ \sum_{i_1,\dots,i_N}M_{1i_1}\cdots M_{Ni_N}\eta_{i_1}\dots\eta_{i_N}</script><script type="math/tex; mode=display">
+= \int{\rm d}^N\eta'\ \sum_{i_1,\dots,i_N}M_{1i_1}\cdots M_{Ni_N}\epsilon_{i_1\dots i_N}\eta_1\dots\eta_N = \det[M]\int{\rm d}^N\eta'\ \eta_1\dots\eta_N</script><p> 可见${\rm d}^N\eta = \det[M]{\rm d}^N\eta’$，这与经典微积分 中的关系是相反的。</p>
+<h3 id="Grassmann数的高斯积分"><a href="#Grassmann数的高斯积分" class="headerlink" title="Grassmann数的高斯积分"></a>Grassmann数的高斯积分</h3><p>考虑由$2N$个Grassmann生成元构成的代数：$\eta_i,\overline\eta_i,i=1,2,\dots,N$，它们都满足反交换关系 </p>
+<script type="math/tex; mode=display">
+\eta_i\eta_j=-\eta_j\eta_i\ ,\quad \overline\eta_i\overline\eta_j=-\overline\eta_j\overline\eta_i\ ,\quad \eta_i\overline\eta_j=-\overline\eta_j\eta_i</script><p> 引入变量线性变换$\eta’=M\eta$，有 </p>
+<script type="math/tex; mode=display">
+{\rm d}\eta_N{\rm d}\overline\eta_N \dots {\rm d}\eta_1{\rm d}\overline\eta_1 = \det[M] {\rm d}\eta_N'{\rm d}\overline\eta_N \dots {\rm d}\eta_1'{\rm d}\overline\eta_1</script><p> 于是就可以得到Matthews-Salam公式： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z_F &= \int{\rm d}\eta_N{\rm d}\overline\eta_N \dots {\rm d}\eta_1{\rm d}\overline\eta_1\ \exp\left(\sum_{i,j=1}^N\overline\eta_iM_{ij}\eta_j\right)\\
+&= \det[M]\int\prod_{n=1}^N {\rm d}\eta_n'{\rm d}\overline\eta_n\ \exp\left(\sum_{i=1}^N\overline\eta_i\eta_i'\right)\\
+&= \det[M]\prod_{n=1}^N \int{\rm d}\eta_n'{\rm d}\overline\eta_n\ \exp(\overline\eta_n\eta_n')\\
+&= \det[M]\prod_{n=1}^N \int{\rm d}\eta_n'{\rm d}\overline\eta_n\ (1+\overline\eta_n\eta_n')\\
+&= \det[M]
+\end{aligned}</script><p>上式可以从由$\eta_i,\overline\eta_i,i=1,\dots,N$生成的$2Z$维Grassmann代数推广到更一般的由$\eta_i,\overline\eta_i,\theta_i,\overline\theta_i,i=1,\dots,N$生成的$4N$维Grassmann代数，只不过只对$\eta_i,\overline\eta_i$积分，即所谓费米子的生成泛函： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+W[\theta,\overline\theta] &= \int\prod_{n=1}^N{\rm d}\eta_n{\rm d}\overline\eta_n\ \exp\left(\sum_{k,l=1}^N\overline\eta_k M_{kl} \eta_l + \sum_{l=1}^N\overline\theta_l \eta_l + \sum_{k=1}^N\overline\eta_k \theta_k\right)\\
+&=\int\prod_{i=n}^N{\rm d}\eta_n{\rm d}\overline\eta_n\ \exp\left(\sum_{k,l,n,m=1}^N \big[\overline\eta_k+\overline\theta_i(M^{-1})_{ik}\big] M_{kl} \big[\eta_l+(M^{-1})_{lj}\theta_j\big] - \sum_{i,j=1}^N\overline\theta_i (M^{-1})_{ij} \theta_j\right)\\
+&= \exp\left(-\sum_{i,j=1}^N\overline\theta_i (M^{-1})_{ij} \theta_j\right) \int\prod_{n=1}^N {\rm d}\eta_n'{\rm d}\overline\eta_n'\ \exp\left(\sum_{k,l=1}^N\overline\eta_k'M_{kl}\eta_l'\right)\\
+&= \det[M]\ \exp\left(-\sum_{i,j=1}^N\overline\theta_i (M^{-1})_{ij} \theta_j\right)
+\end{aligned}</script><p> 上面第三行作了线性变换$\overline\eta_k’=\overline\eta_k+\overline\theta_i(M^{-1})_{ik}$，$\eta_l’=\eta_l+(M^{-1})_{lj}\theta_j$。</p>
+<h2 id="Wick定理"><a href="#Wick定理" class="headerlink" title="Wick定理"></a>Wick定理</h2><p>下面考虑n点关联函数 </p>
+<script type="math/tex; mode=display">
+\langle \eta_{i_1}\overline\eta_{j_1}\cdots\eta_{i_n}\overline\eta_{j_n} \rangle_F = \frac{1}{Z_F}\int\prod_{m=1}^N {\rm d}\eta_m{\rm d}\overline\eta_m\ \eta_{i_1}\overline\eta_{j_1}\cdots\eta_{i_n}\overline\eta_{j_n}\ \exp\left(\sum_{k,l=1}^N \overline\eta_k M_{kl} \eta_l\right)</script><p> 根据生成泛函的定义，显然有 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\langle \eta_{i_1}\overline\eta_{j_1}\cdots\eta_{i_n}\overline\eta_{j_n} \rangle_F &= \frac{1}{Z_F} \frac{\partial}{\partial\theta_{j_1}} \frac{\partial}{\partial\overline\theta_{i_1}} \cdots \frac{\partial}{\partial\theta_{j_n}} \frac{\partial}{\partial\overline\theta_{i_n}} W[\theta,\overline\theta]\Bigg|_{\theta,\overline\theta=0}\\
+&= (-1)^n\sum_{P(1,2,\dots,n)}{\rm sign}(P) (M^{-1})_{i_1 j_{P_1}}(M^{-1})_{i_2 j_{P_2}} \cdots (M^{-1})_{i_n j_{P_n}}
+\end{aligned}</script><p> 求和遍历$1,2,\dots,n$的所有排列$P(1,2,\dots,n)$，${\rm sign}(P)$是相应排列的符号。容易看出关联函数只有在$\eta_i$和$\overline\eta_j$个数相同时才有非零的真空期望值。</p>
+<h1 id="费米子加倍与Wilson费米子作用量"><a href="#费米子加倍与Wilson费米子作用量" class="headerlink" title="费米子加倍与Wilson费米子作用量"></a>费米子加倍与Wilson费米子作用量</h1><h2 id="格点上的狄拉克算符"><a href="#格点上的狄拉克算符" class="headerlink" title="格点上的狄拉克算符"></a>格点上的狄拉克算符</h2><p>之前曾经写出过简单费米子作用量 </p>
+<script type="math/tex; mode=display">
+S_F[\psi,\overline\psi,U] = a^4\sum_{n\in\Lambda}\overline\psi(n)\left[\sum_{\mu=1}^4\gamma^\mu\frac{U_\mu(n) \psi(n+\hat\mu)-U_{-\mu}(n) \psi(n-\hat\mu)}{2a}+m\psi(n)\right]</script><p> 它是关于夸克$\psi$与反夸克场$\overline\psi$的双线性型；则可以写成在Wick定理中指数幂次上出现的形式 </p>
+<script type="math/tex; mode=display">
+S_F[\psi,\overline\psi,U] = a^4\sum_{n,m\in\Lambda}\sum_{a,b,\alpha,\beta} = \overline\psi(n)_{\substack{\alpha\\a}} D(n|m)_{\substack{\alpha\ \beta\\a\ b}} \psi(m)_{\substack{\beta\\b}}</script><p> 其中简单狄拉克算符为 </p>
+<script type="math/tex; mode=display">
+D(n|m)_{\substack{\alpha\ \beta\\a\ b}} = \sum_{\mu=1}^4 (\gamma^\mu)_{\alpha\beta} \frac{U_\mu(n)_{ab} \delta_{n+\hat\mu,m}-U_{-\mu}(n)_{ab} \delta_{n-\hat\mu,m}}{2a}+m\delta_{\alpha\beta}\delta_{ab}\delta_{nm}</script><h2 id="加倍问题"><a href="#加倍问题" class="headerlink" title="加倍问题"></a>加倍问题</h2><p>现在计算格点狄拉克算符$D(n|m)$在平凡规范场$U_\mu(n)= 1$即自由费米子情形下的傅里叶变换，动量空间范围$p_\mu\in(-\pi/a,\pi/a]$且对$-\pi/a$和$\pi/a$做认同。由于$D(n|m)$有两个时空格点参数$n$和$m$，因此需要让格点傅里叶变换独立地应用于这两个时空格点，同时为了保证变换的幺正性，在其中一个格点（这里取$m$）上让变换相位取复共轭，即： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\widetilde D(p|q) &= \frac{1}{|\Lambda|}\sum_{n,m\in\Lambda}{\rm e}^{-{\rm i}p\cdot na} D(n|m) {\rm e}^{ {\rm i}q\cdot ma}\\
+&= \frac{1}{|\Lambda|}\sum_{n\in\Lambda}{\rm e}^{-{\rm i}(p-q)\cdot na}\left(\sum_{\mu=1}^4\gamma^\mu\frac{ {\rm e}^{+{\rm i}q_\mu a}-{\rm e}^{-{\rm i}q_\mu a}}{2a}+m\mathbb 1\right)\\
+&= \delta(p-q)\widetilde D(p)\\
+\end{aligned}</script><p> 这里$|\Lambda|$是总格点数，而单个格点上狄拉克算符的傅里叶变换为 </p>
+<script type="math/tex; mode=display">
+\widetilde D(p) = m\mathbb 1 + \frac{\rm i}{a}\sum_{\mu=1}^4 \gamma^\mu\sin(p_\mu a)</script><p> 由于$\delta(p-q)$项，显然在动量空间$\widetilde D(p|q)$是对角化的$4\times 4$矩阵。</p>
+<p>想要计算狄拉克算符的逆，可先计算动量空间的逆；而 </p>
+<script type="math/tex; mode=display">
+\widetilde D^{-1}(p) = \frac{m\mathbb 1 - {\rm i}a^{-1}\sum_{\mu=1}^4 \gamma^\mu\sin(p_\mu a)}{m^2 + a^{-2}\sum_{\mu=1}^4 \sin^2(p_\mu a)}</script><p> 则 </p>
+<script type="math/tex; mode=display">
+\widetilde D^{-1}(n|m) = \frac{1}{|\Lambda|}\sum_{p\in\widetilde\Lambda}\widetilde D^{-1}(p) {\rm e}^{ {\rm i}p\cdot(n-m)a}</script><p> 此即自由费米子场的夸克传播子。</p>
+<p>根据Wick定理，夸克传播子决定了n点关联函数的行为。对于自由费米子，在动量空间研究更加方便，并且可以特别关心$m=0$的情况，此时 </p>
+<script type="math/tex; mode=display">
+\widetilde D^{-1}(p)\Big|_{m=0} = \frac{- {\rm i}a^{-1}\sum_{\mu=1}^4 \gamma^\mu\sin(p_\mu a)}{a^{-2}\sum_{\mu=1}^4 \sin^2(p_\mu a)} \stackrel{a\to 0}{\longrightarrow} \frac{-{\rm i}\sum_{\mu=1}^4\gamma^\mu p_\mu}{p^2}</script><p> 可以看到在简单连续极限下，即上式右侧项，存在动量空间极点$p=(0,0,0,0)$，对应于由连续狄拉克算符描述的单个费米子。但在格点中，对应于上式中间项，还存在其他极点，即四个分量都取$p_\mu=0$或$p_\mu=\pi/a$中的一个时，就存在极点。因此在格点上存在非物理的极点 </p>
+<script type="math/tex; mode=display">
+p=(\pi/a,0,0,0)\ ,\ (0,\pi/a,0,0)\ ,\ \dots\ ,\ (\pi/a,\pi/a,\pi/a,\pi/a)</script><p> 即产生了其余15个不应存在的费米子，就是所谓费米子加倍现象。理论中需要移除这些多余的极点。</p>
+<h2 id="Wilson费米子"><a href="#Wilson费米子" class="headerlink" title="Wilson费米子"></a>Wilson费米子</h2><p>为了移除这些多余极点，要区分物理极点$(0,0,0,0)$与非物理的极点，即包含非零动量分量$\pi/a$的极点。Wilson建议在动量空间狄拉克算符中添加一项（Wilson项） </p>
+<script type="math/tex; mode=display">
+\widetilde D(p) = m\mathbb 1 + \frac{\rm i}{a}\sum_{\mu=1}^4 \gamma^\mu\sin(p_\mu a) + \mathbb 1\frac{1}{a}\sum_{\mu=1}^4[1-\cos(p_\mu a)]</script><p> 对于物理极点，Wilson项为零；非物理极点的每个非零分量，Wilson项产生额外的$2/a$贡献，从而区分了两类极点。Wilson项表现得类似于一个质量项，则加倍子总的质量为 </p>
+<script type="math/tex; mode=display">
+m+\frac{2\ell}{a}</script><p> 其中$\ell$就是非零动量分量数。在简单连续极限下，加倍子质量变得非常大从而在理论中脱耦。此时的夸克传播子中，仅剩物理极点。</p>
+<p>自由费米子情形下，Wilson项在坐标空间的形式就是其傅里叶逆变换（利用$U_{-\mu}(n)=U_\mu^\dagger(n-\hat\mu)$） </p>
+<script type="math/tex; mode=display">
+-a\sum_{\mu=1}^4\frac{U_\mu(n)_{ab}\delta_{n+\hat\mu,m}-2\delta_{ab}\delta_{nm}+U_{-\mu}(n)_{ab}\delta_{n-\hat\mu,m}}{2a^2}</script><p> 它实际上就是离散化的拉普拉斯算符$-(a/2)\partial_\mu\partial_\mu$（注意到泰勒展开给出$f’’(x)+\mathcal O(\epsilon^2) = [f(x+\epsilon)-2f(x)+f(x-\epsilon)]/\epsilon^2$），并且在简单连续极限$a\to 0$下消失。</p>
+<p>现在可以把Wilson项添加进来得到完整的Wilson狄拉克算符 </p>
+<script type="math/tex; mode=display">
+D^{(f)}(n|m)_{\substack{\alpha\ \beta\\a\ b}} = \left(m^{(f)}+\frac{4}{a}\right)\delta_{\alpha\beta}\delta_{ab}\delta_{nm}-\frac{1}{2a}\sum_{\mu=\pm 1}^{\pm 4}(\mathbb 1-\gamma^\mu)_{\alpha\beta}U_\mu(n)_{ab}\delta_{n+\hat\mu,m}</script><p> 在这里定义了$\gamma_{-\mu}=-\gamma_\mu$。这里也明确看出，$S_F[\psi,\overline\psi,U]$对规范场$U$的依赖来自于$D(n|m)$对$U$的依赖。</p>
+<h1 id="费米子线与跳跃展开"><a href="#费米子线与跳跃展开" class="headerlink" title="费米子线与跳跃展开"></a>费米子线与跳跃展开</h1><p>本节讨论在大夸克质量极限下的Wilson费米子，这将导致跳跃展开，它会提供一个重要的物理视角：费米子可以被视作链变量的路径，即费米子线；这将被用于说明Wilson线与夸克-反夸克对之间的关系。此外费米子行列式也具有新的解释，即封闭的费米子线——费米子圈。</p>
+<h2 id="夸克传播子的跳跃展开"><a href="#夸克传播子的跳跃展开" class="headerlink" title="夸克传播子的跳跃展开"></a>夸克传播子的跳跃展开</h2><p>根据Wick定理，夸克-反夸克对的两点关联函数可以写成 </p>
+<script type="math/tex; mode=display">
+\left\langle \overline\psi(n)_{\substack{\alpha\\a}} \psi(m)_{\substack{\beta\\b}} \right\rangle_F = a^{-4}D^{-1}(n|m)_{\substack{\alpha\ \beta\\a\ b}}</script><p> 其中狄拉克算符的逆、夸克传播子$D^{-1}$也是费米子行列式，可以依大夸克质量展开；在这里使用的是添加了Wilson项的形式。它可以写为 </p>
+<script type="math/tex; mode=display">
+D=C(\mathbb 1-\kappa H)\quad{\rm with}\quad \kappa=\frac{1}{2(am+4)}\ ,\quad C=m+\frac{4}{a}</script><script type="math/tex; mode=display">
+H(n|m)_{\substack{\alpha\ \beta\\a\ b}} = \sum_{\mu=\pm 1}^{\pm 4}(\mathbb 1-\gamma^\mu)_{\alpha\beta} U_\mu(n)_{ab}\delta_{n+\hat\mu,m}</script><p> 其中$H$包含了狄拉克算符中所有最近邻项，因此称为跳跃矩阵；实数$\kappa$是跳跃参数。常数$C$可以被吸收进夸克场的重定义中：$\psi\to\sqrt{C}\psi$因而是无关的，所以一般采用 </p>
+<script type="math/tex; mode=display">
+D=(\mathbb 1-\kappa H)\quad{\rm with}\quad \kappa=\frac{1}{2(am+4)}</script><p> 的形式。</p>
+<p>跳跃展开的本质就是在大质量时，$\kappa$变得很小，据此将$D^{-1}$和$\det[D]$按$\kappa$展开。对夸克传播子，可以用几何级数展开 </p>
+<script type="math/tex; mode=display">
+D^{-1}(n|m)_{\substack{\alpha\ \beta\\a\ b}}=(\mathbb 1-\kappa H)^{-1} = \sum_{k=0}^\infty \left(\kappa H(n|m)_{\substack{\alpha\ \beta\\a\ b}}\right)^k = \sum_{k=0}^\infty \left(\kappa\right)^k \left(H(n|m)_{\substack{\alpha\ \beta\\a\ b}}\right)^k</script><p> 在$\kappa||H||&lt;1$收敛；可以证明$||H||\leq8$因此收敛域就是$\kappa&lt;1/8$。</p>
+<p>用$H^k(n|m)_{\substack{\alpha\ \beta\\a\ b}}$表示$\left(H(n|m)_{\substack{\alpha\ \beta\\a\ b}}\right)^k$，可以根据定义写出各阶 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H^0(n|m)_{\substack{\alpha\ \beta\\a\ b}}&=\delta_{\alpha\beta}\delta_{ab}\delta_{nm}\\
+H^1(n|m)_{\substack{\alpha\ \beta\\a\ b}}&=\sum_{\mu=\pm 1}^{\pm 4}(\mathbb 1-\gamma^\mu)_{\alpha\beta} U_\mu(n)_{ab} \delta_{n+\hat\mu,m}\\
+H^2(n|m)_{\substack{\alpha\ \beta\\a\ b}}&=\sum_{l,\rho,c}H(n|l)_{\substack{\alpha\ \rho\\a\ c}} H(l|m)_{\substack{\rho\ \beta\\c\ b}}\\
+&= \sum_{\mu,\nu=\pm 1}^{\pm 4}\big[(\mathbb 1-\gamma^\mu)(\mathbb 1-\gamma^\nu)\big]_{\alpha\beta} \big[U_\mu(n) U_\nu(n+\hat\mu)\big]_{ab} \delta_{n+\hat\mu+\hat\nu,m}\\
+H^k(n|m)_{\substack{\alpha\ \beta\\a\ b}}&=\sum_{\mu_i=\pm 1}^{\pm 4}\left[\prod_{i=1}^k(\mathbb 1-\gamma^{\mu_i})\right]_{\alpha\beta} \left[\prod_{i=1}^k U_{\mu_i}\left(n+\sum_{j=1}^{i-1}\hat\mu_i\right)\right]_{ab} \delta_{n+\sum_{i=1}^k\hat\mu_i,m}
+\end{aligned}</script><p> 从形式上看，由于$\delta_{n+\sum_{i=1}^k\hat\mu_i,m}$的存在，它们非零当且仅当 </p>
+<script type="math/tex; mode=display">
+m=n+\hat\mu_1+\hat\mu_2+\cdots+\hat\mu_k\ ,\qquad \mu_i\in\{\pm1,\pm2,\pm3,\pm4\}</script><p> 即$n$与$m$点由表达式乘积中出现的链变量构成的路径相连，或者说相乘的链变量需要构成连接两点的路径；再对所有这样的链变量组合（所有可能的格点路径）进行求和。</p>
+<p>当然，在每一项中还有一项 </p>
+<script type="math/tex; mode=display">
+\prod_{i=1}^k(\mathbb 1-\gamma^{\mu_i})</script><p> 注意到$(\mathbb 1-\gamma^\mu)(\mathbb 1+\gamma^\mu)=0$，可见前述的路径中不能出现$180^\circ$转向的路径（回转路径）。</p>
+<p>总结来说，夸克传播子$D^{-1}$可以被分解为对非回转路径的求和，其中长度为$k$的路径有一个权重$\kappa^k$。对于给定的两点$n$、$m$，其领头阶出现在最短路径上。在每一项中，链变量$U_\mu(n)$乘积部分给出了色空间的因子，而$(\mathbb 1-\gamma^{\mu})$乘积部分给出狄拉克空间的因子。</p>
+<p>利用这个结论，也可以说明在构造Wilson圈中，用Wilson线代替费米子场乘积的合理性：一条Wilson线就是夸克传播子的跳跃展开中某一项的一个因子；特别地，在无穷大夸克质量极限下（$\kappa\to0$），只有最短的路径有贡献，也即平直Wilson线。</p>
+<h2 id="费米子行列式的跳跃展开"><a href="#费米子行列式的跳跃展开" class="headerlink" title="费米子行列式的跳跃展开"></a>费米子行列式的跳跃展开</h2><p>费米子行列式也可以跳跃展开 </p>
+<script type="math/tex; mode=display">
+\det[D]=\det[\mathbb 1-\kappa H] = \exp\Big({\rm tr}\big[\ln(\mathbb 1-\kappa H)\big]\Big) = \exp\left(-\sum_{k=1}^\infty \frac{\kappa^k}{k}{\rm tr}[H^k]\right)</script><p> 该式表明必须要计算条约矩阵的幂次的迹${\rm tr}[H^k]$。对这些上一节已经计算过的项取迹，包括对色空间和狄拉克空间取迹，同时还要令$n=m$并对$m$遍历求和，此时路径变为非回转的封闭环路，迹费米子圈。因此费米子行列式就是对这些费米子圈求和的自然指数。由于对每个圈都在色空间取迹，他们都是规范不变的，因此行列式也规范不变。</p>
+<p>总结一下，夸克传播子是对费米子线的求和，而费米子行列式是对费米子圈的求和。</p>
+<h1 id="Wilson作用量的分立对称性"><a href="#Wilson作用量的分立对称性" class="headerlink" title="Wilson作用量的分立对称性"></a>Wilson作用量的分立对称性</h1><p>格点体系使得很多连续对称性被破坏，例如时空平移和转动对称性。但是在格点上仍具有离散的平移和转动对称性，并且在连续极限下可以被恢复为连续版本。</p>
+<p>很多时候更关心诸如荷共轭$\mathcal C$，宇称$\mathcal P$等分立对称性。这些对朝鲜对于构造强子interpolator很重要。</p>
+<h2 id="荷共轭"><a href="#荷共轭" class="headerlink" title="荷共轭"></a>荷共轭</h2><p>荷共轭将粒子转变为其反粒子，并且作用在旋量上的结果是： </p>
+<script type="math/tex; mode=display">
+\psi(n) \stackrel{\mathcal C}{\longrightarrow} \psi^c(n) = C^{-1}\overline\psi^T(n)</script><script type="math/tex; mode=display">
+\overline\psi(n) \stackrel{\mathcal C}{\longrightarrow} \overline\psi^c(n) = -\psi^T(n)C</script><p> 这里转置$T$同时在色空间和狄拉克空间作用，将$3\times 4$矩阵表示的旋量转置为一个行矩阵。荷共轭矩阵$C$则旨在狄拉克空间作用，且定义为 </p>
+<script type="math/tex; mode=display">
+C\gamma_\mu C^{-1} = -\gamma_\mu^T</script><p>在荷共轭下，链变量变换为 </p>
+<script type="math/tex; mode=display">
+U_\mu(n) \stackrel{\mathcal C}{\longrightarrow} U_\mu^c(n) = U_\mu^*(n) = (U_\mu^\dagger(n))^T</script><p> 特别是当其写作$U_\mu(n) = \exp({\rm i}a A_\mu(n))$时，这样的荷共轭等价于$A_\mu(n)\to -A_\mu^T(n)$。这表明反粒子具有其对应粒子相反的荷。</p>
+<p>下面讨论Wilson作用量在电荷变换下的行为。首先对于质量项（平凡项）， </p>
+<script type="math/tex; mode=display">
+\overline\psi^c(n)\psi^c(n) = -\psi^T(n) CC^{-1} \overline\psi^T(n) = -\psi^T(n) \overline\psi^T(n) = \psi(n)\psi(n)</script><p> 是电荷共轭不变的；最后一步使用了Grassmann数的反交换性。</p>
+<p>对于跳跃项（使用前述约定的$\gamma_{-\mu} = -\gamma_\mu$和$U_{-\mu}(n)=U_\mu^\dagger(n-\hat\mu)$）, </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&a^4\sum_n\sum_{\mu=\pm1}^{\pm4}\overline\psi^c(n) \frac{\mathbb 1-\gamma_\mu}{2a} U_\mu^c(n) \psi^c(n+\hat\mu)\\
+=-&a^4\sum_n\sum_{\mu=\pm1}^{\pm4}\psi^T(n) C\frac{\mathbb 1-\gamma_\mu}{2a}C^{-1} U_\mu^*(n) \overline\psi^T(n+\hat\mu)\\
+=-&a^4\sum_n\sum_{\mu=\pm1}^{\pm4}\psi^T(n) \frac{\mathbb 1+\gamma_\mu^T}{2a} (U_\mu^\dagger(n))^T \overline\psi^T(n+\hat\mu)
+\end{aligned}</script><p> 对转置的乘积可以变为对乘积的转置，而由于最终结果是一个数，所以数的转置是其本身。此外再考虑到Grassmann数的反交换性，最终可以得到 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+=&a^4\sum_n\sum_{\mu=\pm1}^{\pm4}\overline\psi(n+\hat\mu) \frac{\mathbb 1+\gamma_\mu}{2a} U_\mu^\dagger(n) \psi^c(n)\\
+=&a^4\sum_{m=n+\hat\mu}\sum_{\mu=\pm1}^{\pm4}\overline\psi(m) \frac{\mathbb 1+\gamma_\mu}{2a} U_\mu^\dagger(m-\hat\mu) \psi(m-\hat\mu)\\
+=&a^4\sum_{m}\sum_{\mu=\pm1}^{\pm4}\overline\psi(m) \frac{\mathbb 1-\gamma_{-\mu}}{2a} U_{-\mu}(m) \psi(m-\hat\mu)\\
+=&a^4\sum_{m}\sum_{\mu=\pm1}^{\pm4}\overline\psi(m) \frac{\mathbb 1-\gamma_{\mu}}{2a} U_{\mu}(m) \psi(m+\hat\mu)
+\end{aligned}</script><p> 表明跳跃项也是电荷共轭不变的；于是总的Wilson费米子作用量都是电荷共轭不变的。</p>
+<h2 id="宇称和欧氏反射"><a href="#宇称和欧氏反射" class="headerlink" title="宇称和欧氏反射"></a>宇称和欧氏反射</h2><p>格点场的宇称变换为 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\psi({\bf n},n_4) &\stackrel{\mathcal P}{\longrightarrow} \psi^p({\bf n},n_4) = \gamma_4 \psi(-{\bf n},n_4)\\
+\overline\psi({\bf n},n_4) &\stackrel{\mathcal P}{\longrightarrow} \overline\psi^p({\bf n},n_4) =  \overline\psi(-{\bf n},n_4)\gamma_4\\
+U_i({\bf n},n_4) &\stackrel{\mathcal P}{\longrightarrow} U_i^p({\bf n},n_4) = U_i^\dagger(-{\bf n}-\hat i,n_4)\qquad i=1,2,3\\
+U_4({\bf n},n_4) &\stackrel{\mathcal P}{\longrightarrow} U_4^p({\bf n},n_4) = U_4(-{\bf n},n_4)
+\end{aligned}</script><p> 这里$\gamma_4$是闵氏时空$\gamma_0$的对应物。在之前的定义中，空间格点范围$n_i=0,1,\dots,N_1$，这在数值计算时较方便；但同时也可以标记为$n_i = -N/2+1,-N/2+2,\dots,N/2$并取周期性边界条件$-N/2+1\longleftrightarrow N/2+1$，这种标记在这里存在反射${\bf n}\to - {\bf n}$的讨论中比较方便。</p>
+<p>Wilson作用量的平凡部分仍然在宇称变换下不变，因为对${\bf n}$的求和都可以换成对$-{\bf n}$的求和；对于跳跃部分，首先考虑场的空间分量： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&a^4\sum_{ {\bf n},n_4}\sum_{i=\pm1}^{\pm3}\overline\psi^p({\bf n},n_4) \frac{\mathbb 1-\gamma_i}{2a} U_i^p({\bf n},n_4) \psi^p({\bf n}+\hat i,n_4)\\
+=&a^4\sum_{ {\bf n},n_4}\sum_{i=\pm1}^{\pm3}\overline\psi(-{\bf n},n_4) \frac{\mathbb 1-\gamma_i}{2a} U_i^\dagger(-{\bf n}-\hat i,n_4) \psi(-{\bf n}-\hat i,n_4)\\
+=&a^4\sum_{ {\bf m} = -{\bf n}}\sum_{n_4}\sum_{i=\pm1}^{\pm3}\overline\psi({\bf m},n_4) \frac{\mathbb 1-\gamma_{-i}}{2a} U_{-i}({\bf m},n_4) \psi({\bf m}-\hat i,n_4)\\
+=&a^4\sum_{ {\bf m},n_4}\sum_{i=\pm1}^{\pm3}\overline\psi({\bf m},n_4) \frac{\mathbb 1-\gamma_i}{2a} U_i({\bf m},n_4) \psi({\bf m}+\hat i,n_4)
+\end{aligned}</script><p> 再考虑场的时间分量 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&a^4\sum_{ {\bf n},n_4}\overline\psi^p({\bf n},n_4) \frac{\mathbb 1-\gamma_{\pm4}}{2a} U_{\pm4}^p({\bf n},n_4) \psi^p({\bf n},n_4\pm1)\\
+=&a^4\sum_{ {\bf n},n_4}\overline\psi(-{\bf n},n_4) \frac{\mathbb 1-\gamma_{\pm4}}{2a} U_{\pm4}(-{\bf n},n_4) \psi(-{\bf n},n_4\pm1)\\
+=&a^4\sum_{ {\bf m},n_4}\overline\psi({\bf m},n_4) \frac{\mathbb 1-\gamma_{\pm4}}{2a} U_{\pm4}({\bf m},n_4) \psi({\bf m},n_4\pm1)
+\end{aligned}</script><p> 可见跳跃部分也在宇称变换下不变；于是Wilson作用量在宇称变换下不变。</p>
+<p>更进一步，Wilson作用量在C和P联合变换下也不变。<br>此外还讨论一种在欧式空间中的变换： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\psi(n) &\stackrel{\mathcal P_\mu}{\longrightarrow} \psi^{p_\mu}(n) = \gamma_\mu \psi(P_\mu(n))\\
+\overline\psi(n) &\stackrel{\mathcal P_\mu}{\longrightarrow} \overline\psi^{p_\mu}(n) =  \overline\psi(P_\mu(n))\gamma_\mu\\
+U_\nu(n) &\stackrel{\mathcal P}{\longrightarrow} U_\nu^{p_\mu}(n) = U_\nu^\dagger(P_\mu(n)-\hat\nu)\qquad \nu\neq\mu\\
+U_\mu(n) &\stackrel{\mathcal P}{\longrightarrow} U_\mu^{p_\mu}(n) = U_\mu(P_\mu(n))
+\end{aligned}</script><p> 其中$P_\mu(n)$是与矢量$n$除了分量$n_\mu$之外所有分量都相反的矢量。</p>
+<p>可以证明Wilson作用量在四个方向上的上述变换都不变，表明欧式空间的四个方向都是等价的；特别地，$\mathcal P_1\mathcal P_2\mathcal P_3$对应于时间反射。</p>
+<h2 id="gamma-5-厄米性"><a href="#gamma-5-厄米性" class="headerlink" title="$\gamma_5$厄米性"></a>$\gamma_5$厄米性</h2><p>大多数情况下狄拉克算符$D$具有$\gamma_5$厄米性，即 </p>
+<script type="math/tex; mode=display">
+(\gamma_5 D)^\dagger = \gamma_5 D\quad\Longleftrightarrow\quad D^\dagger = \gamma_5 D\gamma_5</script><p> 这一性质表明Wilson作用量的质量项（平凡项）不仅是对角的，还是实的，并且左右同时乘$\gamma_5$不变。而在跳跃项中，由于$\gamma$矩阵的性质，$(\mathbb 1-\gamma_\mu)$转变为$(\mathbb 1+\gamma_\mu)$，因此 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\sum_{\mu=\pm1}^{\pm4}\big[\gamma_5(\mathbb 1-\gamma_\mu)\gamma_5\big]_{\alpha\beta}U_\mu(n)_{ab}\delta_{n+\hat\mu,m}\\
+=&\sum_{\mu=\pm1}^{\pm4}(\mathbb 1+\gamma_\mu)_{\alpha\beta}U_\mu(n)_{ab}\delta_{n+\hat\mu,m}\\
+=&\sum_{\mu=\pm1}^{\pm4}(\mathbb 1-\gamma_\mu)_{\alpha\beta}U_{-\mu}(n)_{ab}\delta_{n-\hat\mu,m}\\
+=&\sum_{\mu=\pm1}^{\pm4}(\mathbb 1-\gamma_\mu)_{\alpha\beta}U_{\mu}^\dagger(n-\hat\mu)_{ab}\delta_{n-\hat\mu,m}\\
+=&\sum_{\mu=\pm1}^{\pm4}(\mathbb 1-\gamma_\mu)_{\alpha\beta}U_{\mu}^\dagger(m)_{ab}\delta_{n,m+\hat\mu}\\
+\end{aligned}</script><p> 与变换前相比，可见$U_\mu$变换为$U_\mu^\dagger$并且$n$和$m$交换，这验证了$D^\dagger = \gamma_5 D\gamma_5$。</p>
+<p>它的逆算符，即夸克传播子也继承了这种性质，这在计算强子关联函数时有用。$\gamma_5$厄米性的特征是，狄拉克算符的本征值要么是实数，要么是成对出现的共轭复数，这个性质意味着费米子行列式是实数。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/LQCD/LQCD-5.html">https://papaya-z.github.io/post/LQCD/LQCD-5.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/">路径积分</a><a class="post-meta__tags" href="/tags/LQCD/">LQCD</a><a class="post-meta__tags" href="/tags/Grassmann%E6%95%B0/">Grassmann数</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/LQCD/LQCD-6.html" title="Gattringer &amp; Lang - Cp6: 强子谱"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Gattringer &amp; Lang - Cp6: 强子谱</div></div></a></div><div class="next-post pull-right"><a href="/post/LQCD/LQCD-3.html" title="Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/LQCD/LQCD-1.html" title="Gattringer &amp; Lang - Cp1: 格点上的路径积分"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-28</div><div class="title">Gattringer &amp; Lang - Cp1: 格点上的路径积分</div></div></a></div><div><a href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-08</div><div class="title">量子场论 Chap.3：场量子化：路径积分方法</div></div></a></div><div><a href="/post/LQCD/LQCD-2.html" title="Gattringer &amp; Lang - Cp2: 格点QCD初览"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-30</div><div class="title">Gattringer &amp; Lang - Cp2: 格点QCD初览</div></div></a></div><div><a href="/post/LQCD/LQCD-3.html" title="Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-01</div><div class="title">Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论</div></div></a></div><div><a href="/post/LQCD/LQCD-6.html" title="Gattringer &amp; Lang - Cp6: 强子谱"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-11</div><div class="title">Gattringer &amp; Lang - Cp6: 强子谱</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E7%BB%9F%E8%AE%A1%E5%92%8CGrassmann%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">费米统计和Grassmann数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%96%B0%E8%AE%B0%E5%8F%B7"><span class="toc-number">1.1.</span> <span class="toc-text">一些新记号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E7%BB%9F%E8%AE%A1"><span class="toc-number">1.2.</span> <span class="toc-text">费米统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grassmann%E6%95%B0%E5%92%8C%E5%AF%BC%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">Grassmann数和导数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9Grassmann%E6%95%B0%E7%A7%AF%E5%88%86"><span class="toc-number">1.4.</span> <span class="toc-text">对Grassmann数积分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Grassmann%E6%95%B0%E7%9A%84%E9%AB%98%E6%96%AF%E7%A7%AF%E5%88%86"><span class="toc-number">1.4.1.</span> <span class="toc-text">Grassmann数的高斯积分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wick%E5%AE%9A%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">Wick定理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E5%AD%90%E5%8A%A0%E5%80%8D%E4%B8%8EWilson%E8%B4%B9%E7%B1%B3%E5%AD%90%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">费米子加倍与Wilson费米子作用量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E7%82%B9%E4%B8%8A%E7%9A%84%E7%8B%84%E6%8B%89%E5%85%8B%E7%AE%97%E7%AC%A6"><span class="toc-number">2.1.</span> <span class="toc-text">格点上的狄拉克算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%80%8D%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">加倍问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wilson%E8%B4%B9%E7%B1%B3%E5%AD%90"><span class="toc-number">2.3.</span> <span class="toc-text">Wilson费米子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E5%AD%90%E7%BA%BF%E4%B8%8E%E8%B7%B3%E8%B7%83%E5%B1%95%E5%BC%80"><span class="toc-number">3.</span> <span class="toc-text">费米子线与跳跃展开</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E4%BC%A0%E6%92%AD%E5%AD%90%E7%9A%84%E8%B7%B3%E8%B7%83%E5%B1%95%E5%BC%80"><span class="toc-number">3.1.</span> <span class="toc-text">夸克传播子的跳跃展开</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E5%AD%90%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E8%B7%B3%E8%B7%83%E5%B1%95%E5%BC%80"><span class="toc-number">3.2.</span> <span class="toc-text">费米子行列式的跳跃展开</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Wilson%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E5%88%86%E7%AB%8B%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">Wilson作用量的分立对称性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8D%B7%E5%85%B1%E8%BD%AD"><span class="toc-number">4.1.</span> <span class="toc-text">荷共轭</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%87%E7%A7%B0%E5%92%8C%E6%AC%A7%E6%B0%8F%E5%8F%8D%E5%B0%84"><span class="toc-number">4.2.</span> <span class="toc-text">宇称和欧氏反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gamma-5-%E5%8E%84%E7%B1%B3%E6%80%A7"><span class="toc-number">4.3.</span> <span class="toc-text">$\gamma_5$厄米性</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.2-概率"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率">[Kardar]V.1-C.2-概率</a><time datetime="2024-03-19T19:06:12.000Z" title="发表于 2024-03-20 03:06:12">2024-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.5-相互作用粒子"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子">[Kardar]V.1-C.5-相互作用粒子</a><time datetime="2024-03-19T10:10:54.000Z" title="发表于 2024-03-19 18:10:54">2024-03-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.4-经典统计力学"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学">[Kardar]V.1-C.4-经典统计力学</a><time datetime="2024-02-29T14:21:06.000Z" title="发表于 2024-02-29 22:21:06">2024-02-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[大黄猫]chap1：量子化基础与Coulomb电子气"/></a><div class="content"><a class="title" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气">[大黄猫]chap1：量子化基础与Coulomb电子气</a><time datetime="2024-02-23T21:10:20.000Z" title="发表于 2024-02-24 05:10:20">2024-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.4：散射理论"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论">量子场论 Chap.4：散射理论</a><time datetime="2024-01-21T02:01:51.000Z" title="发表于 2024-01-21 10:01:51">2024-01-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: '56b3b50ed4d52324ca5710c4b82978f9',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

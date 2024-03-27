@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Gattringer &amp; Lang - Cp2: 格点QCD初览 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="QCD是一个典型的强耦合场论，描述强相互作用。"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/LQCD/LQCD-2.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Gattringer & Lang - Cp2: 格点QCD初览',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-26 18:42:02'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Gattringer &amp; Lang - Cp2: 格点QCD初览</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-30T10:23:03.000Z" title="发表于 2022-09-30 18:23:03">2022-09-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-26T10:42:02.952Z" title="更新于 2024-03-26 18:42:02">2024-03-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QCD-on-Latt-Gattringer-Lang/">QCD on Latt. - Gattringer &amp; Lang</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Gattringer &amp; Lang - Cp2: 格点QCD初览"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/LQCD/LQCD-2.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="连续QCD作用量"><a href="#连续QCD作用量" class="headerlink" title="连续QCD作用量"></a>连续QCD作用量</h1><h2 id="夸克和胶子场"><a href="#夸克和胶子场" class="headerlink" title="夸克和胶子场"></a>夸克和胶子场</h2><p>作为重费米子，夸克由狄拉克4-旋量描述，夸克场及反夸克场的符号分别是： </p>
+<script type="math/tex; mode=display">
+\psi^{(f)}(x)_{\substack{\alpha\\c}}\ ,\qquad \overline \psi^{(f)}(x)_{\substack{\alpha\\c}}</script><p> 上标$f=1,2,3,4,5,6$表示夸克的味自由度flavor，下标$\alpha=1,2,3,4$表示狄拉克旋量的指标，下标$c=1,2,3$表示夸克的色自由度，$x$表示四维时空坐标。在某些不涉及重味夸克的情形下$f$指标可以不全取遍6种味，仅到此时的最重味指标$N_f$。</p>
+<p>反夸克场与夸克场由狄拉克共轭相联系：$\overline\psi=\psi^\dagger\gamma_0$。</p>
+<p>另一方面，胶子场是规范矢量场： </p>
+<script type="math/tex; mode=display">
+A_\mu(x)_{cd}</script><p> 下标$\mu$表示4-矢量指标，$x$表示四维时空坐标。在欧氏情况下不再区分协变或逆变，并且$\mu=1,2,3,4$。胶子也携带色荷：$c,d=1,2,3$；对给定的$\mu_0$和$x_0$，$A_{\mu_0}(x_0)_{cd}$是无迹、厄米的$3\times 3$矩阵。</p>
+<p>在这里对色指标、旋量指标、4-时空指标都使用爱因斯坦求和约定。</p>
+<p>一般可将完整的QCD作用量分离为费米子部分（描述夸克场及其与胶子场的耦合）以及胶子部分（仅描述胶子的传播子和自相互作用）。  </p>
+<h2 id="QCD作用量的费米子部分"><a href="#QCD作用量的费米子部分" class="headerlink" title="QCD作用量的费米子部分"></a>QCD作用量的费米子部分</h2><p>费米子部分作用量$S_F[\psi,\overline\psi,A]$是关于夸克/反夸克场的双线性泛函： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S_F[\psi,\overline\psi,A] &=\sum_{f=1}^{N_f}\int{\rm d}^4x\overline\psi^{(f)}(x)\Big[\gamma^\mu(\partial_\mu+{\rm i}A_\mu(x))+m^{(f)}\Big]\psi^{(f)}(x)\\
+&=\sum_{f=1}^{N_f}\int{\rm d}^4x\overline\psi^{(f)}(x)_{\substack{\alpha\\c}}\Big[(\gamma^\mu)^{\alpha\beta}(\delta^{cd}\partial_\mu+{\rm i}A_\mu(x)^{cd})+m^{(f)}\delta^{\alpha\beta}\delta^{cd}\Big]\psi^{(f)}(x)_{\substack{\beta\\d}}
+\end{aligned}</script><p> 从中可以看出：</p>
+<p>1）不同味夸克与胶子耦合方式完全相同，仅区别在于它们的质量；</p>
+<p>2）耦合计算要遍历所有色自由度和狄拉克旋量指标；</p>
+<p>3）胶子场可以耦合相同或不同色荷的夸克，它每个矢量分量耦合的区别在于欧氏$\gamma$矩阵分量不同；$\gamma_\mu$的每个分量都是狄拉克旋量空间中的非平凡$4\times 4$矩阵，因此以不同方式混合了夸克场的不同旋量分量；并且在欧氏下，满足欧氏反对易关系 </p>
+<script type="math/tex; mode=display">
+\{\gamma_\mu,\gamma_\nu\} = 2\delta_{\mu\nu}\mathbb 1</script><p>4）与之类似，偏导数项（动能项）由于欧氏$\gamma_\mu$的存在，也以相同的方式混合夸克场的不同旋量分量，但是这一项不混合不同的色荷；</p>
+<p>5）质量项则既不混合色荷也不混合旋量分量，因为在色空间和狄拉克旋量空间中都是平凡的。<br>下面省略夸克味指标。  </p>
+<h2 id="费米子作用量的规范不变性"><a href="#费米子作用量的规范不变性" class="headerlink" title="费米子作用量的规范不变性"></a>费米子作用量的规范不变性</h2><p>形式上看，除了附加的色指标，QCD费米子作用量与QED十分相似；而我们知道QED中，自由费米子天然具有全局$U(1)$对称性，而通过对$U(1)$对称性局域化的要求自然引入了规范场——电磁场；QCD也可类比推广。下面说明胶子场就是将某种对称性局域化所必需引入的规范场。</p>
+<p>自由费米子的作用量 </p>
+<script type="math/tex; mode=display">
+S^0_F[\psi,\overline\psi] = \int{\rm d}^4x\ \overline\psi(x)(\gamma^\mu\partial_\mu+m)\psi(x)</script><p> 直观来看，带色荷的自由费米子天然具有全局的色空间旋转对称性，即若引入色空间的复$3\times 3$幺正矩阵$\Omega$，$\Omega^\dagger=\Omega^{-1}$，且满足$\det[\Omega]=1$，那么在如下色空间变换下： </p>
+<script type="math/tex; mode=display">
+\psi\to\psi'=\Omega\psi\ ,\qquad \overline\psi\to\overline\psi'=\overline\psi\Omega^\dagger</script><p> 作用量显然是不变的。这样的全体矩阵$\Omega$组成李群$SU(3)$，因而这种对称性也叫全局$SU(3)$对称性；它是非交换群，因此这种场论叫做非阿贝尔场论。</p>
+<p>若要要求这种对称性局域化，即在不同的时空点引入独立的$\Omega(x)$，且 </p>
+<script type="math/tex; mode=display">
+\psi(x)\to\psi'(x)=\Omega(x)\psi(x)\ ,\qquad \overline\psi(x)\to\overline\psi'(x)=\overline\psi(x)\Omega^\dagger(x)</script><p> 为了保证总作用量不变，必须引入满足如下变换的规范场： </p>
+<script type="math/tex; mode=display">
+A_\mu(x)\to A_\mu'(x) = \Omega(x)A_\mu(x)\Omega^\dagger(x)+{\rm i}\big[\partial_\mu \Omega(x)\big]\Omega^\dagger(x)</script><p> 来抵消偏导数算符引起的差异。因此在引入规范场$A_\mu(x)$后，费米子和胶子体系满足$SU(3)$规范对称性。  </p>
+<h2 id="胶子作用量"><a href="#胶子作用量" class="headerlink" title="胶子作用量"></a>胶子作用量</h2><p>胶子作用量仅是胶子场$A_\mu(x)_{cd}$的泛函，并且应当满足规范不变性，即$S_G[A’]=S_G[A]$。可以仿照QED，为此需要定义协变导数 </p>
+<script type="math/tex; mode=display">
+D_\mu(x) = \partial_\mu+{\rm i}A_\mu(x)</script><p> 显然有规范变换性质 </p>
+<script type="math/tex; mode=display">
+D_{\mu}(x)\to D_{\mu}'(x)=\partial_\mu+{\rm i}A_\mu'(x) = \Omega(x)D_{\mu}(x)\Omega^\dagger(x)</script><p> 这保证了$D_\mu(x)\psi(x)$与$\psi(x)$有相同的变换方式。</p>
+<p>定义场强张量为两个协变导数算符的对易子： </p>
+<script type="math/tex; mode=display">
+F_{\mu\nu}(x) = -{\rm i}[D_\mu(x),D_\nu(x)] = \partial_\mu A_\nu(x)-\partial_\nu A_\mu(x)+{\rm i}[A_\mu(x), A_\nu(x)]</script><p> 与电动力学中的场强张量相比，它多出的一项是胶子场对易子，因为胶子场的色空间自由度使其非对易。依此定义，其自然继承了协变导数的规范变换性质： </p>
+<script type="math/tex; mode=display">
+F_{\mu\nu}(x)\to F_{\mu\nu}'(x)=\Omega(x)F_{\mu\nu}(x)\Omega^\dagger(x)</script><p>作为规范作用量的候选，可以考虑如下式子（重复指标求和） </p>
+<script type="math/tex; mode=display">
+S_G[A] = \frac{1}{2g^2}\int{\rm d}^4x\ {\rm tr}[F_{\mu\nu}(x)F^{\mu\nu}(x)]</script><p> 其中对色指标求迹是为了保证它的规范不变性。通过重定义场量$A_\mu(x)\to g A_\mu(x)$可以将前面引入的耦合常数（表征夸克与胶子耦合强度）吸收掉，此时协变导数为$D_\mu(x) = \partial_\mu +{\rm i}g A_\mu(x)$；但是在格点计算上，保留耦合常数作为全局因子更方便。  </p>
+<h2 id="规范场的色分量"><a href="#规范场的色分量" class="headerlink" title="规范场的色分量"></a>规范场的色分量</h2><p>目前可以看到QCD与QED一大重要区别在于，电磁场是实值场，而胶子场$A_\mu(x)_{cd}$是矩阵值场，且是色空间中的无迹、厄米矩阵，规范变换保留这些性质，因此其满足李代数$\mathfrak{su}(3)$： </p>
+<script type="math/tex; mode=display">
+A_\mu(x)=A_\mu^{i}(x)T_i</script><p> 其中$A_\mu^{i}(x)$是实值场，称为“<strong>色分量</strong>”，$i=1,\dots,8$；$T_i$是无迹厄米$3\times 3$矩阵的基（$SU(3)$的生成元），满足$\big[T_j,T_k\big] = {\rm i}f_{jkl}T_l$。这样就将矩阵值场分解为若干分量的实值场，并且据此可以取消求迹运算从而更接近QED的形式。</p>
+<p>据此分解式，场强张量也可分解为8个色分量 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+F_{\mu\nu}(x)&=\Big[\partial_\mu A_\nu^{i}(x)-\partial_\nu A_\mu^{i}(x)\Big]T_i + {\rm i}\sum_{j,k=1}^8 A_\mu^{j}(x) A_\nu^{k}(x) \big[T_j,T_k\big]\\
+&=\bigg[\partial_\mu A_\nu^{i}(x)-\partial_\nu A_\mu^{i}(x)-f_{ijk}A_\mu^{j}(x) A_\nu^{k}(x)\bigg]T_i\\
+&= F_{\mu\nu}^{i}(x)T_i
+\end{aligned}</script><p>由此，作用量可以取消掉求迹运算 </p>
+<script type="math/tex; mode=display">
+S_G[A] = \frac{1}{4g^2}\int{\rm d}^4x\ F_{\mu\nu,i}(x)F^{\mu\nu,i}(x)</script><p> 可见胶子的规范作用量是对色分量（指标$i$）的求和，每一项形式上都与QED形式相同。但由于胶子场不可对易，导致每个场强色分量$F_{\mu\nu}^{i}$都比QED多出一项$f_{ijk}A_\mu^{j}(x) A_\nu^{k}(x)$，即对同指标的规范场$A_\mu^{i}(x)$非线性，而是存在混合了其他色的二次项；这导致QCD作用量不像QED只存在规范场的二次项，而是存在三次、四次色混合项。</p>
+<p>这些项分别对应胶子的“自相互作用”，具体来说，三胶子和四胶子相互作用。这是QCD与QED的又一重要区别，也大大增加了理论计算复杂度。胶子自相互作用是QCD色禁闭的结果。  </p>
+<h1 id="费米子作用量的简单离散化"><a href="#费米子作用量的简单离散化" class="headerlink" title="费米子作用量的简单离散化"></a>费米子作用量的简单离散化</h1><h2 id="自由费米子的离散化"><a href="#自由费米子的离散化" class="headerlink" title="自由费米子的离散化"></a>自由费米子的离散化</h2><p>按照第一章引入4维格点$\Lambda$，夸克旋量场定义在每个格点上 </p>
+<script type="math/tex; mode=display">
+\psi(n)\ ,\ \overline\psi(n)\ ,\ n\in\Lambda</script><p> 每个场自由度都携带色，狄拉克和味指标。</p>
+<p>在连续情形下，自由费米子的作用量 </p>
+<script type="math/tex; mode=display">
+S^0_F[\psi,\overline\psi] = \int{\rm d}^4x\ \overline\psi(x)(\gamma^\mu\partial_\mu+m)\psi(x)</script><p> 离散化时，偏导数取为 </p>
+<script type="math/tex; mode=display">
+\partial_\mu\psi(x)\to\frac{1}{2a}\big[\psi(n+\hat\mu)-\psi(n-\hat\mu)\big]</script><p> 因此离散自由费米子作用量就是 </p>
+<script type="math/tex; mode=display">
+S^0_F[\psi,\overline\psi] = a^4\sum_{n\in\Lambda}\overline\psi(n)\left[\sum_{\mu=1}^4\gamma_\mu\frac{\psi(n+\hat\mu)-\psi(n-\hat\mu)}{2a}+m\psi(n)\right]</script><h2 id="链接变量作为规范场引入"><a href="#链接变量作为规范场引入" class="headerlink" title="链接变量作为规范场引入"></a>链接变量作为规范场引入</h2><p>前面的讨论表明，为了满足作用量在局域的夸克色空间旋转下的不变性，必须引入规范场$A_\mu(x)$。在每个格点上同样要求满足$SU(3)$规范对称性： </p>
+<script type="math/tex; mode=display">
+\psi(n)\to\psi'(n)=\Omega(n)\psi(n)\ ,\qquad \overline\psi(n)\to\overline\psi'(n)=\overline\psi(n)\Omega^\dagger(n)</script><p> 但是 </p>
+<script type="math/tex; mode=display">
+\overline\psi(n)\psi(n+\hat\mu) \to \overline\psi'(n)\psi'(n+\hat\mu)=\overline\psi(n)\Omega^\dagger(n)\Omega(n+\hat\mu)\psi(n+\hat\mu)</script><p> 不是规范不变量，因此上一节末的自由费米子作用量$S^0_F[\psi,\overline\psi]$也不是规范不变量；若引入新的具有方向指标$\mu$的场满足 </p>
+<script type="math/tex; mode=display">
+U_\mu(n)\to U_\mu'(n) = \Omega(n) U_\mu(n) \Omega^\dagger(n+\hat\mu)</script><p> 则 </p>
+<script type="math/tex; mode=display">
+\overline\psi(n) U_\mu(n) \psi(n+\hat\mu) \to \overline\psi'(n) U_\mu'(n) \psi'(n+\hat\mu)</script><p> 是规范不变量。因此，为使在格点上的费米子作用量规范不变，引入如上变换的$U_\mu(n)$场，它们具有方向且链接相邻的格点，因此称为链接变量。虽然形式上将其置于$n$点，但一个链接变量$U_\mu(n)$实际关联于两个格点：$n$和$n+\hat\mu$；不难理解其逆应为： </p>
+<script type="math/tex; mode=display">
+U_{-\mu}(n+\hat\mu) = U_\mu^\dagger(n)\ ,\quad U_{-\mu}(n) = U_\mu^\dagger(n-\hat\mu)</script><p> 相应的变换律为 </p>
+<script type="math/tex; mode=display">
+U_{-\mu}(n)\to U_{-\mu}'(n) = \Omega(n) U_{-\mu}(n) \Omega^\dagger(n-\hat\mu)</script><p>?</p>
+<p>?</p>
+<p>?</p>
+<p>?</p>
+<p>?</p>
+<p>?</p>
+<p>为什么它属于SU3群？</p>
+<p>?</p>
+<p>?</p>
+<p>?</p>
+<p>?</p>
+<p>在这里链接变量起到规范场的作用；不像连续情况的规范场$A_\mu(x)$是李代数$\mathfrak{su}(3)$元素，这里的$U_\mu(n)$是李群$SU(3)$元素。</p>
+<p>利用该规范场可以写出规范不变的作用量形式： </p>
+<script type="math/tex; mode=display">
+S_F[\psi,\overline\psi,U] = a^4\sum_{n\in\Lambda}\overline\psi(n)\left[\sum_{\mu=1}^4\gamma_\mu\frac{U_\mu(n) \psi(n+\hat\mu)-U_{-\mu}(n) \psi(n-\hat\mu)}{2a}+m\psi(n)\right]</script><p> 称为<strong>费米子在外部规范场$U$中的简单费米子作用量</strong>。  </p>
+<h2 id="链接变量与连续规范场的关系"><a href="#链接变量与连续规范场的关系" class="headerlink" title="链接变量与连续规范场的关系"></a>链接变量与连续规范场的关系</h2><p>回顾$U_\mu(n)$的变换律： </p>
+<script type="math/tex; mode=display">
+U_\mu(n)\to U_\mu'(n) = \Omega(n) U_\mu(n) \Omega^\dagger(n+\hat\mu)</script><p> 在连续情形也有具有类似性质的量 </p>
+<script type="math/tex; mode=display">
+G(x,y) = P\exp\left({\rm i}\int_{\mathcal C_{xy}}A_\mu\cdot{\rm d}s^\mu\right)</script><p> 这是以规范场$A_\mu$在连接两点$x,y$的某一曲线路径$\mathcal C_{xy}$上的路径积分为幂次的指数，即所谓规范转运子（gauge transporter），或者Wilson线（Wilson line）；在某规范变换下其变换为 </p>
+<script type="math/tex; mode=display">
+G(x,y)\to \Omega(x) G(x,y) \Omega^\dagger(y)</script><p>根据这种相似性，一个理想的关系是$U_\mu(n)=G(n,n+\hat\mu)+\mathcal O(a^2)$。为此可以引入格点上的代数值规范场$A_\mu(n)$，其属于李代数$\mathfrak{su}(3)$，而令 </p>
+<script type="math/tex; mode=display">
+U_\mu(n) = \exp\left[{\rm i}a A_\mu(n)\right]</script><p> 这里将规范转运子指数上的积分取了近似为格距$a$乘以起点上的规范场值$A_\mu(n)$，对近似度$O(a^2)$足够好并且无需考虑路径顺序；于是链变量就可解释为链接相邻格点的规范转运子，根据李群及其李代数的关系，就不难理解为什么连续的规范场属于李代数$\mathfrak{su}(3)$，而链变量属于李群$SU(3)$了。</p>
+<p>为获得连续极限$a\to 0$下的结果，将之在小$a$展开（第二式利用了$A_\mu=A_\mu^\dagger$） </p>
+<script type="math/tex; mode=display">
+U_\mu(n) = \mathbb 1 + {\rm i}a A_\mu(n) + \mathcal O(a^2)</script><script type="math/tex; mode=display">
+U_{-\mu}(n) = \mathbb 1 - {\rm i}a A_\mu(n-\hat\mu) + \mathcal O(a^2)</script><p> 在该近似下， </p>
+<script type="math/tex; mode=display">
+S_F[\psi,\overline\psi,U] = S_F^0[\psi,\overline\psi] + S_F^I[\psi,\overline\psi,A]</script><script type="math/tex; mode=display">
+S^0_F[\psi,\overline\psi] = a^4\sum_{n\in\Lambda}\overline\psi(n)\left[\sum_{\mu=1}^4\gamma_\mu\frac{\psi(n+\hat\mu)-\psi(n-\hat\mu)}{2a}+m\psi(n)\right]</script><script type="math/tex; mode=display">
+\begin{aligned}
+S^I_F[\psi,\overline\psi,A] &= {\rm i}a^4\sum_{n\in\Lambda}\overline\psi(n)\gamma^\mu\frac{A_\mu(n) \psi(n+\hat\mu) + A_\mu(n-\hat\mu) \psi(n-\hat\mu)}{2}\\
+&= {\rm i}a^4\sum_{n\in\Lambda}\overline\psi(n)\gamma^\mu A_\mu(n)\psi(n) + \mathcal O(a)
+\end{aligned}</script><p> 最后一步利用了$\psi(n\pm\hat\mu)=\psi(n)+\mathcal O(a)$和$A_\mu(n-\hat\mu)=A_\mu(n)+\mathcal(o)$；显然在连续极限$a\to 0$下$S_F[\psi,\overline\psi,U]$可以回到连续作用量。<br>最后需要强调的是，李群值链变量$U_\mu(n)$不仅仅是为了将李代数值规范场$A_\mu(n)$引入格点的辅助构造；相反它被视为在路径积分中的基本变量。这个从李代数值场到李群值场的转变具有重要后果，例如规范固定等。  </p>
+<h1 id="Wilson规范作用量"><a href="#Wilson规范作用量" class="headerlink" title="Wilson规范作用量"></a>Wilson规范作用量</h1><p>现在考虑以链变量为基本变量的格点规范场作用量。</p>
+<h2 id="用链变量构造规范不变量"><a href="#用链变量构造规范不变量" class="headerlink" title="用链变量构造规范不变量"></a>用链变量构造规范不变量</h2><p>考虑在一条连接起止点$n_0$、$n_1$的路径$\mathcal P$上的$k$个相连链变量串乘积 </p>
+<script type="math/tex; mode=display">
+P[U] = U_{\mu_0}(n_0)U_{\mu_1}(n_0+\hat\mu_0)\cdots U_{\mu_{k-1}}(n_1-\hat\mu_{k-1}) = \prod_{(n,\mu)\in\mathcal P}U_\mu(n)</script><p> 此对应于路径$\mathcal P$上的连续规范转运子。注意$\mathcal P$上可能有两个方向$\pm\mu$。其变换与单个链变量类似： </p>
+<script type="math/tex; mode=display">
+P[U]\to P[U'] = \Omega(n_0)P[U]\Omega^\dagger(n_1)</script><p> 因此它直接与起止点的两个夸克场耦合就是规范不变量： </p>
+<script type="math/tex; mode=display">
+\overline\psi(n_0)P[U]\psi(n_1)</script><p>另一种规范不变量是取链变量构成闭合回路即所谓Wilson圈（Wilson loop）$\mathcal L$并取其迹 </p>
+<script type="math/tex; mode=display">
+L[U] = {\rm tr}\left[\prod_{(n,\mu)\in\mathcal L}U_\mu(n)\right]</script><p> 其变换产生的在点$n_0$处的两个变换矩阵取迹后消失 </p>
+<script type="math/tex; mode=display">
+L[U]\to L[U'] = {\rm tr}\left[\Omega(n_0)\prod_{(n,\mu)\in\mathcal L}U_\mu(n) \Omega^\dagger(n_0)\right] = {\rm tr}\left[\prod_{(n,\mu)\in\mathcal L}U_\mu(n)\right] = L[U]</script><h2 id="规范作用量"><a href="#规范作用量" class="headerlink" title="规范作用量"></a>规范作用量</h2><p>构造胶子作用量用到最简单的Wilson loop就是小方格，称为plaquette变量： </p>
+<script type="math/tex; mode=display">
+U_{\mu\nu}(n) = U_\mu(n) U_\nu(n+\hat\mu) U_{-\mu}(n+\hat\mu\hat\nu) U_{-\nu}(n+\hat\nu) = U_\mu(n) U_\nu(n+\hat\mu) U_\mu^\dagger(n+\hat\nu) U_\nu^\dagger(n)</script><p> 对格点上全体独立的小方格遍历求和（每个小方格只计数一个方向）就得到Wilson plaquette作用量 </p>
+<script type="math/tex; mode=display">
+S_G[U] = \frac{2}{g^2}\sum_{n\in\Lambda}\sum_{1\le\mu<\nu\le4}{\rm Re}\ {\rm tr}\big[\mathbb 1-U_{\mu\nu}(n)\big]</script><p> 每项的贡献是<strong>单位矩阵减去plaquette变量后取迹的实部</strong>。</p>
+<p>如此构造的目的是让其在连续极限下回到连续作用量。具体来说，利用Baker-Campbell-Hausdorff公式 </p>
+<script type="math/tex; mode=display">
+\exp(A)\exp(B) = \exp\left(A+B+\frac{1}{2}[A,B]+\cdots\right)</script><p> 可以将每个plaquette展开为 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+U_{\mu\nu}(n) = \exp\bigg(& + {\rm i}a A_\mu(n) + {\rm i}a A_\nu(n+\hat\mu) - \frac{a^2}{2}[A_\mu(n),A_\nu(n+\hat\mu)]\\
+& - {\rm i}a A_\mu(n+\hat\nu) - {\rm i}a A_\nu(n) - \frac{a^2}{2}[A_\mu(n+\hat\nu),A_\nu(n)]\\
+& + \frac{a^2}{2}[A_\nu(n+\hat\mu),A_\mu(n+\hat\nu)] + \frac{a^2}{2}[A_\mu(n),A_\nu(n)]\\
+& + \frac{a^2}{2}[A_\mu(n),A_\mu(n+\hat\nu)] + \frac{a^2}{2}[A_\nu(n+\hat\mu),A_\nu(n)]\\
+& + \mathcal O(a^3)\bigg)
+\end{aligned}</script><p> 对于不在点$n$上的规范场进行泰勒展开 </p>
+<script type="math/tex; mode=display">
+A_\nu(n+\hat\mu) = A_\nu(n) + a\partial_\mu A_\nu(n) + \mathcal O(a^2)</script><p> 于是 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+U_{\mu\nu}(n) &= \exp\Big[{\rm i}a^2\big(\partial_\mu A_\nu(n) - \partial_\nu A_\mu(n) + {\rm i}[A_\mu(n),A_\nu(n)]\big) + \mathcal O(a^3)\Big]\\
+& = \exp\big[{\rm i}a^2 F_{\mu\nu}(n)+\mathcal O(a^3)\big]
+\end{aligned}</script><p> 当取实部后，最低阶只有$a^4$项，此时Wilson规范作用量就是 </p>
+<script type="math/tex; mode=display">
+S_G[U] = \frac{a^4}{g^2}\sum_{n\in\Lambda}\sum_{1\le\mu<\nu\le 4}{\rm tr}\big[(F_{\mu\nu}(n))^2 + \mathcal O(a^2)\big] = \frac{a^4}{2g^2}\sum_{n\in\Lambda}\sum_{\mu,\nu=1,2,3,4}{\rm tr}\big[(F_{\mu\nu}(n))^2\big] + \mathcal O(a^6)</script><p> 就说明Wilson plaquette作用量在连续极限下的会回到连续规范场作用量。  </p>
+<h1 id="QCD格点路径积分的形式表达"><a href="#QCD格点路径积分的形式表达" class="headerlink" title="QCD格点路径积分的形式表达"></a>QCD格点路径积分的形式表达</h1><p>按照第一章结论，QCD欧氏关联函数的路径积分形式为 </p>
+<script type="math/tex; mode=display">
+\langle O_2(t) O_1(0) \rangle = \frac{1}{Z}\int\mathcal D[\psi,\overline\psi] \mathcal D[U] {\rm e}^{-S_F[\psi,\overline\psi,U] - S_G[U]} O_2[\psi,\overline\psi,U] O_1[\psi,\overline\psi,U]</script><p> 配分函数 </p>
+<script type="math/tex; mode=display">
+Z = \int\mathcal D[\psi,\overline\psi] \mathcal D[U] {\rm e}^{-S_F[\psi,\overline\psi,U] - S_G[U]}</script><p> 路径积分要对所有可能的场构型积分；在格点上对应的测度，就是所有夸克场（关于所有指标）测度的乘积，以及所有链变量测度的乘积 </p>
+<script type="math/tex; mode=display">
+\mathcal D[\psi,\overline\psi] = \prod_{n\in\Lambda} \prod_{f,\alpha,c} {\rm d}\psi^{(f)}(n)_{\substack{\alpha\\c}}\ {\rm d}\overline \psi^{(f)}(n)_{\substack{\alpha\\c}}</script><script type="math/tex; mode=display">
+\mathcal D[U] = \prod_{n\in\Lambda} \prod_{\mu=1}^4 {\rm d}U_{\mu}(n)</script><p> 当然这里需要考虑其他约束条件，例如对于夸克场需要考虑泡利原理，费米子的反交换统计（用Glassman数来实现）等；对单个链变量测度${\rm d}U_{\mu}(n)$，也要考虑其属于$SU(3)$群元素的性质，即所谓Haar测度。</p>
+<p>此即目前对QCD放在格点上的处理方法，夸克场置于格点而规范场至于其间的链接。需要注意这只是很粗糙的构造，尤其是费米子部分格点作用量仍需在后续进一步添加其他项。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/LQCD/LQCD-2.html">https://papaya-z.github.io/post/LQCD/LQCD-2.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%A7%84%E8%8C%83%E5%9C%BA%E8%AE%BA/">规范场论</a><a class="post-meta__tags" href="/tags/QCD/">QCD</a><a class="post-meta__tags" href="/tags/LQCD/">LQCD</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/LQCD/LQCD-3.html" title="Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论</div></div></a></div><div class="next-post pull-right"><a href="/post/LQCD/LQCD-1.html" title="Gattringer &amp; Lang - Cp1: 格点上的路径积分"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Gattringer &amp; Lang - Cp1: 格点上的路径积分</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/LQCD/LQCD-3.html" title="Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-01</div><div class="title">Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论</div></div></a></div><div><a href="/post/LQCD/LQCD-1.html" title="Gattringer &amp; Lang - Cp1: 格点上的路径积分"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-28</div><div class="title">Gattringer &amp; Lang - Cp1: 格点上的路径积分</div></div></a></div><div><a href="/post/ClassicalFT/ClassicalFT-Chap-3.html" title="经典场论 Chap.3：Yang-Mills规范场论基础"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-22</div><div class="title">经典场论 Chap.3：Yang-Mills规范场论基础</div></div></a></div><div><a href="/post/LQCD/LQCD-6.html" title="Gattringer &amp; Lang - Cp6: 强子谱"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-11</div><div class="title">Gattringer &amp; Lang - Cp6: 强子谱</div></div></a></div><div><a href="/post/LQCD/LQCD-5.html" title="Gattringer &amp; Lang - Cp5: 格点上的费米子"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-04</div><div class="title">Gattringer &amp; Lang - Cp5: 格点上的费米子</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E7%BB%ADQCD%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">连续QCD作用量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E5%92%8C%E8%83%B6%E5%AD%90%E5%9C%BA"><span class="toc-number">1.1.</span> <span class="toc-text">夸克和胶子场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QCD%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E8%B4%B9%E7%B1%B3%E5%AD%90%E9%83%A8%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text">QCD作用量的费米子部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E5%AD%90%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-number">1.3.</span> <span class="toc-text">费米子作用量的规范不变性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%B6%E5%AD%90%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">胶子作用量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E5%9C%BA%E7%9A%84%E8%89%B2%E5%88%86%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text">规范场的色分量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E5%AD%90%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E7%AE%80%E5%8D%95%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">费米子作用量的简单离散化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E8%B4%B9%E7%B1%B3%E5%AD%90%E7%9A%84%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">自由费米子的离散化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%8F%98%E9%87%8F%E4%BD%9C%E4%B8%BA%E8%A7%84%E8%8C%83%E5%9C%BA%E5%BC%95%E5%85%A5"><span class="toc-number">2.2.</span> <span class="toc-text">链接变量作为规范场引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%8F%98%E9%87%8F%E4%B8%8E%E8%BF%9E%E7%BB%AD%E8%A7%84%E8%8C%83%E5%9C%BA%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.3.</span> <span class="toc-text">链接变量与连续规范场的关系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Wilson%E8%A7%84%E8%8C%83%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">Wilson规范作用量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%93%BE%E5%8F%98%E9%87%8F%E6%9E%84%E9%80%A0%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E9%87%8F"><span class="toc-number">3.1.</span> <span class="toc-text">用链变量构造规范不变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-number">3.2.</span> <span class="toc-text">规范作用量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#QCD%E6%A0%BC%E7%82%B9%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%A1%A8%E8%BE%BE"><span class="toc-number">4.</span> <span class="toc-text">QCD格点路径积分的形式表达</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.2-概率"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率">[Kardar]V.1-C.2-概率</a><time datetime="2024-03-19T19:06:12.000Z" title="发表于 2024-03-20 03:06:12">2024-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.5-相互作用粒子"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子">[Kardar]V.1-C.5-相互作用粒子</a><time datetime="2024-03-19T10:10:54.000Z" title="发表于 2024-03-19 18:10:54">2024-03-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.4-经典统计力学"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学">[Kardar]V.1-C.4-经典统计力学</a><time datetime="2024-02-29T14:21:06.000Z" title="发表于 2024-02-29 22:21:06">2024-02-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[大黄猫]chap1：量子化基础与Coulomb电子气"/></a><div class="content"><a class="title" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气">[大黄猫]chap1：量子化基础与Coulomb电子气</a><time datetime="2024-02-23T21:10:20.000Z" title="发表于 2024-02-24 05:10:20">2024-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.4：散射理论"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论">量子场论 Chap.4：散射理论</a><time datetime="2024-01-21T02:01:51.000Z" title="发表于 2024-01-21 10:01:51">2024-01-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: '6505866859984f4a0332533510aff22d',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

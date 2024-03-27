@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Gattringer &amp; Lang - Cp1: 格点上的路径积分 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="格点场计算的基本工具：欧氏路径积分"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/LQCD/LQCD-1.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Gattringer & Lang - Cp1: 格点上的路径积分',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-26 18:32:17'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Gattringer &amp; Lang - Cp1: 格点上的路径积分</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-28T10:22:53.000Z" title="发表于 2022-09-28 18:22:53">2022-09-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-26T10:32:17.293Z" title="更新于 2024-03-26 18:32:17">2024-03-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QCD-on-Latt-Gattringer-Lang/">QCD on Latt. - Gattringer &amp; Lang</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>26分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Gattringer &amp; Lang - Cp1: 格点上的路径积分"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/LQCD/LQCD-1.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="希尔伯特空间与欧氏关联函数"><a href="#希尔伯特空间与欧氏关联函数" class="headerlink" title="希尔伯特空间与欧氏关联函数"></a>希尔伯特空间与欧氏关联函数</h1><h2 id="希尔伯特空间"><a href="#希尔伯特空间" class="headerlink" title="希尔伯特空间"></a>希尔伯特空间</h2><p>一个希尔伯特空间 $\mathcal H$ ，是一个有限维矢量空间，元素满足加法和数乘运算并对其封闭，且配备了矢量内积 $\langle u|v \rangle$ ——定义为对偶矢量对矢量的作用，满足线性性和共轭交换律 $\langle u|v \rangle = \langle v|u \rangle^*$ 。</p>
+<p>物理上感兴趣的希尔伯特空间存在完备可数基，任意矢量可由该组可数个基矢量的复线性组合展开；进一步，常要求是正交基。</p>
+<p>一个算符 $\hat O$ 作用在 $\mathcal H$ 上，将一个矢量映射到该空间中另一个矢量，其相应的伴随算符定义： $\langle u|\hat O|v \rangle=\langle v|\hat O^\dagger|u \rangle^*$ 。伴随算符与原算符相等的是自伴算符，有时也叫厄密算符（尽管数学上存在一些微妙的差别）。厄密算符的本征值，即如下关于 $\lambda$ 方程（本征方程）的解，永远为实数： </p>
+<script type="math/tex; mode=display">
+\hat O |u\rangle = \lambda | u\rangle</script><p> 并且属于不同本征值的本征矢（即满足上述方程的 $|u\rangle$ ）之间相互正交；另一方面，属于相同本征值的本征矢构成一个子空间，其中总可以找到一组正交基。定理表明，（有限维情况下）对任一自伴算符，其若干本征矢总可以构成整个希尔伯特空间的一组完备正交基，尽管在存在简并情况下不是唯一确定的；进一步，多个相互对易算符的公共本征矢可以唯一确定一组完备正交基，这样的一组算符叫可对易算符完备集（CSCO，complete set of commuting operators）。</p>
+<p>单位算符可按完备正交基展开： $\mathbb{1} = \sum_n| e_n\rangle\langle e_n|$ ，即完备性关系。</p>
+<p>注意到算符的迹是基变换下的不变量，且算符可在其本征矢构成的正交基下对角化，因此算符的迹也可在任一组完备正交基下表示为： ${\rm tr}[\hat O]=\sum_n\langle e_n|\hat O|e_n\rangle$ 。</p>
+<p>对于无限维希尔伯特空间，可能用到不可数基，此时上述求和改为积分。</p>
+<h2 id="粒子物理记号"><a href="#粒子物理记号" class="headerlink" title="粒子物理记号"></a>粒子物理记号</h2><p>粒子物理中态空间（希尔伯特空间）中的态矢可以是多粒子态，因为存在粒子产生和湮灭，此时总的态空间是0粒子，1粒子，2粒子……态空间的直和，即福柯空间（Fock space）。该空间中的粒子态，可以由每个粒子的量子数和它们分别的位置（或动量等参数）决定并标记。零粒子态即真空态，记为 $|0\rangle$ ；它不必是唯一的，例如在自发对称性破缺等情况下。</p>
+<p>重要的一类算符，即场算符，用于产生和湮灭粒子；很多时候，场算符的伴随算符对应于其反粒子，例如若 $\hat O^\dagger_{\pi^+}$ 产生一个 $\pi^+$ 介子量子数的态，则其伴随 $\hat O_{\pi^+}$ 要么将之湮灭，要么产生一个它的反粒子（ $\pi^-$ 介子）态。</p>
+<h2 id="欧氏关联函数"><a href="#欧氏关联函数" class="headerlink" title="欧氏关联函数"></a>欧氏关联函数</h2><p>海森堡绘景（算符随时间演化）下， $\hat O(\tau)={\rm e}^{ {\rm i}\tau\hat H}\hat O(0) {\rm e}^{-{\rm i}\tau\hat H}$ 。</p>
+<p>考虑Wick转动到虚时间欧氏空间传播子 $\langle O_2(t) | O_1(0) \rangle_T$ ，t 是所关心的时间， T 是形式上的最大时间距离，通常取无穷极限。希望在 $T\to\infty$ 极限下，其具有形式如 $\sim {\rm e}^{-t\hat H}\hat O_2 \ {\rm e}^{-t\hat H}\hat O_1$ 。考虑如下定义：</p>
+<script type="math/tex; mode=display">
+\langle O_2(t) | O_1(0) \rangle_T = \dfrac1{Z_T}{\rm tr}\left[{\rm e}^{-(T-t)\hat H}\hat O_2 \ {\rm e}^{-t\hat H}\hat O_1\right] = \dfrac1{Z_T}{\rm tr}\left[\hat O_2 (t) \hat O_1(0) {\rm e}^{-T\hat H}\right]</script><p>因子 $Z_T={\rm tr}\left[{\rm e}^{-T\hat H}\right]$ ，在欧氏路径积分框架下它是统计系统的配分函数。此处两个算符可以是场算符，或可观测量算符。算符指数按级数和定义。</p>
+<p>计算配分函数和trace时可取 $\hat H$ 的一组本征矢作为正交基，相应于一系列能量本征值 </p>
+<script type="math/tex; mode=display">
+\hat H|n\rangle = E_n |n\rangle \ ,\qquad n=0,1,2\dots</script><p> 这里指标不仅表示能级，而且表示所有量子数。于是 </p>
+<script type="math/tex; mode=display">
+Z_T = \sum_n\langle n | {\rm e}^{-T\hat H} | n \rangle = \sum_n{\rm e}^{-T E_n}</script><p>类似的，计算关联函数时按trace定义并插入完备性关系得</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle O_2(t) O_1(0) \rangle_T &= \dfrac1{Z_T}\sum_{m,n}\langle m | {\rm e}^{-(T-t)\hat H}\hat O_2 | n \rangle\ \langle n |{\rm e}^{-t\hat H}\hat O_1|m\rangle \\ &= \dfrac1{Z_T}\sum_{m,n} {\rm e}^{-(T-t)E_m}\langle m | \hat O_2 | n \rangle\ {\rm e}^{-tE_n}\langle n | \hat O_1|m\rangle\\ &= \dfrac{\sum_{m,n} \langle m | \hat O_2 | n \rangle\langle n | \hat O_1|m\rangle {\rm e}^{-(T-t)E_m} {\rm e}^{-tE_n}}{\sum_n{\rm e}^{-T E_n}} \end{aligned}</script><p>在分子分母上同时除以因子${\rm e}^{-TE_0}$</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle O_2(t) O_1(0) \rangle_T &= \dfrac{\sum_{m,n} \langle m | \hat O_2 | n \rangle\langle n | \hat O_1|m\rangle {\rm e}^{-TE_m-tE_m+tE_n+TE_0+tE_0-tE_0} }{1+{\rm e}^{-T \Delta E_1} +{\rm e}^{-T \Delta E_2} +\cdots}\\ &= \dfrac{\sum_{m,n} \langle m | \hat O_2 | n \rangle\langle n | \hat O_1|m\rangle {\rm e}^{-(T-t)\Delta E_m} {\rm e}^{-t\Delta E_n} }{1+{\rm e}^{-T \Delta E_1} +{\rm e}^{-T \Delta E_2} +\cdots} \end{aligned}</script><p>这样它仅与相对真空态能量 $E_0$ 的能量差有关，这些差值可由实验测定；之后不妨取 $E_0=0$ ，即 $\Delta E_n = E_n$ 的记号。</p>
+<p>该关联函数在 $T\to\infty$ 极限下（假设真空态唯一且其余态均为正能），分母为 1 ，分子中则只剩余 $|m\rangle = |0\rangle$ 的态。则 </p>
+<script type="math/tex; mode=display">
+\lim_{T\to\infty} \langle O_2(t) O_1(0) \rangle_T= \sum_n \langle 0 | \hat O_2 | n \rangle\langle n | \hat O_1|0\rangle {\rm e}^{-tE_n}</script><p> 表现为对每一能级能量指数的求和。例如，取 $\hat O_1 = \hat O_p^\dagger$ ， $\hat O_2 = \hat O_p$ 分别表示创造和湮灭一个质子 p 的算符。因此对于没有质子的态 $|n\rangle$ ，矩阵元 $\langle n | \hat O_p^\dagger | 0 \rangle = 0$ 。对于一系列存在的态， </p>
+<script type="math/tex; mode=display">
+\lim_{T_\to\infty} \langle O_2(t) O_1(0) \rangle_T= \sum_{p'} |\langle p'|\hat O_p^\dagger|0\rangle|^2{\rm e}^{-t E_{p'}}</script><p> 对足够大的 $t$ ，高能的项会被压低，主要的项只是一个以最低能态能量为指数的衰减。类似的可得所有粒子的基态能量。</p>
+<h1 id="量子力学体系的路径积分"><a href="#量子力学体系的路径积分" class="headerlink" title="量子力学体系的路径积分"></a>量子力学体系的路径积分</h1><p>考虑势场 U 中作一维（ $x$ ）运动的单个粒子， $\hat H = \dfrac{\hat p^2}{2m}+ \hat U$ ， $\hat U |x\rangle = U(x)|x\rangle$ ，正则对易关系 $[\hat x,\hat p] = {\rm i}$ ，坐标表象下， $\hat p = -{\rm i}\dfrac{\rm d}{ {\rm d}x}$ ，且 $\langle x|p \rangle = \dfrac{1}{\sqrt{2\pi}}{\rm e}^{ {\rm i}px}$ 。配分函数 </p>
+<script type="math/tex; mode=display">
+Z_T = {\rm tr}\left[{\rm e}^{-T\hat H}\right] = \int{\rm d}x\langle x | {\rm e}^{-T\hat H} | x \rangle</script><p>自由粒子情形下 </p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle x | {\rm e}^{-t\hat p^2/2m} | y \rangle &= \int{\rm d}p \langle x | {\rm e}^{-t\hat p^2/2m} | p \rangle \langle p | y \rangle = \int{\rm d}p \langle x | p \rangle \langle p | y \rangle {\rm e}^{-t p^2/2m}\\ &= \frac{1}{2\pi}\int{\rm d}p{\rm e}^{ {\rm i}(x-y)}{\rm e}^{-t p^2/2m} = \sqrt{\frac{m}{2\pi t}}{\rm e}^{-(x-y)^2m/2t} \end{aligned}</script><p>有势场情形下，非对易项产生复杂问题。考虑将势场对称分割，在无限小时间内，展开的领头阶： </p>
+<script type="math/tex; mode=display">
+{\rm e}^{-\epsilon\hat H} = {\rm e}^{-\epsilon\hat U/2}{\rm e}^{-\epsilon\hat p^2/2m}{\rm e}^{-\epsilon\hat U/2}(1+\mathcal O(\epsilon)) = \hat W_\epsilon(1+\mathcal O(\epsilon))</script><script type="math/tex; mode=display">
+\langle x|\hat W_\epsilon |y \rangle = {\rm e}^{-\epsilon U(x)/2}\langle x | {\rm e}^{-\epsilon\hat p^2/2m} | y \rangle{\rm e}^{-\epsilon U(y)/2} = \sqrt{\dfrac{m}{2\pi \epsilon}}{\rm e}^{-\epsilon U(x)/2}{\rm e}^{-\epsilon U(y)/2}{\rm e}^{-(x-y)^2m/2\epsilon}</script><p> 因此可将有限时间 $T$ 分为无穷多无穷小时间 $\epsilon$ </p>
+<script type="math/tex; mode=display">
+{\rm e}^{-T\hat H} = \lim_{N_T\to\infty}\hat W_\epsilon ^{N_T}\qquad \epsilon = \frac{T}{N_T}</script><script type="math/tex; mode=display">
+\begin{aligned} Z_T &= \int{\rm d}x_0 \langle x_0 | {\rm e}^{-T\hat H} | x_0 \rangle = \lim_{N_T\to\infty} \int{\rm d}x_0 \langle x_0 | \hat W_\epsilon^{N_T} | x_0 \rangle\\ &= \lim_{N_T\to\infty} \int{\rm d}x_0\dots{\rm d}x_{N_T-1} \langle x_0 | \hat W_\epsilon | x_1 \rangle \dots \langle x_{N_T-2} | \hat W_\epsilon | x_{N_T-1} \rangle \langle x_{N_T-1} | \hat W_\epsilon | x_0 \rangle\\ &= \lim_{N_T\to\infty}\sqrt{\dfrac{m}{2\pi \epsilon}}^{N_T} \int{\rm d}x_0\dots{\rm d}x_{N_T-1} \exp\left[-\epsilon\sum_{j=0}^{N_T-1}\left(\frac m2\frac{(x_j-x_{j+1})^2}{\epsilon^2} + U(x_j)\right)\right] \end{aligned}</script><p> 但实际计算机能计算的步数是有限的，即如下有限步长的近似配分函数 </p>
+<script type="math/tex; mode=display">
+Z_T^\epsilon = \sqrt{\dfrac{m}{2\pi \epsilon}}^{N_T} \int{\rm d}x_0\dots{\rm d}x_{N_T-1} \exp\left[-\epsilon\sum_{j=0}^{N_T-1}\left(\frac m2\frac{(x_j-x_{j+1})^2}{\epsilon^2} + U(x_j)\right)\right]</script><p>对于任一组积分变量，可以在格点时间排序下构成连续轨迹 $x(t)$ 的若干节点， $t=j\epsilon,\ T=N_T\epsilon$ ，得到欧氏作用量 $S_E$ </p>
+<script type="math/tex; mode=display">
+-\epsilon\sum_{j=0}^{N_T-1}\left(\frac m2\frac{(x_j-x_{j+1})^2}{\epsilon^2} + U(x_j)\right) \sim \int_0^T {\rm d}t \left(\frac m2\dot x^2(t) + U[x(t)]\right) + \mathcal O(\epsilon)</script><p> 所以近似配分函数实际是对所有可能的（格点）路径进行如下积分 </p>
+<script type="math/tex; mode=display">
+Z_T^\epsilon = \sqrt{\dfrac{m}{2\pi \epsilon}}^{N_T} \int\mathcal D x_\epsilon {\rm e}^{S_E[x_\epsilon]}</script><h1 id="标量场的路径积分"><a href="#标量场的路径积分" class="headerlink" title="标量场的路径积分"></a>标量场的路径积分</h1><h2 id="克莱因-高登场"><a href="#克莱因-高登场" class="headerlink" title="克莱因-高登场"></a>克莱因-高登场</h2><p>考虑连续场论，实标量场（闵氏）作用量 </p>
+<script type="math/tex; mode=display">
+S = \int{\rm d}t{\rm d}^3x L[\Phi(t,x),\partial_\mu \Phi(t,x)]</script><p>考虑一类简单的拉格朗日密度 </p>
+<script type="math/tex; mode=display">
+L[\Phi,\partial_\mu\Phi] = \frac12(\partial_\mu\Phi)(\partial^\mu\Phi)-\frac{m^2}{2}\Phi^2-V(\Phi)</script><p> 分为动能项、质量项和势能项。不同的势能项代表不同的（定域）自相互作用，无该项就是自由场。</p>
+<p>欧拉-拉格朗日方程 </p>
+<script type="math/tex; mode=display">
+\partial_\mu\left(\frac{\partial L}{\partial(\partial_\mu\Phi)}\right)-\frac{\partial L}{\partial\Phi}=0</script><p> 给出场运动方程 </p>
+<script type="math/tex; mode=display">
+\partial_\mu\partial^\mu\Phi+m^2\Phi+V'(\Phi)=0</script><p> K-G场是自由标量场，上式中无势能项就是K-G方程。拉格朗日框架天然是四维协变的。</p>
+<p>为了实现正则量子化，需要从拉格朗日密度得到哈密顿密度。正则动量： </p>
+<script type="math/tex; mode=display">
+\Pi(t,{\bf x}) = \frac{\partial}{\partial\dot \Phi(t,{\bf x})}L[\Phi(t,{\bf x}),\partial_\mu\Phi(t,{\bf x})] = \dot\Phi(t,{\bf x})</script><p> 勒让德变换得到哈密顿： </p>
+<script type="math/tex; mode=display">
+H = \int{\rm d}^3x(\Pi\dot\Phi-L)=\int{\rm d}^3x\left[\frac12\Pi^2+\frac12(\nabla\Phi)^2+\frac{m^2}{2}\Phi^2+V(\Phi)\right]</script><p> 哈密顿框架天然是3+1维的。</p>
+<p>采取正则量子化后，场量替换为场算符 </p>
+<script type="math/tex; mode=display">
+\hat H = \int{\rm d}^3x\left[\frac12\hat \Pi^2+\frac12(\nabla\hat \Phi)^2+\frac{m^2}{2}\hat \Phi^2+\hat V(\hat \Phi)\right]</script><p> 场算符满足等时正则对易关系 </p>
+<script type="math/tex; mode=display">
+\left[\hat\Phi({\bf x}),\hat\Pi({\bf y})\right]={\rm i}\delta({\bf x}-{\bf y})\ ,\quad\left[\hat\Pi({\bf x}),\hat\Pi({\bf y})\right]=\left[\hat\Phi({\bf x}),\hat\Phi({\bf y})\right]=0</script><p> 此时的场量具有无穷多自由度。</p>
+<h2 id="K-G场的格点正规化"><a href="#K-G场的格点正规化" class="headerlink" title="K-G场的格点正规化"></a>K-G场的格点正规化</h2><p>众所周知，简单的量子场论存在紫外发散等问题，正规化手续是必要的。在连续微扰理论中可以采取维数正规化，泡利-维拉斯正规化、动量截断等正规化方法。在格点场论中则与之不同。</p>
+<p>考虑在三维有限格点上建立场论，其时空格点 </p>
+<script type="math/tex; mode=display">
+x_i\Rightarrow an_i,\quad n_i=0,1,2,\dots,N-1\ {\rm for}\ i=1,2,3</script><p> 格点常数 a 具有长度量纲。场算符只定义在这些格点上，共有 $N^3$ 个格点， $2N^3$ 个场自由度。简单起见考虑周期性边界条件，即将 $n_j=0$ 与 $n_j=N$ 做认同。</p>
+<p>对哈密顿算符的格点正规化需要处理空间导数 $\nabla\hat\Phi({\bf x})$ 。将场算符泰勒展开，方向导数近似为（ ${\bf j}$ 表示 $j$ 方向的单位矢量）： </p>
+<script type="math/tex; mode=display">
+\partial_j\hat\Phi({\bf x})\sim\frac{\hat\Phi({\bf n}+\hat j)-\hat\Phi({\bf n}-\hat j)}{2a}+\mathcal O(a^2)</script><p> 则格点哈密顿算符 </p>
+<script type="math/tex; mode=display">
+\hat H = a^3\sum_{ {\bf n}\in\Lambda_3}\left[\frac12\hat \Pi^2({\bf n})+\frac12\sum_{j=1,2,3}\left(\frac{\hat\Phi({\bf n}+\hat j)-\hat\Phi({\bf n}-\hat j)}{2a}\right)^2+\frac{m^2}{2}\hat \Phi^2({\bf n})+\hat V(\hat \Phi({\bf n}))\right]</script><p> 这里的场仅具有有限自由度。正则对易关系 </p>
+<script type="math/tex; mode=display">
+\left[\hat\Phi({\bf n}),\hat\Pi({\bf m})\right]={\rm i}a^{-3} \delta^{(3)}_{ {\bf n}{\bf m}}\ ,\quad\left[\hat\Pi({\bf n}),\hat\Pi({\bf m})\right]=\left[\hat\Phi({\bf n}),\hat\Phi({\bf m})\right]=0</script><p> 正则动量此时是： </p>
+<script type="math/tex; mode=display">
+\hat\Pi({\bf n})=-{\rm i}a^{-3}\frac{\partial}{\partial\Phi({\bf n})}</script><p> 这样K-G场哈密顿算符就是 </p>
+<script type="math/tex; mode=display">
+\hat H=\hat H_0+\hat U</script><p> 动能项 </p>
+<script type="math/tex; mode=display">
+\hat H_0 = a^3\sum_{ {\bf n}\in\Lambda_3}\frac12\left(-{\rm i}a^{-3}\frac{\partial}{\partial\Phi({\bf n})}\right)^2 = -\frac{1}{2a^3}\sum_{ {\bf n}\in\Lambda_3}\frac{\partial^2}{\partial\Phi^2({\bf n})}</script><p> 其他项 </p>
+<script type="math/tex; mode=display">
+\hat U=a^3\sum_{ {\bf n}\in\Lambda_3}\left[\frac12\sum_{j=1,2,3}\left(\frac{\hat\Phi({\bf n}+\hat j)-\hat\Phi({\bf n}-\hat j)}{2a}\right)^2+\frac{m^2}{2}\hat \Phi^2({\bf n})+\hat V(\hat \Phi({\bf n}))\right]</script><p>现在考虑场算符 $\hat\Phi({\bf n})$ 的本征方程 $\hat\Phi({\bf n})|\Phi\rangle = \Phi({\bf n})|\Phi\rangle$ ，其每个本征态表示一种场构型，而某个格点上的场算符作用于该态得到的本征值则是该构型下该格点上场的值。各个构型相互正交且完备 </p>
+<script type="math/tex; mode=display">
+\langle\Phi'|\Phi\rangle = \delta(\Phi'-\Phi) = \prod_{ {\bf n} \in \Lambda_3}\delta(\Phi'({\bf n})-\Phi({\bf n}))</script><script type="math/tex; mode=display">
+\mathbb 1 = \int\mathcal D\Phi|\Phi\rangle\langle\Phi|\ ,\qquad{\rm with}\quad \mathcal D\Phi=\prod_{ {\bf n}\in\Lambda_3}{\rm d}\Phi({\bf n})</script><p> 类似地，正则动量场算符也具有本征态：平面波 $|\Pi\rangle$ ： </p>
+<script type="math/tex; mode=display">
+\langle\Pi'|\Pi\rangle = \delta(\Pi'-\Pi) = \prod_{ {\bf n} \in \Lambda_3}\delta(\Pi'({\bf n})-\Pi({\bf n}))</script><script type="math/tex; mode=display">
+\mathbb 1 = \int\mathcal D\Pi|\Pi\rangle\langle\Pi|\ ,\qquad{\rm with}\quad \mathcal D\Pi=\prod_{ {\bf n}\in\Lambda_3}{\rm d}\Pi({\bf n})</script><p> 一个 $|\Pi\rangle$ 态同样理解为一组动量构型，给出每个格点上的平面波，被场动量算符作用给出相应格点上的波数；因此在场表象下表现为 $N^3$ 个平面波乘积 </p>
+<script type="math/tex; mode=display">
+\langle\Phi|\Pi\rangle = \prod_{ {\bf n}\in\Lambda_3}\sqrt{\frac{a^3}{2\pi}}{\rm e}^{ {\rm i}a^3\Pi({\bf n})\Phi({\bf n})}</script><h2 id="自由场的欧氏时间演化算符"><a href="#自由场的欧氏时间演化算符" class="headerlink" title="自由场的欧氏时间演化算符"></a>自由场的欧氏时间演化算符</h2><p>为了计算欧氏关联函数和配分函数，都需要计算时间演化算符 ${\rm e}^{-t\hat H}$ ；首先考虑只含动能项的哈密顿算符 $\hat H_0$ 的简单情况。由于它是动量算符平方，则在坐标表象下计算它作用在动量本征态的结果 </p>
+<script type="math/tex; mode=display">
+\langle\Phi|\hat H_0|\Pi\rangle = -\frac{1}{2a^3}\sum_{ {\bf n}\in\Lambda_3}\frac{\partial^2}{\partial\Phi^2({\bf n})}\langle\Phi|\Pi\rangle = \frac{a^3}{2}\sum_{ {\bf n}\in\Lambda_3}\Pi^3({\bf n})\langle\Phi|\Pi\rangle</script><p> 这意味着 $\hat H_0$ 具有本征态 $|\Pi\rangle$ 以及相应的本征值 $(a^3/2)\sum_{ {\bf n}}\Pi^2({\bf n})$ 。因此可以计算自由场时间演化函数： </p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle\Phi'|{\rm e}^{-t\hat H_0}|\Phi\rangle &= \int\mathcal D \Pi\langle\Phi'|{\rm e}^{-t\hat H_0}|\Pi\rangle\langle\Pi|\Phi\rangle = \int\mathcal D \Pi\langle\Phi'|\Pi\rangle\langle\Pi|\Phi\rangle {\rm e}^{-ta^3/2\sum_{ {\bf n}}\Pi^2({\bf n})}\\ &= \prod_{ {\bf n}\in\Lambda_3}\frac{a^3}{2\pi}\int{\rm d}\Pi({\bf n}){\rm e}^{ {\rm i}a^3\Pi({\bf n})[\Phi'({\bf n})-\Phi({\bf n})]}{\rm e}^{-ta^3/2\sum_{ {\bf n}}\Pi^2({\bf n})}\\ &= \prod_{ {\bf n}\in\Lambda_3}\sqrt\frac{a^3}{2\pi t}\int{\rm d}\Pi({\bf n}) {\rm e}^{-a^3/(2t)[\Phi'({\bf n})-\Phi({\bf n})]^2}\\ &= \sqrt\frac{a^3}{2\pi t}^{N^3}\exp\left\{-\frac{a^3}{2t}\sum_n[\Phi'({\bf n})-\Phi({\bf n})]^2\right\} \end{aligned}</script><h2 id="用Trotter公式处理相互作用项：无穷小欧氏时间演化"><a href="#用Trotter公式处理相互作用项：无穷小欧氏时间演化" class="headerlink" title="用Trotter公式处理相互作用项：无穷小欧氏时间演化"></a>用Trotter公式处理相互作用项：无穷小欧氏时间演化</h2><p>仍然考虑无穷小时间，定义 </p>
+<script type="math/tex; mode=display">
+\hat W_\epsilon = {\rm e}^{-\epsilon\hat U/2}{\rm e}^{-\epsilon\hat H_0}{\rm e}^{-\epsilon\hat U/2}</script><p> 根据Trotter公式 </p>
+<script type="math/tex; mode=display">
+\begin{aligned} &\langle\Phi'|{\rm e}^{-t\hat H}|\Phi \rangle = \lim_{n_t\to\infty}\langle\Phi'|\hat W_\epsilon^{n_t}|\Phi\rangle \\ = &\lim_{n_t\to\infty}\int\mathcal D\Phi_1\mathcal D\Phi_2\dots\mathcal D\Phi_{n_t-1}\langle\Phi'|\hat W_\epsilon|\Phi_{n_t-1}\rangle \langle\Phi_{n_t-1}|\hat W_\epsilon|\Phi_{n_t-2}\rangle \dots \langle\Phi_{1}|\hat W_\epsilon|\Phi\rangle \end{aligned}</script><p> 考虑到 </p>
+<script type="math/tex; mode=display">
+\hat U |\Phi\rangle = U[\Phi] |\Phi\rangle = a^3\sum_{ {\bf n}\in\Lambda_3}\left[\frac12\sum_{j=1,2,3}\left(\frac{\Phi({\bf n}+\hat j)-\Phi({\bf n}-\hat j)}{2a}\right)^2+\frac{m^2}{2}\Phi^2({\bf n})+V(\Phi({\bf n}))\right]|\Phi\rangle</script><p> 则 </p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle \Phi_{i+1}|\hat W_\epsilon |\Phi_i\rangle &= \langle \Phi_{i+1}|{\rm e}^{-\epsilon\hat U/2}{\rm e}^{-\epsilon\hat H_0}{\rm e}^{-\epsilon\hat U/2}|\Phi_i\rangle \\ & = {\rm e}^{-\epsilon U[\Phi_{i+1}]/2} \langle \Phi_{i+1}|{\rm e}^{-\epsilon\hat H_0}|\Phi_i\rangle {\rm e}^{-\epsilon U[\Phi_{i}]/2}\\ & = \sqrt\frac{a^3}{2\pi \epsilon}^{N^3}\exp\left\{-\epsilon\frac{U[\Phi_i]+U[\Phi_{i+1}]}2{}-\frac{a^3}{2\epsilon}\sum_{ {\bf n}}[\Phi_i({\bf n})-\Phi_{i+1}({\bf n})]^2\right\} \end{aligned}</script><h2 id="配分函数的路径积分表示"><a href="#配分函数的路径积分表示" class="headerlink" title="配分函数的路径积分表示"></a>配分函数的路径积分表示</h2><p>在场算符本征态构成的一组完备正交基 $|\Phi_0\rangle$ 下求配分函数</p>
+<script type="math/tex; mode=display">
+Z_T = \int\mathcal D\Phi_0\langle\Phi_0|{\rm e}^{-T\hat H}|\Phi_0\rangle = \lim_{N_T\to\infty}\int\mathcal D\Phi_0\langle\Phi_0|\hat W_\epsilon^{N_T}|\Phi_0\rangle</script><p> 其有限时间步长近似 </p>
+<script type="math/tex; mode=display">
+\begin{aligned} Z_T^\epsilon &= \int\mathcal D\Phi_0\langle \Phi_0 | \hat W_\epsilon^{N_T}|\Phi_0\rangle\\ & = \int\mathcal D\Phi_0\mathcal D\Phi_1\dots\mathcal D\Phi_{N_T-1}\langle \Phi_0 | \hat W_\epsilon|\Phi_{N_T-1}\rangle \langle \Phi_{N_T-1} | \hat W_\epsilon|\Phi_{N_T-2}\rangle \dots \langle \Phi_1 | \hat W_\epsilon|\Phi_0\rangle \\ & = \sqrt\frac{a^3}{2\pi \epsilon}^{N_3N_T}\int\mathcal D[\Phi]{\rm e}^{-S_E[\Phi]} \end{aligned}</script><script type="math/tex; mode=display">
+S_E[\Phi] = \frac12\sum_{i=0}^{N_T-1}a^3\sum_{ {\bf n}\in\Lambda_3}\frac1\epsilon [\Phi_{i+1}({\bf n})-\Phi_i({\bf n})]^2 + \epsilon\sum_{i=0}^{N_T-1}U[\Phi_i]</script><script type="math/tex; mode=display">
+\mathcal D[\Phi]=\prod_{({\bf n},i) \in \Lambda}{\rm d} \Phi_i({\bf n})</script><p> 这里， ${\bf n}$ 表示三维空间格点， $j$ 表示划分的时间节点，且取周期性边界条件 $j=0\Leftrightarrow j=N_T$ 。 $S_E[\Phi]$ 是离散化的欧氏作用量。</p>
+<p>方便起见考虑换一个记号， $\Phi(n) = \Phi({\bf n},n_4)=\Phi_{n_4}({\bf n})$ ，即构造了四维格点： </p>
+<script type="math/tex; mode=display">
+\Lambda=\{n =({\bf n},n_4)|{\bf n}\in\Lambda_3,n_4=0,1,\dots,N_T-1\}</script><p> 这样欧氏作用量 </p>
+<script type="math/tex; mode=display">
+\begin{aligned} S_E[\Phi]=&\epsilon a^3\sum_{n\in\Lambda}\Bigg\{\frac12\left[\frac{\Phi({\bf n},n_4+1)-\Phi({\bf n},n_4)}{\epsilon}\right]^2\\ &+\frac12\sum_{j=1,2,3}\left[\frac{\Phi({\bf n}+\hat j,n_4)-\Phi({\bf n}-\hat j,n_4)}{2a}\right]^2\\ &+\frac{m^2}{2}\Phi^2(n)+V[\Phi(n)]\Bigg\} \end{aligned}</script><h2 id="包含算符的路径积分"><a href="#包含算符的路径积分" class="headerlink" title="包含算符的路径积分"></a>包含算符的路径积分</h2><script type="math/tex; mode=display">
+{\rm tr}\left[{\rm e}^{-(T-t)\hat H}\hat O_2 {\rm e}^{-t\hat H} \hat O_1\right] = \lim_{N_t\to\infty}{\rm tr}\left[\hat W_\epsilon^{N_T-n_t}\hat O_2\hat W_\epsilon^{n_t}\hat O_1\right]</script><p> 时间步数 $T = \epsilon N_T$ ， $t=\epsilon n_t$ 。考虑有限步长近似 </p>
+<script type="math/tex; mode=display">
+\begin{aligned} &\langle O_2(t) O_1(0) \rangle_T^\epsilon = \frac{1}{Z_T^\epsilon}{\rm tr}\left[\hat W_\epsilon^{N_T-n_t}\hat O_2\hat W_\epsilon^{n_t}\hat O_1\right]\\ = &\frac{1}{Z_T^\epsilon} \int \mathcal D\Phi_0\dots\mathcal D\Phi_{N_T-1}\mathcal D\widetilde\Phi_0\mathcal D\widetilde\Phi_{n_t} \\&\langle \Phi_0 | \hat W_\epsilon | \Phi_{N_T-1} \rangle \langle \Phi_{N_T-1} | \hat W_\epsilon | \Phi_{N_T-2} \rangle \langle \Phi_{n_t+1} | \hat W_\epsilon | \widetilde\Phi_{n_t} \rangle \langle \widetilde\Phi_{n_t} | \hat O_2 | \Phi_{n_t} \rangle\\ & \langle \Phi_{n_t} | \hat W_\epsilon | \Phi_{n_t-1} \rangle \langle \Phi_1 | \hat W_\epsilon | \widetilde\Phi_0 \rangle \langle \widetilde\Phi_0 | \hat O_1 | \Phi_0 \rangle \end{aligned}</script><p> 相比于 $Z_T^\epsilon$ 的积分形式，该式多了两项关于算符的矩阵元， $\langle \widetilde\Phi_{n_t} | \hat O_2 | \Phi_{n_t} \rangle$ 和 $\langle \widetilde\Phi_0 | \hat O_1 | \Phi_0 \rangle$ 。两个算符通常由场算符及其共轭动量构成，例如一个典型例子， $\hat O_A = \hat\Phi^\dagger({\bf n}_0)$ 从真空态在 $n_0$ 格点创造粒子， $\hat O_B = \sum_{ {\bf n}\in\Lambda_3}\hat\Phi({\bf n}){\rm e}^{-{\rm i}a{\bf n}{\bf p}}$ 在另一格点湮灭携带某动量的粒子。因此 </p>
+<script type="math/tex; mode=display">
+\langle\widetilde\Phi|\hat O|\Phi\rangle = O[\Phi]\delta(\widetilde\Phi-\Phi)</script><p>前述两个例子在此时，对应的泛函分别是 </p>
+<script type="math/tex; mode=display">
+O_A[\Phi] = \Phi^*({\bf n}_0)\ ,\qquad O_B[\Phi] = \sum_{ {\bf n}\in\Lambda_3}\Phi({\bf n}){\rm e}^{-{\rm i}a{\bf n}{\bf p}}</script><p> 将关联函数中两个 $\widetilde\Phi$ 积掉，得到 </p>
+<script type="math/tex; mode=display">
+\begin{aligned} \langle O_2(t) O_1(0) \rangle_T^\epsilon & = \frac{\sqrt{a^3/{2\pi\epsilon}}^{N_3N_T}}{Z_T^\epsilon} \int\mathcal D[\Phi]{\rm e}^{-S_E[\Phi]}O_2[\Phi_{n_t}]O_1[\Phi_0]\\ & = \frac{\int\mathcal D[\Phi]{\rm e}^{-S_E[\Phi]}O_2[\Phi_{n_t}]O_1[\Phi_0]} {\int\mathcal D[\Phi]{\rm e}^{-S_E[\Phi]}} \end{aligned}</script><h1 id="路径积分的量化"><a href="#路径积分的量化" class="headerlink" title="路径积分的量化"></a>路径积分的量化</h1><h2 id="欧氏作用量的不同离散化方案"><a href="#欧氏作用量的不同离散化方案" class="headerlink" title="欧氏作用量的不同离散化方案"></a>欧氏作用量的不同离散化方案</h2><p>从前文已经离散化的欧氏作用量表达式中可以看出，对于时间导数和空间导数的处理方法不一样，时间导数采取前向差分，来自于按时间节点逐个传播并用trotter公式的结果，而空间导数用中心差分，来自于泰勒展式。相较而言中心差分误差更小： </p>
+<script type="math/tex; mode=display">
+f(x\pm \epsilon)=f(x)\pm\epsilon f'(x)+\epsilon^2 f''(x)/2\pm\epsilon^3 f'''(x)/6+\dots</script><script type="math/tex; mode=display">
+\begin{aligned} \frac{f(x+\epsilon)-f(x-\epsilon)}{2\epsilon} &= f'(x)+\mathcal O(\epsilon^2)\\ \frac{f(x+\epsilon)-f(x)}{\epsilon} &= f'(x)+\mathcal O(\epsilon)\ \end{aligned}</script><p> 因此实际计算中有事也对时间离散化采用中心差分方法。</p>
+<p>此外，也经常取相同的时间和空间步长 $\epsilon = a$ 。</p>
+<p>在上述两种取法下： </p>
+<script type="math/tex; mode=display">
+S_E[\Phi]=a^4\sum_{n\in\Lambda}\left\{\frac12\sum_{\mu=1}^4\left[\frac{\Phi(n+\hat\mu)-\Phi(n-\hat\mu)}{2a}\right]^2+\frac{m^2}{2}\Phi^2(n)+V[\Phi(n)]\right\}</script><p> 其中 $\hat\mu$ 表示第 $\mu$ 时空方向的单位向量。这种形式下时空更平等。特别地，为了与闵氏做区分，时空指标取1，2，3，4，其中4表示时间。</p>
+<h2 id="路径积分量化方案"><a href="#路径积分量化方案" class="headerlink" title="路径积分量化方案"></a>路径积分量化方案</h2><p>新的形式与之前来自于第一性原理的导出不同，代表了新的量化方案。之前的量化表达式，来自于对场算符和正则动量的正则对易关系，因而是正则量子化；新的形式直接来自于路径积分框架，因而是路径积分量子化。这种方法的步骤是：</p>
+<p>1、连续时空换成四维欧氏格点，四个方向格点常数均为 a ；在每个格点上定义场变量的一个自由度 $\Phi(n)$ ，通常是经典场变量；</p>
+<p>2、把系统欧氏作用量 $S_E[\Phi]$ 在格点上进行离散化，并保证在连续极限 $a\to 0$ 下能回到原本的形式；</p>
+<p>3、关联函数中出现的算符，在计算时表现为场构型的泛函，可以直接通过将场算符替换为经典场变量来实现；</p>
+<p>4、欧氏关联函数，就是在特定的格点场构型下，将这些泛函按照玻尔兹曼因子 $\exp(-S_E[\Phi])$ 进行加权，并对所有可能的场构型积分。</p>
+<p>具体在进行离散化时，存在误差不同的各种方案；Osterwalder–Schrader重建保证了，只要这些不同的离散化方案满足特定的一些条件，就可以从离散欧氏关联函数重建出希尔伯特空间和闵氏的关联函数，并提取出所关心的物理可观测量。</p>
+<p>当然，计算出格点上的物理可观测量后，人们会更关心它们的连续极限。简单地将 $a\to\infty$ 称为“简单连续极限”或“经典连续极限”，但为了更全面的分析，通常需要得到这些可观测量作为 $a$ 的函数的形式。</p>
+<p>另一方面，实际计算时系统的连续极限不是简单的数学极限，例如耦合达到临界时，物理尺度在格点上会越来越显著，这需要结合统计等其他手段进行分析。</p>
+<h2 id="与统计力学的关系"><a href="#与统计力学的关系" class="headerlink" title="与统计力学的关系"></a>与统计力学的关系</h2><p>事实上格点上的场论，与统计力学之间存在某种结构上的等价关系。一个典型的统计系统可以考虑在三维格点上以经典自旋 $s_{ {\bf n}}$ 为自由度的自旋系统，系统能量是每个点上自旋的泛函$H[s]$ 。正则系综对温度$T$下发现系统处于某特定构型$s$的概率$P[s]$为： </p>
+<script type="math/tex; mode=display">
+P[s]=\frac1Z{\rm e}^{-\beta H[s]}</script><p> 配分函数 </p>
+<script type="math/tex; mode=display">
+Z=\sum_{\{s\}}{\rm e}^{-\beta H[s]}</script><p> 可观测量的期望 </p>
+<script type="math/tex; mode=display">
+\langle O\rangle = \frac1Z\sum_{\{s\}}{\rm e}^{-\beta H[s]}O[s]</script><p> 这些结构上的等价性允许我们应用发源于统计力学的解析和数值方法研究格点场论。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/LQCD/LQCD-1.html">https://papaya-z.github.io/post/LQCD/LQCD-1.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/">路径积分</a><a class="post-meta__tags" href="/tags/QCD/">QCD</a><a class="post-meta__tags" href="/tags/LQCD/">LQCD</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/LQCD/LQCD-2.html" title="Gattringer &amp; Lang - Cp2: 格点QCD初览"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Gattringer &amp; Lang - Cp2: 格点QCD初览</div></div></a></div><div class="next-post pull-right"><a href="/post/archived/peskin/QFT-seminar-chap8-Regularization-&amp;-Renormalization.html" title="QFT seminar chap.8: Regularization &amp; Renormalization"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">QFT seminar chap.8: Regularization &amp; Renormalization</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/LQCD/LQCD-5.html" title="Gattringer &amp; Lang - Cp5: 格点上的费米子"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-04</div><div class="title">Gattringer &amp; Lang - Cp5: 格点上的费米子</div></div></a></div><div><a href="/post/LQCD/LQCD-2.html" title="Gattringer &amp; Lang - Cp2: 格点QCD初览"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-30</div><div class="title">Gattringer &amp; Lang - Cp2: 格点QCD初览</div></div></a></div><div><a href="/post/QFT/QFT-Chap-3.html" title="量子场论 Chap.3：场量子化：路径积分方法"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-08</div><div class="title">量子场论 Chap.3：场量子化：路径积分方法</div></div></a></div><div><a href="/post/LQCD/LQCD-3.html" title="Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-01</div><div class="title">Gattringer &amp; Lang - Cp3: 格点上的纯规范场理论</div></div></a></div><div><a href="/post/LQCD/LQCD-6.html" title="Gattringer &amp; Lang - Cp6: 强子谱"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-11</div><div class="title">Gattringer &amp; Lang - Cp6: 强子谱</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E7%A9%BA%E9%97%B4%E4%B8%8E%E6%AC%A7%E6%B0%8F%E5%85%B3%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">希尔伯特空间与欧氏关联函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E7%A9%BA%E9%97%B4"><span class="toc-number">1.1.</span> <span class="toc-text">希尔伯特空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86%E8%AE%B0%E5%8F%B7"><span class="toc-number">1.2.</span> <span class="toc-text">粒子物理记号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%B0%8F%E5%85%B3%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">欧氏关联函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%BD%93%E7%B3%BB%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">量子力学体系的路径积分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E9%87%8F%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86"><span class="toc-number">3.</span> <span class="toc-text">标量场的路径积分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E8%8E%B1%E5%9B%A0-%E9%AB%98%E7%99%BB%E5%9C%BA"><span class="toc-number">3.1.</span> <span class="toc-text">克莱因-高登场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K-G%E5%9C%BA%E7%9A%84%E6%A0%BC%E7%82%B9%E6%AD%A3%E8%A7%84%E5%8C%96"><span class="toc-number">3.2.</span> <span class="toc-text">K-G场的格点正规化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E5%9C%BA%E7%9A%84%E6%AC%A7%E6%B0%8F%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6"><span class="toc-number">3.3.</span> <span class="toc-text">自由场的欧氏时间演化算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8Trotter%E5%85%AC%E5%BC%8F%E5%A4%84%E7%90%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E9%A1%B9%EF%BC%9A%E6%97%A0%E7%A9%B7%E5%B0%8F%E6%AC%A7%E6%B0%8F%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">用Trotter公式处理相互作用项：无穷小欧氏时间演化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E5%88%86%E5%87%BD%E6%95%B0%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.5.</span> <span class="toc-text">配分函数的路径积分表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E7%AE%97%E7%AC%A6%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86"><span class="toc-number">3.6.</span> <span class="toc-text">包含算符的路径积分</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E7%9A%84%E9%87%8F%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">路径积分的量化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E4%B8%8D%E5%90%8C%E7%A6%BB%E6%95%A3%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">4.1.</span> <span class="toc-text">欧氏作用量的不同离散化方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86%E9%87%8F%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">4.2.</span> <span class="toc-text">路径积分量化方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">4.3.</span> <span class="toc-text">与统计力学的关系</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.2-概率"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率">[Kardar]V.1-C.2-概率</a><time datetime="2024-03-19T19:06:12.000Z" title="发表于 2024-03-20 03:06:12">2024-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.5-相互作用粒子"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子">[Kardar]V.1-C.5-相互作用粒子</a><time datetime="2024-03-19T10:10:54.000Z" title="发表于 2024-03-19 18:10:54">2024-03-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.4-经典统计力学"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学">[Kardar]V.1-C.4-经典统计力学</a><time datetime="2024-02-29T14:21:06.000Z" title="发表于 2024-02-29 22:21:06">2024-02-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[大黄猫]chap1：量子化基础与Coulomb电子气"/></a><div class="content"><a class="title" href="/post/%E5%87%9D%E8%81%9A%E6%80%81/cond-matt-1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%9F%BA%E7%A1%80%E4%B8%8ECoulomb%E7%94%B5%E5%AD%90%E6%B0%94.html" title="[大黄猫]chap1：量子化基础与Coulomb电子气">[大黄猫]chap1：量子化基础与Coulomb电子气</a><time datetime="2024-02-23T21:10:20.000Z" title="发表于 2024-02-24 05:10:20">2024-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="量子场论 Chap.4：散射理论"/></a><div class="content"><a class="title" href="/post/QFT/QFT-Chap-4.html" title="量子场论 Chap.4：散射理论">量子场论 Chap.4：散射理论</a><time datetime="2024-01-21T02:01:51.000Z" title="发表于 2024-01-21 10:01:51">2024-01-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: '4744cbe41df03935ca5a3549a8fc79dc',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
