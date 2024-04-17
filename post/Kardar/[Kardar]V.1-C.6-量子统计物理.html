@@ -1,0 +1,687 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[Kardar]V.1-C.6-量子统计力学 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="量子统计；固体热容；黑体辐射；密度算符"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Kardar/[Kardar]V.1-C.6-%E9%87%8F%E5%AD%90%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[Kardar]V.1-C.6-量子统计力学',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-17 10:36:51'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">[Kardar]V.1-C.6-量子统计力学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-11T06:03:14.000Z" title="发表于 2024-04-11 14:03:14">2024-04-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-17T02:36:51.654Z" title="更新于 2024-04-17 10:36:51">2024-04-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1-Kardar/">统计-Kardar</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>54分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="[Kardar]V.1-C.6-量子统计力学"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/Kardar/%5BKardar%5DV.1-C.6-%E9%87%8F%E5%AD%90%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<p>经典统计力学存在局限性，尤其是在低温时量子效应变得显著，这就需要引入量子角度的统计力学。本章将首先指出经典统计力学的若干失效之处，再基于量子理论构建量子版本的统计力学。</p>
+<h1 id="稀薄多原子分子气"><a href="#稀薄多原子分子气" class="headerlink" title="稀薄多原子分子气"></a>稀薄多原子分子气</h1><p>本节首先考虑由$n$原子分子构成的、分子间无相互作用的稀薄气体。</p>
+<p>其中每<strong>一个</strong>$n$原子分子的哈密顿量是：</p>
+<script type="math/tex; mode=display">
+\mathcal H_1 = \sum_{i=1}^n \frac{\vec p_i^2}{2m} + \mathcal V(\vec q_1,\dotsm\vec q_n)</script><p>其中$\mathcal V$包括了分子内$n$个原子间化学键的全部信息。在这里我们已经假设分子内的每个原子质量都是$m$；如果质量不同，可以对变量做重标度$\vec q_i \to \vec q_i\sqrt{m/m_i}$，$\vec p_i \to \vec p_i\sqrt{m_i/m}$来得到上面的形式。如果可以忽略<strong>分子间</strong>相互作用，稀薄气体配分函数就可以写为</p>
+<script type="math/tex; mode=display">
+Z(T,V,N) = \frac{Z_1^N}{N!} = \frac{1}{N!}\left\{ \int\prod_{i=1}^n \frac{ {\rm d}^3\vec p_i{\rm d}^3\vec q_i}{h^3} \exp\left[ -\beta\sum_{i=1}^n \frac{\vec p_i^2}{2m} + \mathcal V(\vec q_1,\dotsm\vec q_n) \right] \right\}^N</script><p>通常使原子结合为分子的化学键非常强（能量在电子伏量级），在典型的可及温度（远小于分子解离温度$\sim 10^4\ {\rm K}$）处，分子的形状稳定存在且仅有微小形变。下面考虑这些小形变对单粒子配分函数$Z_1$的贡献。</p>
+<p>首先通过最小化化学键能$\mathcal V(\vec q_1,\dotsm\vec q_n)$找到分子平衡的形状$(\vec q_1^0,\vec q_2^0,\dots,\vec q_n^0)$，微小形变可以视作在此基础上的微扰$\vec q_i = \vec q_i^0 + \vec u_i$，化学键能展开为：</p>
+<script type="math/tex; mode=display">
+\mathcal V = \mathcal V^0 + \frac12 \sum_{i,j=1}^n \sum_{\alpha,\beta=1}^3 \frac{\partial^2 \mathcal V}{\partial q_{i,\alpha}\partial q_{j,\beta}} u_{i,\alpha} u_{j,\beta} + \mathcal O(u^3)</script><p>其中$\alpha,\beta$是空间矢量的分量指标；在平衡点附近的一阶导数为零，因此最低阶贡献是二阶导数$\partial^2\mathcal V/\partial q_{i,\alpha}\partial q_{j,\beta}$，且二阶导数矩阵是正定的（只有非负本征值）。</p>
+<p>将二阶导数矩阵$\partial^2\mathcal V/\partial q_{i,\alpha}\partial q_{j,\beta}$对角化，得到$3n$个非负本征值$\{k_s\}$，分别对应于$3n$个振动简正模式的“劲度系数”。可以将独立变量从形变坐标$\{u_{i,\alpha}\}$换为简正模振幅$\{\widetilde u_s\}$，以及其共轭动量$\{\widetilde p_s = m \dot{\widetilde u}_s\}$，这一变量变换是幺正的，$\sum_i \vec p_i^2 = \sum_s \widetilde p_s^2$，得到形变的二阶水平的哈密顿量是</p>
+<script type="math/tex; mode=display">
+\mathcal H_1 = \mathcal V^0 + \sum_{s=1}^{3n}\left[ \frac{1}{2m} \widetilde p_s^2 + \frac{k_s}{2} \widetilde u_s^2 \right]</script><p>同时这一变量变换也是正则变换，保持相空间积分测度不变：$\prod_{i,\alpha}{\rm d}u_{i,\alpha}{\rm d}p_{i,\alpha} = \prod_s {\rm d}\widetilde u_s {\rm d}\widetilde p_s$。该哈密顿量的期望值就是每个分子的平均能量；根据能均分原理，每个自由度的二次项对应于$k_BT/2$的能量，于是</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H_1 \rangle = \mathcal V^0 + \frac{3n}{2} k_BT + \frac{\lambda}{2}k_B T</script><p>上式中第一项是原子结合为分子的化学键能，在非化学反应的过程中不会释放，可视为常数；第二项代表分子整体运动时的能量，第三项代表分子中原子振动的能量，$\lambda$就是$3n$个振动简正模式中具有非零$k_s$的数量，也即二阶导数矩阵的非零本征值个数，从物理上来讲，这是因为只有具有非零有限大小劲度系数的简正模才可以存储势能。具体为零的$k_s$个数，可以通过势能$\mathcal V$的对称性分析得出：</p>
+<ol>
+<li>平移对称性：由于$\mathcal V(\vec q_1+\vec c_1,\dotsm\vec q_n+\vec c_n) = \mathcal V(\vec q_1,\dotsm\vec q_n)$，其对应于有$3$个自由度的$k_{\rm trans}=0$；这在物理上是因为这种形式的简正模式对应于分子的整体平动，而这已经在动能项部分计算过一次，此在振动项不会储存额外的形变能量。</li>
+<li>旋转对称性：某些形状的分子$\mathcal V(\vec q_1,\dotsm\vec q_n)$也具有特定方向的旋转不变性，其对应的自由度的$k_{\rm rot}=0$，这也解释为分子的整体旋转。但是具体为零的$k_{\rm rot}$的个数$r$取决于分子的形状，一般而言$0\leq r\leq 3$，例如单原子分子$r=0$，棒状分子$r=2$，一般形状的分子$r=3$。</li>
+</ol>
+<p>最终得到$\lambda = 3n - 3 - r$，就是具有非零本征值的简正模个数，对应于法向振动模式。于是平均能量就是</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H_1 \rangle = \mathcal V^* + \frac{6n-3-r}{2}k_B T</script><p>这给出经典理论预言的热容：</p>
+<script type="math/tex; mode=display">
+C_V^{\rm cl.} = \frac{6n-3-r}{2}k_B \qquad C_P^{\rm cl.} = C_V^{\rm cl.} + k_B = \frac{6n-1-r}{2}k_B</script><p>都是温度无关的，比值$\gamma = C_P/C_V$可以从绝热过程测量得到。假如上面的分析是正确的，那么一些典型分子的$\gamma$值应当是：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>形状类型</th>
+<th>例子</th>
+<th>原子数$n$</th>
+<th>转动自由度$r$</th>
+<th>$\gamma$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单原子分子</td>
+<td>$\rm He$</td>
+<td>1</td>
+<td>0</td>
+<td>$5/3$</td>
+</tr>
+<tr>
+<td>双原子分子</td>
+<td>$\rm O_2$ or $\rm CO$</td>
+<td>2</td>
+<td>2</td>
+<td>$9/7$</td>
+</tr>
+<tr>
+<td>线性三原子分子</td>
+<td>$\rm CO_2$</td>
+<td>3</td>
+<td>2</td>
+<td>$15/13$</td>
+</tr>
+<tr>
+<td>平面三原子分子</td>
+<td>$\rm H_2O$</td>
+<td>4</td>
+<td>3</td>
+<td>$14/12 = 7/6$</td>
+</tr>
+<tr>
+<td>四原子分子</td>
+<td>$\rm NH_3$</td>
+<td>5</td>
+<td>3</td>
+<td>$20/18 = 10/9$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="量子修正"><a href="#量子修正" class="headerlink" title="量子修正"></a>量子修正</h2><p>上面是从经典理论出发得到的，我们期待实验上能看到一致的结果。但是对于稀薄气体热容的实验结果与前述结果并不一致。以定容热容为例，实验看到$C_V/k_B$值并非常数而是会随温度变化，例如双原子分子的热容只会在数千开尔文以上的高温才会测量到$C_V/k_B = 7/2$，而在室温则会降低到$5/2$，在更低温（$\sim 10\ {\rm K}$）则降低到$3/2$​，如图所示。</p>
+<p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240411160147980.png" alt="image-20240411160147980"></p>
+<p>低温时，双原子分子的热容接近于单原子分子的热容值，这意味着低温时，没有法向振动或整体转动的能量（经典的说法，这些自由度被冻结了）。</p>
+<p>如果这些自由度的能量允许值是<strong>量子化</strong>的，那么低温时的能量不足以将这些自由度激发到第一激发态，或许可以解释实验现象。为此，我们考虑一个简单情况：双原子分子。并将其配分函数写为更清晰的形式：</p>
+<script type="math/tex; mode=display">
+Z(T,N,V) = \frac{1}{N!}Z_1^N</script><p>其中单个分子的配分函数是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z_1 &= \int \frac{ {\rm d}^3 q_1 {\rm d}^3 q_2 {\rm d}^3 p_1 {\rm d}^3 p_2}{h^6} \exp\left\{ -\beta\left[ \frac{\vec p_1^2}{2m} + \frac{\vec p_2^2}{2m} + \mathcal V(\vec q_1-\vec q_2) \right]  \right\}\\
+&= \int \frac{ {\rm d}^3 Q {\rm d}^3 P}{h^3} \exp\left[ -\beta\frac{\vec P^2}{2M}\right] \int \frac{ {\rm d}^3 q {\rm d}^3 p}{h^3} \exp\left[ -\beta\frac{\vec p^2}{2\mu} - \beta \mathcal V(\vec q) \right]\\
+&= \int \frac{ {\rm d}^3 Q {\rm d}^3 P}{h^3} \exp\left[ -\beta\frac{\vec P^2}{2M}\right] \int \frac{ {\rm d}^2 \Omega {\rm d}^2 L}{h^2} \exp\left[ -\beta\frac{\vec L^2}{2I}\right] \int \frac{ {\rm d} u {\rm d} \pi}{h} \exp\left[ -\beta\frac{\pi^2}{2\mu} - \beta \left(\mathcal V(d_0) + \frac{\mu\omega^2}{2}u^2 \right) \right]
+\end{aligned}</script><p>其中第二行将质心平动分离出来，$\vec Q = (\vec q_1 + \vec q_2)/2$是质心坐标，$\vec P$是与之对应的质心动量；$M$是总质量，$\mu$是约化质量。第三行将旋转模式和振动模式分离，$\vec \Omega$和$\vec L$是棒状双原子分子的两个转动自由度的角坐标及其角动量；$u$和$\pi$是在其轴方向上两个原子振动的相对位移和动量；$I$是转动惯量，$d_0$是势能最低时的距离，并将势能在平衡位置附近展开到二阶。于是将单分子配分函数拆分成了整体平动、整体转动、法向振动三个模式。</p>
+<p>整体平动的讨论之前已经充分了，下面分别讨论振动和转动的模式。</p>
+<h3 id="法向振动模式"><a href="#法向振动模式" class="headerlink" title="法向振动模式"></a>法向振动模式</h3><p>双原子分子具有一个法向振动模式，即在其轴向的振动，劲度系数$k = m\omega^2$。</p>
+<p>我们首先在经典理论中计算该模式的能量，其经典配分函数是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z_{\rm vib}^{\rm cl.} &= \int \frac{ {\rm d}u{\rm d}\pi}{h} \exp\left[ -\beta\left( \frac{\pi^2}{2\mu} + \frac{\mu\omega^2}{2}u^2 \right) \right]\\
+&=\frac{1}{h} \sqrt{ \frac{2\pi \mu}{\beta}\frac{2\pi}{\beta \mu \omega^2} }\\
+&= \frac{2\pi}{h}\frac{1}{\beta \omega}
+\end{aligned}</script><p>该模式储存的能量是</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H_{\rm vib} \rangle^{\rm cl.} = -\frac{\partial\ln Z}{\partial\beta} = \frac{1}{\beta} = k_B T</script><p>来自于该模式的一个动能项和一个势能项分别提供的$k_BT/2$。</p>
+<p>而在量子力学中，允许的能量仅仅是量子化的若干离散值</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H_{\rm vib} \rangle^{\rm qt.} = \hbar\omega\left( n+\frac12 \right) \qquad n = 0,1,2,\dots</script><p>假设该量子系统处于任意一个允许的离散能级的概率都正比于其玻尔兹曼因子（这一点之后会论证），那么概率的归一化因子是</p>
+<script type="math/tex; mode=display">
+Z_{\rm vib}^{\rm qt.} = \sum_{n=0}^\infty {\rm e}^{-\beta\hbar\omega(n+1/2)} = \frac{ {\rm e}^{-\beta\hbar\omega/2}}{1-{\rm e}^{-\beta\hbar\omega}}</script><p>其高温极限</p>
+<script type="math/tex; mode=display">
+\lim_{\beta\to 0} Z_{\rm vib}^{\rm qt.} = \frac{1}{\hbar\beta\omega}</script><p>可见，只要我们将经典相空间的测度$h$与量子力学中的普朗克常数联系起来：$h/2\pi = \hbar$，那么量子归一化系数$Z_{\rm vib}^{\rm qt.}$的高温极限就是经典配分函数。</p>
+<p>该法向振动模式能量的量子期望值是</p>
+<script type="math/tex; mode=display">
+E_{\rm vib}^{\rm qt.} = \frac{1}{2}\hbar\omega + \hbar\omega \frac{ {\rm e}^{-\beta\hbar\omega}}{1-{\rm e}^{-\beta\hbar\omega}} = \frac{1}{2}\hbar\omega + \hbar\omega \frac{ {\rm e}^{-\beta\hbar\omega}}{1-{\rm e}^{-\beta\hbar\omega}}  = E_0 + k_B \theta_{\rm vib} \frac{ {\rm e}^{ -\theta_{\rm vib}/T} }{ 1 - {\rm e}^{ -\theta_{\rm vib}/T} }</script><p>其中第一项是来自零温真空的量子涨落，第二项描述了有限温度时的热涨落能量，$\theta_{\rm vib} = \hbar\omega/k_B$是振动特征温度。上式给出与温度相关的热容：</p>
+<script type="math/tex; mode=display">
+C_V^{\rm qt.} = \frac{ {\rm d}E_{\rm vib}^{\rm qt.}}{\ {\rm d}T} = k_B \left( \frac{\hbar\omega}{k_B T} \right)^2 \frac{ {\rm e}^{-\beta\hbar\omega}}{(1-{\rm e}^{-\beta\hbar\omega})^2} = k_B \left( \frac{\theta_{\rm vib} }{T} \right)^2 \frac{ {\rm e}^{ -\theta_{\rm vib}/T} }{ (1 - {\rm e}^{ -\theta_{\rm vib}/T})^2 }</script><p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240411164055939.png" alt="image-20240411164055939"></p>
+<p>可以看到：</p>
+<ul>
+<li>在高温$T\gg\theta_{\rm vib}$时，热容会接近$k_b$；</li>
+<li>在低温$T\ll\theta_{\rm vib}$时，热容会以指数$\sim \exp(-\theta_{\rm vib}/T)$衰减至接近$0$；</li>
+</ul>
+<p>振动特征温度$\theta_{\rm vib} = \hbar\omega/k_B$与振动能级$\hbar\omega$相关，其典型值是$10^3 \sim 10^4\ {\rm  K}$，这就解释了为什么经典热容只会在高温时才会与实验值一致。</p>
+<h3 id="整体转动模式"><a href="#整体转动模式" class="headerlink" title="整体转动模式"></a>整体转动模式</h3><p>为解释双原子分子在低温时的热容，还需要研究转动自由度的量子化。</p>
+<p>为写出转动模式哈密顿量，借助拉格朗日量比较方便，经典理论中，一个双原子分子的取向可以由两个角度参数$\theta$和$\phi$描述，其转动动能用拉格朗日量的形式写为</p>
+<script type="math/tex; mode=display">
+\mathcal L_{\rm rot} = \frac{1}{2}I\dot{\vec\Omega}^2 = \frac{1}{2}I\left( \dot\theta^2 +  \dot\phi^2\sin^2\theta \right)</script><p>其共轭动量分别是</p>
+<script type="math/tex; mode=display">
+p_\theta = I\dot\theta \qquad p_\phi = I \dot\phi \sin^2\theta</script><p>哈密顿量就是</p>
+<script type="math/tex; mode=display">
+\mathcal H_{\rm rot} = \frac{1}{2I}\left( p_\theta^2 + \frac{p_\phi^2}{\sin^2\theta} \right) \equiv \frac{\vec L^2}{2I}</script><p>其中$L$是角动量。这给出经典配分函数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z_{\rm rot}^{\rm cl.} &= \frac{1}{h^2}\int_0^\pi{\rm d}\theta \int_0^{2\pi}{\rm d}\phi \int_{-\infty}^{+\infty}{\rm d}p_\theta {\rm d}p_\phi \exp\left[ -\frac{\beta}{2I}\left( p_\theta^2 + \frac{p_\phi^2}{\sin^2\theta} \right) \right]\\
+&= \left(\frac{4\pi}{h^2}\right)^2 \frac{2 I}{\beta}
+\end{aligned}</script><p>该模式存储能量为</p>
+<script type="math/tex; mode=display">
+\langle \mathcal H_{\rm rot} \rangle^{\rm cl.} = -\frac{\partial\ln Z}{\partial\beta} = \frac{1}{\beta} = k_B T</script><p>正如我们对于棒状分子所期待的那样，具有两个整体旋转自由度。</p>
+<p>而在量子力学中，已经知道角动量只能取量子化的值：</p>
+<script type="math/tex; mode=display">
+\vec L^2 = \hbar^2 \ell (\ell+1) \qquad \ell = 0,1,2,\dots</script><p>并且每个值都有$2\ell+1$重简并，对应于角动量分量的取值：</p>
+<script type="math/tex; mode=display">
+L_z = \hbar m_\ell \qquad m_\ell = -\ell,-\ell+1,\dots,\ell-1,\ell</script><p>因此可以从这些取值中得到概率归一化因子：</p>
+<script type="math/tex; mode=display">
+Z_{\rm rot}^{\rm qt.} = \sum_{\ell=0}^\infty \exp\left[ -\frac{\beta}{2I} \hbar^2 \ell (\ell+1) \right] (2\ell+1) = \sum_{\ell=0}^\infty \exp\left[ -\frac{\theta_{\rm rot}}{T}\ell(\ell+1) \right](2\ell+1)</script><p>其中$\theta_{\rm rot} = \hbar^2/(2Ik_B)$是转动特征温度。上述求和一般来说难以解析计算出，但可以分析其在高温和低温时的极限行为：</p>
+<ul>
+<li><p>在高温$T\gg\theta_{\rm rot}$时，上式中指数随$\ell$的变化非常缓慢，求和可以近似为积分：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\lim_{\beta\to 0} Z_{\rm rot}^{\rm qt.} &= \int_{0}^\infty {\rm d}x\exp\left[ -\frac{\theta_{\rm rot}}{T}x(x+1) \right](2x+1)\\
+&=\int_0^\infty{\rm d}y\exp\left[ -\frac{\theta_{\rm rot}y}{T} \right]\\
+&=\frac{T}{\theta_{\rm rot}} = Z_{\rm rot}^{\rm cl.}
+\end{aligned}</script><p>就得到经典的结果；</p>
+</li>
+<li><p>在低温$T\ll\theta_{\rm vib}$时，求和主要由前面几项主导，</p>
+<script type="math/tex; mode=display">
+\lim_{\beta\to \infty} Z_{\rm rot}^{\rm qt.} = 1 + 3 {\rm e}^{-2\theta_{\rm rot}/T} + \mathcal O({\rm e}^{-6\theta_{\rm rot}/T})</script><p>这给出能量是</p>
+<script type="math/tex; mode=display">
+E_{\rm rot}^{\rm qt.} = 6 k_B \theta_{\rm rot} {\rm e}^{-2\theta_{\rm rot}/T} + \cdots</script><p>热容</p>
+<script type="math/tex; mode=display">
+C_{\rm rot}^{\rm qt.} = 3k_B\left( \frac{2\theta_{\rm rot}}{T} \right)^2 {\rm e}^{-2\theta_{\rm rot}/T} + \cdots</script></li>
+</ul>
+<p>综上，整体转动模式的热容随温度的变化如图</p>
+<p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240411184104120.png" alt="image-20240411184104120"></p>
+<p>其行为与振动模式是类似的，会在低温时冻结。一般来说，转动特征温度$\theta_{\rm rot}$典型值是$1\sim10\ {\rm K}$，远低于振动特征温度的典型值。</p>
+<p>因此，如果考虑量子的能级离散效应，就可以解释在实验上看到的气体热容随温度变化的现象：当温度很高时，平动、转动、振动自由度均被激发，此时的热容值接近于对自由度分析的结果；当温度下降时，首先会低于振动特征温度$\theta_{\rm vib}$，此后振动能级将会难以激发从而保持在基态，热容只剩平动和转动模式的贡献；温度进一步下降到转动特征温度$\theta_{\rm rot}$以下时，转动能级也难以激发，于是此时的热容仅剩分子整体平动的贡献，因此与单原子分子的热容接近。</p>
+<p>在后面的量子统计将会看到，在更低温时，热容会进一步下降为零。</p>
+<h1 id="固体振动"><a href="#固体振动" class="headerlink" title="固体振动"></a>固体振动</h1><p>本节开始引入分子间的相互作用。</p>
+<p>粒子间的相互吸引势将会导致气体在低温时首先凝聚为液态，在更低温时进一步凝固为固态。固态时，分子几乎被完全束缚在一个确定的位置而不能进行平动或转动，仅可以在平衡位置附近以一定的频率做微小振动。</p>
+<p>为讨论固体的热力学，可以将固体视为一个“大分子”，构成它的每个“原子”就是实际的物质分子，且整个固体“大分子”中的“原子数”$n$就是固体中的实际物质分子数$N$，即令$n=N\gg1$。并且我们暂时不考虑每个分子内部的结构和运动，将其视作单原子分子；同时我们也不会考虑整块固体的平动和转动，因此它的热容实际上几乎全部来自内部分子的振动，并且可以期待在极低温时由于振动自由度的“冻结”，固体热容将会降低到零。这样就可以直接利用上一节的结论来研究固体性质。具体来说：</p>
+<p>通过最小化固体内部的分子间势能$\mathcal V$，来获得固体的经典基态构型。几乎所有情况下，最低能量条件都会让分子形成周期性排列的<strong>晶格</strong>。可以引入三个基矢$\hat a$，$\hat b$，$\hat c$来将一个简单晶体中的分子坐标表示为：</p>
+<script type="math/tex; mode=display">
+\vec q^0(\ell,m,n) = \ell\hat a + m\hat b + n\hat c \equiv \vec r</script><p>其中$\{(\ell,m,n)\}$是整数的三元组。</p>
+<p>在有限温度时，分子可以在其平衡位置附近发生微小振动，</p>
+<script type="math/tex; mode=display">
+\vec q_{\vec r} = \vec r + \vec u(\vec r)</script><p>振动能量是</p>
+<script type="math/tex; mode=display">
+\mathcal V = \mathcal V^0 + \frac12 \sum_{\vec r,\vec r'}^N \sum_{\alpha,\beta=1}^3 \frac{\partial^2 \mathcal V}{\partial q_{\vec r,\alpha}\partial q_{\vec r',\beta}} u_{\alpha}(\vec r) u_{\beta}(\vec r') + \mathcal O(u^3)</script><p>寻找晶体振动的简正模式。由于晶格平移对称性的存在，简正模式的寻找将会大大简化，具体来说：二阶导数矩阵将仅依赖于两点之间相对距离：</p>
+<script type="math/tex; mode=display">
+\frac{\partial^2 \mathcal V}{\partial q_{\vec r,\alpha}\partial q_{\vec r',\beta}} = K_{\alpha\beta}(\vec r-\vec r')</script><p>且$K(\vec r-\vec r’) = K(\vec r’-\vec r)$。根据这一性质，总可以将二阶导数矩阵分块对角化。这要利用傅立叶变换</p>
+<script type="math/tex; mode=display">
+u_\alpha(\vec r) = \sum_{\vec k}^{'}\frac{ {\rm e}^{ {\rm i}\vec k\cdot\vec r}}{\sqrt N}\widetilde u_\alpha(\vec k)</script><p>由$\vec k$和$\alpha$指标确定的一种特定的晶体振动简正模式，在物理上对应于固体中传播的<strong>声波</strong>。其中$\vec k$是声波的<strong>波矢</strong>，大小是波长的倒数$k = 2\pi/\lambda$；指标$\alpha$​对应于声波的<strong>极化</strong>，三个独立的极化包括1个纵向极化和2个横向极化。</p>
+<p>晶格中有意义的波矢长度应当存在一个上限$|\vec k| &lt; k_{\rm max}$，例如对于简单正方晶格$k &lt; k_{\rm max} = \pi/a$，其中$a$是格点之间的最短格距；超过这个大小的波矢对应于波长$\lambda&lt;2a$，这是没有意义的。这个$\vec k$的区域称为<strong>（第一）布里渊区</strong>。上面傅立叶变换中上标$’$表示在布里渊区内对波矢求和。</p>
+<p>利用傅立叶变换，将振动能量表示为</p>
+<script type="math/tex; mode=display">
+\mathcal V = \mathcal V^0 + \frac{1}{2N} \sum_{\vec k,\vec k'}^{'} \sum_{\vec r,\vec r'}^N \sum_{\alpha,\beta=1}^3 K_{\alpha\beta}(\vec r-\vec r') {\rm e}^{ {\rm i}\vec k\cdot\vec r} u_{\alpha}(\vec r) {\rm e}^{ {\rm i}\vec k\cdot\vec r} u_{\beta}(\vec r)</script><p>将每一对在$K_{\alpha\beta}$中成对出现的坐标重新表示为相对它们中心的相对坐标：</p>
+<script type="math/tex; mode=display">
+\vec r = \vec R + \frac{\vec \rho}{2} \qquad \vec r' = \vec R - \frac{\vec \rho}{2}</script><p>则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal V &= \mathcal V^0 + \frac{1}{2N} \sum_{\vec k,\vec k'}^{'} \sum_{\alpha,\beta=1}^3 \left( \sum_{\vec R} {\rm e}^{ {\rm i}(\vec k + \vec k')\cdot\vec R} \right) \left( \sum_{\vec \rho}  K_{\alpha\beta}(\vec \rho) {\rm e}^{ {\rm i}(\vec k-\vec k')\cdot\vec \rho/2} \widetilde u_{\alpha}(\vec k) \widetilde u_{\beta}(\vec k') \right) \\
+&= \mathcal V^0 + \frac12 \sum_{\vec k,\alpha,\beta}^{'} \left[ \sum_{\vec \rho}  K_{\alpha\beta}(\vec \rho) {\rm e}^{ {\rm i}\vec k\cdot\vec \rho} \right] \widetilde u_{\alpha}(\vec k)\widetilde u_{\beta}(-\vec k) \\
+&= \mathcal V^0 + \frac12 \sum_{\vec k,\alpha,\beta}^{'} \widetilde K_{\alpha\beta}(\vec k)\widetilde u_{\alpha}(\vec k)\widetilde u^*_{\beta}(\vec k)
+\end{aligned}</script><p>因此，波矢$\vec k$不同的傅立叶模就在二次项中解耦，原本$3N\times 3N$的二阶导数矩阵被分块对角化为了若干具有不同波矢$\vec k$的$3\times3$矩阵$\widetilde K_{\alpha\beta}(\vec k)$，而它的具体形式又进一步受到晶格点群对称性的限制。</p>
+<p>简单起见，可以考虑最简单的一种情况即<strong>各向同性材料</strong>，此时$\widetilde K_{\alpha\beta}(\vec k) = \delta_{\alpha\beta}\widetilde K(\vec k)$也是对角化的，并且是常数矩阵。这就确定了晶体振动的简正模式，描述其形变的经典哈密顿量写为</p>
+<script type="math/tex; mode=display">
+\mathcal H^{\rm cl.} = \mathcal V^0 + \sum_{\vec k,\alpha}^{'} \left[ \frac{1}{2m} \left|\widetilde p_\alpha(\vec k)\right|^2 + \frac{\widetilde K(\vec k)}{2} \left|\widetilde u_\alpha(\vec k)\right|^2 \right]</script><p>这描述了$3N$个独立的简谐振子，每个的角频率是$\omega_\alpha(\vec k) = \sqrt{\widetilde K(\vec k)/m}$。</p>
+<p>在经典统计力学观点来看，每个具有非零劲度系数的简正模分别提供$k_BT$的能量（两个二次项），而其中最多有$6$个简正模（分别对应固体的整体平动和转动）可能具有零劲度系数，因此上面的哈密顿量会给出与振动相关的内能的经典结果是$3Nk_BT$，至多相差$1/N$的非广延修正。这会给出与温度无关的热容，而再次与实验结果不同：实验上会看到热容在低温时消失。</p>
+<p>与上一节类似，必须要考虑量子效应。固体晶格振动的简正模式（声波）对应的量子化激发被称为<strong>声子</strong>。将上面哈密顿量中每个简谐振子都量子化，得到：</p>
+<script type="math/tex; mode=display">
+\mathcal H^{\rm qt.} = \mathcal V^0 + \sum_{\vec k,\alpha}^{'} \hbar\omega_\alpha(\vec k) \left( n_{\vec k,\alpha} + \frac12 \right)</script><p>其中整数组$\{n_{\vec k,\alpha}\}$描述了固体的微观量子态。各个简谐振子都是相互独立的，于是</p>
+<script type="math/tex; mode=display">
+Z^{\rm qt.} = \sum_{\{n_{\vec k,\alpha}\}} {\rm e}^{-{\beta\mathcal H^{\rm qt.}}} = {\rm e}^{-\beta E_0} \prod_{\vec k,\alpha}^{'} \sum_{n_{\vec k,\alpha}} {\rm e}^{-\beta\hbar\omega_\alpha(\vec k)(n_{\vec k,\alpha}+1/2)} = {\rm e}^{-\beta E_0}\prod_{\vec k,\alpha}^{'} \frac{ {\rm e}^{-\beta\hbar\omega_\alpha(\vec k)/2}}{1-{\rm e}^{-\beta\hbar\omega_\alpha(\vec k)}}</script><p>可见，它就是在上一节得到的单个简谐振子的因子$Z_{\rm vib}^{\rm qt.}$的乘积。内能是</p>
+<script type="math/tex; mode=display">
+E^{\rm qt.} = E_0 + \sum_{\vec k,\alpha}^{'} \frac{\hbar\omega_{\vec k,\alpha}}{2} + \sum_{\vec k,\alpha}^{'} \hbar\omega_{\vec k,\alpha}(\vec k) \left\langle n_{\vec k,\alpha}(\vec k) \right\rangle = E_0^* + \sum_{\vec k,\alpha}^{'} \hbar\omega_{\vec k,\alpha}(\vec k) \left\langle n_{\vec k,\alpha}(\vec k) \right\rangle</script><p>其中$E_0^<em>$除了$\mathcal V^</em>$对应的能量，还包括所有简谐振子的基态能量；$\left\langle n_{\vec k,\alpha}(\vec k) \right\rangle$是平均占据数，由下面给出</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\left\langle n_{\vec k,\alpha}(\vec k) \right\rangle &= \frac{\sum_{n=0}^\infty n {\rm e}^{-\beta\hbar\omega_\alpha(\vec k)n}}{\sum_{n=0}^\infty {\rm e}^{-\beta\hbar\omega_\alpha(\vec k)n}}\\
+&= - \frac{\partial}{\partial (\beta\hbar\omega_\alpha(\vec k))}\ln\frac{1}{1-{\rm e}^{-\beta\hbar\omega_\alpha(\vec k)}}\\
+&= \frac{ {\rm e}^{-\beta\hbar\omega_\alpha(\vec k)}}{1-{\rm e}^{-\beta\hbar\omega_\alpha(\vec k)}}\\
+&= \frac{1}{ {\rm e}^{ \beta\hbar\omega_\alpha(\vec k)}-1}
+\end{aligned}</script><p>从而内能是</p>
+<script type="math/tex; mode=display">
+E^{\rm qt.} = E_0^* + \sum_{\vec k,\alpha}^{'} \frac{\hbar\omega_{\vec k,\alpha}(\vec k)}{ {\rm e}^{ \beta\hbar\omega_\alpha(\vec k)}-1}</script><p>下面的讨论将基于这个式子。</p>
+<h2 id="爱因斯坦模型"><a href="#爱因斯坦模型" class="headerlink" title="爱因斯坦模型"></a>爱因斯坦模型</h2><p>作为首次考虑量子力学效应的尝试，我们可以采用<strong>爱因斯坦模型</strong>，<u>假设所有的简谐振子都具有相同的角频率$\omega_E$​。</u>这一模型描述的是大量由相同劲度系数$K = m\omega^2$的弹簧所固定在平衡位置附近的粒子。内能的结果是</p>
+<script type="math/tex; mode=display">
+E = E_0^* + 3N \frac{\hbar\omega_E}{ {\rm e}^{ \beta\hbar\omega_E}-1} = E_0^* + 3N \hbar\omega_E \frac{ {\rm e}^{ -\beta\hbar\omega_E} }{ 1 - {\rm e}^{ -\beta\hbar\omega_E} } = E_0^* + 3N k_B \theta_E \frac{ {\rm e}^{ -\theta_E/T} }{ 1 - {\rm e}^{ -\theta_E/T} }</script><p>热容</p>
+<script type="math/tex; mode=display">
+C = \frac{ {\rm d}E}{ {\rm d}T} = 3Nk_B \left( \frac{\theta_E}{T} \right)^2 \frac{ {\rm e}^{ -\theta_E/T} }{ (1 - {\rm e}^{ -\theta_E/T})^2 }</script><p>它们都以$3N$正比于上一节得到的单个简谐振子的结果；其中特征温度</p>
+<script type="math/tex; mode=display">
+\theta_E = \frac{\hbar\omega_E}{k_B}</script><p>称为<strong>爱因斯坦温度</strong>。特别地，当极低温时，上式预言热容将会以指数$\sim\exp(-\theta_E/T)$衰减至零。</p>
+<p>实验观察到极低温时热容的确会衰减到零，但是其衰减行为是更以缓慢的$\sim T^3$的形式而非指数形式，这说明爱因斯坦模型的假设——即所有简谐振子的频率相同——过于粗糙。</p>
+<h2 id="德拜模型"><a href="#德拜模型" class="headerlink" title="德拜模型"></a>德拜模型</h2><p>为解决这一差异，可以转而采用<strong>德拜模型</strong>，它强调<u>在低温时，对热容的主要贡献仅来自于最低频率的简谐振子</u>，因为它们最容易被激发。</p>
+<p>低能的模式对应于小的波矢$k = |\vec k|$或长的波长$\lambda = 2\pi/k$；其极限情况是$k = 0$或$\lambda\to\infty$，描述的是晶格的整体平移，这不是振动的简正模式因而对应于零本征值，$\widetilde K(\vec k=\vec 0)=0$。我们希望$\lim_{k\to 0}\widetilde K(\vec k) = \widetilde K(\vec 0) = 0$，于是在小波矢附近有如下展开</p>
+<script type="math/tex; mode=display">
+\widetilde K(\vec k) = B k^2 + \mathcal O(k^4)</script><p>式中没有奇数阶项，因为$K(\vec r-\vec r’) = K(\vec r’-\vec r)$给出$\widetilde K(\vec k) = \widetilde K(-\vec k)$。其对应的频率</p>
+<script type="math/tex; mode=display">
+\omega(\vec k) \approx \sqrt{\frac{Bk^2}{m}} = vk</script><p>上面频率和波矢的关系称为<strong>色散关系</strong>。上式表明，在低频时，色散关系近似是线性的。其中$v = \sqrt{B/m}$是晶体中的<strong>声速</strong>；在各向同性介质中，不同极化$\alpha$的声波具有相同的速度。如果一般各向异性的晶体，不满足$\widetilde K_{\alpha\beta}(\vec k) = \delta_{\alpha\beta}\widetilde K(\vec k)$的假设，那么声波的不同极化也具有不同的速度，色散关系可能有多个分支，但它们在低频区都应当分别是线性的。</p>
+<p>在低温时，内能主要来自低能声子的贡献，利用色散关系可以写为：</p>
+<script type="math/tex; mode=display">
+E^{\rm qt.} = E_0^* + \sum_{\vec k,\alpha}^{'} \frac{\hbar vk}{ {\rm e}^{ \beta\hbar vk}-1}</script><p>对布里渊区中全部可能的波矢$\vec k$和极化$\alpha$求和。考虑如何做上式的求和，就需要考察$\vec k$在动量空间的分布。假设在箱$V = L_x \times L_y \times L_z$设置周期性边界条件，允许的波矢只有</p>
+<script type="math/tex; mode=display">
+\vec k = \left( \frac{2\pi n_x}{L_x} , \frac{2\pi n_y}{L_y} , \frac{2\pi n_z}{L_z} \right)</script><p>其中$\{n_x,n_y,n_z\}$都是整数。在箱体积$V\to\infty$极限下，用<strong>态密度$\rho$</strong>表示单位体积${\rm d}\vec k$内的允许模式数：</p>
+<script type="math/tex; mode=display">
+{\rm d}\mathcal N = \frac{ {\rm d}k_x}{2\pi/L_x} \frac{ {\rm d}k_y}{2\pi/L_y} \frac{ {\rm d}k_z}{2\pi/L_z} = \frac{V}{(2\pi)^3}{\rm d}^3\vec k \equiv \rho {\rm d}^3\vec k</script><p>于是就可以将求和替换为积分：</p>
+<script type="math/tex; mode=display">
+\lim_{V\to\infty} \sum_{\vec k}f(\vec k) = \int{\rm d}^3\vec k \rho f(\vec k)</script><p>于是能量就是</p>
+<script type="math/tex; mode=display">
+E = E_0^* + 3V \int_{\rm B.Z.} \frac{ {\rm d}^3k}{(2\pi)^3} \frac{\hbar vk}{ {\rm e}^{ \beta\hbar vk}-1}</script><p>上式中的积分是对整个布里渊区进行，结果依赖于布里渊区的形状，因而不可能给出一个能量的简单表达式。但是，可以考察它的高温和低温极限。两个极限由<strong>德拜温度</strong>决定：</p>
+<script type="math/tex; mode=display">
+\theta_D = \frac{\hbar v k_{\rm max}}{k_B} \approx \frac{\hbar v}{k_B}\frac{\pi}{a}</script><ul>
+<li><p>当$T\gg \theta_D$，所有模式的行为都与经典相同。上式中被积函数近似为$k_BT$；由于总模式数就是$3N = 3V\int_{\rm B.Z.}{\rm d}^3k/(2\pi)^3$，因此能量得到与经典一致的结果：</p>
+<script type="math/tex; mode=display">
+\lim_{T\gg\theta_D}E = E_0^* + 3Nk_BT</script><script type="math/tex; mode=display">
+\lim_{T\gg\theta_D}C = 3Nk_BT</script></li>
+<li><p>当$T\ll \theta_D$，由于被积函数中的因子${\rm e}^{ \beta\hbar vk}$在布里渊区边界处最大，而在小$k$处很小，因此整个被积函数的主要贡献几乎全部来自小$k$处，并且可以将积分区域推广至无穷区域而仅带来很小的误差。此时积分近似为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\lim_{T\ll\theta_D}E &\approx E_0^* + \frac{3V}{8\pi^3} \left( \frac{k_BT}{\hbar v} \right)^3 4\pi k_BT \int_0^\infty{\rm d}x\frac{x^3}{ {\rm e}^x - 1}\\
+&= E_0^* + \frac{\pi^2}{10}V \left( \frac{k_BT}{\hbar v} \right)^3 k_B T\\
+&= E_0^* + \frac{\pi^2}{10}V k_BT [k^*(T)]^3
+\end{aligned}</script><script type="math/tex; mode=display">
+\lim_{T\ll\theta_D}C = \frac{2\pi^2}{5}Vk_B\left( \frac{k_BT}{\hbar v} \right)^3 = \frac{2\pi^2}{5}Vk_B [k^*(T)]^3</script><p>其中</p>
+<script type="math/tex; mode=display">
+k^*(T) = \frac{k_B T}{\hbar v}</script><p>是温度$T$时的特征频率，也即此时可以被激发模式的最大频率。</p>
+</li>
+</ul>
+<p>可见，德拜模型预言在高温时热容与经典结果一致，而在低温时热容具有$C \propto Nk_B(T/\theta_D)^3$的行为，这符合实验结果。这一行为的物理解释是：当$T\ll\theta_D$时，仅有$\hbar\omega \simeq \hbar v k &lt; k_BT$的低频声子可以被热激发，其波矢大小$|\vec k| &lt; (k_B T/\hbar v)$；在$d$维空间体积为$V$的区域中这样的模式数约为$V(k_B T/\hbar v)^d$。每个被激发的模式被视为经典谐振子，提供约$k_BT$的能量，因此内能$E\sim Vk_BT(k_B T/\hbar v)^d$，内能$C\sim Vk_B(k_B T/\hbar v)^d$，因此以$\sim T^d$形式降至零。</p>
+<h1 id="黑体辐射"><a href="#黑体辐射" class="headerlink" title="黑体辐射"></a>黑体辐射</h1><p>上一节讨论的是固体介质的振动，其简正模式的激发对应于所谓“声子”；在气体或液体中，简正振动也对应于声音模式，于是对于振动模式的统计力学描述，本质上是对声子的统计。而即便是空的“真空”，其中也可以存在一种“振动”——电磁场的振荡， 即电磁波。</p>
+<p>考虑被局限在确定体积$V = L^3$箱中的电磁场，其简正模式——电磁波也可以在有限温度下被激发，这样的激发同样可以由波矢$\vec k$和极化$\alpha$来描述，只不过电磁波极化只有两个独立的横向极化，而没有纵向极化。在合适的坐标系下，电磁场的哈密顿量可以写为：</p>
+<script type="math/tex; mode=display">
+\mathcal H^{\rm cl.} = \frac12 \sum_{\vec k,\alpha} \left[ \left|\widetilde p_\alpha(\vec k)\right|^2 + \omega_\alpha^2(\vec k) \left|\widetilde u_\alpha(\vec k)\right|^2 \right]</script><p>其中光子的色散关系是简单的线性关系$\omega_\alpha(\vec k) = ck$，$c$是真空光速。</p>
+<p>上面哈密顿量的形式与前一节中的形式非常相似，但是与之不同的是，电磁波的波矢$\vec k$没有布里渊区的限制，因此周期性边界条件下$\vec k = 2\pi(n_x,n_y,n_z)/L$中的整数$n_x,n_y,n_z$可以任意大。如果直接类比上一节的处理方法，这会导致<strong>紫外灾难</strong>：每个模式分配$k_BT$​的能量，但没有高频限制导致高频模式数无穷多，相应的能量也无穷大（低频实际上也存在相应的能量发散，称为红外灾难，但是被有限体积箱截断了）。</p>
+<h2 id="光子气的能量与压强"><a href="#光子气的能量与压强" class="headerlink" title="光子气的能量与压强"></a>光子气的能量与压强</h2><p>普朗克提出电磁场的能量量子化假设，电磁场的量子化激发被称为<strong>光子</strong>，解决了这一疑难。光子能量是</p>
+<script type="math/tex; mode=display">
+\mathcal H^{\rm qt.} = \sum_{\vec k,\alpha} \hbar c k \left( n_{\vec k,\alpha} + \frac12 \right)</script><p>与声子类似，归一化系数</p>
+<script type="math/tex; mode=display">
+Z^{\rm qt.} = \sum_{\{n_{\vec k,\alpha}\}} {\rm e}^{-{\beta\mathcal H^{\rm qt.}}} = \prod_{\vec k,\alpha} \sum_{n_{\vec k,\alpha}} {\rm e}^{-\beta\hbar c k(n_{\vec k,\alpha}+1/2)} = \prod_{\vec k,\alpha}^{'} \frac{ {\rm e}^{-\beta\hbar c k/2}}{1-{\rm e}^{-\beta\hbar c k}}</script><p>光子气的内能是</p>
+<script type="math/tex; mode=display">
+E^{\rm qt.} = V E_0 + \sum_{\vec k,\alpha} \frac{\hbar c k}{ {\rm e}^{ \beta\hbar c k}-1} = V E_0 + \frac{2V}{(2\pi)^3}\int {\rm d}^3 k \frac{\hbar c k}{ {\rm e}^{ \beta\hbar c k}-1}</script><p>其中真空零点能$E_0$实际上是发散的，但由于能量只有相对值才有意义，因此可以被忽略。于是有效能量密度是</p>
+<script type="math/tex; mode=display">
+\frac{E}{V} = \frac{\hbar c}{\pi^2} \left(\frac{k_BT}{\hbar c}\right)^4 \int_0^\infty {\rm d}x \frac{x^3}{ {\rm e}^x - 1} = \frac{\pi^2}{15} \left(\frac{k_BT}{\hbar c}\right)^4 k_BT</script><p>另一方面，光子对箱壁也产生压强——光压。根据$Z^{\rm qt.}$，若将之视作正则配分函数则可得到自由能</p>
+<script type="math/tex; mode=display">
+F = -k_BT\ln Z^{\rm qt.} = 2V \int \frac{ {\rm d}^3 k}{(2\pi)^3} \left[ \frac{\hbar c k}{2} + k_BT \ln (1-{\rm e}^{-\beta\hbar c k}) \right]</script><p>利用分部积分，可得压强</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P &= -\left.\frac{\partial F}{\partial V} \right|_T\\
+&= -\int \frac{ {\rm d}^3 k}{(2\pi)^3} \left[ \hbar c k + 2 k_BT \ln (1-{\rm e}^{-\beta\hbar c k}) \right]\\
+&= P_0 - \frac{k_BT}{\pi^2}\int_0^\infty {\rm d}k\ k^2 \ln(1-{\rm e}^{-\beta\hbar c k})\\
+&= P_0 + \frac{k_BT}{\pi^2}\int_0^\infty {\rm d}k \frac{k^3}{3}\frac{\beta\hbar c {\rm e}^{-\beta\hbar c k}}{1-{\rm e}^{-\beta\hbar c k}}\\
+&= P_0 + \frac13 \frac{E}{V}
+\end{aligned}</script><p>这里也存在零点压强$P_0 = \hbar c \int\widetilde{ {\rm d}k} k$，但它不能忽略，具有可观测的物理效应——卡西米尔效应。除了这一项外，压强以一个$1/3$的因子正比于能量密度，这接近相对论性气体的压强量级。</p>
+<h2 id="黑体辐射-1"><a href="#黑体辐射-1" class="headerlink" title="黑体辐射"></a>黑体辐射</h2><p>继续类比粒子气体，若在箱壁上开一个小孔，那么箱内单位时间通过孔洞单位面积流失的能量是</p>
+<script type="math/tex; mode=display">
+\phi = \langle c_\perp \rangle \frac{E}{V}</script><p>所有光子速度大小都是$c$，于是其垂直分量的期望是</p>
+<script type="math/tex; mode=display">
+\langle c_\perp \rangle = c \frac{1}{4\pi} \int_0^{\pi/2} 2\pi \sin\theta \cos\theta {\rm d}\theta = \frac{c}{4}</script><p>于是</p>
+<script type="math/tex; mode=display">
+\phi = \frac{c}{4}\frac{E}{V} = \frac{\pi^2}{60}\frac{k_B^4 T^4}{\hbar^3 c^2} = \sigma T^4</script><p>这正是黑体辐射的<strong>斯特藩-玻尔兹曼定律</strong>，与实验结果一致。斯特藩常数是：$\sigma = \pi^2 k_B^4/60\hbar^3 c^2\approx 5.67\times 10^{-8}\ {\rm W m^{-2}K^{-4}}$。</p>
+<p>现在就可以考察黑体辐射关于频率的分布，令$E(T)/V = \int{\rm d}k \mathcal E(k,T)$，那么</p>
+<script type="math/tex; mode=display">
+\mathcal E(k,T) = \frac{\hbar c}{\pi^2} \frac{k^3}{ {\rm e}^{ \beta\hbar c k} - 1}</script><p>于是在$[k,k+{\rm d}k]$之间的辐射通量就是$I(k,T){\rm d}k$，其中</p>
+<script type="math/tex; mode=display">
+I(k,T) = \frac{c}{4}\mathcal E(k,T) = \frac{\hbar c^2}{4\pi^2}\frac{k^3}{ {\rm e}^{ \beta\hbar c k} - 1} = 
+\begin{dcases}
+\frac{c}{4\pi}k^2k_BT &{\rm for\ }k\ll k^*(T) = \frac{k_BT}{\hbar c}\\
+\frac{\hbar c^2}{4\pi^2}k^3 {\rm e}^{-\beta\hbar c k} &{\rm for\ }k\gg k^*(T) = \frac{k_BT}{\hbar c}
+\end{dcases}</script><p>可以看到，无论是高频还是低频区段，辐射通量都显著下降，具体来说：低频区段表现得与经典行为接近，因为低频模式远低于特征频率，可以被自由激发。而高频区段显著受到量子效应的影响，能量的量子化导致提供了一个黑体辐射能量的上限截断，以避免了紫外灾难。</p>
+<h1 id="量子微观态"><a href="#量子微观态" class="headerlink" title="量子微观态"></a>量子微观态</h1><p>在前面几节中，我们已经指出了经典统计力学的几个失效之处，并且看到如果引入能级量子化的假设就可以解释实验现象，并且看到了量子概率归一化系数$Z^{\rm qt.}$与经典统计配分函数之间紧密的对应关系。这暗示我们可以类比于经典统计力学，而建立一个量子的统计力学，其束缚态的微观状态由离散化能级描述，并且不同态之间概率分布的相对权重与玻尔兹曼因子一致。</p>
+<p>这种类比是需要被证明的。此外，量子力学本身天然还存在需要由概率性方式描述的不确定性，这与统计力学意义上的概率是本质不同的两种现象，因此在量子统计力学中，必须明确区分两种概率性的来源。</p>
+<h2 id="态的描述"><a href="#态的描述" class="headerlink" title="态的描述"></a>态的描述</h2><p>经典多粒子系统的微观态，由$6N$维相空间$\Gamma$中的一个点$\{\vec q_i,\vec p_i|i = 1,2,\dots,N\}$描述；</p>
+<p>量子多粒子系统的微观态，由复数域$\mathbb C$上的希尔伯特空间$H$（可以是无限维）中的一个归一化矢量$\ket\psi$所描述，因此即便描述同一个系统，量子态空间通常也比经典态空间大得多。</p>
+<p>态矢$\ket\psi$满足线性叠加原理，并且可以在适当的完备正交归一基$\{\ket e\}$中唯一确定地展开：</p>
+<script type="math/tex; mode=display">
+\ket\psi = \sum_e \bra{e} \ket{\psi} \ket{e}</script><p>其中$\braket{e}{\psi} = \braket{\psi}{e}^<em>$是两个矢量的内积，是一个复数；若将$e$视为变量，则$\braket{e}{\psi}$称为$\{\ket e\}$表象下的“<em>*波函数</em></em>”；例如坐标表象是$\ket {e} = \ket{(\vec q_i,\dots,\vec q_N) }$，那么</p>
+<script type="math/tex; mode=display">
+\psi(\vec q_1,\dots,\vec q_N) = \braket{(\vec q_i,\dots,\vec q_N)}{\psi}</script><p>在量子力学中，该波函数的物理诠释是：对态$\ket\psi$进行观测时，测量到其中$N$个粒子分别处于$\vec q_1,\dots,\vec q_N$位置的<strong>量子概率</strong>是$|\psi(\vec q_1,\dots,\vec q_N)|^2$。</p>
+<p>量子态的归一化条件是</p>
+<script type="math/tex; mode=display">
+\braket{\psi} = \sum_e \braket{\psi}{e}\braket{e}{\psi} = \sum_e |\braket{e}{\psi}|^2 = 1</script><p>例如，在$d$维空间中的前述多粒子波函数的归一化条件要求</p>
+<script type="math/tex; mode=display">
+\braket{\psi} = \int\prod_{i=1}^N {\rm d}^d\vec q_i |\psi(\vec q_1,\dots,\vec q_N)|^2 = 1</script><h2 id="可观测量的描述"><a href="#可观测量的描述" class="headerlink" title="可观测量的描述"></a>可观测量的描述</h2><p>经典理论可观测量是相空间上的实数值函数$\mathcal O(\{\vec q_i,\vec p_i\})$，每个点具有确定的可观测量数值；</p>
+<p>量子理论可观测量是希尔伯特空间上的厄米算符$\hat {\mathcal O}$。特别地，哈密顿力学中同一个粒子的一组正则变量$p$、$q$的泊松括号满足$\{q_\alpha,p_\beta\} = \delta_{\alpha\beta}$，在量子力学中它们的<strong>对易子</strong>满足正则对易关系：</p>
+<script type="math/tex; mode=display">
+[\hat q_\alpha,\hat p_\beta] = \hat q_\alpha \hat p_\beta - \hat p_\beta \hat q_\alpha = {\rm i}\hbar \delta_{\alpha\beta}</script><p>其余对易子和不同粒子正则变量的对易子均为零。</p>
+<p>对于具有经典对应的量子可观测量，其算符$\hat{\mathcal O}$可以直接在经典表达式$\mathcal O(\{\vec q_i,\vec p_i\})$中将正则变量作对称化（例如，乘积$pq \to (pq + qp)/2$），再替换为算符$\hat q_i$、$\hat p_j$​，即可得到。</p>
+<p>特别地，在坐标表象下，</p>
+<script type="math/tex; mode=display">
+\hat q_i = q_i \ ;\quad \hat p_j = -{\rm i}\hbar \frac{\partial}{\partial q_j}</script><p>算符在一组完备正交基$\{\ket{e}\}$中，可以表示为矩阵的形式：</p>
+<script type="math/tex; mode=display">
+\hat{\mathcal O} = \sum_{e,\ell}\ket{e}\bra{e}\hat{\mathcal O}\ket{\ell}\bra{\ell} = \sum_{e,\ell} \mathcal O_{e\ell}\ket{e}\bra{\ell}</script><p>其中$\mathcal O_{e\ell} = \bra{e}\hat{\mathcal O}\ket{\ell}$称为算符的<strong>矩阵元</strong>。</p>
+<h2 id="可观测量的值"><a href="#可观测量的值" class="headerlink" title="可观测量的值"></a>可观测量的值</h2><p>经典力学中，特定经典微观态$\{\vec q_i,\vec p_i\}$上，某可观测量$\mathcal O$的值由函数$\mathcal O(\{\vec q_i,\vec p_i\})$唯一确定；</p>
+<p>量子力学中，特定量子微观态$\ket\psi$上，某可观测量$\mathcal O$的值不被唯一确定，而是一个随机变量，它的取值来自于算符$\hat{\mathcal O}$的<strong>本征值</strong>：</p>
+<script type="math/tex; mode=display">
+\hat{\mathcal O} \ket{\lambda} = o_\lambda \ket{\lambda}</script><p>其中厄米算符的本征值$o_\lambda$一定是实数，也就是实验上可能测量到的值；相应的$\ket{\lambda}$称为属于本征值$o_\lambda$的<strong>本征态</strong>；属于不同本征值的本征态相互正交。一个厄米算符可以具有多个不同的本征值$\{o_\lambda\}$，并且厄米算符总存在一组本征态，可以构成希尔伯特空间的一组完备正交基，并且在该基下算符是对角化的：</p>
+<script type="math/tex; mode=display">
+\hat{\mathcal O} = \sum_\lambda \mathcal O_{\lambda} \ket{\lambda}\bra{\lambda}</script><p>对可观测量$\mathcal O$进行观测时，将会随机以一定的概率测量到其算符$\hat{\mathcal O}$的某一个本征值$o_\lambda$，测得此值的概率是</p>
+<script type="math/tex; mode=display">
+P(o_\lambda) = |\braket{\lambda}{\psi}|^2</script><p>若态$\ket\psi$或本征态$\ket{\lambda}$未归一化，则上述概率还应除以它们的模长。</p>
+<p>在态$\ket\psi$​中，算符测量值的期望是</p>
+<script type="math/tex; mode=display">
+\langle \mathcal O \rangle = \bra{\psi} \hat{\mathcal O} \ket{\psi} = \sum_{\lambda,\rho}\braket{\psi}{\lambda}\bra{\lambda} \hat{\mathcal O} \ket{\rho}\braket{\rho}{\psi} = \sum_{\lambda,\rho} \mathcal O_{\lambda,\rho} \braket{\psi}{\lambda} \braket{\rho}{\psi}</script><p>例如，多粒子态的势能和动能分别是</p>
+<script type="math/tex; mode=display">
+\langle U(\{\vec q\}) \rangle = \int\prod_{i=1}^N \psi^*(\vec q_1,\dots,\vec q_N) U(\{\vec q\}) \psi(\vec q_1,\dots,\vec q_N)</script><script type="math/tex; mode=display">
+\langle K(\{\vec q\}) \rangle = \int\prod_{i=1}^N \psi^*(\vec q_1,\dots,\vec q_N) K\left(\left\{-{\rm i}\hbar \frac{\partial}{\partial q}\right\}\right) \psi(\vec q_1,\dots,\vec q_N)</script><h2 id="态的时间演化"><a href="#态的时间演化" class="headerlink" title="态的时间演化"></a>态的时间演化</h2><p>经典力学中，态的时间演化由哈密顿量$\mathcal H$所决定的<strong>哈密顿正则方程</strong>确定；</p>
+<p>量子力学中，态的时间演化由哈密顿量算符$\hat{\mathcal H}$所决定的<strong>薛定谔方程</strong>确定：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\partial}{\partial t}\ket{\psi(t)} = \hat{\mathcal H}(t) \ket{\psi(t)}</script><p>通常考虑不显含时的哈密顿量$\mathcal H(t) = \mathcal H$。为求解该方程，一个方便的做法是采取将$\mathcal H$<strong>对角化</strong>的基，即其本征态——能量本征态$\ket{n}$构成的完备正交基：</p>
+<script type="math/tex; mode=display">
+\hat{\mathcal H} \ket{n} = \mathcal E_n \ket{n}</script><p>其中$\mathcal E_n$是相应的能量本征值。能量本征态具有好的时间演化性质：</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\partial}{\partial t}\ket{n(t)} = \hat{\mathcal H} \ket{n(t)} = \mathcal E_n \ket{n(t)} \quad\Longrightarrow\quad \ket{n(t)} = {\rm e}^{-{\rm i}\mathcal E_n (t-t_0)/\hbar} \ket{n(t_0)}</script><p>即能量本征态的时间演化仅仅是附加一个相位，而这在物理上描述与原矢量相同的物理态，即能量本征态不会随时间演化。因此若将任意态按照能量本征态展开，那么它的时间演化就是：</p>
+<script type="math/tex; mode=display">
+\ket{\psi} = \sum_n \braket{n}{\psi}\ket{n}  \quad\Longrightarrow\quad \ket{\psi(t)} = \sum_{n }{\rm e}^{-{\rm i}\mathcal E_n (t-t_0)/\hbar} \braket{n}{\psi(t_0)}\ket{n}</script><p>可以用一个幺正算符：时间演化算符来联系两个时刻的态矢量</p>
+<script type="math/tex; mode=display">
+\ket{\psi(t)} = U(t,t_0)\ket{\psi(t_0)}</script><p>它也满足薛定谔方程${\rm i}\hbar\partial_t U(t,t_0) = \hat{\mathcal H} U(t,t_0)$，以及边界条件$U(t_0,t_0) = 1$。如果哈密顿算符不含时，可以将时间演化算符显式写为</p>
+<script type="math/tex; mode=display">
+U(t,t_0) = \exp\left[ -\frac{\rm i}{\hbar}\hat{\mathcal H}(t-t_0) \right]</script><h1 id="量子宏观态"><a href="#量子宏观态" class="headerlink" title="量子宏观态"></a>量子宏观态</h1><p>与经典统计力学一致，量子统计中也可以利用大量$\mathcal N$微观态$\mu_\alpha$构造系综。在量子力学中，如果我们确定知道一个系统所处的微观态，则称其处于一个<strong>纯态</strong>；若不能确定它的微观态，但只知道它可能处于若干态上的<u>经典</u>概率，则称其处于一个<strong>混态</strong>。可见，混态的概念与统计力学中的系综是类似的。并且在混态中，记微观态$\mu_\alpha$出现的概率是$p_\alpha$。</p>
+<p>量子统计力学中的宏观态，仍然是仅依赖于少数热力学函数（例如温度，压强……）的状态。一般而言，任何宏观态都处于混态，我们只能概率性地知道它可能处于某些微观态，而无法唯一确定是哪一个微观态。</p>
+<h2 id="密度算符"><a href="#密度算符" class="headerlink" title="密度算符"></a>密度算符</h2><p>如何描述一个不确切知道其所处微观态的量子宏观态？经典系综中的相空间密度$\rho$在量子力学中对应于什么对象？</p>
+<p>在经典统计力学中，随时间演化的微观态$\mu_\alpha(t) = \{\vec q_i(t)_\alpha,\vec p_i(t)_\alpha\}$，那么计算系综平均</p>
+<script type="math/tex; mode=display">
+\overline{\mathcal O(t)} = \sum_\alpha p_\alpha \mathcal O(\{\vec q_i(t)_\alpha,\vec p_i(t)_\alpha\}) = \int \prod_{i=1}^N {\rm d}^3 \vec p_i {\rm d}^3 \vec q_i \mathcal O(\{\vec q_i,\vec p_i\}) \rho(\{\vec q_i,\vec p_i\},t)</script><p>其中</p>
+<script type="math/tex; mode=display">
+\rho(\{\vec q_i,\vec p_i\},t) = \sum_\alpha p_\alpha \prod_{i=1}^N \delta^{(3)}(\vec q_i - \vec q_i(t)_\alpha) \delta^{(3)}(\vec p_i - \vec p_i(t)_\alpha)</script><p>称为系统在相空间中的<strong>相空间密度</strong>。</p>
+<p>类比于此，量子统计力学中，可观测量的期望值的混态平均</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\overline{\langle \mathcal O \rangle (t)} &= \sum_\alpha p_a \bra{\psi_\alpha(t)} \hat{\mathcal O} \ket{\psi_\alpha(t)}\\
+&= \sum_{\alpha,e,\ell} p_\alpha \braket{\psi_\alpha(t)}{e} \bra{e}\hat{\mathcal O}\ket{\ell} \braket{\ell}{\psi_\alpha(t)}\\
+&= \sum_{e,\ell}\bra{\ell}\hat\rho(t)\ket{e} \bra{e}\hat{\mathcal O}\ket{\ell}\\
+&= \tr(\hat\rho(t)\hat{\mathcal O})
+\end{aligned}</script><p>其中</p>
+<script type="math/tex; mode=display">
+\hat\rho(t) = \sum_\alpha \ket{\psi_\alpha(t)}\bra{\psi_\alpha(t)}</script><p>是<strong>密度算符</strong>；其矩阵元</p>
+<script type="math/tex; mode=display">
+\rho_{\ell e}(t) = \bra{\ell}\hat\rho\ket{e} = \sum_\alpha p_\alpha \braket{\ell}{\psi_\alpha(t)} \braket{\psi_\alpha(t)}{e}</script><p>称为<strong>密度矩阵</strong>。</p>
+<p>密度算符的一些性质：</p>
+<ul>
+<li>迹归一性：$\tr\hat\rho = \sum_{\ell}\bra{\ell}\hat\rho\ket{\ell} = \sum_\alpha p_\alpha = 1$对任何纯态、混态均成立；密度算符的迹归一性本质上是概率的全局归一性。</li>
+<li>平方迹：$\tr \hat\rho^2 \leq 1$，其中等号当且仅当在纯态时成立；混态时取严格小于号。并且，纯态时$\hat\rho^2 = \hat\rho$，混态时不成立。</li>
+<li>厄米性：$\hat\rho^\dagger = \hat\rho$，因为$\bra{e}\hat\rho^\dagger\ket{\ell} = \bra{\ell} \hat\rho \ket{e}^* = \sum_\alpha p_\alpha \braket{\psi_\alpha}{\ell}\braket{e}{\psi_\alpha} = \bra{e}\hat\rho\ket{\ell}$，这一性质保证了可观测量期望值的混态平均$\overline {\langle \mathcal O \rangle}$是实数。</li>
+<li>正定性：$\bra{\phi}\hat\rho\ket{\phi} = \sum_\alpha p_\alpha \braket{\phi}{\psi_\alpha}\braket{\psi_\alpha}{\phi} = \sum_\alpha p_\alpha |\braket{\phi}{\psi_\alpha}|^2\geq 0$，这表明它的所有本征值都是非负的。</li>
+</ul>
+<h2 id="密度矩阵"><a href="#密度矩阵" class="headerlink" title="密度矩阵"></a>密度矩阵</h2><p>现在讨论密度矩阵元的物理意义。若在表象$\{\ket{e}\}$中，态矢具有分解形式</p>
+<script type="math/tex; mode=display">
+\ket{\psi_\alpha} = \sum_e \braket{e}{\psi_\alpha}\ket{e} = \sum_e c^{(\alpha)}_e \ket{e}</script><p>那么密度矩阵元为</p>
+<script type="math/tex; mode=display">
+\rho_{e\ell} = \sum_\alpha p_\alpha c^{(\alpha)}_e c^{(\alpha)*}_\ell</script><p>首先考虑其对角元</p>
+<script type="math/tex; mode=display">
+\rho_{ee} = \sum_\alpha p_\alpha c^{(\alpha)}_e c^{(\alpha)*}_e = \sum_\alpha p_\alpha |c_e^{(\alpha)}|^2 = \overline{ |c_e^{(\alpha)}|^2 }</script><p>其中$|c_e^{(\alpha)}|^2$的物理意义是在纯态$|\psi_\alpha\rangle$中测量后得到本征态$|e\rangle$的概率，因此$\rho_{ee}$则表示在该系综测量后得到$|e\rangle$的平均概率，称之为系综在态$|e\rangle$的<strong>布居数</strong>。显然布居数$\rho_{ee}\geq 0$，当且仅当全体$c_e^{(\alpha)}$都为零时取等号。</p>
+<p>而密度矩阵的非对角元</p>
+<script type="math/tex; mode=display">
+\rho_{e\ell} = \sum_\alpha p_\alpha c^{(\alpha)}_e c^{(\alpha)*}_\ell = \overline{ c^{(\alpha)}_e c^{(\alpha)*}_\ell }</script><p>出现$c_e^{(\alpha)} c_\ell^{(\alpha){*} }$的交叉乘积项，在量子力学中表明此时系统存在态$|e\rangle$与态$|\ell\rangle$的干涉效应，即在混态系综中有一定概率可能存在两个态的某个线性叠加。而密度矩阵的非对角元$\rho_{e\ell}$则表示这两个态的各种干涉效应在系综中的平均：由于$c_e^{(\alpha)} c_\ell^{(\alpha){*} }$是复数，因而即便所有交叉乘积项都非零，非对角元$\rho_{e\ell}$也可能为零，这意味着各个干涉效应相互抵消了；反之，若非对角元不为零，则说明各个干涉效应不能完全抵消，即$|e\rangle$与$|\ell\rangle$存在一定相干性。因此将$\rho_{e\ell}$称为$|e\rangle$与$|\ell\rangle$的<strong>相干元</strong>。</p>
+<h2 id="时间演化"><a href="#时间演化" class="headerlink" title="时间演化"></a>时间演化</h2><p>在经典力学中，相空间密度$\rho$满足<strong>刘维尔定理</strong>：</p>
+<script type="math/tex; mode=display">
+\frac{ {\rm d}\rho}{ {\rm d}t} = \frac{\partial\rho}{\partial t} + \{\rho,\mathcal H\} = 0</script><p>这给出了$\rho$的时间演化：</p>
+<script type="math/tex; mode=display">
+\frac{\partial\rho}{\partial t} = \{\mathcal H,\rho\}</script><p>在量子力学中，为得到密度算符的时间演化，可以在能量表象下考察：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+{\rm i}\hbar\frac{\partial}{\partial t}\rho_{nm} &= {\rm i}\hbar\frac{\partial}{\partial t}\bra{n}\hat \rho\ket{m}\\
+&= {\rm i}\hbar\frac{\partial}{\partial t} \sum_{\alpha}p_\alpha \braket{n}{\psi_\alpha}\braket{\psi_\alpha}{m}\\
+&= \sum_\alpha p_\alpha (\mathcal E_n - \mathcal E_m)\braket{n}{\psi_\alpha}\braket{\psi_\alpha}{m}\\
+&= \bra{n}(\mathcal H \hat\rho - \hat\rho \mathcal H) \ket{m}
+\end{aligned}</script><p>于是得到</p>
+<script type="math/tex; mode=display">
+{\rm i}\hbar\frac{\partial\hat\rho}{\partial t} = [\mathcal H,\hat\rho]</script><p>在下面，如无歧义，将略去算符的$\ \hat{}\ $符号。</p>
+<h2 id="量子系综"><a href="#量子系综" class="headerlink" title="量子系综"></a>量子系综</h2><p>达平衡态时，宏观态的可观测量期望应当是时间无关的，这无论对经典还是量子都要求$\partial\rho/\partial t = 0$。可以看到，无论对经典还是量子，若取$\rho$是哈密顿量$\mathcal H$的函数（自变量还可以包括与$\mathcal H$对易$[\mathcal H,L_a] = 0$的守恒荷$L_a$），那么自动满足$[\mathcal H,\rho] = 0$，于是也就满足$\partial\rho/\partial t = 0$。在这个意义上将，达平衡时的密度算符$\rho = \rho(\mathcal H)$。据此，就可以类比于经典统计力学，而构造出各种宏观平衡态对应的量子密度算符，也即各种系综的密度。</p>
+<h3 id="量子微正则系综"><a href="#量子微正则系综" class="headerlink" title="量子微正则系综"></a>量子微正则系综</h3><p>固定宏观能量$E$、广义坐标$X^a$、粒子数$N$的情况，密度算符可写为</p>
+<script type="math/tex; mode=display">
+\rho(E) = \frac{\delta(\mathcal H - E)}{\Omega(E)}</script><p>密度算符的迹归一性$\tr\rho = 1$​要求量子归一化系数</p>
+<script type="math/tex; mode=display">
+\Omega(E) = \sum_n \delta_{E,\mathcal E_n}</script><p>就是哈密顿量算符$\mathcal H$的具有能量本征值$E$的本征态数目。</p>
+<p>具体来说，在能量本征态下的密度矩阵元</p>
+<script type="math/tex; mode=display">
+\rho_{nm} = \bra{n}\rho\ket{m} = \sum_\alpha p_\alpha \braket{n}{\psi_\alpha}\braket{\psi_\alpha}{m} =
+\begin{dcases}
+\frac{1}{\Omega} &{\rm if}\ \mathcal E_n = E\ {\rm and}\ m = n\\
+0 &{\rm if}\ \mathcal E_n \neq E\ {\rm or}\ m \neq n
+\end{dcases}</script><p>这是<strong>等概率假设</strong>和<strong>随机相位假设</strong>的直接结果。 </p>
+<p>具体来说：混态系综中的任何一个纯态都可以写为这些允许本征态的线性组合：</p>
+<script type="math/tex; mode=display">
+\ket{\psi_\alpha} = \sum_\alpha c_n^{(\alpha)} \ket{n} = \sum_\alpha |c_n^{(\alpha)}| {\rm e}^{ {\rm i}\theta_n^{(\alpha)}} \ket{n}</script><p>根据密度矩阵的物理意义我们知道，其对角元$\rho_{nn}$表示混态在相应本征态上的布居数，即测量得到相应本征态的平均概率$\overline{|c_e^{(\alpha)}|^2} = \overline{ |\braket{e}{\psi_\alpha}|^2 }$；而非对角元$\rho_{e\ell}$则表示某两个本征态之间的相干效应：$\overline{ c^{(\alpha)}_e c^{(\alpha)*}_\ell } = \overline{ |c^{(\alpha)}_e|  |c^{(\alpha)}_\ell|  {\rm e}^{ {\rm i}(\theta_e^{(\alpha)} - \theta_\ell^{(\alpha)})} }$。</p>
+<p>等概率假设要求，测量得到不同本征态的平均概率相等，均为：</p>
+<script type="math/tex; mode=display">
+\rho_{ee} = \overline{|c_e^{(\alpha)}|^2} = \overline{ |\braket{n}{\psi_\alpha}|^2 } = \frac{1}{\Omega}</script><p>在此基础上，随机相位假设则是说，不同本征态以相位随机的复数构成混态系综中的不同纯态，这些随机相位的平均为零：</p>
+<script type="math/tex; mode=display">
+\rho_{ee} = \frac{1}{\Omega} \overline{ {\rm e}^{ {\rm i}(\theta_e^{(\alpha)} - \theta_\ell^{(\alpha)})} } = 0</script><h3 id="量子正则系综"><a href="#量子正则系综" class="headerlink" title="量子正则系综"></a>量子正则系综</h3><p>固定宏观温度$T$、广义坐标$X^a$、粒子数$N$的情况，密度算符可写为</p>
+<script type="math/tex; mode=display">
+\rho(\beta) = \frac{\exp(-\beta\mathcal H)}{Z(\beta)}</script><p>密度算符的迹归一性$\tr\rho = 1$​要求量子正则配分函数</p>
+<script type="math/tex; mode=display">
+Z(\beta) = \tr\left( {\rm e}^{-\beta\mathcal H} \right) = \sum_n {\rm e}^{-\beta\mathcal E_n}</script><p>最终的求和是对系统的离散能级求和。</p>
+<h3 id="量子巨正则系综"><a href="#量子巨正则系综" class="headerlink" title="量子巨正则系综"></a>量子巨正则系综</h3><p>固定宏观温度$T$、广义坐标$X^a$、化学势$\mu$的情况，密度算符可写为</p>
+<script type="math/tex; mode=display">
+\rho(\beta,\mu) = \frac{\exp(-\beta\mathcal H + \beta\mu N)}{Q}</script><p>密度算符的迹归一性$\tr\rho = 1$要求量子巨配分函数</p>
+<script type="math/tex; mode=display">
+Q(\beta,\mu) = \tr\left(  {\rm e}^{-\beta\mathcal H + \beta\mu N}  \right) = \sum_{N=0}^\infty  {\rm e}^{\beta\mu N} Z_N(\beta)</script><p>注意在此时粒子数$N$不确定，量子系统的态矢所处空间扩展为Fock空间。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>考虑由量子正则系综描述的，体积为$V = L^3$的箱中的自由单粒子，哈密顿量算符（坐标表象）</p>
+<script type="math/tex; mode=display">
+\mathcal H = -\frac{\hbar^2}{2m}\nabla^2</script><p>其本征态是动量本征态$\ket{\vec k}$，相应的波函数和能量本征值是</p>
+<script type="math/tex; mode=display">
+\braket{\vec x}{\vec k} = \frac{1}{\sqrt{V}}{\rm e}^{ {\rm i}\vec k\cdot\vec x}\ ,\qquad \mathcal E_{\vec k} = \frac{\hbar k^2}{2m}</script><p>在周期性边界条件下，允许的动量取值</p>
+<script type="math/tex; mode=display">
+\vec k = \frac{2\pi}{L}(n_x,n_y,n_z)</script><p>全体$\ket{\vec k}$构成希尔伯特空间的一组无穷多的完备正交基矢。</p>
+<p>在$L\to\infty$极限下，单粒子的量子正则配分函数是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z_1 &= \tr\rho = \sum_{\vec k}\exp\left( -\frac{\beta\hbar^2 k^2}{2m} \right)\\
+&= V\int\frac{ {\rm d}^3k}{(2\pi)^3}\exp\left( -\frac{\beta\hbar^2 k^2}{2m} \right)\\
+&= \frac{V}{(2\pi)^3} \left( \frac{2\pi m k_B T}{\hbar^2} \right)^{3/2}\\
+&= \frac{V}{\lambda^3}
+\end{aligned}</script><p>这与经典结果是一致的，只要认为经典$h = 2\pi\hbar$。于是坐标表象下密度矩阵元是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\bra{\vec x'} \rho \ket{x} &= \sum_{\vec k} \braket{\vec x'}{\vec k} \frac{ {\rm e}^{-\beta\mathcal E_{\vec k}}}{Z_1} \braket{\vec k}{\vec x}\\
+&= \frac{\lambda^3}{V}V \int \frac{ {\rm d}^3k}{(2\pi)^3} \frac{1}{V} {\rm e}^{ {\rm i}\vec k\cdot(\vec x-\vec x')} \exp\left( -\frac{\beta\hbar^2 k^2}{2m} \right)\\
+&= \frac{1}{V}\exp\left[ -\frac{m(\vec x-\vec x')^2}{2\beta\hbar^2} \right]\\
+&= \frac{1}{V}\exp\left[ -\frac{\pi(\vec x-\vec x')^2}{\lambda^2} \right]
+\end{aligned}</script><p> 可以看到，密度矩阵的对角元</p>
+<script type="math/tex; mode=display">
+\bra{\vec x} \rho \ket{x} = \frac{1}{V}</script><p>就是在箱中一点$\vec x$处找到粒子的概率；</p>
+<p>非对角元</p>
+<script type="math/tex; mode=display">
+\bra{\vec x'} \rho \ket{x} = \frac{1}{V}\exp\left[ -\frac{\pi(\vec x-\vec x')^2}{\lambda^2} \right]</script><p>则没有经典对应，是完全的量子效应：考虑到粒子在坐标空间实际上是以弥散一定尺度的概率波包形式存在，在有限温度时波包尺度约为$\sim\lambda = \sqrt{2\pi\hbar/mk_BT}$，即<strong>热波长</strong>。因此中心位置不同的粒子之间也可能存在波包的交叠从而产生干涉效应。</p>
+<p>当高温$T\to\infty$时，热波长趋于零，非对角元衰减至零，情况与经典结果一致；当低温$T\to0$时，$\lambda$发散，当波包尺度到达箱尺寸相同的量级，量子效应就会占据主导。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Kardar/[Kardar]V.1-C.6-%E9%87%8F%E5%AD%90%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86.html">https://papaya-z.github.io/post/Kardar/[Kardar]V.1-C.6-%E9%87%8F%E5%AD%90%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6/">统计力学</a><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E7%B3%BB%E7%BB%BC/">量子系综</a><a class="post-meta__tags" href="/tags/%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6/">密度算符</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/Kardar/%5BKardar%5DV.1-C.7-%E7%90%86%E6%83%B3%E9%87%8F%E5%AD%90%E6%B0%94%E4%BD%93.html" title="[Kardar]V.1-C.7-理想量子气体"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">[Kardar]V.1-C.7-理想量子气体</div></div></a></div><div class="next-post pull-right"><a href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">[Kardar]V.1-C.2-概率</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/Kardar/%5BKardar%5DV.1-C.7-%E7%90%86%E6%83%B3%E9%87%8F%E5%AD%90%E6%B0%94%E4%BD%93.html" title="[Kardar]V.1-C.7-理想量子气体"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-17</div><div class="title">[Kardar]V.1-C.7-理想量子气体</div></div></a></div><div><a href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-20</div><div class="title">[Kardar]V.1-C.2-概率</div></div></a></div><div><a href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">[Kardar]V.1-C.5-相互作用粒子</div></div></a></div><div><a href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-29</div><div class="title">[Kardar]V.1-C.4-经典统计力学</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%80%E8%96%84%E5%A4%9A%E5%8E%9F%E5%AD%90%E5%88%86%E5%AD%90%E6%B0%94"><span class="toc-number">1.</span> <span class="toc-text">稀薄多原子分子气</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E4%BF%AE%E6%AD%A3"><span class="toc-number">1.1.</span> <span class="toc-text">量子修正</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E5%90%91%E6%8C%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">法向振动模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E8%BD%AC%E5%8A%A8%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">整体转动模式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BA%E4%BD%93%E6%8C%AF%E5%8A%A8"><span class="toc-number">2.</span> <span class="toc-text">固体振动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">爱因斯坦模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%B7%E6%8B%9C%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">德拜模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84"><span class="toc-number">3.</span> <span class="toc-text">黑体辐射</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E5%AD%90%E6%B0%94%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8E%E5%8E%8B%E5%BC%BA"><span class="toc-number">3.1.</span> <span class="toc-text">光子气的能量与压强</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84-1"><span class="toc-number">3.2.</span> <span class="toc-text">黑体辐射</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%BE%AE%E8%A7%82%E6%80%81"><span class="toc-number">4.</span> <span class="toc-text">量子微观态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%81%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="toc-number">4.1.</span> <span class="toc-text">态的描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E6%B5%8B%E9%87%8F%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="toc-number">4.2.</span> <span class="toc-text">可观测量的描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E6%B5%8B%E9%87%8F%E7%9A%84%E5%80%BC"><span class="toc-number">4.3.</span> <span class="toc-text">可观测量的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%81%E7%9A%84%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96"><span class="toc-number">4.4.</span> <span class="toc-text">态的时间演化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%AE%8F%E8%A7%82%E6%80%81"><span class="toc-number">5.</span> <span class="toc-text">量子宏观态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6"><span class="toc-number">5.1.</span> <span class="toc-text">密度算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E7%9F%A9%E9%98%B5"><span class="toc-number">5.2.</span> <span class="toc-text">密度矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96"><span class="toc-number">5.3.</span> <span class="toc-text">时间演化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E7%B3%BB%E7%BB%BC"><span class="toc-number">5.4.</span> <span class="toc-text">量子系综</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%BE%AE%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC"><span class="toc-number">5.4.1.</span> <span class="toc-text">量子微正则系综</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC"><span class="toc-number">5.4.2.</span> <span class="toc-text">量子正则系综</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%B7%A8%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC"><span class="toc-number">5.4.3.</span> <span class="toc-text">量子巨正则系综</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">5.5.</span> <span class="toc-text">例子</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.7-%E7%90%86%E6%83%B3%E9%87%8F%E5%AD%90%E6%B0%94%E4%BD%93.html" title="[Kardar]V.1-C.7-理想量子气体"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.7-理想量子气体"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.7-%E7%90%86%E6%83%B3%E9%87%8F%E5%AD%90%E6%B0%94%E4%BD%93.html" title="[Kardar]V.1-C.7-理想量子气体">[Kardar]V.1-C.7-理想量子气体</a><time datetime="2024-04-16T19:38:41.000Z" title="发表于 2024-04-17 03:38:41">2024-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.6-%E9%87%8F%E5%AD%90%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86.html" title="[Kardar]V.1-C.6-量子统计力学"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.6-量子统计力学"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.6-%E9%87%8F%E5%AD%90%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86.html" title="[Kardar]V.1-C.6-量子统计力学">[Kardar]V.1-C.6-量子统计力学</a><time datetime="2024-04-11T06:03:14.000Z" title="发表于 2024-04-11 14:03:14">2024-04-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.2-概率"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.2-%E6%A6%82%E7%8E%87.html" title="[Kardar]V.1-C.2-概率">[Kardar]V.1-C.2-概率</a><time datetime="2024-03-19T19:06:12.000Z" title="发表于 2024-03-20 03:06:12">2024-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.5-相互作用粒子"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子">[Kardar]V.1-C.5-相互作用粒子</a><time datetime="2024-03-19T10:10:54.000Z" title="发表于 2024-03-19 18:10:54">2024-03-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.1-C.4-经典统计力学"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.4-%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6.html" title="[Kardar]V.1-C.4-经典统计力学">[Kardar]V.1-C.4-经典统计力学</a><time datetime="2024-02-29T14:21:06.000Z" title="发表于 2024-02-29 22:21:06">2024-02-29</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: '0433360f31af1f3431c93be608eb6047',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
