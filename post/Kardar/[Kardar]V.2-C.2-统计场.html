@@ -1,0 +1,455 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[Kardar]V.2-C.2-统计场 | Papaya's 词驿</title><meta name="author" content="Papaya Z"><meta name="copyright" content="Papaya Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="相变；朗道-金兹堡理论；临界指数"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://papaya-z.github.io/post/Kardar/[Kardar]V.2-C.2-%E7%BB%9F%E8%AE%A1%E5%9C%BA.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[Kardar]V.2-C.2-统计场',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-28 04:40:54'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Papaya's 词驿" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/br.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Mtheory.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Papaya's 词驿"><span class="site-name">Papaya's 词驿</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">[Kardar]V.2-C.2-统计场</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-23T11:27:50.000Z" title="发表于 2024-04-23 19:27:50">2024-04-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-27T20:40:54.510Z" title="更新于 2024-04-28 04:40:54">2024-04-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1-Kardar/">统计-Kardar</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="[Kardar]V.2-C.2-统计场"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/post/Kardar/%5BKardar%5DV.2-C.2-%E7%BB%9F%E8%AE%A1%E5%9C%BA.html#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<p>本章将会建立起一个唯象的平均场理论——朗道-金兹堡理论，利用它讨论体系最可能的构型（基态），并看到它如何给出四个临界指数：$\beta$、$\delta$、$\gamma$、$\alpha$。</p>
+<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>热力学函数在临界点附近的临界行为可由一系列临界指数$\{\alpha,\beta,\gamma,\dots\}$​来描述。对大量不同物理体系的实验观测时，这些临界指数是普适的，与材料种类甚至相变的物理背景都无关。这种普适性需要合理的物理解释。</p>
+<p>另一方面，响应函数的发散性，以及通过散射实验对涨落的观察，表明体系在临界附近具有长程关联$\xi\gg a$​，这种长程涨落包含了大量的例子，因此适合于粗粒化的方法进行描述，因此在本章将会建立<strong>统计场论</strong>。</p>
+<p>我们将采用磁性体系为背景构造，它的对称性更显著，但是结果可以推广到其他体系中。材料磁性的微观起源来自于量子效应，包括自由电子及其自旋和相互作用等贡献，这些都被微观哈密顿量$\mathcal H_{\rm mic}$所描述。原则上，通过该微观哈密顿量得到配分函数</p>
+<script type="math/tex; mode=display">
+Z = \tr\left[ {\rm e}^{\beta\mathcal H_{\rm mic}} \right]</script><p>就可以提取出全部的热力学函数并得到体系的完整信息。但实际上由于微观自由度数过多，以及完整哈密顿量过于复杂，导致这样的过程并不能真正实现。</p>
+<p>虽然微观理论对于某些细致的分析，例如找出什么因素产生了材料磁性，是十分必要的；但对于一些宏观的磁性行为来说，从微观粒子角度出发的量子统计理论过于复杂。但是实验看到，接近居里温度时，影响磁性行为的主要因素是自旋自由度在长程尺度的集体激发（类似于低温时主导固体热容的是长波长的声子）。因此在描述相变时，尤其是在临界附近，关注这些处于介观尺度（远大于微观粒子间距，但远小于体系的整体宏观尺度）的长波激发的统计规律更为重要。</p>
+<p>定义磁化场$\vec m({\bf x})$，代表对位于点${\bf x}$附近的自旋的平均。需要强调的是，尽管将之视为$\bf x$连续的场，但是它并不包含任何尺度短于格距$a$的成分，也就是说它的傅立叶变换积分存在上限$\Lambda\sim 1/a$，不包含比这更高频的模式。</p>
+<p>我们要用磁化场$\vec m({\bf x})$来代替原本的格点自旋，这是一个不可逆的变换，此时，配分函数可以表示为如下的泛函积分</p>
+<script type="math/tex; mode=display">
+Z = \int\mathcal D[\vec m] \mathcal W[\vec m]</script><p>积分测度$D[\vec m]$表示对全部可能的场构型进行积分；其权重由泛函$\mathcal W[\vec m]$给出。但是考虑到要想得到$\mathcal W[\vec m]$的精确形式，并不比直接求解微观理论更简单，我们将会从唯象角度引入若干参数，来表示出足够好的$\mathcal W[\vec m]$​形式。</p>
+<p>在相变领域，首先应用唯象方法给出这一结果的是朗道，描述了超流氦的性质。但这一框架其实可以描述很多不同的体系，只要将$\vec m({\bf x})$换成对应体系的序参量即可。为此将其推广到一般情况：</p>
+<script type="math/tex; mode=display">
+{\bf x} = (x_1,\dots,x_d) \in \mathbb R^d\ ,\qquad \vec m = (m_1,\dots,m_n) \in \mathbb R^n</script><p>其中，$d$是体系所在空间的维数；$n$则与体系的外参量（广义力）形式有关，例如磁性材料所受的外磁场。</p>
+<p>这一广义框架的一些具体例子有：</p>
+<ul>
+<li>$n=1$，描述气-液相变、二元混合物、单轴磁体；</li>
+<li>$n=2$，描述超流、超导、平面磁体；</li>
+<li>$n=3$，描述经典三维磁体。</li>
+</ul>
+<p>尽管大部分物理过程发生在三维空间$d=3$，但是在一些二维平面体系$d=2$和一维链状体系$d=1$也有很重要的唯象现象。而涉及到相对论性的理论，此时就需要在四维时空$d=4$中。</p>
+<h1 id="朗道-金兹堡哈密顿量"><a href="#朗道-金兹堡哈密顿量" class="headerlink" title="朗道-金兹堡哈密顿量"></a>朗道-金兹堡哈密顿量</h1><p>使用粗粒化后的$\mathcal W[\vec m]$，可以定义<strong>有效哈密顿量</strong></p>
+<script type="math/tex; mode=display">
+\mathcal W[\vec m] = {\rm e}^{-\beta\mathcal H[\vec m]} \qquad \Longleftrightarrow \qquad \beta \mathcal H[\vec m] = -\ln \mathcal W[\vec m]</script><p>也就是假设此时玻尔兹曼因子仍然有效。我们根据第一章提出的一些限制条件来去欸的那个有效哈密顿量的形式：</p>
+<ol>
+<li><p><strong>定域性和均匀性</strong>：</p>
+<p>如果体系可以分为若干不连通的子系统，此时理论满足完全的定域性，即不同位置${\bf x}$处的场$\vec m({\bf x})$相对独立，那么总概率是各个独立概率之乘积，因此哈密顿可以表示为不同位置处能量密度之和/积分：</p>
+<script type="math/tex; mode=display">
+\beta\mathcal H[\vec m] = \int {\rm d}^dx \Phi(\vec m({\bf x}) , {\bf x})</script><p>原则上$\Phi$在不同的位置${\bf x}$处可以具有不同对$\vec m({\bf x})$的函数形式，因此上式中显式写出了自变量${\bf x}$。如果是在空间上具有均匀性的材料，不同的位置坐标是等价的，于是$\Phi$仅与场有关$\Phi = \Phi(\vec m({\bf x}))$。但如果存在外势，或者材料中包含杂质，就需要考虑对${\bf x}$​的依赖。</p>
+<p>当体系包含内部的相互作用，定域性在一定程度上被破坏，但是仍然可以采用上面的积分表达式，只要在$\Phi$的依赖中加入若干$\vec m$的空间导数项作为修正</p>
+<script type="math/tex; mode=display">
+\beta\mathcal H[\vec m] = \int {\rm d}^dx \Phi(\vec m({\bf x}) , \nabla \vec m({\bf x}) , \nabla^2 \vec m({\bf x}) , \dots)</script><p>原则上其中可以包含无穷高阶导数，就可以描述粒子间长程的相互作用，例如，长程的库仑相互作用。但对于“局域”的理论，前几阶导数就已经是足够好的描述，例如，短程的范德瓦尔斯相互作用。</p>
+</li>
+<li><p><strong>解析性和多项式展开</strong>：</p>
+<p>下面尝试将$\Phi$写成$\vec m({\bf x})$及其空间导数的幂次展开。这种做法是合理的，因为尽管微观自由度的结构可能十分复杂，但是在介观尺度，通过将其粗粒化为场$\vec m({\bf x})$已经抹掉一些细节的非解析性，获得解析的场$\vec m({\bf x})$。当然，在宏观尺度，存在与相变相关的奇异性，但是它们仅在热力学极限$V\to\infty$时才会出现。因此如果我们只关心介观尺度的场$\vec m({\bf x})$​，就可以避免微观和宏观层面可能出现的奇异性。</p>
+<p>在对微观自由度平均过程，实际上是对大量独立随机微观自由度求和，统计学上这给出中心极限定理，说明总和概率分布接近高斯分布。因此在构造统计场论时，我们实际上是在寻找中心极限定理的推广。</p>
+</li>
+<li><p><strong>对称性</strong>：</p>
+<p>在粗粒化过程中，有一类重要信息仍被保留下来，即对称性，它们是限制有效哈密顿量形式和展开的重要条件。</p>
+<p>例如，若不存在外场，那么$\vec m$在其取值的$n$维空间中，任何方向都是等价的，于是在$n$维空间的旋转变换$\vec m \mapsto R_n \vec m$下，哈密顿量应该不变：$\mathcal H[R_n \vec m] = \mathcal H[\vec m]$。这样的旋转对称性限制$\Phi$中不可能存在$\vec m$的线性项，其展开的最低阶是</p>
+<script type="math/tex; mode=display">
+m^2({\bf x}) = \vec m({\bf x}) \cdot \vec m({\bf x}) = \sum_{i=1}^n m_i({\bf x}) m_i({\bf x})</script><p>展开式的高阶项还可能包含$m^4$，$m^6$等。</p>
+<p>另一类重要的对称性是空间对称性，这会限制场$\vec m$的空间导数项。例如，在各向同性系统中，任何空间方向都是等价的，这样空间各向同性限制$\Phi$中不可能存在特殊空间方向的导数，其线性展开最低阶应是</p>
+<script type="math/tex; mode=display">
+(\nabla\vec m)^2 = \sum_{i=1}^n \sum_{\alpha=1}^d (\partial_\alpha m_i)(\partial_\alpha m_i)</script><p>但如果不满足各向同性，例如晶格两个方向的格距不一样，那么不同方向的空间导数项就可以单独存在，且具有不同的系数。但是通过对空间尺度进行适当的重标度，就可以将其恢复为$(\nabla\vec m)^2$​的形式。</p>
+<p>对于更高阶项，各向同性体系中的四阶项可能有</p>
+<script type="math/tex; mode=display">
+(\nabla^2\vec m)^2 = \sum_{i=1}^n \sum_{\alpha=1}^d \sum_{\beta=1}^d (\partial_\alpha \partial_\alpha m_i)(\partial_\beta \partial_\beta m_i)</script><script type="math/tex; mode=display">
+m^2 (\nabla\vec m)^2 = \sum_{i=1}^n \sum_{j=1}^n \sum_{\alpha=1}^d m_im_i(\partial_\alpha m_j)(\partial_\alpha m_j)</script><p>但如果不满足各向同性，就无法简单通过空间尺度的放缩来得到这些项。但为了描述磁性体系，后面可以论证，实际上只需要少数几个低阶项就足够了，即<strong>朗道-金兹堡哈密顿量</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\beta\mathcal H_{\rm LG}[\vec m] = \beta F_0 + \int {\rm d}^dx \bigg[ &\frac{t}{2} m^2({\bf x}) + u m^4({\bf x}) + \cdots\\
+&+ \frac{K}{2} (\nabla m({\bf x}))^2 + \cdots\\
+&- \vec h \cdot \vec m({\bf x}) \bigg]
+\end{aligned}</script><p>对于短尺度的磁性和非磁性自由度的积分，会贡献一个全局的常数$\beta F_0$，因此不会影响哈密顿量展开式；此外，上式中$\vec h = \beta \vec B$，因此哈密顿量中还包含磁功$\vec B \cdot \vec m$的贡献。磁场还可以贡献更高阶的项，例如$m^2 \vec h \cdot \vec m$，但较上式中明确包含的项可以忽略。</p>
+</li>
+<li><p><strong>稳定性</strong>：</p>
+<p>我们不希望有效哈密顿量导致非物理的结果，也就是说，对于非物理的场构型$\vec m$，其相对概率——玻尔兹曼因子$\exp(-\beta\mathcal H_{\rm LG}[\vec m])$应当给出$0$；这要求当$m$取无穷大值时，哈密顿量中$m$的最高次项的系数为正。例如对于上述形式的朗道-金兹堡理论，也就是$u&gt;0$。</p>
+<p>另一方面，梯度项的系数$K$​也需满足一定的约束条件，以避免振荡不稳定性。</p>
+</li>
+</ol>
+<p><br></p>
+<p>严格来说，一个正确的有效理论，应当是对完整理论$\mathcal H_{\rm mic}$积掉短尺度部分，并使其平均值限制在场$\vec m({\bf x})$处得到的。但是这种第一性原理的做法太过复杂而不可能实现，因此我们仅仅利用对称性等假设限制出有效哈密顿量的形式，也就是朗道-金兹堡哈密顿量$\mathcal H_{\rm LG}$。</p>
+<p>这样做的代价是，$\mathcal H_{\rm LG}$所包含的一系列唯象参数：$\{t,u,K,\dots\}$，不仅与微观状态有关，还<strong>以未知的函数形式与温度、压强等外参量有关</strong>；但根据前面的讨论可知，唯象参数是这些外参量的解析函数，因此也可以级数展开。因此$\exp(-\beta\mathcal H_{\rm LG}[\vec m])$的指数中并<strong>不是</strong>每一项都与$(k_BT)^{-1}$成正比，这只在完整微观理论的哈密顿量才成立。</p>
+<h1 id="鞍点近似；平均场"><a href="#鞍点近似；平均场" class="headerlink" title="鞍点近似；平均场"></a>鞍点近似；平均场</h1><h2 id="鞍点近似"><a href="#鞍点近似" class="headerlink" title="鞍点近似"></a>鞍点近似</h2><p>下面我们从朗道-金兹堡哈密顿量出发。不同的热力学函数，以及它们的临界行为，都应当可以从如下配分函数得到：</p>
+<script type="math/tex; mode=display">
+Z = \int\mathcal D[\vec m] \exp(-\beta\mathcal H_{\rm LG}[\vec m])</script><p>是一个泛函积分，现在体系的自由度表现为上式中的连续场$\vec m({\bf x})$。这已经是对原问题的极大简化，但仍然难以解析计算。</p>
+<p>为此，首先采用鞍点近似，将其用最可能出现的场构型来代替。</p>
+<p>首先简要分析参数$K$：由于磁体中相互作用的自然倾向是使不同位置的磁化矢量保持平行，即$\vec m({\bf x})$的变化应当不剧烈；因此可以期望在哈密顿量中$(\nabla m({\bf x}))^2$项的系数$K&gt;0$为正，否则变化剧烈的场构型会有更低的能量；事实上这也是稳定性的要求。</p>
+<p>接下来考虑最可能的场构型，由于在$K&gt;0$条件下，对任一${\bf x}$处$\vec m({\bf x})$的模长或方向的改变都会导致与其附近场之间的$(\nabla m({\bf x}))^2$项变大，从而使能量升高；因此最有可能的稳定状态是均匀场，$\nabla\vec m = 0$；即$\vec m({\bf x}) = \vec m$，此时有鞍点近似：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z \approx Z_{\rm sp} &= \int{\rm d}\vec m \exp(-\beta\mathcal H_{\rm LG}[\vec m])\\
+&= {\rm e}^{-\beta F_0} \int{\rm d}\vec m \exp\left[ -V \left(\frac{t}{2} m^2 + u m^4 + \cdots - \vec h \cdot \vec m \right)\right]
+\end{aligned}</script><p>其中$V$是系统的体积。</p>
+<p>在极限$V\to\infty$时，上式中的积分又可采用鞍点近似</p>
+<script type="math/tex; mode=display">
+Z_{\rm sp}\approx \exp \left[ - \beta F_0 + V \min_{\vec m}\{\Psi(\vec m)\}  \right]</script><p>其中</p>
+<script type="math/tex; mode=display">
+\Psi(\vec m) = \frac{t}{2} m^2 + u m^4 + \cdots - \vec h \cdot \vec m</script><p>最有可能的磁化矢量$\vec m$将会与外磁场保持平行$\vec m = \overline m \hat h$；于是在此条件下对函数$\Psi$求导</p>
+<script type="math/tex; mode=display">
+\Psi'(\overline m) = t \overline m + 4 u \overline m^3 + \cdots - h = 0</script><p>其可能存在的多个解$\overline m$中，使$\Psi(\overline m)$最小的就是最终最可能出现的场值。</p>
+<p>虽然看起来经过了多次近似，但将会看到，该条件的解的确捕捉到了相变的定性行为。</p>
+<h2 id="函数-Psi-m-的行为"><a href="#函数-Psi-m-的行为" class="headerlink" title="函数$\Psi( m)$的行为"></a>函数$\Psi( m)$的行为</h2><p>虽然函数$\Psi( m)$是解析函数，但是鞍点配分函数$Z_{\rm sp}$以及鞍点自由能$F_{\rm sp} = -k_BT \ln Z_{\rm sp}$可能是非解析的，因为取最小化的操作并非一个解析的操作，这可能会引入奇异性。在上面，能够做鞍点近似的合理性来源于$V\to\infty$的极限；而在有限$V$时，积分是完全解析的。在接近临界时，磁化$\vec m$很小，因此在哈密顿量中仅保留低阶项也是合理的。</p>
+<p>函数$\Psi( m)$的具体行为前列依赖于唯象参数$t$的符号：</p>
+<ul>
+<li><p>当$t&gt;0$，四次项$um^4$​对于稳定性条件不必要，可不予考虑；此时</p>
+<script type="math/tex; mode=display">
+\Psi( m) = \frac{t}{2} m^2 - h m</script><p>是一个开口向上的二次函数，其最低点是唯一的：</p>
+<script type="math/tex; mode=display">
+\overline m = \frac{h}{t}</script><p>与外磁场$h$方向相同，即最可能的磁化场平行于外磁场。</p>
+<p>当外磁场趋于零场$h\to0$时，最可能的磁化场也连续地趋于零$m\to0$​，可见此时描述的是<strong>顺磁相</strong>的行为。</p>
+<p>磁化率</p>
+<script type="math/tex; mode=display">
+\chi = \frac{\partial m}{\partial h} = \frac{1}{t}</script><p>在$t\to0$​时发散。</p>
+<p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240424131952987.png" alt="image-20240424131952987"></p>
+</li>
+<li><p>当$t<0$，为满足稳定性，四次项$um^4$是必要的，且须有$u>0$，此时</p>
+<script type="math/tex; mode=display">
+\Psi( m) = \frac{t}{2} m^2 + u m^4 - h m</script><p>是一个开口向上，但中央凸起的四次函数。$\Psi’(m)=0$存在三个解，其中两个极小值点（稳定值），一个极大值点（不稳定值）；其中全局最小值点与外磁场$h$​的方向相同，因而在热力学极限时，最可能的磁化场平行于外磁场。</p>
+<p>当外磁场趋于零场$h\to0$时，全局最小值点趋于非零值，且当$h=0$时，$m=0$是不稳定的，体系存在两个全局最小值点</p>
+<script type="math/tex; mode=display">
+\overline m_0 = \pm \sqrt{\frac{-t}{4u}}</script><p>均可使$\Psi(m)$取最小值，但是具体取哪一个解取决于体系的磁化历史，也即与历史外场$h$平行的解。这意味着体系存在零场时自发磁化的现象，可见此时描述的是<strong>铁磁相</strong>的行为。</p>
+<p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240424135342881.png" alt="image-20240424135342881"></p>
+</li>
+</ul>
+<h2 id="唯象参数"><a href="#唯象参数" class="headerlink" title="唯象参数"></a>唯象参数</h2><p>通过上述对$\Psi(m)$函数的分析，可将朗道-金兹堡哈密顿量所预言的体系最可能的磁化场绘制如图</p>
+<p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240424140825701.png" alt="image-20240424140825701"></p>
+<p>那么它如何能描述一个磁性体系的铁磁-顺磁相变？前面提到，朗道-金兹堡哈密顿量中的唯象参数$\{t,u,K,\dots\}$都是温度和压强等的解析函数，可以将它们展开为</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+t(T,\dots) = a_0 + a_1(T-T_c) + \mathcal O((T-T_c)^2)\\
+u(T,\dots) = u + u_1(T-T_c) + \mathcal O((T-T_c)^2)\\
+K(T,\dots) = K + K_1(T-T_c) + \mathcal O((T-T_c)^2)\\
+\end{cases}</script><p>根据前面$\Psi(m)$函数的行为，我们希望与铁磁-顺磁相变的相图$(m,T)$与$(m,h)$相比较。为使其能合理描述该体系，容易看出，<strong>最小要求</strong>是：</p>
+<script type="math/tex; mode=display">
+a_0 = 0\ ,\ a_1 \equiv a >0\ ,\ u>0\ ,\ K>0</script><p>也就是</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+t = a(T-T_c) + \mathcal O((T-T_c)^2) & a > 0 \\
+u > 0 \\
+K > 0
+\end{cases}</script><p>这就是使朗道-金兹堡哈密顿量能够描述铁磁-顺磁相变的最简单的条件。</p>
+<h2 id="朗道-金兹堡理论的临界行为"><a href="#朗道-金兹堡理论的临界行为" class="headerlink" title="朗道-金兹堡理论的临界行为"></a>朗道-金兹堡理论的临界行为</h2><h3 id="序参量：磁化强度"><a href="#序参量：磁化强度" class="headerlink" title="序参量：磁化强度"></a>序参量：磁化强度</h3><p>零场时，朗道-金兹堡理论预言的磁化强度是</p>
+<script type="math/tex; mode=display">
+\lim_{h\to0} \overline m(t) = \begin{dcases}
+0 & t>0\\
+\sqrt{\frac{-t}{4u}} = \sqrt{\frac{a}{4u}}|t|^{1/2} & t<0
+\end{dcases}</script><p>可见它预言在$t&lt;0$即$T&lt;T_c$时，零场$h=0$的体系中存在自发磁化$m\neq0$，且该磁化的临界指数是与材料无关的普适常数：</p>
+<script type="math/tex; mode=display">
+\beta = 1/2</script><p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240424141651994.png" alt="image-20240424141651994"></p>
+<p>当$t<0$，体系的序参量在大尺度上具有均匀的非零值，意味着其所代表的格点自旋在大尺度上都是相同的，我们称这种结构是**长程有序**的；反之当$t>0$​时，序参量为零反映出即便是近邻的格点自旋之间也是随机排列，此时不具有长程序。可见，相变的过程也是长程序建立或破坏的过程。</p>
+<p>因此，也称$t&gt;0$为无序相，$t&lt;0$为有序相。</p>
+<p><br></p>
+<p>另一方面，沿着等温线，临界$T=T_c$即$t=0$时，$\Psi’(\overline m) = 0$给出</p>
+<script type="math/tex; mode=display">
+\lim_{t\to0} \overline m(h) = \left( \frac{h}{4u} \right)^{1/3} \propto h^{1/3}</script><p>即它预言另一个临界指数</p>
+<script type="math/tex; mode=display">
+\delta = 3</script><h3 id="响应函数：磁化率"><a href="#响应函数：磁化率" class="headerlink" title="响应函数：磁化率"></a>响应函数：磁化率</h3><p>磁化$\vec m = \overline m \hat h$是一个由外场$\vec h$决定的矢量，其大小是$t\overline m + 4u\overline m^3 = h$​的解，方向与外磁场保持平行。</p>
+<p>磁化$\vec m$的大小的变化由<strong>纵向磁化率$\chi_\ell$</strong>描述，根据$t\overline m + 4u\overline m^3 = h$，零场时：</p>
+<script type="math/tex; mode=display">
+\lim_{t\to0^\pm} \chi_\ell^{-1}(h=0) = \left.\frac{\partial h}{\partial \overline m}\right|_{h=0} = t + 12 u \overline m^2 =  \begin{cases}
+t & t>0\\
+-2t & t<0
+\end{cases}</script><p>即</p>
+<script type="math/tex; mode=display">
+\lim_{t\to0^\pm} \chi_\ell(h=0) = \begin{dcases}
+t^{-1} & t>0\\
+-\frac{1}{2}t^{-1} & t<0
+\end{dcases}</script><p>这给出</p>
+<script type="math/tex; mode=display">
+\gamma^- = \gamma^+ = 1</script><p>并且从两个方向接近临界温度时，$\chi_\ell$的大小比值始终是$2$​，即高温侧比低温侧的纵向磁化率大二倍。</p>
+<p>另一方面，磁化$\vec m$的方向的变化由<strong>横向磁化率$\chi_t$</strong>描述，它是磁化在与之垂直的外磁场作用下的变化率。在零场时，被磁化的相中$\chi_t$​总是无穷大的。</p>
+<p>一般地，利用$\Psi’(\overline m) = 0$可得$h = t \overline m + 4 u \overline m^3 = \Psi’(\overline m)|_{h=0}$，于是响应函数$\chi$与唯象函数$\Psi(m)$之间存在关系</p>
+<script type="math/tex; mode=display">
+\chi^{-1} = \frac{\partial h}{\partial \overline m} = \frac{\partial}{\partial m}\Psi'(\overline m)|_{h=0} = \left. \frac{\partial^2 \Psi(m)}{\partial m^2} \right|_{\overline m}</script><h3 id="热容"><a href="#热容" class="headerlink" title="热容"></a>热容</h3><p>零场时自由能</p>
+<script type="math/tex; mode=display">
+\beta F = \beta F_0 + V\Psi(\overline m) = \beta F_0 + V\begin{dcases}
+0 & t>0\\
+-\frac{t^2}{16 u} & t<0
+\end{dcases}</script><p>在$t$的领头阶$t\sim a(T-T_c)$，$\partial/\partial T \sim a (\partial /\partial t)$，则在临界附近的零场热容</p>
+<script type="math/tex; mode=display">
+C(h=0) = -T \frac{\partial^2 F}{\partial T^2} \approx -T_c a^2 \frac{\partial^2}{\partial t^2}(k_B T_c \beta F) = C_0 + V k_B a^2 T_c^2\begin{dcases}
+0 & t>0\\
+\frac{1}{8u} & t<0
+\end{dcases}</script><p>可见朗道-金兹堡理论给出的热容在临界温度两侧是不连续、不发散的结果；因此</p>
+<script type="math/tex; mode=display">
+\alpha = \alpha' = 0</script><p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240424153112825.png" alt="image-20240424153112825"></p>
+<p>但这与实验看到热容存在发散的结果不符，说明从鞍点近似出发得到的结果并不准确。之后必须要重新考虑其他因素对热容的影响。</p>
+<h1 id="连续对称性破缺，Goldstone模"><a href="#连续对称性破缺，Goldstone模" class="headerlink" title="连续对称性破缺，Goldstone模"></a>连续对称性破缺，Goldstone模</h1><p>在零场时，尽管完整的微观哈密顿量$\mathcal H_{\rm mic}$具有旋转对称性，即任何一个方向的磁化都是等价的；但在低温时体系的自发磁化只会选取某一个方向，也就是<strong>体系的低温态不具有完整哈密顿量的对称性</strong>。这种在具有对称性理论中，体系低能时自发地处于某一不具对称性的态，叫做<strong>自发对称性破缺</strong>。</p>
+<p>统计系统的对称性通常与有序性有密切联系。当从对称的$n$维空间选取一个特殊方向$\vec M$时，体系大部分自旋都与$\vec M$平行，这意味着体系具有<strong>长程序</strong>的。可见，<strong>对称性的自发破缺，伴随着长程序的建立</strong>。</p>
+<p>如果全部局域自旋都旋转一定向（即对应于场旋转变换$\vec m({\bf x}) \mapsto R_n \vec m({\bf x})$），得到的新的态仍具有长程序且能量不改变，仍然是体系可以自发磁化的一种可能状态，这说明理论原本的对称性仍然在全局层面上保持。这种全局旋转变换$R_n$前后的态相互等价，能量也相同。那么我们可以期待一类在空间尺度上缓变的局域旋转变换$R_n({\bf x})$（它仅在长程时具有明显的变化，即原本长程序的态经过这样旋转后，邻近的自旋仍然近似平行，而远距离的自旋之间才会有较明显的差异），应该<u>仅改变较少的能量</u>。这种变换相当于一种长波（低能）的集体激发，即<strong>Goldstone模式</strong>（下面简称G模）。任何具有<strong>连续对称性破缺</strong>的体系中都可以出现这样的低能激发。</p>
+<p>固体中的声子就是G模的一个例子，它来自于被晶格破缺掉的空间平移对称性和旋转对称性。由于低能的G模容易被（尤其在临界附近）的热涨落激发，因此需要对此进行研究。出现在不同体系的G模具有共性，下面以超流为背景讨论。</p>
+<p>与玻色-爱因斯坦凝聚类似，超流相也在单个量子基态上占据了宏观多的粒子数。大致上，可以用基态在$\bf x$处波函数的分量</p>
+<script type="math/tex; mode=display">
+\psi({\bf x}) = \psi_{\mathfrak R}({\bf x}) + {\rm i}\psi_{\mathfrak I}({\bf x}) = |\psi({\bf x})| {\rm e}^{ {\rm i}\theta({\bf x})}</script><p>作为体系的序参量。但是量子力学中波函数的任何<strong>全局的</strong>相位都不是可观测量，或者说，$|\psi({\bf x})| {\rm e}^{ {\rm i}\theta({\bf x})}$和$|\psi({\bf x})| {\rm e}^{ {\rm i}(\theta({\bf x})+\theta_R)}$是等价的，这就给哈密顿量引入了一个旋转对称性。这一条件限制了其有效哈密顿量中可能出现的相，即全局的相位不可能单独出现：</p>
+<script type="math/tex; mode=display">
+\beta \mathcal H[\psi({\bf x})] = \beta F_0 + \int{\rm d}^dx \left[ \frac{t}{2} |\psi({\bf x})|^2 + u |\psi({\bf x})|^4 + \frac{K}{2} |\nabla\psi({\bf x})|^2 +\cdots \right]</script><p>实际上就是$n=2$时的朗道-金兹堡哈密顿量，因为$\psi$具有两个独立自由度（例如实部和虚部）。$t&gt;0$时，$\phi=0$，此时是正常的液相；当$t&lt;0$，$\psi$具有有限非零值，意味着基态上占据了大量粒子，体系就进入了超流相。</p>
+<p>全局相位的不可观测性，导致该有效哈密顿量具有在$\psi$复平面内绕原点的旋转对称性，事实上当$t&lt;0$时它的函数形状是墨西哥草帽形：</p>
+<p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240424185055081.png" alt="image-20240424185055081"></p>
+<p>当最小化该哈密顿量时，仅仅确定了$\psi$的模长$|\psi({\bf x})| = \overline\psi \propto \sqrt{|t|}$，而不限制其相位。朗道-金兹堡理论的分析表明概率最大的场构型是均匀场，因此任何可能的$\psi$都可写为：</p>
+<script type="math/tex; mode=display">
+\psi = \overline\psi {\rm e}^{ {\rm i}\theta}</script><p>这体现了基态的自发对称性破缺。</p>
+<p>该体系的G模应当是通过变换$\theta \mapsto \theta +\theta_G({\bf x})$得到，即</p>
+<script type="math/tex; mode=display">
+\psi^G = \overline\psi {\rm e}^{ {\rm i}(\theta+\theta_G({\bf x}))}</script><p>将依赖于缓变场$\theta_G({\bf x})$的那部分能量显式地写出来</p>
+<script type="math/tex; mode=display">
+\beta\mathcal H = \beta\mathcal H_0 + \frac{\overline K}{2} \int{\rm d}^dx (\nabla \theta_G({\bf x}))^2</script><p>其中$\beta\mathcal H_0$是原本的基态能量；并且给出了G模的劲度系数是$\overline K = K\overline\psi^2$，在临界附近$\overline K\propto \psi^2 \propto t$。可见能量对$\theta_G({\bf x})$的依赖仅在于其空间导数，这也印证了$\theta_G({\bf x}) = \theta_0$这种全局相位变换不会改变能量。</p>
+<p>将G模$\theta_G({\bf x})$分解为不同简正模式成分</p>
+<script type="math/tex; mode=display">
+\theta_G({\bf x}) = \frac{1}{\sqrt V} \sum_{\bf k} {\rm e}^{ {\rm i}{\bf k}\cdot{\bf x}}\theta_{G,\bf k}</script><p>于是</p>
+<script type="math/tex; mode=display">
+\beta\mathcal H = \beta\mathcal H_0 + \frac{\overline K}{2} \sum_{\bf k} k^2 |\theta_{G,\bf k}|^2</script><p>可见G模的色散关系是</p>
+<script type="math/tex; mode=display">
+\omega({\bf k}) = \frac{\overline K}{2} k^2</script><p>具有波数$k$的G模其能量正比于$k^2$，且波长越长的模式，能量越低。因此在具有连续对称性自发破缺的系统中，由于热涨落足以激发这种长波低频模式，就必须考虑到这类G模。</p>
+<h1 id="离散对称性破缺，畴壁"><a href="#离散对称性破缺，畴壁" class="headerlink" title="离散对称性破缺，畴壁"></a>离散对称性破缺，畴壁</h1><p>连续的对称性可以自发破缺，离散的对称性也可以自发破缺。即哈密顿量具有某种离散对称性，但是体系的基态只能取其中某个态而不显现这种对称性。</p>
+<p>但是离散对称性体系中不能出现上一节所述的低能G模，因为每个自旋所可处的不同状态之间相差巨大，不存在整体上缓变的变换所对应的长波激发。尽管如此，在在零场时，材料的不同区域也可以具有不同的自发磁化，即自发破缺到不同的基态。此时，处于不同状态的区域之间存在尖锐的畴壁。</p>
+<p>考虑$n=1$的一个朗道-金兹堡哈密顿量，在$t&lt;0$、$h=0$时，其中$m$仅有两种可能的取值：$+\overline m$和$-\overline m$。同一材料可以在不同区域实现这两个态，但是两者之间需要畴壁进行分界。例如，在$d=1$体系中，设置条件：$m(+\infty) = +\overline m$，$m(-\infty) = -\overline m$，那么在两者之间，最可能的场构型$m_w(x)$就需要最小化能量得到，要注意在这种边界条件下，体系不可能是均匀场，因此需要考虑$K(\nabla m(x))^2$项；简单变形后可知，最可能的场构型满足</p>
+<script type="math/tex; mode=display">
+-K \frac{ {\rm d}^2 m_w(x)}{ {\rm d}x^2} = t m_w(x) + 4u m_w^3(x)</script><p>它的解是</p>
+<script type="math/tex; mode=display">
+m_w(x) = \overline m \tanh\left[ \frac{x - x_0}{w} \right]</script><p>其中$x_0$是任意值，</p>
+<script type="math/tex; mode=display">
+w = \sqrt{\frac{K}{-t}}\ ,\qquad \overline m = \sqrt{\frac{-t}{4u}}</script><p><img src="C:\Users\52304\AppData\Roaming\Typora\typora-user-images\image-20240424225324017.png" alt="image-20240424225324017"></p>
+<p>上面的解描述了在零场时两个不同的磁畴之间以畴壁为分界，畴壁中心处于$x_0$处，畴壁宽度为$w$；在远离临界时，畴壁宽度会变得很窄，不同畴域之间的变化很明显、陡峭；在近临界时，由于$t\to0$而畴壁宽度是以$w \sim |t|^{-1/2}$发散的，此时相当于不同畴域内部的有序性已经被破坏了，它们之间的差异变得不再明显。</p>
+<p>事实上畴壁宽度与体系的关联长度成正比，因此畴壁宽度的发散意味着描述关联长度发散的临界指数</p>
+<script type="math/tex; mode=display">
+\nu = -\frac12</script><p>在体系中创造一个畴壁所需自由能可通过计算包含畴壁的体系能量与一个全部均匀磁化体系能量之差</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\beta F_w &= \beta F[m_w] - \beta F[\overline m]\\
+&= \int{\rm d}^dx \left[ \frac{K}{2}\left(\frac{ {\rm d} m_w}{ {\rm d}x}\right)^2 + \frac{t}{2} (m_w^2 - \overline m^2) + u (m_w^4 - \overline m^4) \right]\\
+&= -\frac{t}{2}\overline m^2 \int{\rm d}^dx  \cosh\left[ \frac{x - x_0}{w} \right]\\
+&= -\frac{t}{2}\overline m^2 w \mathcal A \int_{-\infty}^{+\infty} \frac{ {\rm d}y}{\cosh^4 y}\\
+&= -\frac23 t \overline m^2 w \mathcal A
+\end{aligned}</script><p>其中$\mathcal A$是体系在垂直$x$方向的截面积，也即畴壁的面积；$w\mathcal A$即是畴壁大致体积。因此在畴壁上单位体积的自由能，与体系的体能量密度$\overline m^2$成正比。在近临界时由于$\overline m^2 \sim t$，上述计算表明畴壁自由能将以$\sim |t|^{3/2}$发散。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io">Papaya Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://papaya-z.github.io/post/Kardar/[Kardar]V.2-C.2-%E7%BB%9F%E8%AE%A1%E5%9C%BA.html">https://papaya-z.github.io/post/Kardar/[Kardar]V.2-C.2-%E7%BB%9F%E8%AE%A1%E5%9C%BA.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://papaya-z.github.io" target="_blank">Papaya's 词驿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%9B%B8%E5%8F%98/">相变</a><a class="post-meta__tags" href="/tags/%E6%9C%97%E9%81%93-%E9%87%91%E5%85%B9%E5%A0%A1%E7%90%86%E8%AE%BA/">朗道-金兹堡理论</a></div><div class="post_share"><div class="social-share" data-image="/img/Mtheory.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/Kardar/%5BKardar%5DV.2-C.3-%E6%95%A3%E5%B0%84%E5%92%8C%E6%B6%A8%E8%90%BD.html" title="[Kardar]V.2-C.3-散射和涨落"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">[Kardar]V.2-C.3-散射和涨落</div></div></a></div><div class="next-post pull-right"><a href="/post/Kardar/%5BKardar%5DV.2-C.1-%E9%9B%86%E7%BE%A4%E8%A1%8C%E4%B8%BA%EF%BC%8C%E4%BB%8E%E7%B2%92%E5%AD%90%E5%88%B0%E5%9C%BA.html" title="[Kardar]V.2-C.1-集群行为，从粒子到场"><img class="cover" src="/img/Mtheory.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">[Kardar]V.2-C.1-集群行为，从粒子到场</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/Kardar/%5BKardar%5DV.2-C.3-%E6%95%A3%E5%B0%84%E5%92%8C%E6%B6%A8%E8%90%BD.html" title="[Kardar]V.2-C.3-散射和涨落"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-25</div><div class="title">[Kardar]V.2-C.3-散射和涨落</div></div></a></div><div><a href="/post/Kardar/%5BKardar%5DV.1-C.5-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%B2%92%E5%AD%90.html" title="[Kardar]V.1-C.5-相互作用粒子"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">[Kardar]V.1-C.5-相互作用粒子</div></div></a></div><div><a href="/post/Kardar/%5BKardar%5DV.2-C.1-%E9%9B%86%E7%BE%A4%E8%A1%8C%E4%B8%BA%EF%BC%8C%E4%BB%8E%E7%B2%92%E5%AD%90%E5%88%B0%E5%9C%BA.html" title="[Kardar]V.2-C.1-集群行为，从粒子到场"><img class="cover" src="/img/Mtheory.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-22</div><div class="title">[Kardar]V.2-C.1-集群行为，从粒子到场</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/br.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Papaya Z</div><div class="author-info__description">See as much as possible, <br>go as far as could.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不定期失踪ing</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AD%90"><span class="toc-number">1.</span> <span class="toc-text">引子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%97%E9%81%93-%E9%87%91%E5%85%B9%E5%A0%A1%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">朗道-金兹堡哈密顿量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9E%8D%E7%82%B9%E8%BF%91%E4%BC%BC%EF%BC%9B%E5%B9%B3%E5%9D%87%E5%9C%BA"><span class="toc-number">3.</span> <span class="toc-text">鞍点近似；平均场</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9E%8D%E7%82%B9%E8%BF%91%E4%BC%BC"><span class="toc-number">3.1.</span> <span class="toc-text">鞍点近似</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0-Psi-m-%E7%9A%84%E8%A1%8C%E4%B8%BA"><span class="toc-number">3.2.</span> <span class="toc-text">函数$\Psi( m)$的行为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%94%AF%E8%B1%A1%E5%8F%82%E6%95%B0"><span class="toc-number">3.3.</span> <span class="toc-text">唯象参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%97%E9%81%93-%E9%87%91%E5%85%B9%E5%A0%A1%E7%90%86%E8%AE%BA%E7%9A%84%E4%B8%B4%E7%95%8C%E8%A1%8C%E4%B8%BA"><span class="toc-number">3.4.</span> <span class="toc-text">朗道-金兹堡理论的临界行为</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%8F%82%E9%87%8F%EF%BC%9A%E7%A3%81%E5%8C%96%E5%BC%BA%E5%BA%A6"><span class="toc-number">3.4.1.</span> <span class="toc-text">序参量：磁化强度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%87%BD%E6%95%B0%EF%BC%9A%E7%A3%81%E5%8C%96%E7%8E%87"><span class="toc-number">3.4.2.</span> <span class="toc-text">响应函数：磁化率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%AE%B9"><span class="toc-number">3.4.3.</span> <span class="toc-text">热容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%A0%B4%E7%BC%BA%EF%BC%8CGoldstone%E6%A8%A1"><span class="toc-number">4.</span> <span class="toc-text">连续对称性破缺，Goldstone模</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%A0%B4%E7%BC%BA%EF%BC%8C%E7%95%B4%E5%A3%81"><span class="toc-number">5.</span> <span class="toc-text">离散对称性破缺，畴壁</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.2-C.4-%E6%A0%87%E5%BA%A6%E5%81%87%E8%AE%BE.html" title="[Kardar]V.2-C.4-标度假设"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.2-C.4-标度假设"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.2-C.4-%E6%A0%87%E5%BA%A6%E5%81%87%E8%AE%BE.html" title="[Kardar]V.2-C.4-标度假设">[Kardar]V.2-C.4-标度假设</a><time datetime="2024-04-27T20:42:02.000Z" title="发表于 2024-04-28 04:42:02">2024-04-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.2-C.3-%E6%95%A3%E5%B0%84%E5%92%8C%E6%B6%A8%E8%90%BD.html" title="[Kardar]V.2-C.3-散射和涨落"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.2-C.3-散射和涨落"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.2-C.3-%E6%95%A3%E5%B0%84%E5%92%8C%E6%B6%A8%E8%90%BD.html" title="[Kardar]V.2-C.3-散射和涨落">[Kardar]V.2-C.3-散射和涨落</a><time datetime="2024-04-24T16:55:05.000Z" title="发表于 2024-04-25 00:55:05">2024-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.2-C.2-%E7%BB%9F%E8%AE%A1%E5%9C%BA.html" title="[Kardar]V.2-C.2-统计场"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.2-C.2-统计场"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.2-C.2-%E7%BB%9F%E8%AE%A1%E5%9C%BA.html" title="[Kardar]V.2-C.2-统计场">[Kardar]V.2-C.2-统计场</a><time datetime="2024-04-23T11:27:50.000Z" title="发表于 2024-04-23 19:27:50">2024-04-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/Kardar/%5BKardar%5DV.2-C.1-%E9%9B%86%E7%BE%A4%E8%A1%8C%E4%B8%BA%EF%BC%8C%E4%BB%8E%E7%B2%92%E5%AD%90%E5%88%B0%E5%9C%BA.html" title="[Kardar]V.2-C.1-集群行为，从粒子到场"><img src="/img/Mtheory.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Kardar]V.2-C.1-集群行为，从粒子到场"/></a><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.2-C.1-%E9%9B%86%E7%BE%A4%E8%A1%8C%E4%B8%BA%EF%BC%8C%E4%BB%8E%E7%B2%92%E5%AD%90%E5%88%B0%E5%9C%BA.html" title="[Kardar]V.2-C.1-集群行为，从粒子到场">[Kardar]V.2-C.1-集群行为，从粒子到场</a><time datetime="2024-04-21T23:32:40.000Z" title="发表于 2024-04-22 07:32:40">2024-04-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/Kardar/%5BKardar%5DV.1-C.3-%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA.html" title="kardar3">kardar3</a><time datetime="2024-04-18T15:03:34.000Z" title="发表于 2024-04-18 23:03:34">2024-04-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/Mtheory.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Papaya Z</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See as much as possible, go as far as could.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: 'c7981ef6070a712606d81ed22175649f',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
